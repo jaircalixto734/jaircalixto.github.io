@@ -27,9 +27,9 @@ body {
 
 /* --- ANIMACIÓN DE DESVANECIMIENTO --- */
 @keyframes carruselSuave {
-    0%, 33% { background-image: url('Imagenes/foto1.jpeg'); opacity: 1; }
-    34%, 66% { background-image: url('Imagenes/foto2.jpeg'); }
-    67%, 100% { background-image: url('Imagenes/foto3.jpeg'); }
+    0%, 33% { background-image: url('./imagenes/foto1.jpeg'); opacity: 1; }
+    34%, 66% { background-image: url('./imagenes/foto2.jpeg'); }
+    67%, 100% { background-image: url('./imagenes/foto3.jpeg'); }
 }
 
 @keyframes fadeInUp {
@@ -163,4 +163,5 @@ body {
 .feat-item:hover { 
     transform: translateY(-5px); 
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+
 }
