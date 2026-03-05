@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario Forestal Digital | IE Jesús Bernal Pinzón</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="./imagenes/logojbp.png" alt="Logo" class="logo">
+        <div class="logo-text">
+            <span class="inst-name">I.E. Jesús Bernal Pinzón</span>
+            <span class="tec-name">Técnica en Conservación de Recursos Naturales</span>
+        </div>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-menu" id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lista-arboles.html">Árboles</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+        <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+    </ul>
+</nav>
+<header class="hero">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <span class="project-label">Proyecto Grado Once</span>
+            <h1>Sistema de Gestión Digital para la <br><span>Valoración de la Biodiversidad</span></h1>
+            
+            <p>Transformando nuestro entorno en un laboratorio vivo a través de TIC e Inteligencia Artificial.</p>
+            
+            <div class="buttons-group">
+                <a href="#about" class="btn-secondary">Conocer el proyecto</a>
+                <a href="lista-arboles.html" class="btn-main">Lista de Árboles</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+   <section id="about" class="info-section">
+    <div class="container">
+        <span class="label-green">Sobre el Proyecto</span>
+        <h2>Un Ecosistema Digital de Aprendizaje</h2>
+        <p class="section-intro">Unimos la botánica con la tecnología para que los árboles del colegio dejen de ser invisibles y se conviertan en "docentes vivos".</p>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="icon">🌳</div>
+                <h3>Servicios Ecosistémicos</h3>
+                <p>Hacemos visible lo invisible: cómo los árboles limpian nuestro aire y regulan el calor.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Ciencia Ciudadana</h3>
+                <p>Tú participas en la recolección de datos reales usando herramientas digitales.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3>Inteligencia Artificial</h3>
+                <p>Un tutor que traduce datos científicos complejos a un lenguaje sencillo para todos.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏁</div>
+                <h3>Códigos QR</h3>
+                <p>Acceso instantáneo a la ficha técnica de cada árbol con solo un escaneo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="goals-section">
+    <div class="container">
+        <span class="label-white">Objetivos</span>
+        <h2 class="text-white">Objetivos Del Proyecto</h2>
+        
+        <div class="grid-goals">
+            <div class="goal-item">
+                <span class="goal-number">01</span>
+                <h4>Inventario Forestal</h4>
+                <p>Clasificar cada árbol por su nombre científico y estado de salud.</p>
+            </div>
+            <div class="goal-item">
+                <span class="goal-number">02</span>
+                <h4>Cálculo de Biomasa</h4>
+                <p>Medir cuánto carbono atrapan nuestros árboles para frenar el cambio climático.</p>
+            </div>
+            <div class="goal-item">
+                <span class="goal-number">03</span>
+                <h4>Plataforma Viva</h4>
+                <p>Crear esta web interactiva donde la naturaleza y el código se encuentran.</p>
+            </div>
+            <div class="goal-item">
+                <span class="goal-number">04</span>
+                <h4>Impacto Escolar</h4>
+                <p>Lograr que todos en el Jesús Bernal Pinzón cuiden más su entorno natural.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <script>
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('#nav-list');
+
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    });
+</script>
+   
+</body>
+</html>

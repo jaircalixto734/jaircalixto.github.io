@@ -1,0 +1,343 @@
+/* --- ANIMACIONES DE FONDO --- */
+@keyframes fluidoBlanco {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fluidoVerde {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- CONFIGURACIÓN GENERAL --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: #fdfdfd; 
+    color: #2c3e50; 
+}
+
+.project-label {
+    background-color: #81b622; /* El verde de tu técnica */
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 50px; /* Forma de píldora */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Un poco de sombra para profundidad */
+}
+
+/* --- ANIMACIÓN DE DESVANECIMIENTO --- */
+@keyframes carruselSuave {
+    0%, 33% { background-image: url('./imagenes/foto1.jpeg'); opacity: 1; }
+    34%, 66% { background-image: url('./imagenes/foto2.jpeg'); }
+    67%, 100% { background-image: url('./imagenes/foto3.jpeg'); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- AJUSTE NAVBAR TEXTO --- */
+.nav-text { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    line-height: 1.2; /* Para que queden cerquita uno del otro */
+}
+
+.inst-name { 
+    font-weight: 800; 
+    color: #2d5a27; 
+    font-size: 1.1rem; 
+    text-transform: uppercase;
+}
+
+.tec-name { 
+    font-size: 0.85rem; 
+    color: #666; 
+    font-weight: 500;
+}
+
+/* --- NAVBAR --- */
+/* --- NUEVA BARRA DE NAVEGACIÓN PROFESIONAL --- */
+.navbar {
+    padding: 10px 5%; /* Un poco menos de padding vertical */
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center; /* Centrado vertical de todos los elementos */
+}
+
+/* --- CONTENEDOR DEL LOGO (La clave del cambio) --- */
+.logo-container {
+    display: flex; /* Alinea logo y texto horizontalmente */
+    align-items: center; /* Centrado vertical perfecto */
+    gap: 12px; /* Espacio entre el logo y el texto */
+}
+
+/* Tamaño del logo */
+.logo {
+    height: 50px; /* Un tamaño elegante y no muy grande */
+    width: auto;
+}
+
+/* Contenedor para el texto al lado del logo */
+.logo-text {
+    display: flex;
+    flex-direction: column; /* Apila el nombre sobre la técnica */
+    line-height: 1.2; /* Acercalos un poquito más */
+}
+
+/* Nombre de la institución */
+.inst-name {
+    font-weight: 700; /* Negrita */
+    color: #2d5a27; /* Verde oscuro institucional */
+    font-size: 1rem; /* Tamaño base */
+    text-transform: uppercase; /* Opcional: Mayúsculas para más fuerza */
+}
+
+/* Nombre de la técnica */
+.tec-name {
+    font-size: 0.75rem; /* Más pequeño para jerarquía */
+    color: #666; /* Gris para que no compita */
+    font-weight: 400; /* Peso normal */
+}
+
+/* --- MENÚ DE NAVEGACIÓN DE LA DERECHA --- */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Espacio entre enlaces */
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333; /* Color oscuro para legibilidad */
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+.nav-menu li a:hover {
+    color: #81b622; /* El verde vibrante de tu técnica */
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Se apila en columna en celulares */
+        gap: 10px;
+        padding: 10px;
+    }
+    .nav-menu {
+        flex-wrap: wrap; /* Permite que el menú se divida en líneas */
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-menu li a {
+        font-size: 0.8rem;
+    }
+}
+/* --- HERO SECTION --- */
+.hero {
+    height: 90vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    /* Aquí ocurre la magia del cambio de fotos suave */
+    animation: carruselSuave 18s infinite;
+    transition: all 1s ease-in-out;
+}
+
+.hero-overlay {
+    height: 100%; width: 100%;
+    /* Oscurecemos un poco más el fondo para que el texto resalte */
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex; align-items: center; justify-content: center;
+}
+
+.hero-content { 
+    text-align: center; color: white; padding: 0 20px; 
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero h1 { font-size: 3rem; margin: 20px 0; }
+.hero h1 span { color: #d4ff80; }
+
+/* --- GRUPO DE BOTONES --- */
+.buttons-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn-main {
+    background: #2d5a27;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid white;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.btn-secondary:hover { background: white; color: #2d5a27; }
+
+/* --- SECCIÓN INFORMATIVA --- */
+.info-section { 
+    padding: 80px 10%; 
+    text-align: center; 
+}
+
+.info-section h2 { 
+    margin-bottom: 25px; 
+    color: #2d5a27; 
+    font-size: 2rem;
+}
+
+.features { 
+    display: flex; 
+    gap: 30px; 
+    justify-content: center; 
+    margin-bottom: 50px; 
+    flex-wrap: wrap; 
+}
+
+.feat-item { 
+    background: #f4f9f4; 
+    padding: 30px; 
+    border-radius: 15px; 
+    width: 280px; 
+    transition: 0.3s;
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.feat-item:nth-child(1) { animation-delay: 0.2s; }
+.feat-item:nth-child(2) { animation-delay: 0.4s; }
+.feat-item:nth-child(3) { animation-delay: 0.6s; }
+
+.feat-item:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+
+/* --- ESTILOS DEL MENÚ HAMBURGUESA --- */
+.menu-toggle {
+    display: none; /* Oculto en PC */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #2d5a27;
+    transition: 0.3s;
+}
+
+/* --- RESPONSIVO PARA CELULARES --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Aparece en celular */
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px; /* Justo debajo de la navbar */
+        right: -100%; /* Escondido a la derecha */
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    /* Clase que activaremos con JS */
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+}
+
+/* Esta es la parte que faltaba en tu CSS */
+.info-section {
+    background: linear-gradient(-45deg, #ffffff, #f7f9f7, #ffffff, #f2f2f2);
+    background-size: 400% 400%;
+    animation: fluidoBlanco 15s ease infinite;
+    padding: 20px 0;
+}
+
+/* --- ESTILOS GENERALES DE SECCIONES --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+h2 { font-size: 2.5rem; margin: 15px 0 30px; color: #1a3318; }
+.section-intro { font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto 50px; }
+
+/* Etiquetas de color */
+.label-green { background: #e8f5e9; color: #2d5a27; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+.label-white { background: rgba(255,255,255,0.2); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+
+/* --- CUADRÍCULA DE CARTAS (SOBRE EL PROYECTO) --- */
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+.card { background: #f9f9f9; padding: 30px; border-radius: 15px; transition: 0.3s; border: 1px solid #eee; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+.card h3 { font-size: 1.2rem; margin-bottom: 10px; color: #2d5a27; }
+.card p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+
+/* --- SECCIÓN DE METAS (VERDE OSCURO) --- */
+/* REEMPLAZA TU .goals-section ANTERIOR POR ESTA */
+.goals-section { 
+    background: linear-gradient(-45deg, #2d5a27, #3d7a35, #1e3d1a, #2d5a27);
+    background-size: 400% 400%;
+    animation: fluidoVerde 12s ease infinite;
+    color: white; 
+    border-radius: 50px 50px 0 0; 
+    padding: 80px 0; 
+}
+
+.text-white { color: white; }
+.grid-goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 40px; }
+
+.goal-item { text-align: left; padding: 20px; background: rgba(239, 236, 228, 0.05); border-radius: 15px; }
+.goal-number { font-size: 2rem; font-weight: 800; opacity: 0.9; display: block; margin-bottom: 10px; }
+.goal-item h4 { font-size: 1.1rem; margin-bottom: 10px; color: #d4ff80; }
+.goal-item p { font-size: 0.9rem; opacity: 0.8; line-height: 1.4; }
+
