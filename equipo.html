@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo - EcoDigital</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="./imagenes/logojbp1.png" alt="Logo I.E. Jesús Bernal Pinzón" class="logo">
+            <div class="logo-text">
+                <span class="inst-name">I.E. Jesús Bernal Pinzón</span>
+                <span class="tec-name">Técnica en Conservación de Recursos Naturales</span>
+            </div>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-menu" id="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lista-arboles.html">Árboles</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+    </nav>
+
+<section class="equipo-section">
+    <div class="container-equipo">
+        <h2 class="titulo-seccion">Nuestro Equipo De Trabajo</h2>
+        
+        <div class="grid-equipo">
+            <div class="tarjeta-persona">
+                <div class="contenedor-foto">
+                    <img src="./imagenes/fotojair.jpeg" alt="Jair Calixto">
+                </div>
+                <div class="bloque-info">
+                    <h3>Jair Calixto Hernández</h3>
+                    <span class="etiqueta">Líder Digital</span>
+                    <p>Desarrollo web y arquitectura de Inteligencia Artificial.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-persona">
+                <div class="contenedor-foto">
+                    <img src="./imagenes/sara.jpeg" alt="Sara Ávila">
+                </div>
+                <div class="bloque-info">
+                    <h3>Sara Margarita Ávila</h3>
+                    <span class="etiqueta">Investigadora</span>
+                    <p>Especialista en inventario forestal y clasificación botánica.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-persona">
+                <div class="contenedor-foto">
+                    <img src="./imagenes/diego.jpeg" alt="Diego Hernández">
+                </div>
+                <div class="bloque-info">
+                    <h3>Diego Alejandro Hernández Daza</h3>
+                    <span class="etiqueta">Analista</span>
+                    <p>Cálculo de biomasa y captura de carbono escolar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mentor-horizontal">
+            <div class="mentor-foto">
+                <img src="./imagenes/edwin.jpg" alt="Profe Edwin">
+            </div>
+            <div class="mentor-datos">
+                <h4>Edwin Ricaurte Avella</h4>
+                <p class="cargo">Docente Asesor - Guía Técnico SENA</p>
+                <p class="desc">Mentor pedagógico en la Técnica de Conservación de Recursos Naturales.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="main-footer">
+        </footer>
+
+    <script>
+        // Lógica para el menú hamburguesa
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('#nav-list');
+
+        menu.addEventListener('click', function() {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+    </script>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column branding">
+            <div class="footer-logo">
+                <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
+                <div>
+                    <h4>Inventario Forestal Digital</h4>
+                    <span>IE Jesús Bernal Pinzón</span>
+                </div>
+            </div>
+            <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la biodiversidad arbórea mediante TIC e IA.</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="lista-arboles.html">Inventario Forestal</a></li>
+                <li><a href="calculadora.html">Calculadora de Carbono</a></li>
+                <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Información</h4>
+            <ul>
+                <li><a href="equipo.html">Equipo de Trabajo</a></li>
+                <li><a href="#goals">Objetivos del Proyecto</a></li>
+                <li><a href="#">Marco Teórico</a></li>
+                <li><a href="#">Resultados Esperados</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Contacto</h4>
+            <ul class="contact-info">
+                <li>📍 Maní, Casanare </li>
+                <li>🏫 IE Jesús Bernal Pinzón </li>
+                <li>🎓 SENA - 2026 </li>
+                <li>📧 contacto@ecodigital.edu.co</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
+        <div class="footer-badges">
+            <span class="badge">SENA</span>
+            <span class="badge">ODS 15</span>
+            <span class="badge">PRAE</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

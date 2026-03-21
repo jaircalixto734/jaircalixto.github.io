@@ -38,7 +38,7 @@
             <span class="project-label">Proyecto Grado Once</span>
             <h1>Sistema de Gestión Digital para la <br><span>Valoración de la Biodiversidad</span></h1>
             
-            <p>Transformando nuestro entorno en un laboratorio vivo a través de TIC e Inteligencia Artificial.</p>
+            <p>Transformando nuestro entorno escolar en un laboratorio vivo a través de TIC e Inteligencia Artificial.</p>
             
             <div class="buttons-group">
                 <a href="#about" class="btn-secondary">Conocer el proyecto</a>
@@ -56,22 +56,27 @@
 
         <div class="grid-cards">
             <div class="card">
-                <div class="icon">🌳</div>
+                <div class="icon-container">
+            <img src="./imagenes/servicios ecosistemicos2.png" alt="Servicios Ecosistémicos"></div>
                 <h3>Servicios Ecosistémicos</h3>
                 <p>Hacemos visible lo invisible: cómo los árboles limpian nuestro aire y regulan el calor.</p>
             </div>
             <div class="card">
-                <div class="icon">📱</div>
+                <div class="icon-container">
+            <img src="./imagenes/ciencia ciudadana.png" alt="Ciencia Ciudadana">        
+                </div>
                 <h3>Ciencia Ciudadana</h3>
                 <p>Tú participas en la recolección de datos reales usando herramientas digitales.</p>
             </div>
             <div class="card">
-                <div class="icon">🤖</div>
+                <div class="icon-container">
+            <img src="./imagenes/inteligencia artificial.png" alt="Inteligencia Artificial"></div>
                 <h3>Inteligencia Artificial</h3>
                 <p>Un tutor que traduce datos científicos complejos a un lenguaje sencillo para todos.</p>
             </div>
             <div class="card">
-                <div class="icon">🏁</div>
+                <div class="icon-container">
+            <img src="./imagenes/codigo QR.png" alt="Códigos QR"> </div>
                 <h3>Códigos QR</h3>
                 <p>Acceso instantáneo a la ficha técnica de cada árbol con solo un escaneo.</p>
             </div>
@@ -108,15 +113,78 @@
         </div>
     </div>
 </section>
-    <script>
+<script>
     const menu = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('#nav-list');
 
+    // 1. Función para abrir/cerrar al tocar el botón hamburguesa
     menu.addEventListener('click', function() {
         menu.classList.toggle('is-active');
         menuLinks.classList.toggle('active');
     });
+
+    // 2. Función para que se cierre SOLO al tocar un enlace (opcional, muy útil)
+    document.querySelectorAll('.nav-menu li a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.remove('active');
+        });
+    });
 </script>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column branding">
+            <div class="footer-logo">
+                <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
+                <div>
+                    <h4>Inventario Forestal Digital</h4>
+                    <span>IE Jesús Bernal Pinzón</span>
+                </div>
+            </div>
+            <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la biodiversidad arbórea mediante TIC e IA.</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="lista-arboles.html">Inventario Forestal</a></li>
+                <li><a href="calculadora.html">Calculadora de Carbono</a></li>
+                <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Información</h4>
+            <ul>
+                <li><a href="equipo.html">Equipo de Trabajo</a></li>
+                <li><a href="#goals">Objetivos del Proyecto</a></li>
+                <li><a href="#">Marco Teórico</a></li>
+                <li><a href="#">Resultados Esperados</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Contacto</h4>
+            <ul class="contact-info">
+                <li>📍 Maní, Casanare </li>
+                <li>🏫 IE Jesús Bernal Pinzón </li>
+                <li>🎓 SENA - 2026 </li>
+                <li>📧 contacto@ecodigital.edu.co</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
+        <div class="footer-badges">
+            <span class="badge">SENA</span>
+            <span class="badge">ODS 15</span>
+            <span class="badge">PRAE</span>
+        </div>
+    </div>
+</footer>
    
 </body>
 </html>
