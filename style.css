@@ -1,3 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* En PC usamos altura fija para que el centro sea perfecto */
+    display: flex;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;
+    overflow: hidden;
+    padding: 0; /* Quitamos cualquier padding que empuje el contenido */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* Mayor que el 1 del overlay */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navbar Global (Para Inicio, Equipo y Chatbot) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo { height: 55px; width: auto; }
+
+.school-name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1a3318;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.tech-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #666;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #1a3318;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover, .nav-links li a.active { color: #81b622; }
+
 /* --- ANIMACIONES DE FONDO --- */
 @keyframes fluidoBlanco {
     0% { background-position: 0% 50%; }
@@ -167,11 +248,58 @@ body {
     transition: all 1s ease-in-out;
 }
 
+
+
+@media (max-width: 768px) {
+    /* Achicamos la barra para que no tape el contenido */
+    .navbar {
+        padding: 5px 3%; 
+    }
+
+    .brand-logo {
+        height: 35px; /* Logo más pequeño en móvil */
+    }
+
+    .school-name {
+        font-size: 0.85rem;
+    }
+
+    /* Ajuste del Hero para que NADA se tape */
+    .hero {
+        height: auto; /* Que crezca según el contenido */
+        min-height: 110vh; /* Un poco más de una pantalla para dar aire */
+        padding-top: 100px; /* <--- ESPACIO PARA QUE EL NAVBAR NO TAPE EL LETRERO */
+        padding-bottom: 80px; /* <--- ESPACIO PARA QUE LOS BOTONES NO CHOQUEN */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Título más pequeño para que no ocupe tanto espacio */
+        line-height: 1.2;
+    }
+
+    /* Los botones: uno encima del otro */
+    .buttons-group {
+        flex-direction: column; 
+        gap: 12px;
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    .btn-main, .btn-secondary {
+        width: 85%; /* No tan anchos para que se vean elegantes */
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
 .hero-overlay {
-    height: 100%; width: 100%;
-    /* Oscurecemos un poco más el fondo para que el texto resalte */
-    background: rgba(0, 0, 0, 0.5); 
-    display: flex; align-items: center; justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;            /* <--- Obligatorio: que empiece desde el puro borde izquierdo */
+    width: 100%;        /* <--- Obligatorio: que cubra TODO el ancho disponible */
+    height: 100%;       /* <--- Que cubra todo el alto del contenedor hero */
+    background: rgba(0, 0, 0, 0.6); /* Ajusta el 0.6 si quieres más o menos oscuridad */
+    z-index: 10;         /* Que esté por detrás del texto */
 }
 
 .hero-content { 
@@ -254,17 +382,21 @@ body {
 
 /* --- ESTILOS DEL MENÚ HAMBURGUESA --- */
 .menu-toggle {
-    display: none; /* Oculto en PC */
+    display: none; /* Se oculta en PC */
     flex-direction: column;
     cursor: pointer;
-    gap: 5px;
+    border: none;
+    background: none;
+    z-index: 1200;
 }
 
 .bar {
     width: 25px;
     height: 3px;
-    background-color: #2d5a27;
-    transition: 0.3s;
+    background-color: #1a3318;
+    margin: 4px 0;
+    transition: 0.4s;
+    border-radius: 2px;
 }
 
 /* --- RESPONSIVO PARA CELULARES --- */
@@ -634,3 +766,309 @@ h2 { font-size: 2.5rem; margin: 15px 0 30px; color: #1a3318; }
     transform: scale(1.05); /* Un zoom muy suave dentro del cuadro */
 }
 
+
+
+
+
+
+
+/* =============================================
+   1. NAVBAR (ESTILO INSTITUCIONAL)
+   ============================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    border-bottom: 2px solid #f0f0f0;
+    font-family: sans-serif;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-logo {
+    height: 60px;
+    width: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.school-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1a3318;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tech-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #444;
+    margin: 0;
+}
+
+/* Enlaces horizontales como la principal */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none; /* Quita los puntos */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #1a3318;
+    font-weight: 700; /* Letra gruesa */
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover, 
+.nav-links li a.active {
+    color: #81b622;
+}
+
+/* Menú Hamburguesa */
+.menu-toggle {
+    display: none; /* Se oculta en PC */
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: none;
+    z-index: 1200;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #1a3318;
+    margin: 4px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+/* =============================================
+   2. INTERFAZ DEL CHATBOT (REDISEÑO)
+   ============================================= */
+.chat-page-wrapper {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f4f7f4;
+}
+
+.chat-container {
+    width: 95%;
+    max-width: 850px; /* Ancho pro */
+    height: 700px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #2d5a27;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bot-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bot-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white; /* Por si no carga la imagen */
+    background-image: url('imagenes/silvain1.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    border: 2px solid white;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #81b622;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    box-shadow: 0 0 5px #81b622;
+}
+
+/* Ventana de Mensajes con textura */
+.chat-window {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f8f9fa;
+    background-image: url('https://www.transparenttextures.com/patterns/leaf.png'); /* Textura sutil */
+}
+
+.message {
+    max-width: 80%;
+    padding: 15px 20px;
+    border-radius: 18px;
+    font-size: 1rem;
+    line-height: 1.4;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.bot-msg {
+    align-self: flex-start;
+    background: white;
+    color: #1a3318;
+    border-left: 5px solid #81b622;
+    border-bottom-left-radius: 2px;
+}
+
+.user-msg {
+    align-self: flex-end;
+    background: #2d5a27;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+/* Entrada de texto */
+.chat-input-area {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#userInput:focus {
+    border-color: #81b622;
+}
+
+#sendBtn {
+    background: #81b622;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+#sendBtn:hover {
+    background: #2d5a27;
+    transform: scale(1.05);
+}
+
+/* =============================================
+   3. RESPONSIVO (MÓVIL)
+   ============================================= */
+@media (max-width: 768px) {
+    .menu-toggle { 
+        display: flex; 
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Se pega justo debajo del navbar */
+        right: 0;
+        width: 100%;
+        background: white;
+        
+        /* --- AQUÍ ESTÁ EL TRUCO --- */
+        padding-top: 50px; /* Esto empuja 'Inicio' hacia abajo para que la X no lo tape */
+        padding-bottom: 20px;
+        
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        max-height: 400px; /* Suficiente para que quepan todos los enlaces */
+        opacity: 1;
+    }
+
+    /* Reducimos el espacio entre los nombres de las páginas */
+    .nav-links li {
+        margin: 5px 0; /* Espacio vertical más pequeño y elegante */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
+/* Forzamos el centrado en PC */
+@media (min-width: 769px) {
+    .hero {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 100vh !important;
+        padding: 0 !important;
+    }
+
+    .hero-overlay {
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.hero-overlay {
+    z-index: 1 !important;
+}
+
+.hero-content {
+    z-index: 10 !important;
+    position: relative !important;
+}
