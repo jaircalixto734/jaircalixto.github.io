@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Carbono - EcoDigital</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR (El mismo de siempre) -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="./imagenes/logojbp.png" alt="Logo" class="brand-logo">
+            <div class="brand-text">
+                <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+                <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lista-arboles.html">Árboles</a></li>
+            <li><a href="calculadora.html" class="active">Calculadora</a></li>
+            <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECCIÓN CALCULADORA -->
+    <section class="calculadora-section">
+        <div class="container">
+            <div class="calc-header">
+                <span class="label-green">Herramienta Interactiva</span>
+                <h2>Calculadora de Biomasa y Carbono</h2>
+                <p class="section-intro">Ingresa los datos dasonómicos del árbol para estimar su biomasa y descubrir su impacto real en la mitigación del cambio climático.</p>
+            </div>
+
+            <div class="calc-grid">
+                
+                <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+                <div class="calc-form-column">
+                    <form id="carbonCalculator">
+                        
+                        <div class="form-group">
+                            <label for="especie"><i class="fas fa-leaf"></i> Especie del Árbol</label>
+                            <select id="especie" required>
+                                <option value="" disabled selected>Selecciona una especie...</option>
+                                <option value="yopo">Yopo (Anadenanthera peregrina)</option>
+                                <option value="flor_amarillo">Flor Amarillo (Handroanthus chrysanthus)</option>
+                                <option value="matapalo">Matapalo (Ficus aurea)</option>
+                                <option value="ceiba">Ceiba (Ceiba pentandra)</option>
+                                <option value="otro">Otra especie genérica</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dap"><i class="fas fa-ruler-horizontal"></i> DAP (Diámetro en cm)</label>
+                            <input type="number" id="dap" placeholder="Ej: 45.5" step="0.1" min="1" required>
+                            <small>Diámetro a la altura del pecho (1.30m del suelo)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="altura"><i class="fas fa-arrows-alt-v"></i> Altura Estimada (Metros)</label>
+                            <input type="number" id="altura" placeholder="Ej: 12" step="0.1" min="1" required>
+                        </div>
+
+                        <button type="submit" class="btn-calc">
+                            <i class="fas fa-calculator"></i> Calcular Impacto Ambiental
+                        </button>
+                    </form>
+                </div>
+
+                <!-- COLUMNA DERECHA: RESULTADOS -->
+                <div class="calc-results-column">
+                    
+                    <!-- Tarjeta Principal (Verde Oscuro) -->
+                    <div class="result-main-card">
+                        <p class="result-title">Carbono Almacenado Estimado</p>
+                        <div class="result-value">
+                            <span id="res-carbono">0.00</span>
+                            <span class="unit">kg CO₂</span>
+                        </div>
+                        <p class="result-subtitle">Equivale a la biomasa total procesada por este árbol.</p>
+                    </div>
+
+                    <!-- Cuadrícula de Equivalencias (Tarjetas Blancas) -->
+                    <div class="equivalency-grid">
+                        <div class="equiv-card">
+                            <i class="fas fa-car-side"></i>
+                            <p class="equiv-title">CO₂ Compensado</p>
+                            <span class="equiv-value" id="res-auto">0 km</span>
+                            <small>Recorridos en auto</small>
+                        </div>
+
+                        <div class="equiv-card">
+                            <i class="fas fa-lungs"></i>
+                            <p class="equiv-title">Oxígeno Producido</p>
+                            <span class="equiv-value" id="res-oxigeno">0 per.</span>
+                            <small>Respirando por 1 día</small>
+                        </div>
+
+                        <div class="equiv-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <p class="equiv-title">Energía Limpia</p>
+                            <span class="equiv-value" id="res-energia">0 días</span>
+                            <small>Foco LED encendido</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (El mismo de siempre) -->
+    <footer class="main-footer">
+        <!-- Contenido del Footer aquí -->
+        <div class="footer-bottom">
+            <p>© 2026 Ecosistema Digital JBP - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT: Lógica de la calculadora y Menú -->
+    <script>
+        // Menú Móvil
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active'); 
+            menuBtn.classList.toggle('is-active');
+        });
+
+        // Simulación de Cálculo y Animación de Números
+        document.getElementById('carbonCalculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Valores inventados para la demo visual (¡Aquí luego pones tu fórmula matemática real!)
+            const baseValue = (document.getElementById('dap').value * document.getElementById('altura').value) * 0.8;
+            
+            const numCarbono = (baseValue * 1.5).toFixed(2);
+            const numAuto = Math.floor(baseValue * 2.3);
+            const numOxigeno = Math.floor(baseValue * 0.4);
+            const numEnergia = Math.floor(baseValue * 12);
+
+            // Animación sencilla
+            document.getElementById('res-carbono').innerText = "Calculando...";
+            document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+
+            setTimeout(() => {
+                document.getElementById('res-carbono').innerText = numCarbono;
+                document.getElementById('res-auto').innerText = numAuto + " km";
+                document.getElementById('res-oxigeno').innerText = numOxigeno;
+                document.getElementById('res-energia').innerText = numEnergia + " días";
+                document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-check"></i> ¡Cálculo Exitoso!';
+                
+                setTimeout(() => {
+                    document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-calculator"></i> Calcular Nuevo Impacto';
+                }, 3000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

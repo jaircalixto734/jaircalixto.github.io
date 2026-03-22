@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario Forestal - EcoDigital</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos FontAwesome para la lupa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR (El unificado) -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="./imagenes/logojbp.png" alt="Logo" class="brand-logo">
+            <div class="brand-text">
+                <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+                <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lista-arboles.html" class="active">Árboles</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+    </nav>
+
+    <!-- CABECERA DEL INVENTARIO -->
+    <!-- CABECERA DEL INVENTARIO (Con Fondo de Foto) -->
+    <section class="inventory-hero">
+        <div class="inventory-overlay"></div>
+        <div class="container relative-content">
+            <span class="label-white">Ecosistema Vivo JBP</span>
+            <h2 class="text-white">Inventario Forestal Digital</h2>
+            <p class="section-intro text-white-soft">Explora nuestra base de datos botánica. Conoce las especies que habitan en nuestra institución, su clasificación y su impacto ambiental.</p>
+        </div>
+    </section>
+
+    <!-- CONTROLES: BUSCADOR Y FILTROS (Tarjeta Flotante) -->
+    <div class="inventory-controls-wrapper">
+        <div class="inventory-controls">
+            <!-- Buscador -->
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico...">
+            </div>
+            
+            <!-- Chips de Filtro -->
+            <div class="filter-chips">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="nativos">Nativos</button>
+                <button class="filter-btn" data-filter="frutales">Frutales</button>
+                <button class="filter-btn" data-filter="por-identificar">Por Identificar</button>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- GRILLA DE ÁRBOLES -->
+    <section class="inventory-grid-section">
+        <div class="container" style="padding-top: 0;">
+            <div class="tree-grid" id="treeGrid">
+
+                <!-- TARJETA 1 (Nativo) -->
+                <div class="tree-card" data-category="nativos">
+                    <div class="tree-img-container">
+                        <img src="./imagenes/yopo.jpg" alt="Yopo"> <!-- Pon una imagen real aquí -->
+                        <span class="tree-id">#JBP-01</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Yopo</h3>
+                        <p class="scientific-name">Anadenanthera peregrina</p>
+                        <p class="tree-desc">Árbol leguminoso nativo de gran altura, clave para la fijación de nitrógeno en los suelos del llano.</p>
+                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
+                </div>
+
+                <!-- TARJETA 2 (Frutal) -->
+                <div class="tree-card" data-category="frutales">
+                    <div class="tree-img-container">
+                        <img src="./imagenes/mango.jpg" alt="Mango">
+                        <span class="tree-id">#JBP-02</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Mango Común</h3>
+                        <p class="scientific-name">Mangifera indica</p>
+                        <p class="tree-desc">Especie frutal de copa frondosa que provee excelente sombra e hidratación a la comunidad estudiantil.</p>
+                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
+                </div>
+
+                <!-- TARJETA 3 (Nativo) -->
+                <div class="tree-card" data-category="nativos">
+                    <div class="tree-img-container">
+                        <img src="./imagenes/floramarillo.jpg" alt="Flor Amarillo">
+                        <span class="tree-id">#JBP-03</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Flor Amarillo</h3>
+                        <p class="scientific-name">Handroanthus chrysanthus</p>
+                        <p class="tree-desc">Especie maderable emblemática que pierde sus hojas para florecer espectacularmente en época seca.</p>
+                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
+                </div>
+
+                <!-- TARJETA 4 (Por identificar) -->
+                <div class="tree-card" data-category="por-identificar">
+                    <div class="tree-img-container">
+                        <img src="./imagenes/desconocido.jpg" alt="Árbol en estudio">
+                        <span class="tree-id">#JBP-04</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Especie en Estudio</h3>
+                        <p class="scientific-name">Pendiente de clasificación</p>
+                        <p class="tree-desc">Árbol juvenil hallado cerca de la cancha principal. El equipo está recolectando muestras de hojas.</p>
+                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Mensaje por si no hay resultados -->
+            <div id="noResults" class="no-results-msg" style="display: none;">
+                <i class="fas fa-tree"></i>
+                <h3>No se encontraron árboles</h3>
+                <p>Intenta buscar con otras palabras o cambia el filtro.</p>
+            </div>
+
+        </div>
+    </section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column branding">
+            <div class="footer-logo">
+                <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
+                <div>
+                    <h4>Inventario Forestal Digital</h4>
+                    <span>IE Jesús Bernal Pinzón</span>
+                </div>
+            </div>
+            <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la biodiversidad arbórea mediante TIC e IA.</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="lista-arboles.html">Inventario Forestal</a></li>
+                <li><a href="calculadora.html">Calculadora de Carbono</a></li>
+                <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Información</h4>
+            <ul>
+                <li><a href="equipo.html">Equipo de Trabajo</a></li>
+                <li><a href="#goals">Objetivos del Proyecto</a></li>
+                <li><a href="#">Marco Teórico</a></li>
+                <li><a href="#">Resultados Esperados</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Contacto</h4>
+            <ul class="contact-info">
+                <li>📍 Maní, Casanare </li>
+                <li>🏫 IE Jesús Bernal Pinzón </li>
+                <li>🎓 SENA - 2026 </li>
+                <li>📧 contacto@ecodigital.edu.co</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
+        <div class="footer-badges">
+            <span class="badge">SENA</span>
+            <span class="badge">ODS 15</span>
+            <span class="badge">PRAE</span>
+        </div>
+    </div>
+</footer>
+
+    <!-- SCRIPT DE FILTROS Y BÚSQUEDA -->
+    <script>
+        // 1. Lógica del Menú Móvil
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active'); 
+            menuBtn.classList.toggle('is-active');
+        });
+
+        // 2. Lógica de Filtros e Inventario
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const treeCards = document.querySelectorAll('.tree-card');
+        const noResultsMsg = document.getElementById('noResults');
+
+        // Función principal de filtrado
+        function filterTrees() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            let visibleCount = 0;
+
+            treeCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const scientific = card.querySelector('.scientific-name').textContent.toLowerCase();
+                const category = card.getAttribute('data-category');
+
+                // Verifica si cumple con el texto ingresado y con el botón presionado
+                const matchesSearch = title.includes(searchTerm) || scientific.includes(searchTerm);
+                const matchesFilter = activeFilter === 'todos' || category === activeFilter;
+
+                if (matchesSearch && matchesFilter) {
+                    card.style.display = 'flex'; // Mostrar
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none'; // Ocultar
+                }
+            });
+
+            // Muestra mensaje si no hay nada
+            noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // Evento al escribir en el buscador
+        searchInput.addEventListener('input', filterTrees);
+
+        // Eventos al hacer clic en los botones (chips)
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Quitar clase active a todos y ponérsela al clickeado
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterTrees(); // Llamar al filtro
+            });
+        });
+    </script>
+</body>
+</html>

@@ -566,3 +566,578 @@ h2 {
         justify-content: center;
     }
 }
+
+
+
+/* =============================================
+   11. SECCIÓN CALCULADORA DE CARBONO
+   ============================================= */
+.calculadora-section {
+    padding: 60px 20px 100px;
+    background: linear-gradient(135deg, #fdfdfd 0%, #f4f9f4 100%); /* Fondo orgánico sutil */
+    min-height: calc(100vh - 100px);
+}
+
+.calc-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Contenedor Grid Principal (2 Columnas en PC) */
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch; /* Iguala la altura de ambas cajas */
+}
+
+/* --- COLUMNA 1: FORMULARIO --- */
+.calc-form-column {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #1a3318;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.form-group label i {
+    color: #81b622;
+    margin-right: 8px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    background: #fafafa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #81b622;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(129, 182, 34, 0.1);
+}
+
+.form-group small {
+    display: block;
+    color: #888;
+    font-size: 0.75rem;
+    margin-top: 6px;
+}
+
+/* Botón Especial Calculadora */
+.btn-calc {
+    width: 100%;
+    background: #81b622;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-calc:hover {
+    background: #2d5a27;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
+}
+
+/* --- COLUMNA 2: RESULTADOS --- */
+.calc-results-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tarjeta Principal de Carbono */
+.result-main-card {
+    background: linear-gradient(135deg, #2d5a27, #1e3d1a);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(45, 90, 39, 0.25);
+    flex-grow: 1; /* Para que ocupe el espacio disponible si el form es largo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e8f5e9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-value {
+    margin: 20px 0;
+}
+
+.result-value span:first-child {
+    font-size: 4.5rem; /* Número Gigante */
+    font-weight: 800;
+    color: #d4ff80; /* Verde lima vibrante */
+    line-height: 1;
+}
+
+.result-value .unit {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.result-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Cuadrícula de Equivalencias (Grid de 3 Tarjetas) */
+.equivalency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.equiv-card {
+    background: #ffffff;
+    padding: 25px 15px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.equiv-card:hover {
+    transform: translateY(-8px);
+    border-color: #81b622;
+}
+
+.equiv-card i {
+    font-size: 2.2rem;
+    color: #81b622;
+    margin-bottom: 15px;
+}
+
+.equiv-title {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.equiv-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1a3318;
+    margin: 8px 0 4px;
+}
+
+.equiv-card small {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* --- RESPONSIVO (MÓVILES) --- */
+/* Agrégalo aquí o mételo dentro del @media (max-width: 768px) que ya tienes al final de tu style.css */
+@media (max-width: 768px) {
+    .calc-grid {
+        grid-template-columns: 1fr; /* Se apila en 1 sola columna */
+    }
+
+    .calc-form-column {
+        padding: 25px;
+    }
+
+    .equivalency-grid {
+        grid-template-columns: 1fr; /* Las tarjetitas pequeñas también se apilan en celular */
+    }
+
+    .result-value span:first-child {
+        font-size: 3.5rem; /* Número un poco más pequeño en celular */
+    }
+}
+
+
+
+
+/* =============================================
+   12. SECCIÓN INVENTARIO FORESTAL (Árboles)
+   ============================================= */
+
+/* --- Cabecera con Foto de Fondo --- */
+/* Animación para cambiar el fondo cada 5 segundos (aprox 15s en total para 3 fotos) */
+@keyframes carruselInventario {
+    0%, 28% { background-image: url('./imagenes/colegio1.jpeg'); } 
+    33%, 61% { background-image: url('./imagenes/colegio2.jpeg'); }
+    66%, 94% { background-image: url('./imagenes/foto2.jpeg'); }
+    100% { background-image: url('./imagenes/colegio1.jpeg'); }
+}
+
+/* --- Cabecera con Foto de Fondo Animada --- */
+.inventory-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px 120px;
+    text-align: center;
+    /* Aquí llamamos a la animación: dura 15s, es infinita y tiene un ritmo suave */
+    animation: carruselInventario 15s infinite ease-in-out;
+}
+
+.inventory-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 51, 24, 0.7); /* Verde muy oscuro y semitransparente */
+    z-index: 1;
+}
+
+.relative-content {
+    position: relative;
+    z-index: 2; /* Para que el texto quede por encima de la sombra */
+}
+
+.inventory-hero .text-white {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+.inventory-hero .text-white-soft {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Contenedor del Buscador (FLOTANTE) --- */
+.inventory-controls-wrapper {
+    position: relative;
+    z-index: 10;
+    margin-top: -60px; /* ESTA ES LA MAGIA: Tira el buscador hacia arriba, montándose en la foto */
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.inventory-controls {
+    background: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Sombra elegante */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Barra de Búsqueda */
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #81b622;
+    font-size: 1.2rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 16px 20px 16px 50px;
+    border: 2px solid #e8e8e8;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: 0.3s;
+    background: #f9fbf9;
+}
+
+.search-bar input:focus {
+    border-color: #81b622;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
+}
+
+/* Chips de Filtro */
+.filter-chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    color: #555;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #81b622;
+    color: #81b622;
+}
+
+.filter-btn.active {
+    background: #2d5a27;
+    border-color: #2d5a27;
+    color: white;
+    box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
+}
+
+/* Barra de Búsqueda */
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #81b622;
+    font-size: 1.2rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 16px 20px 16px 50px;
+    border: 2px solid #e8e8e8;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.search-bar input:focus {
+    border-color: #81b622;
+    box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
+}
+
+/* Chips de Filtro */
+.filter-chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    color: #555;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #81b622;
+    color: #81b622;
+}
+
+.filter-btn.active {
+    background: #2d5a27;
+    border-color: #2d5a27;
+    color: white;
+    box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
+}
+
+/* --- Grilla de Tarjetas --- */
+.inventory-grid-section {
+    padding: 50px 20px 100px;
+    background: #fdfdfd;
+}
+
+.tree-grid {
+    display: grid;
+    /* La magia: 300px min, se auto-acomodan según la pantalla */
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+}
+
+/* --- Tarjeta del Árbol (.tree-card) --- */
+.tree-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tree-card:hover {
+    transform: translateY(-10px);
+    border-color: #81b622;
+    box-shadow: 0 15px 40px rgba(129, 182, 34, 0.15);
+}
+
+/* Imagen y Etiqueta */
+.tree-img-container {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Altura Fija */
+    background: #e0e0e0;
+}
+
+.tree-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se estire/deforme */
+    transition: 0.5s;
+}
+
+.tree-card:hover .tree-img-container img {
+    transform: scale(1.05); /* Zoom suave al pasar el mouse */
+}
+
+.tree-id {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(26, 51, 24, 0.85); /* Verde oscuro semitransparente */
+    color: #d4ff80; /* Letra lima */
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+/* Contenido de texto */
+.tree-info {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+.tree-info h3 {
+    font-size: 1.3rem;
+    color: #1a3318;
+    margin-bottom: 2px;
+}
+
+.scientific-name {
+    font-style: italic;
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+/* Truco para limitar a exactamente 2 líneas y poner "..." */
+.tree-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botón de Ficha Completa */
+.btn-tree {
+    margin-top: auto; /* Manda el botón siempre al fondo */
+    text-align: center;
+    display: inline-block;
+    padding: 12px;
+    background: #f4f9f4;
+    color: #2d5a27;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.btn-tree i {
+    margin-right: 6px;
+    color: #81b622;
+}
+
+.btn-tree:hover {
+    background: #81b622;
+    color: white;
+}
+
+.btn-tree:hover i {
+    color: white;
+}
+
+/* Mensaje de no resultados */
+.no-results-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+.no-results-msg i {
+    font-size: 3rem;
+    color: #ddd;
+    margin-bottom: 15px;
+}
