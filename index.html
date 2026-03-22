@@ -10,11 +10,11 @@
 <body>
 
 <nav class="navbar">
-    <div class="logo-container">
-        <img src="./imagenes/logojbp.png" alt="Logo" class="logo">
-        <div class="logo-text">
-            <span class="inst-name">I.E. Jesús Bernal Pinzón</span>
-            <span class="tec-name">Técnica en Conservación de Recursos Naturales</span>
+    <div class="nav-brand">
+        <img src="./imagenes/logojbp.png" alt="Logo" class="brand-logo">
+        <div class="brand-text">
+            <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+            <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
         </div>
     </div>
 
@@ -24,17 +24,17 @@
         <span class="bar"></span>
     </div>
 
-    <ul class="nav-menu" id="nav-list">
-        <li><a href="index.html">Inicio</a></li>
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html" class="active">Inicio</a></li>
         <li><a href="lista-arboles.html">Árboles</a></li>
         <li><a href="calculadora.html">Calculadora</a></li>
         <li><a href="ia-chatbot.html">IA Chatbot</a></li>
         <li><a href="equipo.html">Equipo</a></li>
     </ul>
 </nav>
+
 <header class="hero">
     <div class="hero-overlay"></div> 
-
     <div class="hero-content">
         <span class="project-label">Proyecto Grado Once</span>
         <h1>Sistema de Gestión Digital para la <br><span>Valoración de la Biodiversidad</span></h1>
@@ -47,7 +47,7 @@
     </div>
 </header>
 
-   <section id="about" class="info-section">
+<section id="about" class="info-section">
     <div class="container">
         <span class="label-green">Sobre el Proyecto</span>
         <h2>Un Ecosistema Digital de Aprendizaje</h2>
@@ -56,26 +56,29 @@
         <div class="grid-cards">
             <div class="card">
                 <div class="icon-container">
-            <img src="./imagenes/servicios ecosistemicos2.png" alt="Servicios Ecosistémicos"></div>
+                    <img src="./imagenes/servicios ecosistemicos2.png" alt="Servicios Ecosistémicos">
+                </div>
                 <h3>Servicios Ecosistémicos</h3>
                 <p>Hacemos visible lo invisible: cómo los árboles limpian nuestro aire y regulan el calor.</p>
             </div>
             <div class="card">
                 <div class="icon-container">
-            <img src="./imagenes/ciencia ciudadana.png" alt="Ciencia Ciudadana">        
+                    <img src="./imagenes/ciencia ciudadana.png" alt="Ciencia Ciudadana">        
                 </div>
                 <h3>Ciencia Ciudadana</h3>
                 <p>Tú participas en la recolección de datos reales usando herramientas digitales.</p>
             </div>
             <div class="card">
                 <div class="icon-container">
-            <img src="./imagenes/inteligencia artificial.png" alt="Inteligencia Artificial"></div>
+                    <img src="./imagenes/inteligencia artificial.png" alt="Inteligencia Artificial">
+                </div>
                 <h3>Inteligencia Artificial</h3>
                 <p>Un tutor que traduce datos científicos complejos a un lenguaje sencillo para todos.</p>
             </div>
             <div class="card">
                 <div class="icon-container">
-            <img src="./imagenes/codigo QR.png" alt="Códigos QR"> </div>
+                    <img src="./imagenes/codigo QR.png" alt="Códigos QR"> 
+                </div>
                 <h3>Códigos QR</h3>
                 <p>Acceso instantáneo a la ficha técnica de cada árbol con solo un escaneo.</p>
             </div>
@@ -112,24 +115,6 @@
         </div>
     </div>
 </section>
-<script>
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('#nav-list');
-
-    // 1. Función para abrir/cerrar al tocar el botón hamburguesa
-    menu.addEventListener('click', function() {
-        menu.classList.toggle('is-active');
-        menuLinks.classList.toggle('active');
-    });
-
-    // 2. Función para que se cierre SOLO al tocar un enlace (opcional, muy útil)
-    document.querySelectorAll('.nav-menu li a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.toggle('is-active');
-            menuLinks.classList.remove('active');
-        });
-    });
-</script>
 
 <footer class="main-footer">
     <div class="footer-container">
@@ -184,6 +169,22 @@
         </div>
     </div>
 </footer>
-   
+
+<script>
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('#nav-list');
+
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('is-active');
+            menuLinks.classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>

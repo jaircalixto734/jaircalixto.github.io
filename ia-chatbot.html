@@ -18,17 +18,18 @@
         </div>
     </div>
 
-    <button class="menu-toggle" id="mobile-menu">
+    <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-    </button>
+    </div>
 
     <ul class="nav-links" id="nav-list">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="equipo.html">Equipo</a></li>
-        <li><a href="arboles.html">Árboles</a></li>
+        <li><a href="lista-arboles.html">Árboles</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
         <li><a href="ia-chatbot.html" class="active">IA Chatbot</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
     </ul>
 </nav>
 
@@ -61,43 +62,7 @@
     </div>
 </main>
 
-<script>
-        // 1. LÓGICA DEL MENÚ HAMBURGUESA (Con la X y animación)
-        const menuBtn = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-
-        menuBtn.addEventListener('click', () => {
-            navList.classList.toggle('active'); // Abre el menú
-            menuBtn.classList.toggle('open');   // Convierte las barras en X
-        });
-
-        // 2. LÓGICA DEL CHATBOT
-        const chatForm = document.getElementById('chatForm');
-        const userInput = document.getElementById('userInput');
-        const chatWindow = document.getElementById('chatWindow');
-
-        function addMessage(text, type) {
-            const msgDiv = document.createElement('div');
-            msgDiv.classList.add('message', type);
-            msgDiv.innerHTML = `<p>${text}</p>`;
-            chatWindow.appendChild(msgDiv);
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-
-        chatForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const message = userInput.value.trim();
-            if (message !== "") {
-                addMessage(message, 'user-msg');
-                userInput.value = "";
-                setTimeout(() => {
-                    addMessage("¡Qué buena pregunta! Dame un segundo mientras consulto mis raíces...", 'bot-msg');
-                }, 800);
-            }
-        });
-    </script>
-
-    <footer class="main-footer">
+<footer class="main-footer">
     <div class="footer-container">
         <div class="footer-column branding">
             <div class="footer-logo">
@@ -150,9 +115,42 @@
         </div>
     </div>
 </footer>
-   
-</body>
-</html>
+
+<script>
+    // 1. LÓGICA DEL MENÚ HAMBURGUESA
+    const menuBtn = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active'); 
+        menuBtn.classList.toggle('is-active'); // Corregido: antes decía 'open'
+    });
+
+    // 2. LÓGICA DEL CHATBOT
+    const chatForm = document.getElementById('chatForm');
+    const userInput = document.getElementById('userInput');
+    const chatWindow = document.getElementById('chatWindow');
+
+    function addMessage(text, type) {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message', type);
+        msgDiv.innerHTML = `<p>${text}</p>`;
+        chatWindow.appendChild(msgDiv);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = userInput.value.trim();
+        if (message !== "") {
+            addMessage(message, 'user-msg');
+            userInput.value = "";
+            setTimeout(() => {
+                addMessage("¡Qué buena pregunta! Dame un segundo mientras consulto mis raíces...", 'bot-msg');
+            }, 800);
+        }
+    });
+</script>
 
 </body>
 </html>

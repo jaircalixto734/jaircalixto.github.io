@@ -4,36 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipo - EcoDigital</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css"> 
+</head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo-container">
-            <img src="./imagenes/logojbp1.png" alt="Logo I.E. Jesús Bernal Pinzón" class="logo">
-            <div class="logo-text">
-                <span class="inst-name">I.E. Jesús Bernal Pinzón</span>
-                <span class="tec-name">Técnica en Conservación de Recursos Naturales</span>
-            </div>
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
+        <div class="brand-text">
+            <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+            <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
         </div>
+    </div>
 
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
-        <ul class="nav-menu" id="nav-list">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="lista-arboles.html">Árboles</a></li>
-            <li><a href="calculadora.html">Calculadora</a></li>
-            <li><a href="ia-chatbot.html">IA Chatbot</a></li>
-            <li><a href="equipo.html">Equipo</a></li>
-        </ul>
-    </nav>
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lista-arboles.html">Árboles</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+        <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+        <li><a href="equipo.html" class="active">Equipo</a></li>
+    </ul>
+</nav>
 
 <section class="equipo-section">
-    <div class="container-equipo">
-        <h2 class="titulo-seccion">Nuestro Equipo De Trabajo</h2>
+    <div class="container">
+        <h2>Nuestro Equipo De Trabajo</h2>
         
         <div class="grid-equipo">
             <div class="tarjeta-persona">
@@ -83,21 +84,7 @@
     </div>
 </section>
 
-    <footer class="main-footer">
-        </footer>
-
-    <script>
-        // Lógica para el menú hamburguesa
-        const menu = document.querySelector('#mobile-menu');
-        const menuLinks = document.querySelector('#nav-list');
-
-        menu.addEventListener('click', function() {
-            menu.classList.toggle('is-active');
-            menuLinks.classList.toggle('active');
-        });
-    </script>
-
-    <footer class="main-footer">
+<footer class="main-footer">
     <div class="footer-container">
         <div class="footer-column branding">
             <div class="footer-logo">
@@ -150,6 +137,16 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('#nav-list');
+
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>
