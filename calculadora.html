@@ -13,7 +13,7 @@
     <!-- NAVBAR (El mismo de siempre) -->
     <nav class="navbar">
         <div class="nav-brand">
-            <img src="./imagenes/logojbp.png" alt="Logo" class="brand-logo">
+            <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
             <div class="brand-text">
                 <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
                 <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
@@ -119,13 +119,65 @@
         </div>
     </section>
 
-    <!-- FOOTER (El mismo de siempre) -->
-    <footer class="main-footer">
-        <!-- Contenido del Footer aquí -->
-        <div class="footer-bottom">
-            <p>© 2026 Ecosistema Digital JBP - Todos los derechos reservados.</p>
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column branding">
+            <div class="footer-logo">
+                <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
+                <div>
+                    <h4>Inventario Forestal Digital</h4>
+                    <span>IE Jesús Bernal Pinzón</span>
+                </div>
+            </div>
+            <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la biodiversidad arbórea mediante TIC e IA.</p>
         </div>
-    </footer>
+
+        <div class="footer-column">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="lista-arboles.html">Inventario Forestal</a></li>
+                <li><a href="calculadora.html">Calculadora de Carbono</a></li>
+                <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Información</h4>
+            <ul>
+                <li><a href="equipo.html">Equipo de Trabajo</a></li>
+                <li><a href="#goals">Objetivos del Proyecto</a></li>
+                <li><a href="#">Marco Teórico</a></li>
+                <li><a href="#">Resultados Esperados</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Contacto</h4>
+            <ul class="contact-info">
+                <li>📍 Maní, Casanare </li>
+                <li>🏫 IE Jesús Bernal Pinzón </li>
+                <li>🎓 SENA - 2026 </li>
+                <li>📧 contacto@ecodigital.edu.co</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
+        <div class="footer-badges">
+            <span class="badge">SENA</span>
+            <span class="badge">ODS 15</span>
+            <span class="badge">PRAE</span>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Botón Flotante de Tema -->
+    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <!-- SCRIPT: Lógica de la calculadora y Menú -->
     <script>
@@ -165,6 +217,62 @@
                 }, 3000);
             }, 1000);
         });
+
+        // --------------------------------------------------------
+        // LÓGICA DEL MODO NOCHE GLOBAL Y LUCIÉRNAGAS
+        // --------------------------------------------------------
+        const themeBtn = document.getElementById('themeToggle');
+        const themeIcon = themeBtn.querySelector('i');
+        const body = document.body;
+
+        function createFireflies() {
+            for (let i = 0; i < 15; i++) {
+                let firefly = document.createElement('div');
+                firefly.classList.add('firefly');
+                firefly.style.left = Math.random() * 100 + 'vw';
+                firefly.style.top = Math.random() * 100 + 'vh';
+                firefly.style.animationDelay = Math.random() * 5 + 's';
+                firefly.style.animationDuration = (8 + Math.random() * 5) + 's';
+                body.appendChild(firefly);
+            }
+        }
+
+        // Revisa si el usuario ya había guardado una preferencia
+        function checkTheme() {
+            const savedTheme = localStorage.getItem('ecoTheme'); // Memoria del navegador
+            
+            if (savedTheme === 'dark') {
+                body.classList.add('modo-noche');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else if (savedTheme === 'light') {
+                body.classList.remove('modo-noche');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                // Si es su primera vez en la página, usa la hora automática
+                const horaActual = new Date().getHours();
+                if (horaActual >= 18 || horaActual < 6) {
+                    body.classList.add('modo-noche');
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        // Al hacer clic, cambia el tema y lo GUARDA en memoria
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('modo-noche');
+            
+            if (body.classList.contains('modo-noche')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('ecoTheme', 'dark'); // Guardamos que le gusta oscuro
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('ecoTheme', 'light'); // Guardamos que le gusta claro
+            }
+        });
+
+        // Ejecutar al cargar la página
+        createFireflies();
+        checkTheme();
     </script>
 </body>
 </html>

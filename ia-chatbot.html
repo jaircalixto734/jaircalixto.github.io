@@ -3,154 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot IA - Smart Garden EcoDigital</title>
+    <title>Silvain AI - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="ai-app-body">
 
-<nav class="navbar">
-    <div class="nav-brand">
-        <img src="./imagenes/logojbp.png" alt="Logo" class="brand-logo">
-        <div class="brand-text">
-            <h1 class="school-name">I.E. JESÚS BERNAL PINZÓN</h1>
-            <p class="tech-name">Técnica En Conservación De Recursos Naturales</p>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
+            <div class="brand-text">
+                <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+                <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
+            </div>
         </div>
-    </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lista-arboles.html">Árboles</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="ia-chatbot.html" class="active">IA Chatbot</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+    </nav>
 
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-
-    <ul class="nav-links" id="nav-list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="lista-arboles.html">Árboles</a></li>
-        <li><a href="calculadora.html">Calculadora</a></li>
-        <li><a href="ia-chatbot.html" class="active">IA Chatbot</a></li>
-        <li><a href="equipo.html">Equipo</a></li>
-    </ul>
-</nav>
-
-<main class="chat-page-wrapper">
-    <div class="chat-container">
+    <!-- INTERFAZ TIPO CHATGPT -->
+    <main class="ai-workspace">
         
-        <div class="chat-header">
-            <div class="bot-info">
-                <div class="bot-avatar"></div> 
-                <div class="bot-status-text">
-                    <h3> SILVAIN AI </h3>
-                    <p><span class="dot"></span> En línea para enseñarte</p>
+        <!-- Área donde aparecen los mensajes -->
+        <div class="ai-chat-container" id="chatWindow">
+            
+            <!-- Pantalla de Bienvenida (Desaparece al chatear) -->
+            <div class="ai-welcome-screen" id="welcomeScreen">
+                <div class="ai-logo-large">
+                    <!-- PON AQUÍ TU IMAGEN REAL -->
+                    <img src="./imagenes/silvain1.jpeg" alt="Silvain AI Logo">
+                </div>
+                <h2>Hola, soy Silvain AI</h2>
+                <p>Tu tutor ambiental. ¿En qué te puedo ayudar hoy con el inventario del colegio Jesús Bernal Pinzón?</p>
+                
+                <!-- Chips de Sugerencias -->
+                <div class="ai-suggestions">
+                    <button class="suggestion-chip">¿Cómo se calcula la biomasa de un árbol?</button>
+                    <button class="suggestion-chip">Dime características del Flor Amarillo</button>
+                    <button class="suggestion-chip">¿Qué son los servicios ecosistémicos?</button>
+                    <button class="suggestion-chip">Explícame el secuestro de carbono</button>
                 </div>
             </div>
+
         </div>
 
-        <div class="chat-window" id="chatWindow">
-            <div class="message bot-msg">
-                <p>¡Hola! Soy la IA del Smart Garden. Puedo hablarte sobre la biomasa, el CO2 y cómo cuidamos los árboles en el Jesús Bernal Pinzón. ¿Qué quieres saber?</p>
-            </div>
+        <!-- Barra de escritura flotante inferior -->
+        <div class="ai-input-wrapper">
+            <form id="chatForm" class="ai-input-box">
+                <input type="text" id="userInput" placeholder="Pregúntale a Silvain AI..." autocomplete="off" required>
+                <button type="submit" id="sendBtn" title="Enviar mensaje">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </form>
+            <small class="ai-disclaimer">Silvain AI puede cometer errores. Verifica la información botánica importante con el docente encargado.</small>
         </div>
 
-        <form class="chat-input-area" id="chatForm">
-            <input type="text" id="userInput" placeholder="Escribe tu pregunta aquí..." autocomplete="off" required>
-            <button type="submit" id="sendBtn">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </form>
+    </main>
 
-    </div>
-</main>
+    <!-- Botón Flotante de Tema (Modo Noche) -->
+    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+        <i class="fas fa-moon"></i>
+    </button>
 
-<footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-column branding">
-            <div class="footer-logo">
-                <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
-                <div>
-                    <h4>Inventario Forestal Digital</h4>
-                    <span>IE Jesús Bernal Pinzón</span>
+    <!-- SCRIPT DEL CHATBOT Y MODO NOCHE -->
+    <script>
+        // 1. LÓGICA DEL MENÚ
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active'); 
+            menuBtn.classList.toggle('is-active');
+        });
+
+        // 2. LÓGICA DEL CHATBOT (Estilo GPT)
+        const chatForm = document.getElementById('chatForm');
+        const userInput = document.getElementById('userInput');
+        const chatWindow = document.getElementById('chatWindow');
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const suggestionChips = document.querySelectorAll('.suggestion-chip');
+
+function addMessage(text, isUser) {
+            // Ocultar pantalla de bienvenida si es el primer mensaje
+            if (welcomeScreen.style.display !== 'none') {
+                welcomeScreen.style.display = 'none';
+            }
+
+            const msgRow = document.createElement('div');
+            msgRow.classList.add('ai-message-row', isUser ? 'user-row' : 'bot-row');
+
+            // AQUÍ CAMBIAMOS EL ICONO POR LA IMAGEN EN EL AVATAR DEL BOT
+            const avatar = isUser ? '<div class="msg-avatar user-avatar"><i class="fas fa-user"></i></div>' 
+                                  : '<div class="msg-avatar bot-avatar"><img src="./imagenes/silvain1.jpeg" alt="Silvain AI"></div>';
+            
+            msgRow.innerHTML = `
+                ${avatar}
+                <div class="msg-content">
+                    <p>${text}</p>
                 </div>
-            </div>
-            <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la biodiversidad arbórea mediante TIC e IA.</p>
-        </div>
-
-        <div class="footer-column">
-            <h4>Enlaces Rápidos</h4>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="lista-arboles.html">Inventario Forestal</a></li>
-                <li><a href="calculadora.html">Calculadora de Carbono</a></li>
-                <li><a href="ia-chatbot.html">Chatbot IA</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h4>Información</h4>
-            <ul>
-                <li><a href="equipo.html">Equipo de Trabajo</a></li>
-                <li><a href="#goals">Objetivos del Proyecto</a></li>
-                <li><a href="#">Marco Teórico</a></li>
-                <li><a href="#">Resultados Esperados</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h4>Contacto</h4>
-            <ul class="contact-info">
-                <li>📍 Maní, Casanare </li>
-                <li>🏫 IE Jesús Bernal Pinzón </li>
-                <li>🎓 SENA - 2026 </li>
-                <li>📧 contacto@ecodigital.edu.co</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
-        <div class="footer-badges">
-            <span class="badge">SENA</span>
-            <span class="badge">ODS 15</span>
-            <span class="badge">PRAE</span>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // 1. LÓGICA DEL MENÚ HAMBURGUESA
-    const menuBtn = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-
-    menuBtn.addEventListener('click', () => {
-        navList.classList.toggle('active'); 
-        menuBtn.classList.toggle('is-active'); // Corregido: antes decía 'open'
-    });
-
-    // 2. LÓGICA DEL CHATBOT
-    const chatForm = document.getElementById('chatForm');
-    const userInput = document.getElementById('userInput');
-    const chatWindow = document.getElementById('chatWindow');
-
-    function addMessage(text, type) {
-        const msgDiv = document.createElement('div');
-        msgDiv.classList.add('message', type);
-        msgDiv.innerHTML = `<p>${text}</p>`;
-        chatWindow.appendChild(msgDiv);
-        chatWindow.scrollTop = chatWindow.scrollHeight;
-    }
-
-    chatForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const message = userInput.value.trim();
-        if (message !== "") {
-            addMessage(message, 'user-msg');
-            userInput.value = "";
-            setTimeout(() => {
-                addMessage("¡Qué buena pregunta! Dame un segundo mientras consulto mis raíces...", 'bot-msg');
-            }, 800);
+            `;
+            
+            chatWindow.appendChild(msgRow);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
         }
-    });
-</script>
 
+        // Enviar por formulario
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = userInput.value.trim();
+            if (message !== "") {
+                addMessage(message, true); // True = Es usuario
+                userInput.value = "";
+                
+                // Simular respuesta de la IA
+                setTimeout(() => {
+                    addMessage("¡Interesante! Estoy procesando tu consulta en mi base de datos botánica...", false); // False = Es IA
+                }, 800);
+            }
+        });
+
+        // Enviar haciendo clic en las sugerencias
+        suggestionChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                userInput.value = chip.textContent;
+                chatForm.dispatchEvent(new Event('submit')); // Dispara el botón enviar
+            });
+        });
+
+        // 3. MODO NOCHE Y LUCIÉRNAGAS
+        const themeBtn = document.getElementById('themeToggle');
+        const themeIcon = themeBtn.querySelector('i');
+        const body = document.body;
+
+        function createFireflies() {
+            for (let i = 0; i < 15; i++) {
+                let firefly = document.createElement('div');
+                firefly.classList.add('firefly');
+                firefly.style.left = Math.random() * 100 + 'vw';
+                firefly.style.top = Math.random() * 100 + 'vh';
+                firefly.style.animationDelay = Math.random() * 5 + 's';
+                firefly.style.animationDuration = (8 + Math.random() * 5) + 's';
+                body.appendChild(firefly);
+            }
+        }
+
+        function checkTheme() {
+            const savedTheme = localStorage.getItem('ecoTheme');
+            if (savedTheme === 'dark') {
+                body.classList.add('modo-noche');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else if (savedTheme === 'light') {
+                body.classList.remove('modo-noche');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                if (new Date().getHours() >= 18 || new Date().getHours() < 6) {
+                    body.classList.add('modo-noche');
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('modo-noche');
+            if (body.classList.contains('modo-noche')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('ecoTheme', 'dark');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('ecoTheme', 'light');
+            }
+        });
+
+        createFireflies();
+        checkTheme();
+    </script>
 </body>
 </html>

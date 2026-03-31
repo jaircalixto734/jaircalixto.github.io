@@ -439,37 +439,225 @@ h2 {
 .mentor-datos .cargo { font-weight: bold; color: #81b622; margin-bottom: 10px; }
 
 /* =============================================
-   8. SECCIÓN CHATBOT
+   8. INTERFAZ SILVAIN AI (Estilo ChatGPT)
    ============================================= */
-.chat-page-wrapper {
-    min-height: calc(100vh - 160px); display: flex; align-items: center; justify-content: center;
-    padding: 40px 20px; background: #f4f7f4;
+/* =============================================
+   8. INTERFAZ SILVAIN AI (Estilo ChatGPT)
+   ============================================= */
+.ai-app-body {
+    height: 100vh;
+    height: 100dvh; /* La solución mágica para móviles: Dynamic Viewport Height */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
-.chat-container {
-    width: 100%; max-width: 850px; height: 700px; background: white;
-    border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden;
-}
-.chat-header { background: #2d5a27; color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
-.bot-info { display: flex; align-items: center; gap: 15px; }
-.bot-avatar {
-    width: 50px; height: 50px; border-radius: 50%; background-color: white;
-    background-image: url('imagenes/silvain1.jpeg'); background-size: cover; background-position: center; border: 2px solid white;
-}
-.dot { height: 8px; width: 8px; background-color: #81b622; border-radius: 50%; display: inline-block; margin-right: 5px; box-shadow: 0 0 5px #81b622; }
 
-.chat-window {
-    flex: 1; padding: 30px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;
-    background-color: #f8f9fa; background-image: url('./imagenes/fondochatai.png');
+.ai-workspace {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Esto asegura que nada se salga del contenedor */
+    background-color: #fdfdfd;
 }
-.message { max-width: 80%; padding: 15px 20px; border-radius: 18px; font-size: 1rem; line-height: 1.4; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
-.bot-msg { align-self: flex-start; background: white; color: #1a3318; border-left: 5px solid #81b622; border-bottom-left-radius: 2px; }
-.user-msg { align-self: flex-end; background: #2d5a27; color: white; border-bottom-right-radius: 2px; }
 
-.chat-input-area { padding: 20px; background: white; border-top: 1px solid #eee; display: flex; gap: 10px; }
-#userInput { flex: 1; padding: 12px 15px; border: 2px solid #eee; border-radius: 12px; outline: none; transition: 0.3s; }
-#userInput:focus { border-color: #81b622; }
-#sendBtn { background: #81b622; color: white; border: none; width: 50px; height: 50px; border-radius: 12px; cursor: pointer; font-size: 1.2rem; transition: 0.3s; }
-#sendBtn:hover { background: #2d5a27; transform: scale(1.05); }
+/* Área central de los mensajes */
+.ai-chat-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 40px 15% 20px 15%; /* Redujimos el espacio de abajo */
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+/* --- Barra Inferior de Input (AHORA ES PARTE DEL FLUJO, NO FLOTANTE) --- */
+.ai-input-wrapper {
+    flex-shrink: 0; /* Evita que el chat aplaste esta barra */
+    width: 100%;
+    background: #fdfdfd; /* Fondo sólido para tapar el chat al hacer scroll */
+    padding: 15px 15% 20px;
+    border-top: 1px solid rgba(0,0,0,0.05); /* Línea sutil divisoria */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajuste del Modo Noche para la nueva barra inferior */
+body.modo-noche .ai-input-wrapper {
+    background: #0d140d;
+    border-top: 1px solid #1e3d1a;
+}
+
+/* Pantalla de Bienvenida (Hero) */
+.ai-welcome-screen {
+    margin: auto;
+    text-align: center;
+    max-width: 650px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.ai-logo-large {
+    width: 80px;
+    height: 80px;
+    background: #2d5a27;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
+    overflow: hidden; /* Importante para que la imagen no se salga de las esquinas curvas */
+}
+
+/* Ajustes para que la imagen personalizada quede perfecta */
+.ai-logo-large img,
+.msg-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto de tu IA se achate o estire */
+}
+
+/* Chips de Preguntas Sugeridas */
+.ai-suggestions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.suggestion-chip {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.suggestion-chip:hover {
+    background: #f4f9f4;
+    border-color: #81b622;
+    transform: translateY(-3px);
+}
+
+/* Diseño de los Mensajes (Filas) */
+.ai-message-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.4s ease forwards;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.msg-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.user-avatar { background: #e0e0e0; color: #555; }
+.bot-avatar { background: #2d5a27; color: #d4ff80; }
+
+.msg-content {
+    flex-grow: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 4px;
+}
+
+.user-row .msg-content {
+    background: #f0f4f0;
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    max-width: fit-content;
+}
+
+/* --- Barra Inferior de Input Flotante --- */
+.ai-input-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, #fdfdfd 40%);
+    padding: 30px 15% 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ai-input-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 10px 15px 10px 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.ai-input-box:focus-within {
+    border-color: #81b622;
+    box-shadow: 0 10px 30px rgba(129, 182, 34, 0.15);
+}
+
+.ai-input-box input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    background: transparent;
+}
+
+.ai-input-box button {
+    background: #2d5a27;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ai-input-box button:hover {
+    background: #81b622;
+    transform: translateY(-2px);
+}
+
+.ai-disclaimer {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #888;
+    text-align: center;
+}
+
+/* Responsivo para el Chatbot */
+@media (max-width: 768px) {
+    .ai-chat-container { padding: 20px 5% 10px 5%; }
+    .ai-input-wrapper { padding: 15px 5% 15px; }
+    .ai-suggestions { grid-template-columns: 1fr; }
+}
 
 /* =============================================
    9. FOOTER
@@ -800,8 +988,6 @@ h2 {
    12. SECCIÓN INVENTARIO FORESTAL (Árboles)
    ============================================= */
 
-/* --- Cabecera con Foto de Fondo --- */
-/* Animación para cambiar el fondo cada 5 segundos (aprox 15s en total para 3 fotos) */
 @keyframes carruselInventario {
     0%, 28% { background-image: url('./imagenes/colegio1.jpeg'); } 
     33%, 61% { background-image: url('./imagenes/colegio2.jpeg'); }
@@ -809,14 +995,18 @@ h2 {
     100% { background-image: url('./imagenes/colegio1.jpeg'); }
 }
 
-/* --- Cabecera con Foto de Fondo Animada --- */
+/* Animación de entrada para las tarjetas al filtrar */
+@keyframes fadeInCard {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 .inventory-hero {
     position: relative;
     background-size: cover;
     background-position: center;
     padding: 80px 20px 120px;
     text-align: center;
-    /* Aquí llamamos a la animación: dura 15s, es infinita y tiene un ritmo suave */
     animation: carruselInventario 15s infinite ease-in-out;
 }
 
@@ -826,13 +1016,13 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 51, 24, 0.7); /* Verde muy oscuro y semitransparente */
+    background: rgba(26, 51, 24, 0.7);
     z-index: 1;
 }
 
 .relative-content {
     position: relative;
-    z-index: 2; /* Para que el texto quede por encima de la sombra */
+    z-index: 2;
 }
 
 .inventory-hero .text-white {
@@ -847,11 +1037,10 @@ h2 {
     margin: 0 auto;
 }
 
-/* --- Contenedor del Buscador (FLOTANTE) --- */
 .inventory-controls-wrapper {
     position: relative;
     z-index: 10;
-    margin-top: -60px; /* ESTA ES LA MAGIA: Tira el buscador hacia arriba, montándose en la foto */
+    margin-top: -60px;
     padding: 0 20px;
     display: flex;
     justify-content: center;
@@ -863,14 +1052,13 @@ h2 {
     max-width: 800px;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Sombra elegante */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
 }
 
-/* Barra de Búsqueda */
 .search-bar {
     position: relative;
     width: 100%;
@@ -884,6 +1072,7 @@ h2 {
     transform: translateY(-50%);
     color: #81b622;
     font-size: 1.2rem;
+    transition: 0.3s;
 }
 
 .search-bar input {
@@ -904,7 +1093,10 @@ h2 {
     box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
 }
 
-/* Chips de Filtro */
+.search-bar input:focus + i {
+    color: #2d5a27; /* El icono cambia de color cuando escribes */
+}
+
 .filter-chips {
     display: flex;
     gap: 10px;
@@ -937,73 +1129,6 @@ h2 {
     box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
 }
 
-/* Barra de Búsqueda */
-.search-bar {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-}
-
-.search-bar i {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #81b622;
-    font-size: 1.2rem;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 16px 20px 16px 50px;
-    border: 2px solid #e8e8e8;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-}
-
-.search-bar input:focus {
-    border-color: #81b622;
-    box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
-}
-
-/* Chips de Filtro */
-.filter-chips {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.filter-btn {
-    background: transparent;
-    border: 2px solid #e0e0e0;
-    color: #555;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-}
-
-.filter-btn:hover {
-    border-color: #81b622;
-    color: #81b622;
-}
-
-.filter-btn.active {
-    background: #2d5a27;
-    border-color: #2d5a27;
-    color: white;
-    box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
-}
-
-/* --- Grilla de Tarjetas --- */
 .inventory-grid-section {
     padding: 50px 20px 100px;
     background: #fdfdfd;
@@ -1011,12 +1136,10 @@ h2 {
 
 .tree-grid {
     display: grid;
-    /* La magia: 300px min, se auto-acomodan según la pantalla */
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 30px;
 }
 
-/* --- Tarjeta del Árbol (.tree-card) --- */
 .tree-card {
     background: white;
     border-radius: 20px;
@@ -1026,6 +1149,7 @@ h2 {
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    /* La animación se activa por JS al filtrar */
 }
 
 .tree-card:hover {
@@ -1034,31 +1158,31 @@ h2 {
     box-shadow: 0 15px 40px rgba(129, 182, 34, 0.15);
 }
 
-/* Imagen y Etiqueta */
 .tree-img-container {
     position: relative;
     width: 100%;
-    height: 220px; /* Altura Fija */
+    height: 220px;
     background: #e0e0e0;
 }
 
 .tree-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que la foto se estire/deforme */
+    object-fit: cover;
     transition: 0.5s;
 }
 
 .tree-card:hover .tree-img-container img {
-    transform: scale(1.05); /* Zoom suave al pasar el mouse */
+    transform: scale(1.05);
 }
 
+/* --- ESTILOS DE LAS ETIQUETAS (BADGES Y ID) --- */
 .tree-id {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(26, 51, 24, 0.85); /* Verde oscuro semitransparente */
-    color: #d4ff80; /* Letra lima */
+    background: rgba(26, 51, 24, 0.85);
+    color: #d4ff80;
     padding: 5px 12px;
     border-radius: 8px;
     font-size: 0.8rem;
@@ -1067,12 +1191,35 @@ h2 {
     z-index: 2;
 }
 
-/* Contenido de texto */
+.tree-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Colores por categoría */
+.badge-nativo { background: #2d5a27; }
+.badge-frutal { background: #e67e22; }
+.badge-ornamental { background: #9b59b6; }
+.badge-maderable { background: #7f8c8d; }
+.badge-estudio { background: #34495e; }
+
+
 .tree-info {
     padding: 25px 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Empuja el botón hacia abajo */
+    flex-grow: 1;
 }
 
 .tree-info h3 {
@@ -1088,7 +1235,6 @@ h2 {
     margin-bottom: 12px;
 }
 
-/* Truco para limitar a exactamente 2 líneas y poner "..." */
 .tree-desc {
     font-size: 0.95rem;
     color: #555;
@@ -1101,9 +1247,8 @@ h2 {
     text-overflow: ellipsis;
 }
 
-/* Botón de Ficha Completa */
 .btn-tree {
-    margin-top: auto; /* Manda el botón siempre al fondo */
+    margin-top: auto;
     text-align: center;
     display: inline-block;
     padding: 12px;
@@ -1130,7 +1275,6 @@ h2 {
     color: white;
 }
 
-/* Mensaje de no resultados */
 .no-results-msg {
     text-align: center;
     padding: 60px 20px;
@@ -1140,4 +1284,243 @@ h2 {
     font-size: 3rem;
     color: #ddd;
     margin-bottom: 15px;
+}
+
+/* =============================================
+   13. MODO NOCHE Y AMBIENTE (Automático/Manual)
+   ============================================= */
+
+/* Botón flotante para cambiar el tema manualmente durante la sustentación */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2d5a27;
+    color: white;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: #81b622;
+}
+
+/* --- ESTILOS DEL MODO NOCHE --- */
+body.modo-noche {
+    background-color: #0d140d; /* Un verde muuuuy oscuro, casi negro */
+    color: #e0e0e0;
+}
+
+body.modo-noche .navbar {
+    background-color: #152214;
+    border-bottom: 1px solid #1e3d1a;
+}
+
+body.modo-noche .nav-links li a { color: #e8f5e9; }
+body.modo-noche .school-name { color: #d4ff80; }
+body.modo-noche .tech-name { color: #a3b899; }
+
+body.modo-noche h2, 
+body.modo-noche h3 { 
+    color: #d4ff80; /* Títulos en verde lima brillante */
+}
+
+/* Tarjetas en modo noche */
+body.modo-noche .tree-card,
+body.modo-noche .card,
+body.modo-noche .feat-item,
+body.modo-noche .inventory-controls,
+body.modo-noche .calc-form-column,
+body.modo-noche .equiv-card,
+body.modo-noche .chat-container {
+    background-color: #172616;
+    border-color: #2d5a27;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+body.modo-noche .tree-desc,
+body.modo-noche p {
+    color: #a3b899;
+}
+
+body.modo-noche .search-bar input {
+    background: #0d140d;
+    color: white;
+    border-color: #2d5a27;
+}
+
+body.modo-noche .btn-tree {
+    background: #1e3d1a;
+    color: #d4ff80;
+}
+
+/* --- Arreglos del Modo Noche para Celulares --- */
+/* 1. Cambiar el color de las 3 rayitas del menú hamburguesa */
+body.modo-noche .bar {
+    background-color: #d4ff80; /* Las pone verde lima para que resalten */
+}
+
+@media (max-width: 768px) {
+    /* 2. Arreglar el fondo del menú desplegable */
+    body.modo-noche .nav-links {
+        background-color: #152214; /* Fondo oscuro igual al navbar */
+        border-bottom: 2px solid #2d5a27;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    
+    body.modo-noche .nav-links li a {
+        color: #e8f5e9; /* Letras claras */
+    }
+
+    body.modo-noche .nav-links li a:hover {
+        color: #d4ff80; /* Letras lima al tocar */
+    }
+
+    /* 3. Asegurar que el botón de la luna se vea en el celular */
+    .theme-toggle-btn {
+        bottom: 20px; /* Lo subimos un poco */
+        right: 20px;
+        width: 50px; /* Un pelín más pequeño para que no estorbe */
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* =============================================
+   CORRECCIONES DE CONTRASTE (MODO NOCHE)
+   ============================================= */
+
+/* 1. Correcciones para EQUIPO.HTML */
+body.modo-noche .bloque-info {
+    background-color: #172616; /* Pone oscura la parte de abajo de la foto */
+    border-top: 5px solid #d4ff80; /* Línea lima brillante */
+}
+
+body.modo-noche .etiqueta {
+    background-color: #1e3d1a; /* Etiqueta verde oscura */
+    color: #d4ff80; /* Texto lima brillante */
+}
+
+body.modo-noche .mentor-horizontal {
+    background-color: #152214;
+    border: 1px solid #2d5a27;
+}
+
+body.modo-noche .bloque-info p,
+body.modo-noche .mentor-datos .desc {
+    color: #a3b899; /* Textos de descripción más claros */
+}
+
+/* 2. Correcciones para CALCULADORA.HTML */
+body.modo-noche .form-group label {
+    color: #e8f5e9; /* Letras de los títulos de los cuadros de texto */
+}
+
+body.modo-noche .form-group input, 
+body.modo-noche .form-group select {
+    background-color: #0d140d; /* Fondo del cuadro de texto negro */
+    color: #ffffff; /* Letra blanca al escribir */
+    border-color: #2d5a27;
+}
+
+body.modo-noche .form-group small {
+    color: #888888;
+}
+
+/* Las tarjetitas blancas de equivalencias (auto, oxígeno, luz) */
+body.modo-noche .equiv-title {
+    color: #a3b899; 
+}
+
+body.modo-noche .equiv-value {
+    color: #d4ff80; /* Números gigantes en lima */
+}
+
+body.modo-noche .equiv-card small {
+    color: #777777;
+}
+
+/* 3. Correcciones para CHATBOT.HTML (Nueva Interfaz) */
+body.modo-noche .ai-workspace { background-color: #0d140d; }
+body.modo-noche .ai-welcome-screen p { color: #888; }
+
+body.modo-noche .suggestion-chip {
+    background: #172616;
+    border-color: #2d5a27;
+    color: #a3b899;
+}
+
+body.modo-noche .suggestion-chip:hover {
+    background: #1e3d1a;
+}
+
+body.modo-noche .msg-content { color: #e0e0e0; }
+body.modo-noche .user-row .msg-content { background: #152214; border: 1px solid #1e3d1a; }
+body.modo-noche .user-avatar { background: #333; color: #888; }
+
+body.modo-noche .ai-input-wrapper {
+    background: linear-gradient(transparent, #0d140d 40%);
+}
+
+body.modo-noche .ai-input-box {
+    background: #172616;
+    border-color: #2d5a27;
+}
+
+body.modo-noche .ai-input-box input { color: white; }
+body.modo-noche .ai-disclaimer { color: #555; }
+
+
+/* 4. Correcciones para INDEX.HTML (Tarjetas de Servicios Ecosistémicos) */
+body.modo-noche .card p,
+body.modo-noche .feat-item p {
+    color: #a3b899;
+}
+
+/* --- ANIMACIÓN DE LUCIÉRNAGAS (Solo visibles en modo noche) --- */
+.firefly {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background-color: #d4ff80; /* Luz amarilla/verde */
+    border-radius: 50%;
+    box-shadow: 0 0 10px 4px rgba(212, 255, 128, 0.6);
+    pointer-events: none; /* Para que no estorben si haces clic */
+    z-index: 9000;
+    opacity: 0;
+    animation: floatFirefly 10s infinite ease-in-out;
+    display: none; /* Ocultas por defecto */
+}
+
+body.modo-noche .firefly {
+    display: block; /* Se encienden en la noche */
+}
+
+/* Quitar los fondos blancos de las secciones para que se vea el fondo oscuro */
+body.modo-noche .inventory-grid-section,
+body.modo-noche .info-section,
+body.modo-noche .calculadora-section,
+body.modo-noche .chat-page-wrapper,
+body.modo-noche .equipo-section {
+    background: transparent !important; 
+}
+
+@keyframes floatFirefly {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { opacity: 1; }
+    50% { transform: translate(30px, -50px); opacity: 0.8; }
+    80% { opacity: 0.2; }
+    100% { transform: translate(-20px, -100px); opacity: 0; }
 }
