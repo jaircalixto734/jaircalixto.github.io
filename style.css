@@ -1524,3 +1524,389 @@ body.modo-noche .equipo-section {
     80% { opacity: 0.2; }
     100% { transform: translate(-20px, -100px); opacity: 0; }
 }
+
+
+
+/* =============================================
+   14. FICHA DINÁMICA PREMIUM (Dashboard Botánico)
+   ============================================= */
+.ficha-body { background-color: #f4f7f4; }
+
+.btn-back {
+    position: absolute; top: 20px; left: 20px;
+    background: rgba(0,0,0,0.6); color: white; padding: 12px 20px;
+    border-radius: 50px; text-decoration: none; font-size: 0.95rem; font-weight: 600;
+    z-index: 100; backdrop-filter: blur(8px); transition: 0.3s;
+}
+.btn-back:hover { background: #81b622; transform: translateX(-5px); }
+
+/* Hero Gradient */
+.ficha-hero { height: 50vh; background-size: cover; background-position: center; position: relative; }
+.ficha-overlay-gradient {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(26,51,24,0.1) 0%, rgba(26,51,24,0.8) 100%);
+}
+
+/* Contenedor Premium */
+.premium-layout {
+    background: #ffffff;
+    margin-top: -60px; position: relative; z-index: 10;
+    border-radius: 40px 40px 0 0; padding: 40px 6% 80px;
+    max-width: 900px; margin-left: auto; margin-right: auto;
+    box-shadow: 0 -20px 40px rgba(0,0,0,0.15);
+}
+
+/* Encabezado */
+.ficha-header-pro { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+.id-wrapper { display: flex; gap: 10px; margin-bottom: 15px; }
+.badge-estado { background: #1a3318; color: #d4ff80; padding: 6px 15px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; }
+.badge-tipo { background: #e8f5e9; color: #2d5a27; padding: 6px 15px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; }
+
+.ficha-titles h1 { font-size: 2.8rem; color: #1a3318; line-height: 1; margin-bottom: 5px; font-weight: 800; }
+.ficha-titles h3 { font-size: 1.2rem; color: #888; font-style: italic; font-weight: 400; }
+
+.btn-audio-pro {
+    background: linear-gradient(135deg, #81b622, #5c8515); color: white; border: none;
+    width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem; cursor: pointer;
+    box-shadow: 0 10px 20px rgba(129, 182, 34, 0.4); transition: 0.3s; flex-shrink: 0;
+}
+.btn-audio-pro:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 15px 25px rgba(129, 182, 34, 0.6); }
+
+/* Caja de Silvain AI (Estilo Tech) */
+.silvain-pro-box {
+    background: #f9fbf9; border: 1px solid #e0e0e0; border-radius: 20px; padding: 25px;
+    margin-bottom: 40px; position: relative; overflow: hidden;
+}
+.silvain-pro-box::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #81b622;
+}
+.silvain-pro-header { display: flex; align-items: center; gap: 10px; color: #2d5a27; font-weight: 700; margin-bottom: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+.silvain-pro-box p { font-size: 1.05rem; color: #444; line-height: 1.7; font-weight: 500; }
+
+/* Títulos de Sección */
+.section-title-pro { font-size: 1.4rem; color: #1a3318; margin-bottom: 20px; font-weight: 700; }
+
+/* GALERÍA HORIZONTAL */
+.gallery-scroll-container {
+    display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; margin-bottom: 30px;
+    scroll-snap-type: x mandatory; /* Para que se deslice suave como en el celular */
+    scrollbar-width: thin; scrollbar-color: #81b622 #eee;
+}
+.gallery-scroll-container::-webkit-scrollbar { height: 8px; }
+.gallery-scroll-container::-webkit-scrollbar-thumb { background-color: #81b622; border-radius: 10px; }
+
+.gallery-item {
+    min-width: 220px; height: 220px; border-radius: 20px; position: relative;
+    overflow: hidden; scroll-snap-align: start; flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-label {
+    position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px 10px 10px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;
+    font-size: 0.85rem; font-weight: 600; text-align: center;
+}
+
+/* UBICACIÓN Y MAPA MOCKUP */
+.map-card-pro {
+    background: white; border: 1px solid #eee; border-radius: 20px; overflow: hidden;
+    margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column;
+}
+.map-info { padding: 20px; display: flex; align-items: center; gap: 15px; background: #fafafa; }
+.map-info i { font-size: 2rem; color: #81b622; }
+.map-info h5 { font-size: 1.1rem; color: #1a3318; margin-bottom: 3px; }
+.map-info p { font-size: 0.85rem; color: #666; }
+.map-visual-placeholder {
+    height: 200px; background: #e0e6ed; position: relative; display: flex; justify-content: center; align-items: center;
+    /* Patrón de cuadrícula para simular mapa */
+    background-image: linear-gradient(#d1d8e0 1px, transparent 1px), linear-gradient(90deg, #d1d8e0 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+.map-pin-bounce { font-size: 3rem; color: #e74c3c; text-shadow: 0 5px 10px rgba(0,0,0,0.3); animation: bouncePin 2s infinite; }
+@keyframes bouncePin { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-7px); } }
+
+/* Ficha Técnica Grid */
+.ficha-grid-datos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 40px; }
+.dato-card-pro { background: #fff; border: 1px solid #f0f0f0; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+.dato-card-pro i { color: #81b622; font-size: 1.5rem; margin-bottom: 10px; display: block; }
+.dato-card-pro small { font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 5px; }
+.dato-card-pro span { font-size: 1.1rem; color: #1a3318; font-weight: 800; }
+
+/* Tarjeta Carbono Premium */
+.ficha-carbono-pro { position: relative; border-radius: 25px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(45, 90, 39, 0.25); }
+.carbono-pro-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1e3d1a, #2d5a27); z-index: 1; }
+.carbono-pro-bg::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(129,182,34,0.1) 0%, transparent 60%); z-index: 2; }
+.carbono-pro-content { position: relative; z-index: 3; padding: 40px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.c-header { color: #d4ff80; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; margin-bottom: 20px; }
+.c-data { display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap; }
+.c-number { font-size: 4rem; font-weight: 800; color: white; line-height: 1; }
+.c-number small { font-size: 1.5rem; font-weight: 500; }
+.c-divider { width: 2px; height: 50px; background: rgba(255,255,255,0.2); }
+.c-text { font-size: 1rem; color: rgba(255,255,255,0.9); max-width: 200px; text-align: left; line-height: 1.4; }
+.c-text strong { color: #d4ff80; font-size: 1.2rem; display: block; }
+.btn-calc-pro { background: #d4ff80; color: #1a3318; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.btn-calc-pro:hover { background: white; transform: translateY(-3px); }
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .premium-layout { padding: 30px 5% 60px; border-radius: 30px 30px 0 0; }
+    .ficha-titles h1 { font-size: 2.2rem; }
+    .ficha-header-pro { flex-direction: column; gap: 20px; align-items: flex-start; }
+    .btn-audio-pro { position: absolute; right: 20px; top: 30px; } /* Lo pone arriba a la derecha en celular */
+    .ficha-grid-datos { grid-template-columns: 1fr; } /* Apila los datos en celular */
+    .c-data { flex-direction: column; gap: 15px; }
+    .c-divider { width: 100px; height: 2px; }
+    .c-text { text-align: center; }
+}
+
+/* --- MODO NOCHE --- */
+body.modo-noche .ficha-body { background-color: #0d140d; }
+body.modo-noche .premium-layout { background-color: #121c11; box-shadow: none; border-top: 1px solid #1e3d1a; }
+body.modo-noche .ficha-titles h1, body.modo-noche .section-title-pro { color: #d4ff80; }
+body.modo-noche .silvain-pro-box { background: #172616; border-color: #2d5a27; }
+body.modo-noche .silvain-pro-box p { color: #e8f5e9; }
+body.modo-noche .dato-card-pro, body.modo-noche .map-card-pro { background: #152214; border-color: #2d5a27; }
+body.modo-noche .map-info { background: #172616; border-bottom: 1px solid #2d5a27; }
+body.modo-noche .map-info h5 { color: #d4ff80; }
+body.modo-noche .map-visual-placeholder { background-color: #0d140d; background-image: linear-gradient(#1e3d1a 1px, transparent 1px), linear-gradient(90deg, #1e3d1a 1px, transparent 1px); }
+body.modo-noche .dato-card-pro span { color: white; }
+
+
+/* --- Acordeones Pro (Morfología, Fenología, Etnobotánica) --- */
+.acordeon-container { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+
+.acordeon-pro {
+    background: white; border: 1px solid #e0e0e0; border-radius: 15px; padding: 18px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: 0.3s;
+}
+
+.acordeon-pro[open] { border-color: #81b622; box-shadow: 0 10px 20px rgba(129, 182, 34, 0.1); }
+
+.acordeon-pro summary {
+    font-weight: 700; color: #1a3318; font-size: 1.05rem; cursor: pointer;
+    list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;
+}
+.acordeon-pro summary::-webkit-details-marker { display: none; }
+.acordeon-pro summary i:first-child { color: #81b622; margin-right: 10px; font-size: 1.2rem; }
+.acordeon-pro summary .flecha { color: #aaa; font-size: 0.9rem; transition: transform 0.3s; }
+.acordeon-pro[open] summary .flecha { transform: rotate(180deg); color: #81b622; }
+
+.acordeon-pro .acordeon-content {
+    margin-top: 15px; padding-top: 15px; border-top: 1px dashed #eee;
+    font-size: 0.95rem; color: #555; line-height: 1.6; text-align: justify;
+}
+
+/* --- Quiz Gamificado Pro --- */
+.quiz-pro-box {
+    background: linear-gradient(135deg, #ffffff, #f4f9f4); border: 2px solid #81b622;
+    border-radius: 20px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
+}
+
+.quiz-header { font-size: 1.2rem; font-weight: 800; color: #2d5a27; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.quiz-header i { color: #e67e22; font-size: 1.5rem; }
+.quiz-question { font-size: 1.05rem; color: #333; margin-bottom: 20px; font-weight: 500; }
+
+.quiz-options { display: flex; flex-direction: column; gap: 12px; }
+
+.quiz-btn-pro {
+    background: white; border: 2px solid #e0e0e0; color: #444; padding: 15px;
+    border-radius: 12px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    font-family: 'Poppins', sans-serif; transition: all 0.2s ease;
+}
+.quiz-btn-pro:hover { border-color: #81b622; background: #f4f9f4; transform: translateY(-2px); }
+
+/* Animaciones del Quiz */
+.correct-anim { background: #81b622 !important; color: white !important; border-color: #81b622 !important; animation: popBounce 0.5s ease; }
+.wrong-anim { background: #e74c3c !important; color: white !important; border-color: #e74c3c !important; animation: shake 0.4s ease; }
+.correct-reveal { background: rgba(129, 182, 34, 0.2) !important; border-color: #81b622 !important; color: #2d5a27 !important; }
+
+@keyframes popBounce {
+    0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 50% { transform: translateX(5px); } 75% { transform: translateX(-5px); }
+}
+
+.quiz-feedback-pro { margin-top: 20px; font-weight: 700; font-size: 1rem; min-height: 24px; }
+.quiz-feedback-pro.success { color: #2d5a27; }
+.quiz-feedback-pro.error { color: #e74c3c; }
+
+/* Ajustes Modo Noche */
+body.modo-noche .acordeon-pro { background: #152214; border-color: #2d5a27; }
+body.modo-noche .acordeon-pro summary { color: #e8f5e9; }
+body.modo-noche .acordeon-pro .acordeon-content { color: #a3b899; border-top-color: #2d5a27; }
+body.modo-noche .quiz-pro-box { background: #121c11; border-color: #2d5a27; }
+body.modo-noche .quiz-question { color: #e8f5e9; }
+body.modo-noche .quiz-btn-pro { background: #172616; border-color: #2d5a27; color: #a3b899; }
+
+
+/* =============================================
+   15. EFECTOS PREMIUM Y VISOR (LIGHTBOX)
+   ============================================= */
+
+.premium-layout > * { opacity: 0; animation: fadeInUp 0.8s ease forwards; }
+.premium-layout > *:nth-child(1) { animation-delay: 0.1s; }
+.premium-layout > *:nth-child(2) { animation-delay: 0.2s; }
+.premium-layout > *:nth-child(3) { animation-delay: 0.3s; }
+.premium-layout > *:nth-child(4) { animation-delay: 0.4s; }
+.premium-layout > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Icono Lupa sobre las imágenes */
+.gallery-item { cursor: pointer; }
+.gallery-hover-icon {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(45, 90, 39, 0.6); display: flex; justify-content: center; align-items: center;
+    opacity: 0; transition: 0.3s; color: white; font-size: 2rem; backdrop-filter: blur(2px);
+}
+.gallery-item:hover .gallery-hover-icon { opacity: 1; }
+
+/* VISOR DE IMÁGENES (Modal Lightbox) */
+.modal-visor {
+    display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px);
+    justify-content: center; align-items: center; flex-direction: column;
+    opacity: 0; transition: opacity 0.4s ease;
+}
+
+.modal-contenido {
+    max-width: 90%; max-height: 80vh; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transform: scale(0.8); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cerrar-visor {
+    position: absolute; top: 20px; right: 35px; color: white; font-size: 40px;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.cerrar-visor:hover { color: #d4ff80; transform: scale(1.1); }
+
+.modal-texto { color: #d4ff80; font-size: 1.2rem; margin-top: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;}
+
+/* Estilo Lista APA 7 */
+.lista-apa { padding-left: 20px; }
+.lista-apa li { margin-bottom: 10px; font-family: 'Times New Roman', Times, serif; line-height: 1.5; padding-left: 1.5em; text-indent: -1.5em; }
+
+/* AMBIENTE: HOJAS CAYENDO (DÍA) */
+#contenedorHojas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
+
+.hoja-cayendo {
+    position: absolute; top: -10vh; color: rgba(129, 182, 34, 0.3);
+    animation: caidaHojas linear infinite;
+}
+
+@keyframes caidaHojas {
+    0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(50vh) rotate(180deg) translateX(50px); }
+    90% { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg) translateX(-50px); opacity: 0; }
+}
+
+/* Ocultar hojas en modo noche */
+body.modo-noche .hoja-cayendo { display: none; }
+
+
+/* =============================================
+   16. INTEGRACIÓN DOSSIER CIENTÍFICO
+   ============================================= */
+
+.mt-3 { margin-top: 15px; } .mt-4 { margin-top: 25px; }
+.dossier-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.05em; text-transform: uppercase; }
+.badge-teal { background: #E1F5EE; color: #0F6E56; }
+.badge-amber { background: #FAEEDA; color: #854F0B; }
+.badge-coral { background: #FAECE7; color: #993C1D; }
+.badge-blue { background: #E6F1FB; color: #0C447C; }
+.badge-gray { background: #F1EFE8; color: #5F5E5A; }
+
+.exotic-banner { background: #FCEBEB; border-left: 4px solid #E24B4A; border-radius: 8px; padding: 12px 15px; font-size: 0.9rem; color: #501313; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
+.warn-box { background: #FAEEDA; border-left: 3px solid #BA7517; padding: 10px 15px; font-size: 0.85rem; color: #633806; margin-top: 10px; border-radius: 4px;}
+
+/* Módulos (Tarjetas) */
+.dossier-module { margin-bottom: 25px; border: 1px solid #e0e0e0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+.module-header { padding: 12px 20px; display: flex; align-items: center; gap: 12px; }
+.module-header.teal { background: #E1F5EE; } .module-header.amber { background: #FAEEDA; }
+.module-header.blue { background: #E6F1FB; } .module-header.coral { background: #FAECE7; }
+.module-title { font-size: 1.05rem; font-weight: 700; color: #1a3318; }
+.module-body { padding: 20px; background: #ffffff; }
+
+.section-label { font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+.section-val { font-size: 0.95rem; color: #444; line-height: 1.6; text-align: justify; }
+
+/* Grid Datos Dossier */
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.metric-card { background: #f9fbf9; border-radius: 10px; padding: 15px; border: 1px solid #f0f0f0; }
+.metric-label { font-size: 0.75rem; color: #888; margin-bottom: 5px; text-transform: uppercase; font-weight: 600; }
+.metric-val { font-size: 1.1rem; font-weight: 800; }
+.metric-val.teal { color: #0F6E56; } .metric-val.amber { color: #854F0B; }
+.metric-val.coral { color: #993C1D; } .metric-val.blue { color: #185FA5; }
+
+.tags-container { display: flex; flex-wrap: wrap; gap: 8px; }
+.alometry-box { font-family: monospace; font-size: 0.9rem; background: #f0f4f0; border-radius: 8px; padding: 12px 15px; color: #1a3318; border-left: 4px solid #1D9E75; margin-top: 10px; }
+
+/* Calendario Fenológico */
+.calendar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; margin-top: 10px; }
+.cal-month { border-radius: 8px; padding: 8px 4px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.cal-label { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; }
+.cal-phase { font-size: 0.7rem; margin-top: 4px; font-weight: 500; }
+.dry { background: #FAEEDA; color: #854F0B; }
+.rain { background: #E1F5EE; color: #0F6E56; }
+.trans { background: #EEEDFE; color: #3C3489; }
+
+@media (max-width: 600px) { .calendar { grid-template-columns: repeat(4, 1fr); } }
+
+/* Mensaje Silvain Rediseñado */
+.sylvain-dossier-box { background: linear-gradient(135deg, #EEEDFE 0%, #E1F5EE 100%); border: 1px solid #AFA9EC; border-radius: 15px; padding: 20px; margin-bottom: 25px; }
+.sylvain-name { font-size: 0.8rem; font-weight: 700; color: #3C3489; margin-bottom: 8px; text-transform: uppercase; }
+.sylvain-text { font-size: 1rem; color: #26215C; line-height: 1.6; font-style: italic; }
+
+/* Quiz Múltiple */
+.quiz-q { background: #f9fbf9; border-radius: 12px; padding: 20px; margin-bottom: 15px; border: 1px solid #eee; }
+.quiz-q p { font-size: 1rem; font-weight: 700; color: #1a3318; margin-bottom: 12px; }
+.quiz-opt { font-size: 0.95rem; line-height: 1.4; color: #555; padding: 10px 15px; background: white; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: 0.2s; }
+.quiz-opt:hover { border-color: #81b622; background: #f4f9f4; }
+.correct-choice { background: #E1F5EE !important; border-color: #0F6E56 !important; color: #0F6E56 !important; font-weight: 700; }
+.correct-choice-reveal { background: rgba(15, 110, 86, 0.1) !important; border-color: #0F6E56 !important; border-style: dashed !important; }
+.wrong-choice { background: #FCEBEB !important; border-color: #A32D2D !important; color: #A32D2D !important; text-decoration: line-through; }
+
+/* --- AJUSTES MODO NOCHE PARA DOSSIER --- */
+body.modo-noche .dossier-module { background: #152214; border-color: #2d5a27; }
+body.modo-noche .module-header { background: #1a3318; border-bottom: 1px solid #2d5a27; }
+body.modo-noche .module-body { background: transparent; }
+body.modo-noche .module-title { color: #d4ff80; }
+body.modo-noche .metric-card { background: #172616; border-color: #2d5a27; }
+body.modo-noche .metric-label, body.modo-noche .section-label { color: #a3b899; border-bottom-color: #2d5a27; }
+body.modo-noche .section-val { color: #e8f5e9; }
+body.modo-noche .metric-val.teal, body.modo-noche .metric-val.blue { color: #81b622; }
+body.modo-noche .metric-val.amber, body.modo-noche .metric-val.coral { color: #e67e22; }
+body.modo-noche .alometry-box { background: #0d140d; color: #d4ff80; border-left-color: #81b622; }
+body.modo-noche .sylvain-dossier-box { background: linear-gradient(135deg, #1a2a3a 0%, #152214 100%); border-color: #2d5a27; }
+body.modo-noche .sylvain-name { color: #85B7EB; } body.modo-noche .sylvain-text { color: #e8f5e9; }
+body.modo-noche .quiz-q { background: #172616; border-color: #2d5a27; }
+body.modo-noche .quiz-q p { color: #d4ff80; }
+body.modo-noche .quiz-opt { background: #0d140d; color: #e8f5e9; border-color: #2d5a27; }
+body.modo-noche .dry { background: rgba(133, 79, 11, 0.2); color: #e67e22; }
+body.modo-noche .rain { background: rgba(15, 110, 86, 0.2); color: #81b622; }
+body.modo-noche .trans { background: rgba(60, 52, 137, 0.2); color: #85B7EB; }
+body.modo-noche .badge-gray { background: #2d5a27; color: white; }
+body.modo-noche .exotic-banner { background: rgba(226, 75, 74, 0.1); border-color: #E24B4A; color: #ff9999; }
+body.modo-noche .warn-box { background: rgba(186, 117, 23, 0.1); border-color: #BA7517; color: #ffcc80; }
+
+
+/* Citas Bibliográficas y Textos Largos */
+.blockquote-pro {
+    border-left: 4px solid #1D9E75;
+    background: #E1F5EE;
+    padding: 15px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 15px 0;
+}
+.blockquote-pro p { font-size: 0.95rem; color: #085041; font-style: italic; line-height: 1.6; }
+.blockquote-pro cite { display: block; margin-top: 8px; font-size: 0.8rem; color: #0F6E56; font-weight: 600; }
+
+.text-sm { font-size: 0.85rem; line-height: 1.5; color: #666; }
+
+body.modo-noche .blockquote-pro { background: rgba(29, 158, 117, 0.1); border-left-color: #81b622; }
+body.modo-noche .blockquote-pro p { color: #d4ff80; }
+body.modo-noche .blockquote-pro cite { color: #a3b899; }
+body.modo-noche .text-sm { color: #a3b899; }
