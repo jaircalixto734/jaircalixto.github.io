@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipo - EcoDigital</title>
+    <meta name="description" content="Conoce al equipo detrás de EcoDigital JBP. Estudiantes y mentores dedicados a la conservación.">
+    <title>Nuestro Equipo - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-brand">
-        <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
-        <div class="brand-text">
-            <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
-            <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
+            <div class="brand-text">
+                <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+                <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
+            </div>
         </div>
-    </div>
-
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-
-    <ul class="nav-links" id="nav-list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="lista-arboles.html">Árboles</a></li>
-        <li><a href="calculadora.html">Calculadora</a></li>
-        <li><a href="ia-chatbot.html">IA Chatbot</a></li>
-        <li><a href="equipo.html" class="active">Equipo</a></li>
-    </ul>
-</nav>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lista-arboles.html">Árboles</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+            <li><a href="equipo.html" class="active">Equipo</a></li>
+        </ul>
+    </nav>
 
 <section class="equipo-section">
     <div class="container">
@@ -141,74 +141,11 @@
 </footer>
 
 <!-- Botón Flotante de Tema -->
-    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
-        <i class="fas fa-moon"></i>
-    </button>
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
 
-<script>
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('#nav-list');
-
-    menu.addEventListener('click', function() {
-        menu.classList.toggle('is-active');
-        menuLinks.classList.toggle('active');
-    });
-
-    // --------------------------------------------------------
-        // LÓGICA DEL MODO NOCHE GLOBAL Y LUCIÉRNAGAS
-        // --------------------------------------------------------
-        const themeBtn = document.getElementById('themeToggle');
-        const themeIcon = themeBtn.querySelector('i');
-        const body = document.body;
-
-        function createFireflies() {
-            for (let i = 0; i < 15; i++) {
-                let firefly = document.createElement('div');
-                firefly.classList.add('firefly');
-                firefly.style.left = Math.random() * 100 + 'vw';
-                firefly.style.top = Math.random() * 100 + 'vh';
-                firefly.style.animationDelay = Math.random() * 5 + 's';
-                firefly.style.animationDuration = (8 + Math.random() * 5) + 's';
-                body.appendChild(firefly);
-            }
-        }
-
-        // Revisa si el usuario ya había guardado una preferencia
-        function checkTheme() {
-            const savedTheme = localStorage.getItem('ecoTheme'); // Memoria del navegador
-            
-            if (savedTheme === 'dark') {
-                body.classList.add('modo-noche');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else if (savedTheme === 'light') {
-                body.classList.remove('modo-noche');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            } else {
-                // Si es su primera vez en la página, usa la hora automática
-                const horaActual = new Date().getHours();
-                if (horaActual >= 18 || horaActual < 6) {
-                    body.classList.add('modo-noche');
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                }
-            }
-        }
-
-        // Al hacer clic, cambia el tema y lo GUARDA en memoria
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('modo-noche');
-            
-            if (body.classList.contains('modo-noche')) {
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('ecoTheme', 'dark'); // Guardamos que le gusta oscuro
-            } else {
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('ecoTheme', 'light'); // Guardamos que le gusta claro
-            }
-        });
-
-        // Ejecutar al cargar la página
-        createFireflies();
-        checkTheme();
-</script>
+<!-- Lógica Global -->
+<script src="js/main.js"></script>
 </body>
 </html>

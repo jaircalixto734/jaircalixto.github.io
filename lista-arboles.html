@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inventario Forestal Digital - Explora la base de datos botánica de la IE Jesús Bernal Pinzón.">
     <title>Inventario Forestal - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
     <!-- Iconos FontAwesome -->
@@ -13,13 +14,13 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-brand">
-            <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
+            <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
             <div class="brand-text">
                 <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
                 <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
             </div>
         </div>
-        <div class="menu-toggle" id="mobile-menu">
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -383,118 +384,61 @@
 </footer>
 
 <!-- Botón Flotante de Tema -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- Lógica Global -->
+<script src="js/main.js"></script>
+
+<!-- SCRIPT DE FILTROS OPTIMIZADO -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const treeCards = document.querySelectorAll('.tree-card');
+    const noResultsMsg = document.getElementById('noResults');
+
+    function filterTrees() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+        let visibleCount = 0;
+
+        treeCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const scientific = card.querySelector('.scientific-name').textContent.toLowerCase();
+            const category = card.getAttribute('data-category');
+
+            const matchesSearch = title.includes(searchTerm) || scientific.includes(searchTerm);
+            const matchesFilter = activeFilter === 'todos' || category === activeFilter;
+
+            if (matchesSearch && matchesFilter) {
+                card.style.display = 'flex';
+                card.style.animation = 'fadeInCard 0.4s ease forwards';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterTrees);
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterTrees();
+        });
+    });
+</script>
+    <!-- Botón Flotante de Tema -->
     <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- SCRIPT DE FILTROS ANIMADOS -->
-    <script>
-        const menuBtn = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-        menuBtn.addEventListener('click', () => {
-            navList.classList.toggle('active'); 
-            menuBtn.classList.toggle('is-active');
-        });
-
-        const searchInput = document.getElementById('searchInput');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const treeCards = document.querySelectorAll('.tree-card');
-        const noResultsMsg = document.getElementById('noResults');
-
-        function filterTrees() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-            let visibleCount = 0;
-
-            treeCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const scientific = card.querySelector('.scientific-name').textContent.toLowerCase();
-                const category = card.getAttribute('data-category');
-
-                const matchesSearch = title.includes(searchTerm) || scientific.includes(searchTerm);
-                const matchesFilter = activeFilter === 'todos' || category === activeFilter;
-
-                if (matchesSearch && matchesFilter) {
-                    // Si cumple, la mostramos y le quitamos la animación de salida
-                    card.style.display = 'flex';
-                    // Pequeño truco para reiniciar la animación de CSS
-                    card.style.animation = 'none';
-                    card.offsetHeight; /* Trigger reflow */
-                    card.style.animation = 'fadeInCard 0.4s ease forwards';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-        }
-
-        searchInput.addEventListener('input', filterTrees);
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                filterTrees();
-            });
-        });
-
-// --------------------------------------------------------
-        // LÓGICA DEL MODO NOCHE GLOBAL Y LUCIÉRNAGAS
-        // --------------------------------------------------------
-        const themeBtn = document.getElementById('themeToggle');
-        const themeIcon = themeBtn.querySelector('i');
-        const body = document.body;
-
-        function createFireflies() {
-            for (let i = 0; i < 15; i++) {
-                let firefly = document.createElement('div');
-                firefly.classList.add('firefly');
-                firefly.style.left = Math.random() * 100 + 'vw';
-                firefly.style.top = Math.random() * 100 + 'vh';
-                firefly.style.animationDelay = Math.random() * 5 + 's';
-                firefly.style.animationDuration = (8 + Math.random() * 5) + 's';
-                body.appendChild(firefly);
-            }
-        }
-
-        // Revisa si el usuario ya había guardado una preferencia
-        function checkTheme() {
-            const savedTheme = localStorage.getItem('ecoTheme'); // Memoria del navegador
-            
-            if (savedTheme === 'dark') {
-                body.classList.add('modo-noche');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else if (savedTheme === 'light') {
-                body.classList.remove('modo-noche');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            } else {
-                // Si es su primera vez en la página, usa la hora automática
-                const horaActual = new Date().getHours();
-                if (horaActual >= 18 || horaActual < 6) {
-                    body.classList.add('modo-noche');
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                }
-            }
-        }
-
-        // Al hacer clic, cambia el tema y lo GUARDA en memoria
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('modo-noche');
-            
-            if (body.classList.contains('modo-noche')) {
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('ecoTheme', 'dark'); // Guardamos que le gusta oscuro
-            } else {
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('ecoTheme', 'light'); // Guardamos que le gusta claro
-            }
-        });
-
-        // Ejecutar al cargar la página
-        createFireflies();
-        checkTheme();
-    </script>
+    <!-- Lógica Global -->
+    <script src="js/main.js"></script>
 </body>
 </html>

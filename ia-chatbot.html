@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silvain AI - EcoDigital</title>
+    <meta name="description"
+        content="Silvain AI - Tu tutor botánico inteligente para explorar la biodiversidad de Maní.">
+    <title>Chatbot IA - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="ai-app-body">
+
+<body class="chat-page-wrapper">
 
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-brand">
-            <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
+            <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
             <div class="brand-text">
                 <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
                 <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
             </div>
         </div>
-        <div class="menu-toggle" id="mobile-menu">
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -34,31 +39,37 @@
 
     <!-- INTERFAZ TIPO CHATGPT -->
     <main class="ai-workspace">
-        
+
         <!-- Área donde aparecen los mensajes -->
         <div class="ai-chat-container" id="chatWindow">
-            
-            <!-- Pantalla de Bienvenida (Desaparece al chatear) -->
+
+            <!-- Pantalla de Bienvenida -->
             <div class="ai-welcome-screen" id="welcomeScreen">
                 <div class="ai-logo-large">
-                    <!-- PON AQUÍ TU IMAGEN REAL -->
-                    <img src="./imagenes/silvain1.jpeg" alt="Silvain AI Logo">
+                    <img src="./imagenes/Puedes_hacer_que_202604051544.png" alt="Silvain AI Logo">
                 </div>
                 <h2>Hola, soy Silvain AI</h2>
-                <p>Tu tutor ambiental. ¿En qué te puedo ayudar hoy con el inventario del colegio Jesús Bernal Pinzón?</p>
-                
-                <!-- Chips de Sugerencias -->
+                <p>Tu tutor ambiental. ¿En qué te puedo ayudar hoy con el inventario del colegio Jesús Bernal Pinzón?
+                </p>
+
                 <div class="ai-suggestions">
-                    <button class="suggestion-chip">¿Cómo se calcula la biomasa de un árbol?</button>
-                    <button class="suggestion-chip">Dime características del Flor Amarillo</button>
-                    <button class="suggestion-chip">¿Qué son los servicios ecosistémicos?</button>
-                    <button class="suggestion-chip">Explícame el secuestro de carbono</button>
+                    <button class="suggestion-chip"
+                        onclick="setQuickQuestion('¿Cómo se calcula la biomasa de un árbol?')">¿Cómo se calcula la
+                        biomasa de un árbol?</button>
+                    <button class="suggestion-chip"
+                        onclick="setQuickQuestion('Dime características del Flor Amarillo')">Dime características del
+                        Flor Amarillo</button>
+                    <button class="suggestion-chip"
+                        onclick="setQuickQuestion('¿Qué son los servicios ecosistémicos?')">¿Qué son los servicios
+                        ecosistémicos?</button>
+                    <button class="suggestion-chip"
+                        onclick="setQuickQuestion('Explícame el secuestro de carbono')">Explícame el secuestro de
+                        carbono</button>
                 </div>
             </div>
-
         </div>
 
-        <!-- Barra de escritura flotante inferior -->
+        <!-- Barra de escritura -->
         <div class="ai-input-wrapper">
             <form id="chatForm" class="ai-input-box">
                 <input type="text" id="userInput" placeholder="Pregúntale a Silvain AI..." autocomplete="off" required>
@@ -66,126 +77,122 @@
                     <i class="fas fa-arrow-up"></i>
                 </button>
             </form>
-            <small class="ai-disclaimer">Silvain AI puede cometer errores. Verifica la información botánica importante con el docente encargado.</small>
+            <small class="ai-disclaimer">Silvain AI usa tecnología de Google Gemini. Verifica datos críticos.</small>
         </div>
 
     </main>
 
-    <!-- Botón Flotante de Tema (Modo Noche) -->
+    <!-- Botón Flotante de Tema -->
     <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- SCRIPT DEL CHATBOT Y MODO NOCHE -->
+    <!-- Lógica Global -->
+    <script src="js/main.js"></script>
+
     <script>
-        // 1. LÓGICA DEL MENÚ
-        const menuBtn = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-        menuBtn.addEventListener('click', () => {
-            navList.classList.toggle('active'); 
-            menuBtn.classList.toggle('is-active');
-        });
+        // CONFIGURACIÓN DE LA API (IMPORTANTE)
+        // Para que funcione, debes poner tu API KEY aquí. 
+        // Consíguela gratis en https://aistudio.google.com/
+        const GEMINI_API_KEY = "AIzaSyAoekzXOgc2hzg5JWo1IEkkib0ZfT0RM0c";
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
-        // 2. LÓGICA DEL CHATBOT (Estilo GPT)
         const chatForm = document.getElementById('chatForm');
-        const userInput = document.getElementById('userInput');
-        const chatWindow = document.getElementById('chatWindow');
+        const chatInput = document.getElementById('userInput');
+        const chatBox = document.getElementById('chatWindow');
         const welcomeScreen = document.getElementById('welcomeScreen');
-        const suggestionChips = document.querySelectorAll('.suggestion-chip');
 
-function addMessage(text, isUser) {
-            // Ocultar pantalla de bienvenida si es el primer mensaje
-            if (welcomeScreen.style.display !== 'none') {
-                welcomeScreen.style.display = 'none';
-            }
+        // Función para enviar preguntas rápidas
+        function setQuickQuestion(text) {
+            chatInput.value = text;
+            handleSendMessage();
+        }
 
+        // Función para añadir mensajes al chat
+        function appendMessage(role, text) {
+            welcomeScreen.style.display = 'none';
             const msgRow = document.createElement('div');
-            msgRow.classList.add('ai-message-row', isUser ? 'user-row' : 'bot-row');
-
-            // AQUÍ CAMBIAMOS EL ICONO POR LA IMAGEN EN EL AVATAR DEL BOT
-            const avatar = isUser ? '<div class="msg-avatar user-avatar"><i class="fas fa-user"></i></div>' 
-                                  : '<div class="msg-avatar bot-avatar"><img src="./imagenes/silvain1.jpeg" alt="Silvain AI"></div>';
+            msgRow.className = `chat-row ${role}-row`;
             
+            const avatarIcon = role === 'bot' ? 'fa-robot' : 'fa-user';
+            const avatarClass = role === 'bot' ? 'bot-avatar' : 'user-avatar';
+                
             msgRow.innerHTML = `
-                ${avatar}
-                <div class="msg-content">
-                    <p>${text}</p>
-                </div>
+                <div class="avatar ${avatarClass}"><i class="fas ${avatarIcon}"></i></div>
+                <div class="msg-content">${text}</div>
             `;
             
-            chatWindow.appendChild(msgRow);
-            chatWindow.scrollTop = chatWindow.scrollHeight;
+            chatBox.appendChild(msgRow);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            return msgRow;
         }
 
-        // Enviar por formulario
+        // Función para mostrar indicador de carga
+        function showTypingIndicator() {
+            const indicator = document.createElement('div');
+            indicator.className = 'chat-row bot-row typing-row';
+            indicator.innerHTML = `
+                <div class="avatar bot-avatar"><i class="fas fa-robot"></i></div>
+                <div class="msg-content typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+            chatBox.appendChild(indicator);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            return indicator;
+        }
+
+        // Lógica para conectar con Gemini API
+        async function getAIResponse(prompt) {
+            if (GEMINI_API_KEY.includes("TU_API_KEY")) {
+                return "¡Hola! Para que pueda responderte de verdad, necesitas configurar una API Key de Gemini en el código.";
+            }
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{ text: `Actúa como Silvain AI, un tutor botánico experto del colegio Jesús Bernal Pinzón en Maní, Casanare. Responde de forma amable y educativa sobre temas ambientales y el inventario forestal. Pregunta: ${prompt}` }]
+                        }]
+                    })
+                });
+
+                const data = await response.json();
+                return data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error("Error API:", error);
+                return "Lo siento, hubo un error conectando con mis neuronas artificiales. Revisa tu conexión o la API Key.";
+            }
+        }
+
+        async function handleSendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            // 1. Mensaje del usuario
+            appendMessage('user', text);
+            chatInput.value = '';
+
+            // 2. Indicador de escritura
+            const typingIndicator = showTypingIndicator();
+
+            // 3. Obtener respuesta de la IA
+            const aiResponse = await getAIResponse(text);
+
+            // 4. Quitar indicador y poner respuesta real
+            typingIndicator.remove();
+            appendMessage('bot', aiResponse);
+        }
+
         chatForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const message = userInput.value.trim();
-            if (message !== "") {
-                addMessage(message, true); // True = Es usuario
-                userInput.value = "";
-                
-                // Simular respuesta de la IA
-                setTimeout(() => {
-                    addMessage("¡Interesante! Estoy procesando tu consulta en mi base de datos botánica...", false); // False = Es IA
-                }, 800);
-            }
+            handleSendMessage();
         });
-
-        // Enviar haciendo clic en las sugerencias
-        suggestionChips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                userInput.value = chip.textContent;
-                chatForm.dispatchEvent(new Event('submit')); // Dispara el botón enviar
-            });
-        });
-
-        // 3. MODO NOCHE Y LUCIÉRNAGAS
-        const themeBtn = document.getElementById('themeToggle');
-        const themeIcon = themeBtn.querySelector('i');
-        const body = document.body;
-
-        function createFireflies() {
-            for (let i = 0; i < 15; i++) {
-                let firefly = document.createElement('div');
-                firefly.classList.add('firefly');
-                firefly.style.left = Math.random() * 100 + 'vw';
-                firefly.style.top = Math.random() * 100 + 'vh';
-                firefly.style.animationDelay = Math.random() * 5 + 's';
-                firefly.style.animationDuration = (8 + Math.random() * 5) + 's';
-                body.appendChild(firefly);
-            }
-        }
-
-        function checkTheme() {
-            const savedTheme = localStorage.getItem('ecoTheme');
-            if (savedTheme === 'dark') {
-                body.classList.add('modo-noche');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else if (savedTheme === 'light') {
-                body.classList.remove('modo-noche');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            } else {
-                if (new Date().getHours() >= 18 || new Date().getHours() < 6) {
-                    body.classList.add('modo-noche');
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                }
-            }
-        }
-
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('modo-noche');
-            if (body.classList.contains('modo-noche')) {
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('ecoTheme', 'dark');
-            } else {
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('ecoTheme', 'light');
-            }
-        });
-
-        createFireflies();
-        checkTheme();
     </script>
 </body>
+
 </html>

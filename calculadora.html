@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de Carbono - Mide el impacto ambiental de tus árboles con EcoDigital.">
     <title>Calculadora de Carbono - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
     <!-- Iconos FontAwesome -->
@@ -10,16 +11,16 @@
 </head>
 <body>
 
-    <!-- NAVBAR (El mismo de siempre) -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-brand">
-            <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
+            <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
             <div class="brand-text">
                 <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
                 <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
             </div>
         </div>
-        <div class="menu-toggle" id="mobile-menu">
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -214,65 +215,69 @@
                 
                 setTimeout(() => {
                     document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-calculator"></i> Calcular Nuevo Impacto';
-                }, 3000);
-            }, 1000);
-        });
+<!-- Botón Flotante de Tema -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
 
-        // --------------------------------------------------------
-        // LÓGICA DEL MODO NOCHE GLOBAL Y LUCIÉRNAGAS
-        // --------------------------------------------------------
-        const themeBtn = document.getElementById('themeToggle');
-        const themeIcon = themeBtn.querySelector('i');
-        const body = document.body;
+<!-- Lógica Global -->
+<script src="js/main.js"></script>
 
-        function createFireflies() {
-            for (let i = 0; i < 15; i++) {
-                let firefly = document.createElement('div');
-                firefly.classList.add('firefly');
-                firefly.style.left = Math.random() * 100 + 'vw';
-                firefly.style.top = Math.random() * 100 + 'vh';
-                firefly.style.animationDelay = Math.random() * 5 + 's';
-                firefly.style.animationDuration = (8 + Math.random() * 5) + 's';
-                body.appendChild(firefly);
+<script>
+    // Lógica de la calculadora
+    document.getElementById('biomassForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const dap = parseFloat(document.getElementById('dap').value);
+        const altura = parseFloat(document.getElementById('height').value);
+        
+        if (isNaN(dap) || isNaN(altura)) return;
+
+        // Fórmula simplificada para demostración escolar
+        // Biomasa = 0.1 * (DAP^2) * Altura * DensidadMadera(0.6)
+        const biomasaKg = (0.1 * Math.pow(dap, 2) * altura * 0.6).toFixed(2);
+        const carbonoKg = (biomasaKg * 0.5).toFixed(2); // El 50% de la biomasa es carbono
+        const co2Kg = (carbonoKg * 3.67).toFixed(2); // 1kg Carbono = 3.67kg CO2
+
+        // Animación de los números
+        animateValue("carbonoValue", 0, co2Kg, 1500);
+        
+        // Equivalencias
+        document.getElementById('equivAuto').innerText = (co2Kg / 0.2).toFixed(1) + " km";
+        document.getElementById('equivOxigeno').innerText = (co2Kg * 0.7).toFixed(1) + " días";
+        document.getElementById('equivBombillo').innerText = (co2Kg * 24).toFixed(0) + " hrs";
+    });
+
+    function animateValue(id, start, end, duration) {
+        const obj = document.getElementById(id);
+        const range = end - start;
+        const minTimer = 50;
+        let stepTime = Math.abs(Math.floor(duration / range));
+        stepTime = Math.max(stepTime, minTimer);
+        const startTime = new Date().getTime();
+        const endTime = startTime + duration;
+        let timer;
+
+        function run() {
+            const now = new Date().getTime();
+            const remaining = Math.max((endTime - now) / duration, 0);
+            const value = Math.round(end - (remaining * range));
+            obj.innerText = value;
+            if (value == end) {
+                clearInterval(timer);
             }
         }
 
-        // Revisa si el usuario ya había guardado una preferencia
-        function checkTheme() {
-            const savedTheme = localStorage.getItem('ecoTheme'); // Memoria del navegador
-            
-            if (savedTheme === 'dark') {
-                body.classList.add('modo-noche');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else if (savedTheme === 'light') {
-                body.classList.remove('modo-noche');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            } else {
-                // Si es su primera vez en la página, usa la hora automática
-                const horaActual = new Date().getHours();
-                if (horaActual >= 18 || horaActual < 6) {
-                    body.classList.add('modo-noche');
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                }
-            }
-        }
+        timer = setInterval(run, stepTime);
+        run();
+    }
+</script>
+<!-- Botón Flotante de Tema -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
 
-        // Al hacer clic, cambia el tema y lo GUARDA en memoria
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('modo-noche');
-            
-            if (body.classList.contains('modo-noche')) {
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('ecoTheme', 'dark'); // Guardamos que le gusta oscuro
-            } else {
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('ecoTheme', 'light'); // Guardamos que le gusta claro
-            }
-        });
-
-        // Ejecutar al cargar la página
-        createFireflies();
-        checkTheme();
-    </script>
+<!-- Lógica Global -->
+<script src="js/main.js"></script>
 </body>
 </html>

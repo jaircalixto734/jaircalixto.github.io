@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inventario Forestal Digital de la IE Jesús Bernal Pinzón. Valoración de la biodiversidad arbórea mediante TIC e Inteligencia Artificial en Maní, Casanare.">
+    <meta name="keywords" content="Inventario Forestal, Educación Ambiental, Casanare, IE Jesús Bernal Pinzón, SENA, Conservación, Recursos Naturales">
+    <meta name="author" content="Equipo EcoDigital JBP">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecodigital.edu.co/">
+    <meta property="og:title" content="Inventario Forestal Digital | IE Jesús Bernal Pinzón">
+    <meta property="og:description" content="Transformando nuestro entorno escolar en un laboratorio vivo a través de TIC e Inteligencia Artificial.">
+    <meta property="og:image" content="./imagenes/logojbp1.png">
+
     <title>Inventario Forestal Digital | IE Jesús Bernal Pinzón</title>
     <link rel="stylesheet" href="style.css">
     <!-- Iconos FontAwesome -->
@@ -12,14 +23,14 @@
 
 <nav class="navbar">
     <div class="nav-brand">
-        <img src="./imagenes/logojbp1.png" alt="Logo" class="brand-logo">
+        <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
         <div class="brand-text">
             <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
             <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
         </div>
     </div>
 
-    <div class="menu-toggle" id="mobile-menu">
+    <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -57,28 +68,28 @@
         <div class="grid-cards">
             <div class="card">
                 <div class="icon-container">
-                    <img src="./imagenes/servicios ecosistemicos2.png" alt="Servicios Ecosistémicos">
+                    <img src="./imagenes/servicios ecosistemicos2.png" alt="Icono Servicios Ecosistémicos">
                 </div>
                 <h3>Servicios Ecosistémicos</h3>
                 <p>Hacemos visible lo invisible: cómo los árboles limpian nuestro aire y regulan el calor.</p>
             </div>
             <div class="card">
                 <div class="icon-container">
-                    <img src="./imagenes/ciencia ciudadana.png" alt="Ciencia Ciudadana">        
+                    <img src="./imagenes/ciencia ciudadana.png" alt="Icono Ciencia Ciudadana">        
                 </div>
                 <h3>Ciencia Ciudadana</h3>
                 <p>Tú participas en la recolección de datos reales usando herramientas digitales.</p>
             </div>
             <div class="card">
                 <div class="icon-container">
-                    <img src="./imagenes/inteligencia artificial.png" alt="Inteligencia Artificial">
+                    <img src="./imagenes/inteligencia artificial.png" alt="Icono Inteligencia Artificial">
                 </div>
                 <h3>Inteligencia Artificial</h3>
                 <p>Un tutor que traduce datos científicos complejos a un lenguaje sencillo para todos.</p>
             </div>
             <div class="card">
                 <div class="icon-container">
-                    <img src="./imagenes/codigo QR.png" alt="Códigos QR"> 
+                    <img src="./imagenes/codigo QR.png" alt="Icono Códigos QR"> 
                 </div>
                 <h3>Códigos QR</h3>
                 <p>Acceso instantáneo a la ficha técnica de cada árbol con solo un escaneo.</p>
@@ -87,7 +98,7 @@
     </div>
 </section>
 
-<section class="goals-section">
+<section id="goals" class="goals-section">
     <div class="container">
         <span class="label-white">Objetivos</span>
         <h2 class="text-white">Objetivos Del Proyecto</h2>
@@ -172,81 +183,11 @@
 </footer>
 
 <!-- Botón Flotante de Tema -->
-    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
-        <i class="fas fa-moon"></i>
-    </button>
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
 
-<script>
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('#nav-list');
-
-    menu.addEventListener('click', function() {
-        menu.classList.toggle('is-active');
-        menuLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links li a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('is-active');
-            menuLinks.classList.remove('active');
-        });
-    });
-
-    // --------------------------------------------------------
-        // LÓGICA DEL MODO NOCHE GLOBAL Y LUCIÉRNAGAS
-        // --------------------------------------------------------
-        const themeBtn = document.getElementById('themeToggle');
-        const themeIcon = themeBtn.querySelector('i');
-        const body = document.body;
-
-        function createFireflies() {
-            for (let i = 0; i < 15; i++) {
-                let firefly = document.createElement('div');
-                firefly.classList.add('firefly');
-                firefly.style.left = Math.random() * 100 + 'vw';
-                firefly.style.top = Math.random() * 100 + 'vh';
-                firefly.style.animationDelay = Math.random() * 5 + 's';
-                firefly.style.animationDuration = (8 + Math.random() * 5) + 's';
-                body.appendChild(firefly);
-            }
-        }
-
-        // Revisa si el usuario ya había guardado una preferencia
-        function checkTheme() {
-            const savedTheme = localStorage.getItem('ecoTheme'); // Memoria del navegador
-            
-            if (savedTheme === 'dark') {
-                body.classList.add('modo-noche');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else if (savedTheme === 'light') {
-                body.classList.remove('modo-noche');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            } else {
-                // Si es su primera vez en la página, usa la hora automática
-                const horaActual = new Date().getHours();
-                if (horaActual >= 18 || horaActual < 6) {
-                    body.classList.add('modo-noche');
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                }
-            }
-        }
-
-        // Al hacer clic, cambia el tema y lo GUARDA en memoria
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('modo-noche');
-            
-            if (body.classList.contains('modo-noche')) {
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('ecoTheme', 'dark'); // Guardamos que le gusta oscuro
-            } else {
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('ecoTheme', 'light'); // Guardamos que le gusta claro
-            }
-        });
-
-        // Ejecutar al cargar la página
-        createFireflies();
-        checkTheme();
-</script>
+<!-- Lógica Global -->
+<script src="js/main.js"></script>
 </body>
 </html>

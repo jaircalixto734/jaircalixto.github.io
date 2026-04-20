@@ -3,6 +3,43 @@
    ============================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
+:root {
+    /* Colores Principales */
+    --primary-color: #2d5a27;
+    --primary-light: #81b622;
+    --primary-vibrant: #d4ff80;
+    --secondary-color: #1a3318;
+    
+    /* Colores de Fondo */
+    --bg-color: #fdfdfd;
+    --card-bg: #ffffff;
+    --footer-bg: #222222;
+    
+    /* Colores de Texto */
+    --text-main: #2c3e50;
+    --text-muted: #666666;
+    --text-light: #ffffff;
+    --text-soft: #bbb;
+    
+    /* Bordes y Sombras */
+    --border-color: #f0f0f0;
+    --shadow-soft: 0 5px 15px rgba(0,0,0,0.03);
+    --shadow-medium: 0 10px 30px rgba(0,0,0,0.06);
+    
+    /* Transiciones */
+    --transition: all 0.3s ease;
+}
+
+.modo-noche {
+    --bg-color: #0d140d;
+    --card-bg: #172616;
+    --text-main: #e0e0e0;
+    --text-muted: #a3b899;
+    --secondary-color: #d4ff80;
+    --border-color: #1e3d1a;
+    --primary-light: #81b622;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +48,10 @@
 }
 
 body {
-    background: #fdfdfd;
-    color: #2c3e50;
-    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+    background: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* =============================================
@@ -55,12 +93,12 @@ body {
 h2 {
     font-size: 2.5rem;
     margin: 15px 0 30px;
-    color: #1a3318;
+    color: var(--secondary-color);
 }
 
 .section-intro {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-muted);
     max-width: 700px;
     margin: 0 auto 50px;
 }
@@ -87,28 +125,28 @@ h2 {
 }
 
 .btn-main {
-    background: #2d5a27;
-    color: white;
+    background: var(--primary-color);
+    color: var(--text-light);
     padding: 15px 35px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    transition: 0.3s;
+    transition: var(--transition);
 }
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.2);
-    color: white;
+    color: var(--text-light);
     padding: 15px 35px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     border: 2px solid white;
     backdrop-filter: blur(5px);
-    transition: 0.3s;
+    transition: var(--transition);
 }
 
-.btn-secondary:hover { background: white; color: #2d5a27; }
+.btn-secondary:hover { background: white; color: var(--primary-color); }
 
 /* =============================================
    4. NAVBAR GLOBAL (Unificado y Limpio)
@@ -118,11 +156,12 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
-    background-color: white;
+    background-color: var(--card-bg);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1100;
+    transition: var(--transition);
 }
 
 .nav-brand {
@@ -145,7 +184,7 @@ h2 {
 .school-name {
     font-size: 1.1rem;
     font-weight: 800;
-    color: #1a3318;
+    color: var(--secondary-color);
     text-transform: uppercase;
     margin: 0;
 }
@@ -153,7 +192,7 @@ h2 {
 .tech-name {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #666;
+    color: var(--text-muted);
     margin: 0;
 }
 
@@ -166,15 +205,15 @@ h2 {
 
 .nav-links li a {
     text-decoration: none;
-    color: #1a3318;
+    color: var(--secondary-color);
     font-weight: 700;
     font-size: 0.95rem;
-    transition: 0.3s;
+    transition: var(--transition);
 }
 
 .nav-links li a:hover, 
 .nav-links li a.active { 
-    color: #81b622; 
+    color: var(--primary-light); 
 }
 
 /* Menú Hamburguesa (Oculto en PC) */
@@ -251,7 +290,7 @@ h2 {
 /* Etiqueta superior "Sobre el Proyecto" */
 .label-green {
     background-color: #e8f5e9; /* Fondo verde clarito */
-    color: #2d5a27; /* Texto verde oscuro */
+    color: var(--primary-color); /* Texto verde oscuro */
     padding: 8px 24px;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -273,12 +312,12 @@ h2 {
 
 /* Diseño de cada Tarjeta individual */
 .card {
-    background: #ffffff;
+    background: var(--card-bg);
     padding: 40px 20px;
     border-radius: 20px;
-    border: 1px solid #f0f0f0; /* Borde sutil como en tu imagen */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* Sombra muy suave */
-    transition: all 0.3s ease; /* Para la animación fluida */
+    border: 1px solid var(--border-color); /* Borde sutil */
+    box-shadow: var(--shadow-soft); /* Sombra muy suave */
+    transition: var(--transition); /* Para la animación fluida */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,7 +350,7 @@ h2 {
 /* Textos dentro de la tarjeta */
 .card h3 {
     font-size: 1.25rem;
-    color: #1a3318; /* Verde oscuro */
+    color: var(--secondary-color); /* Verde oscuro */
     margin-bottom: 15px;
     font-weight: 700;
     line-height: 1.3;
@@ -319,7 +358,7 @@ h2 {
 
 .card p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
@@ -328,10 +367,10 @@ h2 {
 
 /* --- SECCIÓN DE METAS (VERDE OSCURO) --- */
 .goals-section { 
-    background: linear-gradient(-45deg, #2d5a27, #3d7a35, #1e3d1a, #2d5a27);
+    background: linear-gradient(-45deg, var(--primary-color), #3d7a35, #1e3d1a, var(--primary-color));
     background-size: 400% 400%;
     animation: fluidoVerde 12s ease infinite;
-    color: white; 
+    color: var(--text-light); 
     border-radius: 50px 50px 0 0; 
     padding: 80px 0; 
 }
@@ -407,31 +446,29 @@ h2 {
    ============================================= */
 .equipo-section {
     padding: 80px 20px;
-    background-color: #f9fbf9;
-    background-image: radial-gradient(#d1d1d1 0.5px, transparent 0.5px);
-    background-size: 20px 20px;
+    background-color: var(--bg-color);
 }
 
 .grid-equipo { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; }
 
 .tarjeta-persona {
-    width: 320px; background: white; border-radius: 20px; overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #eee; transition: all 0.3s ease;
+    width: 320px; background: var(--card-bg); border-radius: 20px; overflow: hidden;
+    box-shadow: var(--shadow-medium); border: 1px solid var(--border-color); transition: all 0.3s ease;
 }
-.tarjeta-persona:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+.tarjeta-persona:hover { transform: translateY(-10px); box-shadow: var(--shadow-medium); }
 
 .contenedor-foto { width: 100%; height: 400px; background: #e0e0e0; overflow: hidden; }
 .contenedor-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(20%); transition: 0.5s; }
 .tarjeta-persona:hover .contenedor-foto img { filter: grayscale(0%); transform: scale(1.05); }
 
-.bloque-info { padding: 25px; text-align: center; background: white; border-top: 5px solid #81b622; }
-.bloque-info h3 { font-size: 1.2rem; color: #1a3318; margin-bottom: 8px; }
+.bloque-info { padding: 25px; text-align: center; background: var(--card-bg); border-top: 5px solid var(--primary-light); }
+.bloque-info h3 { font-size: 1.2rem; color: var(--secondary-color); margin-bottom: 8px; }
 
-.etiqueta { display: inline-block; background: #e8f5e9; color: #2d5a27; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; margin-bottom: 12px; text-transform: uppercase; }
+.etiqueta { display: inline-block; background: var(--bg-color); color: var(--primary-light); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; margin-bottom: 12px; text-transform: uppercase; border: 1px solid var(--border-color); }
 
 .mentor-horizontal {
     max-width: 800px; margin: 80px auto 0; display: flex; align-items: center;
-    background: #2d5a27; color: white; padding: 30px; border-radius: 25px; gap: 25px;
+    background: var(--primary-color); color: var(--text-light); padding: 30px; border-radius: 25px; gap: 25px;
 }
 .mentor-foto { width: 160px; height: 250px; flex-shrink: 0; border-radius: 15px; overflow: hidden; }
 .mentor-foto img { width: 100%; height: 100%; object-fit: cover; }
@@ -457,7 +494,7 @@ h2 {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Esto asegura que nada se salga del contenedor */
-    background-color: #fdfdfd;
+    background-color: var(--bg-color);
 }
 
 /* Área central de los mensajes */
@@ -474,9 +511,9 @@ h2 {
 .ai-input-wrapper {
     flex-shrink: 0; /* Evita que el chat aplaste esta barra */
     width: 100%;
-    background: #fdfdfd; /* Fondo sólido para tapar el chat al hacer scroll */
+    background: var(--bg-color); /* Fondo sólido para tapar el chat al hacer scroll */
     padding: 15px 15% 20px;
-    border-top: 1px solid rgba(0,0,0,0.05); /* Línea sutil divisoria */
+    border-top: 1px solid var(--border-color); /* Línea sutil divisoria */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -484,8 +521,8 @@ h2 {
 
 /* Ajuste del Modo Noche para la nueva barra inferior */
 body.modo-noche .ai-input-wrapper {
-    background: #0d140d;
-    border-top: 1px solid #1e3d1a;
+    background: linear-gradient(transparent, var(--bg-color) 40%);
+    border-top: none;
 }
 
 /* Pantalla de Bienvenida (Hero) */
@@ -499,7 +536,7 @@ body.modo-noche .ai-input-wrapper {
 .ai-logo-large {
     width: 80px;
     height: 80px;
-    background: #2d5a27;
+    background: var(--primary-color);
     border-radius: 20px;
     margin: 0 auto 20px;
     box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
@@ -522,66 +559,110 @@ body.modo-noche .ai-input-wrapper {
 }
 
 .suggestion-chip {
-    background: white;
-    border: 1px solid #e0e0e0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     padding: 15px 20px;
     border-radius: 15px;
     text-align: left;
     font-family: 'Poppins', sans-serif;
-    color: #444;
+    color: var(--text-main);
     cursor: pointer;
     transition: 0.3s;
     font-size: 0.9rem;
     line-height: 1.4;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    box-shadow: var(--shadow-soft);
 }
 
 .suggestion-chip:hover {
-    background: #f4f9f4;
-    border-color: #81b622;
+    background: var(--bg-color);
+    border-color: var(--primary-light);
     transform: translateY(-3px);
 }
 
 /* Diseño de los Mensajes (Filas) */
-.ai-message-row {
+.chat-row {
     display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
+    margin-bottom: 25px;
     animation: fadeInUp 0.4s ease forwards;
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
+    align-items: flex-start;
 }
 
-.msg-avatar {
-    width: 35px;
-    height: 35px;
-    border-radius: 8px;
+.user-row {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-soft);
 }
 
-.user-avatar { background: #e0e0e0; color: #555; }
-.bot-avatar { background: #2d5a27; color: #d4ff80; }
+.user-avatar { 
+    background: var(--primary-light); 
+    color: white; 
+}
+
+.bot-avatar { 
+    background: var(--secondary-color); 
+    color: var(--primary-vibrant); 
+}
 
 .msg-content {
-    flex-grow: 1;
-    font-size: 1rem;
+    max-width: 70%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
     line-height: 1.6;
-    color: #333;
-    padding-top: 4px;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+}
+
+.bot-row .msg-content {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border-top-left-radius: 2px;
+    border: 1px solid var(--border-color);
 }
 
 .user-row .msg-content {
-    background: #f0f4f0;
-    padding: 15px 20px;
-    border-radius: 15px;
-    display: inline-block;
-    max-width: fit-content;
+    background: var(--primary-color);
+    color: white;
+    border-top-right-radius: 2px;
+}
+
+/* Indicador de Escritura */
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 10px 15px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
 }
 
 /* --- Barra Inferior de Input Flotante --- */
@@ -590,7 +671,7 @@ body.modo-noche .ai-input-wrapper {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(transparent, #fdfdfd 40%);
+    background: linear-gradient(transparent, var(--bg-color) 40%);
     padding: 30px 15% 20px;
     display: flex;
     flex-direction: column;
@@ -602,11 +683,11 @@ body.modo-noche .ai-input-wrapper {
     align-items: center;
     width: 100%;
     max-width: 750px;
-    background: white;
-    border: 1px solid #ccc;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 30px;
     padding: 10px 15px 10px 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-medium);
     transition: 0.3s;
 }
 
@@ -621,27 +702,27 @@ body.modo-noche .ai-input-wrapper {
     outline: none;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    color: #333;
+    color: var(--text-main);
     background: transparent;
 }
 
 .ai-input-box button {
-    background: #2d5a27;
-    color: white;
+    background: var(--primary-color);
+    color: var(--text-light);
     border: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 1rem;
-    transition: 0.3s;
+    transition: var(--transition);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .ai-input-box button:hover {
-    background: #81b622;
+    background: var(--primary-light);
     transform: translateY(-2px);
 }
 
@@ -689,7 +770,7 @@ body.modo-noche .ai-input-wrapper {
         top: 100%; 
         right: -100%; /* Oculto por defecto */
         width: 100%;
-        background: white;
+        background: var(--card-bg);
         flex-direction: column;
         justify-content: center;
         /* Padding corregido: evita que la X se superponga al primer enlace */
@@ -711,6 +792,7 @@ body.modo-noche .ai-input-wrapper {
         display: block;
         padding: 10px;
         font-size: 1.1rem;
+        color: var(--text-main);
     }
 
     /* Animación del icono de hamburguesa a X (Requiere clase .is-active en JS) */
@@ -762,7 +844,7 @@ body.modo-noche .ai-input-wrapper {
    ============================================= */
 .calculadora-section {
     padding: 60px 20px 100px;
-    background: linear-gradient(135deg, #fdfdfd 0%, #f4f9f4 100%); /* Fondo orgánico sutil */
+    background: var(--bg-color);
     min-height: calc(100vh - 100px);
 }
 
@@ -783,11 +865,11 @@ body.modo-noche .ai-input-wrapper {
 
 /* --- COLUMNA 1: FORMULARIO --- */
 .calc-form-column {
-    background: #ffffff;
+    background: var(--card-bg);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-    border: 1px solid #f0f0f0;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -798,7 +880,7 @@ body.modo-noche .ai-input-wrapper {
 .form-group label {
     display: block;
     font-weight: 600;
-    color: #1a3318;
+    color: var(--secondary-color);
     margin-bottom: 10px;
     font-size: 0.95rem;
 }
@@ -812,20 +894,20 @@ body.modo-noche .ai-input-wrapper {
 .form-group select {
     width: 100%;
     padding: 15px;
-    border: 2px solid #e8e8e8;
+    border: 2px solid var(--border-color);
     border-radius: 12px;
-    background: #fafafa;
+    background: var(--bg-color);
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    color: #333;
+    color: var(--text-main);
     transition: all 0.3s ease;
     outline: none;
 }
 
 .form-group input:focus, 
 .form-group select:focus {
-    border-color: #81b622;
-    background: #ffffff;
+    border-color: var(--primary-light);
+    background: var(--card-bg);
     box-shadow: 0 0 0 4px rgba(129, 182, 34, 0.1);
 }
 
@@ -839,15 +921,15 @@ body.modo-noche .ai-input-wrapper {
 /* Botón Especial Calculadora */
 .btn-calc {
     width: 100%;
-    background: #81b622;
-    color: white;
+    background: var(--primary-light);
+    color: var(--text-light);
     border: none;
     padding: 18px;
     border-radius: 15px;
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -857,7 +939,7 @@ body.modo-noche .ai-input-wrapper {
 }
 
 .btn-calc:hover {
-    background: #2d5a27;
+    background: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
 }
@@ -871,8 +953,8 @@ body.modo-noche .ai-input-wrapper {
 
 /* Tarjeta Principal de Carbono */
 .result-main-card {
-    background: linear-gradient(135deg, #2d5a27, #1e3d1a);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
@@ -1047,7 +1129,7 @@ body.modo-noche .ai-input-wrapper {
 }
 
 .inventory-controls {
-    background: #ffffff;
+    background: var(--card-bg);
     width: 100%;
     max-width: 800px;
     padding: 30px;
@@ -1078,18 +1160,19 @@ body.modo-noche .ai-input-wrapper {
 .search-bar input {
     width: 100%;
     padding: 16px 20px 16px 50px;
-    border: 2px solid #e8e8e8;
+    border: 2px solid var(--border-color);
     border-radius: 50px;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     outline: none;
     transition: 0.3s;
-    background: #f9fbf9;
+    background: var(--bg-color);
+    color: var(--text-main);
 }
 
 .search-bar input:focus {
-    border-color: #81b622;
-    background: #ffffff;
+    border-color: var(--primary-light);
+    background: var(--card-bg);
     box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
 }
 
@@ -1106,8 +1189,8 @@ body.modo-noche .ai-input-wrapper {
 
 .filter-btn {
     background: transparent;
-    border: 2px solid #e0e0e0;
-    color: #555;
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -1123,15 +1206,15 @@ body.modo-noche .ai-input-wrapper {
 }
 
 .filter-btn.active {
-    background: #2d5a27;
-    border-color: #2d5a27;
-    color: white;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
     box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
 }
 
 .inventory-grid-section {
     padding: 50px 20px 100px;
-    background: #fdfdfd;
+    background: var(--bg-color);
 }
 
 .tree-grid {
@@ -1141,12 +1224,12 @@ body.modo-noche .ai-input-wrapper {
 }
 
 .tree-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow-medium);
     border: 2px solid transparent;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
     /* La animación se activa por JS al filtrar */
@@ -1154,7 +1237,7 @@ body.modo-noche .ai-input-wrapper {
 
 .tree-card:hover {
     transform: translateY(-10px);
-    border-color: #81b622;
+    border-color: var(--primary-light);
     box-shadow: 0 15px 40px rgba(129, 182, 34, 0.15);
 }
 
@@ -1224,20 +1307,20 @@ body.modo-noche .ai-input-wrapper {
 
 .tree-info h3 {
     font-size: 1.3rem;
-    color: #1a3318;
+    color: var(--secondary-color);
     margin-bottom: 2px;
 }
 
 .scientific-name {
     font-style: italic;
-    color: #888;
+    color: var(--text-muted);
     font-size: 0.85rem;
     margin-bottom: 12px;
 }
 
 .tree-desc {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--text-muted);
     line-height: 1.5;
     margin-bottom: 20px;
     display: -webkit-box;
@@ -1252,12 +1335,13 @@ body.modo-noche .ai-input-wrapper {
     text-align: center;
     display: inline-block;
     padding: 12px;
-    background: #f4f9f4;
-    color: #2d5a27;
+    background: var(--bg-color);
+    color: var(--primary-light);
     text-decoration: none;
     font-weight: 600;
     border-radius: 12px;
-    transition: 0.3s;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
     font-size: 0.95rem;
 }
 
@@ -1318,201 +1402,67 @@ body.modo-noche .ai-input-wrapper {
 
 /* --- ESTILOS DEL MODO NOCHE --- */
 body.modo-noche {
-    background-color: #0d140d; /* Un verde muuuuy oscuro, casi negro */
-    color: #e0e0e0;
+    /* La mayoría de los cambios ya se manejan con variables en :root y .modo-noche */
 }
 
-body.modo-noche .navbar {
-    background-color: #152214;
-    border-bottom: 1px solid #1e3d1a;
-}
-
-body.modo-noche .nav-links li a { color: #e8f5e9; }
-body.modo-noche .school-name { color: #d4ff80; }
-body.modo-noche .tech-name { color: #a3b899; }
-
-body.modo-noche h2, 
-body.modo-noche h3 { 
-    color: #d4ff80; /* Títulos en verde lima brillante */
-}
-
-/* Tarjetas en modo noche */
-body.modo-noche .tree-card,
-body.modo-noche .card,
-body.modo-noche .feat-item,
-body.modo-noche .inventory-controls,
-body.modo-noche .calc-form-column,
-body.modo-noche .equiv-card,
-body.modo-noche .chat-container {
-    background-color: #172616;
-    border-color: #2d5a27;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-body.modo-noche .tree-desc,
-body.modo-noche p {
-    color: #a3b899;
-}
-
-body.modo-noche .search-bar input {
-    background: #0d140d;
-    color: white;
-    border-color: #2d5a27;
-}
-
-body.modo-noche .btn-tree {
-    background: #1e3d1a;
-    color: #d4ff80;
-}
-
-/* --- Arreglos del Modo Noche para Celulares --- */
-/* 1. Cambiar el color de las 3 rayitas del menú hamburguesa */
+/* Arreglos del Modo Noche para Celulares */
 body.modo-noche .bar {
-    background-color: #d4ff80; /* Las pone verde lima para que resalten */
+    background-color: var(--primary-vibrant);
 }
 
 @media (max-width: 768px) {
-    /* 2. Arreglar el fondo del menú desplegable */
     body.modo-noche .nav-links {
-        background-color: #152214; /* Fondo oscuro igual al navbar */
-        border-bottom: 2px solid #2d5a27;
+        background-color: var(--card-bg);
+        border-bottom: 2px solid var(--primary-color);
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
     
     body.modo-noche .nav-links li a {
-        color: #e8f5e9; /* Letras claras */
+        color: var(--text-main);
     }
 
     body.modo-noche .nav-links li a:hover {
-        color: #d4ff80; /* Letras lima al tocar */
-    }
-
-    /* 3. Asegurar que el botón de la luna se vea en el celular */
-    .theme-toggle-btn {
-        bottom: 20px; /* Lo subimos un poco */
-        right: 20px;
-        width: 50px; /* Un pelín más pequeño para que no estorbe */
-        height: 50px;
-        font-size: 1.2rem;
+        color: var(--primary-vibrant);
     }
 }
 
+/* CORRECCIONES DE CONTRASTE (MODO NOCHE) */
 
-/* =============================================
-   CORRECCIONES DE CONTRASTE (MODO NOCHE)
-   ============================================= */
-
-/* 1. Correcciones para EQUIPO.HTML */
 body.modo-noche .bloque-info {
-    background-color: #172616; /* Pone oscura la parte de abajo de la foto */
-    border-top: 5px solid #d4ff80; /* Línea lima brillante */
+    border-top: 5px solid var(--primary-vibrant);
 }
 
 body.modo-noche .etiqueta {
-    background-color: #1e3d1a; /* Etiqueta verde oscura */
-    color: #d4ff80; /* Texto lima brillante */
-}
-
-body.modo-noche .mentor-horizontal {
-    background-color: #152214;
-    border: 1px solid #2d5a27;
-}
-
-body.modo-noche .bloque-info p,
-body.modo-noche .mentor-datos .desc {
-    color: #a3b899; /* Textos de descripción más claros */
-}
-
-/* 2. Correcciones para CALCULADORA.HTML */
-body.modo-noche .form-group label {
-    color: #e8f5e9; /* Letras de los títulos de los cuadros de texto */
-}
-
-body.modo-noche .form-group input, 
-body.modo-noche .form-group select {
-    background-color: #0d140d; /* Fondo del cuadro de texto negro */
-    color: #ffffff; /* Letra blanca al escribir */
-    border-color: #2d5a27;
-}
-
-body.modo-noche .form-group small {
-    color: #888888;
-}
-
-/* Las tarjetitas blancas de equivalencias (auto, oxígeno, luz) */
-body.modo-noche .equiv-title {
-    color: #a3b899; 
+    background-color: var(--primary-color);
+    color: var(--primary-vibrant);
 }
 
 body.modo-noche .equiv-value {
-    color: #d4ff80; /* Números gigantes en lima */
+    color: var(--primary-vibrant);
 }
 
-body.modo-noche .equiv-card small {
-    color: #777777;
-}
-
-/* 3. Correcciones para CHATBOT.HTML (Nueva Interfaz) */
-body.modo-noche .ai-workspace { background-color: #0d140d; }
-body.modo-noche .ai-welcome-screen p { color: #888; }
-
-body.modo-noche .suggestion-chip {
-    background: #172616;
-    border-color: #2d5a27;
-    color: #a3b899;
-}
-
-body.modo-noche .suggestion-chip:hover {
-    background: #1e3d1a;
-}
-
-body.modo-noche .msg-content { color: #e0e0e0; }
-body.modo-noche .user-row .msg-content { background: #152214; border: 1px solid #1e3d1a; }
-body.modo-noche .user-avatar { background: #333; color: #888; }
-
-body.modo-noche .ai-input-wrapper {
-    background: linear-gradient(transparent, #0d140d 40%);
-}
-
-body.modo-noche .ai-input-box {
-    background: #172616;
-    border-color: #2d5a27;
-}
-
-body.modo-noche .ai-input-box input { color: white; }
-body.modo-noche .ai-disclaimer { color: #555; }
-
-
-/* 4. Correcciones para INDEX.HTML (Tarjetas de Servicios Ecosistémicos) */
-body.modo-noche .card p,
-body.modo-noche .feat-item p {
-    color: #a3b899;
-}
-
-/* --- ANIMACIÓN DE LUCIÉRNAGAS (Solo visibles en modo noche) --- */
+/* --- ANIMACIÓN DE LUCIÉRNAGAS --- */
 .firefly {
     position: fixed;
     width: 4px;
     height: 4px;
-    background-color: #d4ff80; /* Luz amarilla/verde */
+    background-color: var(--primary-vibrant);
     border-radius: 50%;
     box-shadow: 0 0 10px 4px rgba(212, 255, 128, 0.6);
-    pointer-events: none; /* Para que no estorben si haces clic */
+    pointer-events: none;
     z-index: 9000;
     opacity: 0;
     animation: floatFirefly 10s infinite ease-in-out;
-    display: none; /* Ocultas por defecto */
+    display: none;
 }
 
 body.modo-noche .firefly {
-    display: block; /* Se encienden en la noche */
+    display: block;
 }
 
-/* Quitar los fondos blancos de las secciones para que se vea el fondo oscuro */
 body.modo-noche .inventory-grid-section,
 body.modo-noche .info-section,
 body.modo-noche .calculadora-section,
-body.modo-noche .chat-page-wrapper,
 body.modo-noche .equipo-section {
     background: transparent !important; 
 }
@@ -1530,7 +1480,7 @@ body.modo-noche .equipo-section {
 /* =============================================
    14. FICHA DINÁMICA PREMIUM (Dashboard Botánico)
    ============================================= */
-.ficha-body { background-color: #f4f7f4; }
+.ficha-body { background-color: var(--bg-color); }
 
 .btn-back {
     position: absolute; top: 20px; left: 20px;
@@ -1549,11 +1499,11 @@ body.modo-noche .equipo-section {
 
 /* Contenedor Premium */
 .premium-layout {
-    background: #ffffff;
+    background: var(--card-bg);
     margin-top: -60px; position: relative; z-index: 10;
     border-radius: 40px 40px 0 0; padding: 40px 6% 80px;
     max-width: 900px; margin-left: auto; margin-right: auto;
-    box-shadow: 0 -20px 40px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Encabezado */
@@ -1562,7 +1512,7 @@ body.modo-noche .equipo-section {
 .badge-estado { background: #1a3318; color: #d4ff80; padding: 6px 15px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; }
 .badge-tipo { background: #e8f5e9; color: #2d5a27; padding: 6px 15px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; }
 
-.ficha-titles h1 { font-size: 2.8rem; color: #1a3318; line-height: 1; margin-bottom: 5px; font-weight: 800; }
+.ficha-titles h1 { font-size: 2.8rem; color: var(--secondary-color); line-height: 1; margin-bottom: 5px; font-weight: 800; }
 .ficha-titles h3 { font-size: 1.2rem; color: #888; font-style: italic; font-weight: 400; }
 
 .btn-audio-pro {
@@ -1574,17 +1524,17 @@ body.modo-noche .equipo-section {
 
 /* Caja de Silvain AI (Estilo Tech) */
 .silvain-pro-box {
-    background: #f9fbf9; border: 1px solid #e0e0e0; border-radius: 20px; padding: 25px;
+    background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 20px; padding: 25px;
     margin-bottom: 40px; position: relative; overflow: hidden;
 }
 .silvain-pro-box::before {
     content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #81b622;
 }
 .silvain-pro-header { display: flex; align-items: center; gap: 10px; color: #2d5a27; font-weight: 700; margin-bottom: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-.silvain-pro-box p { font-size: 1.05rem; color: #444; line-height: 1.7; font-weight: 500; }
+.silvain-pro-box p { font-size: 1.05rem; color: var(--text-main); line-height: 1.7; font-weight: 500; }
 
 /* Títulos de Sección */
-.section-title-pro { font-size: 1.4rem; color: #1a3318; margin-bottom: 20px; font-weight: 700; }
+.section-title-pro { font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 20px; font-weight: 700; }
 
 /* GALERÍA HORIZONTAL */
 .gallery-scroll-container {
@@ -1610,12 +1560,12 @@ body.modo-noche .equipo-section {
 
 /* UBICACIÓN Y MAPA MOCKUP */
 .map-card-pro {
-    background: white; border: 1px solid #eee; border-radius: 20px; overflow: hidden;
-    margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column;
+    background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden;
+    margin-bottom: 40px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column;
 }
-.map-info { padding: 20px; display: flex; align-items: center; gap: 15px; background: #fafafa; }
+.map-info { padding: 20px; display: flex; align-items: center; gap: 15px; background: var(--bg-color); }
 .map-info i { font-size: 2rem; color: #81b622; }
-.map-info h5 { font-size: 1.1rem; color: #1a3318; margin-bottom: 3px; }
+.map-info h5 { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 3px; }
 .map-info p { font-size: 0.85rem; color: #666; }
 .map-visual-placeholder {
     height: 200px; background: #e0e6ed; position: relative; display: flex; justify-content: center; align-items: center;
@@ -1628,10 +1578,10 @@ body.modo-noche .equipo-section {
 
 /* Ficha Técnica Grid */
 .ficha-grid-datos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 40px; }
-.dato-card-pro { background: #fff; border: 1px solid #f0f0f0; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+.dato-card-pro { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 15px; padding: 20px; text-align: center; box-shadow: var(--shadow-soft); }
 .dato-card-pro i { color: #81b622; font-size: 1.5rem; margin-bottom: 10px; display: block; }
 .dato-card-pro small { font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 5px; }
-.dato-card-pro span { font-size: 1.1rem; color: #1a3318; font-weight: 800; }
+.dato-card-pro span { font-size: 1.1rem; color: var(--secondary-color); font-weight: 800; }
 
 /* Tarjeta Carbono Premium */
 .ficha-carbono-pro { position: relative; border-radius: 25px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(45, 90, 39, 0.25); }
@@ -1645,7 +1595,7 @@ body.modo-noche .equipo-section {
 .c-divider { width: 2px; height: 50px; background: rgba(255,255,255,0.2); }
 .c-text { font-size: 1rem; color: rgba(255,255,255,0.9); max-width: 200px; text-align: left; line-height: 1.4; }
 .c-text strong { color: #d4ff80; font-size: 1.2rem; display: block; }
-.btn-calc-pro { background: #d4ff80; color: #1a3318; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.btn-calc-pro { background: var(--primary-light); color: var(--text-light); padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
 .btn-calc-pro:hover { background: white; transform: translateY(-3px); }
 
 /* --- RESPONSIVO --- */
@@ -1677,14 +1627,14 @@ body.modo-noche .dato-card-pro span { color: white; }
 .acordeon-container { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
 
 .acordeon-pro {
-    background: white; border: 1px solid #e0e0e0; border-radius: 15px; padding: 18px 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: 0.3s;
+    background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 15px; padding: 18px 20px;
+    box-shadow: var(--shadow-soft); transition: 0.3s;
 }
 
 .acordeon-pro[open] { border-color: #81b622; box-shadow: 0 10px 20px rgba(129, 182, 34, 0.1); }
 
 .acordeon-pro summary {
-    font-weight: 700; color: #1a3318; font-size: 1.05rem; cursor: pointer;
+    font-weight: 700; color: var(--secondary-color); font-size: 1.05rem; cursor: pointer;
     list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;
 }
 .acordeon-pro summary::-webkit-details-marker { display: none; }
@@ -1714,7 +1664,7 @@ body.modo-noche .dato-card-pro span { color: white; }
     border-radius: 12px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
     font-family: 'Poppins', sans-serif; transition: all 0.2s ease;
 }
-.quiz-btn-pro:hover { border-color: #81b622; background: #f4f9f4; transform: translateY(-2px); }
+.quiz-btn-pro:hover { border-color: var(--primary-light); background: var(--bg-color); transform: translateY(-2px); }
 
 /* Animaciones del Quiz */
 .correct-anim { background: #81b622 !important; color: white !important; border-color: #81b622 !important; animation: popBounce 0.5s ease; }
@@ -1826,8 +1776,8 @@ body.modo-noche .hoja-cayendo { display: none; }
 .module-header { padding: 12px 20px; display: flex; align-items: center; gap: 12px; }
 .module-header.teal { background: #E1F5EE; } .module-header.amber { background: #FAEEDA; }
 .module-header.blue { background: #E6F1FB; } .module-header.coral { background: #FAECE7; }
-.module-title { font-size: 1.05rem; font-weight: 700; color: #1a3318; }
-.module-body { padding: 20px; background: #ffffff; }
+.module-title { font-size: 1.05rem; font-weight: 700; color: var(--secondary-color); }
+.module-body { padding: 20px; background: var(--card-bg); }
 
 .section-label { font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
 .section-val { font-size: 0.95rem; color: #444; line-height: 1.6; text-align: justify; }
@@ -1842,7 +1792,7 @@ body.modo-noche .hoja-cayendo { display: none; }
 .metric-val.coral { color: #993C1D; } .metric-val.blue { color: #185FA5; }
 
 .tags-container { display: flex; flex-wrap: wrap; gap: 8px; }
-.alometry-box { font-family: monospace; font-size: 0.9rem; background: #f0f4f0; border-radius: 8px; padding: 12px 15px; color: #1a3318; border-left: 4px solid #1D9E75; margin-top: 10px; }
+.alometry-box { font-family: monospace; font-size: 0.9rem; background: var(--bg-color); border-radius: 8px; padding: 12px 15px; color: var(--secondary-color); border-left: 4px solid var(--primary-light); margin-top: 10px; }
 
 /* Calendario Fenológico */
 .calendar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; margin-top: 10px; }
@@ -1862,9 +1812,9 @@ body.modo-noche .hoja-cayendo { display: none; }
 
 /* Quiz Múltiple */
 .quiz-q { background: #f9fbf9; border-radius: 12px; padding: 20px; margin-bottom: 15px; border: 1px solid #eee; }
-.quiz-q p { font-size: 1rem; font-weight: 700; color: #1a3318; margin-bottom: 12px; }
-.quiz-opt { font-size: 0.95rem; line-height: 1.4; color: #555; padding: 10px 15px; background: white; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: 0.2s; }
-.quiz-opt:hover { border-color: #81b622; background: #f4f9f4; }
+.quiz-q p { font-size: 1rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 12px; }
+.quiz-opt { font-size: 0.95rem; line-height: 1.4; color: var(--text-main); padding: 10px 15px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: 0.2s; }
+.quiz-opt:hover { border-color: var(--primary-light); background: var(--bg-color); }
 .correct-choice { background: #E1F5EE !important; border-color: #0F6E56 !important; color: #0F6E56 !important; font-weight: 700; }
 .correct-choice-reveal { background: rgba(15, 110, 86, 0.1) !important; border-color: #0F6E56 !important; border-style: dashed !important; }
 .wrong-choice { background: #FCEBEB !important; border-color: #A32D2D !important; color: #A32D2D !important; text-decoration: line-through; }

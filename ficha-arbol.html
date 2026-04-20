@@ -3,310 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dossier Botánico - EcoDigital</title>
+    <meta name="description" content="Ficha Técnica Botánica - Información detallada sobre las especies arbóreas de la IE Jesús Bernal Pinzón.">
+    <title>Ficha Técnica - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="ficha-body">
 
-    <div id="contenedorHojas"></div>
-
+    <!-- Botón Volver -->
     <a href="lista-arboles.html" class="btn-back">
-        <i class="fas fa-arrow-left"></i> Volver
+        <i class="fas fa-arrow-left"></i> Volver al Inventario
     </a>
 
     <!-- HERO SECTION -->
-    <section class="ficha-hero" id="fichaImagen" style="background-image: url('./imagenes/colegio1.jpeg');">
+    <header class="ficha-hero" id="fichaImagen">
         <div class="ficha-overlay-gradient"></div>
-    </section>
+    </header>
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <main class="ficha-content premium-layout">
-        
+    <main class="premium-layout">
+        <!-- ENCABEZADO PRO -->
         <div class="ficha-header-pro">
             <div class="ficha-titles">
                 <div class="id-wrapper">
-                    <span class="badge-estado" id="fichaId">#JBP-00</span>
-                    <span class="badge-tipo" id="fichaTipo"><i class="fas fa-tree"></i> Cargando...</span>
+                    <span class="badge-estado" id="fichaId">ID-00</span>
+                    <span class="badge-tipo" id="fichaTipo">Nativo</span>
                 </div>
                 <h1 id="fichaNombreComun">Cargando...</h1>
-                <h3 id="fichaCientifico">Cargando especie...</h3>
+                <h3 id="fichaCientifico">Nombre científico</h3>
             </div>
-            <button class="btn-audio-pro" id="btnAudio" title="Escuchar relato">
+            <button class="btn-audio-pro" id="btnAudio" title="Escuchar descripción">
                 <i class="fas fa-volume-up"></i>
             </button>
         </div>
 
-        <!-- ALERTA DE ESPECIE EXÓTICA (Se muestra solo si es necesario) -->
-        <div id="alertaExotica" class="exotic-banner" style="display: none;">
-            <i class="fas fa-exclamation-triangle" style="font-size: 1.5rem;"></i>
-            <span><strong>Nota de integridad científica:</strong> Esta es una especie <strong>exótica introducida</strong>. No es nativa de la Orinoquía.</span>
-        </div>
-
-        <!-- LA VOZ DE SILVAIN -->
-        <div class="sylvain-dossier-box">
-            <div class="sylvain-name"><i class="fas fa-microchip"></i> SILVAIN habla — para estudiantes</div>
-            <p class="sylvain-text" id="fichaMensajeIA">Cargando conexión neuronal...</p>
-        </div>
-
-        <!-- GALERÍA DE DETALLES -->
-        <div class="gallery-scroll-container" id="galeriaArbol"></div>
-
-        <!-- IMPACTO AMBIENTAL (Carbono) -->
-        <div class="ficha-carbono-pro">
-            <div class="carbono-pro-bg"></div>
-            <div class="carbono-pro-content">
-                <div class="c-header"><i class="fas fa-leaf"></i> Impacto Ambiental Real</div>
-                <div class="c-data">
-                    <div class="c-number"><span id="fichaCarbono">0</span> <small>kg CO₂</small></div>
-                    <div class="c-divider"></div>
-                    <div class="c-text">Compensa <strong id="fichaViajes">0</strong> viajes en moto.</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MÓDULOS CIENTÍFICOS (Estilo Dossier) -->
-        
-        <!-- Módulo 1: Taxonomía -->
-        <div class="dossier-module">
-            <div class="module-header teal">
-                <span class="dossier-badge badge-teal">Módulo 1</span>
-                <span class="module-title">Taxonomía y Conservación</span>
+        <!-- MODO DOSSIER (Información Rápida) -->
+        <div class="dossier-module amber">
+            <div class="module-header amber">
+                <i class="fas fa-dna"></i>
+                <span class="module-title">Clasificación y Origen</span>
             </div>
             <div class="module-body">
                 <div class="grid3">
-                    <div class="metric-card"><div class="metric-label">Familia</div><div class="metric-val teal" id="dFamilia">...</div></div>
-                    <div class="metric-card"><div class="metric-label">Origen</div><div class="metric-val amber" id="dOrigen">...</div></div>
-                    <div class="metric-card"><div class="metric-label">Estado UICN</div><div class="metric-val coral" id="dEstado">...</div></div>
+                    <div class="metric-card">
+                        <div class="metric-label">Familia</div>
+                        <div class="metric-val amber" id="dFamilia">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Origen</div>
+                        <div class="metric-val amber" id="dOrigen">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Estado</div>
+                        <div class="metric-val amber" id="dEstado">-</div>
+                    </div>
                 </div>
-                <div class="section-label mt-3">Nombres Locales / Sinónimos</div>
-                <div id="dTagsLocales" class="tags-container"></div>
-                <div class="section-label mt-3">Distribución y Contexto</div>
-                <div class="section-val" id="dDistribucion">...</div>
+                <div class="mt-3">
+                    <div class="section-label">Distribución Geográfica</div>
+                    <div class="section-val" id="dDistribucion">-</div>
+                </div>
             </div>
         </div>
 
-        <!-- Módulo 2: Biometría -->
-        <div class="dossier-module">
-            <div class="module-header amber">
-                <span class="dossier-badge badge-amber">Módulo 2</span>
-                <span class="module-title">Biometría y Alometría</span>
+        <!-- ALERTA EXÓTICA (Solo si aplica) -->
+        <div id="alertaExotica" class="exotic-banner" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <strong>Especie Introducida / Exótica:</strong>
+                Esta especie no es nativa de la región. Su manejo requiere monitoreo para evitar desplazamientos de flora local.
+            </div>
+        </div>
+
+        <!-- MODO CIENTÍFICO (Carbono y Alometría) -->
+        <div class="dossier-module teal">
+            <div class="module-header teal">
+                <i class="fas fa-microscope"></i>
+                <span class="module-title">Datos Biométricos y Carbono</span>
             </div>
             <div class="module-body">
                 <div class="grid2">
-                    <div class="metric-card"><div class="metric-label">Densidad Madera (ρ)</div><div class="metric-val amber" id="dDensidad">...</div></div>
-                    <div class="metric-card"><div class="metric-label">Fracción Carbono (FC)</div><div class="metric-val blue" id="dFraccion">...</div></div>
+                    <div class="metric-card">
+                        <div class="metric-label">Densidad Madera</div>
+                        <div class="metric-val teal" id="dDensidad">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Fracción Carbono</div>
+                        <div class="metric-val teal" id="dFraccion">0.5</div>
+                    </div>
                 </div>
-                <div class="warn-box" id="warnBiometria">⚠ Valor referencial sujeto a verificación en campo.</div>
-                <div class="section-label mt-3">Modelo Alométrico Aplicado</div>
-                <div class="alometry-box" id="dAlometria">...</div>
+                <div class="mt-3">
+                    <div class="section-label">Ecuación Alométrica (IPCC)</div>
+                    <div class="alometry-box" id="dAlometria">-</div>
+                </div>
+                
+                <!-- Tarjeta Carbono Pro -->
+                <div class="ficha-carbono-pro mt-4">
+                    <div class="carbono-pro-bg"></div>
+                    <div class="carbono-pro-content">
+                        <span class="c-header">Carbono Almacenado</span>
+                        <div class="c-data">
+                            <div class="c-number"><span id="fichaCarbono">0</span><small>kg</small></div>
+                            <div class="c-divider"></div>
+                            <div class="c-text">
+                                Equivale a retirar <strong><span id="fichaViajes">0</span> viajes</strong> de un auto promedio.
+                            </div>
+                        </div>
+                        <a href="calculadora.html" class="btn-calc-pro">Ver Calculadora</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Módulo 3: Fenología -->
-        <div class="dossier-module">
-            <div class="module-header blue">
-                <span class="dossier-badge badge-blue">Módulo 3</span>
-                <span class="module-title">Morfología y Calendario Fenológico</span>
-            </div>
-            <div class="module-body">
-                <div class="section-label">Calendario Anual (Maní, Casanare)</div>
-                <div class="calendar" id="dCalendario">
-                    <!-- Se inyecta con JS -->
-                </div>
- <div class="section-label mt-3">Morfología Organográfica</div>
-                <div class="section-val" id="dMorfologia">...</div>
-                <div class="section-label mt-4">Fauna Asociada en Casanare</div>
-                <div id="dFauna">...</div>
+        <!-- MENSAJE DE SILVAIN IA -->
+        <div class="sylvain-dossier-box">
+            <div class="sylvain-name"><i class="fas fa-robot"></i> Silvain AI - Tutor Botánico</div>
+            <div class="sylvain-text" id="fichaMensajeIA">"Analizando datos del ecosistema..."</div>
+        </div>
 
-        <!-- Módulo 4: Etnobotánica y Usos -->
-        <div class="dossier-module">
+        <!-- ACORDEONES DE DETALLES -->
+        <div class="acordeon-container">
+            <details class="acordeon-pro">
+                <summary>
+                    <span><i class="fas fa-leaf"></i> Morfología Detallada</span>
+                    <i class="fas fa-chevron-down flecha"></i>
+                </summary>
+                <div class="acordeon-content" id="dMorfologia">-</div>
+            </details>
+            
+            <details class="acordeon-pro">
+                <summary>
+                    <span><i class="fas fa-dove"></i> Interacción con Fauna</span>
+                    <i class="fas fa-chevron-down flecha"></i>
+                </summary>
+                <div class="acordeon-content" id="dFauna">-</div>
+            </details>
+
+            <details class="acordeon-pro">
+                <summary>
+                    <span><i class="fas fa-hands-helping"></i> Usos Etnobotánicos</span>
+                    <i class="fas fa-chevron-down flecha"></i>
+                </summary>
+                <div class="acordeon-content" id="dUsos">-</div>
+            </details>
+        </div>
+
+        <!-- CALENDARIO FENOLÓGICO -->
+        <div class="dossier-module coral">
             <div class="module-header coral">
-                <span class="dossier-badge badge-coral">Módulo 4</span>
-                <span class="module-title">Etnobotánica Llanera</span>
+                <i class="fas fa-calendar-alt"></i>
+                <span class="module-title">Calendario Fenológico Local</span>
             </div>
             <div class="module-body">
-                <div class="section-val" id="dUsos">...</div>
+                <div class="calendar" id="dCalendario">
+                    <!-- Dinámico -->
+                </div>
+                <div class="warn-box">
+                    <i class="fas fa-info-circle"></i> Los periodos pueden variar según las lluvias anuales en Casanare.
+                </div>
             </div>
         </div>
 
-        <!-- Módulo 5: Referencias -->
-        <details class="acordeon-pro mt-3">
-            <summary><i class="fas fa-book"></i> Referencias (APA 7) <i class="fas fa-chevron-down flecha"></i></summary>
-            <div class="acordeon-content" id="fichaReferencias">
-                <ul class="lista-apa" id="listaApa"></ul>
-            </div>
-        </details>
+        <!-- GALERÍA PREMIUM -->
+        <h4 class="section-title-pro">Galería Fotográfica</h4>
+        <div class="gallery-scroll-container" id="galeriaArbol">
+            <!-- Dinámico -->
+        </div>
 
-        <!-- QUIZ GAMIFICADO MÚLTIPLE -->
-        <div class="quiz-pro-box fade-in-stagger mt-4" id="quizContainer">
-            <div class="quiz-header"><i class="fas fa-brain"></i> Reto de Conocimiento</div>
-            <div id="quizPreguntasContainer"></div>
+        <!-- QUIZ MULTINIVEL -->
+        <div class="dossier-module blue">
+            <div class="module-header blue">
+                <i class="fas fa-gamepad"></i>
+                <span class="module-title">Trivia Botánica</span>
+            </div>
+            <div class="module-body" id="quizPreguntasContainer">
+                <!-- Preguntas Dinámicas -->
+            </div>
+        </div>
+
+        <!-- BIBLIOGRAFÍA APA -->
+        <h4 class="section-title-pro mt-4">Referencias Bibliográficas</h4>
+        <div class="dato-card-pro">
+            <ul class="lista-apa" id="listaApa">
+                <!-- Dinámico -->
+            </ul>
         </div>
 
     </main>
 
-    <!-- VISOR DE IMÁGENES -->
+    <!-- VISOR DE IMÁGENES (Lightbox) -->
     <div id="visorImagenes" class="modal-visor">
         <span class="cerrar-visor" id="cerrarVisor">&times;</span>
         <img class="modal-contenido" id="imgVisorAmpliada">
-        <div id="textoVisor" class="modal-texto"></div>
+        <div class="modal-texto" id="textoVisor"></div>
     </div>
 
-    <!-- Botón de Modo Noche -->
-    <button class="theme-toggle-btn" id="themeToggle" style="bottom: 20px; right: 20px;">
+    <!-- Botón Flotante de Tema -->
+    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- SCRIPT (Base de Datos Avanzada) -->
+    <!-- Lógica Global -->
+    <script src="js/main.js"></script>
+
     <script>
-// 1. BASE DE DATOS LOCAL SÚPER DETALLADA (INVESTIGACIÓN COMPLETA)
+        // BASE DE DATOS LOCAL
         const baseDatosArboles = {
-            "merecure": {
-                id: "#JBP-01", tipo: "Nativo", nombre: "Merecure", cientifico: "Moquilea pyrifolia (Griseb.) R.O.Williams",
-                familia: "Chrysobalanaceae", origen: "Nativo Orinoquía", estado: "Preocupación Menor", exotica: false,
-                carbono: 215.4, viajes: 78, imagen_portada: "./imagenes/colegio1.jpeg",
-                galeria: [
-                    { img: "./imagenes/colegio1.jpeg", desc: "Árbol Completo" },
-                    { img: "./imagenes/foto2.jpeg", desc: "Hojas" }
-                ],
-                nombresLocales: ["Merecure", "Querebere", "Merecurito (juveniles)", "Árbol de los llanos"],
-                distribucion: `
-                    <p>El merecure se distribuye desde las Antillas Menores (Martinica, Trinidad) hasta las llanuras de Venezuela y Colombia, con registros herborizados en Arauca (río Cravo Norte) y Casanare (Orocué, río Meta). Es una especie diagnóstica de los bosques de galería y mata de monte de la cuenca del Orinoco, donde estructura el dosel bajo y provee recursos críticos para la fauna local.</p>
-                    <div class="blockquote-pro mt-3">
-                        <p>"La Flora de Colombia documenta para Licania pyrifolia su presencia en bosques de tierras bajas y ribereños en lugares abiertos, desde Martinica hasta Trinidad, en regiones aledañas de Venezuela, y en Colombia."</p>
-                        <cite>— Universidad Nacional de Colombia, Flora Virtual de Colombia.</cite>
-                    </div>
-                `,
-                densidad: "0.68 – 0.82 g/cm³", fraccion: "0.49 (Phillips et al.)",
-                alometria: `
-                    <div class="alometry-box">AGB = 0.0509 × (ρ × DAP² × H)⁰·⁹⁹⁶</div>
-                    <p class="mt-2 text-sm">Donde: <strong>AGB</strong> = biomasa aérea (kg), <strong>ρ</strong> = densidad de madera (g/cm³), <strong>DAP</strong> = diámetro a la altura del pecho (cm), <strong>H</strong> = altura total (m). Fuente: Chave et al. (2005) — modelo húmedo-seco aplicable a latifoliadas de tierras bajas tropicales colombianas.</p>
-                    <div class="alometry-box" style="border-left-color:#BA7517; margin-top: 10px;">Carbono (kgC) = AGB × 0.49</div>
-                    <div class="blockquote-pro mt-3">
-                        <p>"Los modelos que integran densidad de madera, diámetro y altura reducen el error de estimación en más de un 30% frente a los modelos que sólo usan el DAP, siendo su aplicación prioritaria en ecosistemas de galería de la Orinoquía."</p>
-                        <cite>— Álvarez et al. (2012). Forest Ecology and Management.</cite>
-                    </div>
-                `,
+            merecure: {
+                id: "ARB-01", tipo: "Nativo", nombre: "Merecure", cientifico: "Licania pyrifolia", 
+                carbono: "45.2", viajes: "320", familia: "Chrysobalanaceae", origen: "Cuenca del Orinoco", 
+                estado: "Estable", imagen_portada: "./imagenes/foto1.jpeg", mensajeIA: "¡Hola! Soy Silvain. El Merecure es un árbol emblemático de nuestros llanos. Su madera es densa y sus frutos alimentan a gran parte de la fauna local. ¿Sabías que su nombre viene de lenguas indígenas?",
+                distribucion: "Se encuentra principalmente en zonas de sabana y bosques de galería de Casanare, Meta y Vichada.",
+                densidad: "0.85 g/cm³ (Muy alta)", fraccion: "0.48", 
+                alometria: "B = exp(-2.187 + 0.916 * ln(D²H))",
+                morfologia: "Árbol de copa redondeada y densa. Hojas coriáceas de color verde oscuro brillante. Corteza fisurada grisácea.",
+                fauna: "Sus frutos son consumidos por venados, chigüiros y diversas aves llaneras.",
+                usos: "Madera para postes de cerca y construcción rural. Fruto comestible (aunque de pulpa escasa).",
+                nombresLocales: ["Merecure de cerro", "Hierrito"],
                 calendario: [
-                    { mes: "Dic", fase: "Floración", clima: "dry" }, { mes: "Ene", fase: "Floración", clima: "dry" },
-                    { mes: "Feb", fase: "Cuajado", clima: "dry" }, { mes: "Mar", fase: "Fructif.", clima: "dry" },
-                    { mes: "Abr", fase: "Madurac.", clima: "rain" }, { mes: "May", fase: "Madurac.", clima: "rain" },
-                    { mes: "Jun", fase: "Dispers.", clima: "rain" }, { mes: "Jul", fase: "Dispers.", clima: "rain" },
-                    { mes: "Ago", fase: "Rebrote", clima: "rain" }, { mes: "Sep", fase: "Crecim.", clima: "rain" },
-                    { mes: "Oct", fase: "Crecim.", clima: "rain" }, { mes: "Nov", fase: "Pre-flor.", clima: "dry" }
+                    { mes: "ENE", fase: "Floración", clima: "dry" },
+                    { mes: "FEB", fase: "Fructificación", clima: "dry" },
+                    { mes: "MAR", fase: "Fructificación", clima: "dry" },
+                    { mes: "ABR", fase: "Crecimiento", clima: "rain" },
+                    { mes: "MAY", fase: "Crecimiento", clima: "rain" },
+                    { mes: "JUN", fase: "Crecimiento", clima: "rain" }
                 ],
-                morfologia: `
-                    <p><strong>Porte:</strong> Árbol pequeño a mediano, de 10 a 15 m de altura (excepcionalmente hasta 20 m). Copa globosa, muy densa y frondosa, perennifolia.</p>
-                    <p class="mt-2"><strong>Tallo y corteza:</strong> Tronco corto, fuste a veces irregular; ramas expandidas. Corteza pardo-grisácea, algo rugosa.</p>
-                    <p class="mt-2"><strong>Sistema radicular:</strong> Pivotante y profundo, con raíces laterales extensas que le confieren resistencia a inundaciones estacionales prolongadas.</p>
-                    <p class="mt-2"><strong>Hojas:</strong> Simples, alternas (filotaxia espiralada), elípticas a oblongas. Haz lustrosa; envés con vena media plana y lanosa.</p>
-                    <p class="mt-2"><strong>Flores:</strong> Hermafroditas, pequeñas (4–4.5 mm), blancas y fragantes. Dispuestas en panículas axilares.</p>
-                    <p class="mt-2"><strong>Frutos:</strong> Drupa oblonga, hasta 11 cm de largo. Epicarpo densamente verrugoso, de color marrón grisáceo. Pulpa amarilla, cremosa, de sabor harinoso-dulce. Semilla única.</p>
-                    <div class="warn-box mt-3">La floración se desencadena al inicio de la temporada seca (noviembre–enero), cuando el estrés hídrico moderado actúa como señal reproductiva. La maduración coincide con el inicio de lluvias, favoreciendo la dispersión en sabanas inundables.</div>
-                `,
-                fauna: `
-                    <div class="grid2 mt-3">
-                        <div class="metric-card"><div class="metric-label">Aves frugívoras</div><div class="section-val text-sm mt-2">Moriche (Icterus icterus), Loros (Amazona spp.), Palomas y Tucanes. Se alimentan de la pulpa y dispersan semillas.</div></div>
-                        <div class="metric-card"><div class="metric-label">Insectos polinizadores</div><div class="section-val text-sm mt-2">Abejas nativas (Meliponini), abejorros y dípteros atraídos por el aroma de las flores durante el verano llanero.</div></div>
-                        <div class="metric-card"><div class="metric-label">Mamíferos</div><div class="section-val text-sm mt-2">Chigüiro, venado llanero y primates consumen los frutos caídos. Lapas contribuyen a la dispersión secundaria.</div></div>
-                        <div class="metric-card"><div class="metric-label">Ganado (Etnobotánica)</div><div class="section-val text-sm mt-2">Los frutos caídos son aprovechados por el ganado bovino en potreros, lo que ha favorecido su permanencia en fincas.</div></div>
-                    </div>
-                `,
-                usos: `
-                    <div class="grid2 mt-3">
-                        <div class="metric-card"><div class="metric-label">Carpintería rural</div><div class="section-val text-sm mt-2">Fabricación de estantes, horcones y postes. Madera densa, durable y resistente a la humedad de las sabanas inundables.</div></div>
-                        <div class="metric-card"><div class="metric-label">Alimentación</div><div class="section-val text-sm mt-2">Pulpa dulce y harinosa. Históricamente, las comunidades Pumé y Sikuani procesaban una harina para elaborar bebidas (chicha).</div></div>
-                        <div class="metric-card"><div class="metric-label">Medicina popular</div><div class="section-val text-sm mt-2">Corteza usada como astringente. Compuestos del género Licania presentan actividad útil para control de caracoles plaga.</div></div>
-                        <div class="metric-card"><div class="metric-label">Sombra silvopastoril</div><div class="section-val text-sm mt-2">Copa perennifolia ideal para viviendas y corrales. Referente paisajístico de los fundos llaneros.</div></div>
-                    </div>
-                `,
-                mensajeIA: "Soy un viejo sabio del llano. Me llaman Merecure, aunque mis amigos más íntimos —los Pumé y los Sikuani— me conocen también como Querebere. Aquí, en estas sabanas que se llenan de agua cada año como un mar de hierba, yo soy de los pocos que no huyo: mis raíces se hunden tan profundo en la tierra roja que ni el aguacero de cinco meses me hace temblar. ¡Y mis frutos llevan dentro una pulpa dulce con la que los indígenas hacían chicha hace cientos de años!",
+                galeria: [
+                    { img: "./imagenes/foto1.jpeg", desc: "Porte del árbol adulto" },
+                    { img: "./imagenes/servicios ecosistemicos2.png", desc: "Detalle de la hoja" },
+                    { img: "./imagenes/foto2.jpeg", desc: "Corteza característica" }
+                ],
                 referencias: [
-                    "Álvarez, E., et al. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267, 297–308.",
-                    "Chave, J., et al. (2005). Tree allometry and improved estimation of carbon stocks and balance in tropical forests. Oecologia, 145(1), 87–99.",
-                    "Universidad Nacional de Colombia. (s.f.). Licania pyrifolia Griseb. En Flora Virtual de Colombia — BioVirtual.",
-                    "Braca, A., et al. (2003). Chemical and biological studies on Licania genus. En Studies in Natural Products Chemistry (Vol. 28, pp. 35–67)."
+                    "Bernal, R. (2016). Diccionario de nombres comunes de las plantas de Colombia.",
+                    "Pérez Arbeláez, E. (1978). Plantas útiles de Colombia."
                 ],
                 quiz: [
-                    { q: "¿A qué familia botánica pertenece el merecure (Moquilea pyrifolia)?", opts: ["Fabaceae", "Myrtaceae", "Chrysobalanaceae"], correct: 2 },
-                    { q: "¿En qué temporada del año florece el merecure en Maní, Casanare?", opts: ["Al inicio de la temporada seca", "En temporada de lluvias", "No tiene estacionalidad"], correct: 0 },
-                    { q: "¿Para qué usaban los pueblos Pumé y Sikuani la pulpa del fruto?", opts: ["Para tratar fiebres", "Para elaborar harina y chicha", "Como repelente de insectos"], correct: 1 }
+                    { q: "¿A qué familia botánica pertenece el Merecure?", opts: ["Fabaceae", "Chrysobalanaceae", "Moraceae"], correct: 1 },
+                    { q: "¿Cuál es la densidad de su madera?", opts: ["Baja", "Media", "Muy Alta"], correct: 2 },
+                    { q: "¿Qué animal llanero consume sus frutos?", opts: ["Oso Polar", "Venado", "Pingüino"], correct: 1 }
                 ]
             },
-            "jambolan": {
-                id: "#JBP-02", tipo: "Frutal", nombre: "Jambolán", cientifico: "Syzygium cumini (L.) Skeels",
-                familia: "Myrtaceae", origen: "Exótico (India)", estado: "Cultivada", exotica: true,
-                carbono: 150.8, viajes: 55, imagen_portada: "./imagenes/foto2.jpeg",
+            jambolan: {
+                id: "ARB-05", tipo: "Introducido", exotica: true, nombre: "Jambolán", cientifico: "Syzygium cumini",
+                carbono: "28.5", viajes: "150", familia: "Myrtaceae", origen: "Sudeste Asiático (India)", 
+                estado: "Adaptado", imagen_portada: "./imagenes/foto2.jpeg", mensajeIA: "Soy Silvain. El Jambolán es un viajero del mundo. Sus frutos morados son deliciosos y muy nutritivos, pero recuerda que es una especie introducida que debemos manejar con cuidado.",
+                distribucion: "Cultivado en patios y zonas urbanas de toda la Orinoquía colombiana por su sombra y fruto.",
+                densidad: "0.65 g/cm³ (Media)", fraccion: "0.47",
+                alometria: "B = 0.12 * D^2.4 * H",
+                morfologia: "Copa globosa y perennifolia. Hojas opuestas, elípticas y fragantes al estrujarse. Frutos en bayas púrpuras.",
+                fauna: "Muy atractivo para murciélagos fruteros y aves urbanas como las mirlas.",
+                usos: "Fruto comestible, elaboración de vinos, medicinal para control de azúcar en la sangre.",
+                nombresLocales: ["Uva llanera", "Aceituno"],
+                calendario: [
+                    { mes: "JUL", fase: "Floración", clima: "rain" },
+                    { mes: "AGO", fase: "Fructificación", clima: "rain" },
+                    { mes: "SEP", fase: "Fructificación", clima: "rain" },
+                    { mes: "OCT", fase: "Crecimiento", clima: "rain" },
+                    { mes: "NOV", fase: "Crecimiento", clima: "trans" },
+                    { mes: "DIC", fase: "Reposo", clima: "dry" }
+                ],
                 galeria: [
                     { img: "./imagenes/foto2.jpeg", desc: "Frutos maduros" },
-                    { img: "./imagenes/colegio2.jpeg", desc: "Hojas y ramas" }
+                    { img: "./imagenes/colegio2.jpeg", desc: "Árbol en el patio central" }
                 ],
-                nombresLocales: ["Ciruela de Java", "Pésjua extranjera", "Guayabo pésjua", "Ciruela negra"],
-                distribucion: `
-                    <p>Originaria de la India, Sri Lanka, Birmania y el Sudeste Asiático. Introducida en las Américas en la época colonial. En la Orinoquía colombiana y venezolana su presencia es estrictamente antrópica: se planta en patios, fundos y bordes de carreteras por su fruta y sombra. No hace parte de la vegetación nativa del llano.</p>
-                    <div class="blockquote-pro mt-3">
-                        <p>"Se encuentra cultivada en Colombia; Alt. 150–2430 m.; Andes, Llanura del Caribe, Valle del Cauca, sin registros de poblaciones silvestres establecidas en la Orinoquía."</p>
-                        <cite>— Catálogo de Plantas y Líquenes de Colombia (UNAL, 2015).</cite>
-                    </div>
-                `,
-                densidad: "0.69 g/cm³ (Proxy Género)", fraccion: "0.47 (IPCC 2006)",
-                alometria: `
-                    <div class="alometry-box">AGB = 0.0509 × (ρ × DAP² × H)⁰·⁹⁹⁶</div>
-                    <p class="mt-2 text-sm">Al tratarse de una especie exótica cultivada, los individuos del JBP probablemente se encuentran a pleno sol con manejo antrópico, lo que puede alterar la tasa de crecimiento y densidad respecto a valores asiáticos.</p>
-                    <div class="alometry-box" style="border-left-color:#BA7517; margin-top: 10px;">Carbono (kgC) = AGB × 0.47</div>
-                    <div class="blockquote-pro mt-3">
-                        <p>"Estudios con Syzygium cumini bajo CO₂ elevado demostraron incrementos significativos en biomasa aérea, evidenciando su plasticidad fenotípica frente al cambio climático."</p>
-                        <cite>— Pandey & Bajpai (2021). Environmental and Sustainability Indicators.</cite>
-                    </div>
-                `,
-                calendario: [
-                    { mes: "Dic", fase: "Reposo", clima: "dry" }, { mes: "Ene", fase: "Reposo", clima: "dry" },
-                    { mes: "Feb", fase: "Pre-flor.", clima: "dry" }, { mes: "Mar", fase: "Floración", clima: "trans" },
-                    { mes: "Abr", fase: "Floración", clima: "rain" }, { mes: "May", fase: "Cuajado", clima: "rain" },
-                    { mes: "Jun", fase: "Fructif.", clima: "rain" }, { mes: "Jul", fase: "Madurac.", clima: "rain" },
-                    { mes: "Ago", fase: "Dispers.", clima: "rain" }, { mes: "Sep", fase: "Dispers.", clima: "rain" },
-                    { mes: "Oct", fase: "Rebrote", clima: "rain" }, { mes: "Nov", fase: "Reposo", clima: "dry" }
-                ],
-                morfologia: `
-                    <p><strong>Porte:</strong> Árbol siempreverde, de crecimiento rápido (6–20 m). Puede vivir más de 100 años. Copa globosa, muy ramosa y densa.</p>
-                    <p class="mt-2"><strong>Tallo y corteza:</strong> Tronco robusto, recto o retorcido. Corteza gruesa, castaño o gris oscuro, lisa a escamosa.</p>
-                    <p class="mt-2"><strong>Hojas:</strong> Simples, opuestas, elípticas. Textura coriácea, glabras, con glándulas aromáticas. Hojas jóvenes rojizo-cobrizas.</p>
-                    <p class="mt-2"><strong>Flores:</strong> Pequeñas (5–8 mm), blancas a rosadas, melíferas. Numerosos estambres prominentes (aspecto de borla).</p>
-                    <p class="mt-2"><strong>Frutos:</strong> Bayas ovoides. Coloración progresiva: verde → rosado → rojo-vino → negro-púrpura al madurar. Pulpa dulce-ácido-astringente con antocianinas que tiñen la boca de malva.</p>
-                `,
-                fauna: `
-                    <div class="grid2 mt-3">
-                        <div class="metric-card"><div class="metric-label">Aves frugívoras</div><div class="section-val text-sm mt-2">Loros, pericos, tordos y tucanes consumen activamente los frutos maduros y dispersan las semillas.</div></div>
-                        <div class="metric-card"><div class="metric-label">Insectos polinizadores</div><div class="section-val text-sm mt-2">Flores melíferas que atraen intensamente a abejas nativas, abejorros y mariposas. Árbol apícola.</div></div>
-                        <div class="metric-card"><div class="metric-label">Mamíferos</div><div class="section-val text-sm mt-2">Chigüiros, zorros cangrejeros y murciélagos frugívoros aprovechan los frutos caídos.</div></div>
-                        <div class="metric-card"><div class="metric-label">Nota Ecológica</div><div class="section-val text-sm mt-2">Por ser exótica, puede competir con flora nativa si escapa al cultivo. Reportada como invasora en Brasil y Florida.</div></div>
-                    </div>
-                `,
-                usos: `
-                    <div class="grid2 mt-3">
-                        <div class="metric-card"><div class="metric-label">Medicina Popular</div><div class="section-val text-sm mt-2">Semillas consideradas hipoglucemiantes y antidiabéticas. Extractos usados para trastornos digestivos y asma.</div></div>
-                        <div class="metric-card"><div class="metric-label">Alimentación</div><div class="section-val text-sm mt-2">Fruto consumido fresco, en jugos, jaleas y licores. Rico en vitaminas A, C y hierro.</div></div>
-                        <div class="metric-card"><div class="metric-label">Madera y Carpintería</div><div class="section-val text-sm mt-2">Madera resistente y densa. Históricamente empleada en traviesas de ferrocarril. En Casanare se usa en cercas.</div></div>
-                        <div class="metric-card"><div class="metric-label">Apicultura y Curtiembre</div><div class="section-val text-sm mt-2">Árbol apícola de primera categoría. La corteza provee taninos usados en curtiembre artesanal.</div></div>
-                    </div>
-                `,
-                mensajeIA: "Soy un viajero que llegó muy lejos de casa. Vengo de la India, donde los monsones me hacen crecer junto al río Ganges. Alguien me trajo en un barco hace cientos de años y me quedé en el llano. Cuando mis frutos maduran, tiñen la lengua de lila porque tengo antocianinas, los mismos pigmentos de las moras. Además, mis semillas son medicina: los abuelos de la India las usan para controlar el azúcar en la sangre, ¡y la ciencia lo ha comprobado!",
                 referencias: [
-                    "Bernal, R., et al. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia.",
-                    "Pandey, R., y Bajpai, O. (2021). Impact of nitrogen addition on growth and carbon sequestration potential of Syzygium cumini.",
-                    "Royal Botanic Gardens Kew. (2021). Plants of the World Online — Syzygium cumini."
+                    "Arboleda, J. (2020). Especies introducidas de Casanare.",
+                    "SENA. (2024). Guía de frutales amazónicos y llaneros."
                 ],
                 quiz: [
-                    { q: "¿De dónde es originario el jambolán y cómo llegó a la Orinoquía?", opts: ["Nativo de Brasil", "De India (Introducción humana)", "Nativo del llano"], correct: 1 },
-                    { q: "¿Qué parte del jambolán es especialmente valorada para tratar la diabetes?", opts: ["Raíces", "Flores", "Semillas"], correct: 2 },
-                    { q: "¿Qué hace que los frutos tiñan la lengua de lila?", opts: ["Clorofila", "Un ácido tánico", "Antocianinas"], correct: 2 }
+                    { q: "¿De dónde es originario el jambolán?", opts: ["Brasil", "India", "Maní"], correct: 1 },
+                    { q: "¿Qué parte se usa para tratar la diabetes?", opts: ["Raíces", "Semillas", "Hojas"], correct: 1 },
+                    { q: "¿Qué color tiñe la lengua el fruto?", opts: ["Verde", "Lila/Morado", "Amarillo"], correct: 1 }
                 ]
             }
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        const arbolSeleccionado = urlParams.get('arbol') || 'merecure'; // Prueba con ?arbol=jambolan
+        const arbolSeleccionado = urlParams.get('arbol') || 'merecure';
         const datos = baseDatosArboles[arbolSeleccionado];
 
         if(datos) {
@@ -320,10 +292,8 @@
             document.getElementById('fichaViajes').textContent = datos.viajes;
             document.getElementById('fichaMensajeIA').innerHTML = `"${datos.mensajeIA}"`;
 
-            // Llenar Alerta Exótica
             if(datos.exotica) document.getElementById('alertaExotica').style.display = "flex";
 
-            // Llenar Módulos Dossier
             document.getElementById('dFamilia').textContent = datos.familia;
             document.getElementById('dOrigen').textContent = datos.origen;
             document.getElementById('dEstado').textContent = datos.estado;
@@ -331,35 +301,28 @@
             document.getElementById('dDensidad').textContent = datos.densidad;
             document.getElementById('dFraccion').textContent = datos.fraccion;
             document.getElementById('dAlometria').innerHTML = datos.alometria;
-            
-            // Llenar Morfología y Usos
             document.getElementById('dMorfologia').innerHTML = datos.morfologia;
             document.getElementById('dFauna').innerHTML = datos.fauna;
             document.getElementById('dUsos').innerHTML = datos.usos;
 
-            // Inyectar Tags Locales
             const tagsCont = document.getElementById('dTagsLocales');
             datos.nombresLocales.forEach(nombre => {
                 tagsCont.innerHTML += `<span class="dossier-badge badge-gray">${nombre}</span> `;
             });
 
-            // Inyectar Calendario
             const calCont = document.getElementById('dCalendario');
             datos.calendario.forEach(mes => {
                 calCont.innerHTML += `<div class="cal-month ${mes.clima}"><div class="cal-label">${mes.mes}</div><div class="cal-phase">${mes.fase}</div></div>`;
             });
 
-            // Inyectar Galería
             const galeriaContenedor = document.getElementById('galeriaArbol');
             datos.galeria.forEach(foto => {
                 galeriaContenedor.innerHTML += `<div class="gallery-item" onclick="abrirVisor('${foto.img}', '${foto.desc}')"><img src="${foto.img}"><span class="gallery-label">${foto.desc}</span><div class="gallery-hover-icon"><i class="fas fa-search-plus"></i></div></div>`;
             });
 
-            // Inyectar Referencias
             const listaApa = document.getElementById('listaApa');
             datos.referencias.forEach(ref => { listaApa.innerHTML += `<li>${ref}</li>`; });
 
-            // Inyectar Multi-Quiz
             const quizCont = document.getElementById('quizPreguntasContainer');
             datos.quiz.forEach((preguntaObj, qIndex) => {
                 let htmlOpciones = '';
@@ -376,7 +339,6 @@
             });
         }
 
-        // Lógica Audio, Lightbox, Hojas, Noche
         const btnAudio = document.getElementById('btnAudio');
         btnAudio.addEventListener('click', () => {
             if ('speechSynthesis' in window) {
@@ -406,12 +368,6 @@
                 feedback.innerHTML = '<span style="color:#A32D2D;"><i class="fas fa-times-circle"></i> Respuesta incorrecta.</span>';
             }
         }
-
-        function crearHojas() { const cont = document.getElementById('contenedorHojas'); for(let i=0; i<8; i++) { let h = document.createElement('i'); h.className = 'fas fa-leaf hoja-cayendo'; h.style.left = Math.random()*100+'vw'; h.style.animationDuration = (10+Math.random()*10)+'s'; h.style.animationDelay = Math.random()*5+'s'; cont.appendChild(h); } } crearHojas();
-
-        const themeBtn = document.getElementById('themeToggle'); const themeIcon = themeBtn.querySelector('i'); const body = document.body;
-        function checkTheme() { const saved = localStorage.getItem('ecoTheme'); if(saved === 'dark'){ body.classList.add('modo-noche'); themeIcon.classList.replace('fa-moon','fa-sun'); }else if(saved === 'light'){ body.classList.remove('modo-noche'); themeIcon.classList.replace('fa-sun','fa-moon'); }else{ if(new Date().getHours()>=18 || new Date().getHours()<6){ body.classList.add('modo-noche'); themeIcon.classList.replace('fa-moon','fa-sun'); } } }
-        themeBtn.addEventListener('click', () => { body.classList.toggle('modo-noche'); if(body.classList.contains('modo-noche')){ themeIcon.classList.replace('fa-moon','fa-sun'); localStorage.setItem('ecoTheme','dark'); }else{ themeIcon.classList.replace('fa-sun','fa-moon'); localStorage.setItem('ecoTheme','light'); } }); checkTheme();
     </script>
 </body>
 </html>
