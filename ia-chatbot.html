@@ -156,16 +156,26 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{
-                            parts: [{ text: `Actúa como Silvain AI, un tutor botánico experto del colegio Jesús Bernal Pinzón en Maní, Casanare. Responde de forma amable y educativa sobre temas ambientales y el inventario forestal. Pregunta: ${prompt}` }]
+                            parts: [{ text: `Actúa como Silvain AI, un tutor botánico experto del colegio Jesús Bernal Pinzón en Maní, Casanare. Responde de forma amable y educativa sobre temas ambientales y el inventario forestal. Sé breve pero inspirador. Pregunta: ${prompt}` }]
                         }]
                     })
                 });
 
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error("Error de la API:", errorData);
+                    return `Error (${response.status}): ${errorData.error ? errorData.error.message : 'No se pudo conectar con la IA'}.`;
+                }
+
                 const data = await response.json();
-                return data.candidates[0].content.parts[0].text;
+                if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    return "Recibí una respuesta vacía o inesperada de la IA.";
+                }
             } catch (error) {
-                console.error("Error API:", error);
-                return "Lo siento, hubo un error conectando con mis neuronas artificiales. Revisa tu conexión o la API Key.";
+                console.error("Error de Red/Fetch:", error);
+                return `Error de conexión: ${error.message}. Asegúrate de que tu navegador permita peticiones a Google APIs y que no tengas bloqueadores activados.`;
             }
         }
 
