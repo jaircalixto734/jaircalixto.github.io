@@ -145,38 +145,58 @@
         }
 
         // Lógica para conectar con Gemini API
+        // Lógica para conectar con Gemini API con reintentos en diferentes modelos
         async function getAIResponse(prompt) {
             if (GEMINI_API_KEY.includes("TU_API_KEY")) {
-                return "¡Hola! Para que pueda responderte de verdad, necesitas configurar una API Key de Gemini en el código.";
+                return "¡Hola! Configura tu API Key de Gemini en el código para empezar.";
             }
 
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{ text: `Actúa como Silvain AI, un tutor botánico experto del colegio Jesús Bernal Pinzón en Maní, Casanare. Responde de forma amable y educativa sobre temas ambientales y el inventario forestal. Sé breve pero inspirador. Pregunta: ${prompt}` }]
-                        }]
-                    })
-                });
+            // Lista de modelos a intentar (incluyendo los de tu código Java y experimentales)
+            const models = [
+                "gemini-1.5-flash-latest",
+                "gemini-1.5-flash",
+                "gemini-1.5-pro-latest",
+                "gemini-2.0-flash-exp",
+                "gemini-1.5-flash-8b",
+                "gemini-pro"
+            ];
+            
+            // Intentar con v1 y v1beta
+            const versions = ["v1beta", "v1"];
 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    console.error("Error de la API:", errorData);
-                    return `Error (${response.status}): ${errorData.error ? errorData.error.message : 'No se pudo conectar con la IA'}.`;
-                }
+            for (const ver of versions) {
+                for (const modelName of models) {
+                    try {
+                        console.log(`Intentando con ${modelName} en versión ${ver}...`);
+                        const url = `https://generativelanguage.googleapis.com/${ver}/models/${modelName}:generateContent?key=${GEMINI_API_KEY}`;
+                        
+                        const response = await fetch(url, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                contents: [{
+                                    parts: [{ text: `Actúa como Silvain AI, tutor botánico. Sé breve. Pregunta: ${prompt}` }]
+                                }]
+                            })
+                        });
 
-                const data = await response.json();
-                if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
-                    return data.candidates[0].content.parts[0].text;
-                } else {
-                    return "Recibí una respuesta vacía o inesperada de la IA.";
+                        if (response.ok) {
+                            const data = await response.json();
+                            if (data.candidates && data.candidates[0].content) {
+                                console.log(`¡Éxito con ${modelName}!`);
+                                return data.candidates[0].content.parts[0].text;
+                            }
+                        } else {
+                            const err = await response.json();
+                            console.warn(`Falló ${modelName}:`, err.error ? err.error.message : response.status);
+                        }
+                    } catch (e) {
+                        console.error(`Error de red con ${modelName}:`, e);
+                    }
                 }
-            } catch (error) {
-                console.error("Error de Red/Fetch:", error);
-                return `Error de conexión: ${error.message}. Asegúrate de que tu navegador permita peticiones a Google APIs y que no tengas bloqueadores activados.`;
             }
+
+            return "Lo siento, no pude conectar con ningún modelo de Gemini. Verifica que tu API Key sea correcta y que tengas activada la 'Generative Language API' en Google AI Studio.";
         }
 
         async function handleSendMessage() {
