@@ -175,11 +175,6 @@
 </footer>
 
 
-    <!-- Botón Flotante de Tema -->
-    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
-        <i class="fas fa-moon"></i>
-    </button>
-
     <!-- SCRIPT: Lógica de la calculadora y Menú -->
     <script>
         // Menú Móvil
@@ -215,69 +210,17 @@
                 
                 setTimeout(() => {
                     document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-calculator"></i> Calcular Nuevo Impacto';
-<!-- Botón Flotante de Tema -->
-<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
-    <i class="fas fa-moon"></i>
-</button>
+                }, 2000);
+            }, 1500);
+        });
+    </script>
 
-<!-- Lógica Global -->
-<script src="js/main.js"></script>
+    <!-- Botón Flotante de Tema -->
+    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+        <i class="fas fa-moon"></i>
+    </button>
 
-<script>
-    // Lógica de la calculadora
-    document.getElementById('biomassForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const dap = parseFloat(document.getElementById('dap').value);
-        const altura = parseFloat(document.getElementById('height').value);
-        
-        if (isNaN(dap) || isNaN(altura)) return;
-
-        // Fórmula simplificada para demostración escolar
-        // Biomasa = 0.1 * (DAP^2) * Altura * DensidadMadera(0.6)
-        const biomasaKg = (0.1 * Math.pow(dap, 2) * altura * 0.6).toFixed(2);
-        const carbonoKg = (biomasaKg * 0.5).toFixed(2); // El 50% de la biomasa es carbono
-        const co2Kg = (carbonoKg * 3.67).toFixed(2); // 1kg Carbono = 3.67kg CO2
-
-        // Animación de los números
-        animateValue("carbonoValue", 0, co2Kg, 1500);
-        
-        // Equivalencias
-        document.getElementById('equivAuto').innerText = (co2Kg / 0.2).toFixed(1) + " km";
-        document.getElementById('equivOxigeno').innerText = (co2Kg * 0.7).toFixed(1) + " días";
-        document.getElementById('equivBombillo').innerText = (co2Kg * 24).toFixed(0) + " hrs";
-    });
-
-    function animateValue(id, start, end, duration) {
-        const obj = document.getElementById(id);
-        const range = end - start;
-        const minTimer = 50;
-        let stepTime = Math.abs(Math.floor(duration / range));
-        stepTime = Math.max(stepTime, minTimer);
-        const startTime = new Date().getTime();
-        const endTime = startTime + duration;
-        let timer;
-
-        function run() {
-            const now = new Date().getTime();
-            const remaining = Math.max((endTime - now) / duration, 0);
-            const value = Math.round(end - (remaining * range));
-            obj.innerText = value;
-            if (value == end) {
-                clearInterval(timer);
-            }
-        }
-
-        timer = setInterval(run, stepTime);
-        run();
-    }
-</script>
-<!-- Botón Flotante de Tema -->
-<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
-    <i class="fas fa-moon"></i>
-</button>
-
-<!-- Lógica Global -->
-<script src="js/main.js"></script>
+    <!-- Lógica Global -->
+    <script src="js/main.js"></script>
 </body>
 </html>

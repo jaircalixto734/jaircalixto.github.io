@@ -1,14 +1,390 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ficha Técnica Botánica - Información detallada sobre las especies arbóreas de la IE Jesús Bernal Pinzón.">
-    <title>Ficha Técnica - EcoDigital</title>
+    <meta name="description"
+        content="Dossier Botánico Profesional - Información técnica y pedagógica de la flora institucional.">
+    <title>Dossier Botánico - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para el Dossier Premium */
+        :root {
+            --m1-color: #f39c12; /* Taxonomía - Amber */
+            --m2-color: #16a085; /* Biometría - Teal */
+            --m3-color: #8e44ad; /* Morfología - Indigo */
+            --m4-color: #27ae60; /* Etnobotánica - Emerald */
+            --quiz-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .dossier-module {
+            background: var(--card-bg);
+            border-radius: 25px;
+            margin-bottom: 50px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border-left: 8px solid var(--m1-color);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .dossier-module.m1 { border-left-color: var(--m1-color); }
+        .dossier-module.m2 { border-left-color: var(--m2-color); }
+        .dossier-module.m3 { border-left-color: var(--m3-color); }
+        .dossier-module.m4 { border-left-color: var(--m4-color); }
+
+        .module-header-pro {
+            padding: 25px 35px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(0,0,0,0.02);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .module-header-pro i {
+            font-size: 2rem;
+            color: var(--m1-color);
+        }
+        .m2 .module-header-pro i { color: var(--m2-color); }
+        .m3 .module-header-pro i { color: var(--m3-color); }
+        .m4 .module-header-pro i { color: var(--m4-color); }
+
+        .module-title-pro {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        .module-body-pro {
+            padding: 40px;
+        }
+
+        /* Silvain AI Box */
+        .sylvain-chat-box {
+            background: linear-gradient(135deg, #0d140d 0%, #1a3318 100%);
+            color: #fff;
+            border-radius: 30px;
+            padding: 40px;
+            position: relative;
+            margin-bottom: 50px;
+            border: 2px solid var(--primary-light);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .sylvain-chat-box::before {
+            content: "\f086";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: -25px;
+            left: 40px;
+            background: var(--primary-light);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 20px rgba(129, 182, 34, 0.4);
+        }
+
+        .sylvain-chat-box h4 {
+            color: var(--primary-vibrant);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sylvain-chat-text {
+            line-height: 1.9;
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        /* Quiz Premium */
+        .quiz-premium-container {
+            background: var(--quiz-bg);
+            color: #fff;
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 30px 60px rgba(30, 60, 114, 0.4);
+        }
+
+        .quiz-card-pro {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .quiz-opt-pro {
+            background: rgba(255,255,255,0.04);
+            padding: 18px 25px;
+            border-radius: 15px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quiz-opt-pro:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .quiz-opt-pro.correct-choice {
+            background: #27ae60 !important;
+            border-color: #2ecc71;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .quiz-opt-pro.wrong-choice {
+            background: #c0392b !important;
+            border-color: #e74c3c;
+        }
+
+        /* General Layout */
+        .premium-layout {
+            max-width: 1050px;
+            margin: -100px auto 80px;
+            padding: 0 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Ajustes Dark Mode */
+        .dark-mode .dossier-module {
+            background: #0d140d;
+            border-color: rgba(255,255,255,0.05);
+        }
+
+        .dark-mode .module-header-pro { background: rgba(255,255,255,0.02); }
+
+        .exotic-banner-pro {
+            background: #fff3cd;
+            color: #856404;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border-left: 8px solid #ffc107;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .dark-mode .exotic-banner-pro { background: #2c2512; color: #ffe082; border-color: #ffc107; }
+
+        /* Calendario Moderno (Estilo Imagen - Refinado) */
+        .calendar-container-pro {
+            background: #0d1a0e; /* Verde muy oscuro como en la imagen */
+            border-radius: 20px;
+            padding: 35px;
+            margin-top: 25px;
+            border: 1px solid rgba(45, 90, 39, 0.4);
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .calendar-title-pro {
+            color: #d4ff80;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(212, 255, 128, 0.1);
+        }
+
+        .calendar-grid-pro {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 900px) {
+            .calendar-grid-pro { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .calendar-grid-pro { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .month-card-pro {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 14px;
+            padding: 20px 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .month-card-pro:hover { 
+            transform: translateY(-8px); 
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .m-name-pro {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .m-fase-pro {
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Colores EXACTOS de la imagen */
+        .cal-dry .m-name-pro, .cal-dry .m-fase-pro { color: #f39c12; } /* Ambar / Seco */
+        .cal-rain .m-name-pro, .cal-rain .m-fase-pro { color: #2ecc71; } /* Verde / Lluvia */
+        .cal-trans .m-name-pro, .cal-trans .m-fase-pro { color: #f1c40f; } /* Amarillo / Transición */
+
+        /* Referencias Accordion Ultra Premium */
+        .ref-accordion {
+            background: var(--card-bg);
+            border-radius: 25px;
+            margin-bottom: 80px;
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .ref-summary {
+            padding: 30px 40px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(129, 182, 34, 0.05) 100%);
+            cursor: pointer;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            outline: none;
+        }
+
+        .ref-summary i.fa-chevron-down {
+            transition: transform 0.4s ease;
+            color: var(--primary-light);
+        }
+
+        .ref-accordion[open] .ref-summary i.fa-chevron-down { transform: rotate(180deg); }
+
+        .lista-apa { list-style: none; padding: 40px; display: flex; flex-direction: column; gap: 20px; }
+
+        .lista-apa li {
+            position: relative;
+            padding: 20px 25px 20px 60px;
+            background: rgba(0,0,0,0.02);
+            border-radius: 15px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .dark-mode .lista-apa li { background: rgba(255,255,255,0.03); }
+
+        .lista-apa li:hover {
+            background: rgba(129, 182, 34, 0.08);
+            border-color: var(--primary-light);
+            transform: scale(1.02);
+        }
+
+        .lista-apa li::before {
+            content: "\f5da"; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-light);
+            font-size: 1.4rem;
+        }
+
+        /* Legibilidad y Colores Universales */
+        .section-label {
+            color: #81b622;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-label::after {
+            content: '';
+            height: 2px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, rgba(129,182,34,0.3), transparent);
+            margin-left: 10px;
+        }
+
+        .section-val { color: var(--text-main); line-height: 1.8; font-size: 1.05rem; }
+        .dark-mode .section-val { color: #e0e0e0; }
+
+        .metric-card {
+            background: rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .dark-mode .metric-card { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); }
+
+        .metric-label { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); margin-bottom: 5px; }
+        .metric-val { font-size: 1.4rem; font-weight: 800; color: var(--secondary-color); }
+        .dark-mode .metric-val { color: var(--primary-vibrant); }
+
+        .badge-estado { background: var(--secondary-color); color: var(--primary-vibrant); padding: 8px 16px; border-radius: 10px; font-weight: 800; }
+        .badge-tipo { background: rgba(129, 182, 34, 0.1); color: var(--primary-light); border: 1px solid var(--primary-light); padding: 8px 16px; border-radius: 10px; font-weight: 800; }
+
+        .dark-mode .badge-tipo { background: rgba(129, 182, 34, 0.2); color: var(--primary-vibrant); }
+
+        .warn-box {
+            background: rgba(243, 156, 18, 0.08);
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            color: var(--text-main);
+            padding: 25px;
+            border-radius: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .warn-box i { font-size: 1.8rem; color: #f39c12; }
+    </style>
 </head>
+
 <body class="ficha-body">
 
     <!-- Botón Volver -->
@@ -22,267 +398,202 @@
     </header>
 
     <main class="premium-layout">
-        <!-- ENCABEZADO PRO -->
+        
+        <!-- ENCABEZADO PRINCIPAL -->
         <div class="ficha-header-pro">
-            <div class="ficha-titles">
-                <div class="id-wrapper">
-                    <span class="badge-estado" id="fichaId">ID-00</span>
-                    <span class="badge-tipo" id="fichaTipo">Nativo</span>
+            <div class="header-logo-container" style="display: flex; align-items: center; gap: 20px;">
+                <img src="./imagenes/logojbp1.png" alt="Logo JBP" style="height: 80px; width: auto; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));">
+                <div class="ficha-titles">
+                    <div class="id-wrapper">
+                        <span class="badge-estado" id="fichaId">#JBP-00</span>
+                        <span class="badge-tipo" id="fichaTipo"><i class="fas fa-tree"></i> Cargando...</span>
+                    </div>
+                    <h1 id="fichaNombreComun">Cargando Nombre...</h1>
+                    <h3 id="fichaCientifico">Cargando nombre científico...</h3>
                 </div>
-                <h1 id="fichaNombreComun">Cargando...</h1>
-                <h3 id="fichaCientifico">Nombre científico</h3>
             </div>
-            <button class="btn-audio-pro" id="btnAudio" title="Escuchar descripción">
+            <button class="btn-audio-pro" id="btnAudio" title="Escuchar a Silvain">
                 <i class="fas fa-volume-up"></i>
             </button>
         </div>
 
-        <!-- MODO DOSSIER (Información Rápida) -->
-        <div class="dossier-module amber">
-            <div class="module-header amber">
-                <i class="fas fa-dna"></i>
-                <span class="module-title">Clasificación y Origen</span>
+        <!-- SECCIÓN 1: SILVAIN HABLA -->
+        <div class="sylvain-chat-box">
+            <h4><i class="fas fa-robot"></i> SILVAIN habla — para estudiantes</h4>
+            <div class="sylvain-chat-text" id="fichaMensajeIA">
+                "Hola, soy Silvain. Estoy analizando los datos de este ejemplar para contarte su historia..."
             </div>
-            <div class="module-body">
+        </div>
+
+        <!-- SECCIÓN 2: GALERÍA FOTOGRÁFICA -->
+        <h4 class="section-title-pro"><i class="fas fa-images"></i> Galería Fotográfica del Árbol</h4>
+        <div class="gallery-scroll-container" id="galeriaArbol" style="margin-bottom: 40px;">
+            <!-- Renderizado Dinámico -->
+        </div>
+
+        <!-- MÓDULO 1: TAXONOMÍA Y CONSERVACIÓN -->
+        <div class="dossier-module m1">
+            <div class="module-header-pro">
+                <i class="fas fa-dna"></i>
+                <span class="module-title-pro">Módulo 1: Taxonomía y Conservación</span>
+            </div>
+            <div class="module-body-pro">
                 <div class="grid3">
                     <div class="metric-card">
                         <div class="metric-label">Familia</div>
-                        <div class="metric-val amber" id="dFamilia">-</div>
+                        <div class="metric-val" id="dFamilia">-</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Origen</div>
-                        <div class="metric-val amber" id="dOrigen">-</div>
+                        <div class="metric-val" id="dOrigen">-</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Estado</div>
-                        <div class="metric-val amber" id="dEstado">-</div>
+                        <div class="metric-val" id="dEstado">-</div>
                     </div>
                 </div>
-                <div class="mt-3">
-                    <div class="section-label">Distribución Geográfica</div>
-                    <div class="section-val" id="dDistribucion">-</div>
+                <div class="mt-4">
+                    <div class="section-label">Distribución y Nomenclatura</div>
+                    <div class="section-val" id="dDistribucion">Cargando datos taxonómicos...</div>
+                </div>
+                <div class="mt-4">
+                    <div class="section-label">Nombres Locales (Casanare)</div>
+                    <div id="dTagsLocales" class="mt-2"></div>
                 </div>
             </div>
         </div>
 
-        <!-- ALERTA EXÓTICA (Solo si aplica) -->
-        <div id="alertaExotica" class="exotic-banner" style="display: none;">
-            <i class="fas fa-exclamation-triangle"></i>
+        <!-- ALERTA EXÓTICA -->
+        <div id="alertaExotica" class="exotic-banner-pro" style="display: none;">
+            <i class="fas fa-exclamation-triangle" style="font-size: 2rem;"></i>
             <div>
-                <strong>Especie Introducida / Exótica:</strong>
-                Esta especie no es nativa de la región. Su manejo requiere monitoreo para evitar desplazamientos de flora local.
+                <strong>⚠️ Especie Introducida / Exótica:</strong>
+                Este árbol no es originario de Colombia. Su presencia se debe a la introducción humana para fines ornamentales o productivos.
             </div>
         </div>
 
-        <!-- MODO CIENTÍFICO (Carbono y Alometría) -->
-        <div class="dossier-module teal">
-            <div class="module-header teal">
-                <i class="fas fa-microscope"></i>
-                <span class="module-title">Datos Biométricos y Carbono</span>
+        <!-- MÓDULO 2: BIOMETRÍA Y ALOMETRÍA -->
+        <div class="dossier-module m2">
+            <div class="module-header-pro">
+                <i class="fas fa-calculator"></i>
+                <span class="module-title-pro">Módulo 2: Biometría y Alometría</span>
             </div>
-            <div class="module-body">
+            <div class="module-body-pro">
                 <div class="grid2">
                     <div class="metric-card">
-                        <div class="metric-label">Densidad Madera</div>
-                        <div class="metric-val teal" id="dDensidad">-</div>
+                        <div class="metric-label">Densidad Básica</div>
+                        <div class="metric-val" id="dDensidad">-</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-label">Fracción Carbono</div>
-                        <div class="metric-val teal" id="dFraccion">0.5</div>
+                        <div class="metric-label">Fracción de Carbono</div>
+                        <div class="metric-val" id="dFraccion">-</div>
                     </div>
                 </div>
-                <div class="mt-3">
-                    <div class="section-label">Ecuación Alométrica (IPCC)</div>
-                    <div class="alometry-box" id="dAlometria">-</div>
+                <div class="mt-4">
+                    <div class="section-label">Motor de Cálculo de Carbono</div>
+                    <div class="alometry-box" id="dAlometria" style="font-family: 'Courier New', monospace; background: #000; color: #0f0; padding: 20px; border-radius: 10px;">
+                        Cargando ecuación científica...
+                    </div>
                 </div>
-                
-                <!-- Tarjeta Carbono Pro -->
                 <div class="ficha-carbono-pro mt-4">
                     <div class="carbono-pro-bg"></div>
                     <div class="carbono-pro-content">
-                        <span class="c-header">Carbono Almacenado</span>
+                        <span class="c-header">Carbono Total Secuestrado</span>
                         <div class="c-data">
                             <div class="c-number"><span id="fichaCarbono">0</span><small>kg</small></div>
                             <div class="c-divider"></div>
-                            <div class="c-text">
-                                Equivale a retirar <strong><span id="fichaViajes">0</span> viajes</strong> de un auto promedio.
-                            </div>
+                            <div class="c-text">Equivale a retirar <strong><span id="fichaViajes">0</span> viajes</strong> de un vehículo promedio.</div>
                         </div>
-                        <a href="calculadora.html" class="btn-calc-pro">Ver Calculadora</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- MENSAJE DE SILVAIN IA -->
-        <div class="sylvain-dossier-box">
-            <div class="sylvain-name"><i class="fas fa-robot"></i> Silvain AI - Tutor Botánico</div>
-            <div class="sylvain-text" id="fichaMensajeIA">"Analizando datos del ecosistema..."</div>
-        </div>
-
-        <!-- ACORDEONES DE DETALLES -->
-        <div class="acordeon-container">
-            <details class="acordeon-pro">
-                <summary>
-                    <span><i class="fas fa-leaf"></i> Morfología Detallada</span>
-                    <i class="fas fa-chevron-down flecha"></i>
-                </summary>
-                <div class="acordeon-content" id="dMorfologia">-</div>
-            </details>
-            
-            <details class="acordeon-pro">
-                <summary>
-                    <span><i class="fas fa-dove"></i> Interacción con Fauna</span>
-                    <i class="fas fa-chevron-down flecha"></i>
-                </summary>
-                <div class="acordeon-content" id="dFauna">-</div>
-            </details>
-
-            <details class="acordeon-pro">
-                <summary>
-                    <span><i class="fas fa-hands-helping"></i> Usos Etnobotánicos</span>
-                    <i class="fas fa-chevron-down flecha"></i>
-                </summary>
-                <div class="acordeon-content" id="dUsos">-</div>
-            </details>
-        </div>
-
-        <!-- CALENDARIO FENOLÓGICO -->
-        <div class="dossier-module coral">
-            <div class="module-header coral">
-                <i class="fas fa-calendar-alt"></i>
-                <span class="module-title">Calendario Fenológico Local</span>
+        <!-- MÓDULO 3: MORFOLOGÍA Y CALENDARIO FENOLÓGICO -->
+        <div class="dossier-module m3">
+            <div class="module-header-pro">
+                <i class="fas fa-leaf"></i>
+                <span class="module-title-pro">Módulo 3: Morfología y Calendario Fenológico</span>
             </div>
-            <div class="module-body">
-                <div class="calendar" id="dCalendario">
-                    <!-- Dinámico -->
+            <div class="module-body-pro">
+                <div class="section-label">Descripción Organográfica</div>
+                <div class="section-val" id="dMorfologia" style="margin-bottom: 30px;">Cargando morfología...</div>
+                
+                <div class="section-label">Ciclo Fenológico Local (Maní, Casanare)</div>
+                <div class="calendar-container-pro">
+                    <div class="calendar-title-pro">Calendario Anual (Maní, Casanare)</div>
+                    <div class="calendar-grid-pro" id="dCalendario">
+                        <!-- Renderizado dinámico -->
+                    </div>
                 </div>
-                <div class="warn-box">
-                    <i class="fas fa-info-circle"></i> Los periodos pueden variar según las lluvias anuales en Casanare.
+                <div class="warn-box mt-3">
+                    <i class="fas fa-info-circle"></i> Los ciclos pueden variar según el régimen hídrico anual.
                 </div>
             </div>
         </div>
 
-        <!-- GALERÍA PREMIUM -->
-        <h4 class="section-title-pro">Galería Fotográfica</h4>
-        <div class="gallery-scroll-container" id="galeriaArbol">
-            <!-- Dinámico -->
+        <!-- MÓDULO 4: FAUNA ASOCIADA Y ETNOBOTÁNICA LLANERA -->
+        <div class="dossier-module m4">
+            <div class="module-header-pro">
+                <i class="fas fa-horse"></i>
+                <span class="module-title-pro">Módulo 4: Fauna Asociada y Etnobotánica</span>
+            </div>
+            <div class="module-body-pro">
+                <div class="section-label">Interacciones con la Fauna Local</div>
+                <div id="dFauna" class="mt-2">Cargando fauna...</div>
+
+                <div class="section-label mt-4">Usos Tradicionales y Etnobotánica</div>
+                <div id="dUsos" class="mt-2">Cargando usos...</div>
+            </div>
         </div>
 
-        <!-- QUIZ MULTINIVEL -->
-        <div class="dossier-module blue">
-            <div class="module-header blue">
-                <i class="fas fa-gamepad"></i>
-                <span class="module-title">Trivia Botánica</span>
+        <!-- RETO DE CONOCIMIENTO INTERACTIVO -->
+        <div class="quiz-premium-container">
+            <div class="quiz-title-pro">
+                <i class="fas fa-trophy" style="font-size: 3rem; color: #f1c40f; margin-bottom: 10px;"></i>
+                <h2>Reto de Conocimiento Botánico</h2>
+                <p>Pon a prueba lo aprendido en este dossier</p>
             </div>
-            <div class="module-body" id="quizPreguntasContainer">
+            <div id="quizPreguntasContainer">
                 <!-- Preguntas Dinámicas -->
             </div>
         </div>
 
-        <!-- BIBLIOGRAFÍA APA -->
-        <h4 class="section-title-pro mt-4">Referencias Bibliográficas</h4>
-        <div class="dato-card-pro">
-            <ul class="lista-apa" id="listaApa">
-                <!-- Dinámico -->
-            </ul>
-        </div>
+        <!-- REFERENCIAS APA 7 (ACCORDEON) -->
+        <details class="ref-accordion">
+            <summary class="ref-summary">
+                <span><i class="fas fa-book"></i> Referencias Bibliográficas (APA 7)</span>
+                <i class="fas fa-chevron-down"></i>
+            </summary>
+            <div style="padding: 30px;">
+                <ul class="lista-apa" id="listaApa">
+                    <!-- Dinámico -->
+                </ul>
+            </div>
+        </details>
 
     </main>
 
-    <!-- VISOR DE IMÁGENES (Lightbox) -->
+    <!-- VISOR DE IMÁGENES -->
     <div id="visorImagenes" class="modal-visor">
         <span class="cerrar-visor" id="cerrarVisor">&times;</span>
         <img class="modal-contenido" id="imgVisorAmpliada">
         <div class="modal-texto" id="textoVisor"></div>
     </div>
 
-    <!-- Botón Flotante de Tema -->
-    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <!-- Botón de Modo Noche -->
+    <button class="theme-toggle-btn" id="themeToggle" style="bottom: 20px; right: 20px;">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Lógica Global -->
-    <script src="js/main.js"></script>
-
+    <script src="js/datos_arboles.js"></script>
     <script>
-        // BASE DE DATOS LOCAL
-        const baseDatosArboles = {
-            merecure: {
-                id: "ARB-01", tipo: "Nativo", nombre: "Merecure", cientifico: "Licania pyrifolia", 
-                carbono: "45.2", viajes: "320", familia: "Chrysobalanaceae", origen: "Cuenca del Orinoco", 
-                estado: "Estable", imagen_portada: "./imagenes/foto1.jpeg", mensajeIA: "¡Hola! Soy Silvain. El Merecure es un árbol emblemático de nuestros llanos. Su madera es densa y sus frutos alimentan a gran parte de la fauna local. ¿Sabías que su nombre viene de lenguas indígenas?",
-                distribucion: "Se encuentra principalmente en zonas de sabana y bosques de galería de Casanare, Meta y Vichada.",
-                densidad: "0.85 g/cm³ (Muy alta)", fraccion: "0.48", 
-                alometria: "B = exp(-2.187 + 0.916 * ln(D²H))",
-                morfologia: "Árbol de copa redondeada y densa. Hojas coriáceas de color verde oscuro brillante. Corteza fisurada grisácea.",
-                fauna: "Sus frutos son consumidos por venados, chigüiros y diversas aves llaneras.",
-                usos: "Madera para postes de cerca y construcción rural. Fruto comestible (aunque de pulpa escasa).",
-                nombresLocales: ["Merecure de cerro", "Hierrito"],
-                calendario: [
-                    { mes: "ENE", fase: "Floración", clima: "dry" },
-                    { mes: "FEB", fase: "Fructificación", clima: "dry" },
-                    { mes: "MAR", fase: "Fructificación", clima: "dry" },
-                    { mes: "ABR", fase: "Crecimiento", clima: "rain" },
-                    { mes: "MAY", fase: "Crecimiento", clima: "rain" },
-                    { mes: "JUN", fase: "Crecimiento", clima: "rain" }
-                ],
-                galeria: [
-                    { img: "./imagenes/foto1.jpeg", desc: "Porte del árbol adulto" },
-                    { img: "./imagenes/servicios ecosistemicos2.png", desc: "Detalle de la hoja" },
-                    { img: "./imagenes/foto2.jpeg", desc: "Corteza característica" }
-                ],
-                referencias: [
-                    "Bernal, R. (2016). Diccionario de nombres comunes de las plantas de Colombia.",
-                    "Pérez Arbeláez, E. (1978). Plantas útiles de Colombia."
-                ],
-                quiz: [
-                    { q: "¿A qué familia botánica pertenece el Merecure?", opts: ["Fabaceae", "Chrysobalanaceae", "Moraceae"], correct: 1 },
-                    { q: "¿Cuál es la densidad de su madera?", opts: ["Baja", "Media", "Muy Alta"], correct: 2 },
-                    { q: "¿Qué animal llanero consume sus frutos?", opts: ["Oso Polar", "Venado", "Pingüino"], correct: 1 }
-                ]
-            },
-            jambolan: {
-                id: "ARB-05", tipo: "Introducido", exotica: true, nombre: "Jambolán", cientifico: "Syzygium cumini",
-                carbono: "28.5", viajes: "150", familia: "Myrtaceae", origen: "Sudeste Asiático (India)", 
-                estado: "Adaptado", imagen_portada: "./imagenes/foto2.jpeg", mensajeIA: "Soy Silvain. El Jambolán es un viajero del mundo. Sus frutos morados son deliciosos y muy nutritivos, pero recuerda que es una especie introducida que debemos manejar con cuidado.",
-                distribucion: "Cultivado en patios y zonas urbanas de toda la Orinoquía colombiana por su sombra y fruto.",
-                densidad: "0.65 g/cm³ (Media)", fraccion: "0.47",
-                alometria: "B = 0.12 * D^2.4 * H",
-                morfologia: "Copa globosa y perennifolia. Hojas opuestas, elípticas y fragantes al estrujarse. Frutos en bayas púrpuras.",
-                fauna: "Muy atractivo para murciélagos fruteros y aves urbanas como las mirlas.",
-                usos: "Fruto comestible, elaboración de vinos, medicinal para control de azúcar en la sangre.",
-                nombresLocales: ["Uva llanera", "Aceituno"],
-                calendario: [
-                    { mes: "JUL", fase: "Floración", clima: "rain" },
-                    { mes: "AGO", fase: "Fructificación", clima: "rain" },
-                    { mes: "SEP", fase: "Fructificación", clima: "rain" },
-                    { mes: "OCT", fase: "Crecimiento", clima: "rain" },
-                    { mes: "NOV", fase: "Crecimiento", clima: "trans" },
-                    { mes: "DIC", fase: "Reposo", clima: "dry" }
-                ],
-                galeria: [
-                    { img: "./imagenes/foto2.jpeg", desc: "Frutos maduros" },
-                    { img: "./imagenes/colegio2.jpeg", desc: "Árbol en el patio central" }
-                ],
-                referencias: [
-                    "Arboleda, J. (2020). Especies introducidas de Casanare.",
-                    "SENA. (2024). Guía de frutales amazónicos y llaneros."
-                ],
-                quiz: [
-                    { q: "¿De dónde es originario el jambolán?", opts: ["Brasil", "India", "Maní"], correct: 1 },
-                    { q: "¿Qué parte se usa para tratar la diabetes?", opts: ["Raíces", "Semillas", "Hojas"], correct: 1 },
-                    { q: "¿Qué color tiñe la lengua el fruto?", opts: ["Verde", "Lila/Morado", "Amarillo"], correct: 1 }
-                ]
-            }
-        };
-
         const urlParams = new URLSearchParams(window.location.search);
         const arbolSeleccionado = urlParams.get('arbol') || 'merecure';
         const datos = baseDatosArboles[arbolSeleccionado];
 
         if(datos) {
-            document.title = `${datos.nombre} - EcoDigital`;
+            document.title = `${datos.nombre} - Dossier EcoDigital`;
             document.getElementById('fichaId').textContent = datos.id;
             document.getElementById('fichaTipo').innerHTML = `<i class="fas fa-tree"></i> ${datos.tipo}`;
             document.getElementById('fichaNombreComun').textContent = datos.nombre;
@@ -307,67 +618,94 @@
 
             const tagsCont = document.getElementById('dTagsLocales');
             datos.nombresLocales.forEach(nombre => {
-                tagsCont.innerHTML += `<span class="dossier-badge badge-gray">${nombre}</span> `;
+                tagsCont.innerHTML += `<span class="badge-estado" style="margin-right:5px; font-size:0.8rem; border:1px solid var(--border-color);">${nombre}</span> `;
             });
 
             const calCont = document.getElementById('dCalendario');
-            datos.calendario.forEach(mes => {
-                calCont.innerHTML += `<div class="cal-month ${mes.clima}"><div class="cal-label">${mes.mes}</div><div class="cal-phase">${mes.fase}</div></div>`;
+            datos.calendario.forEach(cal => {
+                const mesDiv = document.createElement('div');
+                mesDiv.className = `month-card-pro ${cal.clima === 'dry' ? 'cal-dry' : cal.clima === 'rain' ? 'cal-rain' : 'cal-trans'}`;
+                mesDiv.innerHTML = `<span class="m-name-pro">${cal.mes}</span><span class="m-fase-pro">${cal.fase}</span>`;
+                calCont.appendChild(mesDiv);
             });
 
             const galeriaContenedor = document.getElementById('galeriaArbol');
             datos.galeria.forEach(foto => {
-                galeriaContenedor.innerHTML += `<div class="gallery-item" onclick="abrirVisor('${foto.img}', '${foto.desc}')"><img src="${foto.img}"><span class="gallery-label">${foto.desc}</span><div class="gallery-hover-icon"><i class="fas fa-search-plus"></i></div></div>`;
+                galeriaContenedor.innerHTML += `
+                    <div class="gallery-item" onclick="abrirVisor('${foto.img}', '${foto.desc}')">
+                        <img src="${foto.img}">
+                        <span class="gallery-label">${foto.desc}</span>
+                    </div>`;
             });
 
             const listaApa = document.getElementById('listaApa');
-            datos.referencias.forEach(ref => { listaApa.innerHTML += `<li>${ref}</li>`; });
+            datos.referencias.forEach(ref => { listaApa.innerHTML += `<li style="margin-bottom:10px;">${ref}</li>`; });
 
             const quizCont = document.getElementById('quizPreguntasContainer');
-            datos.quiz.forEach((preguntaObj, qIndex) => {
-                let htmlOpciones = '';
-                preguntaObj.opts.forEach((opcion, oIndex) => {
-                    htmlOpciones += `<div class="quiz-opt" onclick="resolverQuizMulti(${qIndex}, ${oIndex}, ${preguntaObj.correct}, this)">${opcion}</div>`;
+            datos.quiz.forEach((p, qIdx) => {
+                let htmlOpts = '';
+                p.opts.forEach((opt, oIdx) => {
+                    htmlOpts += `<div class="quiz-opt-pro" onclick="resolverQuizPremium(${qIdx}, ${oIdx}, ${p.correct}, this)">
+                                    <span class="opt-letter" style="font-weight:800; opacity:0.5;">${String.fromCharCode(65+oIdx)}.</span>
+                                    <span>${opt}</span>
+                                 </div>`;
                 });
                 quizCont.innerHTML += `
-                    <div class="quiz-q">
-                        <p>${qIndex + 1}. ${preguntaObj.q}</p>
-                        ${htmlOpciones}
-                        <div id="feedback-q${qIndex}" class="mt-2 text-sm font-bold"></div>
-                    </div>
-                `;
+                    <div class="quiz-card-pro">
+                        <p style="font-weight:700; margin-bottom:15px; font-size:1.1rem;">${qIdx + 1}. ${p.q}</p>
+                        ${htmlOpts}
+                        <div id="fb-q${qIdx}" class="mt-3" style="font-weight:600;"></div>
+                    </div>`;
+            });
+
+            const btnAudio = document.getElementById('btnAudio');
+            btnAudio.addEventListener('click', () => {
+                if ('speechSynthesis' in window) {
+                    const loc = new SpeechSynthesisUtterance(datos.mensajeIA); loc.lang = 'es-CO';
+                    window.speechSynthesis.speak(loc); btnAudio.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    loc.onend = () => btnAudio.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }
             });
         }
 
-        const btnAudio = document.getElementById('btnAudio');
-        btnAudio.addEventListener('click', () => {
-            if ('speechSynthesis' in window) {
-                const locutor = new SpeechSynthesisUtterance(datos.mensajeIA); locutor.lang = 'es-CO';
-                window.speechSynthesis.speak(locutor); btnAudio.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-                locutor.onend = () => { btnAudio.innerHTML = '<i class="fas fa-volume-up"></i>'; };
-            }
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         });
 
-        const visor = document.getElementById('visorImagenes'); const imgAmpliada = document.getElementById('imgVisorAmpliada'); const textoVisor = document.getElementById('textoVisor');
-        function abrirVisor(ruta, desc) { visor.style.display = "flex"; setTimeout(() => { visor.style.opacity = "1"; imgAmpliada.style.transform = "scale(1)"; }, 10); imgAmpliada.src = ruta; textoVisor.textContent = desc; }
-        function cerrarVisorF() { visor.style.opacity = "0"; imgAmpliada.style.transform = "scale(0.8)"; setTimeout(() => { visor.style.display = "none"; }, 400); }
-        document.getElementById('cerrarVisor').onclick = cerrarVisorF; visor.onclick = e => { if(e.target === visor) cerrarVisorF(); };
+        const visor = document.getElementById('visorImagenes');
+        const imgVisor = document.getElementById('imgVisorAmpliada');
+        const txtVisor = document.getElementById('textoVisor');
+        function abrirVisor(src, txt) { 
+            visor.style.display = "flex"; 
+            imgVisor.src = src; 
+            txtVisor.textContent = txt; 
+            setTimeout(() => visor.style.opacity = "1", 10);
+        }
+        document.getElementById('cerrarVisor').onclick = () => {
+            visor.style.opacity = "0";
+            setTimeout(() => visor.style.display = "none", 300);
+        };
 
-        function resolverQuizMulti(qIndex, oIndex, correctIndex, elemento) {
-            const container = elemento.parentElement;
-            if(container.getAttribute('data-answered') === 'true') return;
-            container.setAttribute('data-answered', 'true');
-            const opciones = container.querySelectorAll('.quiz-opt');
-            const feedback = document.getElementById(`feedback-q${qIndex}`);
-            if(oIndex === correctIndex) {
-                elemento.classList.add('correct-choice');
-                feedback.innerHTML = '<span style="color:#0F6E56;"><i class="fas fa-check-circle"></i> ¡Correcto!</span>';
+        function resolverQuizPremium(qIdx, oIdx, correct, el) {
+            const parent = el.parentElement;
+            if(parent.getAttribute('data-done')) return;
+            parent.setAttribute('data-done', 'true');
+            const fb = document.getElementById(`fb-q${qIdx}`);
+            if(oIdx === correct) {
+                el.classList.add('correct-choice');
+                fb.innerHTML = '<i class="fas fa-check-circle"></i> ¡Excelente! Has demostrado gran observación.';
+                fb.style.color = "#2ecc71";
             } else {
-                elemento.classList.add('wrong-choice');
-                opciones[correctIndex].classList.add('correct-choice-reveal');
-                feedback.innerHTML = '<span style="color:#A32D2D;"><i class="fas fa-times-circle"></i> Respuesta incorrecta.</span>';
+                el.classList.add('wrong-choice');
+                parent.querySelectorAll('.quiz-opt-pro')[correct].classList.add('correct-choice');
+                fb.innerHTML = '<i class="fas fa-times-circle"></i> No es correcto, pero sigue aprendiendo.';
+                fb.style.color = "#e74c3c";
             }
         }
     </script>
 </body>
+
 </html>

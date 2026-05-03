@@ -94,8 +94,8 @@
         // CONFIGURACIÓN DE LA API (IMPORTANTE)
         // Para que funcione, debes poner tu API KEY aquí. 
         // Consíguela gratis en https://aistudio.google.com/
-        const GEMINI_API_KEY = "AIzaSyAoekzXOgc2hzg5JWo1IEkkib0ZfT0RM0c";
-        const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+        const GEMINI_API_KEY = "AIzaSyA_2tw_v81LLUgR0HDDSO8Wl-MklV6QNTk";
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
         const chatForm = document.getElementById('chatForm');
         const chatInput = document.getElementById('userInput');
@@ -153,6 +153,7 @@
 
             // Lista de modelos a intentar (incluyendo los de tu código Java y experimentales)
             const models = [
+                "gemini-3.1-flash-lite-preview",
                 "gemini-1.5-flash-latest",
                 "gemini-1.5-flash",
                 "gemini-1.5-pro-latest",
