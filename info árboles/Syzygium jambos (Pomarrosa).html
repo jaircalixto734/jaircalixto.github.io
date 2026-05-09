@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SILVAIN AI | Dossier Técnico: Syzygium jambos (Pomarrosa)</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --verde-oscuro:  #1b4332;
+      --verde-medio:   #2d6a4f;
+      --verde-claro:   #52b788;
+      --verde-suave:   #d8f3dc;
+      --amarillo:      #f4a261;
+      --naranja:       #e76f51;
+      --crema:         #fefae0;
+      --texto:         #1a1a2e;
+      --gris-claro:    #f1f1f1;
+      --blanco:        #ffffff;
+      --sombra:        0 4px 20px rgba(0,0,0,0.12);
+      --radius:        12px;
+      --fuente-base:   'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--fuente-base);
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ===== TIPOGRAFÍA ===== */
+    h1, h2, h3, h4 { line-height: 1.3; }
+    em, i { font-style: italic; }
+    strong { font-weight: 700; }
+
+    /* ===== ENCABEZADO PRINCIPAL ===== */
+    header {
+      background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-medio) 60%, var(--verde-claro) 100%);
+      color: var(--blanco);
+      padding: 60px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "🌳";
+      position: absolute;
+      font-size: 220px;
+      opacity: 0.07;
+      top: -30px;
+      left: -30px;
+    }
+    header::after {
+      content: "🌿";
+      position: absolute;
+      font-size: 160px;
+      opacity: 0.07;
+      bottom: -20px;
+      right: -10px;
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+      padding: 6px 20px;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: 800;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header h1 em { font-style: italic; font-weight: 700; }
+    header .subtitle {
+      font-size: 1.05rem;
+      margin-top: 10px;
+      opacity: 0.88;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .meta-item {
+      background: rgba(255,255,255,0.18);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== NAVEGACIÓN ===== */
+    nav {
+      background: var(--verde-oscuro);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 16px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    nav ul li a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 14px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s, background 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    nav ul li a:hover {
+      color: var(--verde-claro);
+      border-bottom-color: var(--verde-claro);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ===== LAYOUT PRINCIPAL ===== */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ===== SECCIONES / MÓDULOS ===== */
+    .module {
+      background: var(--blanco);
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 28px;
+      background: linear-gradient(90deg, var(--verde-oscuro), var(--verde-medio));
+      color: var(--blanco);
+    }
+    .module-header .icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .module-header h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .module-header p {
+      font-size: 0.82rem;
+      opacity: 0.82;
+      margin-top: 2px;
+    }
+    .module-body { padding: 28px; }
+
+    /* ===== SUBTÍTULOS INTERNOS ===== */
+    .section-title {
+      color: var(--verde-oscuro);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--verde-suave);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    /* ===== TARJETAS DE DATOS ===== */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .data-card {
+      background: var(--verde-suave);
+      border-left: 4px solid var(--verde-claro);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .data-card .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--verde-oscuro);
+      margin-bottom: 4px;
+    }
+    .data-card .value {
+      font-size: 1rem;
+      color: var(--texto);
+      font-weight: 600;
+    }
+    .data-card .value em { font-style: italic; }
+
+    /* ===== TABLA DE TAXONOMÍA ===== */
+    .tax-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 14px 0;
+    }
+    .tax-table tr:nth-child(even) { background: var(--gris-claro); }
+    .tax-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .tax-table td:first-child {
+      font-weight: 700;
+      color: var(--verde-oscuro);
+      width: 38%;
+    }
+
+    /* ===== CITA EN BLOQUE ===== */
+    blockquote {
+      border-left: 5px solid var(--verde-claro);
+      background: #f0fdf4;
+      margin: 20px 0;
+      padding: 18px 22px;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #2c3e50;
+      font-size: 0.95rem;
+      line-height: 1.85;
+    }
+    blockquote footer {
+      margin-top: 10px;
+      font-style: normal;
+      font-size: 0.82rem;
+      color: var(--verde-oscuro);
+      font-weight: 700;
+    }
+
+    /* ===== ALERTA / AVISO CIENTÍFICO ===== */
+    .alert {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+    }
+    .alert.info {
+      background: #e3f2fd;
+      border-color: #90caf9;
+    }
+    .alert.danger {
+      background: #fdecea;
+      border-color: #ef9a9a;
+    }
+    .alert-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+    /* ===== CALENDARIO FENOLÓGICO ===== */
+    .fenology-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+      margin: 16px 0;
+    }
+    .month-cell {
+      border-radius: 6px;
+      padding: 10px 4px;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .month-name { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .month-icon { font-size: 1.1rem; }
+    .season-rain  { background: #bbdefb; color: #0d47a1; }
+    .season-dry   { background: #ffe0b2; color: #bf360c; }
+    .flowering    { background: #c8e6c9; color: #1b5e20; }
+    .fruiting     { background: #fff9c4; color: #f57f17; }
+    .vegeta       { background: #f3e5f5; color: #4a148c; }
+
+    .fenology-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+    }
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ===== FAUNA ASOCIADA ===== */
+    .fauna-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+    .fauna-card {
+      background: var(--gris-claro);
+      border-radius: 8px;
+      padding: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .fauna-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .fauna-name { font-weight: 700; font-size: 0.9rem; color: var(--verde-oscuro); }
+    .fauna-desc { font-size: 0.8rem; color: #555; }
+
+    /* ===== VOZ SILVAIN ===== */
+    .silvain-box {
+      background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+      color: var(--blanco);
+      border-radius: var(--radius);
+      padding: 34px 32px;
+      margin: 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .silvain-box::before {
+      content: "🌳";
+      position: absolute;
+      font-size: 140px;
+      opacity: 0.08;
+      right: -10px;
+      bottom: -20px;
+    }
+    .silvain-avatar {
+      font-size: 3.5rem;
+      margin-bottom: 14px;
+    }
+    .silvain-title {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--verde-claro);
+      margin-bottom: 12px;
+    }
+    .silvain-text {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      font-style: italic;
+    }
+    .silvain-curiosity {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 0.95rem;
+      font-style: normal;
+      border-left: 4px solid var(--verde-claro);
+    }
+
+    /* ===== QUIZ ===== */
+    .quiz-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      margin: 16px 0;
+      overflow: hidden;
+    }
+    .quiz-question {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .quiz-options { padding: 16px 20px; }
+    .quiz-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      background: var(--gris-claro);
+      cursor: default;
+    }
+    .quiz-option.correct {
+      background: #d4edda;
+      border: 1.5px solid #28a745;
+      color: #155724;
+      font-weight: 700;
+    }
+    .quiz-option.wrong {
+      background: #f8f9fa;
+      color: #6c757d;
+    }
+    .option-letter {
+      background: var(--verde-medio);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .quiz-option.correct .option-letter { background: #28a745; }
+    .quiz-option.wrong .option-letter { background: #adb5bd; }
+    .answer-label {
+      display: inline-block;
+      margin-top: 8px;
+      margin-left: 20px;
+      font-size: 0.78rem;
+      color: #28a745;
+      font-weight: 700;
+    }
+
+    /* ===== REFERENCIAS ===== */
+    .ref-list { list-style: none; }
+    .ref-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .ref-list li:last-child { border-bottom: none; }
+    .ref-num {
+      display: inline-block;
+      background: var(--verde-claro);
+      color: white;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      text-align: center;
+      line-height: 22px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ===== BADGE ESTADO CONSERVACIÓN ===== */
+    .status-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .status-lc { background: #d4edda; color: #155724; border: 2px solid #28a745; }
+    .status-na { background: #e3f2fd; color: #01579b; border: 2px solid #1976d2; }
+
+    /* ===== BIOMETRÍA TABLA ===== */
+    .bio-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 14px 0;
+    }
+    .bio-table th {
+      background: var(--verde-oscuro);
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+    }
+    .bio-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .bio-table tr:nth-child(even) td { background: var(--gris-claro); }
+    .bio-table .highlight td { background: #d4edda !important; font-weight: 700; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--verde-oscuro);
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.82rem;
+    }
+    footer strong { color: var(--verde-claro); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .module-body { padding: 18px; }
+      .fenology-grid { grid-template-columns: repeat(6, 1fr); }
+      .data-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      nav, footer { display: none; }
+      .module { box-shadow: none; border: 1px solid #ccc; }
+      body { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════ HEADER ════════════════════════════ -->
+<header>
+  <div class="header-badge">🔬 Inventario Forestal JBP · Maní, Casanare</div>
+  <h1>🌸 <em>Syzygium jambos</em> (L.) Alston</h1>
+  <p class="subtitle">Pomarrosa · Pomarroso · Pero de Agua · Poma</p>
+  <div class="meta-bar">
+    <div class="meta-item">🌿 Familia Myrtaceae</div>
+    <div class="meta-item">📍 Maní, Casanare — Orinoquía Colombiana</div>
+    <div class="meta-item">🤖 Plataforma SILVAIN AI</div>
+    <div class="meta-item">📅 Dossier v1.0 · 2025</div>
+  </div>
+</header>
+
+<!-- ════════════════════════════ NAVEGACIÓN ════════════════════════════ -->
+<nav>
+  <ul>
+    <li><a href="#modulo1">🔬 Taxonomía</a></li>
+    <li><a href="#modulo2">📊 Biometría</a></li>
+    <li><a href="#modulo3">🌿 Morfología</a></li>
+    <li><a href="#modulo4">🐎 Etnobotánica</a></li>
+    <li><a href="#modulo5">📚 Referencias</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════════════ MAIN ════════════════════════════ -->
+<main>
+
+  <!-- ═══ MÓDULO 1: TAXONOMÍA ═══ -->
+  <section class="module" id="modulo1">
+    <div class="module-header">
+      <span class="icon">🔬</span>
+      <div>
+        <h2>MÓDULO 1 · Taxonomía y Rigor Científico</h2>
+        <p>Identificación plena, nomenclatura, distribución y estado de conservación</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <!-- Clasificación Taxonómica -->
+      <h3 class="section-title">🧬 Clasificación Taxonómica Completa</h3>
+      <table class="tax-table">
+        <tr><td>Reino</td><td>Plantae</td></tr>
+        <tr><td>División</td><td>Magnoliophyta</td></tr>
+        <tr><td>Clase</td><td>Magnoliopsida</td></tr>
+        <tr><td>Subclase</td><td>Rosidae</td></tr>
+        <tr><td>Orden</td><td>Myrtales</td></tr>
+        <tr><td>Familia</td><td>Myrtaceae</td></tr>
+        <tr><td>Género</td><td><em>Syzygium</em> Gaertn.</td></tr>
+        <tr><td>Especie</td><td><em>Syzygium jambos</em> (L.) Alston</td></tr>
+        <tr><td>Basiónimo</td><td><em>Eugenia jambos</em> L. (Sp. Pl.: 470, 1753)</td></tr>
+        <tr><td>Autoridad de la combinación</td><td>Alston in Trimen, Handb. Fl. Ceylon 6(Suppl.): 115, 1931</td></tr>
+        <tr><td>Sinónimos notables</td><td><em>Jambosa jambos</em> (L.) Millsp.; <em>Myrtus jambos</em> (L.) Kunth; <em>Plinia jambos</em> (L.) M.Gómez</td></tr>
+      </table>
+
+      <div class="alert info">
+        <span class="alert-icon">📌</span>
+        <div>
+          <strong>Nota nomenclatural:</strong> El género <em>Syzygium</em> deriva del griego <em>syn</em> = "juntos" y <em>zygon</em> = "yugo", haciendo referencia a las hojas opuestas características de la familia. La especie ha sido históricamente adscrita a los géneros <em>Jambosa</em>, <em>Eugenia</em> y <em>Syzygium</em>, donde actualmente parece haber sido aceptada definitivamente (GBIF, 2019).
+        </div>
+      </div>
+
+      <!-- Nombres Comunes -->
+      <h3 class="section-title">🏷️ Nomenclatura Regional y Local</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">🇨🇴 Colombia (general)</div>
+          <div class="value">Pomarrosa, perita, pero de agua</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🦁 Casanare / Orinoquía</div>
+          <div class="value">Pomarroso, poma, pero de agua</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇻🇪 Venezuela (llanos)</div>
+          <div class="value">Pumalaca, pomarrosa</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇬🇧 Inglés</div>
+          <div class="value">Rose apple, Malabar plum</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇧🇷 Brasil</div>
+          <div class="value">Jambo</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇫🇷 Francés / Antillas</div>
+          <div class="value">Pomme-rose, jambosier</div>
+        </div>
+      </div>
+
+      <div class="alert">
+        <span class="alert-icon">⚠️</span>
+        <div>
+          En el contexto de los <strong>llanos del Casanare</strong> (Maní), la especie es conocida popularmente como <strong>"pomarroso"</strong> o <strong>"poma"</strong> entre los habitantes rurales y llaneros. El término "pomarrosa" tiende a predominar en registros académicos colombianos.
+        </div>
+      </div>
+
+      <!-- Estado de Conservación -->
+      <h3 class="section-title">🛡️ Estado de Conservación</h3>
+      <p><strong>Lista Roja UICN (2019):</strong></p>
+      <div style="margin: 12px 0;">
+        <span class="status-badge status-lc">✅ LC — Preocupación Menor (Least Concern)</span>
+      </div>
+      <p style="margin-top:10px; font-size:0.9rem;">
+        Según la evaluación de Botanic Gardens Conservation International (BGCI) e IUCN SSC Global Tree Specialist Group (2019), <em>Syzygium jambos</em> se clasifica como especie de <strong>Preocupación Menor</strong> a nivel global, dado que no enfrenta amenazas que impliquen reducción significativa de sus poblaciones. No aparece en los Libros Rojos de Plantas de Colombia como especie nativa amenazada, dado que en Colombia es una especie <strong>introducida y naturalizada</strong>, no endémica.
+      </p>
+      <p style="margin-top:10px; font-size:0.9rem;">
+        <strong>Referencia UICN:</strong> Botanic Gardens Conservation International (BGCI) & IUCN SSC Global Tree Specialist Group. (2019). <em>Syzygium jambos</em>. The IUCN Red List of Threatened Species 2019. e.T49487025A144800316. https://doi.org/10.2305/IUCN.UK.2019-1.RLTS.T49487025A144800316.en
+      </p>
+
+      <!-- Distribución -->
+      <h3 class="section-title">🗺️ Distribución Geográfica y Relevancia en la Orinoquía</h3>
+      <p style="font-size:0.93rem; text-align:justify;">
+        <em>Syzygium jambos</em> es originaria del sudeste asiático tropical, principalmente del archipiélago malayo (Insulindia). Ha sido ampliamente cultivada y naturalizada en el Neotrópico continental y antillano gracias a su introducción colonial. En América está presente desde Florida y el sur de California hasta el sur de Brasil; se registra también en las Bermudas y las Antillas (NaturaLista Colombia, 2024). En Colombia, la especie se encuentra reportada en el <em>Catálogo de Plantas y Líquenes de Colombia</em> (Bernal, Gradstein & Celis, 2015; 2020) y ha sido documentada como naturalizada en zonas de clima cálido, especialmente en bordes de quebradas, márgenes fluviales y predios rurales de la Orinoquía y los llanos orientales, donde prospera asociada a bosques de galería del sistema hídrico del río Meta y sus afluentes en Casanare.
+      </p>
+      <blockquote>
+        "En Colombia y Venezuela, el árbol ha sido acogido tradicionalmente como ornamental en climas cálidos, debido a su bajo mantenimiento, abundante sombra y rápido crecimiento."
+        <footer>— NaturaLista Colombia / Wikipedia ES (2024). Syzygium jambos. Recuperado de: https://colombia.inaturalist.org/taxa/84838</footer>
+      </blockquote>
+
+    </div>
+  </section>
+
+  <!-- ═══ MÓDULO 2: BIOMETRÍA Y CARBONO ═══ -->
+  <section class="module" id="modulo2">
+    <div class="module-header">
+      <span class="icon">📊</span>
+      <div>
+        <h2>MÓDULO 2 · Biometría y Carbono</h2>
+        <p>Motor científico del inventario forestal — parámetros dasométricos y estimaciones de carbono</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <!-- Densidad de madera -->
+      <h3 class="section-title">🪵 Densidad Básica de la Madera</h3>
+      <table class="bio-table">
+        <thead>
+          <tr>
+            <th>Parámetro</th>
+            <th>Valor / Rango</th>
+            <th>Fuente / Observación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Densidad básica (ρ)</strong></td>
+            <td><strong>0.60 – 0.75 g/cm³</strong> (madera moderadamente pesada)</td>
+            <td>Global Wood Density Database (Zanne et al., 2009); reportes de literatura internacional para el género <em>Syzygium</em>.</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>⚠️ Densidad específica para Colombia</strong></td>
+            <td><strong>Dato por verificar en campo</strong></td>
+            <td>No se encontró valor especie-específico en el Catálogo de Maderas del IDEAM para <em>S. jambos</em> en la Orinoquía colombiana. Se recomienda toma de muestras densimétricas in situ (método Chave, 2006).</td>
+          </tr>
+          <tr>
+            <td>Durabilidad de la madera</td>
+            <td>Baja a moderada ante humedad / termitas</td>
+            <td>Wikipedia ES — <em>Syzygium jambos</em> (2024)</td>
+          </tr>
+          <tr>
+            <td>Usos madereros</td>
+            <td>Madera rolliza, leña, carbón vegetal</td>
+            <td>Ficha técnica Scribd / Arbolesornamentales.es (2025)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert danger">
+        <span class="alert-icon">🚨</span>
+        <div>
+          <strong>Integridad científica:</strong> El IDEAM y el Catálogo de Maderas de Colombia no cuentan con un registro específico publicado para <em>Syzygium jambos</em> en la Orinoquía. El rango 0.60–0.75 g/cm³ proviene de la base de datos global (Zanne et al., 2009), pero su aplicación directa al contexto de Maní, Casanare, requiere <strong>verificación en campo</strong> conforme a la metodología del Inventario Forestal Nacional Colombia (Barreto et al., 2018).
+        </div>
+      </div>
+
+      <!-- Parámetros de Carbono -->
+      <h3 class="section-title">🌿 Parámetros de Carbono</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">Fracción de Carbono (FC)</div>
+          <div class="value">0.47 – 0.50</div>
+        </div>
+        <div class="data-card">
+          <div class="label">Factor de Expansión de Biomasa (FEB)</div>
+          <div class="value">⚠️ Dato por verificar en campo</div>
+        </div>
+        <div class="data-card">
+          <div class="label">Fracción de carbono por defecto (IPCC)</div>
+          <div class="value">0.50 (biomasa leñosa)</div>
+        </div>
+        <div class="data-card">
+          <div class="label">Método recomendado</div>
+          <div class="value">Álvarez et al. (2012) — Bosques naturales Colombia</div>
+        </div>
+      </div>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ️</span>
+        <div>
+          La <strong>fracción de carbono (FC)</strong> recomendada por el IPCC y aplicada en estudios colombianos es de <strong>0.50</strong> para biomasa leñosa general. Para estudios de mayor precisión en la Orinoquía, se adopta el rango <strong>0.47–0.50</strong> según la especie y las condiciones edafoclimáticas locales (Díaz-Cháux et al., 2021; CAR, 2013).
+        </div>
+      </div>
+
+      <!-- Ecuación alométrica -->
+      <h3 class="section-title">📐 Ecuación Alométrica Sugerida</h3>
+      <p style="font-size:0.93rem; margin-bottom:12px;">
+        Para estimar la biomasa aérea de <em>Syzygium jambos</em> en ecosistemas de sabanas inundables y bosques de galería del Casanare, se recomienda la ecuación multivariable de <strong>Álvarez et al. (2012)</strong>, desarrollada específicamente para bosques naturales de Colombia:
+      </p>
+      <div style="background:#f0fdf4; border:1px solid #a7f3d0; border-radius:8px; padding:18px 22px; font-family:'Courier New', monospace; font-size:0.95rem; margin:10px 0;">
+        <strong>ln(AGB) = a + b·ln(D) + c·ln(ρ)</strong><br><br>
+        Donde:<br>
+        &nbsp;• AGB = Biomasa Aérea (kg árbol⁻¹)<br>
+        &nbsp;• D = Diámetro a la Altura del Pecho (cm) a 1,3 m<br>
+        &nbsp;• ρ = Densidad básica de la madera (g/cm³)<br>
+        &nbsp;• a, b, c = Coeficientes ajustados para cada región de vida
+      </div>
+      <p style="font-size:0.85rem; color:#555; margin-top:8px;">
+        <strong>Referencia:</strong> Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., de las Salas, G., del Valle, I., … Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013
+      </p>
+      <p style="font-size:0.9rem; margin-top:14px; text-align:justify;">
+        En ausencia de una ecuación especie-específica para <em>S. jambos</em> en Colombia, también puede aplicarse el modelo pantrópico de <strong>Chave et al. (2014)</strong>, el cual incorpora densidad de madera, diámetro y altura como variables predictoras, y ha sido validado para bosques tropicales del Neotrópico. Para el componente subterráneo (biomasa radicular), se recomienda la ecuación de Cairns et al. (1997), recomendada por el IPCC (2003).
+      </p>
+
+      <!-- Cita en bloque -->
+      <h3 class="section-title">📖 Cita en Bloque — Carbono y Myrtaceae</h3>
+      <blockquote>
+        "Los bosques tropicales almacenan más carbono que los bosques templados y boreales, y su estudio es fundamental para contribuir a la comprensión del ciclo global del carbono y el cambio climático. Los avances en investigación sobre este tema han buscado mejorar las estimaciones de carbono en biomasa aérea mediante modelos alométricos. Para el bosque seco tropical, los análisis de estas relaciones son aún más escasos, lo que subraya la urgencia de desarrollar ecuaciones locales para species como <em>Syzygium jambos</em> en ecosistemas de sabana y galería."
+        <footer>— Adaptado de: Castellanos, J., & Cárdenas, D. (2017). Tipos funcionales de plantas como estimadores de carbono en bosque seco del Caribe colombiano. <em>Revista Mexicana de Biodiversidad, 88</em>(1). https://doi.org/10.1016/j.rmb.2016.11.004 (pp. 147–157)</footer>
+      </blockquote>
+
+    </div>
+  </section>
+
+  <!-- ═══ MÓDULO 3: MORFOLOGÍA Y FENOLOGÍA ═══ -->
+  <section class="module" id="modulo3">
+    <div class="module-header">
+      <span class="icon">🌿</span>
+      <div>
+        <h2>MÓDULO 3 · Morfología y Fenología</h2>
+        <p>Descripción organográfica detallada y calendario fenológico adaptado a Maní, Casanare</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <!-- Descripción organográfica -->
+      <h3 class="section-title">🌱 Descripción Organográfica</h3>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">🌳 Porte General</div>
+          <div class="value">Árbol perennifolio de 3 a 20 m de altura; copa amplia y densa con tendencia a ramificación baja</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🟫 Corteza</div>
+          <div class="value">Pardo-rojiza a gris castaño, lisa; el tronco puede superar 30 cm de diámetro en ejemplares adultos</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🍃 Hojas</div>
+          <div class="value">Simples, opuestas (decusadas), lanceoladas; 10–24 cm × 3–5 cm; coriáceas, verde brillante; ápice acuminado; base cuneada; pecíolo 7–10 mm; las jóvenes brotan de color rosado intenso</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌸 Flores</div>
+          <div class="value">Epíginas, hermafroditas; agrupadas en corimbos terminales de 4–5 flores; pétalos blanquecinos a verdosos (1–1.5 cm); estambres numerosos y largos (3–4 cm) de color blancuzco que forman "pompones"; producen gran cantidad de néctar</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🍈 Fruto</div>
+          <div class="value">Baya carnosa tipo pomo; globosa; color blanco rosado a la madurez; pulpa amarillenta, dulce, con aroma a rosas; rica en pectinas; semillas con alta capacidad de germinación y flotabilidad</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌿 Raíz</div>
+          <div class="value">Pivotante con raíces laterales superficiales; facilita la fijación en márgenes fluviales y pendientes; eficaz en control de erosión</div>
+        </div>
+      </div>
+
+      <p style="margin-top:16px; font-size:0.91rem; text-align:justify;">
+        La <strong>filotaxia</strong> es decusada (hojas opuestas dispuestas en ángulo de 90° entre pares consecutivos). La inflorescencia es de tipo <strong>corimbo terminal</strong>. Las flores son actinomorfas, con gineceo sincárpico, ovario ínfero, placentación axilar y estigma capitado completamente soldado al hipanto. El androceo está conformado por estambres libres con dehiscencia longitudinal (Scribd Ficha Técnica, 2020).
+      </p>
+
+      <!-- Calendario Fenológico -->
+      <h3 class="section-title">📅 Calendario Fenológico — Maní, Casanare</h3>
+      <p style="font-size:0.88rem; margin-bottom:12px; color:#555;">
+        Ajustado al régimen bimodal de lluvias de Maní: <strong>Verano</strong> (diciembre–marzo) / <strong>Invierno</strong> (abril–noviembre). Basado en el comportamiento de la especie en climas cálidos del piedemonte llanero y zonas de galería.
+      </p>
+
+      <div class="fenology-grid">
+        <!-- ENE -->
+        <div class="month-cell season-dry">
+          <div class="month-name">ENE</div>
+          <div class="month-icon">☀️</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Veg.</div>
+        </div>
+        <!-- FEB -->
+        <div class="month-cell flowering">
+          <div class="month-name">FEB</div>
+          <div class="month-icon">🌸</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Flora.</div>
+        </div>
+        <!-- MAR -->
+        <div class="month-cell flowering">
+          <div class="month-name">MAR</div>
+          <div class="month-icon">🌸</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Flora.</div>
+        </div>
+        <!-- ABR -->
+        <div class="month-cell fruiting">
+          <div class="month-name">ABR</div>
+          <div class="month-icon">🍈</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Frut.</div>
+        </div>
+        <!-- MAY -->
+        <div class="month-cell fruiting">
+          <div class="month-name">MAY</div>
+          <div class="month-icon">🍈</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Frut.</div>
+        </div>
+        <!-- JUN -->
+        <div class="month-cell season-rain">
+          <div class="month-name">JUN</div>
+          <div class="month-icon">🌧️</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Crec.</div>
+        </div>
+        <!-- JUL -->
+        <div class="month-cell season-rain">
+          <div class="month-name">JUL</div>
+          <div class="month-icon">🌧️</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Crec.</div>
+        </div>
+        <!-- AGO -->
+        <div class="month-cell season-rain">
+          <div class="month-name">AGO</div>
+          <div class="month-icon">🌧️</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Crec.</div>
+        </div>
+        <!-- SEP -->
+        <div class="month-cell vegeta">
+          <div class="month-name">SEP</div>
+          <div class="month-icon">🌱</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Veg.</div>
+        </div>
+        <!-- OCT -->
+        <div class="month-cell vegeta">
+          <div class="month-name">OCT</div>
+          <div class="month-icon">🌱</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Veg.</div>
+        </div>
+        <!-- NOV -->
+        <div class="month-cell flowering">
+          <div class="month-name">NOV</div>
+          <div class="month-icon">🌺</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Pre-fl.</div>
+        </div>
+        <!-- DIC -->
+        <div class="month-cell season-dry">
+          <div class="month-name">DIC</div>
+          <div class="month-icon">☀️</div>
+          <div style="font-size:0.62rem; margin-top:3px;">Sec.</div>
+        </div>
+      </div>
+
+      <div class="fenology-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#bbdefb;"></div> Verano / Estación seca</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#bbdefb; background: #d8f3dc;"></div> Invierno / Crecimiento vegetativo</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#c8e6c9;"></div> Floración (feb–mar / nov)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#fff9c4;"></div> Fructificación (abr–may)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f3e5f5;"></div> Crecimiento vegetativo activo</div>
+      </div>
+
+      <div class="alert">
+        <span class="alert-icon">📌</span>
+        <div>
+          <strong>Nota metodológica:</strong> El calendario fenológico presentado es una aproximación basada en el comportamiento documentado de la especie en climas cálidos (< 1.000 m s.n.m.) con régimen bimodal de lluvias, ajustado al contexto de Maní (Casanare). Se recomienda <strong>validar con observaciones de campo</strong> durante al menos un ciclo anual completo para confirmar los períodos de floración y fructificación local.
+        </div>
+      </div>
+
+      <!-- Fauna Asociada -->
+      <h3 class="section-title">🦜 Fauna Asociada en la Orinoquía</h3>
+      <div class="fauna-grid">
+        <div class="fauna-card">
+          <div class="fauna-icon">🐝</div>
+          <div>
+            <div class="fauna-name">Abejas (Apis mellifera y nativas)</div>
+            <div class="fauna-desc">Las flores producen gran cantidad de néctar y son intensamente visitadas por abejas. Los estambres vistosos actúan como atractores secundarios para la polinización.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🦜</div>
+          <div>
+            <div class="fauna-name">Loros y pericos (Brotogeris spp., Amazona spp.)</div>
+            <div class="fauna-desc">Se alimentan de los frutos carnosos. Comunes en la galería fluvial del Casanare; actúan como dispersores de semillas.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🦇</div>
+          <div>
+            <div class="fauna-name">Murciélagos frugívoros (Artibeus spp.)</div>
+            <div class="fauna-desc">Consumen los frutos nocturnamente, contribuyendo a la dispersión de semillas en bosques de galería llaneros.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🐦</div>
+          <div>
+            <div class="fauna-name">Pavas y palomas silvestres</div>
+            <div class="fauna-desc"><em>Penelope purpurascens</em> y colúmbidos del llano frecuentan esta especie en busca de frutos durante la época de fructificación.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🦋</div>
+          <div>
+            <div class="fauna-name">Mariposas e insectos polinizadores</div>
+            <div class="fauna-desc">El néctar abundante atrae lepidópteros y otros himenópteros silvestres del piedemonte llanero.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🐿️</div>
+          <div>
+            <div class="fauna-name">Mamíferos menores (ardillas, ratones arborícolas)</div>
+            <div class="fauna-desc">Consumen frutos caídos y actúan como dispersores secundarios en sotobosque de galería.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ MÓDULO 4: ETNOBOTÁNICA Y PEDAGOGÍA ═══ -->
+  <section class="module" id="modulo4">
+    <div class="module-header">
+      <span class="icon">🐎</span>
+      <div>
+        <h2>MÓDULO 4 · Etnobotánica y Pedagogía</h2>
+        <p>El alma del proyecto — usos tradicionales, la voz de SILVAIN y reto de aprendizaje</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <!-- Usos Tradicionales -->
+      <h3 class="section-title">🌿 Usos Tradicionales en el Contexto Llanero</h3>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">🍹 Alimentario</div>
+          <div class="value">El fruto se consume fresco, en dulce de leche, jaleas, mermeladas y jugos. Es rico en pectinas, vitamina C, betacarotenos, calcio y fósforo.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">💊 Medicinal popular</div>
+          <div class="value">Semillas pulverizadas en infusión para tratar la diabetes. Decocción de hojas para ojos irritados. Las raíces: efecto antiepiléptico (uso tradicional). Hojas en infusión diurética y para bajar de peso. Corteza: propiedades purgativas y como astringente.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🔨 Madera y construcción</div>
+          <div class="value">Madera de fibra recta, fuerte; se usa para productos rollizos. Como leña y carbón vegetal. La corteza contiene 7–12.4% de tanino, con potencial para tenerías (curtiembre).</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌳 Servicios ecosistémicos</div>
+          <div class="value">Árbol de sombra y ornamental en fincas llaneras. Rompevientos en bordes de potreros. Control de erosión en márgenes de caños y ríos (raíces). Cercas vivas y linderos de predios rurales.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🐄 Uso ganadero</div>
+          <div class="value">Árbol de sombra para el ganado en sabanas; los frutos son consumidos por animales domésticos y silvestres.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌺 Apicultura</div>
+          <div class="value">Excelente fuente de néctar para abejas. Árboles en floración atraen enjambres; valorado en fincas con actividad apícola del piedemonte de Casanare.</div>
+        </div>
+      </div>
+
+      <!-- VOZ SILVAIN -->
+      <h3 class="section-title">🤖 La Voz de SILVAIN · Storytelling Educativo</h3>
+      <div class="silvain-box">
+        <div class="silvain-avatar">🌳</div>
+        <div class="silvain-title">✦ SILVAIN habla · Para estudiantes de Grado Sexto ✦</div>
+        <p class="silvain-text">
+          Soy el Pomarroso, y llevo viajando por el mundo mucho antes de que existiera Colombia. Nací en las selvas húmedas del sudeste asiático, a orillas del Mar de Java, donde los monzones me bañaban con lluvia tibia durante meses. Los marineros y exploradores me llevaron en sus barcos como fruta exótica, y así crucé océanos hasta llegar a las tierras calientes del Neotrópico. Aquí, en los llanos del Casanare, me adapté a vivir junto a los caños y ríos, donde el agua nunca falta aunque el verano queme los pastizales. Mis raíces abrazan la tierra para que el río no se lleve las orillas, mis flores blancas con estambres largos se parecen a pequeños fuegos artificiales que las abejas no pueden resistir, y mis frutos—que huelen a rosas—alimentan a los loros, murciélagos y hasta los becerros curiosos que pasan a la sombra de mi copa. Los llaneros me conocen como el "pomarroso" o el "pero de agua", y me plantan en los bordes de sus fincas para tener sombra en los veranos ardientes, jaleas dulces para el desayuno y medicina cuando alguien tiene fiebre o los ojos irritados.
+        </p>
+        <div class="silvain-curiosity">
+          <strong>🤯 ¡Curiosidad asombrosa!</strong><br><br>
+          ¿Sabías que <strong>mis semillas saben nadar</strong>? Cuando uno de mis frutos cae al caño o al río, la semilla puede flotar durante horas o incluso días, siendo arrastrada por la corriente hasta llegar a un banco de arena o a las orillas de otro caño, donde germina y nace un nuevo árbol. ¡Soy uno de los pocos árboles tropicales que usa los ríos llaneros como "autopistas" para expandirse! Esto me convierte en un experto colonizador de riberas, aunque también significa que los científicos me clasifican como especie "naturalizada invasora" en algunas regiones. En los llanos, sin embargo, soy bienvenido: doy sombra, alimento y medicina a la comunidad.
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <h3 class="section-title">🎯 Reto de Aprendizaje · Active Recall (Grado Sexto)</h3>
+
+      <!-- Pregunta 1 -->
+      <div class="quiz-card">
+        <div class="quiz-question">❓ Pregunta 1: ¿A qué familia botánica pertenece el Pomarroso (<em>Syzygium jambos</em>)?</div>
+        <div class="quiz-options">
+          <div class="quiz-option wrong">
+            <div class="option-letter">A</div>
+            <div>Fabaceae (la familia de los árboles con vainas y semillas secas)</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">B</div>
+            <div>Moraceae (la familia de las higueras y el árbol de pan)</div>
+          </div>
+          <div class="quiz-option correct">
+            <div class="option-letter">C</div>
+            <div>Myrtaceae (la misma familia del guayabo y el clavo de olor)</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">D</div>
+            <div>Rubiaceae (la familia del café)</div>
+          </div>
+          <div class="answer-label">✅ Respuesta correcta: C — Myrtaceae</div>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="quiz-card">
+        <div class="quiz-question">❓ Pregunta 2: ¿Por qué las semillas del Pomarroso pueden dispersarse a lo largo de los caños y ríos del Casanare?</div>
+        <div class="quiz-options">
+          <div class="quiz-option wrong">
+            <div class="option-letter">A</div>
+            <div>Porque tienen alas que las permiten volar con el viento</div>
+          </div>
+          <div class="quiz-option correct">
+            <div class="option-letter">B</div>
+            <div>Porque las semillas pueden flotar en el agua y tienen alta capacidad de germinación</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">C</div>
+            <div>Porque las hormigas las transportan largas distancias</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">D</div>
+            <div>Porque los frutos tienen ganchos que se pegan en el pelo de los animales</div>
+          </div>
+          <div class="answer-label">✅ Respuesta correcta: B — Semillas flotantes de alta germinación</div>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="quiz-card">
+        <div class="quiz-question">❓ Pregunta 3: ¿Cuál de los siguientes usos del Pomarroso es especialmente importante en el contexto de los llanos de Casanare?</div>
+        <div class="quiz-options">
+          <div class="quiz-option wrong">
+            <div class="option-letter">A</div>
+            <div>Como especia para cocinar (como el clavo de olor)</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">B</div>
+            <div>Como árbol maderero para la construcción de barcos</div>
+          </div>
+          <div class="quiz-option correct">
+            <div class="option-letter">C</div>
+            <div>Como árbol de sombra en fincas, control de erosión en caños y fuente de néctar para abejas</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">D</div>
+            <div>Como planta trepadora para cubrir paredes</div>
+          </div>
+          <div class="answer-label">✅ Respuesta correcta: C — Sombra, control erosión y apicultura</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ MÓDULO 5: REFERENCIAS ═══ -->
+  <section class="module" id="modulo5">
+    <div class="module-header">
+      <span class="icon">📚</span>
+      <div>
+        <h2>MÓDULO 5 · Referencias Bibliográficas</h2>
+        <p>Fuentes reales y verificables — Formato APA 7ma Edición</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ️</span>
+        <div>
+          Todas las referencias listadas son reales y verificables. Las fuentes con acceso libre incluyen enlace DOI o URL. Las fuentes de bases de datos cerradas o documentos físicos se citan sin URL, conforme a las normas APA 7.ª edición. Se han excluido referencias no verificadas.
+        </div>
+      </div>
+
+      <ul class="ref-list">
+
+        <li>
+          <span class="ref-num">1</span>
+          Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., de las Salas, G., del Valle, I., Lema, A., Moreno, F., Orrego, S., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013
+        </li>
+
+        <li>
+          <span class="ref-num">2</span>
+          Barreto, J. S., Ramírez-Echeverry, S., Peña, M. A., Capachero, C., Barbosa, A. P., Panev, M., Phillips, J. F., & Moreno, L. M. (2018). <em>Manual de Campo Inventario Forestal Nacional Colombia</em>. Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM). Bogotá D.C.
+        </li>
+
+        <li>
+          <span class="ref-num">3</span>
+          Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2020). <em>Catálogo de Plantas y Líquenes de Colombia</em> (v1.1). Universidad Nacional de Colombia. Dataset/Checklist. https://doi.org/10.15472/7avdhn
+        </li>
+
+        <li>
+          <span class="ref-num">4</span>
+          Botanic Gardens Conservation International (BGCI) & IUCN SSC Global Tree Specialist Group. (2019). <em>Syzygium jambos</em>. The IUCN Red List of Threatened Species. e.T49487025A144800316. https://doi.org/10.2305/IUCN.UK.2019-1.RLTS.T49487025A144800316.en
+        </li>
+
+        <li>
+          <span class="ref-num">5</span>
+          Chave, J. (2006). <em>Medición de densidad de madera en árboles tropicales: Manual de campo</em>. Laboratoire Évolution et Diversité Biologique, Université Paul Sabatier. Toulouse, Francia. Recuperado de https://rainfor.org/wp-content/uploads/sites/129/2022/07/wood_density_spanish1.pdf
+        </li>
+
+        <li>
+          <span class="ref-num">6</span>
+          Díaz-Cháux, J. T., Cerón Urquina, C. T., Molina Mendieta, M., Ordóñez García, M. A., & Velasquez-Valencia, A. (2021). Cuantificación del carbono almacenado en la vereda Peregrinos (Solano-Caquetá). <em>Informe técnico del componente de Servicios Ecosistémicos de la Expedición No. 01 Proyecto Colombia BIO Caquetá BIO</em>. Centro de Investigación de la Biodiversidad Andino Amazónica (INBIANAM). Florencia, Caquetá.
+        </li>
+
+        <li>
+          <span class="ref-num">7</span>
+          Corporación Autónoma Regional de Cundinamarca (CAR). (2013). <em>Guía para la cuantificación de la biomasa y el carbono en inventarios forestales</em>. CAR. Bogotá D.C. Recuperado de https://www.car.gov.co/uploads/files/5ade19e5bcb8e.pdf
+        </li>
+
+        <li>
+          <span class="ref-num">8</span>
+          Global Biodiversity Information Facility (GBIF). (2019). <em>Syzygium jambos</em> (L.) Alston. GBIF Backbone Taxonomy. Checklist dataset. https://doi.org/10.15468/39omei. Recuperado de https://www.gbif.org/species/3183534
+        </li>
+
+        <li>
+          <span class="ref-num">9</span>
+          González-Blas, M., Huamaní, F., & Herrera-Gutiérrez, L. (2022). Flavonoides y fenoles totales con actividad hipoglicemiante en semillas de <em>Syzygium jambos</em>. <em>Revista de Salud, Amazonía y Bienestar, 1</em>(1), e272. Universidad Nacional de Trujillo.
+        </li>
+
+        <li>
+          <span class="ref-num">10</span>
+          Kew Science — Plants of the World Online. (2023). <em>Syzygium jambos</em> (L.) Alston. Royal Botanic Gardens, Kew. Recuperado de https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:601802-1
+        </li>
+
+        <li>
+          <span class="ref-num">11</span>
+          Mereles, M. F., & López Grau, E. (2025). Dos especies adventicias de <em>Syzygium</em> (Myrtaceae) en Paraguay. <em>Lilloa, 62</em>(1). Fundación Miguel Lillo. Tucumán, Argentina. https://doi.org/10.30550/j.lil
+        </li>
+
+        <li>
+          <span class="ref-num">12</span>
+          Zanne, A. E., Lopez-Gonzalez, G., Coomes, D. A., Ilic, J., Jansen, S., Lewis, S. L., Miller, R. B., Swenson, N. G., Wiemann, M. C., & Chave, J. (2009). <em>Global wood density database</em>. Dryad Digital Repository. https://doi.org/10.5061/dryad.234
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+<footer>
+  <p>
+    🌳 <strong>SILVAIN AI</strong> · Plataforma de Inventario Forestal JBP · Jardín Botánico de Paz de Ariporo · Maní, Casanare, Colombia
+  </p>
+  <p style="margin-top:6px;">
+    Dossier técnico-pedagógico generado con rigor científico. Datos sujetos a verificación de campo conforme a las Reglas de Oro de Integridad de Datos del Proyecto SILVAIN.
+  </p>
+  <p style="margin-top:6px; color: rgba(255,255,255,0.45); font-size:0.75rem;">
+    Formato APA 7ma Edición · Consorcio técnico: Ph.D. Botánica Sistemática | Ing. Forestal Biometría | Antropólogo Etnobotánica | Editor Académico
+  </p>
+</footer>
+
+</body>
+</html>

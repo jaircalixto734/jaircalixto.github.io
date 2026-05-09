@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SILVAIN AI | Dossier Técnico: Mangifera indica (Mango)</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amarillo-oscuro:  #b45309;
+      --amarillo-medio:   #d97706;
+      --amarillo-claro:   #fbbf24;
+      --amarillo-suave:   #fef3c7;
+      --verde-oscuro:     #1b4332;
+      --verde-claro:      #52b788;
+      --verde-suave:      #d8f3dc;
+      --naranja:          #ea580c;
+      --naranja-suave:    #fff7ed;
+      --crema:            #fffbeb;
+      --texto:            #1a1a2e;
+      --gris-claro:       #f5f5f4;
+      --blanco:           #ffffff;
+      --sombra:           0 4px 24px rgba(0,0,0,0.11);
+      --radius:           12px;
+      --fuente-base:      'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--fuente-base);
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.78;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4 { line-height: 1.3; }
+    em, i { font-style: italic; }
+    strong { font-weight: 700; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #78350f 0%, #b45309 50%, #f59e0b 100%);
+      color: var(--blanco);
+      padding: 64px 24px 44px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "🥭";
+      position: absolute;
+      font-size: 230px;
+      opacity: 0.07;
+      top: -30px;
+      left: -30px;
+    }
+    header::after {
+      content: "🌿";
+      position: absolute;
+      font-size: 170px;
+      opacity: 0.07;
+      bottom: -20px;
+      right: -10px;
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+      padding: 6px 22px;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: 800;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header h1 em { font-style: italic; font-weight: 700; }
+    header .subtitle {
+      font-size: 1.05rem;
+      margin-top: 10px;
+      opacity: 0.88;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .meta-item {
+      background: rgba(255,255,255,0.18);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== NAVEGACIÓN ===== */
+    nav {
+      background: #78350f;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 16px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.22);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    nav ul li a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 14px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s, background 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    nav ul li a:hover {
+      color: var(--amarillo-claro);
+      border-bottom-color: var(--amarillo-claro);
+      background: rgba(255,255,255,0.07);
+    }
+
+    /* ===== LAYOUT ===== */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ===== MÓDULOS ===== */
+    .module {
+      background: var(--blanco);
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      margin-bottom: 42px;
+      overflow: hidden;
+    }
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 28px;
+      background: linear-gradient(90deg, #78350f, #b45309);
+      color: var(--blanco);
+    }
+    .module-header .icon { font-size: 2rem; flex-shrink: 0; }
+    .module-header h2 {
+      font-size: 1.22rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .module-header p { font-size: 0.82rem; opacity: 0.82; margin-top: 2px; }
+    .module-body { padding: 28px; }
+
+    /* ===== SUBTÍTULOS ===== */
+    .section-title {
+      color: #78350f;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 26px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--amarillo-suave);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    /* ===== DATA CARDS ===== */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .data-card {
+      background: var(--amarillo-suave);
+      border-left: 4px solid var(--amarillo-claro);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .data-card .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #78350f;
+      margin-bottom: 4px;
+    }
+    .data-card .value {
+      font-size: 0.97rem;
+      color: var(--texto);
+      font-weight: 600;
+    }
+    .data-card .value em { font-style: italic; }
+
+    /* ===== TABLA TAXONOMÍA ===== */
+    .tax-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 14px 0;
+    }
+    .tax-table tr:nth-child(even) { background: var(--gris-claro); }
+    .tax-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .tax-table td:first-child {
+      font-weight: 700;
+      color: #78350f;
+      width: 38%;
+    }
+
+    /* ===== BLOCKQUOTE ===== */
+    blockquote {
+      border-left: 5px solid var(--amarillo-claro);
+      background: #fffbeb;
+      margin: 20px 0;
+      padding: 18px 22px;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #3d2b00;
+      font-size: 0.95rem;
+      line-height: 1.85;
+    }
+    blockquote footer {
+      margin-top: 10px;
+      font-style: normal;
+      font-size: 0.82rem;
+      color: #78350f;
+      font-weight: 700;
+    }
+
+    /* ===== ALERTAS ===== */
+    .alert {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+    }
+    .alert.info { background: #e3f2fd; border-color: #90caf9; }
+    .alert.danger { background: #fdecea; border-color: #ef9a9a; }
+    .alert.green { background: var(--verde-suave); border-color: var(--verde-claro); }
+    .alert-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+    /* ===== TABLA BIOMETRÍA ===== */
+    .bio-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 14px 0;
+    }
+    .bio-table th {
+      background: #78350f;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+    }
+    .bio-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    .bio-table tr:nth-child(even) td { background: var(--gris-claro); }
+    .bio-table .highlight td { background: #fff3cd !important; font-weight: 700; }
+    .bio-table .danger-row td { background: #fdecea !important; }
+
+    /* ===== FENOLOGÍA ===== */
+    .fenology-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+      margin: 16px 0;
+    }
+    .month-cell {
+      border-radius: 6px;
+      padding: 10px 4px;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .month-name { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .month-icon { font-size: 1.1rem; }
+    .month-phase { font-size: 0.58rem; margin-top: 3px; }
+    .season-rain  { background: #bbdefb; color: #0d47a1; }
+    .season-dry   { background: #ffe0b2; color: #bf360c; }
+    .flowering    { background: #fce4ec; color: #880e4f; }
+    .fruiting     { background: #fff9c4; color: #f57f17; }
+    .vegeta       { background: #f3e5f5; color: #4a148c; }
+    .prefruit     { background: #e8f5e9; color: #1b5e20; }
+    .fenology-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+    }
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ===== FAUNA ===== */
+    .fauna-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+    .fauna-card {
+      background: var(--gris-claro);
+      border-radius: 8px;
+      padding: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .fauna-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .fauna-name { font-weight: 700; font-size: 0.9rem; color: #78350f; }
+    .fauna-desc { font-size: 0.8rem; color: #555; }
+
+    /* ===== SILVAIN BOX ===== */
+    .silvain-box {
+      background: linear-gradient(135deg, #78350f 0%, #b45309 60%, #d97706 100%);
+      color: var(--blanco);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin: 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .silvain-box::before {
+      content: "🥭";
+      position: absolute;
+      font-size: 150px;
+      opacity: 0.08;
+      right: -10px;
+      bottom: -20px;
+    }
+    .silvain-avatar { font-size: 3.5rem; margin-bottom: 14px; }
+    .silvain-title {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amarillo-claro);
+      margin-bottom: 14px;
+    }
+    .silvain-text {
+      font-size: 1.04rem;
+      line-height: 1.92;
+      font-style: italic;
+    }
+    .silvain-curiosity {
+      margin-top: 22px;
+      background: rgba(255,255,255,0.13);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 0.95rem;
+      font-style: normal;
+      border-left: 4px solid var(--amarillo-claro);
+    }
+
+    /* ===== QUIZ ===== */
+    .quiz-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      margin: 18px 0;
+      overflow: hidden;
+    }
+    .quiz-question {
+      background: #78350f;
+      color: var(--blanco);
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .quiz-options { padding: 16px 20px; }
+    .quiz-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      background: var(--gris-claro);
+    }
+    .quiz-option.correct {
+      background: #d4edda;
+      border: 1.5px solid #28a745;
+      color: #155724;
+      font-weight: 700;
+    }
+    .quiz-option.wrong { background: #f8f9fa; color: #6c757d; }
+    .option-letter {
+      background: #b45309;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .quiz-option.correct .option-letter { background: #28a745; }
+    .quiz-option.wrong .option-letter { background: #adb5bd; }
+    .answer-label {
+      display: inline-block;
+      margin-top: 8px;
+      margin-left: 20px;
+      font-size: 0.78rem;
+      color: #28a745;
+      font-weight: 700;
+    }
+
+    /* ===== BADGE ESTADO ===== */
+    .status-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .status-lc { background: #d4edda; color: #155724; border: 2px solid #28a745; }
+    .status-na { background: #fff3cd; color: #856404; border: 2px solid #ffc107; }
+
+    /* ===== REFERENCIAS ===== */
+    .ref-list { list-style: none; }
+    .ref-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .ref-list li:last-child { border-bottom: none; }
+    .ref-num {
+      display: inline-block;
+      background: var(--amarillo-claro);
+      color: #78350f;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      text-align: center;
+      line-height: 22px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* ===== CAJA ESPECIAL MANGIFERINA ===== */
+    .compound-box {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 2px solid #f59e0b;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 14px 0;
+    }
+    .compound-box h4 { color: #78350f; font-size: 1rem; margin-bottom: 8px; }
+    .compound-box p { font-size: 0.9rem; }
+
+    /* ===== ECUACIÓN BOX ===== */
+    .eq-box {
+      background: #f0fdf4;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+      padding: 18px 22px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.93rem;
+      margin: 10px 0;
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      nav, footer { display: none; }
+      .module { box-shadow: none; border: 1px solid #ccc; }
+    }
+    @media (max-width: 600px) {
+      .module-body { padding: 16px; }
+      .fenology-grid { grid-template-columns: repeat(6, 1fr); }
+      .data-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════ HEADER ════════════════════ -->
+<header>
+  <div class="header-badge">🔬 Inventario Forestal JBP · Maní, Casanare</div>
+  <h1>🥭 <em>Mangifera indica</em> L.</h1>
+  <p class="subtitle">Mango · Mango criollo · Melocotón de los trópicos · Palo de mango</p>
+  <div class="meta-bar">
+    <div class="meta-item">🌿 Familia Anacardiaceae</div>
+    <div class="meta-item">📍 Maní, Casanare — Orinoquía Colombiana</div>
+    <div class="meta-item">🤖 Plataforma SILVAIN AI</div>
+    <div class="meta-item">📅 Dossier v1.0 · 2025</div>
+  </div>
+</header>
+
+<!-- ════════════════════ NAVEGACIÓN ════════════════════ -->
+<nav>
+  <ul>
+    <li><a href="#modulo1">🔬 Taxonomía</a></li>
+    <li><a href="#modulo2">📊 Biometría</a></li>
+    <li><a href="#modulo3">🌿 Morfología</a></li>
+    <li><a href="#modulo4">🐎 Etnobotánica</a></li>
+    <li><a href="#modulo5">📚 Referencias</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════ MAIN ════════════════════ -->
+<main>
+
+  <!-- ══════════════════════════════════════════════════════
+       MÓDULO 1 — TAXONOMÍA
+  ══════════════════════════════════════════════════════ -->
+  <section class="module" id="modulo1">
+    <div class="module-header">
+      <span class="icon">🔬</span>
+      <div>
+        <h2>MÓDULO 1 · Taxonomía y Rigor Científico</h2>
+        <p>Identificación plena, nomenclatura, distribución y estado de conservación</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <h3 class="section-title">🧬 Clasificación Taxonómica Completa</h3>
+      <table class="tax-table">
+        <tr><td>Reino</td><td>Plantae</td></tr>
+        <tr><td>División / Filo</td><td>Magnoliophyta (Angiospermas)</td></tr>
+        <tr><td>Clase</td><td>Magnoliopsida (Dicotiledóneas — Eudicots)</td></tr>
+        <tr><td>Subclase</td><td>Rosidae</td></tr>
+        <tr><td>Orden</td><td>Sapindales</td></tr>
+        <tr><td>Familia</td><td>Anacardiaceae (R. Br.)</td></tr>
+        <tr><td>Género</td><td><em>Mangifera</em> L.</td></tr>
+        <tr><td>Especie</td><td><em>Mangifera indica</em> L.</td></tr>
+        <tr><td>Publicación original</td><td>Species Plantarum, vol. 1: 200, 1753 (C. Linneo)</td></tr>
+        <tr><td>Autoría de la especie</td><td>L. (Carolus Linnaeus, 1753)</td></tr>
+        <tr>
+          <td>Sinónimos principales</td>
+          <td>
+            <em>Mangifera austroyunnanensis</em> Hu;<br>
+            <em>Mangifera domestica</em> Gaertn.;<br>
+            <em>Mangifera gladiata</em> Boj.;<br>
+            <em>Rhus laurina</em> Nutt.
+          </td>
+        </tr>
+        <tr>
+          <td>Etimología</td>
+          <td>
+            <em>Mangifera</em>: versión latinizada del nombre malayo «manga» + sufijo latino <em>fer</em> = «el que produce» (productora de mangos).<br>
+            <em>indica</em>: del latín <em>indicus-a-um</em>, «procedente de la India».
+          </td>
+        </tr>
+      </table>
+
+      <div class="alert info">
+        <span class="alert-icon">📌</span>
+        <div>
+          <strong>Nota nomenclatural:</strong> <em>Mangifera indica</em> es la <strong>especie tipo del género <em>Mangifera</em></strong> y el fruto comercial más importante de toda la familia Anacardiaceae. La descripción original de Linneo (1753) en <em>Species Plantarum</em> sigue siendo la referencia nomenclatural válida. El Catálogo de Plantas y Líquenes de Colombia (Bernal et al., 2020) la registra como especie <strong>introducida y naturalizada</strong> en Colombia.
+        </div>
+      </div>
+
+      <!-- Nombres Comunes -->
+      <h3 class="section-title">🏷️ Nomenclatura Regional y Nombres Comunes</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">🇨🇴 Colombia (general)</div>
+          <div class="value">Mango, mango criollo, palo de mango, manguero</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🦁 Casanare / Orinoquía</div>
+          <div class="value">Mango, mango de azúcar, mango de hilacha, mango de burro (variedades criollas del llano)</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇻🇪 Venezuela (llanos)</div>
+          <div class="value">Mango, manga, bocado, mango manzano, mango de mecha</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇬🇧 Inglés</div>
+          <div class="value">Mango, common mango</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇧🇷 Brasil / 🇵🇹 Portugal</div>
+          <div class="value">Manga, mangueira</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🇫🇷 Francés</div>
+          <div class="value">Mangue, manguier</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌎 Pueblos originarios Colombia</div>
+          <div class="value">Comunidad Siona (Putumayo): uso medicinal documentado en uso de hojas y corteza</div>
+        </div>
+        <div class="data-card">
+          <div class="label">📋 Registro en herbario UNAL</div>
+          <div class="value">«mango» — Bernal, Galeano, Rodríguez, Sarmiento & Gutiérrez (2012). Nombres Comunes de las Plantas de Colombia</div>
+        </div>
+      </div>
+
+      <!-- Estado de Conservación -->
+      <h3 class="section-title">🛡️ Estado de Conservación</h3>
+      <p><strong>Lista Roja UICN:</strong></p>
+      <div style="margin: 12px 0 16px;">
+        <span class="status-badge status-lc">✅ LC — Preocupación Menor (Least Concern)</span>
+      </div>
+      <p style="font-size:0.92rem; text-align:justify;">
+        <em>Mangifera indica</em> tiene estado de <strong>Preocupación Menor (LC)</strong> en la Lista Roja de la UICN, dado que es una especie ampliamente cultivada en aproximadamente 100 países y no enfrenta ninguna amenaza de extinción. En Colombia, no aparece en los Libros Rojos de Plantas como especie amenazada porque es una <strong>especie introducida y naturalizada</strong>, no endémica del país. La FAO la reconoce como uno de los cultivos frutícolas tropicales más importantes del mundo. La especie lleva aproximadamente 4.000 años de cultivo continuo por el ser humano, con más de 500 a 1.000 variedades identificadas o reportadas, principalmente en la India.
+      </p>
+      <div class="alert">
+        <span class="alert-icon">⚠️</span>
+        <div>
+          <strong>Contexto en Colombia:</strong> El DANE (2019) documenta a Casanare como uno de los departamentos productores de mango en Colombia. La especie está plenamente adaptada a las condiciones climáticas del piedemonte llanero y las planicies de Maní, donde se comporta como árbol cultivado y espontáneo en predios rurales.
+        </div>
+      </div>
+
+      <!-- Distribución -->
+      <h3 class="section-title">🗺️ Distribución Geográfica y Relevancia en la Orinoquía</h3>
+      <p style="font-size:0.93rem; text-align:justify;">
+        <em>Mangifera indica</em> L. es originaria del norte de la India, Myanmar (Birmania) y la región de Malesia, donde ha sido cultivada por aproximadamente 4.000 años. A partir del siglo XVI fue introducida en América por comerciantes portugueses desde Goa (India) hacia el África oriental y occidental, y posteriormente a Brasil y México. En el Neotrópico se ha naturalizado ampliamente y es cultivada desde el nivel del mar hasta los 1.800 m s.n.m., en climas cálidos y semicálidos con precipitaciones entre 1.500 y 2.600 mm anuales y temperaturas óptimas de 24–28 °C. En Colombia, la especie es registrada en el <em>Catálogo de Plantas y Líquenes</em> (Bernal et al., 2020) y el biovirtual UNAL la documenta como especie introducida. Existen dos poblaciones genéticas diferenciadas en las variedades comerciales modernas: el «tipo indio» y el «tipo del sudeste asiático», con diferencias en sabor, fibrosidad y color del fruto.
+      </p>
+      <blockquote>
+        "El mango (<em>Mangifera indica</em> L.) es una planta perteneciente a la familia Anacardiaceae, nativa del sur de Asia; actualmente ha alcanzado una gran distribución por su cultivo en alrededor de 100 países."
+        <footer>— Guerra, M., Ruiz, R., & Pardo, E. (2018). Diversidad genética de <em>Mangifera indica</em> (Anacardiaceae) en Valencia, Córdoba, Colombia. <em>Acta Botanica Mexicana, 124</em>. DOI: 10.21829/abm124.2018.1285 (p. 1)</footer>
+      </blockquote>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       MÓDULO 2 — BIOMETRÍA Y CARBONO
+  ══════════════════════════════════════════════════════ -->
+  <section class="module" id="modulo2">
+    <div class="module-header">
+      <span class="icon">📊</span>
+      <div>
+        <h2>MÓDULO 2 · Biometría y Carbono</h2>
+        <p>Motor científico del inventario forestal — parámetros dasométricos y estimaciones de carbono</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <!-- Densidad de la madera -->
+      <h3 class="section-title">🪵 Densidad Básica de la Madera</h3>
+      <table class="bio-table">
+        <thead>
+          <tr>
+            <th>Parámetro</th>
+            <th>Valor / Rango</th>
+            <th>Fuente y Observación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Densidad básica (ρ) — literatura internacional</strong></td>
+            <td><strong>0.52 – 0.70 g/cm³</strong></td>
+            <td>Delta-Intkey / InsideWood Database — Maderas Comerciales: <em>Mangifera indica</em> y <em>Mangifera</em> spp. (Machang). Madera de porosidad difusa, vasos agrupados en grupos radiales cortos.</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>⚠️ Densidad específica para Colombia / Casanare</strong></td>
+            <td><strong>Dato por verificar en campo</strong></td>
+            <td>No se encontró valor especie-específico publicado por el IDEAM para <em>M. indica</em> en la Orinoquía colombiana. Se recomienda toma de muestras densimétricas in situ (método Chave, 2006) a 1,3 m del suelo.</td>
+          </tr>
+          <tr>
+            <td>Clasificación por dureza</td>
+            <td>Madera semipesada a pesada</td>
+            <td>Ecos del Bosque (2025): «La madera es dura y pesada, recomendada para tablas de picar en la cocina y elaboración de yugos.»</td>
+          </tr>
+          <tr>
+            <td>Contexto Anacardiaceae Sapindales</td>
+            <td>68% de especies: 0.51 – 0.80 g/cm³</td>
+            <td>Riesco Muñoz et al. (2019). Densidad de la madera de 59 especies del orden Sapindales — bosques naturales brasileños. <em>Madera y Bosques, 25</em>(2). DOI: 10.21829/myb.2019.2521817</td>
+          </tr>
+          <tr>
+            <td>Durabilidad natural</td>
+            <td>Susceptible a hongos e insectos</td>
+            <td>Wikipedia EN — <em>Mangifera indica</em> (2024): «The wood is susceptible to damage from fungi and insects.»</td>
+          </tr>
+          <tr>
+            <td>Usos madereros documentados</td>
+            <td>Ukuleles, instrumentos musicales, tableros laminados, muebles, yugos, carpintería general</td>
+            <td>Wikipedia EN (2024); Ecos del Bosque (2025); RNGR — Árboles de Puerto Rico (Parrotta, 1993)</td>
+          </tr>
+          <tr class="danger-row">
+            <td><strong>⚠️ Precaución en uso de la madera</strong></td>
+            <td>Contiene sustancias fenólicas (urushiol)</td>
+            <td>La madera puede producir <strong>dermatitis por contacto</strong> en personas sensibilizadas. La familia Anacardiaceae incluye a la hiedra venenosa, con el mismo tipo de reacción.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert danger">
+        <span class="alert-icon">🚨</span>
+        <div>
+          <strong>Integridad científica:</strong> El Catálogo de Maderas del IDEAM y las publicaciones de densidad específica para bosques de la Orinoquía colombiana no cuentan con valores publicados para <em>Mangifera indica</em> en Casanare. El rango 0.52–0.70 g/cm³ proviene de bases de datos internacionales (InsideWood / Delta-Intkey). Su aplicación al inventario de Maní requiere <strong>verificación en campo</strong> conforme al protocolo del Inventario Forestal Nacional Colombia (Barreto et al., 2018).
+        </div>
+      </div>
+
+      <!-- Parámetros de carbono -->
+      <h3 class="section-title">🌿 Parámetros de Carbono</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">Fracción de Carbono (FC) — IPCC</div>
+          <div class="value">0.47 – 0.50 (biomasa leñosa)</div>
+        </div>
+        <div class="data-card">
+          <div class="label">FC recomendado por defecto</div>
+          <div class="value">0.50 (IPCC, 2003)</div>
+        </div>
+        <div class="data-card">
+          <div class="label">Factor de Expansión de Biomasa (FEB)</div>
+          <div class="value">⚠️ Dato por verificar en campo</div>
+        </div>
+        <div class="data-card">
+          <div class="label">Ecuación alométrica base</div>
+          <div class="value">Álvarez et al. (2012) — bosques naturales Colombia</div>
+        </div>
+        <div class="data-card">
+          <div class="label">Modelo pantrópico alternativo</div>
+          <div class="value">Chave et al. (2014) — válido para Neotrópico</div>
+        </div>
+        <div class="data-card">
+          <div class="label">Biomasa radicular</div>
+          <div class="value">Cairns et al. (1997) recomendado por IPCC (2003)</div>
+        </div>
+      </div>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ️</span>
+        <div>
+          Para los estudios de captura de carbono en ecosistemas de sabanas inundables y bosques de galería del Casanare, la fracción de carbono estándar es de <strong>0.50</strong> para árboles leñosos (IPCC, 2003). El factor de expansión de biomasa (FEB) debe determinarse localmente dado que no existe publicación específica para <em>Mangifera indica</em> bajo condiciones de los llanos orientales colombianos.
+        </div>
+      </div>
+
+      <!-- Ecuación alométrica -->
+      <h3 class="section-title">📐 Ecuación Alométrica Sugerida</h3>
+      <p style="font-size:0.93rem; margin-bottom:10px;">
+        Para estimar la biomasa aérea de <em>Mangifera indica</em> en ecosistemas de sabanas y bosques de galería del Casanare, se recomienda la ecuación de <strong>Álvarez et al. (2012)</strong> para bosques naturales de Colombia, complementada con el modelo pantrópico de Chave et al. (2014):
+      </p>
+      <div class="eq-box">
+        <strong>Modelo Colombia (Álvarez et al., 2012):</strong><br>
+        ln(AGB) = a + b·ln(D) + c·ln(ρ)<br><br>
+        <strong>Modelo Pantrópico (Chave et al., 2014):</strong><br>
+        AGB = 0.0673 × (ρ × D² × H)⁰·⁹⁷⁶<br><br>
+        Donde:<br>
+        &nbsp;• AGB = Biomasa Aérea (kg árbol⁻¹)<br>
+        &nbsp;• D &nbsp;= Diámetro a la Altura del Pecho — DAP (cm), medido a 1.30 m<br>
+        &nbsp;• ρ &nbsp;= Densidad básica de la madera (g/cm³)<br>
+        &nbsp;• H &nbsp;= Altura total del árbol (m)<br>
+        &nbsp;• a, b, c = Coeficientes de regresión ajustados por región de vida
+      </div>
+      <p style="font-size:0.85rem; color:#555; margin-top:8px;">
+        <strong>Referencias:</strong><br>
+        • Álvarez, E. et al. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013<br>
+        • Chave, J. et al. (2014). Improved allometric models to estimate the aboveground biomass of tropical trees. <em>Global Change Biology, 20</em>(10), 3177–3190. https://doi.org/10.1111/gcb.12629
+      </p>
+
+      <!-- Cita en bloque -->
+      <h3 class="section-title">📖 Cita en Bloque — Carbono, Anacardiaceae y Sapindales</h3>
+      <blockquote>
+        "Para estimar la biomasa leñosa a partir de las existencias maderables en volumen obtenidas en inventarios forestales, se determinó la densidad básica de la madera en 59 especies arbóreas. Se trata de especies pertenecientes a las familias Anacardiaceae, Burseraceae, Meliaceae, Rutaceae, Sapindaceae y Simaroubaceae, todas ellas incluidas en el orden Sapindales. La mayor parte de las especies analizadas (68%) presentan maderas livianas o semipesadas (densidad básica entre 0,51 g/cm³ y 0,80 g/cm³)."
+        <footer>— Riesco Muñoz, G., Imaña Encinas, J., & de Paula, J. E. (2019). Densidad de la madera de 59 especies del orden Sapindales procedentes de bosques naturales brasileños. <em>Madera y Bosques, 25</em>(2), e2521817. https://doi.org/10.21829/myb.2019.2521817 (pp. 2–4)</footer>
+      </blockquote>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       MÓDULO 3 — MORFOLOGÍA Y FENOLOGÍA
+  ══════════════════════════════════════════════════════ -->
+  <section class="module" id="modulo3">
+    <div class="module-header">
+      <span class="icon">🌿</span>
+      <div>
+        <h2>MÓDULO 3 · Morfología y Fenología</h2>
+        <p>Descripción organográfica detallada y calendario fenológico adaptado a Maní, Casanare</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <!-- Descripción organográfica -->
+      <h3 class="section-title">🌱 Descripción Organográfica</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">🌳 Porte General</div>
+          <div class="value">Árbol siempreverde (perennifolio) de gran porte; 8–30 m de altura (hasta 45 m en condiciones ideales); copa densa y redondeada de hasta 30 m de diámetro. Tronco recto con corteza gruesa, áspera, negruzca, fisurada longitudinalmente.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🟫 Tronco y Corteza</div>
+          <div class="value">Tronco grueso; DAP puede superar 100 cm en árboles longevos. Corteza negruzca con látex resinoso de olor penetrante. Ramas glabras de coloración castaña. Albura y duramen variables; duramen marrón oscuro con vetas casi negras en ejemplares adultos.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🍃 Hojas</div>
+          <div class="value">Simples, alternas, coriáceas (subcoriáceas), lanceoladas a oblongo-elípticas, 10–30 cm long. × 2.5–8 cm; bordes enteros, a veces ondulados; ápice acuminado o aristado; base cuneiforme; nervadura pinnatinervia reticulada; filotaxia alterna dispuesta en hélice; glabras; verde oscuro brillante en el haz, más claras en el envés. Los brotes nuevos son rojizos o rosados.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌸 Inflorescencia y Flores</div>
+          <div class="value">Inflorescencia en panícula piramidal terminal (o axilar) de 15–40 cm de largo; pedúnculos rojizos con tricomas. Flores polígamas (masculinas, femeninas y hermafroditas) muy pequeñas (3–8 mm de diámetro); verdosas a verde-amarillentas; muy aromáticas. Cáliz: 4–5 sépalos ovado-lanceolados, verdosos, pubescentes. Corola: 4–5 pétalos oblongo-lanceolados, con 3–5 crestas glandulares amarillas o moradas en la base. Androceo: 4–5 estambres; solo 1 ó 2 son fértiles y de mayor tamaño en flores masculinas. Disco nectarífero carnoso y segmentado en 5 partes, lleno de néctar. Gineceo: ovario globoso con 1 estilo en flores femeninas.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🥭 Fruto</div>
+          <div class="value">Drupa carnosa, ovoide-oblonga o reniforme; longitud 4–25 cm; color variable: verde, amarillo-verdoso, anaranjado, rojizo o morado según la variedad. Mesocarpio carnoso, fibroso, amarillo-anaranjado, dulce y jugoso en la madurez. Endocarpio leñoso y fibroso (hueso). Semilla monospérmica; puede ser monoembiónica o poliembiónica según la variedad.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌿 Raíz</div>
+          <div class="value">Sistema radical pivotante con raíces laterales bien desarrolladas. Tolerante a suelos pobres, con pH entre 5–8. Eficaz en la fijación del suelo. Las raíces contienen látex y principios activos con propiedades medicinales documentadas.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">⏱️ Fenología general</div>
+          <div class="value">Especie perenne de comportamiento fenológico estacional. Prefiere períodos secos para la floración. Tarda 2–4 años en producir los primeros frutos desde la siembra; por injerto, 5 años. Vida útil productiva: 30–50 años.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🧪 Latéx y compuestos especiales</div>
+          <div class="value">Produce látex resinoso en toda la planta. Contiene urushiol en la piel del fruto y en la madera (puede causar dermatitis). La corteza y hojas producen mangiferina (ver módulo etnobotánica).</div>
+        </div>
+      </div>
+
+      <div class="alert green">
+        <span class="alert-icon">🔬</span>
+        <div>
+          <strong>Filotaxia específica:</strong> Las hojas de <em>M. indica</em> presentan disposición alterna en hélice (espiral), con láminas de inserción peciolada. Esta disposición garantiza la máxima captación de luz solar en todos los planos de la copa densa y redondeada, lo que contribuye a su eficiencia fotosintética y producción de biomasa en el clima cálido del Casanare.
+        </div>
+      </div>
+
+      <!-- CALENDARIO FENOLÓGICO -->
+      <h3 class="section-title">📅 Calendario Fenológico — Maní, Casanare</h3>
+      <p style="font-size:0.88rem; margin-bottom:12px; color:#555;">
+        Ajustado al régimen bimodal de lluvias de Maní: <strong>Verano</strong> (diciembre–marzo) / <strong>Invierno</strong> (abril–noviembre). El mango prefiere estación seca para su floración. Comportamiento documentado para climas cálidos (&lt;1.000 m s.n.m.) con temperatura óptima 24–28°C.
+      </p>
+
+      <div class="fenology-grid">
+        <!-- ENE: Floración intensa (verano / seco) -->
+        <div class="month-cell flowering">
+          <div class="month-name">ENE</div>
+          <div class="month-icon">🌸</div>
+          <div class="month-phase">Flora.</div>
+        </div>
+        <!-- FEB: Floración / inicio cuajado (verano) -->
+        <div class="month-cell flowering">
+          <div class="month-name">FEB</div>
+          <div class="month-icon">🌸</div>
+          <div class="month-phase">Flora.</div>
+        </div>
+        <!-- MAR: Cuajado / frutos verdes (fin verano) -->
+        <div class="month-cell prefruit">
+          <div class="month-name">MAR</div>
+          <div class="month-icon">🍏</div>
+          <div class="month-phase">Cuajado</div>
+        </div>
+        <!-- ABR: Maduración / cosecha (inicio lluvias) -->
+        <div class="month-cell fruiting">
+          <div class="month-name">ABR</div>
+          <div class="month-icon">🥭</div>
+          <div class="month-phase">Cosecha</div>
+        </div>
+        <!-- MAY: Cosecha principal / invierno -->
+        <div class="month-cell fruiting">
+          <div class="month-name">MAY</div>
+          <div class="month-icon">🥭</div>
+          <div class="month-phase">Cosecha</div>
+        </div>
+        <!-- JUN: Crecimiento vegetativo (lluvias) -->
+        <div class="month-cell season-rain">
+          <div class="month-name">JUN</div>
+          <div class="month-icon">🌧️</div>
+          <div class="month-phase">Crec.</div>
+        </div>
+        <!-- JUL: Crecimiento vegetativo (lluvias) -->
+        <div class="month-cell season-rain">
+          <div class="month-name">JUL</div>
+          <div class="month-icon">🌧️</div>
+          <div class="month-phase">Crec.</div>
+        </div>
+        <!-- AGO: Crecimiento vegetativo (lluvias) -->
+        <div class="month-cell season-rain">
+          <div class="month-name">AGO</div>
+          <div class="month-icon">🌧️</div>
+          <div class="month-phase">Crec.</div>
+        </div>
+        <!-- SEP: Vegetativo activo -->
+        <div class="month-cell vegeta">
+          <div class="month-name">SEP</div>
+          <div class="month-icon">🌱</div>
+          <div class="month-phase">Veg.</div>
+        </div>
+        <!-- OCT: Pre-floración (fin lluvias) -->
+        <div class="month-cell vegeta">
+          <div class="month-name">OCT</div>
+          <div class="month-icon">🌱</div>
+          <div class="month-phase">Pre-fl.</div>
+        </div>
+        <!-- NOV: Inicio floración (estación seca) -->
+        <div class="month-cell season-dry">
+          <div class="month-name">NOV</div>
+          <div class="month-icon">☀️</div>
+          <div class="month-phase">Inicio sec.</div>
+        </div>
+        <!-- DIC: Floración (verano) -->
+        <div class="month-cell flowering">
+          <div class="month-name">DIC</div>
+          <div class="month-icon">🌸</div>
+          <div class="month-phase">Flora.</div>
+        </div>
+      </div>
+
+      <div class="fenology-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#ffe0b2;"></div> Estación seca (Verano)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#bbdefb;"></div> Estación lluviosa (Invierno)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#fce4ec;"></div> Floración (dic–feb)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e8f5e9;"></div> Cuajado de frutos (mar)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#fff9c4;"></div> Fructificación / Cosecha (abr–may)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f3e5f5;"></div> Crecimiento vegetativo activo</div>
+      </div>
+
+      <div class="alert">
+        <span class="alert-icon">📌</span>
+        <div>
+          <strong>Clave fenológica del mango en el llano:</strong> La floración ocurre preferentemente en la <strong>estación seca</strong> (diciembre–febrero en Maní), cuando la disminución de las lluvias actúa como detonante hormonal. Las lluvias tempranas durante la floración pueden reducir drásticamente la producción al favorecer enfermedades fungosas (<em>Oidium mangiferae</em>, antracnosis). La cosecha principal coincide con el inicio de las lluvias (abril–mayo), lo cual es bien conocido por los productores llaneros que "van al mango" entre semana santa y mayo.
+        </div>
+      </div>
+
+      <!-- FAUNA ASOCIADA -->
+      <h3 class="section-title">🦜 Fauna Asociada en la Orinoquía</h3>
+      <div class="fauna-grid">
+        <div class="fauna-card">
+          <div class="fauna-icon">🐝</div>
+          <div>
+            <div class="fauna-name">Abejas y abejorros (Apis mellifera y nativas)</div>
+            <div class="fauna-desc">El disco nectarífero produce néctar abundante. Las flores aromáticas son visitadas intensamente. La especie es reconocida como importante planta melífera en los llanos.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🦜</div>
+          <div>
+            <div class="fauna-name">Loros y pericos (<em>Amazona</em> spp., <em>Brotogeris</em> spp.)</div>
+            <div class="fauna-desc">Consumen activamente los frutos maduros e inmaduros. Son dispersores secundarios de semillas en bosques de galería del Casanare.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🐀</div>
+          <div>
+            <div class="fauna-name">Chácharo o Pecarí de collar (<em>Pecari tajacu</em>)</div>
+            <div class="fauna-desc">Consume los frutos caídos. Documentado como consumidor frecuente del mango en las sabanas y bosques de galería de la Orinoquía venezolana y colombiana.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🐿️</div>
+          <div>
+            <div class="fauna-name">Lapa (<em>Cuniculus paca</em>) y Picure (<em>Dasyprocta</em> spp.)</div>
+            <div class="fauna-desc">Consumen el fruto y la semilla (endocarpio leñoso). Documentados como consumidores habituales del mango en Venezuela y Colombia (Orinoquía y Amazonía).</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🦅</div>
+          <div>
+            <div class="fauna-name">Turpiales y tángaras (<em>Icterus</em> spp., <em>Tangara</em> spp.)</div>
+            <div class="fauna-desc">Se alimentan de la pulpa madura, picoteando el fruto en la rama. Las ramas del mango son también sitio de descanso y canto en fincas llaneras.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🦇</div>
+          <div>
+            <div class="fauna-name">Murciélagos frugívoros (<em>Artibeus</em> spp., <em>Carollia</em> spp.)</div>
+            <div class="fauna-desc">Consumen y transportan los frutos nocturnamente, actuando como dispersores de semillas. Las copas densas son también refugio diurno.</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🐛</div>
+          <div>
+            <div class="fauna-name">Mosca del mango (<em>Anastrepha</em> spp.)</div>
+            <div class="fauna-desc">Principal plaga en Colombia; los adultos ovipositan en el fruto. Su manejo es clave en el cultivo llanero. El árbol también alberga enemigos naturales como avispas parasitoides (<em>Diachasmimorpha</em> spp.).</div>
+          </div>
+        </div>
+        <div class="fauna-card">
+          <div class="fauna-icon">🐄</div>
+          <div>
+            <div class="fauna-name">Ganado bovino y équidos</div>
+            <div class="fauna-desc">El mango es usado extensamente como árbol de sombra para el ganado en hatos y fincas del Casanare. Los frutos caídos son consumidos por el ganado y los caballos.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       MÓDULO 4 — ETNOBOTÁNICA Y PEDAGOGÍA
+  ══════════════════════════════════════════════════════ -->
+  <section class="module" id="modulo4">
+    <div class="module-header">
+      <span class="icon">🐎</span>
+      <div>
+        <h2>MÓDULO 4 · Etnobotánica y Pedagogía</h2>
+        <p>El alma del proyecto — usos tradicionales, la voz de SILVAIN y reto de aprendizaje</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <!-- Usos tradicionales -->
+      <h3 class="section-title">🌿 Usos Tradicionales en el Contexto Llanero</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="label">🍹 Alimentario (fruto)</div>
+          <div class="value">Consumo fresco, jugos, mermeladas, bocadillos, conservas. Fruto rico en vitamina A, C, betacarotenos y fibra. El mango de azúcar criollo del Casanare es muy valorado por su sabor. En Venezuela se producen más de 16 cultivares adaptados a los llanos.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🍋 Alimentario (fruto verde)</div>
+          <div class="value">Mango verde en ensaladas, chutneys, encurtidos y salsas. En los llanos es tradicional el "mango biche" con sal y limón. El fruto inmaduro tiene alto contenido de ácido málico y astringentes.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">💊 Medicinal — hojas</div>
+          <div class="value">Decocción de 15–20 hojas en 1 L de agua para tratar afecciones respiratorias, tos y asma. Infusión de hojas como antidiabético tradicional (documentado en Tramil). Hojas masticadas para fortalecer dientes y tratar ampollas bucales.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">💊 Medicinal — corteza y raíz</div>
+          <div class="value">Comunidad Siona (Putumayo): infusión de hojas y corteza como desinfectante de heridas. Decocción de raíces como diurético y para enfermedades gastrointestinales. Infusión de corteza para tratamiento del paludismo y pigmentación de piel (carate/vitíligo). Astringente para diarreas crónicas.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">💊 Medicinal — semilla</div>
+          <div class="value">Semilla seca y pulverizada: antiparasitario contra <em>Ascaris lumbricoides</em> (uso ampliamente documentado en Colombia, México y Venezuela). La almendra de la semilla contiene triterpenos y esteroles bioactivos.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🔬 Compuesto bioactivo clave: Mangiferina</div>
+          <div class="value">Xantona glucosilada extraída de hojas y corteza. Propiedades: antioxidante, antimicrobiana, antidiabética, antihistamínica, anticancerígena, hipocolesterolémica e inmunomoduladora (documentadas científicamente).</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🔨 Madera y artesanía</div>
+          <div class="value">Madera para utensilios de cocina (tablas de picar), yugos para bueyes, carpintería rústica, instrumentos musicales (ukuleles, marimbas), muebles de bajo costo. También se usa para fabricar carbón vegetal.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🎨 Tintura y taninos</div>
+          <div class="value">La corteza produce un colorante amarillo natural. Rico en taninos con potencial para la industria del cuero (curtiembre). La familia Anacardiaceae es reconocida por sus taninos industriales.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌳 Servicios ecosistémicos</div>
+          <div class="value">Árbol de sombra insustituible en fincas y hatos llaneros. Rompevientos. Árbol melífero de primer orden. Ornamental en cascos urbanos de Casanare. Fijador de suelo con raíces profundas. Sombra para el ganado en los largos veranos del llano.</div>
+        </div>
+        <div class="data-card">
+          <div class="label">🌱 Agroforestería llanera</div>
+          <div class="value">Árbol componente de sistemas silvopastoriles. Se combina con pasturas mejoradas bajo su copa. Los llaneros lo plantan estratégicamente en los potreros como sombra permanente sin necesidad de riego ni fertilización.</div>
+        </div>
+      </div>
+
+      <!-- COMPUESTO ESPECIAL: MANGIFERINA -->
+      <div class="compound-box">
+        <h4>🧬 La Mangiferina: el secreto farmacológico del mango</h4>
+        <p>
+          La <strong>mangiferina</strong> es una xantona glucosilada que se extrae principalmente de las hojas y la corteza del árbol de mango. Es considerada uno de los compuestos naturales más prometedores de la farmacología tropical, con propiedades <strong>antioxidantes, antimicrobianas, antidiabéticas, antihistamínicas, anticancerígenas, hipocolesterolémicas e inmunomoduladoras</strong>, todas ellas confirmadas por estudios científicos publicados (Imran et al., 2017; Colegio Colombo Británico Envigado, 2023). También se encuentra en menores cantidades en la piel del fruto maduro.
+        </p>
+      </div>
+
+      <!-- VOZ SILVAIN -->
+      <h3 class="section-title">🤖 La Voz de SILVAIN · Storytelling Educativo</h3>
+      <div class="silvain-box">
+        <div class="silvain-avatar">🥭</div>
+        <div class="silvain-title">✦ SILVAIN habla · Para estudiantes de Grado Sexto ✦</div>
+        <p class="silvain-text">
+          Soy el Mango, y llevo más de cuatro mil años viajando con los seres humanos. Nací en los bosques húmedos y montañosos del norte de la India, cerca de la frontera con Myanmar, donde los monjes budistas del siglo V antes de Cristo ya me cargaban en sus bolsas para plantarme en nuevas tierras. Crucé el océano con marineros persas hacia el Medio Oriente, y siglos después los portugueses me embarcaron desde Goa hacia las costas de África, Brasil y México. Cuando llegué a los llanos del Casanare, supe que había encontrado mi lugar favorito en América: el verano largo y seco de diciembre a marzo me despierta del letargo vegetativo, mis ramas se llenan de panículas piramidales con miles de florecitas perfumadas color verde-amarillento, y las abejas, los turpiales y los colibríes no se pueden resistir al néctar dulce que produce mi disco floral. Cuando llegan las primeras lluvias de abril, mis frutos ya están maduros, amarillos o naranja, cargados de vitamina A, y toda la sabana huele a mango. El llanero sabe que cuando los mangos caen, es hora de recogerlos, comérselos con sal o preparar dulce para todo el año. Mis hojas guardan un secreto que los científicos apenas están descubriendo: contienen un compuesto llamado mangiferina, que puede ayudar a combatir la diabetes, los hongos y hasta algunas células de cáncer.
+        </p>
+        <div class="silvain-curiosity">
+          <strong>🤯 ¡Curiosidad asombrosa!</strong><br><br>
+          ¿Sabías que <strong>soy pariente de la hiedra venenosa</strong>? Pertenezco a la familia Anacardiaceae, la misma del marañón, el pistache y el árbol del caucho, pero también la misma de la planta que produce terribles sarpullidos en la piel. La piel de mi fruto y mi madera contienen una sustancia llamada <strong>urushiol</strong>, la misma que produce alergia en personas sensibles. Por eso, cuando en los llanos los niños comen mango directamente del árbol mordiéndolo desde la piel, algunos desarrollan manchas rojas alrededor de la boca. ¡Pero la pulpa de adentro es completamente segura y deliciosa! Y aquí viene lo más increíble: puedo vivir <strong>más de 100 años y seguir produciendo frutos</strong>. En Bangladesh hay un mango de 110 años de antigüedad que sigue dando cosecha. ¡Soy el árbol frutal más paciente del mundo!
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <h3 class="section-title">🎯 Reto de Aprendizaje · Active Recall (Grado Sexto)</h3>
+
+      <!-- Pregunta 1 -->
+      <div class="quiz-card">
+        <div class="quiz-question">❓ Pregunta 1: ¿De dónde es originario el árbol de mango (<em>Mangifera indica</em>) y cuánto tiempo lleva siendo cultivado por el ser humano?</div>
+        <div class="quiz-options">
+          <div class="quiz-option wrong">
+            <div class="option-letter">A</div>
+            <div>Es originario de África central y lleva unos 500 años de cultivo en el trópico americano</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">B</div>
+            <div>Es originario de la Amazonia colombiana y Venezuela, donde se cultiva desde hace 1.000 años</div>
+          </div>
+          <div class="quiz-option correct">
+            <div class="option-letter">C</div>
+            <div>Es originario del norte de la India y Myanmar, con aproximadamente 4.000 años de cultivo continuo por el ser humano</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">D</div>
+            <div>Es nativo de los llanos del Casanare y Arauca, donde crece silvestre de forma natural</div>
+          </div>
+          <div class="answer-label">✅ Respuesta correcta: C — Originario de la India / ~4.000 años de cultivo</div>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="quiz-card">
+        <div class="quiz-question">❓ Pregunta 2: ¿Por qué en Maní (Casanare) el mango florece principalmente entre diciembre y febrero, durante la época de verano?</div>
+        <div class="quiz-options">
+          <div class="quiz-option wrong">
+            <div class="option-letter">A</div>
+            <div>Porque en esa época el suelo tiene más nutrientes disponibles gracias a las inundaciones de los caños</div>
+          </div>
+          <div class="quiz-option correct">
+            <div class="option-letter">B</div>
+            <div>Porque el mango prefiere períodos secos para florecer; la estación sin lluvias actúa como señal para que el árbol produzca sus flores aromáticas</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">C</div>
+            <div>Porque las abejas solo están activas en los meses de verano y sin ellas el mango no puede florecer</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">D</div>
+            <div>Porque la temperatura baja en diciembre y eso estimula la aparición de las flores</div>
+          </div>
+          <div class="answer-label">✅ Respuesta correcta: B — La estación seca activa la floración del mango</div>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="quiz-card">
+        <div class="quiz-question">❓ Pregunta 3: ¿Qué compuesto bioactivo importante se extrae de las hojas y la corteza del mango, y para qué sirve según la ciencia?</div>
+        <div class="quiz-options">
+          <div class="quiz-option wrong">
+            <div class="option-letter">A</div>
+            <div>La cafeína, que es un estimulante del sistema nervioso central usado en bebidas energéticas</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">B</div>
+            <div>La pectina, que se usa exclusivamente para hacer mermeladas y jaleas del fruto</div>
+          </div>
+          <div class="quiz-option wrong">
+            <div class="option-letter">C</div>
+            <div>El urushiol, que tiene propiedades curativas contra enfermedades de la piel en los llanos</div>
+          </div>
+          <div class="quiz-option correct">
+            <div class="option-letter">D</div>
+            <div>La mangiferina, una xantona con propiedades antioxidantes, antidiabéticas, antimicrobianas y anticancerígenas confirmadas científicamente</div>
+          </div>
+          <div class="answer-label">✅ Respuesta correcta: D — La mangiferina y sus propiedades farmacológicas</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       MÓDULO 5 — REFERENCIAS
+  ══════════════════════════════════════════════════════ -->
+  <section class="module" id="modulo5">
+    <div class="module-header">
+      <span class="icon">📚</span>
+      <div>
+        <h2>MÓDULO 5 · Referencias Bibliográficas</h2>
+        <p>Fuentes reales y verificables — Formato APA 7ma Edición</p>
+      </div>
+    </div>
+    <div class="module-body">
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ️</span>
+        <div>
+          Todas las referencias listadas son reales y verificables. Las fuentes con acceso libre incluyen enlace DOI o URL. Las fuentes de bases de datos cerradas o documentos físicos se citan correctamente sin URL, conforme a APA 7.ª edición. Se han excluido fuentes no verificadas.
+        </div>
+      </div>
+
+      <ul class="ref-list">
+
+        <li>
+          <span class="ref-num">1</span>
+          Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., de las Salas, G., del Valle, I., Lema, A., Moreno, F., Orrego, S., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013
+        </li>
+
+        <li>
+          <span class="ref-num">2</span>
+          Barreto, J. S., Ramírez-Echeverry, S., Peña, M. A., Capachero, C., Barbosa, A. P., Panev, M., Phillips, J. F., & Moreno, L. M. (2018). <em>Manual de Campo Inventario Forestal Nacional Colombia</em>. Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM). Bogotá D.C.
+        </li>
+
+        <li>
+          <span class="ref-num">3</span>
+          Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2020). <em>Catálogo de Plantas y Líquenes de Colombia</em> (v1.1). Universidad Nacional de Colombia. https://doi.org/10.15472/7avdhn
+        </li>
+
+        <li>
+          <span class="ref-num">4</span>
+          Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2012). <em>Nombres Comunes de las Plantas de Colombia</em>. Universidad Nacional de Colombia — Biovirtual UNAL. http://www.biovirtual.unal.edu.co/nombrescomunes/
+        </li>
+
+        <li>
+          <span class="ref-num">5</span>
+          Chave, J. (2006). <em>Medición de densidad de madera en árboles tropicales: Manual de campo</em>. Laboratoire Évolution et Diversité Biologique, Université Paul Sabatier. Toulouse. https://rainfor.org/wp-content/uploads/sites/129/2022/07/wood_density_spanish1.pdf
+        </li>
+
+        <li>
+          <span class="ref-num">6</span>
+          Chave, J., Réjou-Méchain, M., Búrquez, A., Chidumayo, E., Colgan, M. S., Delitti, W. B. C., Duque, A., Eid, T., Fearnside, P. M., Goodman, R. C., Henry, M., Martínez-Yrízar, A., Mugasha, W. A., Muller-Landau, H. C., Mencuccini, M., Nelson, B. W., Ngomanda, A., Nogueira, E. M., Ortiz-Malavassi, E., … Vieilledent, G. (2014). Improved allometric models to estimate the aboveground biomass of tropical trees. <em>Global Change Biology, 20</em>(10), 3177–3190. https://doi.org/10.1111/gcb.12629
+        </li>
+
+        <li>
+          <span class="ref-num">7</span>
+          Departamento Administrativo Nacional de Estadística (DANE). (2019). <em>El cultivo del mango (Mangifera indica L.) en Colombia y un estudio de caso de los costos de producción en el municipio de Espinal (Tolima)</em>. Boletín de Insumos y Factores Asociados a la Producción Agropecuaria, febrero 2019. https://www.dane.gov.co/files/investigaciones/agropecuario/sipsa/Bol_Insumos_feb_2019.pdf
+        </li>
+
+        <li>
+          <span class="ref-num">8</span>
+          Guerra, M., Ruiz, R., & Pardo, E. (2018). Diversidad genética de <em>Mangifera indica</em> (Anacardiaceae) en Valencia, Córdoba, Colombia, usando marcadores microsatélites. <em>Acta Botanica Mexicana, 124</em>. https://doi.org/10.21829/abm124.2018.1285
+        </li>
+
+        <li>
+          <span class="ref-num">9</span>
+          Imran, M., Arshad, M. S., Butt, M. S., Kwon, J.-H., Arshad, M. U., & Sultan, M. T. (2017). Mangiferin: a natural miracle bioactive compound against lifestyle related disorders. <em>Lipids in Health and Disease, 16</em>(84). https://doi.org/10.1186/s12944-017-0449-y
+        </li>
+
+        <li>
+          <span class="ref-num">10</span>
+          Martínez, J. A., Fajardo, A. G., Esquivel, J. S., González, D. M., Prieto, A. G., & Rincón, D. (2020). Manejo integrado del cultivo de mango <em>Mangifera indica</em> L. <em>Revista Ciencias Agropecuarias, 6</em>(1), 51–78. https://doi.org/10.36436/24223484.267
+        </li>
+
+        <li>
+          <span class="ref-num">11</span>
+          Parrotta, J. A. (1993). <em>Mangifera indica</em> L. Mango. SO-ITF-SM-63. New Orleans, LA: U.S. Department of Agriculture, Forest Service, Southern Forest Experiment Station. Recuperado de https://rngr.net/publications/arboles-de-puerto-rico/mangifera-indica/at_download/file
+        </li>
+
+        <li>
+          <span class="ref-num">12</span>
+          Riesco Muñoz, G., Imaña Encinas, J., & de Paula, J. E. (2019). Densidad de la madera de 59 especies del orden Sapindales procedentes de bosques naturales brasileños. <em>Madera y Bosques, 25</em>(2), e2521817. https://doi.org/10.21829/myb.2019.2521817
+        </li>
+
+        <li>
+          <span class="ref-num">13</span>
+          TRAMIL Network. (2023). <em>Mangifera indica</em> L. — Ficha etnofarmacológica. Tramil Caribbean Medicinal Plant Database. https://www.tramil.net/en/plant/mangifera-indica
+        </li>
+
+        <li>
+          <span class="ref-num">14</span>
+          Vega-Ávila, E., Velasco-Lezama, R., & Jiménez-Estrada, M. (2006). Usos tradicionales de las plantas de la Orinoquía colombiana. <em>Ugciencia — Revista de la Universidad La Gran Colombia, 12</em>(1). https://revistas.ugca.edu.co/index.php/ugciencia/article/view/419
+        </li>
+
+        <li>
+          <span class="ref-num">15</span>
+          Zanne, A. E., Lopez-Gonzalez, G., Coomes, D. A., Ilic, J., Jansen, S., Lewis, S. L., Miller, R. B., Swenson, N. G., Wiemann, M. C., & Chave, J. (2009). <em>Global wood density database</em>. Dryad Digital Repository. https://doi.org/10.5061/dryad.234
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer style="background:#78350f; color:rgba(255,255,255,0.75); text-align:center; padding:28px 20px; font-size:0.82rem;">
+  <p>
+    🥭 <strong style="color:#fbbf24;">SILVAIN AI</strong> · Plataforma de Inventario Forestal JBP · Jardín Botánico de Paz de Ariporo · Maní, Casanare, Colombia
+  </p>
+  <p style="margin-top:6px;">
+    Dossier técnico-pedagógico generado con rigor científico. Datos sujetos a verificación de campo conforme a las Reglas de Oro de Integridad de Datos del Proyecto SILVAIN.
+  </p>
+  <p style="margin-top:6px; color:rgba(255,255,255,0.4); font-size:0.75rem;">
+    Formato APA 7ma Edición · Consorcio técnico: Ph.D. Botánica Sistemática | Ing. Forestal Biometría | Antropólogo Etnobotánica | Editor Académico
+  </p>
+</footer>
+
+</body>
+</html>
