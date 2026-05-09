@@ -164,7 +164,7 @@
         }
 
         /* Ajustes Dark Mode */
-        .dark-mode {
+        .modo-noche {
             --bg-color: #0d140d;
             --card-bg: #151f14;
             --text-main: #e0e0e0;
@@ -173,12 +173,12 @@
             --secondary-color: #d4ff80;
         }
 
-        .dark-mode .dossier-module {
+        .modo-noche .dossier-module {
             background: #0d140d;
             border-color: rgba(255,255,255,0.05);
         }
 
-        .dark-mode .module-header-pro { background: rgba(255,255,255,0.02); }
+        .modo-noche .module-header-pro { background: rgba(255,255,255,0.02); }
 
         .exotic-banner-pro {
             background: #fff3cd;
@@ -193,7 +193,7 @@
             box-shadow: var(--shadow-soft);
         }
 
-        .dark-mode .exotic-banner-pro { background: #2c2512; color: #ffe082; border-color: #ffc107; }
+        .modo-noche .exotic-banner-pro { background: #2c2512; color: #ffe082; border-color: #ffc107; }
 
         /* Calendario Moderno (Estilo Imagen - Refinado) */
         .calendar-container-pro {
@@ -323,7 +323,7 @@
             transition: 0.3s;
         }
 
-        .dark-mode .lista-apa li { background: rgba(255,255,255,0.03); }
+        .modo-noche .lista-apa li { background: rgba(255,255,255,0.03); }
 
         .lista-apa li:hover {
             background: rgba(129, 182, 34, 0.08);
@@ -369,7 +369,7 @@
         }
 
         .section-val { color: var(--text-main); line-height: 1.8; font-size: 1.05rem; }
-        .dark-mode .section-val, .dark-mode .module-body-pro, .dark-mode p { color: #e0e0e0 !important; }
+        .modo-noche .section-val, .modo-noche .module-body-pro, .modo-noche p { color: #e0e0e0 !important; }
 
         .metric-card {
             background: rgba(0,0,0,0.03);
@@ -395,13 +395,13 @@
             .btn-audio-pro { width: 50px; height: 50px; font-size: 1.2rem; }
         }
 
-        .dark-mode .metric-card { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); }
+        .modo-noche .metric-card { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); }
 
         .metric-label { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); margin-bottom: 5px; }
         .metric-val { font-size: 1.4rem; font-weight: 800; color: var(--secondary-color); }
-        .dark-mode .metric-val { color: var(--primary-vibrant); }
+        .modo-noche .metric-val { color: var(--primary-vibrant); }
 
-        .dark-mode .badge-estado { 
+        .modo-noche .badge-estado { 
             background: #1a3318; 
             color: #d4ff80; 
             border: 1px solid rgba(212, 255, 128, 0.3);
@@ -418,7 +418,7 @@
 
         .badge-tipo { background: rgba(129, 182, 34, 0.1); color: var(--primary-light); border: 1px solid var(--primary-light); padding: 8px 16px; border-radius: 10px; font-weight: 800; }
 
-        .dark-mode .badge-tipo { background: rgba(129, 182, 34, 0.2); color: #d4ff80; }
+        .modo-noche .badge-tipo { background: rgba(129, 182, 34, 0.2); color: #d4ff80; }
 
         /* Blockquote styles (Investigation data) */
         .blockquote-pro {
@@ -430,13 +430,13 @@
             font-style: italic;
         }
 
-        .dark-mode .blockquote-pro {
+        .modo-noche .blockquote-pro {
             background: rgba(255,255,255,0.05);
             color: #d1d1d1 !important;
             border-left-color: var(--primary-vibrant);
         }
 
-        .dark-mode .blockquote-pro cite {
+        .modo-noche .blockquote-pro cite {
             color: var(--primary-vibrant);
             display: block;
             margin-top: 10px;
@@ -729,9 +729,17 @@
         }
 
         const themeToggle = document.getElementById('themeToggle');
+        
+        // Cargar estado inicial
+        const savedTheme = localStorage.getItem('ecoTheme');
+        if(savedTheme === 'dark') {
+            document.body.classList.add('modo-noche');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
         themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
+            const isDark = document.body.classList.toggle('modo-noche');
+            localStorage.setItem('ecoTheme', isDark ? 'dark' : 'light');
             themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         });
 
