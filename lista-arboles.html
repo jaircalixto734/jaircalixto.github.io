@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inventario Forestal Digital - Explora la base de datos botánica de la IE Jesús Bernal Pinzón.">
+    <meta name="description"
+        content="Inventario Forestal Digital - Explora la base de datos botánica de la IE Jesús Bernal Pinzón.">
     <title>Inventario Forestal - EcoDigital</title>
     <link rel="stylesheet" href="style.css">
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- NAVBAR -->
@@ -40,7 +43,8 @@
         <div class="container relative-content">
             <span class="label-white">Ecosistema Vivo JBP</span>
             <h2 class="text-white">Inventario Forestal Digital</h2>
-            <p class="section-intro text-white-soft">Explora nuestra base de datos botánica. Conoce las especies que habitan en nuestra institución, su clasificación y su impacto ambiental.</p>
+            <p class="section-intro text-white-soft">Explora nuestra base de datos botánica. Conoce las especies que
+                habitan en nuestra institución, su clasificación y su impacto ambiental.</p>
         </div>
     </section>
 
@@ -49,9 +53,10 @@
         <div class="inventory-controls">
             <div class="search-bar">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico..." autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico..."
+                    autocomplete="off">
             </div>
-            
+
             <div class="filter-chips">
                 <button class="filter-btn active" data-filter="todos">Todos</button>
                 <button class="filter-btn" data-filter="nativos">Nativos</button>
@@ -70,275 +75,412 @@
 
                 <!-- ÁRBOLES PRINCIPALES (1-4) -->
                 <div class="tree-card" data-category="nativos">
-                    <div class="tree-img-container"><img src="./imagenes/colegio1.jpeg" alt="Merecure">
-                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span class="tree-id">#JBP-01</span></div>
-                    <div class="tree-info"><h3>Merecure</h3><p class="scientific-name">Moquilea pyrifolia</p>
-                        <p class="tree-desc">Especie emblemática de la cuenca del Orinoco, proveedora de sombra y frutos dulces en la sabana.</p>
-                        <a href="ficha-arbol.html?arbol=merecure" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                    <div class="tree-img-container"><img src="./imagenes/foto2.jpeg" alt="Merecure">
+                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span
+                            class="tree-id">#JBP-01</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Merecure</h3>
+                        <p class="scientific-name">Moquilea pyrifolia</p>
+                        <p class="tree-desc">Especie emblemática de la cuenca del Orinoco, proveedora de sombra y frutos
+                            dulces en la sabana.</p>
+                        <a href="ficha-arbol.html?arbol=merecure" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="frutales">
-                    <div class="tree-img-container"><img src="./imagenes/foto2.jpeg" alt="Jambolán">
-                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span class="tree-id">#JBP-02</span></div>
-                    <div class="tree-info"><h3>Jambolán</h3><p class="scientific-name">Syzygium cumini</p>
-                        <p class="tree-desc">Especie exótica introducida desde la India, famosa por sus frutos que tiñen la lengua y sus propiedades medicinales.</p>
-                        <a href="ficha-arbol.html?arbol=jambolan" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                    <div class="tree-img-container"><img src="./imagenes/Jambolán.jpeg" alt="Jambolán">
+                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span
+                            class="tree-id">#JBP-02</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Jambolán</h3>
+                        <p class="scientific-name">Syzygium cumini</p>
+                        <p class="tree-desc">Especie exótica introducida desde la India, famosa por sus frutos que tiñen
+                            la lengua y sus propiedades medicinales.</p>
+                        <a href="ficha-arbol.html?arbol=jambolan" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="nativos">
-                    <div class="tree-img-container"><img src="./imagenes/colegio2.jpeg" alt="Palo Cruz">
-                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span class="tree-id">#JBP-03</span></div>
-                    <div class="tree-info"><h3>Palo Cruz</h3><p class="scientific-name">Brownea ariza</p>
-                        <p class="tree-desc">Árbol nativo de extraordinario valor ornamental, famoso por sus grandes cabezuelas de flores escarlatas que nacen directo del tronco.</p>
-                        <a href="ficha-arbol.html?arbol=palo-cruz" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                    <div class="tree-img-container"><img src="./imagenes/Palo_Cruz.jpeg" alt="Palo Cruz">
+                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span
+                            class="tree-id">#JBP-03</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Palo Cruz</h3>
+                        <p class="scientific-name">Brownea ariza</p>
+                        <p class="tree-desc">Árbol nativo de extraordinario valor ornamental, famoso por sus grandes
+                            cabezuelas de flores escarlatas que nacen directo del tronco.</p>
+                        <a href="ficha-arbol.html?arbol=palo-cruz" class="btn-tree"><i class="fas fa-leaf"></i> Ver
+                            Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="maderables">
                     <div class="tree-img-container"><img src="./imagenes/colegio1.jpeg" alt="Almendro">
-                        <span class="tree-badge badge-maderable"><i class="fas fa-tree"></i> Sombra</span><span class="tree-id">#JBP-04</span></div>
-                    <div class="tree-info"><h3>Almendro</h3><p class="scientific-name">Terminalia catappa</p>
-                        <p class="tree-desc">Árbol de sombra clave en la llanura. Sus hojas purifican el agua y sus ramas crecen en capas protegiendo al ganado del sol.</p>
-                        <a href="ficha-arbol.html?arbol=almendro" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-maderable"><i class="fas fa-tree"></i> Sombra</span><span
+                            class="tree-id">#JBP-04</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Almendro</h3>
+                        <p class="scientific-name">Terminalia catappa</p>
+                        <p class="tree-desc">Árbol de sombra clave en la llanura. Sus hojas purifican el agua y sus
+                            ramas crecen en capas protegiendo al ganado del sol.</p>
+                        <a href="ficha-arbol.html?arbol=almendro" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="frutales">
                     <div class="tree-img-container"><img src="./imagenes/pomarrosa1.jpg" alt="Pomarrosa">
-                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span class="tree-id">#JBP-05</span></div>
-                    <div class="tree-info"><h3>Pomarrosa</h3><p class="scientific-name">Syzygium jambos</p>
-                        <p class="tree-desc">Famosa por sus flores en forma de pompones y sus frutos con aroma a rosas. Un tesoro exótico naturalizado en el llano.</p>
-                        <a href="ficha-arbol.html?arbol=pomarrosa" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span
+                            class="tree-id">#JBP-05</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Pomarrosa</h3>
+                        <p class="scientific-name">Syzygium jambos</p>
+                        <p class="tree-desc">Famosa por sus flores en forma de pompones y sus frutos con aroma a rosas.
+                            Un tesoro exótico naturalizado en el llano.</p>
+                        <a href="ficha-arbol.html?arbol=pomarrosa" class="btn-tree"><i class="fas fa-leaf"></i> Ver
+                            Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="ornamentales">
                     <div class="tree-img-container"><img src="./imagenes/areca1.jpg" alt="Palma Areca">
-                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span class="tree-id">#JBP-06</span></div>
-                    <div class="tree-info"><h3>Palma Areca</h3><p class="scientific-name">Dypsis lutescens</p>
-                        <p class="tree-desc">Elegante palmera multicaule conocida como "Palma Bambú". Es una de las mejores purificadoras de aire según la NASA.</p>
-                        <a href="ficha-arbol.html?arbol=palma_areca" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span
+                            class="tree-id">#JBP-06</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Palma Areca</h3>
+                        <p class="scientific-name">Dypsis lutescens</p>
+                        <p class="tree-desc">Elegante palmera multicaule conocida como "Palma Bambú". Es una de las
+                            mejores purificadoras de aire según la NASA.</p>
+                        <a href="ficha-arbol.html?arbol=palma_areca" class="btn-tree"><i class="fas fa-leaf"></i> Ver
+                            Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="nativos">
                     <div class="tree-img-container"><img src="./imagenes/caracaro1.jpg" alt="Caracaro">
-                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span class="tree-id">#JBP-07</span></div>
-                    <div class="tree-info"><h3>Caracaro</h3><p class="scientific-name">Enterolobium cyclocarpum</p>
-                        <p class="tree-desc">El gigante de las sabanas. Sus frutos en forma de oreja y su capacidad de fijar nitrógeno lo hacen vital para el ecosistema llanero.</p>
-                        <a href="ficha-arbol.html?arbol=caracaro" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span
+                            class="tree-id">#JBP-07</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Caracaro</h3>
+                        <p class="scientific-name">Enterolobium cyclocarpum</p>
+                        <p class="tree-desc">El gigante de las sabanas. Sus frutos en forma de oreja y su capacidad de
+                            fijar nitrógeno lo hacen vital para el ecosistema llanero.</p>
+                        <a href="ficha-arbol.html?arbol=caracaro" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="frutales">
                     <div class="tree-img-container"><img src="./imagenes/mango1.jpg" alt="Mango">
-                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span class="tree-id">#JBP-08</span></div>
-                    <div class="tree-info"><h3>Mango</h3><p class="scientific-name">Mangifera indica</p>
-                        <p class="tree-desc">El rey de las frutas tropicales. Su sombra densa y sus frutos dulces son parte esencial de la identidad de los patios en Maní.</p>
-                        <a href="ficha-arbol.html?arbol=mango" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span
+                            class="tree-id">#JBP-08</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Mango</h3>
+                        <p class="scientific-name">Mangifera indica</p>
+                        <p class="tree-desc">El rey de las frutas tropicales. Su sombra densa y sus frutos dulces son
+                            parte esencial de la identidad de los patios en Maní.</p>
+                        <a href="ficha-arbol.html?arbol=mango" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <!-- NUEVOS ÁRBOLES (09-17) -->
                 <div class="tree-card" data-category="nativos">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Uvero">
-                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span class="tree-id">#JBP-09</span></div>
-                    <div class="tree-info"><h3>Uvero</h3><p class="scientific-name">Coccoloba acuminata</p>
-                        <p class="tree-desc">Sus pequeños frutos parecidos a uvas son un manjar para aves y transeúntes, crece cerca de fuentes de agua.</p>
-                        <a href="ficha-arbol.html?arbol=coccoloba-acuminata" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span
+                            class="tree-id">#JBP-09</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Uvero</h3>
+                        <p class="scientific-name">Coccoloba acuminata</p>
+                        <p class="tree-desc">Sus pequeños frutos parecidos a uvas son un manjar para aves y transeúntes,
+                            crece cerca de fuentes de agua.</p>
+                        <a href="ficha-arbol.html?arbol=coccoloba-acuminata" class="btn-tree"><i
+                                class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="frutales">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Palma de Coco">
-                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span class="tree-id">#JBP-10</span></div>
-                    <div class="tree-info"><h3>Palma de Coco</h3><p class="scientific-name">Cocos nucifera</p>
-                        <p class="tree-desc">Palma mundialmente conocida por su fruto, el agua de coco y su valor paisajístico inconfundible.</p>
-                        <a href="ficha-arbol.html?arbol=palma-de-coco" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span
+                            class="tree-id">#JBP-10</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Palma de Coco</h3>
+                        <p class="scientific-name">Cocos nucifera</p>
+                        <p class="tree-desc">Palma mundialmente conocida por su fruto, el agua de coco y su valor
+                            paisajístico inconfundible.</p>
+                        <a href="ficha-arbol.html?arbol=palma-de-coco" class="btn-tree"><i class="fas fa-leaf"></i> Ver
+                            Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="maderables">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Trompillo">
-                        <span class="tree-badge badge-maderable"><i class="fas fa-hammer"></i> Maderable</span><span class="tree-id">#JBP-11</span></div>
-                    <div class="tree-info"><h3>Trompillo</h3><p class="scientific-name">Guarea guidonia</p>
-                        <p class="tree-desc">También conocido como Cedro Macho, aporta valiosa madera y sus semillas atraen a las aves del bosque.</p>
-                        <a href="ficha-arbol.html?arbol=trompillo" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-maderable"><i class="fas fa-hammer"></i> Maderable</span><span
+                            class="tree-id">#JBP-11</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Trompillo</h3>
+                        <p class="scientific-name">Guarea guidonia</p>
+                        <p class="tree-desc">También conocido como Cedro Macho, aporta valiosa madera y sus semillas
+                            atraen a las aves del bosque.</p>
+                        <a href="ficha-arbol.html?arbol=trompillo" class="btn-tree"><i class="fas fa-leaf"></i> Ver
+                            Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="nativos">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Guácimo">
-                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span class="tree-id">#JBP-12</span></div>
-                    <div class="tree-info"><h3>Guácimo</h3><p class="scientific-name">Guazuma ulmifolia</p>
-                        <p class="tree-desc">Un salvavidas en el verano llanero: sus frutos caídos proporcionan forraje clave para el ganado.</p>
-                        <a href="ficha-arbol.html?arbol=guacimo" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-nativo"><i class="fas fa-seedling"></i> Nativo</span><span
+                            class="tree-id">#JBP-12</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Guácimo</h3>
+                        <p class="scientific-name">Guazuma ulmifolia</p>
+                        <p class="tree-desc">Un salvavidas en el verano llanero: sus frutos caídos proporcionan forraje
+                            clave para el ganado.</p>
+                        <a href="ficha-arbol.html?arbol=guacimo" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="ornamentales">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Gualanday">
-                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span class="tree-id">#JBP-13</span></div>
-                    <div class="tree-info"><h3>Gualanday</h3><p class="scientific-name">Jacaranda obtusifolia</p>
-                        <p class="tree-desc">Pinta el paisaje de la Orinoquía con su espectacular floración azul-violácea durante la sequía.</p>
-                        <a href="ficha-arbol.html?arbol=gualanday" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span
+                            class="tree-id">#JBP-13</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Gualanday</h3>
+                        <p class="scientific-name">Jacaranda obtusifolia</p>
+                        <p class="tree-desc">Pinta el paisaje de la Orinoquía con su espectacular floración
+                            azul-violácea durante la sequía.</p>
+                        <a href="ficha-arbol.html?arbol=gualanday" class="btn-tree"><i class="fas fa-leaf"></i> Ver
+                            Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="ornamentales">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Oití">
-                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span class="tree-id">#JBP-14</span></div>
-                    <div class="tree-info"><h3>Oití</h3><p class="scientific-name">Licania tomentosa</p>
-                        <p class="tree-desc">Su copa densa y redondeada proporciona una sombra excelente, ideal para parques y andenes.</p>
-                        <a href="ficha-arbol.html?arbol=oiti" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span
+                            class="tree-id">#JBP-14</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Oití</h3>
+                        <p class="scientific-name">Licania tomentosa</p>
+                        <p class="tree-desc">Su copa densa y redondeada proporciona una sombra excelente, ideal para
+                            parques y andenes.</p>
+                        <a href="ficha-arbol.html?arbol=oiti" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="frutales">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Noni">
-                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span class="tree-id">#JBP-15</span></div>
-                    <div class="tree-info"><h3>Noni</h3><p class="scientific-name">Morinda citrifolia</p>
-                        <p class="tree-desc">Conocido por su fuerte olor y ampliamente cultivado por sus supuestas propiedades medicinales.</p>
-                        <a href="ficha-arbol.html?arbol=noni" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-frutal"><i class="fas fa-apple-alt"></i> Frutal</span><span
+                            class="tree-id">#JBP-15</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Noni</h3>
+                        <p class="scientific-name">Morinda citrifolia</p>
+                        <p class="tree-desc">Conocido por su fuerte olor y ampliamente cultivado por sus supuestas
+                            propiedades medicinales.</p>
+                        <a href="ficha-arbol.html?arbol=noni" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="ornamentales">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Palma Real">
-                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span class="tree-id">#JBP-16</span></div>
-                    <div class="tree-info"><h3>Palma Real</h3><p class="scientific-name">Roystonea regia</p>
-                        <p class="tree-desc">Majestuosa palmera con capitel verde brillante, sus frutos "palmiche" son favoritos de loros.</p>
-                        <a href="ficha-arbol.html?arbol=palma-real" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-ornamental"><i class="fas fa-spa"></i> Ornamental</span><span
+                            class="tree-id">#JBP-16</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Palma Real</h3>
+                        <p class="scientific-name">Roystonea regia</p>
+                        <p class="tree-desc">Majestuosa palmera con capitel verde brillante, sus frutos "palmiche" son
+                            favoritos de loros.</p>
+                        <a href="ficha-arbol.html?arbol=palma-real" class="btn-tree"><i class="fas fa-leaf"></i> Ver
+                            Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="maderables">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Samán">
-                        <span class="tree-badge badge-maderable"><i class="fas fa-hammer"></i> Maderable</span><span class="tree-id">#JBP-17</span></div>
-                    <div class="tree-info"><h3>Samán</h3><p class="scientific-name">Samanea saman</p>
-                        <p class="tree-desc">El gigante protector del llano; su inmensa copa da refugio y sus hojas "duermen" de noche.</p>
-                        <a href="ficha-arbol.html?arbol=saman" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-maderable"><i class="fas fa-hammer"></i> Maderable</span><span
+                            class="tree-id">#JBP-17</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Samán</h3>
+                        <p class="scientific-name">Samanea saman</p>
+                        <p class="tree-desc">El gigante protector del llano; su inmensa copa da refugio y sus hojas
+                            "duermen" de noche.</p>
+                        <a href="ficha-arbol.html?arbol=saman" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha
+                            Completa</a>
+                    </div>
                 </div>
 
                 <!-- POR IDENTIFICAR (18-20) -->
                 <div class="tree-card" data-category="por-identificar">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Por identificar">
-                        <span class="tree-badge badge-estudio"><i class="fas fa-microscope"></i> En Estudio</span><span class="tree-id">#JBP-18</span></div>
-                    <div class="tree-info"><h3>Especie en Estudio</h3><p class="scientific-name">Pendiente de clasificación</p>
-                        <p class="tree-desc">Se están recolectando muestras de hojas y frutos para su identificación botánica.</p>
-                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <span class="tree-badge badge-estudio"><i class="fas fa-microscope"></i> En Estudio</span><span
+                            class="tree-id">#JBP-18</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Especie en Estudio</h3>
+                        <p class="scientific-name">Pendiente de clasificación</p>
+                        <p class="tree-desc">Se están recolectando muestras de hojas y frutos para su identificación
+                            botánica.</p>
+                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="por-identificar">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Por identificar">
-                        <span class="tree-badge badge-estudio"><i class="fas fa-microscope"></i> En Estudio</span><span class="tree-id">#JBP-19</span></div>
-                    <div class="tree-info"><h3>Especie en Estudio</h3><p class="scientific-name">Pendiente de clasificación</p>
+                        <span class="tree-badge badge-estudio"><i class="fas fa-microscope"></i> En Estudio</span><span
+                            class="tree-id">#JBP-19</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Especie en Estudio</h3>
+                        <p class="scientific-name">Pendiente de clasificación</p>
                         <p class="tree-desc">Se están recolectando muestras botánicas.</p>
-                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
                 </div>
 
                 <div class="tree-card" data-category="por-identificar">
                     <div class="tree-img-container"><img src="./imagenes/desconocido.jpg" alt="Por identificar">
-                        <span class="tree-badge badge-estudio"><i class="fas fa-microscope"></i> En Estudio</span><span class="tree-id">#JBP-20</span></div>
-                    <div class="tree-info"><h3>Especie en Estudio</h3><p class="scientific-name">Pendiente de clasificación</p>
+                        <span class="tree-badge badge-estudio"><i class="fas fa-microscope"></i> En Estudio</span><span
+                            class="tree-id">#JBP-20</span>
+                    </div>
+                    <div class="tree-info">
+                        <h3>Especie en Estudio</h3>
+                        <p class="scientific-name">Pendiente de clasificación</p>
                         <p class="tree-desc">Se están recolectando muestras botánicas.</p>
-                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a></div>
+                        <a href="#" class="btn-tree"><i class="fas fa-leaf"></i> Ver Ficha Completa</a>
+                    </div>
                 </div>
             </div>
         </div>
-            </div>
+        </div>
         </div>
     </section>
 
-<footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-column branding">
-            <div class="footer-logo">
-                <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
-                <div>
-                    <h4>Inventario Forestal Digital</h4>
-                    <span>IE Jesús Bernal Pinzón</span>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column branding">
+                <div class="footer-logo">
+                    <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
+                    <div>
+                        <h4>Inventario Forestal Digital</h4>
+                        <span>IE Jesús Bernal Pinzón</span>
+                    </div>
                 </div>
+                <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la
+                    biodiversidad arbórea mediante TIC e IA.</p>
             </div>
-            <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la biodiversidad arbórea mediante TIC e IA.</p>
+
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="lista-arboles.html">Inventario Forestal</a></li>
+                    <li><a href="calculadora.html">Calculadora de Carbono</a></li>
+                    <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="equipo.html">Equipo de Trabajo</a></li>
+                    <li><a href="#goals">Objetivos del Proyecto</a></li>
+                    <li><a href="#">Marco Teórico</a></li>
+                    <li><a href="#">Resultados Esperados</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul class="contact-info">
+                    <li>📍 Maní, Casanare </li>
+                    <li>🏫 IE Jesús Bernal Pinzón </li>
+                    <li>🎓 SENA - 2026 </li>
+                    <li>📧 contacto@ecodigital.edu.co</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="footer-column">
-            <h4>Enlaces Rápidos</h4>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="lista-arboles.html">Inventario Forestal</a></li>
-                <li><a href="calculadora.html">Calculadora de Carbono</a></li>
-                <li><a href="ia-chatbot.html">Chatbot IA</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
+            <div class="footer-badges">
+                <span class="badge">SENA</span>
+                <span class="badge">ODS 15</span>
+                <span class="badge">PRAE</span>
+            </div>
         </div>
+    </footer>
 
-        <div class="footer-column">
-            <h4>Información</h4>
-            <ul>
-                <li><a href="equipo.html">Equipo de Trabajo</a></li>
-                <li><a href="#goals">Objetivos del Proyecto</a></li>
-                <li><a href="#">Marco Teórico</a></li>
-                <li><a href="#">Resultados Esperados</a></li>
-            </ul>
-        </div>
+    <!-- Botón Flotante de Tema -->
+    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+        <i class="fas fa-moon"></i>
+    </button>
 
-        <div class="footer-column">
-            <h4>Contacto</h4>
-            <ul class="contact-info">
-                <li>📍 Maní, Casanare </li>
-                <li>🏫 IE Jesús Bernal Pinzón </li>
-                <li>🎓 SENA - 2026 </li>
-                <li>📧 contacto@ecodigital.edu.co</li>
-            </ul>
-        </div>
-    </div>
+    <!-- Lógica Global -->
+    <script src="js/main.js"></script>
 
-    <div class="footer-bottom">
-        <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
-        <div class="footer-badges">
-            <span class="badge">SENA</span>
-            <span class="badge">ODS 15</span>
-            <span class="badge">PRAE</span>
-        </div>
-    </div>
-</footer>
+    <!-- SCRIPT DE FILTROS OPTIMIZADO -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const treeCards = document.querySelectorAll('.tree-card');
+        const noResultsMsg = document.getElementById('noResults');
 
-<!-- Botón Flotante de Tema -->
-<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
-    <i class="fas fa-moon"></i>
-</button>
+        function filterTrees() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            let visibleCount = 0;
 
-<!-- Lógica Global -->
-<script src="js/main.js"></script>
+            treeCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const scientific = card.querySelector('.scientific-name').textContent.toLowerCase();
+                const category = card.getAttribute('data-category');
 
-<!-- SCRIPT DE FILTROS OPTIMIZADO -->
-<script>
-    const searchInput = document.getElementById('searchInput');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const treeCards = document.querySelectorAll('.tree-card');
-    const noResultsMsg = document.getElementById('noResults');
+                const matchesSearch = title.includes(searchTerm) || scientific.includes(searchTerm);
+                const matchesFilter = activeFilter === 'todos' || category === activeFilter;
 
-    function filterTrees() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-        let visibleCount = 0;
+                if (matchesSearch && matchesFilter) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeInCard 0.4s ease forwards';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
 
-        treeCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const scientific = card.querySelector('.scientific-name').textContent.toLowerCase();
-            const category = card.getAttribute('data-category');
+            noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
 
-            const matchesSearch = title.includes(searchTerm) || scientific.includes(searchTerm);
-            const matchesFilter = activeFilter === 'todos' || category === activeFilter;
+        searchInput.addEventListener('input', filterTrees);
 
-            if (matchesSearch && matchesFilter) {
-                card.style.display = 'flex';
-                card.style.animation = 'fadeInCard 0.4s ease forwards';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterTrees();
+            });
         });
-
-        noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-    }
-
-    searchInput.addEventListener('input', filterTrees);
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            filterTrees();
-        });
-    });
-</script>
+    </script>
 </body>
+
 </html>

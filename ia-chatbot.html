@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="chat-page-wrapper">
+<body class="ai-app-body">
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -46,7 +46,7 @@
             <!-- Pantalla de Bienvenida -->
             <div class="ai-welcome-screen" id="welcomeScreen">
                 <div class="ai-logo-large">
-                    <img src="./imagenes/Puedes_hacer_que_202604051544.png" alt="Silvain AI Logo">
+                    <img src="./imagenes/logoAI.jpeg" alt="Silvain AI Logo">
                 </div>
                 <h2>Hola, soy Silvain AI</h2>
                 <p>Tu tutor ambiental. ¿En qué te puedo ayudar hoy con el inventario del colegio Jesús Bernal Pinzón?
@@ -113,15 +113,15 @@
             welcomeScreen.style.display = 'none';
             const msgRow = document.createElement('div');
             msgRow.className = `chat-row ${role}-row`;
-            
+
             const avatarIcon = role === 'bot' ? 'fa-robot' : 'fa-user';
             const avatarClass = role === 'bot' ? 'bot-avatar' : 'user-avatar';
-                
+
             msgRow.innerHTML = `
                 <div class="avatar ${avatarClass}"><i class="fas ${avatarIcon}"></i></div>
                 <div class="msg-content">${text}</div>
             `;
-            
+
             chatBox.appendChild(msgRow);
             chatBox.scrollTop = chatBox.scrollHeight;
             return msgRow;
@@ -161,7 +161,7 @@
                 "gemini-1.5-flash-8b",
                 "gemini-pro"
             ];
-            
+
             // Intentar con v1 y v1beta
             const versions = ["v1beta", "v1"];
 
@@ -170,7 +170,7 @@
                     try {
                         console.log(`Intentando con ${modelName} en versión ${ver}...`);
                         const url = `https://generativelanguage.googleapis.com/${ver}/models/${modelName}:generateContent?key=${GEMINI_API_KEY}`;
-                        
+
                         const response = await fetch(url, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },

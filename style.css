@@ -665,18 +665,7 @@ body.modo-noche .ai-input-wrapper {
     40% { transform: scale(1); }
 }
 
-/* --- Barra Inferior de Input Flotante --- */
-.ai-input-wrapper {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(transparent, var(--bg-color) 40%);
-    padding: 30px 15% 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .ai-input-box {
     display: flex;
@@ -1003,12 +992,12 @@ body.modo-noche .ai-input-wrapper {
 }
 
 .equiv-card {
-    background: #ffffff;
+    background: var(--card-bg);
     padding: 25px 15px;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid #f0f0f0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
     transition: transform 0.3s;
 }
 
@@ -1025,7 +1014,7 @@ body.modo-noche .ai-input-wrapper {
 
 .equiv-title {
     font-size: 0.8rem;
-    color: #777;
+    color: var(--text-muted);
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -1034,13 +1023,13 @@ body.modo-noche .ai-input-wrapper {
     display: block;
     font-size: 1.3rem;
     font-weight: 800;
-    color: #1a3318;
+    color: var(--secondary-color);
     margin: 8px 0 4px;
 }
 
 .equiv-card small {
     font-size: 0.75rem;
-    color: #999;
+    color: var(--text-muted);
 }
 
 /* --- RESPONSIVO (MÓVILES) --- */
