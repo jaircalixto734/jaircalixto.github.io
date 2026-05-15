@@ -74,10 +74,10 @@ const baseDatosArboles = {
     "jambolan": {
         id: "#JBP-02", tipo: "Frutal", nombre: "Jambolán", cientifico: "Syzygium cumini (L.) Skeels",
         familia: "Myrtaceae", origen: "Exótico (India)", estado: "Cultivada", exotica: true,
-        carbono: 150.8, viajes: 55, imagen_portada: "./imagenes/foto2.jpeg",
+        carbono: 150.8, viajes: 55, imagen_portada: "./imagenes/Jambolán.jpeg",
         galeria: [
-            { img: "./imagenes/foto2.jpeg", desc: "Frutos maduros" },
-            { img: "./imagenes/colegio2.jpeg", desc: "Hojas y ramas" }
+            { img: "./imagenes/Jambolán.jpeg", desc: "Frutos maduros" },
+            { img: "./imagenes/Jambolán_2.jpeg", desc: "Hojas y ramas" }
         ],
         nombresLocales: ["Ciruela de Java", "Pésjua extranjera", "Guayabo pésjua", "Ciruela negra"],
         distribucion: `
@@ -143,10 +143,10 @@ const baseDatosArboles = {
     "palo-cruz": {
         id: "#JBP-03", tipo: "Nativo", nombre: "Palo Cruz", cientifico: "Brownea ariza Benth.",
         familia: "Fabaceae", origen: "Nativo Colombia", estado: "Preocupación Menor", exotica: false,
-        carbono: 185.0, viajes: 65, imagen_portada: "./imagenes/colegio2.jpeg",
+        carbono: 185.0, viajes: 65, imagen_portada: "./imagenes/Palo_Cruz.jpeg",
         galeria: [
-            { img: "./imagenes/colegio2.jpeg", desc: "Flores en el tronco" },
-            { img: "./imagenes/colegio1.jpeg", desc: "Hojas jóvenes" }
+            { img: "./imagenes/Palo_Cruz.jpeg", desc: "Flores en el tronco" },
+            { img: "./imagenes/Palo_Cruz_2.jpeg", desc: "Hojas jóvenes" }
         ],
         nombresLocales: ["Palo Cruz", "Arizá", "Rosa de Monte", "Florisanto"],
         distribucion: `
@@ -425,77 +425,68 @@ const baseDatosArboles = {
         ]
     },
     "caracaro": {
-        id: "#JBP-07", tipo: "Nativo", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
-        familia: "Fabaceae", origen: "Nativo Neotrópico", estado: "Preocupación Menor (LC)", exotica: false,
+        id: "#JBP-07", tipo: "Nativo / Sombra", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
+        familia: "Fabaceae (Leguminosas)", origen: "Nativo Neotrópico", estado: "Preocupación Menor (LC)", exotica: false,
         carbono: 450.5, viajes: 165, imagen_portada: "./imagenes/caracaro1.jpg",
         galeria: [
             { img: "./imagenes/caracaro1.jpg", desc: "Fruto forma de oreja" },
             { img: "./imagenes/caracaro2.jpg", desc: "Copa extendida" }
         ],
-        nombresLocales: ["Orejero", "Piñón de Oreja", "Guanacaste", "Anacahuite"],
+        nombresLocales: ["Caracaro", "Orejero", "Piñón de oreja", "Caro", "Hueso de pescado", "Guanacaste", "Jaboncillo"],
         distribucion: `
-            <p>Nativo desde México hasta el norte de Sudamérica. En la Orinoquía es un gigante emblemático de las sabanas y bosques de galería, fundamental en sistemas silvopastoriles llaneros por su sombra y nitrificación.</p>
+            <p>Gigante emblemático de las sabanas y bosques de galería, fundamental en sistemas silvopastoriles llaneros. Es el Árbol Nacional de Costa Rica (Guanacaste). En Casanare, actúa como un "ingeniero del ecosistema" mejorando la calidad del suelo y ofreciendo refugio térmico vital para el ganado.</p>
             <div class="blockquote-pro mt-3">
-                <p>"El Caracaro es el gigante generoso de la sabana; bajo su sombra puede descansar todo un hato, mientras sus raíces alimentan el suelo con nitrógeno."</p>
-                <cite>— Tradición Oral y Sabiduría Llanera.</cite>
-            </div>
-            <div class="mt-4">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Subfamilia</td><td style="padding:8px;">Mimosoideae</td></tr>
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Tribu</td><td style="padding:8px;">Ingeae</td></tr>
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Estado (UICN)</td><td style="padding:8px;">Least Concern (LC)</td></tr>
-                </table>
+                <p>"Tres palos hay en el monte, que causan admiración: algarrobo pa’ trapiche, caracaro pa’ pilón, el jobo por lo liviano, la ceniza pa’ jabón."</p>
+                <cite>— Coplerío Popular Llanero (Extracto del libro de Etnobotánica).</cite>
             </div>
         `,
-        densidad: "0.34 – 0.60 g/cm³", fraccion: "0.47 (IPCC)",
+        densidad: "0.34 – 0.60 g/cm³ (Ref. 0.47)", fraccion: "0.47 (IPCC)",
         alometria: `
-            <div class="alometry-box" style="margin-bottom:10px;">ln(BAS) = a + b · ln(DAP² · H · ρ)</div>
-            <p class="text-sm">Modelo de <strong>Álvarez et al. (2012)</strong>. Es una de las especies con mayor potencial de secuestro de carbono en la Orinoquía debido a su crecimiento rápido y gran volumen de copa.</p>
-            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #f39c12; padding-left:10px;">
-                Especie clave para proyectos de bonos de carbono en sistemas agroforestales.
-            </div>
+            <div class="alometry-box">ln(BAS) = a + b · ln(DAP² · H · ρ)</div>
+            <p class="mt-2 text-sm">Modelo II.1 de <strong>Álvarez et al. (2012)</strong>. Especie con un potencial colosal de secuestro de carbono. Un solo ejemplar maduro puede capturar toneladas de CO₂eq durante su vida, actuando como un verdadero 'titán del carbono' en los potreros de Maní.</p>
         `,
         calendario: [
             { mes: "Dic", fase: "Defoliación", clima: "dry" }, { mes: "Ene", fase: "Defoliación", clima: "dry" },
-            { mes: "Feb", fase: "Refoliación", clima: "dry" }, { mes: "Mar", fase: "Floración", clima: "trans" },
-            { mes: "Abr", fase: "Floración", clima: "trans" }, { mes: "May", fase: "Cuajado", clima: "rain" },
+            { mes: "Feb", fase: "Defoliación", clima: "dry" }, { mes: "Mar", fase: "Floración", clima: "trans" },
+            { mes: "Abr", fase: "Floración", clima: "trans" }, { mes: "May", fase: "Fructif.", clima: "rain" },
             { mes: "Jun", fase: "Fructif.", clima: "rain" }, { mes: "Jul", fase: "Fructif.", clima: "rain" },
-            { mes: "Ago", fase: "Fructif.", clima: "rain" }, { mes: "Sep", fase: "Fructif.", clima: "rain" },
-            { mes: "Oct", fase: "Madurac.", clima: "rain" }, { mes: "Nov", fase: "Dispers.", clima: "dry" }
+            { mes: "Ago", fase: "Fructif.", clima: "rain" }, { mes: "Sep", fase: "Dispersión", clima: "rain" },
+            { mes: "Oct", fase: "Dispersión", clima: "rain" }, { mes: "Nov", fase: "Dispersión", clima: "dry" }
         ],
         morfologia: `
             <div style="display:flex; flex-direction:column; gap:15px;">
-                <div><strong style="color:var(--secondary-color);">Porte:</strong> Árbol gigante (20-30 m) con copa hemisférica muy extendida (hasta 30 m de diámetro).</div>
-                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Bipinnadas, alternas. Los folíolos tienen la curiosidad de plegarse de noche o ante falta de agua.</div>
-                <div><strong style="color:var(--secondary-color);">Flores:</strong> Cabezuelas globosas blancas de aspecto plumoso; muy fragantes y ricas en néctar.</div>
-                <div><strong style="color:var(--secondary-color);">Frutos:</strong> Legumbre circular indehiscente con forma de oreja humana, de color moreno oscuro y muy brillante.</div>
+                <div><strong style="color:var(--secondary-color);">Porte:</strong> Gigante del llano (20-30 m). Copa hemisférica inmensa y densa que proyecta una sombra amplia, reduciendo el estrés calórico en el hato.</div>
+                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Bipinnadas. Presentan <strong>nictinastia</strong>: se pliegan de noche o en sequía extrema para ahorrar agua y protegerse del sol ardiente.</div>
+                <div><strong style="color:var(--secondary-color);">Tronco:</strong> Recto y robusto. Madera liviana pero resistente a la humedad, fácil de trabajar en carpintería rural.</div>
+                <div><strong style="color:var(--secondary-color);">Fruto:</strong> Vaina circular enroscada como una <strong>oreja humana</strong> (7-15 cm). Contiene saponinas naturales; antes se usaba como jabón.</div>
             </div>
         `,
         fauna: `
             <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Ganado Vacuno</div><div class="section-val text-sm mt-2">Consume los frutos caídos, que son ricos en proteína, y dispersa las semillas en los potreros.</div></div>
-                <div class="metric-card"><div class="metric-label">Insectos</div><div class="section-val text-sm mt-2">Sus flores blancas son un imán para abejas nativas y abejorros al inicio de las lluvias.</div></div>
-                <div class="metric-card"><div class="metric-label">Aves</div><div class="section-val text-sm mt-2">Diferentes aves de sabana anidan en su enorme copa, protegidas por su denso follaje.</div></div>
+                <div class="metric-card"><div class="metric-label">Grandes Mamíferos</div><div class="section-val text-sm mt-2">Dantas, chigüiros y ganado consumen las vainas maduras; las semillas sobreviven al paso digestivo (endozoocoria).</div></div>
+                <div class="metric-card"><div class="metric-label">Insectos</div><div class="section-val text-sm mt-2">Cabezuelas globosas blancas muy aromáticas que atraen masivamente a abejas nativas y abejorros en marzo.</div></div>
+                <div class="metric-card"><div class="metric-label">Regulación Térmica</div><div class="section-val text-sm mt-2">Su inmensa copa reduce la temperatura del suelo y protege a la fauna silvestre del sol casanareño.</div></div>
             </div>
         `,
         usos: `
             <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Suelo</div><div class="section-val text-sm mt-2">Fija nitrógeno en el suelo a través de simbiosis radicular, mejorando la pastura.</div></div>
-                <div class="metric-card"><div class="metric-label">Madera</div><div class="section-val text-sm mt-2">Liviana y fácil de trabajar; resistente al agua, usada tradicionalmente en canoas.</div></div>
-                <div class="metric-card"><div class="metric-label">Sombra</div><div class="section-val text-sm mt-2">Indispensable en hatos llaneros para mitigar el estrés calórico del ganado.</div></div>
+                <div class="metric-card"><div class="metric-label">Etnobotánica</div><div class="section-val text-sm mt-2">Madera para pilones, curiaras y ruedas de carreta. Vainas verdes usadas para lavar ropa (Jaboncillo).</div></div>
+                <div class="metric-card"><div class="metric-label">Fijación de Nitrógeno</div><div class="section-val text-sm mt-2">Sus raíces con bacterias <em>Rhizobium</em> enriquecen el suelo, actuando como abono natural para los pastos.</div></div>
+                <div class="metric-card"><div class="metric-label">Medicina Tradicional</div><div class="section-val text-sm mt-2">La decocción de corteza es cicatrizante y antiinflamatoria; se usa en baños contra olores corporales.</div></div>
             </div>
         `,
-        mensajeIA: "¡Epa, pariente! Yo soy el Caracaro. Soy el gigante que vigila las sabanas de Maní. Me dicen 'Orejero' porque mis frutos parecen orejas humanas caídas en el suelo. Soy un árbol muy generoso: no solo te doy la mejor sombra del llano, sino que también le regalo nitrógeno a la tierra para que el pasto crezca verde y fuerte para las vacas. ¡Soy un abrazo de sombra para todo el hato!",
+        mensajeIA: "¡Epa, pariente! Yo soy el Caracaro, el gigante generoso del llano. Me dicen 'Orejero' por mis frutos, pero también 'Jaboncillo' porque con mis vainas verdes lavaban la ropa antes de que existieran las tiendas. Soy un ingeniero del suelo: atrapo el nitrógeno del aire y lo regalo a la tierra para que el pasto crezca fuerte para las vacas. ¡Bajo mi sombra cabe todo el hato y sobra espacio!",
         referencias: [
-            "Álvarez et al. (2012). Tree above-ground biomass allometries for Colombian forests. Forest Ecology and Management.",
+            "Álvarez, E., et al. (2012). Tree above-ground biomass allometries for carbon stocks estimation in Colombia.",
             "Bernal, R., et al. (2017). Nombres comunes de las plantas de Colombia. Universidad Nacional de Colombia.",
-            "Gentry, A. H. (1993). A Field Guide to the Families and Generies of Woody Plants of Northwest South America. Conservation International.",
-            "IUCN (2023). Enterolobium cyclocarpum — Conservation Assessment."
+            "Francis, J. K. (1988). Enterolobium cyclocarpum (Jacq.) Griseb. Guanacaste, earpod-tree (USDA Forest Service).",
+            "Ibrahim, M., et al. (2006). Sistemas silvopastoriles para el mejoramiento de la productividad.",
+            "Obando Picado, M. (2010). Propiedades físicas y generales de la madera de Enterolobium cyclocarpum."
         ],
         quiz: [
-            { q: "¿Por qué se le llama popularmente 'Orejero'?", opts: ["Porque sus hojas oyen", "Por la forma de sus frutos circulares", "Porque crece cerca de los oídos"], correct: 1 },
-            { q: "¿Qué importante beneficio le da al suelo de los potreros?", opts: ["Lo vuelve más duro", "Lo seca para que no haya barro", "Fija nitrógeno y lo fertiliza"], correct: 2 },
-            { q: "¿Cómo se comportan sus hojas de noche?", opts: ["Se caen todas", "Se pliegan o se cierran", "Se vuelven rojas"], correct: 1 }
+            { q: "¿Por qué se le llama popularmente 'Jaboncillo' al Caracaro?", opts: ["Porque su madera resbala", "Porque sus vainas verdes contienen saponinas que hacen espuma", "Porque sus hojas huelen a perfume"], correct: 1 },
+            { q: "¿Qué importante beneficio oculto le da a los potreros de Maní?", opts: ["Ahuyenta a las serpientes", "Fija nitrógeno atmosférico en el suelo mediante sus raíces", "Produce agua potable"], correct: 1 },
+            { q: "¿Qué es la nictinastia, fenómeno que ocurre en sus hojas?", opts: ["Cuando las flores se vuelven rojas", "Cuando las hojas se pliegan de noche o en sequía para ahorrar agua", "Cuando el árbol crece más rápido en invierno"], correct: 1 }
         ]
     },
     "mango": {
@@ -571,7 +562,7 @@ const baseDatosArboles = {
             { q: "¿Cómo se llama el compuesto bioactivo saludable que se encuentra en sus hojas?", opts: ["Cafeína", "Mangiferina", "Látex"], correct: 1 },
             { q: "¿Qué sucede con los brotes de hojas nuevas del mango?", opts: ["Nacen de color azul", "Son de color rojizo o rosado", "Son transparentes"], correct: 1 }
         ]
-    }    ,
+    },
     "coccoloba-acuminata": {
         id: "#JBP-09", tipo: "Nativo", nombre: "Uvero / Uvita de playa", cientifico: "Coccoloba acuminata Kunth",
         familia: "Polygonaceae", origen: "Nativa", estado: "No Evaluada (NE) / LC", exotica: false,
