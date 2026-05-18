@@ -1785,5 +1785,122 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
             { q: "¿Cuál es la característica morfológica exclusiva del género Guarea que permite identificarlo en campo sin necesidad de flores ni frutos?", opts: ["Corteza con látex blanco abundante", "Hojas simples con margen serrado", "Hojas compuestas con raquis de crecimiento apical indefinido (continúa generando hojuelas nuevas en la punta)", "Presencia de espinas en el tallo principal"], correct: 2 },
             { q: "En el municipio de Maní, Casanare, ¿en qué temporada del año el Trompillo presenta su floración más intensa y por qué es ecológicamente importante este momento?", opts: ["En agosto, durante el pico máximo de las lluvias", "En noviembre, al inicio de la transición climática", "En febrero–marzo (temporada seca), cuando muchos otros árboles no florecen, ofreciendo alimento clave para abejas y polinizadores del llano", "En julio, en plena época de inundación de los morichales"], correct: 2 }
         ]
+    },
+    "oiti": {
+        id: "#JBP-04", tipo: "Introducida", nombre: "Oití", cientifico: "Licania tomentosa (Benth.) Fritsch",
+        familia: "Chrysobalanaceae", origen: "Exótica (Brasil - Mata Atlántica/Cerrado)", estado: "Preocupación Menor (LC) - Introducida", exotica: true,
+        carbono: 185.3, viajes: 42, imagen_portada: "./imagenes/colegio1.jpeg",
+        galeria: [
+            { img: "./imagenes/colegio1.jpeg", desc: "Oití adulto en arborización urbana, mostrando su copa globosa densa" },
+            { img: "./imagenes/foto2.jpeg", desc: "Detalle del envés tomentoso blanquecino característico de las hojas" }
+        ],
+        nombresLocales: ["Oití", "Oitizeiro", "Matapalos llanero", "Árbol de sombra", "Árbol Oficial de Cúcuta"],
+        distribucion: `
+            <p><strong>Especie introducida desde Brasil:</strong> <em>Licania tomentosa</em> es nativa del noreste y sureste de Brasil (estados de Bahia, Pernambuco, Sergipe, Alagoas, Espírito Santo y Minas Gerais), en los biomas de Mata Atlántica y Cerrado. Fue introducida a Colombia desde Brasil a principios de los años 70 del siglo XX, siendo actualmente la especie dominante en zonas verdes de Cúcuta (Norte de Santander), donde es el <strong>Árbol Oficial</strong> de la ciudad.</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Distribución nativa</td><td style="padding:6px;">Brasil: Mata Atlántica y Cerrado (Lorenzi, 1992)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Colombia (registros verificados)</td><td style="padding:6px;">Norte de Santander (Cúcuta), Antioquia (Valle de Aburrá), Meta (Villavicencio), Casanare (Catumare — NaturaLista)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Rango altitudinal</td><td style="padding:6px;">0 – ~1.200 m s.n.m. en climas tropicales húmedos y de altitud</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">UICN: LC (Preocupación Menor). No figura en Libros Rojos de Colombia por ser especie introducida.</td></tr>
+                </table>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #e74c3c; padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>⚠️ NOTA GEOGRÁFICA CRÍTICA:</strong> En Colombia es una especie <strong>introducida y cultivada</strong>. Su presencia en Maní, Casanare, corresponde a individuos plantados en arborización urbana, parques o jardines botánicos. No existen registros de naturalización espontánea confirmada en la Orinoquía colombiana.
+            </div>
+            <div class="blockquote-pro mt-3">
+                <p>"El género Licania está representado por 59 especies en Colombia, encontrándose principalmente en bosques de tierras bajas y sabanas de la Orinoquía y la Amazonia; L. tomentosa, sin embargo, corresponde a la especie introducida desde el noreste de Brasil, con amplio uso en arborización urbana."</p>
+                <cite>— Prance, G. T. (1989). Flora de Colombia, Vol. 10. ICN-UNAL</cite>
+            </div>
+        `,
+        densidad: "0.75 – 0.95 g/cm³ (Madera pesada, dura y muy durable; dato referencial por verificar en campo)", fraccion: "0.47 – 0.50 (Ref. 0.50 por alta densidad)",
+        alometria: `
+            <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+                ln(Ba) = a + b·ln(D) + c·ln(H) + d·ln(ρ)
+            </div>
+            <p class="text-sm">Modelo alométrico de <strong>Álvarez et al. (2012)</strong> — Tipo I para bosques naturales de Colombia. Incluye DAP (m), altura total (m) y densidad de madera (g/cm³).</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Ba</td><td style="padding:6px;">Biomasa aérea (kg/individuo)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">D</td><td style="padding:6px;">DAP en metros (diámetro a 1.30 m)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total (m)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica de la madera (0.75–0.95 g/cm³, rango referencial para Chrysobalanaceae de Mata Atlántica)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Carbono aéreo</td><td style="padding:6px;">Ca = Ba × FC (FC = 0.47–0.50)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">CO₂ equivalente</td><td style="padding:6px;">CO₂eq = Ca × 3.67</td></tr>
+                </table>
+            </div>
+            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main);">
+                ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No existe ecuación alométrica publicada específicamente para <em>Licania tomentosa</em> en Colombia. El fuste retorcido y la copa baja y globosa características hacen que la variable altura tenga menor peso relativo. Se recomienda complementar con medición de proyección de copa.
+            </div>
+            <div class="blockquote-pro mt-3" style="font-size:0.85rem;">
+                <p>"La identidad de las especies y la densidad de la madera son determinantes fundamentales de la biomasa del árbol [...] siempre que sea posible, los esfuerzos para mapear y monitorear el carbono forestal tropical deben combinarse con la medición de la identidad de las especies a nivel de árbol."</p>
+                <cite>— Phillips, O. L., et al. (2019). Surveys in Geophysics, 40(4), 913–935.</cite>
+            </div>
+        `,
+        calendario: [
+            { mes: "Dic", fase: "Perennifolio 🍃", clima: "dry" },
+            { mes: "Ene", phase: "Perennifolio 🍃", clima: "dry" },
+            { mes: "Feb", fase: "Fructif. tardía 🍋", clima: "dry" },
+            { mes: "Mar", fase: "Inicio floración 🌸", clima: "dry" },
+            { mes: "Abr", fase: "Floración plena 🌸", clima: "rain" },
+            { mes: "May", fase: "Floración / Cuajado 🌸", clima: "rain" },
+            { mes: "Jun", fase: "Frutos en desarrollo 🟢", clima: "rain" },
+            { mes: "Jul", fase: "Fructificación activa 🟢", clima: "rain" },
+            { mes: "Ago", fase: "Maduración 🍋", clima: "rain" },
+            { mes: "Sep", fase: "Dispersión 🍋", clima: "rain" },
+            { mes: "Oct", fase: "Dispersión final 🍋", clima: "rain" },
+            { mes: "Nov", fase: "Preparación ciclo 🍃", clima: "dry" }
+        ],
+        morfologia: `
+            <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol perennifolio de porte bajo a mediano, <strong>10 – 20 m</strong> de altura (máximo ~25 m). Fuste corto, retorcido, de <strong>40 – 60 cm</strong> de diámetro. Copa globosa muy amplia (hasta 8 m de diámetro), densa, que proyecta sombra intensa — rasgo que lo convierte en el árbol de sombra más valorado de Cúcuta.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíz pivotante profunda con raíces laterales extensas. Alta adaptación a suelos variados: arcillosos, arenosos y compactados. Esta robustez radical le permite tolerar sequías estacionales y suelos pobres de zonas urbanas y suburbanas del Casanare.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Madera y Corteza:</strong> Corteza externa grisácea, lisa en árboles jóvenes, fisurada longitudinalmente en adultos. Presenta lenticelas pálidas. Madera de albura casi indistinguible del duramen. Grano recto, textura media a gruesa. <strong>Pesada, dura, muy resistente y durable</strong>. Alta resistencia a la pudrición y a insectos xilófagos. Color parduzco-crema, tornándose marrón con el tiempo.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Follaje y Hojas:</strong> Hojas <strong>alternas, simples, enteras</strong>, de base aguda y ápice acuminado, borde ondeado. Limbo oblongo-elíptico, coriáceo, <strong>6–18 cm</strong> de longitud. Haz lustrosa y glabra; <strong style="color:#e74c3c;">envés cubierto de tomento blanquecino-grisáceo</strong> (de ahí el nombre <em>tomentosa</em>). Este tomento reduce la transpiración foliar y mejora la adaptación a climas cálidos y secos. Nervadura penninervia con 10–15 pares de nervios laterales.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Flores pequeñas, blancas a blanco-cremosas, agrupadas en <strong>panículas terminales y axilares</strong> densamente tomentosas. Cáliz de 5 sépalos tomentosos. Pétalos 5, blancos. Estambres numerosos (8–22), característica típica de la familia Chrysobalanaceae. Tienen fragancia suave, perceptible en las horas de la mañana.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Fruto y Semilla:</strong> Drupa elipsoide-ovoide, de <strong>2 – 4 cm</strong> de largo. Epicarpo liso, de color amarillo-verdoso al madurar. Mesocarpo carnoso, delgado, de sabor levemente dulce-astringente. Endocarpo duro, leñoso u óseo (hueso). <strong>Efecto laxativo</strong> leve cuando se ingiere en cantidad. Semilla única que llena el lóculo; germinación hipogea.</div>
+            </div>
+        `,
+        fauna: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🦋 Mariposas</div><div class="section-val text-sm mt-2"><strong>Astraptes spp., Heliconius spp.:</strong> Las orugas de <em>Astraptes fulgerator</em> (complejo de especies crípticas) han sido reportadas sobre <em>Licania</em> spp. Visitas florales frecuentes.</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Abejas y abejorros</div><div class="section-val text-sm mt-2"><strong>Apis mellifera, Xylocopa spp.:</strong> Principales polinizadores diurnos. Sus numerosos estambres son fuente prolífica de polen para melíferas nativas y domésticas.</div></div>
+                <div class="metric-card"><div class="metric-label">🦜 Loros y pericos</div><div class="section-val text-sm mt-2"><strong>Amazona spp., Forpus spp.:</strong> Consumo de frutos maduros (drupa amarilla). Uso de la copa densa como refugio y zona de descanso.</div></div>
+                <div class="metric-card"><div class="metric-label">🐦 Tordos y estorninos</div><div class="section-val text-sm mt-2"><strong>Quiscalus spp., Molothrus spp.:</strong> Consumo de frutos caídos bajo la copa. Uso de ramas como sitio de reunión comunal y dormidero.</div></div>
+                <div class="metric-card"><div class="metric-label">🦎 Lagartijas y gecko</div><div class="section-val text-sm mt-2"><strong>Anolis spp., Thecadactylus spp.:</strong> Termorregulación en la corteza del fuste. Caza de insectos que visitan las flores y frutos.</div></div>
+                <div class="metric-card"><div class="metric-label">🦅 Gavilanes y rapaces</div><div class="section-val text-sm mt-2"><strong>Buteo spp., Falco spp.:</strong> La copa globosa y densa sirve como atalaya de caza y nido en áreas urbanas y periurbanas de Maní.</div></div>
+            </div>
+        `,
+        usos: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🍋 Fruto comestible</div><div class="section-val text-sm mt-2">La drupa madura (amarillo-verdosa) es comestible, de sabor levemente dulce y astringente. Se consume fresco o en preparaciones de bebidas y alimentos. La ingestión en exceso produce efecto laxativo leve. Cultivado ampliamente como frutal en Brasil y Sudáfrica.</div></div>
+                <div class="metric-card"><div class="metric-label">🌿 Sombra y arborización urbana</div><div class="section-val text-sm mt-2">Su copa globosa, densa y siempreverde lo hace el árbol de sombra urbano por excelencia en ciudades calientes como Cúcuta y zonas del Casanare. Sus ramas horizontales proyectan sombra de alta calidad durante todo el año. Fue traído a Colombia desde Brasil para este uso.</div></div>
+                <div class="metric-card"><div class="metric-label">💊 Medicina popular — Corteza</div><div class="section-val text-sm mt-2">La corteza hervida se bebe como té para: reducir la fiebre, tratar la diarrea y como astringente digestivo. También se ha reportado su uso para tratar la malaria y enfermedades infecciosas en comunidades rurales de Brasil.</div></div>
+                <div class="metric-card"><div class="metric-label">🔥 Antiinflamatorio</div><div class="section-val text-sm mt-2">La corteza se usa para tratar inflamaciones articulares (artritis) y heridas externas. La decocción fuerte se aplica en compresas sobre zonas inflamadas. Se reporta también uso en quemaduras leves y afecciones respiratorias (tos, bronquitis).</div></div>
+                <div class="metric-card"><div class="metric-label">🔨 Madera — Construcción</div><div class="section-val text-sm mt-2">La madera pesada y muy durable se usa para construcción general, postes de cerca, traviesas de ferrocarril, pilares de casas, quillas de embarcaciones pequeñas y obras externas de alta exigencia (Lorenzi, 1992).</div></div>
+                <div class="metric-card"><div class="metric-label">🏙️ Patrimonio cultural Cúcuta</div><div class="section-val text-sm mt-2">Declarado <strong>Árbol Oficial de la ciudad de Cúcuta</strong> por su presencia histórica dominante en las zonas verdes. Es símbolo de identidad urbana del Norte de Santander, similar a como el Gualanday es símbolo del Casanare.</div></div>
+            </div>
+        `,
+        mensajeIA: "🌳 **Soy el Oití. Un nombre que viene de lejos, del corazón del noreste de Brasil, de las playas calientes de Bahia y Pernambuco, donde los niños corren bajo mi sombra y los pájaros anidan en mis ramas sin que el sol los alcance.**\n\nLlegué a Colombia por primera vez en los años 70, cuando alguien vio en mí lo que yo siempre he sabido: que soy el mejor árbol de sombra del mundo.\n\nMi nombre científico, *Licania tomentosa*, guarda un secreto en cada palabra. *Licania* viene de una palabra indígena sudamericana muy antigua. Y *tomentosa* es latín para \"llena de lana o pelusa\" — porque si le das vuelta a mis hojas y las miras por el envés, verás una capa de pelo blanquecino y suave, como si estuviera forrada de algodón. Ese tomento, esa \"lanita\", me protege del calor: reduce el agua que pierdo por la hoja y me ayuda a sobrevivir el verano seco del llano.\n\nSoy siempreverde. No me desnudo en el verano como lo hace el Gualanday. Mientras él descansa sin hojas en enero, yo estoy aquí, vestido de verde, dando sombra, cobijando iguanas, loros y mariposas. Cuando llegan las lluvias en abril, yo respondo con miles de florecitas blancas que huelen suavemente en las mañanas. Las abejas me adoran.\n\n✨ **Curiosidad que genera asombro**: mi madera es tan dura y tan resistente que en Brasil me usaban para hacer las quillas de los barcos — esa pieza que va en la parte de abajo del bote y aguanta toda la fuerza del agua. ¿Puedes imaginar que una madera vegetal sea tan fuerte como para resistir el mar? Eso soy yo. Por fuera, una copa suave y generosa que da sombra. Por dentro, un corazón de hierro. Y aquí en el JBP de Maní, soy el árbol viajero que cruzó un océano de sabana para darles sombra a los niños de Casanare.",
+        referencias: [
+            "Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., De las Salas, G., Del Valle, I., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267(1), 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+            "Andrade-Castañeda, H. J., Segura-Madrigal, M. A., Canal-Daza, D. S., Huertas-González, A., & Mosos-Torres, C. (2020). Captura de carbono en biomasa de sistemas de uso del suelo, municipio de Yopal, Casanare, Colombia. Orinoquia — Universidad de los Llanos, 24(1), 13–22. https://orinoquia.unillanos.edu.co/index.php/orinoquia/article/view/587",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. http://catalogoplantasdecolombia.unal.edu.co",
+            "Fern, K. (2024). Licania tomentosa — Useful Tropical Plants Database. Tropical Plants Database. https://tropical.theferns.info/viewtropical.php?id=Licania+tomentosa",
+            "InVivo Virtual. (2009, septiembre 27). Oiti [Entrada de blog]. http://invivovirtual.blogspot.com/2009/09/oiti.html",
+            "Lorenzi, H. (1992). Árvores brasileiras: manual de identificação e cultivo de plantas arbóreas nativas do Brasil (Vol. 1, 4ª ed.). Instituto Plantarum de Estudos da Flora, Brasil.",
+            "NaturaLista Colombia — iNaturalist. (2024). Licania tomentosa. https://colombia.inaturalist.org/taxa/427014-Licania-tomentosa",
+            "Phillips, O. L., Sullivan, M. J. P., Baker, T. R., Monteagudo Mendoza, A., Higuchi, N., & Mehrabi, Z. (2019). Species matter: Wood density influences tropical forest biomass at multiple scales. Surveys in Geophysics, 40(4), 913–935. https://doi.org/10.1007/s10712-019-09540-0",
+            "Prance, G. T. (1989). Chrysobalanaceae. En P. Pinto Escobar & G. Lozano Contreras (Eds.), Flora de Colombia (Vol. 10). Instituto de Ciencias Naturales, Universidad Nacional de Colombia, Bogotá.",
+            "Reyes, G., Brown, S., Chapman, J., & Lugo, A. E. (1992). Wood densities of tropical tree species. General Technical Report SO-88. U.S. Department of Agriculture, Forest Service, Southern Forest Experiment Station, New Orleans, LA. https://www.srs.fs.usda.gov/pubs/gtr/gtr_so088.pdf",
+            "Royal Botanic Gardens, Kew. (2024). Licania tomentosa (Benth.) Fritsch — Plants of the World Online. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:726988-1",
+            "Universidad Nacional de Colombia — BioVirtual. (2023). Licania — Flora de Colombia. Instituto de Ciencias Naturales, UNAL. http://www.biovirtual.unal.edu.co/floradecolombia/es/description/730/",
+            "Yepes, A. P., Navarrete, D. A., Duque, A. J., Phillips, J. F., Cabrera, K. R., Álvarez, E., García, M. C., & Ordoñez, M. F. (2011). Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia. Instituto de Hidrología, Meteorología y Estudios Ambientales — IDEAM, Bogotá D. C."
+        ],
+        quiz: [
+            { q: "Licania tomentosa (Oití) pertenece a la familia botánica Chrysobalanaceae. ¿Cuál de las siguientes afirmaciones describe correctamente su origen y presencia en Colombia?", opts: ["Es una especie nativa de la Orinoquía colombiana, endémica del Casanare y el Meta", "Es una especie andina, nativa de los Andes colombianos, que fue naturalizada en la Costa Caribe", "Es nativa del noreste y sureste de Brasil (Mata Atlántica/Cerrado). Fue introducida a Colombia en los años 70 del siglo XX, principalmente para arborización urbana, y es actualmente el Árbol Oficial de la ciudad de Cúcuta", "Es nativa de África y llegó a Colombia durante la época de la esclavitud en el siglo XVII"], correct: 2 },
+            { q: "El nombre científico de esta especie es Licania tomentosa. La palabra 'tomentosa' proviene del latín y hace referencia a una característica morfológica visible. ¿A cuál de las siguientes estructuras del árbol hace referencia?", opts: ["Al color amarillo brillante del fruto maduro, visible desde lejos", "Al porte retorcido del fuste, que le da apariencia de árbol viejo desde joven", "Al denso tomento (pelusa o 'lana') blanquecino-grisáceo que cubre el envés de las hojas. Esa capa protectora reduce la transpiración foliar y es la característica morfológica más distintiva de la especie", "A los miles de flores blancas pequeñas que cubren la copa durante la floración"], correct: 2 },
+            { q: "En los inventarios forestales del JBP de Maní, el ingeniero forestal debe estimar el carbono almacenado en el Oití. ¿Cuál de estas afirmaciones sobre la madera de Licania tomentosa es CORRECTA y más relevante para ese cálculo?", opts: ["La madera del Oití es muy blanda y ligera (densidad < 0.30 g/cm³), por eso almacena muy poco carbono por unidad de volumen", "El Oití no almacena carbono en la madera porque es una especie introducida, no nativa", "La madera del Oití es pesada, dura y de alta durabilidad (densidad referencial estimada: 0.75–0.95 g/cm³), lo que implica un alto almacenamiento de carbono por unidad de volumen. Las maderas densas acumulan más carbono que las ligeras, siendo una ventaja para el inventario de carbono", "El Oití almacena carbono únicamente en sus hojas y flores, no en la madera del tronco"], correct: 2 }
+        ]
     }
 };
