@@ -762,79 +762,6 @@ Tengo un superpoder que muy pocas plantas del jardín poseen: soy una <strong>m�
             { q: "En el calendario fenológico de Maní (Casanare), ¿en qué época del año florece y qué ocurre de forma simultánea?", opts: ["En pleno invierno lluvioso (julio) perdiendo todas las hojas", "Al final del verano e inicio de lluvias (marzo-abril), coincidiendo con la refoliación", "Durante el mes de diciembre cuando las temperaturas bajan"], correct: 1 }
         ]
     },
-    "mango": {
-        id: "#JBP-08", tipo: "Frutal", nombre: "Mango", cientifico: "Mangifera indica L.",
-        familia: "Anacardiaceae", origen: "Exótico (Asia)", estado: "Preocupación Menor (LC)", exotica: true,
-        carbono: 310.2, viajes: 105, imagen_portada: "./imagenes/mango1.jpg",
-        galeria: [
-            { img: "./imagenes/mango1.jpg", desc: "Variedad criolla" },
-            { img: "./imagenes/mango2.jpg", desc: "Inflorescencia" }
-        ],
-        nombresLocales: ["Mango criollo", "Mango de hilacha", "Manguero", "Mango de azúcar"],
-        distribucion: `
-            <p>Nativo del norte de la India y Myanmar. Cultivado en el trópico americano desde hace más de 400 años. En el Casanare es omnipresente en fincas y pueblos, plenamente adaptado al régimen de sabana y bosques de galería.</p>
-            <div class="blockquote-pro mt-3">
-                <p>"El mango es el rey de las frutas tropicales; en el llano no hay hato que no tenga un 'palo de mango' cargado en mayo, siendo un referente cultural y alimentario insustituible."</p>
-                <cite>— Tradición Popular del Casanare.</cite>
-            </div>
-            <div class="mt-4">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Orden</td><td style="padding:8px;">Sapindales</td></tr>
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Género</td><td style="padding:8px;">Mangifera L.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Compuesto clave</td><td style="padding:8px;">Mangiferina (Xantona)</td></tr>
-                </table>
-            </div>
-        `,
-        densidad: "0.52 – 0.70 g/cm³", fraccion: "0.50 (IPCC)",
-        alometria: `
-            <div class="alometry-box" style="margin-bottom:10px;">AGB = 0.0673 × (ρ × D² × H)⁰·⁹⁷⁶</div>
-            <p class="text-sm">Modelo pantrópico de <strong>Chave et al. (2014)</strong>. El mango almacena grandes cantidades de carbono en su tronco robusto y copa perennifolia.</p>
-            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #f39c12; padding-left:10px;">
-                La densidad de la madera de mango varía según la edad del ejemplar y la variedad.
-            </div>
-        `,
-        calendario: [
-            { mes: "Dic", fase: "Floración", clima: "dry" }, { mes: "Ene", fase: "Floración", clima: "dry" },
-            { mes: "Feb", fase: "Floración", clima: "dry" }, { mes: "Mar", fase: "Cuajado", clima: "trans" },
-            { mes: "Abr", fase: "Cosecha", clima: "rain" }, { mes: "May", fase: "Cosecha", clima: "rain" },
-            { mes: "Jun", fase: "Crecim.", clima: "rain" }, { mes: "Jul", fase: "Crecim.", clima: "rain" },
-            { mes: "Ago", fase: "Veg. Activo", clima: "rain" }, { mes: "Sep", fase: "Veg. Activo", clima: "rain" },
-            { mes: "Oct", fase: "Pre-flor.", clima: "rain" }, { mes: "Nov", fase: "Inicio sec.", clima: "dry" }
-        ],
-        morfologia: `
-            <div style="display:flex; flex-direction:column; gap:15px;">
-                <div><strong style="color:var(--secondary-color);">Porte:</strong> Árbol perennifolio de copa densa y redondeada. Puede alcanzar 30 m de altura y vivir más de 100 años.</div>
-                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Simples, alternas, lanceoladas, de color verde oscuro brillante; los brotes nuevos son rojizos.</div>
-                <div><strong style="color:var(--secondary-color);">Flores:</strong> Pequeñas y muy fragantes en grandes panículas piramidales terminales.</div>
-                <div><strong style="color:var(--secondary-color);">Frutos:</strong> Drupa carnosa con pulpa dulce y una semilla grande y fibrosa; piel variable (verde, amarillo, rojo).</div>
-            </div>
-        `,
-        fauna: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Aves</div><div class="section-val text-sm mt-2">Loros, pericos y turpiales consumen activamente los frutos maduros.</div></div>
-                <div class="metric-card"><div class="metric-label">Insectos</div><div class="section-val text-sm mt-2">Flores melíferas que atraen abejas y moscas polinizadoras (Anastrepha spp.).</div></div>
-                <div class="metric-card"><div class="metric-label">Mamíferos</div><div class="section-val text-sm mt-2">Chigüiros y murciélagos frugívoros aprovechan los frutos caídos o en la rama.</div></div>
-            </div>
-        `,
-        usos: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Alimentación</div><div class="section-val text-sm mt-2">Fruto fresco, jugos y conservas. El mango biche con sal es tradicional en el llano.</div></div>
-                <div class="metric-card"><div class="metric-label">Farmacología</div><div class="section-val text-sm mt-2">Contiene mangiferina en hojas y corteza, con propiedades antioxidantes y antidiabéticas.</div></div>
-                <div class="metric-card"><div class="metric-label">Sombra</div><div class="section-val text-sm mt-2">Árbol de sombra por excelencia en viviendas y potreros del Casanare.</div></div>
-            </div>
-        `,
-        mensajeIA: "¡Hola! Soy el Mango. Vengo de la India, pero me siento más llanero que el coleo. Llevo cientos de años alimentando a la gente de estas tierras. Mis hojas son fuertes y siempre verdes, y cuando llega mayo, mis ramas se doblan con el peso de mis frutos dulces. ¿Sabías que guardo una medicina secreta llamada mangiferina en mis hojas? ¡Soy un tesoro de sabor y salud!",
-        referencias: [
-            "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2017). Nombres comunes de las plantas de Colombia. Universidad Nacional de Colombia.",
-            "Chave, J., et al. (2014). Improved allometric models to estimate the aboveground biomass of tropical trees. Global Change Biology, 20(10), 3177–3190.",
-            "Orwa, C., et al. (2009). Agroforestry Database: a tree reference and handbook version 4.0. World Agroforestry Centre."
-        ],
-        quiz: [
-            { q: "¿De qué región geográfica es originario el Mango?", opts: ["De la Amazonía colombiana", "Del norte de la India y Myanmar (Asia)", "De los bosques secos de África tropical"], correct: 1 },
-            { q: "¿Qué importante antioxidante medicinal contiene el mango en sus hojas?", opts: ["Mangiferina", "Látex natural", "Saponina espumosa"], correct: 0 },
-            { q: "¿En qué mes ocurre el pico de cosecha del mango criollo en Casanare?", opts: ["En pleno verano (diciembre)", "Durante el inicio de las lluvias (abril-mayo)", "En la época más seca (septiembre)"], correct: 1 }
-        ]
-    },
     "coccoloba-acuminata": {
         id: "#JBP-09", tipo: "Nativo", nombre: "Maíz Tostado", cientifico: "Coccoloba acuminata Kunth",
         familia: "Polygonaceae", origen: "Nativa", estado: "Preocupación Menor (LC)", exotica: false,
@@ -1542,6 +1469,203 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
             { q: "¿Cómo se llama el movimiento que hace el Samán al cerrar sus hojas de noche o antes de llover?", opts: ["Fototropismo", "Nictinastia", "Gravitropismo"], correct: 1 },
             { q: "¿Por qué el Samán es el árbol favorito para tener en los potreros ganaderos de la Orinoquía?", opts: ["Porque sus hojas envenenan a las garrapatas", "Porque su inmensa copa da una sombra muy fresca y sus vainas maduras alimentan al ganado", "Porque su madera sirve para postes de cercas eléctricas"], correct: 1 },
             { q: "¿En qué moneda de circulación actual en Colombia aparece grabado el árbol de Samán?", opts: ["En la de 1.000 pesos", "En la de 50 pesos", "En la de 500 pesos"], correct: 2 }
+        ]
+    },
+    "mango": {
+        id: "#JBP-18", tipo: "Introducido", nombre: "Mango", cientifico: "Mangifera indica L.",
+        familia: "Anacardiaceae", origen: "Norte de India y Myanmar (Exótica introducida)", estado: "LC — Preocupación Menor (UICN) / No Evaluada en Colombia", exotica: true,
+        carbono: 185.4, viajes: 62, imagen_portada: "./imagenes/desconocido.jpg",
+        galeria: [
+            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo - Mango en predio rural de Maní" },
+            { img: "./imagenes/desconocido.jpg", desc: "Frutos maduros de mango criollo en cosecha (abril-mayo)" },
+            { img: "./imagenes/desconocido.jpg", desc: "Panícula floral piramidal con flores aromáticas en época seca" }
+        ],
+        nombresLocales: ["Mango", "Mango criollo", "Palo de mango", "Melocotón de los trópicos", "Mango de azúcar", "Mango de hilacha", "Mango de burro", "Bocado (Venezuela)", "Mango manzano", "Common mango (EN)", "Manga (PT)", "Mangue (FR)"],
+        distribucion: `
+            <p><strong>Origen: Norte de India y Myanmar — Especie introducida y naturalizada en la Orinoquía:</strong> <em>Mangifera indica</em> L. es originaria de los bosques húmedos y montañosos del norte de la India, Myanmar y región de Malesia, donde se cultiva desde hace aproximadamente 4.000 años. Llegó a América vía portuguesa (Goa → África → Brasil/México) y se expandió por el Neotrópico entre 0 y 1.800 m s.n.m.</p>
+            <p>El mango fue introducido a la región del río Meta probablemente a comienzos del siglo XIX, proveniente de las Antillas y transportado vía el río Orinoco. Desde entonces se naturalizó, integrándose al quehacer de hatos, fundos y chágras indígenas del llano. No es nativo de la Orinoquía, pero su presencia histórica y cultural lo convierte en un elemento paisajístico y productivo consolidado en Maní, Casanare.</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida (Dicotiledóneas) / Sapindales</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Anacardiaceae R.Br.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género</td><td style="padding:6px;"><em>Mangifera</em> L.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Especie</td><td style="padding:6px;"><em>Mangifera indica</em> L. · <em>Species Plantarum</em> 1: 200. 1753</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Autoría</td><td style="padding:6px;">L. (Carl von Linné) — especie tipo del género</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Sinónimos principales</td><td style="padding:6px;"><em>Mangifera austroyunnanensis</em> Hu; <em>Mangifera domestica</em> Gaertn.; <em>Mangifera gladiata</em> Boj.; <em>Rhus laurina</em> Nutt.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Mangifera</em>: versión latinizada del malayo «manga» + sufijo latino <em>fer</em> («el que produce»). <em>indica</em>: «procedente de la India».</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Distribución en Colombia</td><td style="padding:6px;">Registrada en múltiples departamentos. El DANE (2019) documenta a Casanare como uno de los departamentos productores. En el llano se comporta como árbol cultivado y espontáneo en predios rurales.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación (UICN)</td><td style="padding:6px;">✅ <strong>LC — Preocupación Menor</strong>. Cultivado en ~100 países, más de 500–1.000 variedades. Sin amenazas de extinción. No figura en Libros Rojos de Colombia.</td></tr>
+                </table>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>🥭 Nota de contexto histórico:</strong> El Catálogo de Plantas y Líquenes de Colombia (Bernal et al., 2020) registra a <em>Mangifera indica</em> como especie introducida y naturalizada. Su integración cultural en el llano es tal que muchos lo perciben como parte del paisaje tradicional, aunque botánicamente sea exótico.
+            </div>
+            <div class="blockquote-pro mt-3">
+                <p>"Para estimar la biomasa leñosa a partir de existencias maderables en inventarios forestales, se determinó la densidad básica de la madera en 59 especies del orden Sapindales (Anacardiaceae, Burseraceae, Meliaceae, Rutaceae, Sapindaceae, Simaroubaceae). El 68% de las especies analizadas presentan maderas livianas o semipesadas (0,51–0,80 g/cm³), lo que condiciona su dinámica de crecimiento y almacenamiento de carbono en bosques tropicales secundarios y sistemas agroforestales."</p>
+                <cite>— Riesco Muñoz, G., Imaña Encinas, J., & de Paula, J. E. (2019). Madera y Bosques, 25(2), e2521817.</cite>
+            </div>
+        `,
+        densidad: "0.52 – 0.70 g/cm³ (Semipesada a pesada; Delta-Intkey / InsideWood Database)", fraccion: "0.47 – 0.50 (IPCC para biomasa leñosa tropical)",
+        alometria: `
+            <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+                ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No hay registro IDEAM de densidad específica para la Orinoquía colombiana. Se recomienda muestreo <em>in situ</em> conforme al protocolo Chave (2006) y método ASTM D2395 para calibración local.
+            </div>
+            <p class="text-sm mb-3"><strong>Características de la madera:</strong> Madera de porosidad difusa, vasos en grupos radiales cortos. Clasificada como semipesada a pesada. Apta para tablas de picar, yugos, carpintería rústica e instrumentos musicales. Durabilidad natural: susceptible a hongos e insectos; requiere secado y tratamiento si se usa en exteriores húmedos.</p>
+            
+            <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+ln(AGB) = a + b·ln(D) + c·ln(ρ)
+            </div>
+            <p class="text-sm"><strong>Modelo Colombia — Álvarez et al. (2012):</strong> Ecuación validada para bosques naturales colombianos de tierras bajas cálidas.</p>
+            <ul style="font-size:0.85rem; margin-top:10px; padding-left:20px;">
+                <li><strong>AGB</strong> = Biomasa Aérea (kg árbol⁻¹)</li>
+                <li><strong>D</strong> = DAP (cm) a 1.30 m</li>
+                <li><strong>ρ</strong> = Densidad básica (g/cm³) → usar 0.52–0.70 como referencia</li>
+                <li><strong>a, b, c</strong> = Coeficientes ajustados por región de vida</li>
+            </ul>
+
+            <div class="alometry-box" style="margin:15px 0; font-family: 'Courier New', monospace; font-weight:bold; background: #1a1a2e; color: #00ffcc; padding: 15px; border-radius: 10px; text-align:center;">
+AGB = 0.0673 × (ρ × D² × H)^0.976
+            </div>
+            <p class="text-sm"><strong>Alternativa Pantrópica — Chave et al. (2014):</strong> Modelo mejorado para estimación de biomasa aérea en árboles tropicales.</p>
+
+            <div class="section-val text-sm mt-3" style="color:white; padding:12px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius:8px;">
+                ⚠️ <strong>Precaución toxicológica verificada:</strong> La madera y corteza contienen <strong>urushiol</strong> (fenoles), la misma sustancia presente en la hiedra venenosa. Puede causar dermatitis por contacto en personas sensibilizadas. Manipular con guantes durante muestreo dasométrico.
+            </div>
+
+            <div class="warn-box mt-3" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+                ⚠️ <strong>Nota técnica para inventarios en sabanas inundables:</strong> Para estimaciones completas de carbono, combinar con la ecuación de Cairns et al. (1997) para biomasa radicular, ya que el sistema pivotante del mango contribuye significativamente al carbono subterráneo.
+            </div>
+        `,
+        calendario: [
+            { mes: "Ene", fase: "🌸 Floración (verano seco)", clima: "dry" },
+            { mes: "Feb", fase: "🌸 Floración (verano seco)", clima: "dry" },
+            { mes: "Mar", fase: "🍏 Cuajado de frutos", clima: "dry" },
+            { mes: "Abr", phase: "🥭 Inicio cosecha / Invierno", clima: "rain" },
+            { mes: "May", fase: "🥭 Cosecha máxima", clima: "rain" },
+            { mes: "Jun", fase: "🌧️ Crecimiento vegetativo", clima: "rain" },
+            { mes: "Jul", fase: "🌧️ Crecimiento activo", clima: "rain" },
+            { mes: "Ago", fase: "🌧️ Crecimiento activo", clima: "rain" },
+            { mes: "Sep", fase: "🌱 Preparación pre-floral", clima: "rain" },
+            { mes: "Oct", fase: "🌱 Preparación pre-floral", clima: "rain" },
+            { mes: "Nov", fase: "☀️ Pre-floración", clima: "dry" },
+            { mes: "Dic", fase: "🌸 Inicio floración", clima: "dry" }
+        ],
+        morfologia: `
+            <div style="display:flex; flex-direction:column; gap:15px;">
+                <div><strong style="color:var(--secondary-color);">🌳 Porte General:</strong> Árbol perennifolio de 8–30 m (hasta 45 m en óptimas condiciones). Copa densa y redondeada (hasta 30 m de diámetro). Tronco recto, DAP puede superar 100 cm en individuos longevos. <em>Datos de campo (San Martín, Meta, 1997): ejemplares típicos de 14 m de altura y 80 cm de diámetro de fuste.</em></div>
+                
+                <div><strong style="color:var(--secondary-color);">🟫 Corteza:</strong> Gruesa, áspera, negruzca, fisurada longitudinalmente. Látex resinoso de olor penetrante en ramas y corteza joven.</div>
+                
+                <div><strong style="color:var(--secondary-color);">🍃 Hojas:</strong> Simples, alternas, subcoriáceas, lanceoladas a oblongo-elípticas. <em>Medidas de campo: 10 × 6 cm</em>. Haz verde oscuro brillante, envés más claro. Brotes nuevos rojizos/rosados. Filotaxia en hélice para máxima captación lumínica.</div>
+                
+                <div><strong style="color:var(--secondary-color);">🌸 Flores:</strong> Panícula piramidal terminal/axilar (15–40 cm). Flores polígamas, pequeñas (3–8 mm), verdosas a verde-amarillentas, muy aromáticas. Disco nectarífero carnoso con 5 lóbulos. Polinización entomófila (abejas, abejorros).</div>
+                
+                <div><strong style="color:var(--secondary-color);">🥭 Fruto:</strong> Drupa ovoide-oblonga o reniforme (4–25 cm). Mesocarpio carnoso, fibroso, amarillo-anaranjado. Endocarpio leñoso (hueso) con semilla mono/poliembiónica. Variedades criollas del llano: "mango de azúcar", "de hilacha", "de burro".</div>
+                
+                <div><strong style="color:var(--secondary-color);">🌱 Raíz:</strong> Sistema pivotante con laterales bien desarrolladas. Tolerante a suelos pobres (pH 5–8). Eficaz fijador de suelo en sabanas y bordes de caño.</div>
+            </div>
+            
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>📌 Clave fenológica llanera:</strong> La floración coincide con el verano seco (dic–feb). Las lluvias tempranas durante este período favorecen hongos (<em>Oidium</em>, antracnosis) y reducen la cuaja. La cosecha masiva llega justo cuando inicia el invierno (abril–mayo), fenómeno que los productores conocen como "irse al mango entre Semana Santa y mayo".
+            </div>
+        `,
+        fauna: `
+            <div class="grid2 mt-3">
+                <div class="metric-card">
+                    <div class="metric-label">🐝 Abejas y Abejurros</div>
+                    <div class="section-val text-sm mt-2"><strong><em>Apis mellifera</em>, meliponinos:</strong> Polinización principal. Árbol melífero de primer orden en el llano. Las panículas florales aromáticas atraen colonias enteras durante la estación seca.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🦜 Loros y Pericos</div>
+                    <div class="section-val text-sm mt-2"><strong><em>Amazona</em> spp., <em>Brotogeris</em> spp.:</strong> Consumen frutos maduros e inmaduros. Dispersores secundarios en bosques de galería.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🐗 Chácharo / Pecarí</div>
+                    <div class="section-val text-sm mt-2"><strong><em>Pecari tajacu</em>:</strong> Consume frutos caídos. Documentado en sabanas y bosques de galería de la Orinoquía.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🐀 Lapa y Picure</div>
+                    <div class="section-val text-sm mt-2"><strong><em>Cuniculus paca</em>, <em>Dasyprocta</em> spp.:</strong> Roedores que roen el endocarpio leñoso para acceder a la pulpa/semilla. <em>Confirmado en registros de campo de la Orinoquía.</em></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🐦 Turpiales y Tángaras</div>
+                    <div class="section-val text-sm mt-2"><strong><em>Icterus</em> spp., <em>Tangara</em> spp.:</strong> Picotean la pulpa madura. Usan ramas como percha y canto.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🦇 Murciélagos Frugívoros</div>
+                    <div class="section-val text-sm mt-2"><strong><em>Artibeus</em> spp., <em>Carollia</em> spp.:</strong> Dispersión nocturna. Copa densa usada como refugio diurno.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🐛 Mosca del Mango</div>
+                    <div class="section-val text-sm mt-2"><strong><em>Anastrepha</em> spp.:</strong> Principal plaga. Oviposita en el fruto. Manejo clave en cultivo llanero.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🐄 Ganado y Équidos</div>
+                    <div class="section-val text-sm mt-2">Sombra permanente en hatos. Frutos caídos consumidos como forraje suplementario.</div>
+                </div>
+            </div>
+        `,
+        usos: `
+            <div class="grid2 mt-3">
+                <div class="metric-card">
+                    <div class="metric-label">🍹 Alimentario</div>
+                    <div class="section-val text-sm mt-2">Consumo fresco, jugos, mermeladas, bocadillos. Rico en vitamina A, C, betacarotenos y fibra. El "mango de azúcar" criollo del Casanare es muy valorado. Fruto verde ("biche") usado con sal y limón.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">💊 Medicinal (Hojas)</div>
+                    <div class="section-val text-sm mt-2">Decocción para afecciones respiratorias, tos y asma. Infusión antidiabética tradicional. Masticadas para ampollas bucales.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">💊 Medicinal (Corteza/Raíz)</div>
+                    <div class="section-val text-sm mt-2">Desinfectante de heridas (comunidad Siona). Diurético y gastrointestinal. Astringente para diarreas crónicas. Tratamiento de carate/vitíligo.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">💊 Medicinal (Semilla)</div>
+                    <div class="section-val text-sm mt-2">Polvo seco como antiparasitario (<em>Ascaris</em>). Almendra con triterpenos y esteroles bioactivos.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🔬 Mangiferina</div>
+                    <div class="section-val text-sm mt-2">Xantona glucosilada extraída de hojas/corteza. Propiedades antioxidantes, antidiabéticas, antimicrobianas y anticancerígenas confirmadas científicamente (Imran et al., 2017).</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🪵 Madera y Artesanía</div>
+                    <div class="section-val text-sm mt-2">Utensilios de cocina, yugos para bueyes, carpintería rústica, instrumentos musicales (ukuleles, marimbas), carbón vegetal.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🎨 Tintura y Taninos</div>
+                    <div class="section-val text-sm mt-2">Corteza produce colorante amarillo. Taninos para curtiembre (familia Anacardiaceae reconocida por ello).</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🌳 Servicios Ecosistémicos</div>
+                    <div class="section-val text-sm mt-2">Sombra insustituible en hatos. Rompevientos. Fijador de suelo. Componente de sistemas silvopastoriles sin necesidad de riego ni fertilización.</div>
+                </div>
+            </div>
+            
+            <div class="blockquote-pro mt-3">
+                <p><strong>📜 Herencia cultural llanera (registrada en campo):</strong></p>
+                <p style="font-style:italic;">"La orejiniela soy yo, amiga del rey zamuro,<br>y salgo en semana santa a comer mango maduro."</p>
+                <p style="margin-top:10px;"><strong>Adivinanza tradicional:</strong><br>¿Qué es lo que tiene carne por fuera y los pelos por dentro?<br><em>El mango.</em></p>
+                <p style="margin-top:10px; font-size:0.85rem;">Muchos animales de la fauna silvestre, entre ellos el chácharo o pecarí de collar, la lapa y el picure, comen con avidez sus frutos. Los indígenas guahibos, nómadas por naturaleza, hacían prolongadas estaciones cuando encontraban en su camino rodales de árbol de mango en cosecha. De la madera de este árbol se hacían los fustes o sillas de montar, así como asientos rústicos (registrado en colecciones de campo, mayo 1997, San Martín, Meta).</p>
+            </div>
+        `,
+        mensajeIA: "🥭 **Soy el Mango... y llevo más de cuatro mil años viajando con los seres humanos**\n\nNací en los bosques húmedos y montañosos del norte de la India, cerca de Myanmar, donde monjes y viajeros me cargaban en sus bolsas hace milenios. Crucé océanos con marineros persas, luego los portugueses me embarcaron desde Goa hacia África, Brasil y México. Cuando llegué a los llanos del Casanare, supe que había encontrado mi lugar: el verano largo y seco de diciembre a marzo me despierta del letargo, mis ramas se llenan de panículas piramidales con miles de florecitas perfumadas, y las abejas, turpiales y colibríes no se resisten a mi néctar. Cuando llegan las primeras lluvias de abril, mis frutos ya están maduros, amarillos o naranja, cargados de vitamina A, y toda la sabana huele a mango.\n\nTengo un secreto que los científicos apenas están descubriendo: mis hojas y mi corteza guardan la **mangiferina**, un compuesto que puede ayudar a combatir la diabetes, los hongos y hasta algunas células enfermas. Pero también tengo una advertencia: pertenezco a la misma familia que la hiedra venenosa. Mi piel y mi madera contienen **urushiol**, la misma sustancia que causa sarpullido en personas sensibles. Por eso, cuando los niños llaneros muerden el mango directamente del árbol, a veces les sale una manchita roja alrededor de la boca. La pulpa de adentro, eso sí, es completamente segura y deliciosa.\n\n✨ **Curiosidad que genera asombro**: Puedo vivir más de 100 años y seguir produciendo frutos. En Bangladesh hay un mango de 110 años que sigue dando cosecha. Soy el árbol frutal más paciente del mundo, y mientras haya un llanero bajo mi sombra esperando que caiga el primero, yo seguiré floreciendo cada verano.",
+        referencias: [
+            "Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., de las Salas, G., del Valle, I., Lema, A., Moreno, F., Orrego, S., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013",
+            "Barreto, J. S., Ramírez-Echeverry, S., Peña, M. A., Capachero, C., Barbosa, A. P., Panev, M., Phillips, J. F., & Moreno, L. M. (2018). Manual de Campo Inventario Forestal Nacional Colombia. IDEAM.",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2020). Catálogo de Plantas y Líquenes de Colombia (v1.1). Universidad Nacional de Colombia. https://doi.org/10.15472/7avdhn",
+            "Chave, J. (2006). Medición de densidad de madera en árboles tropicales: Manual de campo. Laboratoire Évolution et Diversité Biologique, Université Paul Sabatier.",
+            "Chave, J., Réjou-Méchain, M., Búrquez, A., Chidumayo, E., Colgan, M. S., Delitti, W. B. C., Duque, A., Eid, T., Fearnside, P. M., Goodman, R. C., Henry, M., Martínez-Yrízar, A., Mugasha, W. A., Muller-Landau, H. C., Mencuccini, M., Nelson, B. W., Ngomanda, A., Nogueira, E. M., Ortiz-Malavassi, E., … Vieilledent, G. (2014). Improved allometric models to estimate the aboveground biomass of tropical trees. Global Change Biology, 20(10), 3177–3190. https://doi.org/10.1111/gcb.12629",
+            "Departamento Administrativo Nacional de Estadística (DANE). (2019). El cultivo del mango (Mangifera indica L.) en Colombia y un estudio de caso de los costos de producción en el municipio de Espinal (Tolima). Boletín de Insumos y Factores Asociados a la Producción Agropecuaria.",
+            "Imran, M., Arshad, M. S., Butt, M. S., Kwon, J.-H., Arshad, M. U., & Sultan, M. T. (2017). Mangiferin: a natural miracle bioactive compound against lifestyle related disorders. Lipids in Health and Disease, 16(84). https://doi.org/10.1186/s12944-017-0449-y",
+            "Riesco Muñoz, G., Imaña Encinas, J., & de Paula, J. E. (2019). Densidad de la madera de 59 especies del orden Sapindales procedentes de bosques naturales brasileños. Madera y Bosques, 25(2), e2521817. https://doi.org/10.21829/myb.2019.2521817",
+            "TRAMIL Network. (2023). Mangifera indica L. — Ficha etnofarmacológica. Tramil Caribbean Medicinal Plant Database.",
+            "Zanne, A. E., Lopez-Gonzalez, G., Coomes, D. A., Ilic, J., Jansen, S., Lewis, S. L., Miller, R. B., Swenson, N. G., Wiemann, M. C., & Chave, J. (2009). Global wood density database. Dryad. https://doi.org/10.5061/dryad.234"
+        ],
+        quiz: [
+            { q: "¿De dónde es originario el árbol de mango (Mangifera indica) y cuánto tiempo lleva siendo cultivado por el ser humano?", opts: ["Es originario de África central y lleva unos 500 años de cultivo en el trópico americano", "Es originario de la Amazonia colombiana y Venezuela, donde se cultiva desde hace 1.000 años", "Es originario del norte de la India y Myanmar, con aproximadamente 4.000 años de cultivo continuo por el ser humano", "Es nativo de los llanos del Casanare y Arauca, donde crece silvestre de forma natural"], correct: 2 },
+            { q: "¿Por qué en Maní (Casanare) el mango florece principalmente entre diciembre y febrero, durante la época de verano?", opts: ["Porque en esa época el suelo tiene más nutrientes disponibles gracias a las inundaciones de los caños", "Porque el mango prefiere períodos secos para florecer; la estación sin lluvias actúa como señal hormonal para que el árbol produzca sus flores aromáticas", "Porque las abejas solo están activas en los meses de verano y sin ellas el mango no puede florecer", "Porque la temperatura baja en diciembre y eso estimula la aparición de las flores"], correct: 1 },
+            { q: "¿Qué compuesto bioactivo importante se extrae de las hojas y la corteza del mango, y para qué sirve según la ciencia?", opts: ["La cafeína, que es un estimulante del sistema nervioso central", "La pectina, que se usa exclusivamente para hacer mermeladas y jaleas", "El urushiol, que tiene propiedades curativas contra enfermedades de la piel en los llanos", "La mangiferina, una xantona con propiedades antioxidantes, antidiabéticas, antimicrobianas y anticancerígenas confirmadas científicamente"], correct: 3 }
         ]
     }
 };
