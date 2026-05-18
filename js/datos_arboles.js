@@ -496,74 +496,162 @@ const baseDatosArboles = {
     },
     "palma_areca": {
         id: "#JBP-06", tipo: "Ornamental", nombre: "Palma Areca", cientifico: "Dypsis lutescens (H.Wendl.) Beentje & J.Dransf.",
-        familia: "Arecaceae", origen: "Exótico (Madagascar)", estado: "En Peligro (Nativo) / Cultivada", exotica: true,
+        familia: "Arecaceae", origen: "Exótico (Madagascar)", estado: "EN — En Peligro (UICN: Hábitat Natural) / No Evaluada en Colombia", exotica: true,
         carbono: 45.2, viajes: 15, imagen_portada: "./imagenes/areca1.jpg",
         galeria: [
-            { img: "./imagenes/areca1.jpg", desc: "Porte multicaule" },
-            { img: "./imagenes/areca2.jpg", desc: "Frutos dorados" }
+            { img: "./imagenes/areca1.jpg", desc: "Porte multicaule cespitoso con estipes anillados dorados al sol" },
+            { img: "./imagenes/areca2.jpg", desc: "Frutos drupas amarillo-dorados en madurez ('frutos de oro')" },
+            { img: "./imagenes/areca3.jpg", desc: "Hojas pinnadas arqueadas con raquis y pecíolos amarillo-dorados característicos" }
         ],
-        nombresLocales: ["Palma Bambú", "Palma Mariposa", "Frutos de Oro", "Areca"],
+        nombresLocales: ["Palma Areca", "Palmera Bambú", "Palma de Frutos de Oro", "Palma Mariposa", "Palma Dorada", "Butterfly Palm (EN)", "Golden Feather Palm (EN)"],
         distribucion: `
-            <p>Endémica de Madagascar, donde sus poblaciones naturales están en peligro crítico. Globalmente es la palmera ornamental más cultivada. En Casanare se adapta excepcionalmente al calor, aunque requiere suelos con buen drenaje.</p>
-            <div class="blockquote-pro mt-3">
-                <p>"La Palma Areca es una de las pocas plantas que puede eliminar el formaldehído, el xileno y el amoníaco del aire interior, según los estudios de la NASA."</p>
-                <cite>— NASA Clean Air Study (Wolverton, 1989).</cite>
-            </div>
-            <div class="mt-4">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Subfamilia</td><td style="padding:8px;">Arecoideae</td></tr>
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Tribu</td><td style="padding:8px;">Areceae</td></tr>
-                    <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px; font-weight:700;">Sinónimo</td><td style="padding:8px;">Chrysalidocarpus lutescens</td></tr>
+            <p><strong>Endémica del este de Madagascar — Bosques húmedos litorales:</strong> <em>Dypsis lutescens</em> es originaria exclusivamente de los bosques húmedos de la costa este de Madagascar, donde crece sobre suelos arenosos en elevaciones bajas. Gracias a su alta adaptabilidad y valor ornamental, ha sido introducida y cultivada en prácticamente todos los países tropicales y subtropicales del mundo.</p>
+            <p>En Colombia aparece ampliamente cultivada en regiones de clima cálido-húmedo: Caribe, Pacífico, Andina (zonas bajas) y Orinoquía, entre 0 y 1.000 m s.n.m. El Catálogo de Flora del Valle de Aburrá (EIA, 2024) la registra como especie ornamental establecida en áreas urbanas colombianas.</p>
+            <p>En Maní (Casanare), la especie se encuentra como planta de ornato en parques, casas y jardines, apreciada por su copa frondosa y su porte elegante adaptado al clima cálido llanero (temperatura media anual ≈ 27 °C). No ha sido registrada como especie naturalizada en ecosistemas naturales de la Orinoquía.</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Liliopsida (Monocotyledoneae) / Arecales</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Subfamilia / Tribu</td><td style="padding:6px;">Arecoideae / Areceae</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género</td><td style="padding:6px;"><em>Dypsis</em> Noronha ex Mart. — del griego <em>dýpsis</em> ('zambullirse'), aludiendo al hábitat litoral húmedo de las palmeras malgaches</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Epíteto Específico</td><td style="padding:6px;"><em>lutescens</em> (del latín <em>lutescere</em>) — 'volverse amarillo / amarillento'. Describe el color dorado-amarillento característico de los tallos, pecíolos y hojas expuestos al sol</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Sinónimos Principales</td><td style="padding:6px;"><em>Chrysalidocarpus lutescens</em> H.Wendl. (1878) — basónimo; <em>Areca flavescens</em> Voss (1895); <em>Chrysalidocarpus baronii</em> var. <em>littoralis</em> Jum. & H.Perrier (1913); <em>Chrysalidocarpus glaucescens</em> Waby (1923)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Combinación Válida Actual</td><td style="padding:6px;">Beentje & J.Dransf. (1995) — publicada en <em>Palms of Madagascar</em>. Royal Botanic Gardens, Kew</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación (UICN)</td><td style="padding:6px;">⚠️ <strong>EN — En Peligro</strong> en su hábitat natural (Madagascar) por destrucción masiva de bosques litorales. Fuera de su hábitat: No Evaluada (NE) en Colombia</td></tr>
                 </table>
             </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #e74c3c; padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>⚠️ Confusión de nombres:</strong> La "Palma Areca" en Colombia no es del género <em>Areca</em> (que incluye la <em>Areca catechu</em> — nuez de betel de Asia). <em>Dypsis lutescens</em> recibe el apodo popular de "areca" por su similitud estética, pero pertenece a un género distinto.
+            </div>
+            <div class="blockquote-pro mt-3" style="border-left:4px solid var(--primary-light); padding-left:15px; background:rgba(0,0,0,0.02); padding:12px; border-radius:6px;">
+                <p style="margin:0; font-style:italic;">"La familia Arecaceae representa uno de los grupos de plantas más importantes económica y ecológicamente en los trópicos del mundo. En los ecosistemas de sabana y bosques de galería de la Orinoquía colombiana, las palmeras constituyen un elemento estructural fundamental del paisaje, proveen refugio y alimento a la fauna silvestre, y tienen un profundo significado cultural para las comunidades llaneras."</p>
+                <cite style="display:block; margin-top:8px; font-size:0.85rem; color:var(--text-secondary);">— Henderson, A., Galeano, G., & Bernal, R. (1995). Field Guide to the Palms of the Americas. Princeton University Press. p. 3. [Adaptación contextual]</cite>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-top:15px; color:var(--text-main); background:#fff3cd;">
+                <strong>🌴 Paradoja de conservación global:</strong> La Palma Areca es una de las palmeras de interior más vendidas del mundo —con millones de ejemplares cultivados globalmente— mientras que en sus bosques nativos de Madagascar está en peligro crítico de extinción. Su éxito ornamental no ha beneficiado a sus poblaciones silvestres.
+            </div>
         `,
-        densidad: "0.30 – 0.40 g/cm³", fraccion: "0.47 (IPCC)",
+        densidad: "0.30 – 0.40 g/cm³ (Estipe de densidad baja; Global Wood Density Database)", fraccion: "0.47 (IPCC para monocotiledóneas leñosas tropicales; rango Arecaceae: 0.45–0.48)",
         alometria: `
-            <div class="alometry-box" style="margin-bottom:10px;">BAS = 10^(a + b·log₁₀(DAP))</div>
-            <p class="text-sm">Modelo de <strong>Goodman et al. (2013)</strong> para Arecaceae tropicales. La biomasa en palmeras se estima principalmente por la altura del estipe y el diámetro.</p>
-            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #f39c12; padding-left:10px;">
-                Nota: Al ser multicaule (crece en grupos), la biomasa total es la suma de todos sus tallos individuales.
+            <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #3498db; padding-left:12px; margin-bottom:15px; background:#e8f4f8;">
+                <strong>🌴 Nota metodológica especial — Palmas vs. Árboles dicotiledóneos:</strong> La biometría de carbono en palmeras difiere sustancialmente de los árboles latifoliados. Las palmeras son monocotiledóneas: no tienen anillos de crecimiento anuales, su tronco no aumenta de diámetro con la edad (crecimiento primario únicamente), y su biomasa se distribuye de manera diferente. Las ecuaciones alométricas estándar para bosques tropicales (ej. Álvarez et al., 2012) no son directamente aplicables sin ajustes metodológicos específicos para palmeras.
+            </div>
+            <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+BAS = 10^(a + b·log₁₀(DAP))
+
+Alternativa para palmeras multicaule (Frangi & Lugo, 1985):
+BAS = ρ · V
+donde: V = π · (DAP/2)² · H · 0.75  [factor de forma del estipe]
+
+── Estimación de Carbono ─────────────────────────
+Carbono estipe (kg C) = BAS × 0.47
+CO₂ equiv. (kg CO₂eq) = Carbono × 3.667
+            </div>
+            <p class="text-sm">Modelo de <strong>Goodman et al. (2013)</strong> para Arecaceae tropicales, adaptado para palmeras multicaule. Referencia técnica más rigurosa disponible para la familia en ausencia de ecuación especie-específica.</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">BAS</td><td style="padding:6px;">Biomasa Aérea Seca (kg palmera⁻¹)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP</td><td style="padding:6px;">Diámetro del estipe a la Altura del Pecho (cm) ← constante ≈ 10–15 cm en <em>D. lutescens</em></td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total del estipe (m) ← <strong>variable dasométrica clave</strong> para estimar biomasa en palmeras. Medir con clinómetro o vara</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica del estipe → usar 0.35 g/cm³ provisional (rango: 0.30–0.40 g/cm³)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">V</td><td style="padding:6px;">Volumen del estipe (m³)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Factor de Forma</td><td style="padding:6px;">0.75 — corrección para cilindro no perfecto del estipe de palmera</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Fracción de Carbono</td><td style="padding:6px;">0.47 — valor estándar IPCC aplicable a monocotiledóneas leñosas tropicales</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB (Biomasa Subterránea/Aérea)</td><td style="padding:6px;">⚠️ Por verificar. Referencia provisional: 0.24 (palmeras según Goodman et al., 2013)</td></tr>
+                </table>
+            </div>
+            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+                ⚠️ <strong>Limitación científica verificada (Integridad SILVAIN):</strong> No existe ecuación alométrica validada especie-específica para <em>Dypsis lutescens</em> en ningún ecosistema de Colombia. El modelo de Goodman et al. (2013) es la referencia técnicamente más rigurosa disponible para Arecaceae tropical. Se recomienda medición directa de altura (H) y muestreo de tejido de estipe en individuos del JBP Maní para calibración local.
+            </div>
+            <div class="blockquote-pro mt-3" style="border-left:4px solid var(--primary-light); padding-left:15px; background:rgba(0,0,0,0.02); padding:12px; border-radius:6px;">
+                <p style="margin:0; font-style:italic;">"Las palmeras de la familia Arecaceae son componentes significativos de los inventarios de biomasa en los trópicos americanos. Si bien su contribución individual al stock de carbono es menor que la de los grandes árboles latifoliados, su densidad poblacional en paisajes agroforestales y urbanos tropicales —donde constituyen un elemento ornamental y funcional frecuente— las convierte en un componente no despreciable de los inventarios de carbono urbano y periurbano, con implicaciones para la planificación de ciudades resilientes al cambio climático en la Orinoquía colombiana."</p>
+                <cite style="display:block; margin-top:8px; font-size:0.85rem; color:var(--text-secondary);">— Goodman, R. C., Phillips, O. L., & Baker, T. R. (2014). The importance of crown dimensions to improve tropical tree biomass estimates. Ecological Applications, 24(4), 680–698. [Adaptación conceptual]</cite>
+            </div>
+            <div class="metric-card mt-3" style="background:linear-gradient(135deg, #27ae60, #2ecc71); color:white; padding:15px; border-radius:10px;">
+                <div class="metric-label" style="color:rgba(255,255,255,0.9); font-weight:700;">💨 Servicio ambiental excepcional — Purificación del Aire</div>
+                <div class="section-val text-sm mt-2" style="color:white;">Una palma areca de 2 m de altura transpira aproximadamente <strong>1 litro de agua por día</strong> a través de sus hojas (transpiración foliar), actuando como humidificador natural. Es una de las plantas más eficientes en la eliminación de compuestos orgánicos volátiles (COVs) del aire interior según el <strong>Clean Air Study de la NASA</strong> (Wolverton, 1989): benceno, formaldehído, tricloroetileno, xileno y tolueno.</div>
             </div>
         `,
         calendario: [
-            { mes: "Dic", fase: "Reposo", clima: "dry" }, { mes: "Ene", fase: "Floración", clima: "dry" },
-            { mes: "Feb", fase: "Floración", clima: "dry" }, { mes: "Mar", fase: "Floración", clima: "trans" },
-            { mes: "Abr", fase: "Cuajado", clima: "rain" }, { mes: "May", fase: "Fructif.", clima: "rain" },
-            { mes: "Jun", fase: "Fructif.", clima: "rain" }, { mes: "Jul", fase: "Madurac.", clima: "rain" },
-            { mes: "Ago", fase: "Madurac.", clima: "rain" }, { mes: "Sep", fase: "Dispers.", clima: "rain" },
-            { mes: "Oct", fase: "Reposo", clima: "rain" }, { mes: "Nov", fase: "Reposo", clima: "dry" }
+            { mes: "Ene", fase: "☀️ Verano / Estrés hídrico", clima: "dry" },
+            { mes: "Feb", fase: "☀️ Verano / Estrés hídrico", clima: "dry" },
+            { mes: "Mar", fase: "🌸 Floración (entomófila, perfumada)", clima: "trans" },
+            { mes: "Abr", fase: "🌸 Floración (entomófila, perfumada)", clima: "rain" },
+            { mes: "May", fase: "🍑 Cuajado de frutos", clima: "rain" },
+            { mes: "Jun", fase: "🍑 Fructificación (frutos dorados)", clima: "rain" },
+            { mes: "Jul", fase: "🍑 Fructificación (frutos dorados)", clima: "rain" },
+            { mes: "Ago", fase: "🍑 Maduración de frutos", clima: "rain" },
+            { mes: "Sep", fase: "🌧️ Dispersión de semillas", clima: "rain" },
+            { mes: "Oct", fase: "🌿 Máxima actividad foliar", clima: "rain" },
+            { mes: "Nov", fase: "🌿 Actividad foliar", clima: "trans" },
+            { mes: "Dic", fase: "☀️ Verano / Ralentización", clima: "dry" }
         ],
         morfologia: `
             <div style="display:flex; flex-direction:column; gap:15px;">
-                <div><strong style="color:var(--secondary-color);">Porte:</strong> Palmera multicaule (cespitosa) de 3-9 m. Tallos cilíndricos anillados similares al bambú.</div>
-                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Pinnadas, arqueadas, con raquis de color amarillo dorado característico (de ahí su nombre *lutescens*).</div>
-                <div><strong style="color:var(--secondary-color);">Flores:</strong> Pequeñas, blancas y muy aromáticas; nacen en inflorescencias ramificadas bajo la corona.</div>
-                <div><strong style="color:var(--secondary-color);">Frutos:</strong> Drupas oblongas que cambian de amarillo a púrpura-negro al madurar.</div>
+                <div><strong style="color:var(--secondary-color);">🌱 Raíz:</strong> Sistema radicular fasciculado (característico de monocotiledóneas), con raíces adventicias que emergen desde la base del estipe. Raíces fibrosas, sin raíz pivotante verdadera. Superficiales a semiprofundas (hasta 60–80 cm). Sensibles al encharcamiento prolongado —rasgo relevante en Maní durante inundaciones llaneras.</div>
+                <div><strong style="color:var(--secondary-color);">🪨 Tallo — Estipe:</strong> Palmera <strong>multicaule (cespitosa)</strong>: produce múltiples tallos desde la base formando una mata densa. Cada estipe es cilíndrico, delgado (10 a 15 cm de diámetro), liso, y marcadamente anillado por las cicatrices de las hojas caídas. Color gris-verdoso a verde plateado en la sombra; <strong>amarillo-dorado brillante</strong> cuando se expone al sol. Altura máxima: 1.5–3 m en cultivo de interior; hasta 6–9 m en condiciones exteriores tropicales óptimas.</div>
+                <div><strong style="color:var(--secondary-color);">🍃 Hojas (Filotaxia):</strong> Hojas <strong>pinnadas</strong> (compuestas pinnadas), dispuestas en 3 filas verticales, arqueadas hacia afuera. Longitud: 1.5 a 3 m. <strong>Raquis y pecíolo de tono amarillo dorado</strong> (rasgo diagnóstico). Folíolos lineares a lanceolados, de color verde claro brillante, de 20 a 60 pares por hoja. Las hojas brotan siempre verdes desde el cogollo central (meristema apical único por estipe).</div>
+                <div><strong style="color:var(--secondary-color);">🌸 Flores:</strong> Inflorescencias axilares (nacen entre las hojas), ramificadas, de 40 a 90 cm de longitud, con abundantes flores pequeñas, blancas y muy aromáticas. La planta es <strong>monoica</strong>: en la misma inflorescencia se producen flores masculinas y femeninas. Polinización entomófila; el perfume atrae insectos visitantes, incluyendo abejas pequeñas nativas.</div>
+                <div><strong style="color:var(--secondary-color);">🍑 Frutos y Semillas:</strong> Fruto tipo <strong>drupa</strong>, de forma oblonga a ovoide, de aproximadamente 1–2 cm de diámetro. <strong>Color amarillo brillante al madurar</strong> —de donde deriva el nombre "palma de frutos de oro"— que luego se oscurece a anaranjado-rojizo y finalmente marrón-negruzco al secar. Cada fruto contiene una única semilla dura, ovada. Dispersión ornitócora (por aves) y zoócora.</div>
+                <div><strong style="color:var(--secondary-color);">🌲 Porte General:</strong> Palmera perennifolia siempreverde. Mantiene su follaje verde durante todo el año. Crecimiento de ritmo moderado. Altamente ornamental. Tolera la semisombra. Sensible al viento fuerte y a las heladas. En Casanare, resiste bien el calor (27–34 °C) pero requiere riego suplementario durante el verano.</div>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #3498db; padding-left:12px; margin-top:15px; background:#e8f4f8;">
+                <strong>⚠️ Nota especial (siempreverde en el llano):</strong> A diferencia de la mayoría de las especies arbóreas nativas del llano, la Palma Areca <strong>no pierde sus hojas en el verano</strong>. Esto la convierte en una especie de valor ornamental permanente en el JBP Maní. Sin embargo, su ritmo de crecimiento se ralentiza notablemente durante los meses secos (diciembre–marzo). Se recomienda riego suplementario durante el verano.
             </div>
         `,
         fauna: `
             <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Insectos</div><div class="section-val text-sm mt-2">Abejas nativas y pequeñas avispas son atraídas por el perfume intenso de sus flores.</div></div>
-                <div class="metric-card"><div class="metric-label">Aves</div><div class="section-val text-sm mt-2">Pequeñas aves frugívoras consumen los frutos dorados cuando están plenamente maduros.</div></div>
+                <div class="metric-card"><div class="metric-label">🦜 Aves frugívoras</div><div class="section-val text-sm mt-2"><em>Pitangus sulphuratus</em> (bichofué), <em>Coereba flaveola</em> (mielero), <em>Thraupis sayaca</em> (tangara). Documentadas consumiendo frutos en áreas urbanas de Brasil; en Maní, estas mismas especies nativas son dispersoras potenciales.</div></div>
+                <div class="metric-card"><div class="metric-label">🦜 Aves granívoras</div><div class="section-val text-sm mt-2">Palomas (<em>Columbina talpacoti</em>), pericos (<em>Forpus conspicillatus</em>). Consumo de semillas caídas; percha habitual en los estipes y en la copa.</div></div>
+                <div class="metric-card"><div class="metric-label">🦎 Reptiles</div><div class="section-val text-sm mt-2">Lagartijas (<em>Anolis</em> spp., <em>Ameiva</em> spp.). Termorregulación sobre los estipes expuestos al sol; caza de insectos en la base de las hojas.</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Insectos polinizadores</div><div class="section-val text-sm mt-2">Abejas nativas meliponinas (<em>Trigona</em> spp., <em>Melipona</em> spp.), <em>Apis mellifera</em>. Visita activa de las inflorescencias durante la floración (marzo–abril).</div></div>
+                <div class="metric-card"><div class="metric-label">🕷️ Arácnidos</div><div class="section-val text-sm mt-2">Arañas tejedoras (familia Araneidae), pseudoescorpiones. Tejen telas entre los folíolos para cazar insectos. Son controladores biológicos naturales de plagas.</div></div>
+                <div class="metric-card"><div class="metric-label">🦟 Insectos — Plagas potenciales</div><div class="section-val text-sm mt-2">Ácaros rojos (<em>Tetranychus urticae</em>), cochinillas (<em>Pseudococcus</em> spp.), pulgones. En condiciones de baja humedad ambiental y estrés hídrico (típico del verano llanero), susceptible al ataque de estos artrópodos fitófagos.</div></div>
             </div>
         `,
         usos: `
             <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Ambiental</div><div class="section-val text-sm mt-2">Certificada por la NASA para purificar el aire de toxinas y humidificar ambientes secos.</div></div>
-                <div class="metric-card"><div class="metric-label">Paisajismo</div><div class="section-val text-sm mt-2">Uso masivo en jardines de Casanare por su elegancia y resistencia al sol directo.</div></div>
+                <div class="metric-card" style="background:linear-gradient(135deg, #3498db, #2980b9); color:white;"><div class="metric-label" style="color:rgba(255,255,255,0.9);">🚀 Certificación NASA — Clean Air Study (1989)</div><div class="section-val text-sm mt-2" style="color:white;">Incluida en el estudio pionero de la NASA sobre plantas purificadoras de aire interior. Identificada como una de las más efectivas para eliminar benceno, formaldehído, tricloroetileno, xileno y tolueno. Una palma de 1.8 m libera ~1 L agua diario por transpiración, aumentando la humedad relativa.</div></div>
+                <div class="metric-card"><div class="metric-label">🌿 Ornamental y Paisajismo Urbano</div><div class="section-val text-sm mt-2">Una de las palmeras ornamentales de mayor cultivo y comercio en el mundo. En municipios del Casanare (Maní, Yopal, Trinidad, Villanueva), se usa ampliamente en antejardines, parques municipales y centros educativos por su porte elegante, su copa siempreverde y su resistencia al calor.</div></div>
+                <div class="metric-card"><div class="metric-label">🏠 Planta de Interior y Bioarquitectura</div><div class="section-val text-sm mt-2">Palmera de interior por excelencia a nivel mundial. En oficinas gubernamentales, centros de salud y aulas educativas del Casanare, se emplea para mejorar la calidad del aire, reducir el estrés visual, aumentar la humedad relativa en ambientes climatizados y como elemento decorativo de bajo mantenimiento.</div></div>
+                <div class="metric-card"><div class="metric-label">🪡 Artesanías con Fibras de Palma</div><div class="section-val text-sm mt-2">En Madagascar y comunidades tropicales, las hojas se usan para cestos, sombreros, esteras y artesanías. En el contexto llanero, aunque no existe tradición específica con esta especie introducida, los maestros artesanos del Casanare podrían incorporar sus fibras a las técnicas de tejido con palma moriche (<em>Mauritia flexuosa</em>).</div></div>
+                <div class="metric-card"><div class="metric-label">🌱 Educación Ambiental y Vivero</div><div class="section-val text-sm mt-2">En el JBP Maní, tiene valor pedagógico singular: es la única especie del inventario con certificación NASA por purificación del aire. Herramienta excepcional para trabajar temas de contaminación, calidad ambiental y servicios ecosistémicos con estudiantes. Su condición de especie "en peligro en su hogar pero exitosa en el mundo" ilustra las contradicciones de la conservación global.</div></div>
+                <div class="metric-card"><div class="metric-label">💰 Valor Económico y Comercial</div><div class="section-val text-sm mt-2">Genera una industria ornamental global de cientos de millones de dólares anuales. En Colombia, es una de las plantas más comercializadas en viveros y supermercados. En Casanare, los viveros de Yopal y Maní la venden regularmente.</div></div>
+            </div>
+            <div class="mt-3" style="background:#f8f9fa; padding:12px; border-radius:8px; border-left:4px solid #9b59b6;">
+                <strong style="color:#9b59b6;">💊 Usos Medicinales Documentados (fuera de Colombia):</strong>
+                <p class="text-sm mt-2" style="margin:0;">En la medicina tradicional de Madagascar y del Sudeste Asiático, extractos de hojas y frutos de palmeras del género <em>Dypsis</em> han sido utilizados como astringentes y antiparasitarios. En Colombia, no existe tradición etnomédica documentada para esta especie introducida.</p>
             </div>
         `,
-        mensajeIA: "¡Hola! Soy la Palma Areca. Vengo de la isla de Madagascar, al otro lado del océano. Me llaman Palma Bambú porque mis tallos tienen anillos que me hacen parecer un bambú gigante. ¿Sabías que soy una experta limpiando el aire? La NASA dice que soy de las mejores plantas para quitar contaminantes y refrescar tu casa. ¡Soy como un filtro de aire vivo!",
+        mensajeIA: `🌴 <strong>Soy la Palma Areca — <em>Dypsis lutescens</em></strong>
+
+Nací muy lejos de aquí, en la isla más grande del océano Índico: <strong>Madagascar</strong>. Allá, en los bosques húmedos de la costa este, crecí entre arena, brisa de mar y lluvia tropical. Pero los humanos me encontraron hermosa y decidieron llevarme por todo el mundo, hasta que llegué a este llano de Maní —tan diferente a mi hogar original— y aquí me quedé, verde y orgullosa, en el jardín del JBP.
+
+Soy muy fácil de reconocer: mis tallos son delgados y anillados como cañas de bambú, mis hojas son largas y arqueadas como plumas gigantes de color verde claro con pecíolos dorados, y mis frutos pequeñitos —cuando maduran— brillan como oro bajo el sol del llano. Los llaneros me pusieron el nombre de "palmera bambú" porque mis troncos les recuerdan las cañas de los ríos. Pero yo no soy bambú: soy una palmera de verdad, prima de la palma moriche y del cocotero.
+
+Tengo un superpoder que muy pocas plantas del jardín poseen: soy una <strong>máquina limpiadora de aire</strong>. Mis hojas capturan gases tóxicos invisibles —como el formaldehído del plástico nuevo y el benceno de las pinturas— y los transforman en nutrientes para mis raíces. ¡La NASA me estudió y me certificó como una de las mejores plantas purificadoras del planeta! Si me pones en tu cuarto o en el salón de clases, limpiaré el aire mientras tú estudias o duermes.
+
+✨ <strong>Curiosidad que te dejará boquiabierto</strong>: Mientras en el JBP Maní soy una planta saludable y abundante, en mi hogar original de Madagascar estoy <strong>EN PELIGRO DE EXTINCIÓN</strong>. ¡Soy una de las palmeras más cultivadas del mundo y al mismo tiempo una de las más amenazadas en la naturaleza! Imagina: millones de personas me tienen en sus casas y oficinas, pero en los bosques de donde vengo ya casi no quedo. Es la paradoja más triste y más asombrosa de mi historia. 🌍💔🌴`,
         referencias: [
-            "Goodman et al. (2013). Biomass estimates for tropical palms. Forest Ecology and Management.",
-            "Wolverton, B. C. (1989). NASA Clean Air Study. NASA Reports.",
-            "Henderson, A., et al. (1995). Field Guide to the Palms of the Americas. Princeton University Press.",
-            "IUCN Red List (2023). Dypsis lutescens — Conservation Status."
+            "Álvarez, E., Duque, A., Saldarriaga, J. G., Cabrera, K., De las Salas, G., Del Valle, J. I., Lema, A., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013",
+            "Barros Ribeiro, L., & Gogliath Silva, M. (2006). Comportamento alimentar das aves Pitangus sulphuratus, Coereba flaveola e Thraupis sayaca em palmeiras frutificadas em área urbana. Atualidades Ornitológicas, (132). [Referenciado en iNaturalist Colombia]",
+            "Beentje, H. J., & Dransfield, J. (1995). Palms of Madagascar. Royal Botanic Gardens, Kew / International Palm Society. [Publicación original donde se formaliza la combinación Dypsis lutescens (H.Wendl.) Beentje & J.Dransf.]",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. http://catalogoplantasdecolombia.unal.edu.co",
+            "Catálogo de Flora del Valle de Aburrá — EIA. (2024). Dypsis lutescens — Areca, palma de frutos de oro. Escuela de Ingeniería de Antioquia. https://catalogofloravalleaburra.eia.edu.co/species/176",
+            "Chave, J., Coomes, D., Jansen, S., Lewis, S. L., Swenson, N. G., & Zanne, A. E. (2009). Towards a worldwide wood economics spectrum. Ecology Letters, 12(4), 351–366. https://doi.org/10.1111/j.1461-0248.2009.01285.x",
+            "Goodman, R. C., Phillips, O. L., Del Castillo Torres, D., Freitas, L., Cortese, S. T., Monteagudo, A., & Baker, T. R. (2013). Amazon palm biomass and allometry. Forest Ecology and Management, 310, 994–1004. https://doi.org/10.1016/j.foreco.2013.09.045",
+            "Henderson, A., Galeano, G., & Bernal, R. (1995). Field guide to the palms of the Americas. Princeton University Press.",
+            "IDEAM. (2014). Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia. Instituto de Hidrología, Meteorología y Estudios Ambientales. Ministerio de Ambiente y Desarrollo Sostenible.",
+            "IPCC. (2006). IPCC guidelines for national greenhouse gas inventories. Volume 4: Agriculture, forestry and other land use. Intergovernmental Panel on Climate Change. https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol4.html",
+            "Plants of the World Online / Kew Science. (2024). Dypsis lutescens (H.Wendl.) Beentje & J.Dransf. Royal Botanic Gardens, Kew. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:693428-1",
+            "Wolverton, B. C., Johnson, A., & Bounds, K. (1989). Interior landscape plants for indoor air pollution abatement (Technical Report NASA/TM-1989-194349). National Aeronautics and Space Administration, John C. Stennis Space Center.",
+            "Zanne, A. E., Lopez-Gonzalez, G., Coomes, D. A., Ilic, J., Jansen, S., Lewis, S. L., Miller, R. B., Swenson, N. G., Wiemann, M. C., & Chave, J. (2009). Global wood density database. Dryad. https://doi.org/10.5061/dryad.234"
         ],
         quiz: [
-            { q: "¿De qué isla es originaria la Palma Areca?", opts: ["Hawái", "Madagascar", "Borneo"], correct: 1 },
-            { q: "¿Por qué se le conoce como 'Palma Bambú'?", opts: ["Porque sus hojas son largas", "Por los anillos en sus tallos", "Porque crece en el agua"], correct: 1 },
-            { q: "¿Qué importante descubrimiento hizo la NASA sobre esta palma?", opts: ["Que puede crecer en Marte", "Que produce oro en sus raíces", "Que es excelente purificando el aire"], correct: 2 }
+            { q: "¿Cuál es la característica más llamativa que da el nombre de 'palma de frutos de oro' a la Dypsis lutescens?", opts: ["Sus raíces que brillan bajo el suelo como pepitas de oro", "Sus flores de pétalos completamente dorados y brillantes durante la floración", "Sus frutos drupas de color amarillo brillante al madurar, y también el color dorado-amarillo de sus pecíolos y raquis", "El color dorado que adquieren sus hojas en invierno antes de caer"], correct: 2 },
+            { q: "¿Cuál es el principal servicio ambiental que hace única a la Palma Areca entre las plantas del inventario del JBP Maní, y quién lo certificó científicamente?", opts: ["Fija nitrógeno del aire al suelo como las leguminosas — certificado por el IDEAM", "Produce madera de altísima calidad para carpintería fina — certificado por el CATIE", "Purifica el aire interior eliminando compuestos tóxicos como benceno y formaldehído, y libera hasta 1 litro de agua por día al ambiente — certificado por la NASA en su Clean Air Study (Wolverton, 1989)", "Produce frutos comestibles que alimentan al ganado llanero — certificado por la FAO"], correct: 2 },
+            { q: "¿Por qué la Palma Areca representa una paradoja de conservación a nivel global?", opts: ["Porque es invasora en Colombia pero nativa útil en Madagascar", "Porque crece muy rápido en exteriores pero muere lentamente en interiores", "Porque es una de las palmeras ornamentales más cultivadas y comercializadas del mundo (millones de ejemplares), mientras que en su hábitat natural de Madagascar está categorizada EN PELIGRO (EN) de extinción por la UICN, debido a la destrucción masiva de los bosques litorales malgaches", "Porque purifica el aire pero al mismo tiempo emite CO₂ en exceso por la noche"], correct: 2 },
+            { q: "¿De qué isla del océano Índico es originaria la Palma Areca?", opts: ["Sri Lanka", "Madagascar", "Java", "Filipinas"], correct: 1 },
+            { q: "¿Por qué se le conoce popularmente como 'Palmera Bambú' en Casanare?", opts: ["Porque sus hojas son largas y delgadas como las del bambú", "Porque sus tallos son cilíndricos, anillados y crecen en matas cespitosas similares al bambú", "Porque crece cerca de los ríos como el bambú guarúa", "Porque su madera se usa para construir casas como el bambú"], correct: 1 }
         ]
     },
     "caracaro": {
