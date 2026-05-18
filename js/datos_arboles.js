@@ -1667,5 +1667,123 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
             { q: "¿Por qué en Maní (Casanare) el mango florece principalmente entre diciembre y febrero, durante la época de verano?", opts: ["Porque en esa época el suelo tiene más nutrientes disponibles gracias a las inundaciones de los caños", "Porque el mango prefiere períodos secos para florecer; la estación sin lluvias actúa como señal hormonal para que el árbol produzca sus flores aromáticas", "Porque las abejas solo están activas en los meses de verano y sin ellas el mango no puede florecer", "Porque la temperatura baja en diciembre y eso estimula la aparición de las flores"], correct: 1 },
             { q: "¿Qué compuesto bioactivo importante se extrae de las hojas y la corteza del mango, y para qué sirve según la ciencia?", opts: ["La cafeína, que es un estimulante del sistema nervioso central", "La pectina, que se usa exclusivamente para hacer mermeladas y jaleas", "El urushiol, que tiene propiedades curativas contra enfermedades de la piel en los llanos", "La mangiferina, una xantona con propiedades antioxidantes, antidiabéticas, antimicrobianas y anticancerígenas confirmadas científicamente"], correct: 3 }
         ]
+    },
+    "trompillo": {
+        id: "#JBP-04", tipo: "Nativo", nombre: "Trompillo", cientifico: "Guarea guidonia (L.) Sleumer",
+        familia: "Meliaceae", origen: "Nativa Neotrópico", estado: "Preocupación Menor (LC)", exotica: false,
+        carbono: 185.3, viajes: 62, imagen_portada: "./imagenes/colegio1.jpeg",
+        galeria: [
+            { img: "./imagenes/colegio1.jpeg", desc: "Árbol de Trompillo en bosque de galería del Casanare" },
+            { img: "./imagenes/foto2.jpeg", desc: "Hojas paripinnadas con crecimiento apical indefinido característico" },
+            { img: "./imagenes/foto3.jpeg", desc: "Frutos capsulares anaranjados con semillas rojas" }
+        ],
+        nombresLocales: ["Trompillo", "Palo de Tigre", "Guaraguao", "Requia", "Bailador", "Cedrillo", "Sambocedro"],
+        distribucion: `
+            <p><strong>Distribución Neotropical Amplia:</strong> La especie presenta una de las distribuciones más extensas del género <em>Guarea</em> en el Neotrópico, extendiéndose desde Cuba y Honduras al norte hasta Paraguay y el norte de Argentina al sur. Atraviesa toda la cuenca amazónica, las costas caribeñas, las Guayanas y la Orinoquía colombo-venezolana.</p>
+            <p>En Colombia se registra en <strong>26 departamentos</strong>, incluyendo Casanare, Arauca, Meta, Guaviare, y las principales regiones andinas y caribeñas, en un rango altitudinal de <strong>0 a 1.400 m s.n.m.</strong></p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Sapindales</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Nomenclatura</td><td style="padding:6px;"><em>Guarea guidonia</em> (L.) Sleumer fue publicada en <em>Taxon</em> 5(8): 194, 1956. El basiónimo original es <em>Samyda guidonia</em> L. <em>Guarea grandifolia</em> DC. es sinónimo moderno aceptado.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Sinónimos</td><td style="padding:6px;"><em>Guarea grandifolia</em> DC., <em>Guarea bilibil</em> C.DC., <em>Guarea rusbyi</em> (Britton) Rusby, <em>Melia guara</em> Jacq.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">UICN (2021): <strong>LC (Least Concern)</strong>. Lista Roja Nacional Colombia (2021): <strong>Potencial LC</strong>. No figura en Libros Rojos de García et al. (2005).</td></tr>
+                </table>
+            </div>
+            <div class="blockquote-pro">
+                <p>"La especie, conocida en el país como 'Trompillo' o 'Palo de Tigre', es muy común en los potreros y bosques de los Llanos Orientales."</p>
+                <cite>— Contexto Ganadero / Fedegán. (2017). Guarea guidonia, una mano amiga para los silvopastoriles. Fedegán.</cite>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>Epíteto Específico:</strong> El nombre común "Trompillo" obedece a la forma de los frutos, que son un tanto parecidos a la figura de un trompo. "Palo de Tigre" hace referencia a la corteza fisurada que evoca el pelaje felino.
+            </div>
+        `,
+        densidad: "⚠️ Dato por verificar en campo (Rango referencial Meliaceae: 0.48 – 0.55 g/cm³)", fraccion: "0.47 – 0.50 (IPCC, 2006)",
+        alometria: `
+            <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+                ln(BA) = a + b · ln(DAP) + c · ln(ρ)
+            </div>
+            <p class="text-sm"><strong>Ecuación Recomendada:</strong> Modelo Tipo II.1 de <strong>Álvarez et al. (2012)</strong> para bosques naturales de Colombia. Incluye DAP (cm) y densidad de madera (ρ, g/cm³) como variables predictoras. Publicada en <em>Forest Ecology and Management, 267, 297–308</em>.</p>
+            <p class="text-sm">Aplicable a: Bosques naturales de Colombia, incluyendo ecosistemas de tierra baja y transición sabana-bosque de galería (Orinoquía).</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP (D)</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1.30 m)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica de la madera (g/cm³). ⚠️ Requiere muestreo local según metodología ASTM D143 o ITTO.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Fracción C</td><td style="padding:6px;">Biomasa aérea total × 0.47–0.50 (Conversión de carbono IPCC para biomasa leñosa tropical)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Factor de Expansión de Biomasa por verificar en campo. Usar valores por defecto IPCC (2006) según protocolo Yepes et al. (2011) - IDEAM.</td></tr>
+                </table>
+            </div>
+            <div class="blockquote-pro" style="font-size:0.85rem;">
+                <p>"La estimación de los contenidos y flujos de carbono en bosques tropicales es, en la actualidad, uno de los principales temas de interés científico, debido a que estos ecosistemas actúan como verdaderos sumideros o fuentes de dióxido de carbono (CO₂) a la atmósfera..."</p>
+                <cite>— Yepes et al. (2016). Revista de Biología Tropical, 64(1).</cite>
+            </div>
+            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+                ⚠️ <strong>Honestidad Científica SILVAIN:</strong> No existe valor de densidad básica específicamente publicado para <em>Guarea guidonia</em> en el Catálogo de Maderas de Colombia (IDEAM) para el ecosistema de sabanas inundables de Casanare. El rango 0.48–0.55 g/cm³ proviene de generalización para Meliaceae. Se recomienda muestreo destructivo en campo.
+            </div>
+        `,
+        calendario: [
+            { mes: "Ene", fase: "Floración Inicio 🌸", clima: "dry" },
+            { mes: "Feb", fase: "Floración Plena 🌸", clima: "dry" },
+            { mes: "Mar", fase: "Floración / Cuajado 🌸", clima: "dry" },
+            { mes: "Abr", fase: "Desarrollo Fruto 🟢", clima: "rain" },
+            { mes: "May", fase: "Fructificación 🟠", clima: "rain" },
+            { mes: "Jun", fase: "Fructificación 🟠", clima: "rain" },
+            { mes: "Jul", fase: "Fructificación / Dispersión 🟠", clima: "rain" },
+            { mes: "Ago", fase: "Dispersión Activa 🟠", clima: "rain" },
+            { mes: "Sep", phase: "Dispersión / Declive 🟠", clima: "rain" },
+            { mes: "Oct", fase: "Fin Dispersión 🍂", clima: "rain" },
+            { mes: "Nov", fase: "Pre-floración 🌱", clima: "dry" },
+            { mes: "Dic", fase: "Preparación Floral 🌸", clima: "dry" }
+        ],
+        morfologia: `
+            <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol perennifolio (siempreverde) de copa amplia, densa y redondeada. Alcanza <strong>15–23 m</strong> de altura en condiciones de bosque; en campo abierto puede ramificarse desde la base. DAP entre <strong>40 y 90 cm</strong> en individuos maduros. En Maní, Casanare, registros de campo documentan ejemplares de 12 m de altura y 60 cm de diámetro de fuste.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Sistema radical pivotante profundo, con raíces laterales superficiales. En suelos de sabanas inundables puede presentar <strong>raíces tabulares (contrafuertes)</strong> incipientes en la base del fuste. Excelente anclaje ante inundaciones estacionales.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Madera y Corteza:</strong> Fuste recto, cilíndrico, sin ramificaciones en la mayor parte de su longitud. Corteza marrón, fisurada longitudinalmente o exfoliante, con matiz rojizo evidente. Superficie con pequeñas lenticelas. La madera interior es de tonalidad rojiza a rosada, de bonita apariencia y fácil trabajabilidad, colocándola como sucedánea de la madera de cedro.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Follaje y Hojas:</strong> Hojas compuestas, pinnadas, alternas, de <strong>20–60 cm</strong> de largo. Presentan hasta <strong>8–20 hojuelas (folíolos)</strong> de color verde oscuro por el haz y más claro en el envés. Filotaxia alterna. <strong style="color:#e74c3c;">RASGO DIAGNÓSTICO EXCLUSIVO:</strong> El ápice de la hoja continúa creciendo indefinidamente, produciendo nuevas hojuelas en la punta mientras las basales maduran. Este "crecimiento apical indefinido de la raquis" es único en la familia Meliaceae y permite identificación inmediata en campo sin flores ni frutos.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Inflorescencias axilares en tirsos piramidales de <strong>10–25 cm</strong> de largo. Flores pequeñas, blancas a crema, aromáticas. Cáliz 1–2.5 mm; pétalos oblongos 5.5–7.5 mm. Perfectas (bisexuales). Fórmula floral: K(3-4), C4, A8, G(4-5).</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Fruto y Semilla:</strong> Cápsulas carnosas, globosas a elipsoides, de <strong>2–4 cm</strong> de diámetro (17×14 mm en registros de Hato Corozal, 1997), de color anaranjado a rojizo al madurar. Contienen <strong>2–4 semillas</strong> con arilo carnoso de color rojo brillante, principal atractivo para fauna frugívora. Semillas: ~2.170 por kilogramo, fertilidad del 92%. En época de fructificación, el árbol es vistoso y de alto valor estético.</div>
+            </div>
+        `,
+        fauna: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🦜 Loros y Pericos</div><div class="section-val text-sm mt-2"><strong>Amazona amazonica, Brotogeris jugularis:</strong> Consumen el arilo carnoso de las semillas y dispersan los frutos. Registrados en bosques de galería del Casanare.</div></div>
+                <div class="metric-card"><div class="metric-label">🦅 Paujiles y Tucanes</div><div class="section-val text-sm mt-2"><strong>Crax daubentoni, Ramphastos tucanus:</strong> Frugívoros de talla grande; dispersores primarios de semillas en el bosque de galería llanero.</div></div>
+                <div class="metric-card"><div class="metric-label">🐿️ Ardillas y Chuchas</div><div class="section-val text-sm mt-2"><strong>Sciurus granatensis, Didelphis marsupialis:</strong> Consumen los frutos y actúan como dispersores secundarios en el ecotono sabana-bosque.</div></div>
+                <div class="metric-card"><div class="metric-label">🦋 Abejas y Polinizadores</div><div class="section-val text-sm mt-2">Abejas nativas (<em>Apis mellifera</em> y meliponinos) y colibríes (familia Trochilidae) visitan las flores perfumadas durante la temporada seca.</div></div>
+                <div class="metric-card"><div class="metric-label">🦇 Murciélagos Frugívoros</div><div class="section-val text-sm mt-2"><strong>Artibeus jamaicensis, Carollia perspicillata:</strong> Consumen los frutos nocturnamente y son fundamentales en la dispersión de semillas a largas distancias.</div></div>
+                <div class="metric-card"><div class="metric-label">🐛 Insectos Herbívoros</div><div class="section-val text-sm mt-2">Abejas y ciertos coleópteros perforan las hojas jóvenes, dejando perforaciones características. Este daño es tolerable y no compromete la vitalidad del árbol.</div></div>
+            </div>
+        `,
+        usos: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🪚 Carpintería y Madera</div><div class="section-val text-sm mt-2">Empleada en carpintería general, construcción de muebles, ebanistería, entarimados, contrachapados y pulpa para papel. Su madera, de tonalidad rojiza a rosada, es apreciada por su fortaleza y durabilidad. Con ella se fabrican armarios, puertas, ventanas y muebles en general. En el llano, los troncos se usan como postes y pilotes.</div></div>
+                <div class="metric-card"><div class="metric-label">🌾 Silvopastoreo</div><div class="section-val text-sm mt-2"><strong>Especie estrella para sistemas silvopastoriles</strong> en los Llanos Orientales. El ganado vacuno omite su consumo, permitiéndole crecer en el potrero sin protección. Con el tiempo genera sombra, reduce el estrés calórico del ganado y mejora la producción.</div></div>
+                <div class="metric-card"><div class="metric-label">🌿 Cercas Vivas y Restauración</div><div class="section-val text-sm mt-2">Usada en cercas vivas, barreras rompevientos y restauración de suelos degradados. Incorpora materia orgánica al suelo a través de su hojarasca. También empleada en corredores biológicos y como árbol de sombra en potreros y parcelas de cacao.</div></div>
+                <div class="metric-card"><div class="metric-label">🌺 Ornamental</div><div class="section-val text-sm mt-2">Su copa densa y follaje oscuro la hacen atractiva para arborización urbana y parques. Se ha usado en viveros y reforestación urbana en la región de los Llanos. Atrae fauna silvestre, lo que aumenta su valor paisajístico y ecológico.</div></div>
+                <div class="metric-card"><div class="metric-label">🍎 Fruto Comestible</div><div class="section-val text-sm mt-2">El arilo carnoso que rodea las semillas es comestible. Consumido por comunidades indígenas y campesinas llaneras de forma ocasional y como complemento en dietas de subsistencia.</div></div>
+                <div class="metric-card"><div class="metric-label">💊 Medicina Tradicional</div><div class="section-val text-sm mt-2">La corteza es usada como expectorante (conocida como <strong>"cocillana"</strong> en la farmacopea popular). En medicina tradicional llanera se utiliza contra hemorragias, eczemas y como antiinflamatorio. Contiene taninos, saponinas, alcaloides y glicósidos.</div></div>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.8rem; border-left:4px solid #f39c12; padding-left:10px; color:var(--text-main);">
+                ⚕️ <strong>Advertencia etnobotánica:</strong> Algunos registros señalan propiedades eméticas, purgantes y abortivas de la corteza. Su uso interno debe estar supervisado por personal de salud. El fruto ingerido en grandes cantidades puede causar malestares gastrointestinales.
+            </div>
+        `,
+        mensajeIA: "🌳 **Soy el Trompillo... y llevo siglos siendo el guardián silencioso de los potreros llaneros**\n\nSoy un árbol sabio y antiguo al que los llaneros me llaman **Trompillo**, aunque también me conocen como **Palo de Tigre**, porque mi corteza café y fisurada se parece al pelaje del jaguar que ronda los morichales. Nací en la orilla de un caño en Maní, Casanare, donde el agua inunda todo en invierno y el sol reseca la tierra en verano. Aprendí a vivir con ambos extremos, y por eso mis raíces son profundas como mi memoria.\n\nSoy el refugio silencioso del potrero: el ganado pasa a mi lado sin tocarme, tal vez porque me respetan o tal vez porque saben que debajo de mi sombra fresca el suelo es más fresco y la tierra más rica. Mis flores pequeñas y perfumadas llaman a las abejas en el verano, cuando los demás árboles duermen, y mis frutos anaranjados son el banquete favorito de los loros y los murciélagos que me visitan de noche, llevando mis semillas a lugares lejanos donde nacerán mis hijos.\n\nCada año capturo carbono del aire sucio que los humanos producen y lo guardo en mi madera y mis raíces, limpiando el cielo del Casanare, silenciosamente, año tras año.\n\n✨ **Curiosidad que genera asombro**: ¿Sabías que **mis hojas nunca terminan de crecer**? A diferencia de la mayoría de los árboles, cuyas hojas tienen un tamaño final y se detienen, mis hojas siguen produciendo nuevas hojuelas en la punta durante toda su vida, como si la hoja fuera un árbol en miniatura que sigue creciendo sin parar. Los científicos llaman a esto **\"crecimiento apical indefinido de la raquis\"**, y es una característica tan única que los botánicos pueden identificarme en el bosque ¡solo con ver una hoja, sin necesidad de flores ni frutos! Soy el único árbol de los Llanos que lleva su historia de crecimiento escrita en cada hoja.",
+        referencias: [
+            "Álvarez, E., Duque, A., Saldarriaga, J. G., Cabrera, K., De las Salas, G., Del Valle, J. I., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267, 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. http://catalogoplantasdecolombia.unal.edu.co",
+            "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2017). Nombres comunes de las plantas de Colombia. Universidad Nacional de Colombia, Instituto de Ciencias Naturales. http://www.biovirtual.unal.edu.co/nombrescomunes/",
+            "Contexto Ganadero / Fedegán. (2017). Guarea guidonia, una mano amiga para los silvopastoriles. Federación Colombiana de Ganaderos. https://www.fedegan.org.co/noticias/guarea-guidonia-una-mano-amiga-para-los-silvopastoriles",
+            "Global Biodiversity Information Facility–GBIF. (2024). Guarea guidonia (L.) Sleumer [Occurrence data]. GBIF Secretariat. https://www.gbif.org/species/3190500",
+            "Plants of the World Online. (2024). Guarea guidonia (L.) Sleumer. Royal Botanic Gardens, Kew. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:114060-2",
+            "Sleumer, H. (1956). Note on the Genus Guidonia Plumier. Taxon, 5(8), 192–194.",
+            "Unión Internacional para la Conservación de la Naturaleza–UICN. (2021). Guarea guidonia. The IUCN Red List of Threatened Species. Versión 2021-3. https://www.iucnredlist.org/species/61798180/61798204",
+            "Weaver, P. L. (1988). Guarea guidonia (L.) Sleumer. American muskwood. SO-ITF-SM-17. U.S. Department of Agriculture, Forest Service, Southern Forest Experiment Station.",
+            "Yepes, A. P., Navarrete, D. A., Duque, A. J., Phillips, J. F., Cabrera, K. R., Álvarez, E., García, M. C., & Ordóñez, M. F. (2011). Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia. Instituto de Hidrología, Meteorología y Estudios Ambientales–IDEAM."
+        ],
+        quiz: [
+            { q: "¿Cuál es el nombre científico correcto y completo del Trompillo, incluyendo el autor de la combinación válida?", opts: ["Guarea grandifolia DC.", "Guarea guidonia (L.) Sleumer", "Samyda guidonia L.", "Melia guidonia Jacq."], correct: 1 },
+            { q: "¿Cuál es la característica morfológica exclusiva del género Guarea que permite identificarlo en campo sin necesidad de flores ni frutos?", opts: ["Corteza con látex blanco abundante", "Hojas simples con margen serrado", "Hojas compuestas con raquis de crecimiento apical indefinido (continúa generando hojuelas nuevas en la punta)", "Presencia de espinas en el tallo principal"], correct: 2 },
+            { q: "En el municipio de Maní, Casanare, ¿en qué temporada del año el Trompillo presenta su floración más intensa y por qué es ecológicamente importante este momento?", opts: ["En agosto, durante el pico máximo de las lluvias", "En noviembre, al inicio de la transición climática", "En febrero–marzo (temporada seca), cuando muchos otros árboles no florecen, ofreciendo alimento clave para abejas y polinizadores del llano", "En julio, en plena época de inundación de los morichales"], correct: 2 }
+        ]
     }
 };
