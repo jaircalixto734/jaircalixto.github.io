@@ -1902,5 +1902,114 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
             { q: "El nombre científico de esta especie es Licania tomentosa. La palabra 'tomentosa' proviene del latín y hace referencia a una característica morfológica visible. ¿A cuál de las siguientes estructuras del árbol hace referencia?", opts: ["Al color amarillo brillante del fruto maduro, visible desde lejos", "Al porte retorcido del fuste, que le da apariencia de árbol viejo desde joven", "Al denso tomento (pelusa o 'lana') blanquecino-grisáceo que cubre el envés de las hojas. Esa capa protectora reduce la transpiración foliar y es la característica morfológica más distintiva de la especie", "A los miles de flores blancas pequeñas que cubren la copa durante la floración"], correct: 2 },
             { q: "En los inventarios forestales del JBP de Maní, el ingeniero forestal debe estimar el carbono almacenado en el Oití. ¿Cuál de estas afirmaciones sobre la madera de Licania tomentosa es CORRECTA y más relevante para ese cálculo?", opts: ["La madera del Oití es muy blanda y ligera (densidad < 0.30 g/cm³), por eso almacena muy poco carbono por unidad de volumen", "El Oití no almacena carbono en la madera porque es una especie introducida, no nativa", "La madera del Oití es pesada, dura y de alta durabilidad (densidad referencial estimada: 0.75–0.95 g/cm³), lo que implica un alto almacenamiento de carbono por unidad de volumen. Las maderas densas acumulan más carbono que las ligeras, siendo una ventaja para el inventario de carbono", "El Oití almacena carbono únicamente en sus hojas y flores, no en la madera del tronco"], correct: 2 }
         ]
+    },
+    "noni": {
+        id: "#JBP-05", tipo: "Exótica Naturalizada", nombre: "Noni", cientifico: "Morinda citrifolia L.",
+        familia: "Rubiaceae", origen: "Exótica (Sureste Asiático – Australasia)", estado: "Preocupación Menor (LC) / Naturalizada", exotica: true,
+        carbono: 45.2, viajes: 120, imagen_portada: "./imagenes/colegio1.jpeg",
+        galeria: [
+            { img: "./imagenes/colegio1.jpeg", desc: "Árbol de Noni con frutos maduros blancos característicos" },
+            { img: "./imagenes/foto2.jpeg", desc: "Hojas grandes brillantes opuestas decusadas y flores blancas en cabezuelas" }
+        ],
+        nombresLocales: ["Noni", "Mora de la India", "Guanábana Cimarrona", "Fruta del Diablo", "Fruta del Queso", "Indian Mulberry"],
+        distribucion: `
+            <p><strong>Origen y dispersión global:</strong> <em>Morinda citrifolia</em> es nativa del Sureste Asiático y Australasia (India, Malasia, Indonesia, Filipinas, Papua Nueva Guinea, Australia tropical). Fue dispersada a través del Pacífico por navegantes polinesios durante sus grandes travesías oceánicas hace miles de años. Actualmente se cultiva a lo largo de todos los trópicos y se encuentra ampliamente naturalizada, incluyendo el Caribe, Centroamérica, Sudamérica, África tropical y las islas del Pacífico.</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Condición en Colombia</td><td style="padding:6px;">Especie EXÓTICA NATURALIZADA (NO nativa). Introducida con fines medicinales, nutricionales y comerciales. Cultivada en patios, huertos, bordes de caños y zonas perturbadas tropicales.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Rango altitudinal</td><td style="padding:6px;">0 – 800 m s.n.m. (Maní ≈ 180–250 m → dentro del rango óptimo)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia Botánica</td><td style="padding:6px;"><strong>Rubiaceae</strong> (familia del café y la quinina). Una de las familias más grandes del planeta con ~13.000 especies y 611 géneros.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Producción frutal</td><td style="padding:6px;">4–8 kg por árbol por mes, durante los 12 meses del año (floración y fructificación continuas)</td></tr>
+                </table>
+            </div>
+            <div class="blockquote-pro">
+                <p>"El noni es el nombre común de la Morinda citrifolia Linn., originaria de la Polinesia, Malasia, Australia, India y el Sudeste de Asia, pero se ha extendido a casi todas las regiones del mundo."</p>
+                <cite>— González Lavaut, N.E. (2003). Revista Cubana de Plantas Medicinales</cite>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>⚠️ Nota Crítica de Integridad Científica:</strong> Esta especie es <strong>EXÓTICA NATURALIZADA</strong> en Colombia. Su inclusión en el Inventario JBP responde a su amplia presencia cultivada y naturalizada en zonas tropicales del Casanare. No es nativa de la Orinoquía.
+            </div>
+        `,
+        densidad: "0,40 – 0,54 g/cm³ (Madera liviana a media-liviana; dato por verificar en campo)", fraccion: "0,47 – 0,50 (Ref. 0,49)",
+        alometria: `
+            <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+                ln(AGB) = −3,652 − 1,697·ln(D) + 1,169·[ln(D)]² − 0,122·[ln(D)]³ + 1,285·ln(ρ)
+            </div>
+            <p class="text-sm">Modelo alométrico de <strong>Álvarez et al. (2012)</strong> para DAP ≥ 5 cm, validado para bosques naturales colombianos. Alternativa pan-tropical de <strong>Chave et al. (2014)</strong>: AGB = 0,0673 × (ρ · D² · H)^0,976 (válida desde DAP = 1 cm).</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP (D)</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1.30 m)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total del árbol (m) — requerida en Chave et al. (2014)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica de madera (0,47 g/cm³ como valor central provisional para M. citrifolia)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Carbono</td><td style="padding:6px;">AGB (kg) × 0,47 / 1.000 = tC por árbol</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">CO₂eq</td><td style="padding:6px;">Carbono × 3,6667 = tCO₂eq por árbol</td></tr>
+                </table>
+            </div>
+            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+                ⚠️ <strong>Dato por verificar en campo:</strong> No existe en IDEAM ni en catálogos nacionales un valor de densidad básica específico para <em>M. citrifolia</em> en la Orinoquía. El rango 0,40–0,54 g/cm³ proviene de literatura global. Se requiere medición directa conforme al protocolo ASTM D2395.
+            </div>
+        `,
+        calendario: [
+            { mes: "Dic", fase: "🌸🍈 Floración/Fruct.", clima: "dry" },
+            { mes: "Ene", fase: "🌸🍈 Floración/Fruct.", clima: "dry" },
+            { mes: "Feb", fase: "🌸🍈 Floración/Fruct.", clima: "dry" },
+            { mes: "Mar", fase: "🌸🍈 Floración/Fruct.", clima: "dry" },
+            { mes: "Abr", fase: "🌸🍈 Floración/Fruct.", clima: "rain" },
+            { mes: "May", fase: "🌸🍈 Floración/Fruct.", clima: "rain" },
+            { mes: "Jun", fase: "🌸🍈 Floración/Fruct.", clima: "rain" },
+            { mes: "Jul", fase: "🌸🍈 Floración/Fruct.", clima: "rain" },
+            { mes: "Ago", fase: "🌸🍈 Floración/Fruct.", clima: "rain" },
+            { mes: "Sep", fase: "🌸🍈 Floración/Fruct.", clima: "rain" },
+            { mes: "Oct", fase: "🌸🍈 Floración/Fruct.", clima: "rain" },
+            { mes: "Nov", fase: "🌸🍈 Floración/Fruct.", clima: "dry" }
+        ],
+        morfologia: `
+            <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Arbusto o árbol pequeño siempreverde (perennifolio), de copa cónica a redondeada, porte compacto. Generalmente crece entre <strong>2 y 6 metros</strong> de altura, ocasionalmente alcanzando <strong>9 a 10 metros</strong>. Fuste delgado (DAP hasta 12 cm), recto y ramificado desde baja altura. Especie pionera de crecimiento moderado a rápido.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíz pivotante profunda con raíces laterales extendidas. Tolerante a suelos salinos, de baja fertilidad, secundarios y condiciones de sequía temporal. No se han reportado asociaciones simbióticas radiculares especializadas.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo y Corteza:</strong> Tallo principal erecto, delgado (DAP ≤ 12 cm), corteza externa gris-parda, lisa y brillante en jóvenes. <strong style="color:#e74c3c;">Carácter diagnóstico del género:</strong> las ramitas son más o menos <strong>cuadrangulares en sección transversal</strong> y frecuentemente carnosas. Presentan estípulas amplias, muy anchas y obtusas en el ápice, de hasta 2 cm, persistentes.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Follaje y Hojas:</strong> Filotaxia <strong>opuesta decusada</strong> (pares de hojas alternos a 90°). Hojas simples, grandes, hasta <strong>25 cm de longitud y 13 cm de ancho</strong>. Forma elíptica a ovada, margen entero a levemente ondulado. Lámina glabra, subcoriácea, verde oscuro intenso y brillante en el haz, con <strong>6 a 9 pares de nervios laterales evidentes</strong>. Presentan <strong>domacios</strong> (mechones de pelos densos en axilas de nervios), rasgo taxonómico diagnóstico.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencias:</strong> Inflorescencias en <strong>cabezuelas globosas densas</strong>, apicales o axilares, opositifolias. Cada cabezuela puede contener hasta <strong>90–100 flores</strong>, aunque solo pocas abren simultáneamente. Flores individuales <strong>blancas, tubulares, con 5 lóbulos</strong>, ~15 mm de largo. Fragantes, hermafroditas, polinización entomófila. Presencia durante todo el año.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Fruto y Semilla:</strong> Fruto múltiple compuesto (sincárpico), ovoide a elipsoide, <strong>5–12 cm de largo y 3–5 cm de ancho</strong>. Superficie <strong>lobulada y tuberculada</strong> con protuberancias poligonales. Color: verde oscuro (inmaduro) → verde amarillento → amarillo → blanco-grisáceo/translúcido (maduro). Pulpa madura: amarillo pálido a blanco, jugosa, gelatinosa, con <strong>olor característico fuerte y desagradable</strong> ("fruta del queso"). Semillas (pirenos) de <strong>5–7 mm</strong>, café, duras, con <strong style="color:#e74c3c;">cámara de aire interna</strong> que les permite flotar en agua y mantener viabilidad durante meses (hidrocoría).</div>
+            </div>
+        `,
+        fauna: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🦇 Murciélagos frugívoros</div><div class="section-val text-sm mt-2"><strong>Artibeus spp.:</strong> Atraídos por el olor del fruto maduro; dispersores principales. El olor fétido es el vector de atracción nocturna.</div></div>
+                <div class="metric-card"><div class="metric-label">🐜 Hormigas tejedoras</div><div class="section-val text-sm mt-2"><strong>Oecophylla spp.:</strong> Hacen nidos con las hojas; protegen contra fitófagos (relación mutualista documentada científicamente).</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Abejas y abejorros</div><div class="section-val text-sm mt-2"><strong>Apis mellifera y nativas:</strong> Principales polinizadores de las flores blancas perfumadas.</div></div>
+                <div class="metric-card"><div class="metric-label">🦋 Mariposas tropicales</div><div class="section-val text-sm mt-2">Varios géneros. Visitantes florales secundarios durante el día.</div></div>
+                <div class="metric-card"><div class="metric-label">🐦 Aves frugívoras</div><div class="section-val text-sm mt-2">Varios géneros. Consumen pulpa madura y dispersan semillas.</div></div>
+                <div class="metric-card"><div class="metric-label">🦟 Drosophila spp.</div><div class="section-val text-sm mt-2">Moscas de la fruta. Se alimentan del fruto maduro fermentado.</div></div>
+            </div>
+        `,
+        usos: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">💊 Medicina Tradicional</div><div class="section-val text-sm mt-2">Más de 2.000 años de uso en Indo-Pacífico. Hojas: decocción para afecciones respiratorias, tos, asma, infusión antidiabética. Corteza/raíz: desinfectante de heridas, diurético, enfermedades gastrointestinales, tratamiento de paludismo y pigmentación de piel. Semilla: antiparasitario contra Ascaris. <strong style="color:#e74c3c;">ADVERTENCIA:</strong> Evidencia limitada a estudios preclínicos in vitro. Sin ensayos clínicos en humanos. FDA emitió advertencia (2018) por afirmaciones falsas. Consumo excesivo puede causar hepatotoxicidad.</div></div>
+                <div class="metric-card"><div class="metric-label">🎨 Tinte Natural</div><div class="section-val text-sm mt-2"><strong>Uso histórico más documentado:</strong> Corteza de raíz → tinte ROJO de alta calidad. Corteza de tallo/fuste → tinte AMARILLO. Antes de colorantes sintéticos, fue producto comercial importante en Asia para batik de Java. Rendimiento: 500–1.000 kg corteza/hectárea.</div></div>
+                <div class="metric-card"><div class="metric-label">🍽️ Alimentario</div><div class="section-val text-sm mt-2">Fruto de hambruna ("starvation fruit") en Polinesia. Jugo fermentado: tónico general de salud. Fruto inmaduro: usado en sambals, curries y salsas en cocina india y del Sureste Asiático. Semillas tostadas: snack en Asia. Suplementos: cápsulas, polvos, aceites.</div></div>
+                <div class="metric-card"><div class="metric-label">🌱 Agroforestal</div><div class="section-val text-sm mt-2">Huertos caseros y patios de fincas. Cercas vivas informales. Planta pionera en recuperación de zonas degradadas. Sombra liviana en sistemas agroforestales de pequeña escala.</div></div>
+                <div class="metric-card"><div class="metric-label">🪵 Madera y otros</div><div class="section-val text-sm mt-2">Construcción rural liviana, utensilios de campo, leña y carbón de baja-media calidad. Aceite de semillas en cosméticos (lociones, jabones, productos capilares). Artesanías menores y juguetes rústicos.</div></div>
+            </div>
+        `,
+        mensajeIA: "🍈 **Soy el Noni... y vengo del otro lado del mundo**\n\nMe llamo *Morinda citrifolia*, aunque en el llano colombiano me conocen como **Noni**, **Mora de la India** o **Guanábana Cimarrona**. Pero para que te cuente bien mi historia, necesitas saber algo que no todo el mundo sabe: yo nací muy lejos de aquí. Mi tierra de origen es el **Sureste Asiático** —India, Malasia, Indonesia, Filipinas— y las islas del Pacífico. Durante miles de años viví solamente allá, donde los médicos tradicionales polinesios, conocidos como **Kahunas**, me consideraban sagrada y me llevaban en sus canoas durante sus largas travesías por el océano. Así llegué poco a poco a casi todos los trópicos del mundo, incluyendo Colombia.\n\nAquí en Maní y en el Casanare me cultivan en patios de fincas y huertos, principalmente por mis hojas y frutos medicinales. Tengo hojas grandes, brillantes como espejos verdes, que pueden medir hasta 25 centímetros de largo. Mis flores son blancas, tubulares y perfumadas, agrupadas en pequeñas cabezuelas que pueden contener hasta 100 florecitas. Y mi fruto... mi famoso fruto... es blanco y nudoso cuando madura, y tiene un olor muy fuerte que a muchos les parece desagradable. En Australia me llaman \"cheesefruit\" —fruta del queso— y en algunos países \"vomit fruit\" —fruta del vómito. ¡Pero ese olor tan peculiar tiene un propósito! Es para atraer a los murciélagos que vuelan de noche y dispersan mis semillas a lo lejos.\n\n✨ **La curiosidad que te dejará sin palabras**: ¿Sabías que mis semillas tienen una **cámara de aire interna** que les permite flotar en el agua? Cuando llegan a una quebrada o a un caño del llano, pueden navegar por el agua durante meses sin ahogarse, manteniendo su capacidad de germinar. ¡Soy el único árbol de Maní que puede mudarse de casa navegando por el agua! Los científicos llaman a eso **hidrocoría**. Y también los murciélagos me ayudan a volar en la noche... ¡Tengo dos formas de viajar! 🦇💧",
+        referencias: [
+            "Álvarez, E., Benítez, D., Velásquez, C., & Cogollo, Á. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267, 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+            "Arguedas-Jiménez, L., Cordero-Solórzano, J., Gómez-Obando, P., Villalobos-Rodríguez, K., & Garro-Monge, G. (2004). Morinda citrifolia (Noni) y sus posibles efectos como planta medicinal. Revista Tecnología En Marcha, 17(1), 30–33. Instituto Tecnológico de Costa Rica.",
+            "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2012). Nombres comunes de las plantas de Colombia. Universidad Nacional de Colombia, Instituto de Ciencias Naturales.",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015, actualizado 2026). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. Entrada: Morinda citrifolia L.",
+            "Chave, J., Réjou-Méchain, M., Búrquez, A., Chidumayo, E., Colgan, M. S., Delitti, W. B. C., Duque, A., Eid, T., Fearnside, P. M., Goodman, R. C., Henry, M., Martínez-Yrízar, A., Mugasha, W. A., Muller-Landau, H. C., Mencuccini, M., Nelson, B. W., Ngomanda, A., Nogueira, E. M., Ortiz-Malavassi, E., … Vieilledent, G. (2014). Improved allometric models to estimate the aboveground biomass of tropical trees. Global Change Biology, 20(10), 3177–3190. https://doi.org/10.1111/gcb.12629",
+            "González Lavaut, N. E. (2003). Morinda citrifolia Linn.: potencialidades para su utilización en la salud humana. Revista Cubana de Plantas Medicinales, 8(3). SciELO Cuba.",
+            "Morón, F., & Morón, D. (2004). Mito y realidad de Morinda citrifolia L. (noni). Revista Cubana de Plantas Medicinales, 9(3). SciELO Cuba.",
+            "Ordóñez Díaz, J. A. B., de Jong, B. H. J., García-Oliva, F., Aviña, F. L., Pérez, J. V., Guerrero, G., Torres, R., & Masera, O. (2015). Densidad de las maderas mexicanas por tipo de vegetación con base en la clasificación de J. Rzedowski: compilación. Madera y Bosques, 21(número especial), 77–126.",
+            "Plants of the World Online – Kew Science. (2026). Morinda citrifolia L. Royal Botanic Gardens, Kew.",
+            "TRAMIL – Réseau de Recherche Appliquée à la Médecine Populaire Caribéenne. (2024). Morinda citrifolia L.: Uses, validation studies and references. TRAMIL Network.",
+            "Yepes, A. P., Navarrete, D. A., Duque, A. J., Phillips, J. F., Cabrera, K. R., Álvarez, E., García, M. C., & Ordóñez, M. F. (2011). Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia. IDEAM."
+        ],
+        quiz: [
+            { q: "¿Cuál es el origen biogeográfico real de Morinda citrifolia (Noni) y cuál es su condición en Colombia?", opts: ["Es nativa de la Amazonia colombiana y fue llevada a Asia por navegantes europeos en el siglo XVI", "Es nativa de la Orinoquía colombiana, específicamente de las sabanas del Casanare", "Es nativa del Sureste Asiático y Australasia; en Colombia es una especie exótica, naturalizada y cultivada", "Es nativa del Caribe colombiano y fue distribuida por poblaciones indígenas taironas"], correct: 2 },
+            { q: "¿Cuál es el mecanismo especial de dispersión de semillas de Morinda citrifolia relacionado con las cámaras de aire internas en sus semillas?", opts: ["Anemocoria – las semillas son tan livianas que viajan kilómetros con el viento", "Barocoria – las semillas caen pesadamente al suelo y germinan al pie del árbol madre", "Hidrocoría – las semillas tienen cámara de aire y pueden flotar en agua durante meses manteniendo viabilidad", "Endozoocoria exclusiva – solo pueden germinar después de pasar por el tracto digestivo de un mamífero"], correct: 2 },
+            { q: "¿Qué afirmación sobre el uso medicinal del noni (Morinda citrifolia) es correcta y honesta desde el punto de vista científico?", opts: ["El jugo de noni está 100% comprobado científicamente como cura para el cáncer, la diabetes y la hipertensión", "El noni no tiene ningún compuesto activo verificado; todos sus supuestos beneficios son completamente falsos", "Contiene compuestos activos (scopoletina, damnacanthal, flavonoides) con efectos demostrados en modelos preclínicos, pero sin ensayos clínicos en humanos que validen su eficacia terapéutica confirmada", "La FDA de EE.UU. ha aprobado el noni como medicamento oficial para el tratamiento de artritis y diabetes"], correct: 2 }
+        ]
     }
 };
