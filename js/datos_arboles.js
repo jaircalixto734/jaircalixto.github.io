@@ -2011,5 +2011,152 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
             { q: "¿Cuál es el mecanismo especial de dispersión de semillas de Morinda citrifolia relacionado con las cámaras de aire internas en sus semillas?", opts: ["Anemocoria – las semillas son tan livianas que viajan kilómetros con el viento", "Barocoria – las semillas caen pesadamente al suelo y germinan al pie del árbol madre", "Hidrocoría – las semillas tienen cámara de aire y pueden flotar en agua durante meses manteniendo viabilidad", "Endozoocoria exclusiva – solo pueden germinar después de pasar por el tracto digestivo de un mamífero"], correct: 2 },
             { q: "¿Qué afirmación sobre el uso medicinal del noni (Morinda citrifolia) es correcta y honesta desde el punto de vista científico?", opts: ["El jugo de noni está 100% comprobado científicamente como cura para el cáncer, la diabetes y la hipertensión", "El noni no tiene ningún compuesto activo verificado; todos sus supuestos beneficios son completamente falsos", "Contiene compuestos activos (scopoletina, damnacanthal, flavonoides) con efectos demostrados en modelos preclínicos, pero sin ensayos clínicos en humanos que validen su eficacia terapéutica confirmada", "La FDA de EE.UU. ha aprobado el noni como medicamento oficial para el tratamiento de artritis y diabetes"], correct: 2 }
         ]
+    },
+    "caracaro": {
+        id: "#JBP-18", tipo: "Nativo", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
+        familia: "Fabaceae", origen: "Nativo Neotrópico (México–Sudamérica)", estado: "LC — Preocupación Menor (UICN)", exotica: false,
+        carbono: 285.6, viajes: 92, imagen_portada: "./imagenes/colegio1.jpeg",
+        galeria: [
+            { img: "./imagenes/colegio1.jpeg", desc: "Caracaro adulto en potrero llanero con su característica copa hemisférica" },
+            { img: "./imagenes/foto2.jpeg", desc: "Frutos en forma de oreja — vainas circulares indehiscentes" },
+            { img: "./imagenes/foto3.jpeg", desc: "Flores blancas plumosas en cabezuelas globosas axilares" }
+        ],
+        nombresLocales: ["Caracaro", "Orejero", "Piñón de oreja", "Carito", "Caro", "Orejo", "Orejón", "Dormilón", "Árbol de oreja", "Jaboncillo", "Guarano blanco", "Caracaro del Potrero", "Guanacaste (CR)"],
+        distribucion: `
+            <p><strong>Nativo del Neotrópico — Distribución amplia desde México hasta el norte de Sudamérica:</strong> <em>Enterolobium cyclocarpum</em> es nativo del Neotrópico con distribución natural desde el centro de México hasta el norte de Sudamérica (Venezuela, Brasil norte, Colombia, Guayanas) y las Antillas Mayores. En Colombia, el Catálogo de Plantas y Líquenes (UNAL, 2015) la registra como nativa y cultivada entre 0 y 1.200 m s.n.m., presente en Amazonía, Andes, Guayana, Serranía de La Macarena, Llanura del Caribe, Valle del Cauca y Valle del Magdalena.</p>
+            <p>En la <strong>Orinoquía colombiana</strong>, y particularmente en Meta y el piedemonte de Casanare, prospera en bosques de galería, potreros y sistemas silvopastoriles. Especie fundamental en paisajes ganaderos del llano por su sombra densa y producción de forraje (vainas).</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Fabales</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Subfamilia / Tribu</td><td style="padding:6px;">Caesalpinioideae / Ingeae</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género</td><td style="padding:6px;"><em>Enterolobium</em> Griseb. — del griego <em>énteron</em> (intestino) + <em>lobós</em> (lóbulo/cápsula), aludiendo a la forma retorcida del fruto</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Epíteto Específico</td><td style="padding:6px;"><em>cyclocarpum</em> — del griego <em>kýklos</em> (círculo) + <em>karpós</em> (fruto), indicando la forma circular del fruto</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Autoría Original</td><td style="padding:6px;">Jacquin — basónimo: <em>Mimosa cyclocarpa</em> Jacq. (1805)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Combinación Válida</td><td style="padding:6px;">(Jacq.) Griseb. — publicada en <em>Flora of the British West Indian Islands</em> 226, 1860</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Sinónimos Principales</td><td style="padding:6px;"><em>Mimosa cyclocarpa</em> Jacq.; <em>Inga cyclocarpa</em> (Jacq.) Willd.; <em>Pithecellobium cyclocarpum</em> (Jacq.) Mart.; <em>Feuilleea cyclocarpa</em> (Jacq.) Kuntze; <em>Albizia longipes</em> Britton & Killip</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación (UICN 2021)</td><td style="padding:6px;"><strong>LC — Preocupación Menor</strong>. Amplia distribución, rápido crecimiento y alta adaptabilidad a distintos suelos</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación (Colombia)</td><td style="padding:6px;">Potencialmente LC según ColPlanta (2021). No figura en Libros Rojos de Plantas de Colombia</td></tr>
+                </table>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #27ae60; padding-left:12px; margin-top:15px; color:var(--text-main); background:#d5f5e3;">
+                <strong>🌎 ¿Sabías esto?</strong> El <em>Enterolobium cyclocarpum</em> es el <strong>árbol nacional de Costa Rica</strong> desde el 31 de agosto de 1959, y es símbolo de la provincia de Guanacaste. En náhuatl, "guanacaste" viene de <em>quauh</em> (árbol) + <em>nacastl</em> (oreja), refiriéndose a la inconfundible forma de su fruto.
+            </div>
+            <div class="blockquote-pro mt-3" style="border-left:4px solid var(--primary-light); padding-left:15px; background:rgba(0,0,0,0.02); padding:12px; border-radius:6px;">
+                <p style="margin:0; font-style:italic;">"La familia Fabaceae, a la que pertenece el género Enterolobium, constituye una de las familias botánicas de mayor diversidad y valor ecológico en el Neotrópico, destacándose por su capacidad de fijación de nitrógeno atmosférico mediante simbiosis con bacterias del género Rhizobium, lo que la convierte en elemento fundamental para la restauración de suelos degradados en ecosistemas de sabana y bosque seco tropical de los Llanos Orientales de Colombia."</p>
+                <cite style="display:block; margin-top:8px; font-size:0.85rem; color:var(--text-secondary);">— Gentry, A. H. (1993). A Field Guide to the Families and Genera of Woody Plants of Northwest South America. [Adaptación contextual]</cite>
+            </div>
+        `,
+        densidad: "0.34 – 0.60 g/cm³ (Madera rojizo-marrón, liviana a media; valor central de referencia: ~0.47–0.50 g/cm³)", fraccion: "0.47 (IPCC para latifoliadas tropicales Fabaceae)",
+        alometria: `
+            <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #3498db; padding-left:12px; margin-bottom:15px; background:#e8f4f8;">
+                <strong>⚠️ Nota metodológica — Sin ecuación especie-específica:</strong> No existe ecuación alométrica validada especie-específica para <em>Enterolobium cyclocarpum</em> en sistemas de sabana inundable del Casanare. El modelo multiespecie de Álvarez et al. (2012) es la opción técnicamente más sólida disponible para Colombia.
+            </div>
+            <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+ln(BAS) = a + b · ln(DAP² · H · ρ)
+
+── Estimación de Carbono ─────────────────────────
+Carbono árbol (kg C)    = BAS × 0.47
+CO₂ equiv. (kg CO₂eq)  = Carbono × 3.667
+Carbono total rodal (t) = Σ BAS × 0.47 / 1000
+            </div>
+            <p class="text-sm">Modelo multiespecie de <strong>Álvarez et al. (2012)</strong> para estimación de biomasa aérea en los Llanos Orientales. Referencia técnica más rigurosa disponible para Colombia en ausencia de ecuación especie-específica.</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">BAS</td><td style="padding:6px;">Biomasa Aérea Seca (kg árbol⁻¹)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP (D)</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1.30 m del suelo)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total del árbol (m)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica de la madera → usar 0.47–0.50 g/cm³ para <em>E. cyclocarpum</em></td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">a, b</td><td style="padding:6px;">Coeficientes calibrados (ver Álvarez et al., 2012 — Tabla 2)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Fracción de Carbono</td><td style="padding:6px;">0.47 — valor conservador IPCC para latifoliadas tropicales (Fabaceae)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB (Biomasa Subterránea/Aérea)</td><td style="padding:6px;">⚠️ Por verificar en campo. IPCC (2006) sugiere 1.3–1.6 para latifoliadas tropicales como referencia provisional</td></tr>
+                </table>
+            </div>
+            <div class="metric-card mt-3" style="background:linear-gradient(135deg, #27ae60, #2ecc71); color:white; padding:15px; border-radius:10px;">
+                <div class="metric-label" style="color:rgba(255,255,255,0.9); font-weight:700;">🌱 Servicio ecosistémico clave — Fijación de Nitrógeno</div>
+                <div class="section-val text-sm mt-2" style="color:white;">Como leguminosa de la tribu Ingeae, <em>E. cyclocarpum</em> fija nitrógeno atmosférico vía simbiosis con bacterias <strong>Rhizobium</strong> sp. en nódulos radicales, enriqueciendo los suelos de sabana de forma natural. Las leguminosas arbóreas desempeñan un papel doble en la economía del carbono de los sistemas silvopastoriles tropicales: acumulan biomasa leñosa de rápido crecimiento y reducen la necesidad de fertilizantes sintéticos.</div>
+            </div>
+            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+                ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No existe registro específico de densidad básica para individuos de <em>E. cyclocarpum</em> en el Catálogo de Maderas del IDEAM (2014) ni en publicaciones regionales del SiB Colombia para Casanare. Se recomienda toma de muestras <em>in situ</em> con barrenas de Pressler en individuos adultos del JBP Maní.
+            </div>
+            <div class="blockquote-pro mt-3" style="border-left:4px solid var(--primary-light); padding-left:15px; background:rgba(0,0,0,0.02); padding:12px; border-radius:6px;">
+                <p style="margin:0; font-style:italic;">"Las leguminosas arbóreas como Enterolobium cyclocarpum desempeñan un papel doble en la economía del carbono de los sistemas silvopastoriles tropicales: por una parte, acumulan biomasa leñosa de rápido crecimiento que actúa como reservorio de carbono; por otra, enriquecen los suelos mediante la fijación biológica de nitrógeno, reduciendo la necesidad de fertilizantes sintéticos y potenciando el almacenamiento de carbono orgánico en el suelo..."</p>
+                <cite style="display:block; margin-top:8px; font-size:0.85rem; color:var(--text-secondary);">— Ibrahim, M., et al. (2006). Pastos y Forrajes, 29(4), 383–419. [Adaptación conceptual]</cite>
+            </div>
+        `,
+        calendario: [
+            { mes: "Ene", fase: "🍂 Defoliación (verano)", clima: "dry" },
+            { mes: "Feb", fase: "🌱 Refoliación temprana", clima: "dry" },
+            { mes: "Mar", fase: "🌸 Floración (entomófila)", clima: "trans" },
+            { mes: "Abr", fase: "🌸 Floración + Cuajado", clima: "rain" },
+            { mes: "May", phase: "💧 Crecimiento frutos", clima: "rain" },
+            { mes: "Jun", fase: "🍑 Fructificación temprana", clima: "rain" },
+            { mes: "Jul", fase: "🍑 Fructificación activa", clima: "rain" },
+            { mes: "Ago", fase: "🍑 Maduración de vainas", clima: "rain" },
+            { mes: "Sep", fase: "💧 Dispersión de semillas", clima: "rain" },
+            { mes: "Oct", fase: "🌿 Máxima foliación", clima: "rain" },
+            { mes: "Nov", fase: "🌿 Actividad vegetativa", clima: "trans" },
+            { mes: "Dic", fase: "🍂 Inicio defoliación", clima: "dry" }
+        ],
+        morfologia: `
+            <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol de <strong>20–30 m de altura</strong> (hasta 45 m en óptimas condiciones), tronco derecho y robusto. Copa <strong>hemisférica o globosa</strong>, muy extendida (hasta 30 m de diámetro), densa, brindando sombra excelente. Caducifolio en zonas de estación seca marcada. Heliófita, de rápido crecimiento. DAP puede superar 1 m en individuos maduros.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Sistema axonomorfo (pivotante) con raíz principal profunda. Raíces laterales secundarias ramificadas radialmente. Presenta <strong>nódulos simbióticos con Rhizobium spp. / Bradyrhizobium spp.</strong> para fijación de nitrógeno. Simbiosis micorrícica con <em>Glomus aggregatum</em>.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo y Corteza:</strong> Tronco derecho, robusto. Corteza externa lisa a granulosa, gris clara a pardusca (2–3 cm espesor). Corteza interna rosada/rojiza. Savia clara, sin látex.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Follaje y Hojas:</strong> Hojas alternas, <strong>compuestas bipinnadas</strong> (15–40 cm), con 4–15 pares de pinnas opuestas. Folíolos numerosos (15–30 por pinna), ovalados a elípticos, borde entero, ápice agudo. Haz verde oscuro brillante, envés más claro. <strong>Se pliegan de noche o en estrés hídrico</strong> (nictinastia). Glándulas extraflorales en el raquis secretan néctar para hormigas protectoras.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencias:</strong> Inflorescencias en <strong>cabezuelas globosas axilares</strong> (1.5–2 cm diámetro). Flores hermafroditas, pequeñas; estambres numerosos (>20), filamentos blancos largos, estructura plumosa y fragante. Polinización entomófila (abejas, abejorros). Floración precedida o simultánea con refoliación.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Fruto y Semilla:</strong> Legumbre <strong>indehiscente circular</strong> (característica diagnóstica). Vaina de <strong>7–15 cm diámetro</strong>, aplanada y enroscada en espiral, leñosa, marrón oscura brillante. Pulpa interna esponjosa, sabor dulce. <strong>10–15 semillas grandes</strong>, ovoides, aplanadas (2.3 × 1.5 cm), testa extremadamente dura (requiere escarificación). Forma semejante a oreja humana → origen de nombres populares.</div>
+            </div>
+        `,
+        fauna: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🦜 Aves — Loras y Pericos</div><div class="section-val text-sm mt-2"><strong>Loras y pericos (<em>Amazona amazonica</em>, <em>Forpus conspicillatus</em>):</strong> Consumo de semillas verdes; dispersión secundaria.</div></div>
+                <div class="metric-card"><div class="metric-label">🦜 Aves — Palomas</div><div class="section-val text-sm mt-2"><strong>Palomas (<em>Columbina talpacoti</em>, <em>Patagioenas cayennensis</em>):</strong> Consumo de semillas caídas; percha y anidación.</div></div>
+                <div class="metric-card"><div class="metric-label">🐄 Mamíferos Domésticos</div><div class="section-val text-sm mt-2"><strong>Ganado bovino, equinos, dantas:</strong> Consumo de vainas maduras; dispersión endozoócora.</div></div>
+                <div class="metric-card"><div class="metric-label">🦔 Mamíferos Silvestres</div><div class="section-val text-sm mt-2"><strong>Ratón espinoso, chigüiro:</strong> Depredación y almacenamiento de semillas; dispersores secundarios.</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Insectos — Polinizadores</div><div class="section-val text-sm mt-2"><strong>Abejas meliponinas, abejorros, <em>Apis mellifera</em>:</strong> Polinización de flores (marzo–abril); fuente melífera importante.</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Insectos — Mutualistas</div><div class="section-val text-sm mt-2"><strong>Hormigas (Formicidae):</strong> Atraídas por néctar de glándulas extraflorales; defensa contra herbívoros.</div></div>
+                <div class="metric-card"><div class="metric-label">🐛 Insectos — Fitófagos</div><div class="section-val text-sm mt-2"><strong><em>Asphondylia enterolobii</em> (mosca de agallas):</strong> Ataca flores; puede reducir producción de frutos.</div></div>
+                <div class="metric-card"><div class="metric-label">🦎 Reptiles</div><div class="section-val text-sm mt-2"><strong>Iguanas (<em>Iguana iguana</em>):</strong> Consumo de hojas, flores, frutos; termorregulación bajo la copa.</div></div>
+            </div>
+        `,
+        usos: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🪵 Carpintería y Construcción Rural</div><div class="section-val text-sm mt-2">Madera rojiza, dureza media, fácil de trabajar. Usada históricamente para canoas, curiaras, ruedas de carreta, puertas, ventanas, muebles rústicos, enchapes, artesanías. Gran durabilidad en ambientes húmedos. Resistente al fuego y al comején.</div></div>
+                <div class="metric-card"><div class="metric-label">🌾 Forraje y Ganadería Silvopastoril</div><div class="section-val text-sm mt-2">Uno de los árboles forrajeros de mayor importancia en el llano. Vainas maduras consumidas por ganado, caballos y cerdos (energía, proteínas, minerales). Un árbol adulto puede producir cientos de kg de vainas por temporada. Copa extendida = sombra indispensable para bienestar animal.</div></div>
+                <div class="metric-card"><div class="metric-label">🌿 Medicina Popular Llanera</div><div class="section-val text-sm mt-2">Corteza: triterpenos (ácido betulínico, veracruzol, ácido machaerínico). Pulpa del fruto: lactonas. Uso popular: cicatrizante, antiinflamatorio. Extractos con actividad antibacteriana (<em>E. coli</em>, <em>S. aureus</em>). Infusiones de hojas para afecciones respiratorias/digestivas. Corteza curtiente (taninos) para tratamiento de cueros.</div></div>
+                <div class="metric-card"><div class="metric-label">🧼 Usos Domésticos y Artesanales</div><div class="section-val text-sm mt-2">Pulpa de vainas verdes: sustituto de jabón (saponinas). Madera: tallado de juguetes, utensilios, artesanías. Exudado gomoso: adhesivo artesanal. Semillas: bisutería, collares, pulseras.</div></div>
+                <div class="metric-card"><div class="metric-label">🌳 Sombra, Ornamento y Restauración</div><div class="section-val text-sm mt-2">Plantado en plazas, parques, entradas de fincas por su copa hemisférica y sombra densa. Especie pionera en restauración ecológica de bosques secos tropicales degradados. Fijación de nitrógeno = árbol mejorador de suelo. Recomendado por CATIE y FAO para sistemas agroforestales en sabanas neotropicales.</div></div>
+                <div class="metric-card"><div class="metric-label">🍽️ Alimentario</div><div class="section-val text-sm mt-2">Semillas comestibles tostadas o cocidas (hasta 30 % proteínas). Consumo en comunidades indígenas del Casanare y Meta. Pulpa interna de vainas: sabor dulce, alimento de subsistencia en épocas de escasez.</div></div>
+            </div>
+        `,
+        mensajeIA: `🌿 <strong>Soy el Caracaro del Llano — <em>Enterolobium cyclocarpum</em></strong>
+
+Soy uno de los árboles más viejos y sabios del llano. Mis raíces se hunden profundo en la sabana inundable, buscando agua cuando el verano seca la tierra y la convierte en polvo amarillo. Pero yo no me rindo. Cada año, al llegar el final del verano, me quedo sin hojas y parezco muerto. Los llaneros dicen que "el caracaro se pone pelón". Pero eso es solo un truco: estoy descansando, ahorrando agua, esperando el momento exacto para florecer.
+
+Cuando el primer viento fresco del mes de marzo llega desde el norte, yo despierto. Brotan mis hojas nuevas y al mismo tiempo mis flores blancas y esponjosas cubren mi copa entera como si fuera una nube verde perfumada. Las abejas, mis mejores amigas, vienen desde muy lejos para visitar mis flores. Luego, con las primeras lluvias del invierno, mis frutos van creciendo lentamente. Son mis vainas en forma de oreja —¡sí, exactamente igual que una oreja humana!— las que me hacen inconfundible en todo el llano. El ganado, los caballos y los loros me comen los frutos y llevan mis semillas lejos, muy lejos, ayudándome a viajar.
+
+Mis raíces guardan un secreto increíble: dentro de pequeños nódulos, viven bacterias que capturan el nitrógeno del aire —ese gas invisible que está en todas partes— y lo convierten en alimento para mí y para las plantas que crecen a mi alrededor. ¡Soy una fábrica natural de fertilizante!
+
+✨ <strong>Curiosidad que genera asombro</strong>: ¿Sabías que mis vainas con forma de oreja tienen un súper poder? Contienen saponinas —una sustancia tan jabonosa que los llaneros de antes lavaban su ropa restregando mis vainas verdes contra la tela sin necesitar jabón. ¡Soy el árbol que hace espuma! Y si eso no fuera poco, mis semillas son tan duras que pueden sobrevivir dentro de la barriga de un caballo y germinar en el otro extremo del llano. 🐎🌱`,
+        referencias: [
+            "Álvarez, E., Duque, A., Saldarriaga, J. G., Cabrera, K., De las Salas, G., Del Valle, J. I., Lema, A., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. http://catalogoplantasdecolombia.unal.edu.co",
+            "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2017). Nombres comunes de las plantas de Colombia. Universidad Nacional de Colombia. http://www.biovirtual.unal.edu.co/nombrescomunes/",
+            "Francis, J. K. (1988). Enterolobium cyclocarpum (Jacq.) Griseb. Guanacaste, earpod-tree (SO-ITF-SM-15). U.S. Department of Agriculture, Forest Service, Southern Forest Experiment Station. https://rngr.net/publications/arboles-de-puerto-rico/enterolobium-cyclocarpum",
+            "Gentry, A. H. (1993). A field guide to the families and genera of woody plants of northwest South America (Colombia, Ecuador, Peru) with supplementary notes on herbaceous taxa. Conservation International / University of Chicago Press.",
+            "IDEAM. (2014). Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia. Instituto de Hidrología, Meteorología y Estudios Ambientales. Ministerio de Ambiente y Desarrollo Sostenible.",
+            "IPCC. (2006). IPCC guidelines for national greenhouse gas inventories. Volume 4: Agriculture, forestry and other land use. Intergovernmental Panel on Climate Change. https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol4.html",
+            "Ibrahim, M., Villanueva, C., Casasola, F., & Rojas, J. (2006). Sistemas silvopastoriles como una herramienta para el mejoramiento de la productividad y generación de servicios ambientales en fincas ganaderas de América Central. Pastos y Forrajes, 29(4), 383–419.",
+            "Plants of the World Online / Kew Science. (2024). Enterolobium cyclocarpum (Jacq.) Griseb. Royal Botanic Gardens, Kew. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:1037928-2",
+            "Obando Picado, M. (2010). Condición silvicultural actual y propiedades físicas y generales de la madera de Enterolobium cyclocarpum y Samanea saman en plantaciones mixtas con especies nativas ubicadas en la Estación Experimental Forestal Horizontes, Liberia, Guanacaste [Tesis de Licenciatura]. Instituto Tecnológico de Costa Rica. https://repositoriotec.tec.ac.cr/handle/2238/5669",
+            "Pineda-Herrera, E., Valdez-Hernández, J. I., Pérez-Olvera, C. P., & Dávalos-Sotelo, R. (2017). Fenología, incremento en diámetro y periodicidad de anillos de crecimiento de Enterolobium cyclocarpum (Jacq.) Griseb (Leguminoceae) en Costa Grande, Guerrero, México. Polibotánica, 43, 1–21. https://doi.org/10.18387/polibotanica.43.9",
+            "Acero Duarte, L. E. (2005). Plantas útiles de la cuenca del Orinoco. BP Exploration Company (Colombia) Limited; Ecopetrol; Corporinoquia."
+        ],
+        quiz: [
+            { q: "¿Cómo es el fruto característico del caracaro (Enterolobium cyclocarpum) que le da su nombre popular 'árbol de la oreja'?", opts: ["Una drupa carnosa y redonda similar a una cereza grande", "Una cápsula dehiscente que se abre en dos valvas al madurar", "Una vaina circular indehiscente de 7–15 cm de diámetro, aplanada y enroscada en espiral como una oreja, de color marrón oscuro brillante y sabor dulce", "Un sámara alada que vuela con el viento como las semillas del guayacán"], correct: 2 },
+            { q: "¿Qué servicio ecosistémico especial ofrecen las raíces del caracaro a los suelos del llano casanareño?", opts: ["Producen látex medicinal que se extrae para curar heridas", "Sus raíces forman nódulos con bacterias del género Rhizobium que fijan nitrógeno atmosférico, enriqueciendo el suelo de forma natural", "Sus raíces profundas extraen metales pesados del suelo descontaminándolo", "Sus raíces producen sustancias alelopáticas que eliminan malezas competidoras"], correct: 1 },
+            { q: "En el calendario fenológico de Maní (Casanare), ¿en qué momento del año florece el caracaro y qué característica especial tiene su floración?", opts: ["Solo en pleno invierno (junio–julio), cuando hay máxima humedad en el suelo", "Al final del verano e inicio de lluvias (marzo–abril), coincidiendo simultáneamente con la refoliación", "Exclusivamente en otoño (octubre–noviembre), cuando los días se acortan", "Durante todo el año de forma continua sin relación con las estaciones climáticas"], correct: 1 },
+            { q: "¿Por qué el Caracaro (Enterolobium cyclocarpum) es considerado el árbol nacional de Costa Rica y qué significa el nombre 'Guanacaste' en náhuatl?", opts: ["Por su madera valiosa; 'Guanacaste' significa 'árbol de oro'", "Por su belleza ornamental; 'Guanacaste' significa 'flor del sur'", "Por su importancia cultural y ecológica; 'Guanacaste' viene de 'quauh' (árbol) + 'nacastl' (oreja), refiriéndose a la forma de su fruto", "Por su longevidad extrema; 'Guanacaste' significa 'árbol eterno'"], correct: 2 }
+        ]
     }
 };
