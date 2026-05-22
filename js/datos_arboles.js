@@ -396,104 +396,140 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
         ]
     },
     "almendro": {
-        id: "#JBP-04", tipo: "Sombra / Frutal", nombre: "Almendro", cientifico: "Terminalia catappa L.",
-        familia: "Combretaceae", origen: "Exótico (Asia)", estado: "Preocupación Menor (LC)", exotica: true,
+        id: "#JBP-04", tipo: "Exótica Introducida", nombre: "Almendro", cientifico: "Terminalia catappa L.",
+        familia: "Combretaceae", origen: "Exótica introducida — Sudeste Asiático (Malasia, India, Indo-China). Naturalizada en trópicos de América", estado: "LC — Preocupación Menor (UICN). No listada en Libros Rojos de Colombia", exotica: true,
         carbono: 280.5, viajes: 95, imagen_portada: "./imagenes/colegio1.jpeg",
         galeria: [
-            { img: "./imagenes/colegio1.jpeg", desc: "Gran copa piramidal verticilada en el patio del colegio JBP" },
-            { img: "./imagenes/foto2.jpeg", desc: "Defoliación estacional vistiendo de rojo el verano llanero" }
+            { img: "./imagenes/colegio1.jpeg", desc: "Gran Almendro del JBP con copa piramidal verticilada brindando sombra permanente" },
+            { img: "./imagenes/foto2.jpeg", desc: "Defoliación estacional: hojas rojas y anaranjadas antes de caer en verano llanero" },
+            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Drupas aplanadas bicarenadas colgando de las ramas" },
+            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Espigas florales axilares con flores blanco-verdosas" }
         ],
         nombresLocales: ["Almendro", "Almendrón", "Almendro de la India", "Almendro de los Trópicos", "Almendro de playa", "Almendrillo", "Almendro de Sombra"],
         distribucion: `
-            <p><strong>Especie exótica introducida y naturalizada en Colombia:</strong> Originaria del Sudeste Asiático (Malasia, India e Indo-China), ha sido introducida y ampliamente cultivada en todas las regiones tropicales del globo. En Colombia, el Catálogo de Plantas y Líquenes de Colombia (UNAL, 2015) la reporta presente en las regiones Andina, Caribe, Orinoquía y Pacífico, en un rango altitudinal de 0 a 1.500 m s.n.m. En la Orinoquía (Maní, Casanare), prospera como árbol urbano, de potrero y ornamental gracias a su asombrosa tolerancia a la sequía estacional y los suelos ácidos típicos del llano.</p>
+            <p><strong>Especie exótica introducida y naturalizada en Colombia:</strong> <em>Terminalia catappa</em> L. es nativa del Sudeste Asiático (Malasia, India e Indo-China). Fue introducida y ampliamente cultivada en todas las regiones tropicales del planeta. En Colombia, el Catálogo de Plantas y Líquenes de Colombia (UNAL, 2015) la reporta presente en las regiones Andina, Caribe, Orinoquía y Pacífico, en un rango altitudinal de 0 a 1.500 m s.n.m. En la Orinoquía (Maní, Casanare), prospera como árbol urbano, de potrero y ornamental gracias a su notable tolerancia a la sequía estacional propia del régimen llanero.</p>
             <div class="mt-3">
                 <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
-                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Basónimo</td><td style="padding:6px;">No posee. Fue clasificada originalmente por Carlos Linneo en <em>Mantissa Plantarum</em> (1767).</td></tr>
-                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Sinónimos</td><td style="padding:6px;"><em>Buceras catappa</em> (L.) Hitchc.; <em>Juglans catappa</em> (L.) Lour.; <em>Terminalia moluccana</em> Lam.</td></tr>
-                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Terminalia</em> (del latín <em>terminus</em> = terminal, aludiendo a la agrupación de hojas al final de los tallos) y <em>catappa</em> (de la palabra malaya <em>ketapang</em>, nombre original del árbol).</td></tr>
-                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">Preocupación Menor (LC) a nivel mundial. Especie extremadamente exitosa y no amenazada. En Colombia no está en Libros Rojos dada su condición exótica cultivada.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida (Dicotiledóneas) / Myrtales</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Combretaceae R.Br.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género</td><td style="padding:6px;"><em>Terminalia</em> L.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Especie aceptada</td><td style="padding:6px;"><em>Terminalia catappa</em> L. — publicado en <em>Mantissa Plantarum</em> 1: 128, 1767</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Autoría y publicación</td><td style="padding:6px;">Carlos Linneo (L.) — <em>Mantissa Plantarum Altera</em> (1767)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Sinónimos principales</td><td style="padding:6px;"><em>Buceras catappa</em> (L.) Hitchc.; <em>Juglans catappa</em> (L.) Lour.; <em>Terminalia moluccana</em> Lam.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Terminalia</em>: del latín <em>terminus</em> = terminal, aludiendo a la agrupación de hojas al final de los tallos. <em>catappa</em>: de la palabra malaya <em>ketapang</em>, nombre original del árbol.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">⚠️ <strong>LC — Preocupación Menor (UICN):</strong> No enfrenta amenazas significativas a escala global. Especie exitosa y resistente ampliamente cultivada en los trópicos. <strong>No listada en Libros Rojos de Colombia</strong> dada su condición de especie introducida/cultivada de amplia distribución.</td></tr>
                 </table>
             </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #e74c3c; padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>🚨 NOTA IMPORTANTE:</strong> <em>Terminalia catappa</em> es una especie <strong>EXÓTICA INTRODUCIDA</strong> en Colombia. No es nativa de la Orinoquía ni de América. Su manejo en el JBP debe contemplar esta condición. Al ser exótica, no tiene relaciones coevolutivas con la flora y fauna nativa de la Orinoquía colombiana.
+            </div>
             <div class="blockquote-pro mt-3" style="font-size:0.9rem;">
-                <p>"La familia Combretaceae se distribuye predominantemente en las regiones tropicales y subtropicales, con géneros arbóreos de alta importancia ecológica y etnobotánica en el Neotrópico, donde contribuyen a la estructura de bosques riparios y de galería."</p>
-                <cite>— Alwyn H. Gentry (1993) – Guía de Campo de las Plantas Leñosas de Colombia</cite>
+                <p>"La familia Combretaceae, a la que pertenece Terminalia catappa, se distribuye predominantemente en las regiones tropicales y subtropicales, con géneros arbóreos de alta importancia ecológica y etnobotánica en el Neotrópico, donde contribuyen significativamente a la estructura de bosques riparios y de galería."</p>
+                <cite>— Gentry, A. H. (1993). A Field Guide to the Families and Genera of Woody Plants of Northwest South America. Conservation International / University of Chicago Press. p. 372.</cite>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>🌎 Dato curioso:</strong> A diferencia de árboles nativos de la Orinoquía como el Merecure (<em>Moquilea pyrifolia</em>), el Caracaro (<em>Enterolobium cyclocarpum</em>) o la Palma Moriche (<em>Mauritia flexuosa</em>), el Almendro fue introducido en América tropical para uso ornamental y de sombra. Su presencia en Maní, Casanare, es consecuencia de siembras antrópicas intencionales.
             </div>
         `,
-        densidad: "0.59 g/cm³ (Madera de densidad media a media-alta)", fraccion: "0.47 – 0.50 (Ref. 0.47)",
+        densidad: "0.59 g/cm³ (Rango: 0.49–0.72 g/cm³. Madera de densidad media a media-alta)", fraccion: "0.47 – 0.50 (IPCC para latifoliadas tropicales. Ref. 0.47 para Combretaceae)",
         alometria: `
+            <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+                ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No existe registro específico de densidad básica para individuos de <em>T. catappa</em> medidos en Casanare o la Orinoquía colombiana en el Catálogo de Maderas del IDEAM (2014). El valor de 0.59 g/cm³ proviene de bases de datos internacionales (USDA Forest Service / Brown & Lugo, 1992). Se recomienda toma de muestras <em>in situ</em> con barrenas de Pressler para obtener valores locales validados.
+            </div>
             <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
                 ln(BAS) = a + b · ln(DAP² · H · ρ)
             </div>
-            <p class="text-sm">Modelo II.1 recomendado por <strong>Álvarez et al. (2012)</strong> para estimar la biomasa aérea seca ($BAS$ en kg) de árboles latifoliados en bosques naturales de Colombia.</p>
+            <p class="text-sm"><strong>Modelo recomendado — Álvarez et al. (2012) para bosques naturales de Colombia:</strong> Ecuación desarrollada para la estimación de biomasa aérea en bosques naturales colombianos, incluyendo las sabanas inundables y bosques de galería de la Orinoquía.</p>
             <div class="mt-3">
                 <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
-                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP (D)</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, a 1.30 m)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">BAS</td><td style="padding:6px;">Biomasa aérea seca (kg árbol⁻¹)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP (D)</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1.30 m)</td></tr>
                     <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total del árbol (m)</td></tr>
-                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica de la madera → **0.59 g/cm³** (Ref. USDA / USFS / Brown & Lugo, 1992).</td></tr>
-                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conversión C</td><td style="padding:6px;">Carbono (t C) = Biomasa aérea ($BAS$) × 0.47 / 1000 (Valor de conversión de carbono conservador para Combretaceae).</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica de la madera = <strong>0.59 g/cm³</strong> (Ref. USDA / USFS / Brown & Lugo, 1992). Rango internacional: 0.49–0.72 g/cm³</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">a, b</td><td style="padding:6px;">Coeficientes calibrados para bosques colombianos (Álvarez et al., 2012)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Fracción C (FC)</td><td style="padding:6px;">0.47 – 0.50 · Factor estándar IPCC para latifoliadas tropicales. Para Combretaceae, en ausencia de dato específico local, se recomienda usar 0.47 como valor conservador.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar — No existe FEB específico publicado para <em>T. catappa</em> en Colombia. IPCC (2006) sugiere 1.3–1.6 para latifoliadas tropicales como referencia provisional.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">CO₂ equiv.</td><td style="padding:6px;">CO₂ equivalente (kg) = Carbono (kg) × 3.67</td></tr>
                 </table>
             </div>
             <div class="blockquote-pro" style="font-size:0.85rem;">
-                <p>"Los sistemas agroforestales y silvopastoriles —que en los Llanos Orientales de Colombia incorporan especies como el almendro— contribuyen al secuestro y almacenamiento de carbono, siendo fundamentales para proyectos REDD+."</p>
-                <cite>— Segura et al. (2021) – Revista de Biología Tropical</cite>
+                <p>"Los bosques tropicales contribuyen a regular la concentración de CO₂ en la atmósfera a través de la fijación en su biomasa y en el suelo. Los sistemas agroforestales —que en los Llanos Orientales de Colombia incorporan especies arbóreas como el almendro— también pueden contribuir a la mitigación del cambio climático mediante el secuestro y almacenamiento de carbono, siendo fundamentales para los esquemas de pago por servicios ambientales y los proyectos REDD+ en la Orinoquía colombiana."</p>
+                <cite>— Segura, M., Andrade, H. J., & Mojica Sánchez, S. (2020), citados en: Segura, M. et al. (2021). Almacenamiento de carbono en sistemas agroforestales en los Llanos Orientales de Colombia. Revista de Biología Tropical, 69(1), 352–368.</cite>
             </div>
-            <div class="warn-box mt-3" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main);">
-                ⚠️ <strong>Integridad Científica SILVAIN AI:</strong> No existe una densidad básica especie-específica certificada in situ en Casanare. La cifra 0.59 g/cm³ es referencial (USDA i-Tree). Requiere medición local en el JBP Maní.
+            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+                ⚠️ <strong>Nota técnica:</strong> No existe ecuación alométrica especie-específica publicada para <em>Terminalia catappa</em> en ecosistemas de sabanas inundables del Casanare. El modelo de Álvarez et al. (2012) es la opción más robusta disponible para Colombia. Se recomienda calibración futura con datos locales del JBP Maní.
             </div>
         `,
         calendario: [
-            { mes: "Dic", fase: "Defoliación Roja 🍂", clima: "dry" },
+            { mes: "Dic", fase: "Defoliación estacional 🍂", clima: "dry" },
             { mes: "Ene", fase: "Defoliación / Hojas Rojas 🍂", clima: "dry" },
-            { mes: "Feb", fase: "Refoliación Joven 🌱", clima: "dry" },
-            { mes: "Mar", fase: "Pico de Floración 🌸", clima: "trans" },
-            { mes: "Abr", fase: "Pico de Floración 🌸", clima: "trans" },
-            { mes: "May", fase: "Cuajado y Fructificación 🍑", clima: "rain" },
-            { mes: "Jun", fase: "Crecimiento de drupas 🍑", clima: "rain" },
-            { mes: "Jul", fase: "Maduración y cosecha 🍑", clima: "rain" },
-            { mes: "Ago", fase: "Caída de frutos 🍑", clima: "rain" },
-            { mes: "Sep", fase: "Dispersión por fauna / agua 💧", clima: "rain" },
+            { mes: "Feb", fase: "Refoliación temprana 🌱", clima: "dry" },
+            { mes: "Mar", fase: "Floración plena 🌸", clima: "trans" },
+            { mes: "Abr", fase: "Floración tardía / Polinización 🌸", clima: "trans" },
+            { mes: "May", fase: "Cuajado de frutos 🍑", clima: "rain" },
+            { mes: "Jun", fase: "Desarrollo de drupas 🍑", clima: "rain" },
+            { mes: "Jul", fase: "Maduración de frutos 🍑", clima: "rain" },
+            { mes: "Ago", fase: "Cosecha / Caída de frutos 🍑", clima: "rain" },
+            { mes: "Sep", fase: "Dispersión por fauna y agua 💧", clima: "rain" },
             { mes: "Oct", fase: "Foliación máxima 🌿", clima: "rain" },
-            { mes: "Nov", fase: "Foliación máxima 🌿", clima: "rain" }
+            { mes: "Nov", fase: "Foliación plena / Pre-defoliación 🌿", clima: "dry" }
         ],
         morfologia: `
             <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
-                <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol caducifolio de 9 a 35 m de altura (10-20 m en Casanare). Tronco robusto con corteza grisácea agrietada en ejemplares maduros. Destaca por sus ramas horizontales dispuestas en pisos verticilados (falsa verticilada), formando una copa piramidal.</div>
-                <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Raíz:</strong> Sistema radicular amplio y superficial. Desarrolla contrafuertes (bambas) en la base del tronco al envejecer, permitiendo gran anclaje en suelos variables.</div>
-                <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas Caducas:</strong> Alternas pero agrupadas en el ápice de las ramas (pseudoverticiladas). Hojas coriáceas obovadas (8-38 cm x 5-19 cm). Tienen la particularidad única de vestirse de color rojo brillante y caer en el verano llanero.</div>
-                <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores:</strong> Dispuestas en espigas axilares de 15 a 20 cm de longitud. Flores blancas-verdosas muy pequeñas (~6 mm) y con un aroma característico. Las flores masculinas se ubican arriba y las bisexuales en la base.</div>
-                <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Fruto y Semilla:</strong> Drupa aplanada elipsoide bicarenada de 4-7 cm de largo. Mesocarpo carnoso y fibroso, endocarpo leñoso sumamente duro. La semilla interior es una almendra comestible de difícil extracción. Dispersión por hidrocoría y fauna.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol caducifolio de 9 a 35 m de altura (10-20 m en Casanare urbano). Tronco grueso con corteza externa gris oscura a grisácea, inicialmente lisa y luego fisurada longitudinalmente en ejemplares maduros. Ramas principales gruesas, horizontales, dispuestas en falsas verticiladas (pisos), lo que da a la copa su característica forma piramidal a extendida. Copa muy ornamental. Crecimiento rápido en condiciones tropicales de baja altitud.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Sistema radicular amplio y superficial, con raíces laterales extendidas que cumplen función de anclaje y consolidación del suelo. Raíces de contrafuerte (bambas) desarrolladas en ejemplares maduros. Tolera suelos de texturas variables propias de las sabanas llaneras, desde arenas hasta arcillas compactas.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo y Corteza:</strong> Fuste recto o ligeramente sinuoso, con corteza externa gris oscura a grisácea. En árboles jóvenes, la corteza es lisa; en maduros, se agrieta longitudinalmente formando placas irregulares. Madera de color rojizo, sólida, de alta resistencia al agua, apreciada para carpintería rural y construcciones expuestas a humedad.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje:</strong> Hojas alternas pero agrupadas hacia el ápice de los tallos (disposición pseudoverticilada). Lámina anchamente obovada a elíptico-ovada, 8–38 × 5–19 cm; textura coriácea, glabra en ambas caras en la madurez. Venación pinnada con 6–9 pares de nervios laterales prominentes. <strong>Característica distintiva:</strong> Las hojas adquieren coloración rojiza a anaranjada antes de la caída estacional (verano llanero), creando un espectáculo visual único en el paisaje de Maní.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Inflorescencias en espigas axilares de 15–20 cm de longitud. Flores pequeñas (~6 mm de diámetro), blancas a verdosas, con olor poco agradable. Flores masculinas hacia el ápice de la espiga (más numerosas); flores bisexuales en la base. Polinización entomófila (abejas, mariposas, moscas florales). Floración coincide con la transición verano-lluvias (marzo-abril en Casanare).</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Drupa aplanada, elipsoide, comprimida bicarenada, 4–7 cm de largo; mesocarpo carnoso y fibroso; endocarpo leñoso y muy duro. Semilla comestible (sabor similar a la almendra europea), de difícil extracción. El fruto es dispersado por agua (hidrocoría) y por fauna que consume la pulpa (loros, murciélagos, palomas). Los niños llaneros recolectan las semillas para consumirlas tostadas o crudas.</div>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>📌 Nota metodológica:</strong> Este calendario fenológico fue construido con base en el régimen bimodal de lluvias de los Llanos Orientales (Verano: dic-mar | Invierno: abr-nov). Los datos de floración y fructificación pueden adelantarse o retrasarse 2–4 semanas según el microclima local del JBP Maní. Se recomienda registro fenológico continuo <em>in situ</em> para calibración.
             </div>
         `,
         fauna: `
             <div class="grid2 mt-3" style="font-size:0.9rem;">
-                <div class="metric-card"><div class="metric-label">🦜 Loros y Cotorras</div><div class="section-val text-sm mt-2"><strong>Amazona amazonica (Loro real llanero) y Forpus:</strong> Consumen con avidez las drupas maduras, rompiendo los frutos y favoreciendo la dispersión biológica.</div></div>
-                <div class="metric-card"><div class="metric-label">🦇 Murciélagos Frugívoros</div><div class="section-val text-sm mt-2"><strong>Artibeus jamaicensis y Carollia:</strong> Consumen el mesocarpo carnoso de las legumbres por la noche, transportando las semillas y actuando como eficientes dispersores secundarios.</div></div>
-                <div class="metric-card"><div class="metric-label">🦎 Iguanas y Foliación</div><div class="section-val text-sm mt-2"><strong>Iguana iguana:</strong> Consumen las hojas tiernas de los brotes jóvenes y trepan hasta los pisos superiores para termorregularse bajo el sol llanero.</div></div>
-                <div class="metric-card"><div class="metric-label">🐟 Biotopo y Purificación</div><div class="section-val text-sm mt-2"><strong>Peces y macroinvertebrados:</strong> Las hojas caídas en caños y morichales liberan taninos saludables que bajan la acidez, matan bacterias y purifican el agua.</div></div>
+                <div class="metric-card"><div class="metric-label">🦜 Aves — Loros y Cotorras</div><div class="section-val text-sm mt-2"><strong><em>Amazona amazonica</em> (loro real llanero), <em>Psittacara wagleri</em>, cotorras y loros del género <em>Forpus</em>:</strong> Consumo de semillas y frutos maduros; dispersión de semillas. Rompen las drupas con sus picos fuertes y transportan las semillas a distancias considerables.</div></div>
+                <div class="metric-card"><div class="metric-label">🦜 Aves — Palomas</div><div class="section-val text-sm mt-2"><strong>Palomas (<em>Patagioenas cayennensis</em>, <em>Columbina talpacoti</em>):</strong> Consumo de frutos caídos; percha y refugio en la copa extendida del árbol. Anidan en ramas horizontales protegidas por el follaje denso.</div></div>
+                <div class="metric-card"><div class="metric-label">🦇 Murciélagos Frugívoros</div><div class="section-val text-sm mt-2"><strong><em>Artibeus jamaicensis</em>, <em>Carollia perspicillata</em>:</strong> Frugívoros nocturnos que consumen la pulpa del fruto y actúan como dispersores secundarios. Transportan frutos enteros a sus refugios, facilitando la germinación a distancia.</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Insectos — Polinizadores</div><div class="section-val text-sm mt-2"><strong>Abejas (<em>Apis mellifera</em>, meliponinos nativos) y diversas mariposas:</strong> Polinización de las flores durante la época de floración (marzo–abril). Fuente importante de néctar y polen en la transición seco-lluvioso.</div></div>
+                <div class="metric-card"><div class="metric-label">🦎 Reptiles</div><div class="section-val text-sm mt-2"><strong>Iguanas (<em>Iguana iguana</em>):</strong> Consumo de hojas jóvenes; uso de ramas como sitio de termorregulación solar. Las iguanas trepan a los pisos superiores de la copa para asolearse durante las mañanas llaneras.</div></div>
+                <div class="metric-card"><div class="metric-label">🐟 Fauna Acuática</div><div class="section-val text-sm mt-2"><strong>Peces de caños y morichales adyacentes:</strong> Las hojas caídas liberan taninos y compuestos antibacterianos al agua, modulando el pH y la química de cuerpos de agua cercanos. Propiedad usada por acuaristas de todo el mundo para tratar aguas de peces tropicales.</div></div>
             </div>
         `,
         usos: `
             <div class="grid2 mt-3" style="font-size:0.9rem;">
-                <div class="metric-card"><div class="metric-label">🐄 Sombra Ganadera y Sistemas</div><div class="section-val text-sm mt-2">Su amplia copa en pisos brinda el sombrío ideal para el ganado bovino durante las horas críticas del día (10 a.m. a 3 p.m.), reduciendo significativamente el estrés calórico y mejorando el ordeño.</div></div>
-                <div class="metric-card"><div class="metric-label">🏗️ Madera e Hidrorresistencia</div><div class="section-val text-sm mt-2">Madera sólida de color rojizo con excelente resistencia al agua. Tradicionalmente empleada en el llano para fabricar postes de cercas, construcciones de corrales y canoas o curiaras.</div></div>
-                <div class="metric-card"><div class="metric-label">🩺 Etnomedicina Llanera</div><div class="section-val text-sm mt-2">Las hojas secas son ricas en taninos y flavonoides con alto poder cicatrizante y antibacteriano. Tradicionalmente, la infusión se bebe contra problemas hepáticos, diabetes y diarrea.</div></div>
-                <div class="metric-card"><div class="metric-label">🍽️ Alimentación y Nutrición</div><div class="section-val text-sm mt-2">Las semillas o "almendras" contenidas dentro del hueso son comestibles, muy nutritivas y ricas en aceites. Tradicionalmente recolectadas por niños en el patio del colegio JBP.</div></div>
+                <div class="metric-card"><div class="metric-label">🪵 Carpintería y Madera</div><div class="section-val text-sm mt-2">La madera del almendro —rojiza, sólida y de alta resistencia al agua— ha sido empleada en la construcción de cercas, postes, embarcaciones artesanales (curiaras), pisos y muebles rústicos en las fincas del piedemonte llanero y riberas del río Cusiana y Meta. Su durabilidad en ambientes húmedos la hace apreciada para estructuras expuestas a inundaciones estacionales del llano.</div></div>
+                <div class="metric-card"><div class="metric-label">🌿 Medicina Popular Llanera</div><div class="section-val text-sm mt-2">Las hojas contienen taninos (punicalagina, punicalina), flavonoides (kaempferol, quercetina) y saponinas con propiedades antiinflamatorias, antimicrobianas y antioxidantes. En el llano, la infusión de hojas secas se usa popularmente para tratar afecciones hepáticas, diarrea y como cicatrizante de heridas. La corteza se emplea en cataplasmas para contusiones.</div></div>
+                <div class="metric-card"><div class="metric-label">🌳 Cercas Vivas y Sombra Ganadera</div><div class="section-val text-sm mt-2">Es uno de los árboles de sombra por excelencia en potreros llaneros. Proporciona sombra de amplia copa para el ganado en las horas de máxima irradiación solar (10 a.m.–3 p.m.), reduciendo el estrés calórico y mejorando la productividad lechera. Se utiliza en sistemas silvopastoriles informales como cerca viva en linderos de fundos.</div></div>
+                <div class="metric-card"><div class="metric-label">🍽️ Alimentario y Ornamental</div><div class="section-val text-sm mt-2">Las semillas (almendras) son comestibles: los niños llaneros las consumen directamente o tostadas, obteniendo un sabor similar a la almendra europea. Los frutos son también consumidos por aves y tortugas domésticas. Como árbol ornamental, es plantado en parques y casas de Maní, Trinidad y Yopal, especialmente valorado por la sombra densa que proyecta su copa multiverticilada.</div></div>
             </div>
         `,
-        mensajeIA: "¡Hola, pariente! Soy el Almendro del Llano, aunque mis raíces reales están muy lejos, en el Sudeste Asiático. Aterricé en Casanare hace tiempo y aquí me quedé. Mis ramas son geniales porque crecen en pisos verticilados, formando una estructura de capas perfecta para que el ganado se resguarde a mediodía. En verano me visto con un deslumbrante follaje de hojas rojas antes de soltarlas para mi descanso. Mis frutos guardan una almendra dulce que a los loros reales les fascina, y mis hojas secas caídas actúan como una medicina natural purificando los caños de agua para los peces. ¡Disfruta de mi sombra en el colegio JBP!",
+        mensajeIA: `🌳 <strong>Soy el Almendro del Llano — <em>Terminalia catappa</em></strong>
+
+Soy un viajero muy antiguo. Nací en las costas del Sudeste Asiático, en tierras de manglar y arenas ardientes, y el mar y los vientos me llevaron, semilla a semilla, hasta llegar a este llano inmenso que hoy llamo hogar. Aquí, en Maní, soy el árbol de la sombra generosa: mis ramas crecen en capas como los pisos de una gran casa, y cuando el sol castiga el potrero a mediodía, el ganado corre a buscar mi abrazo verde.
+
+Cada año, cuando llega el verano llanero, me visto de rojo y anaranjado antes de soltar mis hojas, como si el llano también necesitara un otoño propio. Y cuando regresan las lluvias, vuelvo a brotar con fuerza nueva. Mis frutos —esas pequeñas cápsulas achatadas— guardan dentro un secreto dulce: una semilla que sabe a almendra y que los loros reales del llano conocen mejor que nadie.
+
+✨ <strong>Curiosidad asombrosa</strong>: ¿Sabías que mis hojas caídas son mágicas para los peces? Cuando caen al agua de los caños y morichales, sueltan taninos que bajan la acidez del agua y matan bacterias dañinas, ¡tal como hacen algunos antibióticos! Por eso, los acuaristas del mundo entero buscan mis hojas secas para proteger a sus peces tropicales. ¡Soy una farmacia natural flotante! 🐟💊`,
         referencias: [
-            "Álvarez, E., Duque, A., Saldarriaga, J. G., Cabrera, K., De las Salas, G., Del Valle, J. I., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267(1), 297–308.",
-            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia.",
-            "Brown, S., & Lugo, A. E. (1992). Wood densities of tropical tree species (Gen. Tech. Rep. SO-88). U.S. Department of Agriculture, Forest Service.",
-            "Francis, J. K. (1989). Terminalia catappa L. — Indian almond, almendra (SO-ITF-SM-23). U.S. Department of Agriculture, Forest Service.",
-            "Plants of the World Online / Kew Science. (2024). Terminalia catappa L. Royal Botanic Gardens, Kew.",
-            "Segura, M., Andrade, H. J., & Mojica Sánchez, S. (2021). Almacenamiento de carbono en sistemas agroforestales en los Llanos Orientales de Colombia. Revista de Biología Tropical, 69(1), 352–368.",
-            "World Agroforestry Centre (ICRAF). (2024). Terminalia catappa — Species profile. Agroforestree Database 4.0."
+            "Álvarez, E., Duque, A., Saldarriaga, J. G., Cabrera, K., De las Salas, G., Del Valle, J. I., Lema, A., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267(1), 297–308. https://doi.org/10.1016/j.foreco.2011.12.013",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. http://catalogoplantasdecolombia.unal.edu.co",
+            "Brown, S., & Lugo, A. E. (1992). Wood densities of tropical tree species (Gen. Tech. Rep. SO-88). U.S. Department of Agriculture, Forest Service, Southern Forest Experiment Station. https://www.srs.fs.usda.gov/pubs/gtr/gtr_so088.pdf",
+            "Francis, J. K. (1989). Terminalia catappa L. — Indian almond, almendra (SO-ITF-SM-23). U.S. Department of Agriculture, Forest Service, Southern Forest Experiment Station. https://rngr.net/publications/arboles-de-puerto-rico/terminalia-catappa",
+            "Chudnoff, M. (1984). Tropical timbers of the world (Agriculture Handbook 607). U.S. Department of Agriculture, Forest Service.",
+            "Plants of the World Online / Kew Science. (2024). Terminalia catappa L. Royal Botanic Gardens, Kew. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:171034-1",
+            "Segura, M., Andrade, H. J., & Mojica Sánchez, S. (2021). Almacenamiento de carbono en sistemas agroforestales en los Llanos Orientales de Colombia. Revista de Biología Tropical, 69(1), 352–368. https://doi.org/10.15517/rbt.v69i1",
+            "World Agroforestry Centre (ICRAF). (2024). Terminalia catappa — Species profile. Agroforestree Database 4.0. https://apps.worldagroforestry.org/treedb2/speciesprofile.php?Spid=1616",
+            "IDEAM. (2014). Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia. Instituto de Hidrología, Meteorología y Estudios Ambientales. Ministerio de Ambiente y Desarrollo Sostenible.",
+            "IPCC. (2006). IPCC guidelines for national greenhouse gas inventories. Volume 4: Agriculture, forestry and other land use. Intergovernmental Panel on Climate Change. https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol4.html"
         ],
         quiz: [
-            { q: "¿A qué familia botánica pertenece el árbol de Almendro (Terminalia catappa)?", opts: ["Fabaceae", "Moraceae", "Combretaceae"], correct: 2 },
-            { q: "¿En qué época del año el Almendro florece predominantemente en el régimen llanero de Maní (Casanare)?", opts: ["Al finalizar el verano e inicios de lluvias (marzo–abril)", "En pleno verano seco (enero–febrero)", "En el invierno más lluvioso (julio–agosto)"], correct: 0 },
-            { q: "¿Qué beneficio brindan sus hojas secas caídas cuando entran en contacto con el agua de caños y acristalamientos?", opts: ["Ensucian el biotopo e impiden el crecimiento de algas", "Liberan taninos con propiedades antibacterianas que purifican y modulan el pH del agua", "Consumen el oxígeno impidiendo la vida de los peces"], correct: 1 }
+            { q: "¿A qué familia botánica pertenece Terminalia catappa?", opts: ["Fabaceae", "Moraceae", "Combretaceae", "Bignoniaceae"], correct: 2 },
+            { q: "En el contexto del llano de Maní (Casanare), ¿en qué época del año el almendro generalmente produce sus flores?", opts: ["Durante los meses de mayor lluvia (julio–agosto)", "Al finalizar el verano e inicio de lluvias (marzo–abril)", "En pleno verano (enero–febrero)", "En diciembre, durante la Navidad llanera"], correct: 1 },
+            { q: "¿Cuál es la densidad básica de la madera de Terminalia catappa reportada en bases de datos internacionales de maderas tropicales?", opts: ["0.20 g/cm³ (madera muy liviana, como el balso)", "0.95 g/cm³ (madera muy pesada, como el guayacán)", "0.49–0.59 g/cm³ (madera de densidad media)", "1.10 g/cm³ (más densa que el agua)"], correct: 2 },
+            { q: "¿Qué propiedad especial tienen las hojas caídas del almendro cuando entran en contacto con el agua?", opts: ["Producen oxígeno adicional para los peces", "Liberan taninos con propiedades antibacterianas que purifican y modulan el pH del agua", "Consumen todo el oxígeno disponible", "Generan algas que alimentan a los peces"], correct: 1 }
         ]
     },
     "pomarrosa": {
