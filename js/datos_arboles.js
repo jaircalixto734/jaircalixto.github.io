@@ -2325,5 +2325,152 @@ Mis raíces guardan un secreto increíble: dentro de pequeños nódulos, viven b
             { q: "En el calendario fenológico de Maní (Casanare), ¿en qué momento del año florece el caracaro y qué característica especial tiene su floración?", opts: ["Solo en pleno invierno (junio–julio), cuando hay máxima humedad en el suelo", "Al final del verano e inicio de lluvias (marzo–abril), coincidiendo simultáneamente con la refoliación", "Exclusivamente en otoño (octubre–noviembre), cuando los días se acortan", "Durante todo el año de forma continua sin relación con las estaciones climáticas"], correct: 1 },
             { q: "¿Por qué el Caracaro (Enterolobium cyclocarpum) es considerado el árbol nacional de Costa Rica y qué significa el nombre 'Guanacaste' en náhuatl?", opts: ["Por su madera valiosa; 'Guanacaste' significa 'árbol de oro'", "Por su belleza ornamental; 'Guanacaste' significa 'flor del sur'", "Por su importancia cultural y ecológica; 'Guanacaste' viene de 'quauh' (árbol) + 'nacastl' (oreja), refiriéndose a la forma de su fruto", "Por su longevidad extrema; 'Guanacaste' significa 'árbol eterno'"], correct: 2 }
         ]
+    },
+    "maiz_tostado": {
+        id: "#JBP-08", tipo: "Nativo", nombre: "Maíz Tostado", cientifico: "Coccoloba acuminata Kunth",
+        familia: "Polygonaceae", origen: "Nativa Neotrópico — México SE a Sudamérica. Nativa de Colombia", estado: "LC — Preocupación Menor (UICN 2021)", exotica: false,
+        carbono: 85.3, viajes: 42, imagen_portada: "./imagenes/colegio1.jpeg",
+        galeria: [
+            { img: "./imagenes/colegio1.jpeg", desc: "Maíz Tostado en bosque de galería del JBP con frutos en espiga" },
+            { img: "./imagenes/foto2.jpeg", desc: "Espigas de frutos rojos coral que asemejan mazorca de maíz tostado" },
+            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Ócreas tubulares en nudos del tallo (rasgo distintivo Polygonaceae)" },
+            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Hojas ovadas con ápice marcadamente acuminado" }
+        ],
+        nombresLocales: ["Maíz Tostado", "Maíz tostao", "Uva de Coral", "Uva de Monte", "Uvero", "Uva silvestre", "Bejuco de uvero"],
+        distribucion: `
+            <p><strong>Especie nativa de amplia distribución neotropical:</strong> <em>Coccoloba acuminata</em> Kunth es una especie nativa con rango desde el sureste de México hasta el sur de Sudamérica. En Colombia está documentada en la Llanura del Caribe, Orinoquía, Pacífico y Valle del Magdalena, entre 0 y 500 m s.n.m. Departamentos con registros: Antioquia, Bolívar, Cauca, Chocó, La Guajira, Magdalena, Meta, Tolima, entre otros.</p>
+            <p>En la Orinoquía colombiana —incluyendo Maní, Casanare (≈ 180–250 m s.n.m.)— prospera en bosques de galería, sabanas arboladas, márgenes de caños y zonas de vegetación secundaria riparia en el piso térmico cálido.</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida (Eudicotiledóneas) / Caryophyllales</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Polygonaceae Juss. (Familia del alforfón / trigo sarraceno)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género</td><td style="padding:6px;"><em>Coccoloba</em> Mill. (~177 especies reconocidas; del griego <em>kokkolobis</em> = "vaina con baya")</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Especie aceptada</td><td style="padding:6px;"><em>Coccoloba acuminata</em> Kunth — publicado en <em>Nova Genera et Species Plantarum</em>, 1817</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Autoría y fecha</td><td style="padding:6px;">Karl Sigismund Kunth, 1817</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Epíteto específico</td><td style="padding:6px;"><em>acuminata</em> (del latín: "acuminado" = con ápice agudo), aludiendo a la punta alargada de las hojas</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Sinónimos principales</td><td style="padding:6px;"><em>Coccoloba acuminata</em> var. <em>glabra</em> Lindau (1890); <em>C. acuminata</em> var. <em>pubescens</em> Lindau (1890); <em>C. strobilulifera</em> Meisn. (1855); <em>Lyperodendron coccoloboides</em> Willd. ex Meisn. (1856); <em>Uvifera acuminata</em> Kuntze (1891); <em>U. strobilulifera</em> Rusby (1900)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación UICN</td><td style="padding:6px;">✅ <strong>LC — Preocupación Menor</strong> (ID: 150112747, 2021). No amenazada según Bachman et al., <em>New Phytologist</em> (2024)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Rango altitudinal Colombia</td><td style="padding:6px;">0 – 500 m s.n.m. (Maní ≈ 180–250 m → dentro del rango óptimo)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Hábitats según UICN</td><td style="padding:6px;">Bosque, sabana, matorral, humedal, artificial</td></tr>
+                </table>
+            </div>
+            <div class="blockquote-pro mt-3" style="font-size:0.9rem;">
+                <p>"Nativa en Colombia; Alt. 0 – 500 m.; Llanura del Caribe, Orinoquia, Pacífico, Valle del Magdalena. Usada como medicina y para alimentación."</p>
+                <cite>— Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia.</cite>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>🌎 Dato curioso:</strong> El nombre "Maíz Tostado" hace referencia a la apariencia de los frutos maduros agrupados en espigas, que recuerdan una mazorca de maíz tostado por su textura y coloración. "Uva de Coral" enfatiza el color encendido de los frutos maduros. Es el nombre más frecuente en el Valle de Aburrá y se documenta también en la Orinoquía.
+            </div>
+        `,
+        densidad: "0.60 – 0.80 g/cm³ (Madera semidura a dura; dato por verificar en campo)", fraccion: "0.47 – 0.50 (IPCC para latifoliadas tropicales; Ref. 0.47)",
+        alometria: `
+            <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+                ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No se encontró en la literatura del IDEAM Colombia un valor de densidad básica calibrado específicamente para <em>C. acuminata</em> en la Orinoquía colombiana. El rango <strong>0,60–0,80 g/cm³</strong> proviene de una ficha técnica para el Valle de Aburrá (EIA, 2023). Se requiere toma de muestras de madera en individuos adultos de Maní conforme al protocolo ASTM D2395 para validación local. El valor de densidad de <em>Coccoloba uvifera</em> (especie hermana) es de ~0.70 g/cm³ (secada al aire), lo que constituye una referencia orientativa.
+            </div>
+            <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]³ + 1,285 · ln(ρ)
+            </div>
+            <p class="text-sm"><strong>Modelo recomendado — Álvarez et al. (2012) para bosques naturales de Colombia:</strong> Ecuación desarrollada para la estimación de biomasa aérea en bosques naturales colombianos, incluyendo las sabanas inundables y bosques de galería de la Orinoquía (R² = 0,958).</p>
+            <div class="mt-3">
+                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">AGB</td><td style="padding:6px;">Biomasa aérea total (Mg ha⁻¹)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">D (DAP)</td><td style="padding:6px;">Diámetro a la Altura del Pecho (cm, medido a 1,30 m del suelo)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ (Densidad)</td><td style="padding:6px;">Densidad básica de la madera (g/cm³) → usar <strong>0,70 g/cm³</strong> como valor orientativo para <em>C. acuminata</em></td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Carbono (tC)</td><td style="padding:6px;">AGB × 0.47 (factor estándar IPCC para latifoliadas tropicales)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">CO₂eq (tCO₂eq)</td><td style="padding:6px;">AGB × 0.47 × 3,6667 (factor molecular estándar)</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar — No existe FEB publicado por IDEAM específico para esta especie en la Orinoquía. Usar FEB genérico IPCC para bosques tropicales secos (1,3–1,74) solo como referencia.</td></tr>
+                    <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Error estándar residual</td><td style="padding:6px;">0,336 | R² ajustado = 0,958</td></tr>
+                </table>
+            </div>
+            <div class="blockquote-pro" style="font-size:0.85rem;">
+                <p>"El Catálogo de Plantas y Líquenes de Colombia recopila, por primera vez, las 28.000 especies de plantas y líquenes identificadas hasta ahora en Colombia, suministrando para cada una información sobre el tamaño de la planta, las regiones ecológicas, el rango de elevación, los departamentos en que ha sido hallada, su estado de conservación y la distribución global de la especie."</p>
+                <cite>— Bernal, R. (2015, citado en Agencia de Noticias UNAL).</cite>
+            </div>
+            <div class="blockquote-pro mt-2" style="font-size:0.85rem;">
+                <p>"La biomasa forestal almacena aproximadamente la mitad del carbono de los bosques tropicales. Las ecuaciones alométricas que incorporan el diámetro, la altura y la densidad de la madera son las herramientas más precisas disponibles para estimar este almacenamiento a escala de árbol individual en inventarios forestales tropicales."</p>
+                <cite>— Chave et al. (2014). Global Change Biology, 20(10), 3177–3190.</cite>
+            </div>
+            <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #e74c3c; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+                💡 <strong>Consideración dendrométrica:</strong> Por ser <em>C. acuminata</em> frecuentemente un arbusto o árbol pequeño (DAP = 3–6 cm en hábitats perturbados), se recomienda complementar la ecuación alométrica con mediciones de biomasa radical estimada y biomasa foliar. Para individuos con DAP &lt; 5 cm se sugiere consultar las ecuaciones de Chave et al. (2014) para plantas leñosas tropicales de pequeño porte.
+            </div>
+        `,
+        calendario: [
+            { mes: "Dic", fase: "☀️ Verano / Frutos maduros 🍇", clima: "dry" },
+            { mes: "Ene", fase: "☀️ Verano / Frutos maduros 🍇", clima: "dry" },
+            { mes: "Feb", fase: "☀️ Verano / Posible floración 🌸", clima: "dry" },
+            { mes: "Mar", fase: "☀️ Verano / Follaje siempreverde 🌿", clima: "dry" },
+            { mes: "Abr", phase: "🌧️ Inicio lluvias / Floración principal 🌸", clima: "rain" },
+            { mes: "May", fase: "🌧️ Floración tardía 🌸", clima: "rain" },
+            { mes: "Jun", fase: "🌧️ Cuajado de frutos 🟢", clima: "rain" },
+            { mes: "Jul", fase: "🌧️ Desarrollo de frutos 🍇", clima: "rain" },
+            { mes: "Ago", fase: "🌧️ Fructificación activa 🍇", clima: "rain" },
+            { mes: "Sep", fase: "🌧️ Maduración de frutos 🍇", clima: "rain" },
+            { mes: "Oct", fase: "🌧️ Cosecha máxima 🍇", clima: "rain" },
+            { mes: "Nov", fase: "🌧️ Dispersión de semillas 💧", clima: "rain" }
+        ],
+        morfologia: `
+            <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte General:</strong> Arbusto o árbol pequeño a mediano, siempreverde, 6–10 m de altura máxima en bosque de galería; frecuentemente 2–5 m en zonas perturbadas. Copa reducida, follaje de densidad media. Crecimiento moderado. Longevidad estimada: 20–30 años.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Pivotante con raíces laterales extendidas en horizontes superficiales. En ambientes riparios desarrolla raíces adventicias superficiales para anclaje en suelos con fluctuaciones hídricas. No presenta nódulos fijadores de nitrógeno, pero puede presentar asociaciones micorrícicas.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo y Corteza — ÓCREAS PRESENTES:</strong> Tallo erecto a semierecto, ramificado desde la base. Corteza externa pardo grisácea, lisa en jóvenes, con lenticelas visibles en ramas maduras. <strong>ÓCREAS PRESENTES:</strong> estructuras tubulares membranosas que envuelven cada nudo del tallo —<strong>sello distintivo de Polygonaceae</strong>. Ninguna otra familia de plantas vasculares presenta este carácter.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Filotaxia:</strong> Filotaxia alterna. Hojas simples, pecioladas, ovadas a lanceoladas con <strong>ápice marcadamente acuminado</strong> (de ahí el epíteto <em>acuminata</em>), base redondeada a levemente cordada, margen entero a levemente ondulado. Lámina glabra a levemente pubescente en envés, textura subcoriácea, nervación pinnada prominente. Haz verde oscuro brillante, envés más claro.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Espigas terminales o axilares, erectas o péndulas, color blanco a blanco verdoso. Flores pequeñas, hermafroditas o funcionalmente unisexuales, con perianto de 5 tépalos fusionados en la base. Polinización principalmente anemófila (viento), con posible atracción de insectos oportunistas.</div>
+                <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Aquenio triangulado (característico de Polygonaceae), envuelto por perianto carnoso y brillante que se vuelve comestible al madurar. Frutos agrupados en espigas densas que <strong>asemejan una mazorca de maíz tostado</strong>. Color: verde (inmaduro) → rojo coral brillante (maduro). Semillas pequeñas, con testa dura. Dispersión: anemocoria + zoocoria (aves, mamíferos).</div>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>📌 Nota metodológica:</strong> La presencia de <strong>ócreas</strong> (estructuras tubulares membranosas que envuelven cada nudo del tallo) es el rasgo morfológico más característico que permite identificar en campo a cualquier planta de la familia Polygonaceae, incluyendo a <em>Coccoloba acuminata</em>. Ninguna otra familia de plantas vasculares presenta este carácter.
+            </div>
+        `,
+        fauna: `
+            <div class="grid2 mt-3">
+                <div class="metric-card"><div class="metric-label">🦜 Aves frugívoras</div><div class="section-val text-sm mt-2">Tangaras, manakins, palomas silvestres (<em>Columbidae</em> spp.). Consumo de frutos maduros; dispersión de semillas.</div></div>
+                <div class="metric-card"><div class="metric-label">🐒 Primates</div><div class="section-val text-sm mt-2"><em>Cebus apella</em>, <em>Saimiri</em> spp. Consumo de frutos en racimo en bosques de galería.</div></div>
+                <div class="metric-card"><div class="metric-label">🦇 Murciélagos frugívoros</div><div class="section-val text-sm mt-2"><em>Artibeus</em> spp., <em>Carollia</em> spp. Consumo nocturno de frutos; dispersión de semillas en bosques de galería llaneros.</div></div>
+                <div class="metric-card"><div class="metric-label">🦌 Venado cola blanca</div><div class="section-val text-sm mt-2"><em>Odocoileus virginianus</em>. Consumo de frutos caídos en sotobosque.</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Abejas y avispas</div><div class="section-val text-sm mt-2">Varios géneros. Néctar floral; polinizadores ocasionales (polinización principalmente anemófila).</div></div>
+                <div class="metric-card"><div class="metric-label">🦋 Mariposas neotropicales</div><div class="section-val text-sm mt-2">Varios géneros. Néctar de flores blancas en espigas.</div></div>
+                <div class="metric-card"><div class="metric-label">🐛 Herbívoros foliares</div><div class="section-val text-sm mt-2">Insectos diversos. Consumo de hojas jóvenes.</div></div>
+                <div class="metric-card"><div class="metric-label">🐜 Hormigas</div><div class="section-val text-sm mt-2">Varios géneros. Dispersoras de semillas (mirmecoria).</div></div>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>🔬 Nota ecológica:</strong> El género <em>Coccoloba</em> presenta asociaciones con macrohongos micorrícicos (Amanitaceae, Russulaceae, Boletaceae), documentadas para <em>C. uvifera</em>. Estas asociaciones pueden tener implicaciones en la absorción de nutrientes en suelos pobres de la sabana llanera. La dispersión de semillas por aves (ornitocoria) es posiblemente el principal mecanismo de regeneración natural en bosques de galería.
+            </div>
+        `,
+        usos: `
+            <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+                <div><strong style="color:var(--secondary-color);">🍇 Alimentación — Uso Más Registrado:</strong> El uso alimentario de <em>Coccoloba acuminata</em> es el más documentado y verificado. Los frutos maduros son carnosos, de sabor variable entre dulce y ligeramente astringente, y son consumidos: frescos, en mermeladas, en postres artesanales. Este uso está registrado en el <strong>ColPlantA (2021)</strong> de la Universidad Nacional, que confirma el uso "para alimentación" como uno de los dos usos principales. En comunidades llaneras y ribereñas del Meta y Casanare, la planta es conocida como fuente de frutos silvestres de temporada, apreciados especialmente por niños y recolectores.</div>
+                <div><strong style="color:var(--secondary-color);">💊 Medicina Tradicional:</strong> El ColPlantA (2021) confirma el uso medicinal de <em>C. acuminata</em>, aunque sin detallar aplicaciones específicas. Extrapolando del conocimiento etnobotánico del género en el Neotrópico: <strong>Cocimiento de la corteza:</strong> antidiarreico y astringente gastrointestinal (por taninos); <strong>Infusión de hojas:</strong> febrífugo y alivio de malestares respiratorios leves; <strong>Aplicación tópica de la corteza:</strong> en heridas superficiales por propiedades hemostáticas; <strong>Fruto fresco:</strong> para aliviar sed y como alimento de subsistencia en jornadas de campo. ⚠️ <em>Nota de integridad:</em> Los usos medicinales son inferidos del patrón del género en literatura etnobotánica neotropical. El ColPlantA solo confirma "medical uses" sin especificar. Se recomienda consulta directa con curanderos y sabedores tradicionales (raizaleros) de Maní para documentar usos locales específicos.</div>
+                <div><strong style="color:var(--secondary-color);">🌳 Usos Ornamentales y Agroforestales:</strong> Árbol o arbusto ornamental en jardines y parques de zonas tropicales; árbol de sombrío liviano en sistemas silvopastoriles de baja densidad; especie nodal para fauna en corredores biológicos en bordes de bosques de galería; elemento de revegetalización en márgenes de caños y quebradas del llano; especie centinela de biodiversidad en inventarios forestales.</div>
+                <div><strong style="color:var(--secondary-color);">🪵 Madera y Artesanía:</strong> Aunque no es de uso maderable comercial significativo por su porte predominantemente arbustivo, la madera de individuos adultos puede emplearse en: herramientas y utensilios menores de uso doméstico (mangos, palancas); leña y carbón vegetal de uso doméstico (densidad media-alta = buen poder calorífico); artesanía de pequeño formato (torneado, marquetería).</div>
+            </div>
+        `,
+        mensaje_ia: `> 🍇 **Soy el Maíz Tostado... y tengo un secreto que te va a sorprender**
+>
+> Me llamo *Coccoloba acuminata*, pero en el llano y en los pueblos me dicen Maíz Tostado o Uva de Coral. No me ofende ninguno de los dos nombres, porque tienen razón: cuando estoy cargado de frutos maduros, mis ramas se llenan de racimos de color rojo brillante que parecen pequeñas uvas de coral, y cuando están agrupados en espiga, recuerdan una mazorca de maíz que alguien tostó al fuego. Vivo aquí, en los bordes de los caños y bosques de galería de la Orinoquía, donde el agua y la tierra se encuentran.
+>
+> Pertenezco a la familia Polygonaceae —la misma de las espinacas y el alforfón— y tengo un sello secreto en cada nudo de mis tallos: unas pequeñas bolsitas de papel llamadas **ócreas**, que son como diminutas bufandas que abrazan mis ramas. Ninguna otra familia de plantas tiene esas ócreas. Si algún día encuentras en el monte un arbusto con esas bolsitas en los nudos, ya sabes que es un pariente mío. Mis hojas tienen puntas muy afiladas y alargadas, por eso los botánicos me pusieron el apellido *acuminata*, que en latín significa "con punta aguda".
+>
+> 🔬 **La curiosidad que te dejará sin palabras**: ¿Sabías que mis frutos se dispersan principalmente por el viento? Soy diferente a muchos árboles del llano: mis pequeñas semillas están envueltas en un perianto carnoso que también puede atrapar aire y planear cortas distancias. ¡Pero cuando las aves y los murciélagos se comen mis frutos, yo viajo mucho más lejos sin gastar ni un gramo de energía! Eso se llama **doble estrategia de dispersión**. Soy el viajero con dos modos de transporte del bosque llanero. 🌬️🦇`,
+        referencias: [
+            "Álvarez, E., Benítez, D., Velásquez, C., & Cogollo, Á. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. Forest Ecology and Management, 267, 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+            "Bachman, S. P., Brown, M. J. M., Leão, T. C. C., Lughadha, E. N., & Walker, B. E. (2024). Extinction risk predictions for the world's flowering plants to support their conservation. New Phytologist, 242(2), 679–691. https://doi.org/10.1111/nph.19592",
+            "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2017). Nombres comunes de las plantas de Colombia. Universidad Nacional de Colombia, Instituto de Ciencias Naturales. http://www.biovirtual.unal.edu.co/nombrescomunes/",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015, actualizado 2022). Catálogo de plantas y líquenes de Colombia. Instituto de Ciencias Naturales, Universidad Nacional de Colombia, Bogotá. Entrada: Coccoloba acuminata Kunth. http://catalogoplantasdecolombia.unal.edu.co",
+            "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2020). Catálogo de plantas y líquenes de Colombia (v1.1) [Dataset/Checklist]. Universidad Nacional de Colombia. https://doi.org/10.15472/7avdhn",
+            "Catálogo de Flora del Valle de Aburrá – EIA. (2023). Coccoloba acuminata Kunth: Maíz tostao. Ficha de especie #86. Universidad EIA. http://catalogofloravalleaburra.eia.edu.co/species/86",
+            "Chave, J., Réjou-Méchain, M., Búrquez, A., Chidumayo, E., Colgan, M. S., Delitti, W. B. C., Duque, A., Eid, T., Fearnside, P. M., Goodman, R. C., Henry, M., Martínez-Yrízar, A., Mugasha, W. A., Muller-Landau, H. C., Mencuccini, M., Nelson, B. W., Ngomanda, A., Nogueira, E. M., Ortiz-Malavassi, E., … Vieilledent, G. (2014). Improved allometric models to estimate the aboveground biomass of tropical trees. Global Change Biology, 20(10), 3177–3190. https://doi.org/10.1111/gcb.12629",
+            "Diazgranados, M., Allkin, B., Black, N., Cámara-Leret, R., Canteiro, C., Carretero, J., Eastwood, R., Hargreaves, S., Hudson, A., Milliken, W., Nesbitt, M., Ondo, I., Patmore, K., Pironon, S., Turner, R., & Ulian, T. (2020). World Checklist of Useful Plant Species. Royal Botanic Gardens, Kew. Recuperado vía GBIF Knowledge Network for Biocomplexity.",
+            "García Castro, N. J. (2011). Plantas nativas empleadas en alimentación en Colombia. Instituto de Investigaciones Biológicas Alexander von Humboldt, Bogotá. [Documento impreso, repositorio IAvH]",
+            "Global Biodiversity Information Facility – GBIF. (2023). Coccoloba acuminata Kunth. Taxon ID: 7291417. GBIF Secretariat, Copenhagen. https://www.gbif.org/species/7291417",
+            "Plants of the World Online – Kew Science. (2026). Coccoloba acuminata Kunth. Royal Botanic Gardens, Kew. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:693560-1",
+            "Useful Plants of Colombia – ColPlantA. (2021). Coccoloba acuminata Kunth: General information, uses and distribution. http://colplanta.org/taxon/urn:lsid:ipni.org:names:693560-1/general-information"
+        ],
+        quiz: [
+            { q: "¿Cuál es el rasgo morfológico más característico que permite identificar en campo a cualquier planta de la familia Polygonaceae, incluyendo a Coccoloba acuminata?", opts: ["Flores de color azul con cinco pétalos soldados en forma de campana", "Hojas compuestas pinnadas con folíolos opuestos y estípulas espinosas", "Presencia de ócreas: estructuras tubulares membranosas que envuelven cada nudo del tallo", "Látex blanco lechoso visible al cortar cualquier parte de la planta"], correct: 2 },
+            { q: "Según el Catálogo de Plantas Útiles de Colombia (ColPlantA, 2021), ¿cuáles son los DOS usos principales documentados para Coccoloba acuminata?", opts: ["Madera estructural y forraje para ganado bovino", "Tinte natural para textiles y producción de aceite vegetal", "Medicina tradicional y alimentación (frutos comestibles)", "Control de erosión costera y fabricación de cuerdas"], correct: 2 },
+            { q: "¿Cuál es el rango altitudinal documentado para Coccoloba acuminata en Colombia, y a qué regiones biogeográficas colombianas está restringida su distribución verificada?", opts: ["0–3.000 m; presente en Andes, Amazonia y Orinoquía", "500–2.000 m; exclusiva de la región Andina y el Macizo Colombiano", "0–500 m; Llanura del Caribe, Orinoquía, Pacífico y Valle del Magdalena", "1.000–3.500 m; paramos y bosques altoandinos de Boyacá y Cundinamarca"], correct: 2 },
+            { q: "¿Qué estrategia de dispersión de semillas utiliza Coccoloba acuminata que la hace particularmente exitosa en bosques de galería de la Orinoquía?", opts: ["Solo dispersión por viento (anemocoria)", "Solo dispersión por agua (hidrocoria)", "Doble estrategia: anemocoria (viento) + zoocoria (aves y murciélagos)", "Solo dispersión por hormigas (mirmecoria)"], correct: 2 }
+        ]
     }
 };
