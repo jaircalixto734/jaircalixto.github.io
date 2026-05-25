@@ -2,11 +2,18 @@ const baseDatosArboles = {
     "merecure": {
         id: "#JBP-01", tipo: "Nativo", nombre: "Merecure", cientifico: "Moquilea pyrifolia (Griseb.) R.O.Williams",
         familia: "Chrysobalanaceae", origen: "Nativo Orinoquía — Llanos colombo-venezolanos", estado: "LC — Preocupación Menor (UICN: No Evaluada en Colombia)", exotica: false,
-        carbono: 215.4, viajes: 78, imagen_portada: "./imagenes/colegio1.jpeg",
+        carbono: 215.4, viajes: 78, imagen_portada: "./imagenes/merecure1.jpeg",
         galeria: [
             { img: "./imagenes/merecure1.jpeg", desc: "Imagen Merecure" },
+            { img: "./imagenes/merecures.jpeg", desc: "Varios Merecures" },
             { img: "./imagenes/merecure2.jpeg", desc: "Corteza del árbol" },
-            { img: "./imagenes/merecure3.jpeg", desc: "Vista inferior" }
+            { img: "./imagenes/merecure3.jpeg", desc: "Vista inferior" },
+            { img: "./imagenes/merecure4.jpeg", desc: "Hojas" },
+            { img: "./imagenes/merecure5.jpeg", desc: "Corteza" },
+            { img: "./imagenes/merecure6.jpeg", desc: "Fruto Seco" },
+            { img: "./imagenes/merecure7.jpeg", desc: "Flores" },
+            { img: "./imagenes/merecure8.jpeg", desc: "Frutos" },
+            { img: "./imagenes/merecure9.jpeg", desc: "Tronco" }
         ],
         nombresLocales: ["Merecure", "Querebere", "Merecurito (juveniles)", "Árbol del Llano", "Merecure plateado"],
         distribucion: `
@@ -539,10 +546,13 @@ Cada año, cuando llega el verano llanero, me visto de rojo y anaranjado antes d
     "pomarrosa": {
         id: "#JBP-05", tipo: "Exótica Introducida", nombre: "Pomarrosa", cientifico: "Syzygium jambos (L.) Alston",
         familia: "Myrtaceae", origen: "Exótico — Sudeste Asiático (archipiélago malayo). Naturalizada en Colombia", estado: "LC — Preocupación Menor (UICN 2019)", exotica: true,
-        carbono: 142.5, viajes: 52, imagen_portada: "./imagenes/colegio2.jpeg",
+        carbono: 142.5, viajes: 52, imagen_portada: "./imagenes/pomarrosa1.jpeg",
         galeria: [
-            { img: "./imagenes/colegio2.jpeg", desc: "Arbolado de pomarrosa y guaduas en el patio escolar del colegio JBP" },
-            { img: "./imagenes/colegio2.jpeg", desc: "Flores en corimbos terminales con estambres largos formando 'pompones' blancos" }
+            { img: "./imagenes/pomarrosa1.jpeg", desc: "Árbol Completo" },
+            { img: "./imagenes/pomarrosa3.jpeg", desc: "Vista inferior" },
+            { img: "./imagenes/pomarrosa4.jpeg", desc: "Corteza" },
+            { img: "./imagenes/pomarrosa5.jpeg", desc: "Hojas" },
+            { img: "./imagenes/pomarrosa6.jpeg", desc: "Frutos" }
         ],
         nombresLocales: ["Pomarroso", "Poma", "Pero de Agua", "Pomarrosa", "Perita", "Pumalaca (Venezuela)", "Jambo (Brasil)", "Rose apple (Inglés)", "Malabar plum", "Almendro de la India"],
         distribucion: `
@@ -668,11 +678,15 @@ Cada año, cuando llega el verano llanero, me visto de rojo y anaranjado antes d
     "palma_areca": {
         id: "#JBP-06", tipo: "Ornamental", nombre: "Palma Areca", cientifico: "Dypsis lutescens (H.Wendl.) Beentje & J.Dransf.",
         familia: "Arecaceae", origen: "Exótico (Madagascar)", estado: "EN — En Peligro (UICN: Hábitat Natural) / No Evaluada en Colombia", exotica: true,
-        carbono: 45.2, viajes: 15, imagen_portada: "./imagenes/areca1.jpg",
+        carbono: 45.2, viajes: 15, imagen_portada: "./imagenes/areca1.jpeg",
         galeria: [
-            { img: "./imagenes/areca1.jpg", desc: "Porte multicaule cespitoso con estipes anillados dorados al sol" },
-            { img: "./imagenes/areca2.jpg", desc: "Frutos drupas amarillo-dorados en madurez ('frutos de oro')" },
-            { img: "./imagenes/areca3.jpg", desc: "Hojas pinnadas arqueadas con raquis y pecíolos amarillo-dorados característicos" }
+            { img: "./imagenes/areca1.jpeg", desc: "Palma Completa" },
+            { img: "./imagenes/areca2.jpeg", desc: "Palma Completa" },
+            { img: "./imagenes/areca3.jpeg", desc: "Hojas" },
+            { img: "./imagenes/areca4.jpeg", desc: "Frutas" },
+            { img: "./imagenes/areca5.jpeg", desc: "Vista inferior" },
+            { img: "./imagenes/areca6.jpeg", desc: "Corteza Palma" },
+            { img: "./imagenes/areca7.jpeg", desc: "Frutas" }
         ],
         nombresLocales: ["Palma Areca", "Palmera Bambú", "Palma de Frutos de Oro", "Palma Mariposa", "Palma Dorada", "Butterfly Palm (EN)", "Golden Feather Palm (EN)"],
         distribucion: `
@@ -828,10 +842,13 @@ Tengo un superpoder que muy pocas plantas del jardín poseen: soy una <strong>m�
     "caracaro": {
         id: "#JBP-07", tipo: "Nativo / Sombra", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
         familia: "Fabaceae (Leguminosas)", origen: "Nativo Neotrópico", estado: "Preocupación Menor (LC)", exotica: false,
-        carbono: 450.5, viajes: 165, imagen_portada: "./imagenes/caracaro1.jpg",
+        carbono: 450.5, viajes: 165, imagen_portada: "./imagenes/caracaro1.jpeg",
         galeria: [
-            { img: "./imagenes/caracaro1.jpg", desc: "Fruto en forma de oreja humana" },
-            { img: "./imagenes/caracaro2.jpg", desc: "Gran copa aparasolada del Caracaro en potrero" }
+            { img: "./imagenes/caracaro1.jpeg", desc: "" },
+            { img: "./imagenes/caracaro2.jpeg", desc: "" },
+            { img: "./imagenes/caracaro3.jpeg", desc: "Vista inferior" },
+            { img: "./imagenes/caracaro4.jpeg", desc: "Vista inferior" },
+            { img: "./imagenes/caracaro5.jpeg", desc: "Vista inferior" }
         ],
         nombresLocales: ["Caracaro", "Orejero", "Piñón de oreja", "Caro", "Hueso de pescado", "Guanacaste", "Jaboncillo", "Dormilón", "Caracaro del potrero"],
         distribucion: `
@@ -1041,9 +1058,12 @@ Tengo un superpoder que muy pocas plantas del jardín poseen: soy una <strong>m�
     "palma-de-coco": {
         id: "#JBP-10", tipo: "Introducido", nombre: "Palma de Coco", cientifico: "Cocos nucifera L.",
         familia: "Arecaceae", origen: "Indo-Pacífico (Exótica introducida)", estado: "No Evaluada / LC global", exotica: true,
-        carbono: 85.2, viajes: 0, imagen_portada: "./imagenes/desconocido.jpg",
+        carbono: 85.2, viajes: 0, imagen_portada: "./imagenes/coco1.jpeg",
         galeria: [
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo - Cocotero en patio de Maní" }
+            { img: "./imagenes/coco1.jpeg", desc: "Palma Completa" },
+            { img: "./imagenes/coco2.jpeg", desc: "Cocos" },
+            { img: "./imagenes/coco3.jpeg", desc: "Tronco" },
+            { img: "./imagenes/coco4.jpeg", desc: "Vista Inferior" }
         ],
         nombresLocales: ["Palma de coco", "Cocotero", "Coquera", "Coquero", "Palo de coco", "Mata de coco", "Coco caballero", "Árbol de la vida", "Árbol de los mil usos", "Coconut palm (EN)"],
         distribucion: `
@@ -1315,9 +1335,15 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     "guacimo": {
         id: "#JBP-12", tipo: "Nativo", nombre: "Guácimo / Guásimo", cientifico: "Guazuma ulmifolia Lam.",
         familia: "Malvaceae", origen: "Nativa", estado: "Preocupación Menor (LC)", exotica: false,
-        carbono: 85.0, viajes: 0, imagen_portada: "./imagenes/desconocido.jpg",
+        carbono: 85.0, viajes: 0, imagen_portada: "./imagenes/guacimo7.jpeg",
         galeria: [
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo" }
+            { img: "./imagenes/guacimo7.jpeg", desc: "Árbol completo" },
+            { img: "./imagenes/guacimo1.jpeg", desc: "Hojas" },
+            { img: "./imagenes/guacimo2.jpeg", desc: "Flores secas" },
+            { img: "./imagenes/guacimo3.jpeg", desc: "Tronco" },
+            { img: "./imagenes/guacimo4.jpeg", desc: "Vista árbol" },
+            { img: "./imagenes/guacimo5.jpeg", desc: "Frutos" },
+            { img: "./imagenes/guacimo6.jpeg", desc: "" }
         ],
         nombresLocales: ["Guácimo", "Guásimo", "Caulote", "Mutamba"],
         distribucion: `
@@ -1370,9 +1396,14 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     "gualanday": {
         id: "#JBP-13", tipo: "Nativo", nombre: "Gualanday / Acacia", cientifico: "Jacaranda obtusifolia Bonpl.",
         familia: "Bignoniaceae", origen: "Nativa", estado: "Preocupación Menor (LC)", exotica: false,
-        carbono: 120.0, viajes: 0, imagen_portada: "./imagenes/desconocido.jpg",
+        carbono: 120.0, viajes: 0, imagen_portada: "./imagenes/gualanday1.jpeg",
         galeria: [
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo" }
+            { img: "./imagenes/gualanday1.jpeg", desc: "Árbol Completo" },
+            { img: "./imagenes/gualanday2.jpeg", desc: "Hojas" },
+            { img: "./imagenes/gualanday3.jpeg", desc: "Fruto" },
+            { img: "./imagenes/gualanday4.jpeg", desc: "Tronco" },
+            { img: "./imagenes/gualanday5.jpeg", desc: "Vista Inferior" },
+            { img: "./imagenes/gualanday6.jpeg", desc: "Flores" }
         ],
         nombresLocales: ["Gualanday", "Acacia morada", "Guayacán morado", "Jacaranda"],
         distribucion: `
@@ -1425,9 +1456,12 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     "oiti": {
         id: "#JBP-14", tipo: "Introducido", nombre: "Oití / Oiticica", cientifico: "Licania tomentosa (Benth.) Fritsch",
         familia: "Chrysobalanaceae", origen: "Introducida (Brasil)", estado: "Preocupación Menor (LC)", exotica: true,
-        carbono: 180.0, viajes: 0, imagen_portada: "./imagenes/desconocido.jpg",
+        carbono: 180.0, viajes: 0, imagen_portada: "./imagenes/oiti1.jpeg",
         galeria: [
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo" }
+            { img: "./imagenes/oiti1.jpeg", desc: "" },
+            { img: "./imagenes/oiti2.jpeg", desc: "" },
+            { img: "./imagenes/oiti3.jpeg", desc: "" },
+            { img: "./imagenes/oiti4.jpeg", desc: "" }
         ],
         nombresLocales: ["Oití", "Oiticica", "Licania"],
         distribucion: `
@@ -1535,9 +1569,13 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     "palma-real": {
         id: "#JBP-16", tipo: "Introducido", nombre: "Palma Real / Chaguaramo", cientifico: "Roystonea regia (Kunth) O.F.Cook",
         familia: "Arecaceae", origen: "Introducida (Caribe)", estado: "Preocupación Menor (LC)", exotica: true,
-        carbono: 135.0, viajes: 0, imagen_portada: "./imagenes/desconocido.jpg",
+        carbono: 135.0, viajes: 0, imagen_portada: "./imagenes/real1.jpeg",
         galeria: [
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo" }
+            { img: "./imagenes/real1.jpeg", desc: "Palmas Reales" },
+            { img: "./imagenes/real2.jpeg", desc: "Parte Supeior" },
+            { img: "./imagenes/real3.jpeg", desc: "Parte Superior Zoom" },
+            { img: "./imagenes/real4.jpeg", desc: "Tronco" },
+            { img: "./imagenes/real5.jpeg", desc: "Vista Inferior" }
         ],
         nombresLocales: ["Palma real", "Chaguaramo", "Palmera real"],
         distribucion: `
@@ -1645,11 +1683,13 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     "mango": {
         id: "#JBP-8", tipo: "Introducido", nombre: "Mango", cientifico: "Mangifera indica L.",
         familia: "Anacardiaceae", origen: "Norte de India y Myanmar (Exótica introducida)", estado: "LC — Preocupación Menor (UICN) / No Evaluada en Colombia", exotica: true,
-        carbono: 185.4, viajes: 62, imagen_portada: "./imagenes/desconocido.jpg",
+        carbono: 185.4, viajes: 62, imagen_portada: "./imagenes/mango1.jpeg",
         galeria: [
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo - Mango en predio rural de Maní" },
-            { img: "./imagenes/desconocido.jpg", desc: "Frutos maduros de mango criollo en cosecha (abril-mayo)" },
-            { img: "./imagenes/desconocido.jpg", desc: "Panícula floral piramidal con flores aromáticas en época seca" }
+            { img: "./imagenes/mango1.jpeg", desc: "Árbol Completo" },
+            { img: "./imagenes/mango2.jpeg", desc: "Corteza" },
+            { img: "./imagenes/mango3.jpeg", desc: "Vista Inferior" },
+            { img: "./imagenes/mango4.jpeg", desc: "Hojas" },
+            { img: "./imagenes/mango5.jpeg", desc: "Fruto: Mango" }
         ],
         nombresLocales: ["Mango", "Mango criollo", "Palo de mango", "Melocotón de los trópicos", "Mango de azúcar", "Mango de hilacha", "Mango de burro", "Bocado (Venezuela)", "Mango manzano", "Common mango (EN)", "Manga (PT)", "Mangue (FR)"],
         distribucion: `
@@ -1840,7 +1880,7 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
         ]
     },
     "trompillo": {
-        id: "#JBP-04", tipo: "Nativo", nombre: "Trompillo", cientifico: "Guarea guidonia (L.) Sleumer",
+        id: "#JBP-11", tipo: "Nativo", nombre: "Trompillo", cientifico: "Guarea guidonia (L.) Sleumer",
         familia: "Meliaceae", origen: "Nativa Neotrópico", estado: "Preocupación Menor (LC)", exotica: false,
         carbono: 185.3, viajes: 62, imagen_portada: "./imagenes/colegio1.jpeg",
         galeria: [
@@ -1958,12 +1998,14 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
         ]
     },
     "oiti": {
-        id: "#JBP-04", tipo: "Introducida", nombre: "Oití", cientifico: "Licania tomentosa (Benth.) Fritsch",
+        id: "#JBP-14", tipo: "Introducida", nombre: "Oití", cientifico: "Licania tomentosa (Benth.) Fritsch",
         familia: "Chrysobalanaceae", origen: "Exótica (Brasil - Mata Atlántica/Cerrado)", estado: "Preocupación Menor (LC) - Introducida", exotica: true,
-        carbono: 185.3, viajes: 42, imagen_portada: "./imagenes/colegio1.jpeg",
+        carbono: 185.3, viajes: 42, imagen_portada: "./imagenes/oiti1.jpeg",
         galeria: [
-            { img: "./imagenes/colegio1.jpeg", desc: "Oití adulto en arborización urbana, mostrando su copa globosa densa" },
-            { img: "./imagenes/foto2.jpeg", desc: "Detalle del envés tomentoso blanquecino característico de las hojas" }
+            { img: "./imagenes/oiti1.jpeg", desc: "Árbol Completo" },
+            { img: "./imagenes/oiti2.jpeg", desc: "Hojas" },
+            { img: "./imagenes/oiti3.jpeg", desc: "Vista Interior" },
+            { img: "./imagenes/oiti4.jpeg", desc: "Vista Interior" }
         ],
         nombresLocales: ["Oití", "Oitizeiro", "Matapalos llanero", "Árbol de sombra", "Árbol Oficial de Cúcuta"],
         distribucion: `
@@ -2075,12 +2117,15 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
         ]
     },
     "noni": {
-        id: "#JBP-05", tipo: "Exótica Naturalizada", nombre: "Noni", cientifico: "Morinda citrifolia L.",
+        id: "#JBP-15", tipo: "Exótica Naturalizada", nombre: "Noni", cientifico: "Morinda citrifolia L.",
         familia: "Rubiaceae", origen: "Exótica (Sureste Asiático – Australasia)", estado: "Preocupación Menor (LC) / Naturalizada", exotica: true,
-        carbono: 45.2, viajes: 120, imagen_portada: "./imagenes/colegio1.jpeg",
+        carbono: 45.2, viajes: 120, imagen_portada: "./imagenes/noni1.jpeg",
         galeria: [
-            { img: "./imagenes/colegio1.jpeg", desc: "Árbol de Noni con frutos maduros blancos característicos" },
-            { img: "./imagenes/foto2.jpeg", desc: "Hojas grandes brillantes opuestas decusadas y flores blancas en cabezuelas" }
+            { img: "./imagenes/noni1.jpeg", desc: "Árbol Completo" },
+            { img: "./imagenes/noni2.jpeg", desc: "Vista" },
+            { img: "./imagenes/noni3.jpeg", desc: "Vista" },
+            { img: "./imagenes/noni4.jpeg", desc: "Fruta" },
+            { img: "./imagenes/noni5.jpeg", desc: "Árbol Completo" },           
         ],
         nombresLocales: ["Noni", "Mora de la India", "Guanábana Cimarrona", "Fruta del Diablo", "Fruta del Queso", "Indian Mulberry"],
         distribucion: `
@@ -2184,13 +2229,15 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
         ]
     },
     "caracaro": {
-        id: "#JBP-18", tipo: "Nativo", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
+        id: "#JBP-07", tipo: "Nativo", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
         familia: "Fabaceae", origen: "Nativo Neotrópico (México–Sudamérica)", estado: "LC — Preocupación Menor (UICN)", exotica: false,
         carbono: 285.6, viajes: 92, imagen_portada: "./imagenes/colegio1.jpeg",
         galeria: [
-            { img: "./imagenes/colegio1.jpeg", desc: "Caracaro adulto en potrero llanero con su característica copa hemisférica" },
-            { img: "./imagenes/foto2.jpeg", desc: "Frutos en forma de oreja — vainas circulares indehiscentes" },
-            { img: "./imagenes/foto3.jpeg", desc: "Flores blancas plumosas en cabezuelas globosas axilares" }
+            { img: "./imagenes/caracaro1.jpeg", desc: "Árbol Completo" },
+            { img: "./imagenes/caracaro2.jpeg", desc: "Hojas" },
+            { img: "./imagenes/caracaro3.jpeg", desc: "Hojas" },
+            { img: "./imagenes/caracaro4.jpeg", desc: "Corteza y Tronco" },
+            { img: "./imagenes/caracaro5.jpeg", desc: "Vista inferior" }
         ],
         nombresLocales: ["Caracaro", "Orejero", "Piñón de oreja", "Carito", "Caro", "Orejo", "Orejón", "Dormilón", "Árbol de oreja", "Jaboncillo", "Guarano blanco", "Caracaro del Potrero", "Guanacaste (CR)"],
         distribucion: `
@@ -2331,7 +2378,7 @@ Mis raíces guardan un secreto increíble: dentro de pequeños nódulos, viven b
         ]
     },
     "maiz_tostado": {
-        id: "#JBP-08", tipo: "Nativo", nombre: "Maíz Tostado", cientifico: "Coccoloba acuminata Kunth",
+        id: "#JBP-09", tipo: "Nativo", nombre: "Maíz Tostado", cientifico: "Coccoloba acuminata Kunth",
         familia: "Polygonaceae", origen: "Nativa Neotrópico — México SE a Sudamérica. Nativa de Colombia", estado: "LC — Preocupación Menor (UICN 2021)", exotica: false,
         carbono: 85.3, viajes: 42, imagen_portada: "./imagenes/colegio1.jpeg",
         galeria: [
@@ -2445,7 +2492,8 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
             <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
                 <div><strong style="color:var(--secondary-color);">🍇 Alimentación — Uso Más Registrado:</strong> El uso alimentario de <em>Coccoloba acuminata</em> es el más documentado y verificado. Los frutos maduros son carnosos, de sabor variable entre dulce y ligeramente astringente, y son consumidos: frescos, en mermeladas, en postres artesanales. Este uso está registrado en el <strong>ColPlantA (2021)</strong> de la Universidad Nacional, que confirma el uso "para alimentación" como uno de los dos usos principales. En comunidades llaneras y ribereñas del Meta y Casanare, la planta es conocida como fuente de frutos silvestres de temporada, apreciados especialmente por niños y recolectores.</div>
                 <div><strong style="color:var(--secondary-color);">💊 Medicina Tradicional:</strong> El ColPlantA (2021) confirma el uso medicinal de <em>C. acuminata</em>, aunque sin detallar aplicaciones específicas. Extrapolando del conocimiento etnobotánico del género en el Neotrópico: <strong>Cocimiento de la corteza:</strong> antidiarreico y astringente gastrointestinal (por taninos); <strong>Infusión de hojas:</strong> febrífugo y alivio de malestares respiratorios leves; <strong>Aplicación tópica de la corteza:</strong> en heridas superficiales por propiedades hemostáticas; <strong>Fruto fresco:</strong> para aliviar sed y como alimento de subsistencia en jornadas de campo. ⚠️ <em>Nota de integridad:</em> Los usos medicinales son inferidos del patrón del género en literatura etnobotánica neotropical. El ColPlantA solo confirma "medical uses" sin especificar. Se recomienda consulta directa con curanderos y sabedores tradicionales (raizaleros) de Maní para documentar usos locales específicos.</div>
-                <div><strong style="color:var(--secondary-color);">🌳 Usos Ornamentales y Agroforestales:</strong> Árbol o arbusto ornamental en jardines y parques de zonas tropicales; árbol de sombrío liviano en sistemas silvopastoriles de baja densidad; especie nodal para fauna en corredores biológicos en bordes de bosques de galería; elemento de revegetalización en márgenes de caños y quebradas del llano; especie centinela de biodiversidad en inventarios forestales.</div>
+                <div><strong style="color:var(--secondary-color);">🌳 Usos Ornamentales y A
+                groforestales:</strong> Árbol o arbusto ornamental en jardines y parques de zonas tropicales; árbol de sombrío liviano en sistemas silvopastoriles de baja densidad; especie nodal para fauna en corredores biológicos en bordes de bosques de galería; elemento de revegetalización en márgenes de caños y quebradas del llano; especie centinela de biodiversidad en inventarios forestales.</div>
                 <div><strong style="color:var(--secondary-color);">🪵 Madera y Artesanía:</strong> Aunque no es de uso maderable comercial significativo por su porte predominantemente arbustivo, la madera de individuos adultos puede emplearse en: herramientas y utensilios menores de uso doméstico (mangos, palancas); leña y carbón vegetal de uso doméstico (densidad media-alta = buen poder calorífico); artesanía de pequeño formato (torneado, marquetería).</div>
             </div>
         `,
