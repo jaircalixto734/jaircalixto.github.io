@@ -58,13 +58,16 @@ body {
    2. ANIMACIONES GLOBALES
    ============================================= */
 @keyframes carruselSuave {
-    0%, 12% { background-image: url('./imagenes/colegio1.jpeg'); }
-    14%, 26% { background-image: url('./imagenes/colegio2.jpeg'); }
-    28%, 40% { background-image: url('./imagenes/colegio3.jpeg'); }
-    42%, 54% { background-image: url('./imagenes/colegio4.jpeg'); }
-    56%, 68% { background-image: url('./imagenes/colegio5.jpeg'); }
-    70%, 82% { background-image: url('./imagenes/colegio6.jpeg'); }
-    84%, 100% { background-image: url('./imagenes/colegio7.jpeg'); }
+    0%, 10% { background-image: url('./imagenes/colegio1.jpeg'); }
+    11%, 20% { background-image: url('./imagenes/colegio2.jpeg'); }
+    21%, 30% { background-image: url('./imagenes/colegio3.jpeg'); }
+    31%, 40% { background-image: url('./imagenes/colegio4.jpeg'); }
+    41%, 50% { background-image: url('./imagenes/colegio5.jpeg'); }
+    51%, 60% { background-image: url('./imagenes/colegio6.jpeg'); }
+    61%, 70% { background-image: url('./imagenes/colegio7.jpeg'); }
+    71%, 80% { background-image: url('./imagenes/colegio8.jpeg'); }
+    81%, 90% { background-image: url('./imagenes/colegio9.jpeg'); }
+    91%, 100% { background-image: url('./imagenes/colegio10.jpeg'); }
 }
 
 @keyframes fadeInUp {
@@ -1104,13 +1107,16 @@ body.modo-noche .ai-input-wrapper {
    ============================================= */
 
 @keyframes carruselInventario {
-    0%, 12% { background-image: url('./imagenes/colegio1.jpeg'); }
-    14%, 26% { background-image: url('./imagenes/colegio2.jpeg'); }
-    28%, 40% { background-image: url('./imagenes/colegio3.jpeg'); }
-    42%, 54% { background-image: url('./imagenes/colegio4.jpeg'); }
-    56%, 68% { background-image: url('./imagenes/colegio5.jpeg'); }
-    70%, 82% { background-image: url('./imagenes/colegio6.jpeg'); }
-    84%, 100% { background-image: url('./imagenes/colegio7.jpeg'); }
+    0%, 10% { background-image: url('./imagenes/colegio1.jpeg'); }
+    11%, 20% { background-image: url('./imagenes/colegio2.jpeg'); }
+    21%, 30% { background-image: url('./imagenes/colegio3.jpeg'); }
+    31%, 40% { background-image: url('./imagenes/colegio4.jpeg'); }
+    41%, 50% { background-image: url('./imagenes/colegio5.jpeg'); }
+    51%, 60% { background-image: url('./imagenes/colegio6.jpeg'); }
+    61%, 70% { background-image: url('./imagenes/colegio7.jpeg'); }
+    71%, 80% { background-image: url('./imagenes/colegio8.jpeg'); }
+    81%, 90% { background-image: url('./imagenes/colegio9.jpeg'); }
+    91%, 100% { background-image: url('./imagenes/colegio10.jpeg'); }
 }
 
 /* Animación de entrada para las tarjetas al filtrar */
@@ -1125,7 +1131,7 @@ body.modo-noche .ai-input-wrapper {
     background-position: center;
     padding: 80px 20px 120px;
     text-align: center;
-    animation: carruselInventario 28s infinite ease-in-out;
+    animation: carruselInventario 50s infinite ease-in-out;
 }
 
 .inventory-overlay {
