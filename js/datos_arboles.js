@@ -139,10 +139,17 @@ const baseDatosArboles = {
         familia: "Myrtaceae", origen: "Exótica introducida — Indo-Malaya (subcontinente indio y Sudeste Asiático)", estado: "No Evaluada (NE) en Colombia / Globalmente no amenazada — Potencial invasor", exotica: true,
         carbono: 150.8, viajes: 55, imagen_portada: "./imagenes/Jambolán.jpeg",
         galeria: [
-            { img: "./imagenes/Jambolán.jpeg", desc: "Frutos maduros de Jambolán que tiñen la lengua de morado por antocianinas" },
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Copa globosa y densa con follaje perennifolio" },
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Racimos florales terminales con borlas blancas fragantes" },
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Hojas jóvenes con coloración rojizo-cobriza característica" }
+            { img: "./imagenes/Jambolán.jpeg", desc: "" },
+            { img: "./imagenes/jambolan1.jpeg", desc: "" },
+            { img: "./imagenes/jambolan2.jpeg", desc: "" },
+            { img: "./imagenes/jambolan3.jpeg", desc: "" },
+            { img: "./imagenes/jambolan4.jpeg", desc: "" },
+            { img: "./imagenes/jambolan5.jpeg", desc: "" },
+            { img: "./imagenes/jambolan6.jpeg", desc: "" },
+            { img: "./imagenes/jambolan7.jpeg", desc: "" },
+            { img: "./imagenes/jambolan8.jpeg", desc: "" },
+            { img: "./imagenes/jambolan9.jpeg", desc: "" }
+            
         ],
         nombresLocales: ["Uvito", "Jambolán", "Ciruela de Java", "Uva mora", "Guayabo Pesgua", "Java Plum", "Jamun", "Black Plum", "Malabar Plum"],
         distribucion: `
@@ -1461,7 +1468,10 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
             { img: "./imagenes/oiti1.jpeg", desc: "" },
             { img: "./imagenes/oiti2.jpeg", desc: "" },
             { img: "./imagenes/oiti3.jpeg", desc: "" },
-            { img: "./imagenes/oiti4.jpeg", desc: "" }
+            { img: "./imagenes/oiti4.jpeg", desc: "" },
+            { img: "./imagenes/oiti5.jpeg", desc: "" },
+            { img: "./imagenes/oiti6.jpeg", desc: "" },
+            { img: "./imagenes/oiti7.jpeg", desc: "" }
         ],
         nombresLocales: ["Oití", "Oiticica", "Licania"],
         distribucion: `
@@ -2005,7 +2015,11 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
             { img: "./imagenes/oiti1.jpeg", desc: "Árbol Completo" },
             { img: "./imagenes/oiti2.jpeg", desc: "Hojas" },
             { img: "./imagenes/oiti3.jpeg", desc: "Vista Interior" },
-            { img: "./imagenes/oiti4.jpeg", desc: "Vista Interior" }
+            { img: "./imagenes/oiti4.jpeg", desc: "Vista Interior" },
+            { img: "./imagenes/oiti5.jpeg", desc: "" },
+            { img: "./imagenes/oiti6.jpeg", desc: "" },
+            { img: "./imagenes/oiti7.jpeg", desc: "" },
+            { img: "./imagenes/oiti8.jpeg", desc: "" }
         ],
         nombresLocales: ["Oití", "Oitizeiro", "Matapalos llanero", "Árbol de sombra", "Árbol Oficial de Cúcuta"],
         distribucion: `
@@ -2672,7 +2686,7 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
             { q: "¿Cuál es el contenido de vitamina C del fruto de guayaba por cada 100 g de pulpa, y cómo se compara con la naranja?", opts: ["45 mg — aproximadamente la mitad que una naranja", "228 mg — aproximadamente 5 veces más que una naranja", "85 mg — aproximadamente igual que una naranja", "150 mg — aproximadamente 3 veces más que una naranja"], correct: 1 }
         ]
     },
-"flor morado": {
+"flor-morado": {
     id: "#JBP-18", tipo: "Nativo", nombre: "Flor Morado", cientifico: "Tabebuia rosea (Bertol.) DC.",
     familia: "Bignoniaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "NE — No Evaluada (UICN); sin restricción en Colombia", exotica: false,
     carbono: 0.479, viajes: 175, imagen_portada: "./imagenes/rosea1.jpeg",
@@ -2682,6 +2696,8 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
         { img: "./imagenes/rosea4.jpeg", desc: "Hojas" },
         { img: "./imagenes/rosea5.jpeg", desc: "Hojas" },
         { img: "./imagenes/rosea6.jpeg", desc: "Vista Inferior" },
+        { img: "./imagenes/rosea7.jpeg", desc: "" }
+        
     ],
     nombresLocales: ["Guayacán Rosado", "Flor Morado", "Ocobo", "Roble de Río", "Amapa", "Maquilishuat", "Pink Trumpet-tree"],
     distribucion: `
@@ -3186,14 +3202,10 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
     familia: "Apocynaceae", origen: "Noroeste de Sudamérica (prob. Perú) — Naturalizada en Orinoquía", estado: "LC — Preocupación Menor (UICN, 2021); exótica cultivada en Colombia", exotica: true,
     carbono: 0.142, viajes: 52, imagen_portada: "./imagenes/adelfa1.jpeg",
     galeria: [
-        { img: "./imagenes/adelfa_amarilla1.jpeg", desc: "Floración masiva amarilla en abril" },
-        { img: "./imagenes/adelfa_amarilla2.jpeg", desc: "Frutos característicos (forma de llanta achatada)" },
-        { img: "./imagenes/adelfa_amarilla3.jpeg", desc: "Hojas linear-lanceoladas, coriáceas" },
-        { img: "./imagenes/adelfa_amarilla4.jpeg", desc: "Látex blanco-lechoso al cortar tallo" },
-        { img: "./imagenes/adelfa_amarilla5.jpeg", desc: "Corteza grisácea con fisuras longitudinales" },
-        { img: "./imagenes/adelfa_amarilla6.jpeg", desc: "Semillas aplanadas (⚠️ altamente tóxicas)" },
-        { img: "./imagenes/adelfa_amarilla7.jpeg", desc: "Porte arbustivo en cerca viva" },
-        { img: "./imagenes/adelfa_amarilla8.jpeg", desc: "Detalle de flor torsa (pétalos torcidos)" }
+        { img: "./imagenes/adelfa1.jpeg", desc: "" },
+        { img: "./imagenes/adelfa2.jpeg", desc: "" },
+        { img: "./imagenes/adelfa3.jpeg", desc: "" },
+        { img: "./imagenes/adelfa4.jpeg", desc: "" }
     ],
     nombresLocales: ["Adelfa Amarilla", "Cabalonga", "Venenillo", "Campanilla Amarilla", "Haba de San Ignacio", "Amancay", "Codo de fraile"],
     distribucion: `
