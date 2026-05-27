@@ -2380,12 +2380,12 @@ Mis raíces guardan un secreto increíble: dentro de pequeños nódulos, viven b
     "maiz_tostado": {
         id: "#JBP-09", tipo: "Nativo", nombre: "Maíz Tostado", cientifico: "Coccoloba acuminata Kunth",
         familia: "Polygonaceae", origen: "Nativa Neotrópico — México SE a Sudamérica. Nativa de Colombia", estado: "LC — Preocupación Menor (UICN 2021)", exotica: false,
-        carbono: 85.3, viajes: 42, imagen_portada: "./imagenes/colegio1.jpeg",
+        carbono: 85.3, viajes: 42, imagen_portada: "./imagenes/tostado1.jpeg",
         galeria: [
-            { img: "./imagenes/colegio1.jpeg", desc: "Maíz Tostado en bosque de galería del JBP con frutos en espiga" },
-            { img: "./imagenes/foto2.jpeg", desc: "Espigas de frutos rojos coral que asemejan mazorca de maíz tostado" },
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Ócreas tubulares en nudos del tallo (rasgo distintivo Polygonaceae)" },
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Hojas ovadas con ápice marcadamente acuminado" }
+            { img: "./imagenes/tostado1.jpeg", desc: "" },
+            { img: "./imagenes/tostado2.jpeg", desc: "" },
+            { img: "./imagenes/tostado3.jpeg", desc: "" },
+            { img: "./imagenes/tostado4.jpeg", desc: "" }
         ],
         nombresLocales: ["Maíz Tostado", "Maíz tostao", "Uva de Coral", "Uva de Monte", "Uvero", "Uva silvestre", "Bejuco de uvero"],
         distribucion: `
@@ -2497,7 +2497,7 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
                 <div><strong style="color:var(--secondary-color);">🪵 Madera y Artesanía:</strong> Aunque no es de uso maderable comercial significativo por su porte predominantemente arbustivo, la madera de individuos adultos puede emplearse en: herramientas y utensilios menores de uso doméstico (mangos, palancas); leña y carbón vegetal de uso doméstico (densidad media-alta = buen poder calorífico); artesanía de pequeño formato (torneado, marquetería).</div>
             </div>
         `,
-        mensaje_ia: `> 🍇 Soy el Maíz Tostado... y tengo un secreto que te va a sorprender
+        mensajeIA: `> 🍇 Soy el Maíz Tostado... y tengo un secreto que te va a sorprender
 >
 > Me llamo Coccoloba acuminata, pero en el llano y en los pueblos me dicen Maíz Tostado o Uva de Coral. No me ofende ninguno de los dos nombres, porque tienen razón: cuando estoy cargado de frutos maduros, mis ramas se llenan de racimos de color rojo brillante que parecen pequeñas uvas de coral, y cuando están agrupados en espiga, recuerdan una mazorca de maíz que alguien tostó al fuego. Vivo aquí, en los bordes de los caños y bosques de galería de la Orinoquía, donde el agua y la tierra se encuentran.
 >
@@ -2526,18 +2526,16 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
         ]
     },
     "guayaba": {
-        id: "#JBP-21", tipo: "Nativo", nombre: "Guayaba", cientifico: "Psidium guajava L.",
+        id: "#JBP-20", tipo: "Nativo", nombre: "Guayaba", cientifico: "Psidium guajava L.",
         familia: "Myrtaceae", origen: "Nativa Neotrópico — México a Argentina, Caribe, Amazonia", estado: "NE — No Evaluada (UICN); Nativa cultivada sin amenaza en Colombia", exotica: false,
         carbono: 32.1, viajes: 45, imagen_portada: "./imagenes/guayaba1.jpeg",
         galeria: [
-            { img: "./imagenes/guayaba1.jpeg", desc: "Árbol de Guayaba con frutos" },
-            { img: "./imagenes/guayaba2.jpeg", desc: "Corteza exfoliante característica" },
-            { img: "./imagenes/guayaba3.jpeg", desc: "Hojas opuestas aromáticas" },
-            { img: "./imagenes/guayaba4.jpeg", desc: "Flores blancas con estambres numerosos" },
-            { img: "./imagenes/guayaba5.jpeg", desc: "Frutos maduros amarillos" },
-            { img: "./imagenes/guayaba6.jpeg", desc: "Tronco ramificado desde la base" },
-            { img: "./imagenes/guayaba7.jpeg", desc: "Vista de copa redondeada" },
-            { img: "./imagenes/guayaba8.jpeg", desc: "Semillas reniformes" }
+            { img: "./imagenes/guayaba1.jpeg", desc: "Árbol de Guayaba" },
+            { img: "./imagenes/guayaba2.jpeg", desc: "Hojas Características" },
+            { img: "./imagenes/guayaba3.jpeg", desc: "Vista Inferior" },
+            { img: "./imagenes/guayaba4.jpeg", desc: "Tronco" },
+            { img: "./imagenes/guayaba5.jpeg", desc: "Hormiga" },
+            { img: "./imagenes/guayaba6.jpeg", desc: "Vista" }
         ],
         nombresLocales: ["Guayabo", "Guayaba", "Guayaba común", "Guayaba llanera", "Guayabo colorado", "Guayaba pera", "Guayaba dulce", "Goiabeira (Brasil)", "Common Guava (Inglés)", "Amrood (India)"],
         distribucion: `
@@ -2619,17 +2617,33 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
                 <div><strong style="color:var(--secondary-color);"><i class="fas fa-microscope"></i> Triada Diagnóstica (Identificación Rápida):</strong> ① Corteza rojiza-grisácea que se exfolia en láminas verdes · ② Hojas opuestas con olor penetrante al estrujarlas · ③ Flores blancas con cientos de estambres (masa algodonosa) + Porte ramificado desde la base y copa redondeada.</div>
             </div>
         `,
-        usos: `
-            <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
-                <div><strong style="color:var(--secondary-color);">🍎 Alimentación — Uso Principal:</strong> El fruto fresco es el uso más extendido en Maní y el Casanare. Se consume directamente, en <strong>jugos, bocadillos</strong> (jalea de guayaba), dulces, mermeladas, ates y cuajadas. El bocadillo de guayaba es uno de los productos insignia de la cultura gastronómica llanera y boyacense. Valor nutricional excepcional (por 100 g de pulpa): Vitamina C 228 mg (5× más que la naranja), fibra 8,5 g, energía 68 kcal, agua 78 g, proteínas 0,9 g, azúcares 7,7 g.</div>
-                <div><strong style="color:var(--secondary-color);">💊 Medicina Tradicional Llanera:</strong> Uso medicinal ampliamente documentado: <strong>hojas cocidas para diarrea y cólicos</strong>; corteza para disentería y afecciones de la piel; raíces para el tratamiento de encías; fruto para hipertensión y diabetes. El "agua de guayaba" (cocimiento de hojas) es el remedio casero más común en las fincas del Casanare para enfermedades gastrointestinales. Compuestos bioactivos confirmados: quercetina (antidiarreico, antiespasmódico), taninos (astringentes, hemostáticos), catequinas (antiinflamatorio), β-cariofileno (aceite esencial antibacterial), vitamina C (antioxidante), licopeno (pulpa rosada), ácido guajavérico (antimicrobiano exclusivo del género <em>Psidium</em>).</div>
-                <div><strong style="color:var(--secondary-color);">🪵 Carpintería y Leña:</strong> La madera dura del guayabo se aprovecha en el llano para fabricar <strong>herramientas de labranza, mangos de machete, postes de corral y leña</strong>. Su alta densidad calorífica la hace preferida para el fogón llanero. También se usa en artesanías menores y tornería rústica. Propiedades tecnológicas: madera dura, pesada, de grano fino, difícil de trabajar manualmente pero con buen acabado superficial.</div>
-                <div><strong style="color:var(--secondary-color);">🌳 Sombra y Sistema Silvopastoril:</strong> Árbol de <strong>sombra en potreros</strong>, utilizado por los ganaderos del Casanare para proteger el ganado del sol durante el verano. Su copa perennifolio (no pierde hojas) garantiza sombra permanente incluso en el verano, a diferencia del guayacán rosado. Comúnmente utilizado en cercas vivas y linderos de finca. Especie nodal para fauna en corredores biológicos.</div>
-                <div><strong style="color:var(--secondary-color);">🐄 Forraje Animal:</strong> Los frutos caídos son consumidos directamente por bovinos, equinos, chigüiros y cerdos. Las hojas tiernas son ramoneadas por el ganado. En época de escasez forrajera del verano llanero, el guayabo representa un <strong>recurso estratégico de alimento</strong> para la ganadería extensiva del Casanare.</div>
-                <div><strong style="color:var(--secondary-color);">🎨 Tinte y Curtiente:</strong> Las hojas y corteza contienen taninos que se utilizan para <strong>teñir fibras naturales</strong> de color beige-marrón dorado. Uso documentado en artesanías indígenas de la región. También se emplea como curtiente de pieles en prácticas tradicionales.</div>
+        fauna: `
+            <div class="grid2 mt-3">
+                <div class="metric-card"><div class="metric-label">🦜 Loros y pericos</div><div class="section-val text-sm mt-2"><em>Amazona amazonica</em>, <em>Brotogeris</em> spp. Consumo de frutos y visita a flores; dispersión de semillas.</div></div>
+                <div class="metric-card"><div class="metric-label">🐦 Turpiales y tángaras</div><div class="section-val text-sm mt-2"><em>Icterus icterus</em>, <em>Tangara</em> spp. Consumo de frutos; dispersión activa de semillas.</div></div>
+                <div class="metric-card"><div class="metric-label">🦇 Murciélagos frugívoros</div><div class="section-val text-sm mt-2"><em>Artibeus jamaicensis</em>, <em>Carollia</em> spp. Consumo nocturno de frutos; dispersión en horas nocturnas.</div></div>
+                <div class="metric-card"><div class="metric-label">🐝 Abejas nativas</div><div class="section-val text-sm mt-2"><em>Melipona</em> spp., <em>Apis mellifera</em>. Polinización floral; producción de miel.</div></div>
+                <div class="metric-card"><div class="metric-label">🦋 Mariposas</div><div class="section-val text-sm mt-2"><em>Heliconius</em> spp., <em>Morpho</em> spp. Polinización y oviposición; hojas como sustrato larval.</div></div>
+                <div class="metric-card"><div class="metric-label">🐿️ Chigüiro</div><div class="section-val text-sm mt-2"><em>Hydrochoerus hydrochaeris</em>. Consumo de frutos caídos; uso de sombra.</div></div>
+                <div class="metric-card"><div class="metric-label">🦌 Venado sabanero</div><div class="section-val text-sm mt-2"><em>Odocoileus virginianus</em>. Consumo de hojas y frutos; dispersión de semillas.</div></div>
+                <div class="metric-card"><div class="metric-label">🐓 Garrapatero</div><div class="section-val text-sm mt-2"><em>Crotophaga ani</em>. Anidamiento en ramas; consumo de insectos asociados.</div></div>
+                <div class="metric-card"><div class="metric-label">🐜 Hormigas cortadoras</div><div class="section-val text-sm mt-2"><em>Atta colombica</em>. Fragmentación de hojas; dispersión secundaria.</div></div>
+            </div>
+            <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+                <strong>🔬 Nota ecológica:</strong> El guayabo (<em>Psidium</em> spp.) funciona como nodo ecológico clave en el paisaje llanero de Maní. Sus hojas sirven como planta hospedera para larvas de mariposas neotropicales. El árbol es frecuentemente parasitado por hemiparásitas del género <em>Struthanthus</em> sp. (muérdago), que reducen su vigor sin causarle la muerte. En las matas de monte del Casanare, es uno de los arbustos que más nidos de aves pequeñas alberga (Parra-O., 2023; Flora de Colombia No. 33).
             </div>
         `,
-        mensaje_ia: `> 🍃 Soy el Guayabo... y tengo un secreto que te va a sorprender
+        usos: `
+            <div class="grid2 mt-3" style="font-size:0.9rem;">
+                <div class="metric-card"><div class="metric-label">🍎 Alimentación — Uso Principal</div><div class="section-val text-sm mt-2">El fruto fresco es el uso más extendido en Maní y el Casanare. Se consume directamente, en jugos, bocadillos (jalea de guayaba), dulces, mermeladas, ates y cuajadas. El bocadillo de guayaba es uno de los productos insignia de la cultura gastronómica llanera y boyacense. Valor nutricional excepcional (por 100 g de pulpa): Vitamina C 228 mg (5× más que la naranja), fibra 8,5 g, energía 68 kcal, agua 78 g, proteínas 0,9 g, azúcares 7,7 g.</div></div>
+                <div class="metric-card"><div class="metric-label">💊 Medicina Tradicional Llanera</div><div class="section-val text-sm mt-2">Uso medicinal ampliamente documentado: hojas cocidas para diarrea y cólicos; corteza para disentería y afecciones de la piel; raíces para el tratamiento de encías; fruto para hipertensión y diabetes. El "agua de guayaba" (cocimiento de hojas) es el remedio casero más común en las fincas del Casanare para enfermedades gastrointestinales. Compuestos bioactivos confirmados: quercetina (antidiarreico, antiespasmódico), taninos (astringentes, hemostáticos), catequinas (antiinflamatorio), β-cariofileno (aceite esencial antibacterial), vitamina C (antioxidante), licopeno (pulpa rosada), ácido guajavérico (antimicrobiano exclusivo del género <em>Psidium</em>).</div></div>
+                <div class="metric-card"><div class="metric-label">🪵 Carpintería y Leña</div><div class="section-val text-sm mt-2">La madera dura del guayabo se aprovecha en el llano para fabricar herramientas de labranza, mangos de machete, postes de corral y leña. Su alta densidad calorífica la hace preferida para el fogón llanero. También se usa en artesanías menores y tornería rústica. Propiedades tecnológicas: madera dura, pesada, de grano fino, difícil de trabajar manualmente pero con buen acabado superficial.</div></div>
+                <div class="metric-card"><div class="metric-label">🌳 Sombra y Sistema Silvopastoril</div><div class="section-val text-sm mt-2">Árbol de sombra en potreros, utilizado por los ganaderos del Casanare para proteger el ganado del sol durante el verano. Su copa perennifolia (no pierde hojas) garantiza sombra permanente incluso en el verano, a diferencia del guayacán rosado. Comúnmente utilizado en cercas vivas y linderos de finca. Especie nodal para fauna en corredores biológicos.</div></div>
+                <div class="metric-card"><div class="metric-label">🐄 Forraje Animal</div><div class="section-val text-sm mt-2">Los frutos caídos son consumidos directamente por bovinos, equinos, chigüiros y cerdos. Las hojas tiernas son ramoneadas por el ganado. En época de escasez forrajera del verano llanero, el guayabo representa un recurso estratégico de alimento para la ganadería extensiva del Casanare.</div></div>
+                <div class="metric-card"><div class="metric-label">🎨 Tinte y Curtiente</div><div class="section-val text-sm mt-2">Las hojas y corteza contienen taninos que se utilizan para teñir fibras naturales de color beige-marrón dorado. Uso documentado en artesanías indígenas de la región. También se emplea como curtiente de pieles en prácticas tradicionales.</div></div>
+            </div>
+        `,
+        mensajeIA: `> 🍃 Soy el Guayabo... y tengo un secreto que te va a sorprender
 >
 > Me llamo <em>Psidium guajava</em>, pero en el llano casanareño simplemente soy "el guayabo", el árbol de las guayabas que todo el mundo quiere. Vivo en los patios de las fincas, en las orillas de los caños y hasta en los potreros donde pasta el ganado. Mi nombre científico viene del griego <em>psídion</em> = "granada pequeña", y mi apellido <em>guajava</em> viene del vocablo taíno que usaban los indígenas del Caribe antes de que llegaran los españoles.
 >
@@ -2657,5 +2671,382 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
             { q: "A diferencia de Tabebuia rosea (guayacán rosado), ¿cuál es la gran ventaja ecológica del guayabo (Psidium guajava) para la fauna silvestre del Casanare durante todo el año?", opts: ["El guayabo pierde sus hojas en verano, lo que facilita que los animales puedan ver y alcanzar mejor sus frutos", "El guayabo produce semillas aladas que el viento dispersa a grandes distancias", "El guayabo es perennifolio (no pierde sus hojas) y puede florecer y fructificar dos veces por año, proporcionando alimento continuo a aves, murciélagos y mamíferos incluso durante el verano llanero", "El guayabo produce flores durante la inundación del llano, siendo el único árbol que florece bajo el agua"], correct: 2 },
             { q: "¿Cuál es el contenido de vitamina C del fruto de guayaba por cada 100 g de pulpa, y cómo se compara con la naranja?", opts: ["45 mg — aproximadamente la mitad que una naranja", "228 mg — aproximadamente 5 veces más que una naranja", "85 mg — aproximadamente igual que una naranja", "150 mg — aproximadamente 3 veces más que una naranja"], correct: 1 }
         ]
-    }
+    },
+"flor morado": {
+    id: "#JBP-18", tipo: "Nativo", nombre: "Flor Morado", cientifico: "Tabebuia rosea (Bertol.) DC.",
+    familia: "Bignoniaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "NE — No Evaluada (UICN); sin restricción en Colombia", exotica: false,
+    carbono: 0.479, viajes: 175, imagen_portada: "./imagenes/rosea1.jpeg",
+    galeria: [
+        { img: "./imagenes/rosea2.jpeg", desc: "Árbol Tabebuia Rosea" },
+        { img: "./imagenes/rosea3.jpeg", desc: "Corteza Y Tronco" },
+        { img: "./imagenes/rosea4.jpeg", desc: "Hojas" },
+        { img: "./imagenes/rosea5.jpeg", desc: "Hojas" },
+        { img: "./imagenes/rosea6.jpeg", desc: "Vista Inferior" },
+    ],
+    nombresLocales: ["Guayacán Rosado", "Flor Morado", "Ocobo", "Roble de Río", "Amapa", "Maquilishuat", "Pink Trumpet-tree"],
+    distribucion: `
+        <p><strong>Árbol neotropical emblemático:</strong> <em>Tabebuia rosea</em> (Bertol.) DC. es una especie nativa con distribución natural desde el sur de México hasta el norte de Sudamérica, incluyendo las Antillas. En Colombia está presente en las regiones Andina, Caribe, Pacífica y, de especial interés para este inventario, la <strong>Orinoquía</strong>, donde habita bosques de galería, bordes de ríos y bosque seco tropical (bs-T). En Casanare es componente frecuente de las matas de monte de Maní, asociado a la dinámica hídrica del río Cusiana.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Lamiales</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Bignoniaceae Juss.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género / Especie</td><td style="padding:6px;"><em>Tabebuia</em> Gomes ex DC. / <em>T. rosea</em> (Bertol.) DC.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Basiónimo</td><td style="padding:6px;"><em>Tecoma rosea</em> Bertol. (1840)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Tabebuia</em>: vocablo indígena brasileño; <em>rosea</em>: "rosado" en latín, por el color floral.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">⚪ No Evaluada (UICN) · No incluida en Libros Rojos de Colombia · Nativa sin restricción de aprovechamiento.</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro">
+            <p>"El género Tabebuia posee alrededor de 100 especies distribuidas por toda la América tropical, desde el norte de México hasta el norte de Argentina, incluyendo las islas del Caribe. Para Colombia se conocen 20 especies con distribución natural."</p>
+            <cite>— Flora de Colombia (Universidad Nacional de Colombia, Biovirtual, s.f.).</cite>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🌎 Dato curioso:</strong> <em>Tabebuia rosea</em> es el árbol nacional de El Salvador (<em>maquilishuat</em>) y símbolo de ciudades como Barranquilla y Ibagué en Colombia. En el llano colombo-venezolano, su floración masiva en verano es un <strong>indicador bioclimático</strong> del inicio de las primeras lluvias.
+        </div>
+    `,
+    densidad: "0,54 g/cm³ (Madera de densidad media; verificada IDEAM/CTCM SENNOVA, 2020)", fraccion: "0,47 – 0,50 (IPCC para latifoliadas tropicales)",
+    alometria: `
+        <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+            ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No se encontró un Factor de Expansión de Biomasa (FEB) específico para <em>Tabebuia rosea</em> en bosque seco tropical de la Orinoquía colombiana. Se recomienda usar FEB = 1,74 (valor por defecto IPCC Tier 1 para bs-T) hasta obtener mediciones directas en individuos del JBP Maní.
+        </div>
+        <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+            ln(AGB) = −3,652 − 1,697·ln(D) + 1,169·(ln(D))² − 0,122·(ln(D))³ + 1,285·ln(ρ)
+        </div>
+        <p class="text-sm"><strong>Modelo Colombia — Álvarez et al. (2012):</strong> Ecuación validada para bosque seco tropical (bs-T) del Caribe colombiano, aplicable a la Orinoquía por similitud ecológica. R² = 0,958 | ESR = 0,336.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">AGB</td><td style="padding:6px;">Biomasa aérea (Mg·ha⁻¹ o kg árbol⁻¹)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">D (DAP)</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1,30 m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ</td><td style="padding:6px;">Densidad básica de la madera: 0,54 g/cm³ (verificada)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FC (Carbono)</td><td style="padding:6px;">0,47 (IPCC, 2006) o 0,50 (Brown, 1997)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar · Usar 1,74 (IPCC Tier 1 bs-T) como valor provisional</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro" style="font-size:0.85rem;">
+            <p>"La biomasa de cada individuo se obtuvo a través de la ecuación alométrica de Álvarez et al. (2012), desarrollada para parcelas de bosque seco tropical del Caribe colombiano, la cual tiene un error estándar residual de 0,336 y R² de 0,958..."</p>
+            <cite>— Álvarez, E., et al. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management</em>, 267, 297–308.</cite>
+        </div>
+    `,
+    calendario: [
+        { mes: "Dic", fase: "Caída de hojas 🍂", clima: "dry" },
+        { mes: "Ene", fase: "Floración principal 🌸", clima: "dry" },
+        { mes: "Feb", fase: "Floración máxima 🌸", clima: "dry" },
+        { mes: "Mar", fase: "Brotación + Fructificación 🌿🫘", clima: "dry" },
+        { mes: "Abr", fase: "Dispersión de semillas 🪁", clima: "rain" },
+        { mes: "May", fase: "Crecimiento vegetativo 🌳", clima: "rain" },
+        { mes: "Jun", fase: "Crecimiento activo 🍃", clima: "rain" },
+        { mes: "Jul", fase: "Desarrollo de fuste 🪵", clima: "rain" },
+        { mes: "Ago", fase: "Floración secundaria (esporádica) 🌸", clima: "rain" },
+        { mes: "Sep", fase: "Crecimiento sostenido 🌱", clima: "rain" },
+        { mes: "Oct", fase: "Preparación para sequía 🍂", clima: "rain" },
+        { mes: "Nov", fase: "Inicio de deciduidad 🍁", clima: "dry" }
+    ],
+    morfologia: `
+        <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol deciduo de tamaño mediano a grande, alcanza 20–35 m de altura y DAP de hasta 60–100 cm. Fuste erecto, cilíndrico-cónico, con copa amplia y redondeada. Pierde sus hojas brevemente antes y durante la floración, generando un espectáculo visual único en el llano.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíz pivotante y superficial, adaptada a suelos con fluctuación hídrica estacional. Alta resistencia a inundaciones temporales, característica clave para su presencia en los llanos inundables del Casanare. Sin aletones basales prominentes.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo / Corteza y Madera:</strong> Fuste comercial de hasta 15 m libre de ramas. Corteza externa gris oscura a negruzca, angostamente agrietada, con lenticelas escasas. Madera color marrón-grisáceo, olor suavemente dulce cuando fresca, densidad básica 0,54 g/cm³ (densidad media). Duramen marrón dorado a castaño con veteado conspicuo.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje:</strong> Filotaxia opuesta. Hojas compuestas palmaticompuestas con 5 folíolos, hasta 30 × 35 cm en conjunto. Folíolos elíptico-ovados, cubiertos de tricomas lepidotos en ambas caras. <strong>Especie decidua</strong>: pierde el follaje en época seca como estrategia de eficiencia hídrica.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Corola tubular-infundibuliforme, 5–10 cm de largo, color blanco a rosado-lavanda o purpúreo-rojizo, garganta amarilla. Inflorescencias en panículas terminales densamente pubescentes. 4 estambres fértiles + 1 estaminodio. Polinización entomófila (abejas, mariposas) y quiropterófila (murciélagos).</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Fruto cápsula lineal-cilíndrica, 22–38 cm de largo, dehiscencia bivalva. Semillas bialadas con alas hialino-membranáceas que facilitan la <strong>dispersión anemócora</strong> (por el viento), estrategia vital en los llanos abiertos del Casanare.</div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>📌 Nota metodológica:</strong> El calendario fenológico presentado se ajustó al régimen bimodal de lluvias de Maní, Casanare (Verano dic–mar | Invierno abr–nov). Se recomienda validar con observaciones directas en campo para refinar los picos de floración y fructificación a escala local.
+        </div>
+    `,
+    fauna: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🦜 Loros y Pericos</div><div class="section-val text-sm mt-2"><em>Amazona amazonica</em>, <em>Forpus passerinus</em>. Consumo de néctar floral y semillas; uso del dosel como sitio de percha y anidamiento.</div></div>
+            <div class="metric-card"><div class="metric-label">🐦 Azulejo de verano</div><div class="section-val text-sm mt-2"><em>Piranga rubra</em>. Visita flores para néctar; utiliza ramas para anidamiento en época reproductiva.</div></div>
+            <div class="metric-card"><div class="metric-label">🦅 Gavilán rastrero</div><div class="section-val text-sm mt-2"><em>Circus buffoni</em>. Utiliza la copa alta como atalaya para vigilar la sabana y detectar presas.</div></div>
+            <div class="metric-card"><div class="metric-label">🦋 Mariposas neotropicales</div><div class="section-val text-sm mt-2"><em>Heliconius</em> spp., <em>Morpho</em> spp. Polinización incidental; oviposición en follaje joven.</div></div>
+            <div class="metric-card"><div class="metric-label">🐝 Abejas nativas</div><div class="section-val text-sm mt-2"><em>Melipona</em> spp., <em>Trigona</em> spp., <em>Apis mellifera</em>. Polinización principal; producción de miel de "flor morado" reconocida localmente.</div></div>
+            <div class="metric-card"><div class="metric-label">🦇 Murciélagos nectarívoros</div><div class="section-val text-sm mt-2"><em>Glossophaga soricina</em>. Polinización nocturna; visita flores en horas crepusculares.</div></div>
+            <div class="metric-card"><div class="metric-label">🐿️ Chigüiro / Capibara</div><div class="section-val text-sm mt-2"><em>Hydrochoerus hydrochaeris</em>. Utiliza la sombra del árbol para termorregulación; consume hojarasca y frutos caídos.</div></div>
+            <div class="metric-card"><div class="metric-label">🌿 Epífitas asociadas</div><div class="section-val text-sm mt-2">Orquídeas (<em>Epidendrum</em> spp.), bromelias (<em>Tillandsia</em> spp.). Usan tronco y ramas como sustrato sin parasitar, incrementando biodiversidad.</div></div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            ⚠️ <strong>Nota:</strong> La identificación específica de fauna asociada a <em>T. rosea</em> en Maní, Casanare, debe confirmarse mediante observación directa de campo o consulta con el IAvH y el SiB Colombia.
+        </div>
+    `,
+    usos: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🪵 Carpintería y Construcción</div><div class="section-val text-sm mt-2">Madera de densidad media (0,54 g/cm³), trabajable con herramientas manuales. Usada en horcones, vigas, muebles rústicos, corrales y arcos de instrumentos musicales. Apreciada por su durabilidad en ambientes húmedos y su veteado decorativo.</div></div>
+            <div class="metric-card"><div class="metric-label">🌿 Medicina Popular Llanera</div><div class="section-val text-sm mt-2">Corteza utilizada como antiinflamatoria y para afecciones de la piel. Estudios confirman actividad antioxidante, antiinflamatoria y antiproliferativa en extractos. Cocimientos tradicionales para dolores articulares y fiebre.</div></div>
+            <div class="metric-card"><div class="metric-label">🌳 Cercas Vivas y Silvopastoreo</div><div class="section-val text-sm mt-2">Ampliamente usado en cercas vivas y sistemas silvopastoriles en fincas del Casanare. Proporciona sombra para el ganado, retiene humedad del suelo, reduce erosión en orillas de caños y es indicador de ganadería sostenible.</div></div>
+            <div class="metric-card"><div class="metric-label">🍯 Recurso Melífero</div><div class="section-val text-sm mt-2">Flores abundantes en época seca (ene–mar) son fuente de néctar de alta calidad para abejas nativas y melíferas. Comunidades campesinas colocan colmenas cerca de estos árboles; miel de "flor morado" con valor local.</div></div>
+            <div class="metric-card"><div class="metric-label">🌱 Restauración Ecológica</div><div class="section-val text-sm mt-2">Especie prioritaria para restaurar bosques de galería degradados en la Orinoquía. Crecimiento rápido, resistencia a inundaciones temporales y producción masiva de semillas aladas facilitan su propagación natural y artificial.</div></div>
+            <div class="metric-card"><div class="metric-label">🎨 Ornamental y Cultural</div><div class="section-val text-sm mt-2">Explosión floral rosada en verano es espectáculo natural emblemático del llano. Plantado en parques y vías de Yopal, Maní y Tauramena; símbolo visual de la identidad cultural casanareña.</div></div>
+        </div>
+    `,
+    mensajeIA: "🌸 ¡Hola, pariente llanero! Soy el Guayacán Rosado, pero aquí en Maní me conocen como <strong>Flor Morado</strong>. Soy de los guardianes más antiguos de las matas de monte del Casanare, y cada año, cuando el verano seca la sabana, hago algo que deja a todos con la boca abierta: me quedo sin una sola hoja... ¡y me visto de miles de trompetitas rosadas! Así es: mientras otros esperan la lluvia en silencio, yo despierto el llano con mi floración masiva de enero a marzo, perfumando el aire y anunciando que las aguas están por llegar.\n\nMis raíces son fuertes y pacientes. Sé sobrevivir las inundaciones del invierno y la sequía del verano porque soy hijo de esta tierra de extremos. Cuando caen las primeras lluvias de abril, brotan mis hojas nuevas y mis frutos —como varitas mágicas de casi 40 cm— se abren para soltar semillas con alas transparentes que el viento lleva lejos, sembrando vida por toda la sabana.\n\nLas abejas nativas me visitan para tomar mi néctar, los loros verdes discuten en mis ramas, y los gavilanes me usan como atalaya para vigilar el horizonte. Los llaneros han usado mi madera para construir sus casas y corrales; con mi corteza curan dolores; y me plantan en las orillas de los caños para que mis raíces abracen la tierra y protejan el agua.\n\n✨ <strong>Mi curiosidad única</strong>: Científicos han descubierto que mi floración masiva coincide siempre con las 12 horas de luz solar del trópico. ¡Soy un calendario natural vivo en medio del llano! ¿Me has visto florecer alguna vez? Si es así, sabes que no hay paisaje más llanero que una mata de monte vestida de rosa bajo el sol de febrero.",
+    referencias: [
+        "Gentry, A. H. (1992). A synopsis of Bignoniaceae ethnobotany and economic botany. <em>Annals of the Missouri Botanical Garden, 79</em>(1), 53–64.",
+        "Universidad Nacional de Colombia — Biovirtual. (s.f.). <em>Tabebuia rosea</em>. Flora de Colombia. Instituto de Ciencias Naturales. http://www.biovirtual.unal.edu.co/floradecolombia/es/description/462/",
+        "Álvarez, E., Rodríguez, L., Melo, O., Londoño, V., Moreno, F., Ortega, A., & Galindo, G. (2012). <em>Ecuaciones alométricas para estimar biomasa y carbono en bosques naturales de Colombia</em>. IDEAM.",
+        "IDEAM / Ministerio de Ambiente y Desarrollo Sostenible — MADS. (2020). <em>Caracterización de las 30 especies forestales maderables más movilizadas en Colombia provenientes del bosque natural</em>. https://www.researchgate.net/publication/344493294",
+        "IPCC. (2006). <em>IPCC Guidelines for National Greenhouse Gas Inventories. Volume 4: Agriculture, Forestry and Other Land Use</em>. IGES, Japón.",
+        "Arévalo, R., & Londoño, A. C. (2005). <em>Manual de identificación de maderas de Colombia</em>. CONIF. Bogotá, Colombia.",
+        "Brown, S. (1997). <em>Estimating biomass and biomass change of tropical forests: A primer</em>. FAO Forestry Paper 134. Roma, Italia."
+    ],
+    quiz: [
+        { q: "¿Cuál es la densidad básica de la madera de Tabebuia rosea y cómo se clasifica tecnológicamente?", opts: ["0,30 g/cm³ — Madera muy liviana", "0,54 g/cm³ — Madera de densidad media, trabajable y apta para carpintería", "0,80 g/cm³ — Madera muy pesada, similar al guayacán negro", "0,20 g/cm³ — Madera esponjosa, sólo para artesanías"], correct: 1, expl: "Con ρ = 0,54 g/cm³, la madera de T. rosea se clasifica como densidad media según criterios ITTO, lo que la hace trabajable con herramientas manuales y apta para carpintería rural y construcción." },
+        { q: "En el calendario fenológico ajustado a Maní, Casanare, ¿cuándo ocurre la floración principal de T. rosea y qué la hace visualmente espectacular?", opts: ["Julio–agosto, con follaje verde completo", "Octubre–noviembre, al final de lluvias, con pocas flores", "Enero–marzo (verano), cuando el árbol está sin hojas y cubierto totalmente de flores rosadas", "Floración permanente todo el año con flores amarillas"], correct: 2, expl: "La floración principal ocurre en enero–marzo, durante la época seca. El árbol pierde sus hojas previamente, lo que hace que las flores rosadas sean visibles desde lejos, creando un espectáculo único en el paisaje llanero." },
+        { q: "¿Qué ecuación alométrica se recomienda para estimar biomasa aérea de T. rosea en bs-T colombiano y cuál es el factor de conversión a carbono del IPCC?", opts: ["Chave et al. (2005) para bosques húmedos; FC = 0,60", "Ecuación lineal simple; FC = 1,0", "Álvarez et al. (2012) para bs-T: ln(AGB) = −3,652 − 1,697·ln(D) + 1,169·(ln(D))² − 0,122·(ln(D))³ + 1,285·ln(ρ); FC = 0,47", "Brown (1993) para bosques templados; FC = 0,35"], correct: 2, expl: "La ecuación de Álvarez et al. (2012) es la más validada para bosque seco tropical colombiano (R² = 0,958). El IPCC (2006) recomienda FC = 0,47 para convertir biomasa aérea a carbono en latifoliadas tropicales." },
+        { q: "¿Cuál es la estrategia de dispersión de semillas de Tabebuia rosea y por qué es clave en los llanos abiertos del Casanare?", opts: ["Hidrocoria: dispersión por agua en ríos y caños", "Zoocoria: consumo y dispersión por mamíferos grandes", "Anemocoria: semillas aladas dispersadas por el viento", "Autocoria: caída directa al suelo sin dispersión"], correct: 2, expl: "Las semillas de T. rosea tienen alas hialino-membranáceas que facilitan la dispersión por viento (anemocoria). Esta estrategia es vital en los llanos abiertos, donde el viento puede llevar las semillas a grandes distancias, colonizando nuevos espacios." },
+        { q: "¿Por qué Tabebuia rosea es considerada un indicador bioclimático en el llano colombo-venezolano?", opts: ["Porque sus raíces indican la profundidad del nivel freático", "Porque su floración masiva coincide con el inicio de las primeras lluvias de la estación", "Porque sus hojas cambian de color según la humedad del suelo", "Porque atrae nubes y genera lluvia local"], correct: 1, expl: "La floración masiva de T. rosea en enero–marzo coincide con el final de la época seca y el anuncio de las primeras lluvias. Los llaneros tradicionalmente usan este evento como señal natural para planificar actividades agrícolas y ganaderas." }
+    ]
+},
+"mamoncillo": {
+    id: "#JBP-19", tipo: "Nativo", nombre: "Mamoncillo", cientifico: "Melicoccus bijugatus Jacq.",
+    familia: "Sapindaceae", origen: "Nativo norte de Suramérica — Orinoquía colombo-venezolana", estado: "LC — Preocupación Menor (UICN, 2020)", exotica: false,
+    carbono: 0.312, viajes: 114, imagen_portada: "./imagenes/mamoncillo1.jpeg",
+    galeria: [
+        { img: "./imagenes/mamoncillo1.jpeg", desc: "Racimos de frutos maduros" },
+        { img: "./imagenes/mamoncillo2.jpeg", desc: "Árbol adulto en potrero llanero" },
+        { img: "./imagenes/mamoncillo3.jpeg", desc: "Hojas bijugadas (2 pares de folíolos)" },
+        { img: "./imagenes/mamoncillo4.jpeg", desc: "Detalle de flores blanco-verdosas" },
+        { img: "./imagenes/mamoncillo5.jpeg", desc: "Fruto abierto mostrando pulpa gelatinosa" },
+        { img: "./imagenes/mamoncillo6.jpeg", desc: "Semilla tostada (uso tradicional)" },
+        { img: "./imagenes/mamoncillo7.jpeg", desc: "Copa densa de sombra" },
+        { img: "./imagenes/mamoncillo8.jpeg", desc: "Corteza grisácea lisa" }
+    ],
+    nombresLocales: ["Mamoncillo", "Mamón", "Macao", "Quenepa", "Guinep", "Spanish lime", "Huaya"],
+    distribucion: `
+        <p><strong>Especie nativa del norte de Suramérica:</strong> <em>Melicoccus bijugatus</em> Jacq. es originaria de Colombia y Venezuela, con distribución natural en bosques secos tropicales y de galería. Se ha naturalizado en Centroamérica, el Caribe, México y partes de África tropical. En Colombia está reportada en las regiones Andina, Caribe, Pacífica y, de especial interés para este inventario, la <strong>Orinoquía</strong>, donde crece en márgenes de ríos, caños y patios de fincas del piedemonte llanero.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Sapindales</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Sapindaceae Juss.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género / Especie</td><td style="padding:6px;"><em>Melicoccus</em> P. Browne / <em>M. bijugatus</em> Jacq.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Autoría</td><td style="padding:6px;">Nikolaus Joseph von Jacquin, <em>Enum. Syst. Pl.</em> 19 (1760)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Meli</em> (miel) + <em>kokkos</em> (baya) = "baya de miel"; <em>bijugatus</em> = dos pares de folíolos</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">✅ LC — Preocupación Menor (UICN, 2020) · Nativa sin restricción en Colombia</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro">
+            <p>"Es nativo al norte de la América del Sur y se ha cultivado y naturalizado extensamente a través de los trópicos."</p>
+            <cite>— Francis, J. K. (1992). <em>Melicoccus bijugatus</em> Jacq. Quenepa. SO-ITF-SM-48. USDA Forest Service.</cite>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🌎 Dato curioso:</strong> Estudios genéticos recientes sugieren que la domesticación del mamoncillo se originó en la Amazonia sudamericana, con diferenciación posterior en los Andes y Colombia. En Maní, es un árbol de historia colectiva: sus frutos son parte de la cultura alimentaria popular, consumidos en racimos durante las tardes calurosas del verano llanero.
+        </div>
+    `,
+    densidad: "~0,70 g/cm³ (estimado — familia Sapindaceae; ⚠️ por verificar en campo)", fraccion: "0,47 – 0,50 (IPCC para latifoliadas tropicales)",
+    alometria: `
+        <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+            ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No se encontró un valor de densidad básica de madera (ρ) específico para <em>Melicoccus bijugatus</em> en la Orinoquía colombiana. El valor de ~0,70 g/cm³ es una estimación basada en la familia Sapindaceae. Asimismo, el Factor de Expansión de Biomasa (FEB) específico no está reportado; usar FEB = 1,74 (IPCC Tier 1 para bs-T) como valor provisional hasta obtener mediciones directas en individuos del JBP Maní.
+        </div>
+        <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+            BA = EXP(α + β₁·Ln(DAP) + β₂·Ln(ρ)) · Álvarez et al. (2012)
+        </div>
+        <p class="text-sm"><strong>Modelo Colombia — Álvarez et al. (2012), Tipo II.1:</strong> Ecuación recomendada por IDEAM para bosques naturales colombianos. R² = 0,958 | ESR = 0,336.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">BA</td><td style="padding:6px;">Biomasa aérea individual (kg)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1,30 m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ</td><td style="padding:6px;">Densidad básica de madera: ~0,70 g/cm³ (⚠️ estimado)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FC (Carbono)</td><td style="padding:6px;">0,47 (IPCC, 2006) o 0,50 (Brown, 1997)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar · Usar 1,74 (IPCC Tier 1 bs-T) como valor provisional</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro" style="font-size:0.85rem;">
+            <p>"Con el fin de conocer el balance de carbono emitido y almacenado en los bosques colombianos, las estimaciones se orientan a cuantificar el carbono almacenado o stock en diferentes compartimientos..."</p>
+            <cite>— IDEAM. (2011). <em>Estimación de las reservas actuales de carbono almacenadas en la biomasa aérea en bosques naturales de Colombia</em>.</cite>
+        </div>
+    `,
+    calendario: [
+        { mes: "Dic", fase: "Renovación foliar 🌱", clima: "dry" },
+        { mes: "Ene", fase: "Brotes + Pre-floración 🌸", clima: "dry" },
+        { mes: "Feb", fase: "Floración principal 🌸", clima: "dry" },
+        { mes: "Mar", fase: "Floración + Inicio frutos 🌸🍈", clima: "dry" },
+        { mes: "Abr", fase: "Fructificación temprana 🍈", clima: "rain" },
+        { mes: "May", fase: "Cosecha máxima 🍈", clima: "rain" },
+        { mes: "Jun", fase: "Fructificación sostenida 🍈", clima: "rain" },
+        { mes: "Jul", fase: "Dispersión de semillas 🪁", clima: "rain" },
+        { mes: "Ago", fase: "Crecimiento vegetativo 🌳", clima: "rain" },
+        { mes: "Sep", fase: "Floración secundaria (esporádica) 🌸", clima: "rain" },
+        { mes: "Oct", fase: "Preparación para sequía 🍂", clima: "rain" },
+        { mes: "Nov", fase: "Transición seca 🌱", clima: "dry" }
+    ],
+    morfologia: `
+        <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol de crecimiento lento, siempreverde, alcanza 12–30 m de altura y DAP de hasta 1,70 m en individuos maduros. Copa densa, amplia, semiesférica a redondeada, que brinda sombra abundante. Ramas principales gruesas y horizontales. Especie heliófila: requiere plena exposición solar para óptima producción de frutos.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíz pivotante robusta con amplio desarrollo de raíces laterales superficiales que pueden extenderse hasta 1,5 veces el diámetro de la copa. Bien adaptado a suelos arcillosos con fluctuaciones en el nivel freático, típicos de la altillanura del Casanare. Sin capacidad fijadora de nitrógeno.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo / Corteza y Madera:</strong> Tronco de coloración grisácea, que se fisura levemente con la edad. Corteza lisa, grisácea. Madera dura, pesada, de grano fino y resistente, usada localmente para horcones, mangos de herramientas y carpintería doméstica.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje:</strong> Filotaxia opuesta decusada. Hojas compuestas paripinnadas, <strong>bijugadas</strong> (exactamente 2 pares de folíolos — carácter diagnóstico). Folíolos elípticos a ovado-elípticos, 5–15 cm de longitud, ápice subacuminado, base asimétrica, margen ondulado, textura coriácea. Haz verde oscuro brillante, envés pálido. Los folíolos superiores son más grandes que los inferiores.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Inflorescencias en panículas axilares o terminales de 5–20 cm. Flores pequeñas (5–7 mm), pétalos blanco-verdosos, muy fragantes. Árbol monoico (o dioico funcional): la mayoría de individuos produce flores predominantemente masculinas o femeninas; algunos presentan flores bisexuales. Polinización entomófila (abejas, abejorros).</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Fruto tipo drupa, esférico a ovoide, 2–4 cm de diámetro. Exocarpio verde, delgado, quebradizo. Pulpa jugosa, translúcida, agridulce de textura gelatinosa, color naranja o amarillo-anaranjado. Contiene 1 semilla grande, oblonga, pardo-rojiza, lisa. Frutos en racimos compactos de 5 a 20 unidades. Dispersión por aves y mamíferos (zoocoria).</div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔍 Triada diagnóstica en campo:</strong> ① Hojas bijugadas (exactamente 2 pares de folíolos) · ② Frutos en racimos compactos con cáscara verde quebradiza y pulpa gelatinosa agridulce · ③ Flores pequeñas blanco-verdosas muy fragantes en panículas axilares. + Copa densa y amplia, típica de árboles de sombra en potreros llaneros.
+        </div>
+    `,
+    fauna: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🦜 Loros y Pericos</div><div class="section-val text-sm mt-2"><em>Amazona amazonica</em>, <em>Pionus menstruus</em>, <em>Brotogeris jugularis</em>. Consumen la pulpa dulce y dispersan semillas a largas distancias; uso del dosel como sitio de percha y anidamiento.</div></div>
+            <div class="metric-card"><div class="metric-label">🐦 Tangaras y Mieleros</div><div class="section-val text-sm mt-2"><em>Thraupis episcopus</em>, <em>Dacnis cayana</em>. Aves frugívoras que consumen activamente la pulpa agridulce durante la fructificación (mayo–julio).</div></div>
+            <div class="metric-card"><div class="metric-label">🦅 Rapaces</div><div class="section-val text-sm mt-2"><em>Buteo magnirostris</em> (gavilán caminero). Usa la copa densa como sitio de anidación y atalaya de caza en los llanos abiertos.</div></div>
+            <div class="metric-card"><div class="metric-label">🦇 Murciélagos frugívoros</div><div class="section-val text-sm mt-2"><em>Carollia perspicillata</em>, <em>Artibeus jamaicensis</em>. Consumen frutos maduros y son dispersores nocturnos clave; visitan flores por néctar.</div></div>
+            <div class="metric-card"><div class="metric-label">🐒 Primates</div><div class="section-val text-sm mt-2"><em>Alouatta seniculus</em> (mono aullador), <em>Cebus albifrons</em> (mico maicero). Consumen frutos y semillas; reportados en bosques de galería del Casanare.</div></div>
+            <div class="metric-card"><div class="metric-label">🐝 Abejas nativas</div><div class="section-val text-sm mt-2"><em>Apis mellifera</em>, <em>Trigona</em> spp. Polinizadores primarios. <em>M. bijugatus</em> es fuente importante de néctar durante febrero–marzo, período de menor oferta floral en el llano.</div></div>
+            <div class="metric-card"><div class="metric-label">🐿️ Mamíferos terrestres</div><div class="section-val text-sm mt-2"><em>Dasyprocta punctata</em> (ñeque/guatín), <em>Sciurus</em> spp. (ardillas). Consumen y entierran semillas, actuando como dispersores secundarios.</div></div>
+            <div class="metric-card"><div class="metric-label">⚠️ Hongo patógeno</div><div class="section-val text-sm mt-2"><em>Meliola crucifera</em> (mildiu negro). Agente causal reportado en Colombia. Monitorear en individuos del JBP para detectar síntomas tempranos.</div></div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🌳 Valor ecosistémico:</strong> La copa densa del mamoncillo reduce la temperatura del suelo circundante hasta 5°C respecto al sol directo. Su fructificación en época de mayor calor (verano) lo convierte en recurso alimenticio clave para la fauna cuando el alimento es más escaso.
+        </div>
+    `,
+    usos: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🍈 Alimentación (Uso Principal)</div><div class="section-val text-sm mt-2">Pulpa gelatinosa consumida directamente al chupar o morder la cáscara. En Casanare, los racimos se venden en plazas y márgenes de vía. Se usa para jugos, chicha, mermeladas, gelatinas, helados artesanales y licores. Semilla tostada usada históricamente por comunidades indígenas como sustituto de la yuca.</div></div>
+            <div class="metric-card"><div class="metric-label">🌿 Medicina Popular</div><div class="section-val text-sm mt-2">Decocción de hojas como febrífugo, antidiarreico y antiséptico. Decocción de semillas contra disentería y parásitos intestinales. Semillas molidas aplicadas tópicamente en heridas. Frutos fuente de vitamina C, hierro y calcio. Estudios recientes identifican compuestos fenólicos con actividad antioxidante y antiinflamatoria.</div></div>
+            <div class="metric-card"><div class="metric-label">🪵 Madera y Carpintería</div><div class="section-val text-sm mt-2">Madera dura, pesada, de grano fino y resistente. Usada para muebles, molduras, artesanías y construcción rural. En fincas del Casanare, se emplea para horcones de viviendas, mangos de herramientas y artículos de carpintería doméstica. Alta demanda a nivel local.</div></div>
+            <div class="metric-card"><div class="metric-label">🌳 Sombra y Ornamental</div><div class="section-val text-sm mt-2">Uno de los árboles de sombra más apreciados en plazas, patios y potreros del Casanare. Copa extensa genera microclimas frescos indispensables en el rigor del verano llanero. Plantado habitualmente como árbol de sombrío para ganado bovino y bufalino. Componente habitual del arbolado urbano en Maní, Trinidad y Orocué.</div></div>
+            <div class="metric-card"><div class="metric-label">🍯 Apicultura</div><div class="section-val text-sm mt-2">Fuente importante de néctar para apicultura tropical. Panículas florales producen abundante néctar durante febrero–marzo, coincidiendo con el período de menor oferta floral en el llano. Apicultores del Casanare pueden aprovechar este recurso melífero potencialmente valioso.</div></div>
+            <div class="metric-card"><div class="metric-label">🌐 Usos Ambientales</div><div class="section-val text-sm mt-2">Contribuye a la conectividad del paisaje entre fragmentos de bosque seco y galería en el Casanare. Actúa como refugio permanente de fauna en potreros y áreas deforestadas. Estabiliza taludes y riberas de caños gracias a su sistema radical. Especie nativa con preferencia en programas de restauración ecológica del IDEAM para la Orinoquía.</div></div>
+        </div>
+    `,
+    mensajeIA: "🍈 ¡Hola, pariente llanero! Soy el <strong>mamoncillo</strong>, y aquí en el Casanare me conocen desde hace muchísimo tiempo: soy <strong>nativo</strong> de estas tierras, del norte de Colombia y Venezuela. ¡Nadie me trajo de otro continente, soy de aquí! Mi nombre científico es <em>Melicoccus bijugatus</em> Jacq., y viene de dos palabras griegas muy bonitas: <em>melí</em>, que significa <strong>miel</strong>, y <em>kokkos</em>, que significa <strong>baya</strong>. Juntas dicen \"baya de miel\": el nombre perfecto para describirme, porque mi fruto es precisamente una bolita verde llena de una pulpa jugosa, agridulce y gelatinosa que sabe a una mezcla de limón y miel. ¡Los niños del Casanare llevan siglos rompiéndome la cáscara con los dientes para llegar a esa delicia!\n\nSoy un árbol de crecimiento lento pero de vida muy larga. Cuando estoy adulto, puedo alcanzar los 30 metros de altura y mi copa se hace tan grande y tupida que a mi sombra pueden descansar un hato entero de vacas en el verano. Por eso los llaneros me quieren tanto: soy su \"árbol de la sombra del potrero\", ese árbol solitario en medio del llano abierto donde el ganado se refugia del sol que quema como brasa. Mis flores son pequeñas y blancas, casi invisibles, pero su perfume dulzón llena el aire en febrero cuando comienzan las primeras lluvias. Las abejas me visitan sin parar, y de eso también me alegro: ellas me ayudan a hacer mis frutos.\n\n✨ <strong>Curiosidad que te dejará boquiabierto</strong>: Los indígenas de la Orinoquía que vivían a las orillas del gran río Orinoco —justo frente al Casanare— ¡tostaban mis semillas y las comían como sustituto de la yuca! Eso quedó registrado en los diccionarios etnobotánicos del siglo XVIII. ¿Recuerdas que me llaman \"bijugatus\" porque tengo exactamente dos pares de hojitas? Ni una más, ni una menos: siempre dos pares perfectos. Si alguna vez encuentras una hoja de mamoncillo con 3 pares de folíolos, ¡corre a avisarle al botánico más cercano, porque estás ante algo muy raro!",
+    referencias: [
+        "Acevedo-Rodríguez, P. (2003). <em>Melicocceae (Sapindaceae): Melicoccus and Talisia</em>. Flora Neotropica, 87, 1–178. New York Botanical Garden Press.",
+        "Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., De Las Salas, G., Del Valle, I., Lema, A., Moreno, F., Orrego, S., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>, 297–308. https://doi.org/10.1016/j.foreco.2011.12.013",
+        "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2017). <em>Nombres comunes de las plantas de Colombia</em> [base de datos en línea]. Universidad Nacional de Colombia, Instituto de Ciencias Naturales. http://www.biovirtual.unal.edu.co/nombrescomunes/",
+        "Francis, J. K. (1992). <em>Melicoccus bijugatus</em> Jacq. Quenepa. SO-ITF-SM-48. U.S. Department of Agriculture, Forest Service, Southern Forest Experiment Station.",
+        "IDEAM. (2011). <em>Estimación de las reservas actuales (2010) de carbono almacenadas en la biomasa aérea en bosques naturales de Colombia: Estratificación, alometría y métodos analíticos</em>. IDEAM.",
+        "Molina-Rodríguez, A., Garzón-Suárez, D. A., & Orjuela-Salazar, A. M. (2019). <em>Melicoccus bijugatus</em> (guinep): Fitoquímica, propiedades nutricionales y aplicaciones comerciales. <em>International Journal of Fruit Science, 20</em>(S2), 784–799. https://doi.org/10.1080/15538362.2019.1669517",
+        "Royal Botanic Gardens, Kew. (2026). <em>Melicoccus bijugatus</em> Jacq. Plants of the World Online. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:783682-1"
+    ],
+    quiz: [
+        { q: "¿Qué significado tiene el nombre científico Melicoccus bijugatus y cómo se refleja en la morfología de la planta?", opts: ["\"Árbol de miel negro\": porque el tronco secreta una resina oscura y pegajosa", "\"Fruta doble de la selva\": porque produce dos cosechas al año sin excepción", "\"Baya de miel con dos pares\": meli = miel + kokkos = baya (pulpa dulce) y bijugatus = dos pares de folíolos por hoja", "\"Semilla blanda de miel\": porque la semilla tiene una cubierta suave de color miel cuando madura"], correct: 2, expl: "El nombre científico refleja dos características diagnósticas: la pulpa dulce ('baya de miel') y la disposición bijugada de las hojas (exactamente dos pares de folíolos), carácter clave para identificación en campo." },
+        { q: "¿Por qué el mamoncillo es especialmente importante para el Inventario Forestal del JBP Maní?", opts: ["Porque es la única especie del inventario que produce madera de exportación", "Porque es una especie NATIVA del norte de Colombia y Venezuela, con arraigo cultural en el Casanare y roles ecológicos clave (sombra, frutos para fauna, apicultura)", "Porque es la especie con mayor velocidad de crecimiento y captura de carbono", "Porque fue traída del Caribe para mejorar la biodiversidad de los llanos en el siglo XX"], correct: 1, expl: "Su condición de especie nativa, su valor cultural llanero y sus servicios ecosistémicos (sombra, alimento para fauna, recurso melífero) la convierten en prioritaria para el inventario patrimonial del JBP Maní." },
+        { q: "¿Cuál es una característica reproductiva particular de M. bijugatus que puede afectar la producción de frutos si solo hay un ejemplar plantado?", opts: ["Sus flores solo se abren de noche y no hay murciélagos polinizadores en el Casanare", "El árbol es monoico (o dioico funcional): la mayoría de individuos produce flores predominantemente masculinas o femeninas, por lo que se necesitan varios individuos para polinización cruzada", "Sus semillas solo germinan después de pasar por el sistema digestivo de un murciélago específico", "Sus flores son autofértiles pero solo se polinizan si la temperatura supera los 35°C"], correct: 1, expl: "La condición monoica/dioica funcional requiere la presencia de múltiples individuos para garantizar la polinización cruzada. Esto es clave para la planificación de siembras en el JBP: no basta con plantar un solo árbol si se busca producción de frutos." },
+        { q: "¿Cuál es la triada diagnóstica para identificar rápidamente un mamoncillo en campo en Maní, Casanare?", opts: ["Hojas simples alternas + frutos rojos + flores amarillas solitarias", "Hojas bijugadas (2 pares de folíolos) + frutos en racimos compactos con cáscara verde quebradiza y pulpa gelatinosa + flores pequeñas blanco-verdosas fragantes en panículas axilares", "Hojas compuestas con 3+ pares de folíolos + frutos en cápsulas secas + flores grandes rosadas", "Hojas lobuladas + frutos en bayas negras + flores en racimos terminales"], correct: 1, expl: "La combinación de hojas bijugadas (exactamente 2 pares), frutos en racimos con cáscara verde quebradiza y pulpa gelatinosa agridulce, y flores pequeñas blanco-verdosas fragantes en panículas axilares, constituye la firma morfológica única de M. bijugatus en el llano." },
+        { q: "¿Qué valor ecosistémico adicional aporta el mamoncillo en potreros del Casanare durante el verano?", opts: ["Fija nitrógeno atmosférico en el suelo, mejorando la fertilidad para pastos", "Reduce la temperatura del suelo circundante hasta 5°C respecto al sol directo, generando microclimas frescos para el ganado y la fauna", "Atrae lluvia local mediante la emisión de compuestos volátiles desde sus hojas", "Produce resinas que repelen plagas del ganado bovino"], correct: 1, expl: "La copa densa y extensa del mamoncillo genera sombra permanente que reduce significativamente la temperatura del suelo y del aire circundante. Este microclima es vital para el bienestar del ganado y la fauna local durante los meses más calurosos del verano llanero." }
+    ]
+},
+"limoncillo": {
+    id: "#JBP-21", tipo: "Introducida", nombre: "Limoncillo", cientifico: "Swinglea glutinosa (Blanco) Merr.",
+    familia: "Rutaceae", origen: "Filipinas — Naturalizada en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN); exótica cultivada en Colombia", exotica: true,
+    carbono: 0.089, viajes: 32, imagen_portada: "./imagenes/limoncillo1.jpeg",
+    galeria: [
+        { img: "./imagenes/limoncillo2.jpeg", desc: "" },
+        { img: "./imagenes/limoncillo3.jpeg", desc: "" },
+        { img: "./imagenes/limoncillo4.jpeg", desc: "" },
+        { img: "./imagenes/limoncillo5.jpeg", desc: "" },
+    ],
+    nombresLocales: ["Limoncillo", "Limón Swingle", "Suingle", "Swinglia", "Cerca viva", "Limón de cerca", "Tabog"],
+    distribucion: `
+        <p><strong>Especie introducida naturalizada:</strong> <em>Swinglea glutinosa</em> (Blanco) Merr. es originaria de Filipinas y pertenece a la familia Rutaceae (la misma de los cítricos). Es un <strong>género monotípico</strong>: esta es la única especie del género <em>Swinglea</em> en todo el mundo. En Colombia se ha naturalizado como especie cultivada en las regiones Amazonia, Andes, Caribe, Orinoquía y Valle del Cauca (0–2.000 m s.n.m.). En Casanare es omnipresente delimitando potreros y fincas, donde cumple funciones agroforestales clave como cerco vivo y sombra puntual.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Sapindales</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Rutaceae Juss. (Subfamilia: Aurantioideae)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género / Especie</td><td style="padding:6px;"><em>Swinglea</em> Merr. (monotípico) / <em>S. glutinosa</em> (Blanco) Merr.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Basiónimo</td><td style="padding:6px;"><em>Limonia glutinosa</em> Blanco (1837, <em>Flora de Filipinas</em>)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Swinglea</em>: en honor a Walter T. Swingle (agrobotánico de cítricos); <em>glutinosa</em>: hojas pegajosas por glándulas de mucílago</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">✅ LC (UICN) · ⚠️ Exótica cultivada en Colombia · Riesgo invasor: bajo</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro">
+            <p>"Swinglea glutinosa es una especie de la familia Rutaceae, originaria de Filipinas, que se ha naturalizado en varias regiones tropicales de América. En Colombia se reporta como especie cultivada y subespontánea en cercas vivas y sistemas agroforestales."</p>
+            <cite>— Bernal, R., et al. (2017). <em>Nombres comunes de las plantas de Colombia</em>. Universidad Nacional de Colombia.</cite>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>⚠️ Nota técnica:</strong> Esta especie NO es nativa de Colombia. Su inclusión en el Inventario JBP responde a su valor agroforestal y ecológico en sistemas silvopastoriles del Casanare. No compite agresivamente con flora nativa, pero requiere monitoreo fitosanitario por su condición de hospedero potencial del virus de la leprosis de los cítricos (CiLV-C).
+        </div>
+    `,
+    densidad: "⚠️ Dato por verificar en campo (Rutaceae: ~0,60–0,75 g/cm³ estimado)", fraccion: "0,47 – 0,50 (IPCC para latifoliadas tropicales)",
+    alometria: `
+        <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+            ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No se encontró un valor de densidad básica de madera (ρ) específico para <em>Swinglea glutinosa</em> en la Orinoquía colombiana. El rango de ~0,60–0,75 g/cm³ es una estimación basada en la familia Rutaceae. Asimismo, el Factor de Expansión de Biomasa (FEB) específico no está reportado; usar FEB = 1,30 (IPCC Tier 1 para arbustos tropicales) como valor provisional hasta obtener mediciones directas en individuos del JBP Maní.
+        </div>
+        <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+            BA = EXP(α + β₁·Ln(DAP) + β₂·Ln(ρ)) · Álvarez et al. (2012) · DAP ≥ 10 cm
+        </div>
+        <p class="text-sm"><strong>Modelo Colombia — Álvarez et al. (2012), Tipo II.1:</strong> Ecuación recomendada por IDEAM para individuos con DAP ≥ 10 cm. Para arbustos pequeños (DAP < 10 cm), usar ecuación de Chave et al. (2005): BA = 0,112 × (ρ × DAP² × H)^0,916.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">BA</td><td style="padding:6px;">Biomasa aérea individual (kg)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1,30 m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ</td><td style="padding:6px;">Densidad básica: ~0,60–0,75 g/cm³ (⚠️ estimado por familia Rutaceae)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FC (Carbono)</td><td style="padding:6px;">0,47 (IPCC, 2006) o 0,50 (Brown, 1997)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar · Usar 1,30 (IPCC Tier 1 arbustos tropicales) como valor provisional</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro" style="font-size:0.85rem;">
+            <p>"En sistemas silvopastoriles, las cercas vivas lineales representan reservorios permanentes de biomasa leñosa en paisajes ganaderos donde la cobertura forestal nativa ha disminuido. Su contribución al almacenamiento de carbono, aunque modesta por individuo, es significativa a escala de paisaje cuando se consideran kilómetros lineales de linderos."</p>
+            <cite>— IDEAM. (2011). <em>Estimación de las reservas actuales de carbono almacenadas en la biomasa aérea en bosques naturales de Colombia</em>.</cite>
+        </div>
+    `,
+    calendario: [
+        { mes: "Dic", fase: "Fructificación tardía 🍋", clima: "dry" },
+        { mes: "Ene", fase: "Persistencia de follaje 🍃", clima: "dry" },
+        { mes: "Feb", fase: "Floración principal 🌸", clima: "dry" },
+        { mes: "Mar", fase: "Floración máxima + Polinización 🌸🐝", clima: "dry" },
+        { mes: "Abr", fase: "Cuajado de frutos 🟢", clima: "rain" },
+        { mes: "May", fase: "Desarrollo de frutos 🍋", clima: "rain" },
+        { mes: "Jun", fase: "Maduración temprana 🍋", clima: "rain" },
+        { mes: "Jul", fase: "Maduración máxima 🍋", clima: "rain" },
+        { mes: "Ago", phase: "Dispersión limitada 🍋", clima: "rain" },
+        { mes: "Sep", fase: "Segunda floración (esporádica) 🌸", clima: "rain" },
+        { mes: "Oct", fase: "Rebrote vegetativo 🌱", clima: "rain" },
+        { mes: "Nov", fase: "Preparación para sequía 🍃", clima: "dry" }
+    ],
+    morfologia: `
+        <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol pequeño a mediano de 7–12 m de altura. Copa densa y redondeada. Porte arbustivo cuando se poda para cercas vivas. Especie perennifolia (siempreverde), manteniendo follaje denso todo el año. Crecimiento moderado, longeva bajo manejo adecuado.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíces fibrosas y extendidas, adaptadas a suelos bien drenados. No presenta aletones basales. Sistema radical eficaz para estabilización de taludes y linderos, contribuyendo a la retención de suelo en bordes de potreros.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo / Corteza y Espinas:</strong> Tronco con corteza gris-pardusca, lisa a ligeramente fisurada. <strong>Carácter diagnóstico clave:</strong> Ramas profusamente espinosas con espinas rectas, agudas y axilares de hasta 4 cm de longitud. Estas espinas son la base de su uso como barrera infranqueable para ganado.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje:</strong> Hojas simples, alternas, unifolioladas, coriáceas, verde oscuro. <strong>Carácter único:</strong> Superficie foliar <strong>glutinosa (pegajosa)</strong> al tacto debido a glándulas secretoras de mucílago. Limbo elíptico de 5–12 cm, margen entero, ápice agudo. Esta pegajosidad es una adaptación defensiva contra herbívoros.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Flores blancas, solitarias o en racimos axilares, muy perfumadas con fragancia cítrica intensa. Pétalos reflexos, estambres numerosos. Actinomorfas y hermafroditas. Polinización entomófila (abejas, abejorros). Floración principal en febrero–marzo, con evento secundario en septiembre–octubre.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Fruto tipo hesperidio (cítrico), grande (10–12 cm), ovoide, color amarillo-verdoso al madurar. Cáscara gruesa y rugosa rica en aceites esenciales. <strong>⚠️ Pulpa NO comestible:</strong> ácida, amarga, muy pegajosa y rica en pectinas. Semillas pequeñas, poliembriónicas. Dispersión limitada; frutos persistentes en la planta.</div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔍 Triada diagnóstica en campo:</strong> ① Hojas unifolioladas, coriáceas y <strong>pegajosas al tacto</strong> · ② Espinas axilares rectas y agudas (hasta 4 cm) · ③ Frutos hesperidios grandes (10–12 cm), amarillo-verdosos, de pulpa no comestible. + Porte arbustivo en linderos y olor cítrico intenso de las flores.
+        </div>
+    `,
+    fauna: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🐝 Abejas y polinizadores</div><div class="section-val text-sm mt-2"><em>Apis mellifera</em>, meliponinos (<em>Trigona</em> spp.). Atraídos por la fragancia cítrica intensa de las flores. Fuente de néctar valiosa en época de menor oferta floral (febrero–marzo).</div></div>
+            <div class="metric-card"><div class="metric-label">🦋 Lepidópteros</div><div class="section-val text-sm mt-2"><em>Papilio</em> spp. y otras mariposas de la familia Papilionidae. Usan la planta como hospedera larval; las orugas toleran los aceites esenciales de las hojas de Rutaceae.</div></div>
+            <div class="metric-card"><div class="metric-label">🦎 Reptiles pequeños</div><div class="section-val text-sm mt-2">Lagartijas (<em>Ameiva</em> spp., <em>Anolis</em> spp.). Utilizan la estructura espinosa densa como refugio seguro contra depredadores en potreros abiertos.</div></div>
+            <div class="metric-card"><div class="metric-label">🐦 Aves insectívoras</div><div class="section-val text-sm mt-2">Aves pequeñas (<em>Tyrannus</em> spp., <em>Myiarchus</em> spp.). Usan las ramas espinosas como perchas de caza y sitios de anidación protegidos.</div></div>
+            <div class="metric-card"><div class="metric-label">🚨 Alerta fitosanitaria</div><div class="section-val text-sm mt-2"><strong>Hospedero de Virus de la Leprosis de los Cítricos (CiLV-C)</strong> y vector <em>Brevipalpus phoenicis</em> (ácaro). Monitoreo obligatorio en fincas con cultivos comerciales de cítricos en un radio de 500 m. No eliminar, pero sí manejar con distanciamiento estratégico.</div></div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #e74c3c; padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>⚠️ Nota de bioseguridad:</strong> Aunque <em>S. glutinosa</em> tiene bajo riesgo invasor, su condición de hospedero del virus de la leprosis de los cítricos requiere manejo responsable. En fincas con producción comercial de cítricos, se recomienda mantener una distancia mínima de 500 m entre cercas de limoncillo y los cultivos, o considerar especies nativas alternativas para linderos.
+        </div>
+    `,
+    usos: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🚧 Cercas Vivas (Uso Principal)</div><div class="section-val text-sm mt-2">Barrera infranqueable para ganado gracias a sus espinas axilares rectas y agudas. Reemplaza alambre de púas con ventajas ecológicas: retiene suelo, ofrece refugio a fauna, captura carbono y requiere bajo mantenimiento. Se poda fácilmente para mantener densidad y altura deseada.</div></div>
+            <div class="metric-card"><div class="metric-label">🔧 Patrón de Injerto</div><div class="section-val text-sm mt-2">Valorado en citricultura como portainjerto por su tolerancia a enfermedades fúngicas, nematodos y suelos ácidos. Compatible con varias especies de cítricos comerciales. Uso técnico que requiere conocimiento especializado en injertación.</div></div>
+            <div class="metric-card"><div class="metric-label">🍯 Fuente de Pectinas</div><div class="section-val text-sm mt-2">El fruto, aunque no comestible, es rico en pectinas. Se usa artesanalmente como pegante natural o fuente para elaboración de mermeladas de otras frutas. Potencial industrial para extracción de pectina de grado alimenticio o cosmético.</div></div>
+            <div class="metric-card"><div class="metric-label">💊 Medicina Popular</div><div class="section-val text-sm mt-2">Hojas machacadas en alcohol para micosis cutáneas, inflamaciones y dolores reumáticos (efecto antiséptico y antiinflamatorio validado in vitro). Uso tradicional en Casanare; se recomienda precaución y consulta médica antes de aplicaciones terapéuticas.</div></div>
+            <div class="metric-card"><div class="metric-label">🌳 Ornamental y Paisajismo</div><div class="section-val text-sm mt-2">Copa densa, flores fragantes y follaje perenne lo hacen atractivo para jardines, parques y entradas de fincas. Resistente a poda, sequía y suelos pobres. Opción estética y funcional para delimitación ornamental en zonas urbanas y rurales del Casanare.</div></div>
+            <div class="metric-card"><div class="metric-label">🌱 Restauración de Linderos</div><div class="section-val text-sm mt-2">Aunque exótica, su rápido establecimiento y resistencia la hacen útil para estabilizar bordes de potreros degradados mientras se establecen especies nativas de largo plazo. Usar como especie "puente" en estrategias de restauración gradual, no como fin único.</div></div>
+        </div>
+    `,
+    mensajeIA: "🍋 ¡Hola, pariente llanero! Soy el <strong>limoncillo</strong>, pero mi nombre científico es <em>Swinglea glutinosa</em> y tengo una historia que pocos conocen: <strong>vengo de muy lejos</strong>. Nací en las islas Filipinas, en Asia, y crucé océanos para llegar a tu tierra. Pero no te preocupes: no vine a competir, vine a servir. Soy tan único que soy el <strong>único árbol de mi género en todo el planeta</strong>. ¡No tengo hermanos ni primos en el mundo de los nombres científicos!\n\nSoy el árbol de la defensa. Cuando los llaneros quieren proteger sus hatos sin gastar dinero en alambre, me plantan en fila. Mis ramas están llenas de espinas rectas y afiladas —una barrera viva que ningún toro se atreve a cruzar. Soy el muro verde y espinoso que mantiene el orden en la sabana.\n\n🤫 <strong>¿Mi secreto?</strong> Tócame las hojas. ¿Sientes esa pegajosidad? Por eso me llamo <em>glutinosa</em>. Mis hojas tienen miles de glándulas que secretan un mucílago natural, como una baba invisible. Esa pegajosidad es mi armadura contra insectos y mi marca personal.\n\nCuando florezco (que es dos veces al año), el aire se llena de un perfume cítrico intenso que despierta a las abejas. Mis frutos son grandes y hermosos, parecidos a limones gigantes, pero ¡no te los comas! Mi pulpa es amarga y pegajosa. Sin embargo, mis raíces trabajan duro para sostener la tierra y mis espinas cuidan el ganado. Soy el guardián silencioso de la finca.\n\n✨ <strong>Una advertencia con cariño</strong>: Si en tu finca hay naranjos, limones o mandarinas comerciales, mantenme a unos 500 metros de distancia. Puedo ser portador de un virus que afecta a mis primos cítricos. No soy malo, solo necesito espacio para que todos vivamos en paz. ¿Me plantarías en tu linderos?",
+    referencias: [
+        "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2017). <em>Nombres comunes de las plantas de Colombia</em>. Universidad Nacional de Colombia. http://www.biovirtual.unal.edu.co/nombrescomunes/",
+        "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). <em>Catálogo de plantas y líquenes de Colombia</em>. Instituto de Ciencias Naturales, UNAL. http://catalogoplantasdecolombia.unal.edu.co",
+        "Jiménez Villasuso, R., et al. (2015). Caracterización y evaluación del género <em>Swinglea glutinosa</em> (Blanco) Merr. (Rutaceae). <em>Revista Agrotecnia de Cuba, 39</em>(2), 3–19.",
+        "León, M., Gómez-Montoya, J., & Morales, J. G. (2006). Natural infection of <em>Swinglea glutinosa</em> by the Citrus leprosis virus cytoplasmic type (CiLV-C) in Colombia. <em>Plant Disease, 90</em>(6), 829. https://doi.org/10.1094/PD-90-0829B",
+        "Royal Botanic Gardens, Kew. (2026). <em>Swinglea glutinosa</em> (Blanco) Merr. <em>Plants of the World Online</em>. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:775281-1",
+        "Sotelo, L., Arrázola, G., Emeri, S., & Alvis, A. (2016). Extracción y caracterización de pectinas a partir del fruto de Limón Swinglea (<em>Swinglea glutinosa</em>). <em>Revista SENNOVA, 2</em>(1), 70–82.",
+        "Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., De Las Salas, G., Del Valle, I., Lema, A., Moreno, F., Orrego, S., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>, 297–308. https://doi.org/10.1016/j.foreco.2011.12.013"
+    ],
+    quiz: [
+        { q: "¿Por qué el epíteto específico 'glutinosa' forma parte del nombre científico Swinglea glutinosa?", opts: ["Porque sus raíces son gomosas y pegan la tierra", "Porque sus frutos producen una miel dulce y pegajosa", "Porque sus hojas son notablemente pegajosas al tacto debido a glándulas de mucílago", "Porque crece adherida a otros árboles como parásito"], correct: 2, expl: "El epíteto 'glutinosa' (del latín 'gluten' = pegamento) hace referencia directa a la característica diagnóstica de sus hojas: son pegajosas al tacto por la presencia de glándulas secretoras de mucílago. Esta es una adaptación defensiva y una clave de identificación en campo." },
+        { q: "¿Cuál es la característica taxonómica única del género Swinglea a nivel mundial?", opts: ["Es el único árbol que florece dos veces al año", "Es el único árbol que no produce semillas viables", "Es un género monotípico: S. glutinosa es la ÚNICA especie de su género en todo el planeta", "Es el único árbol de la familia Rutaceae con espinas axilares"], correct: 2, expl: "Swinglea es un género monotípico: significa que contiene una sola especie válida en todo el mundo, que es S. glutinosa. No tiene otras especies hermanas dentro del mismo género, lo que le otorga un valor taxonómico singular." },
+        { q: "¿Cuál es la principal razón por la que Swinglea glutinosa se usa como cerca viva en el Casanare?", opts: ["Porque sus flores perfumadas ahuyentan plagas del ganado", "Porque sus espinas rectas y agudas forman una barrera infranqueable para el ganado bovino", "Porque sus frutos alimentan al ganado durante la época seca", "Porque sus hojas son un forraje de alta calidad proteica"], correct: 1, expl: "Las espinas axilares rectas y agudas (hasta 4 cm) de S. glutinosa forman una barrera física efectiva que el ganado no atraviesa. Esta característica, combinada con su resistencia a la poda y su rápido establecimiento, la hace ideal para cercas vivas de bajo mantenimiento." },
+        { q: "¿Qué medida de bioseguridad se recomienda si se tiene Swinglea glutinosa cerca de cultivos comerciales de cítricos?", opts: ["Eliminar todos los individuos de limoncillo en un radio de 1 km", "Mantener una distancia mínima de 500 m entre cercas de limoncillo y cultivos de cítricos", "Injertar cítricos comerciales sobre limoncillo para generar resistencia", "Aplicar pesticidas mensuales a las cercas de limoncillo"], correct: 1, expl: "S. glutinosa puede ser hospedera del virus de la leprosis de los cítricos (CiLV-C) y de su vector, el ácaro Brevipalpus phoenicis. Por precaución, se recomienda mantener una distancia mínima de 500 m entre cercas de limoncillo y cultivos comerciales de cítricos, sin necesidad de eliminar la especie." },
+        { q: "¿Por qué los frutos de Swinglea glutinosa NO son recomendables para consumo humano directo?", opts: ["Porque son tóxicos y pueden causar intoxicación grave", "Porque su pulpa es ácida, amarga y muy pegajosa, rica en pectinas no digeribles", "Porque contienen semillas venenosas que no pueden separse fácilmente", "Porque su cáscara es demasiado gruesa y dura para pelarse"], correct: 1, expl: "Aunque los frutos de S. glutinosa son visualmente atractivos (hesperidios de 10–12 cm), su pulpa es ácida, amarga y extremadamente pegajosa debido a su alto contenido de pectinas. No son tóxicos, pero su sabor y textura los hacen poco apetecibles para consumo directo. Se usan industrialmente para extracción de pectina, no como fruta de mesa." }
+    ]
+}
 };
