@@ -190,12 +190,12 @@
             selectEspecie.innerHTML = '<option value="" disabled selected>Selecciona una especie...</option>';
             
             // Obtener lista de especies válidas
-            const especies = obtenerListaEspecies();
+            const especies = window.CalculadoraCarbono.obtenerListaEspecies();
             
             // Agregar cada especie al select
             especies.forEach(especie => {
                 const option = document.createElement('option');
-                option.value = especie.clave;
+                option.value = especie.id;
                 option.textContent = `${especie.nombre} (${especie.cientifico})`;
                 selectEspecie.appendChild(option);
             });
@@ -205,12 +205,12 @@
         document.getElementById('carbonCalculator').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const especie = document.getElementById('especie').value;
+            const especieId = document.getElementById('especie').value;
             const dap = parseFloat(document.getElementById('dap').value);
             const altura = parseFloat(document.getElementById('altura').value);
             
             // Validar entradas
-            if (!especie || isNaN(dap) || isNaN(altura) || dap <= 0 || altura <= 0) {
+            if (!especieId || isNaN(dap) || isNaN(altura) || dap <= 0 || altura <= 0) {
                 alert('Por favor ingresa todos los datos correctamente');
                 return;
             }
@@ -221,14 +221,18 @@
 
             setTimeout(() => {
                 try {
-                    // Calcular usando las ecuaciones reales
-                    const resultado = calcularBiomasaYCarbono(especie, dap, altura);
+                    // Calcular usando las ecuaciones reales (usando ecuación específica por defecto)
+                    const resultado = window.CalculadoraCarbono.calcularBiomasa(especieId, dap, altura, 'especifica');
+                    
+                    // Calcular equivalencias
+                    const equivalencias = window.CalculadoraCarbono.calcularEquivalencias(resultado.carbono);
                     
                     // Mostrar resultados con animación
+                    // Nota: El resultado muestra CO₂ equivalente (carbono * 3.67)
                     document.getElementById('res-carbono').innerText = resultado.co2Equivalente.toFixed(2);
-                    document.getElementById('res-auto').innerText = resultado.equivalencias.kmAuto.toLocaleString() + " km";
-                    document.getElementById('res-oxigeno').innerText = resultado.equivalencias.personasDia.toLocaleString();
-                    document.getElementById('res-energia').innerText = resultado.equivalencias.diasFocoLED.toLocaleString() + " días";
+                    document.getElementById('res-auto').innerText = Math.round(equivalencias.kmAuto).toLocaleString() + " km";
+                    document.getElementById('res-oxigeno').innerText = Math.round(equivalencias.personasDiaOxigeno).toLocaleString();
+                    document.getElementById('res-energia').innerText = Math.round(equivalencias.diasFocoLED).toLocaleString() + " días";
                     
                     // Mostrar mensaje de éxito
                     document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-check"></i> ¡Cálculo Exitoso!';
@@ -242,7 +246,7 @@
                     console.error(error);
                     document.getElementById('res-carbono').innerText = "Error";
                     document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error en cálculo';
-                    alert('Hubo un error al calcular. Verifica los datos e intenta nuevamente.');
+                    alert('Hubo un error al calcular: ' + error.message);
                 }
             }, 800);
         });
