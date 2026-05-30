@@ -53,11 +53,7 @@
                             <label for="especie"><i class="fas fa-leaf"></i> Especie del Árbol</label>
                             <select id="especie" required>
                                 <option value="" disabled selected>Selecciona una especie...</option>
-                                <option value="yopo">Yopo (Anadenanthera peregrina)</option>
-                                <option value="flor_amarillo">Flor Amarillo (Handroanthus chrysanthus)</option>
-                                <option value="matapalo">Matapalo (Ficus aurea)</option>
-                                <option value="ceiba">Ceiba (Ceiba pentandra)</option>
-                                <option value="otro">Otra especie genérica</option>
+                                <!-- Las especies se cargan dinámicamente desde calculadora-carbono.js -->
                             </select>
                         </div>
 
@@ -176,6 +172,7 @@
 
 
     <!-- SCRIPT: Lógica de la calculadora y Menú -->
+    <script src="js/calculadora-carbono.js"></script>
     <script>
         // Menú Móvil
         const menuBtn = document.getElementById('mobile-menu');
@@ -185,33 +182,69 @@
             menuBtn.classList.toggle('is-active');
         });
 
-        // Simulación de Cálculo y Animación de Números
+        // Cargar especies en el select al iniciar
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectEspecie = document.getElementById('especie');
+            
+            // Limpiar opciones por defecto
+            selectEspecie.innerHTML = '<option value="" disabled selected>Selecciona una especie...</option>';
+            
+            // Obtener lista de especies válidas
+            const especies = obtenerListaEspecies();
+            
+            // Agregar cada especie al select
+            especies.forEach(especie => {
+                const option = document.createElement('option');
+                option.value = especie.clave;
+                option.textContent = `${especie.nombre} (${especie.cientifico})`;
+                selectEspecie.appendChild(option);
+            });
+        });
+
+        // Cálculo real con ecuaciones alométricas
         document.getElementById('carbonCalculator').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Valores inventados para la demo visual (¡Aquí luego pones tu fórmula matemática real!)
-            const baseValue = (document.getElementById('dap').value * document.getElementById('altura').value) * 0.8;
+            const especie = document.getElementById('especie').value;
+            const dap = parseFloat(document.getElementById('dap').value);
+            const altura = parseFloat(document.getElementById('altura').value);
             
-            const numCarbono = (baseValue * 1.5).toFixed(2);
-            const numAuto = Math.floor(baseValue * 2.3);
-            const numOxigeno = Math.floor(baseValue * 0.4);
-            const numEnergia = Math.floor(baseValue * 12);
-
-            // Animación sencilla
+            // Validar entradas
+            if (!especie || isNaN(dap) || isNaN(altura) || dap <= 0 || altura <= 0) {
+                alert('Por favor ingresa todos los datos correctamente');
+                return;
+            }
+            
+            // Animación de carga
             document.getElementById('res-carbono').innerText = "Calculando...";
             document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
 
             setTimeout(() => {
-                document.getElementById('res-carbono').innerText = numCarbono;
-                document.getElementById('res-auto').innerText = numAuto + " km";
-                document.getElementById('res-oxigeno').innerText = numOxigeno;
-                document.getElementById('res-energia').innerText = numEnergia + " días";
-                document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-check"></i> ¡Cálculo Exitoso!';
-                
-                setTimeout(() => {
-                    document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-calculator"></i> Calcular Nuevo Impacto';
-                }, 2000);
-            }, 1500);
+                try {
+                    // Calcular usando las ecuaciones reales
+                    const resultado = calcularBiomasaYCarbono(especie, dap, altura);
+                    
+                    // Mostrar resultados con animación
+                    document.getElementById('res-carbono').innerText = resultado.co2Equivalente.toFixed(2);
+                    document.getElementById('res-auto').innerText = resultado.equivalencias.kmAuto.toLocaleString() + " km";
+                    document.getElementById('res-oxigeno').innerText = resultado.equivalencias.personasDia.toLocaleString();
+                    document.getElementById('res-energia').innerText = resultado.equivalencias.diasFocoLED.toLocaleString() + " días";
+                    
+                    // Mostrar mensaje de éxito
+                    document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-check"></i> ¡Cálculo Exitoso!';
+                    
+                    // Resetear botón después de 2 segundos
+                    setTimeout(() => {
+                        document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-calculator"></i> Calcular Nuevo Impacto';
+                    }, 2000);
+                    
+                } catch (error) {
+                    console.error(error);
+                    document.getElementById('res-carbono').innerText = "Error";
+                    document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error en cálculo';
+                    alert('Hubo un error al calcular. Verifica los datos e intenta nuevamente.');
+                }
+            }, 800);
         });
     </script>
 
