@@ -1,1 +1,19 @@
-Nothing should be ignored based on the provided file changes. The added and modified files are all source code and HTML files that should be tracked in version control.
+```gitignore
+# Dependencies
+node_modules/
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+```
