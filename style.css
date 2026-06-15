@@ -1099,6 +1099,114 @@ body.modo-noche .ai-input-wrapper {
     }
 }
 
+/* =============================================
+   11.5 SECCIÓN TUTORIAL CALCULADORA
+   ============================================= */
+.calc-tutorial-section {
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+}
+
+.calc-tutorial-section h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.tutorial-card {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-light);
+}
+
+.tutorial-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.tutorial-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.tutorial-card h4 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.tutorial-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.info-box {
+    background: linear-gradient(135deg, rgba(129, 182, 34, 0.1), rgba(45, 90, 39, 0.1));
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-light);
+    text-align: left;
+}
+
+.info-box h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-box p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.info-box strong {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .calc-tutorial-section h3 {
+        font-size: 1.4rem;
+    }
+}
 
 
 
