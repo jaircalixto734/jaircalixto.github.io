@@ -9,8 +9,8 @@ const GEMINI_API_KEY = "AIzaSyA_2tw_v81LLUgR0HDDSO8Wl-MklV6QNTk";
 
 // Modelos disponibles para intentar conexión
 const MODELS = [
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-latest",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash",
     "gemini-1.5-pro-latest",
     "gemini-2.0-flash-exp",
     "gemini-1.5-flash-8b",
