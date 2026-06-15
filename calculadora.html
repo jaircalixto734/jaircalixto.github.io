@@ -68,6 +68,15 @@
                             <input type="number" id="altura" placeholder="Ej: 12" step="0.1" min="1" required>
                         </div>
 
+                        <div class="form-group">
+                            <label for="tipoEcuacion"><i class="fas fa-flask"></i> Tipo de Ecuación</label>
+                            <select id="tipoEcuacion" required>
+                                <option value="especifica" selected>Específica para la especie (Recomendada)</option>
+                                <option value="general">General Chave et al. (2014)</option>
+                            </select>
+                            <small>La ecuación específica usa coeficientes propios de cada especie. La general es pantrópica.</small>
+                        </div>
+
                         <button type="submit" class="btn-calc">
                             <i class="fas fa-calculator"></i> Calcular Impacto Ambiental
                         </button>
@@ -84,7 +93,7 @@
                             <span id="res-carbono">0.00</span>
                             <span class="unit">kg CO₂</span>
                         </div>
-                        <p class="result-subtitle">Equivale a la biomasa total procesada por este árbol.</p>
+                        <p class="result-subtitle" id="resultado-explicacion">Ingresa los datos para calcular el CO₂ almacenado por este árbol.</p>
                     </div>
 
                     <!-- Cuadrícula de Equivalencias (Tarjetas Blancas) -->
@@ -109,10 +118,67 @@
                             <span class="equiv-value" id="res-energia">0 días</span>
                             <small>Foco LED encendido</small>
                         </div>
+
+                        <div class="equiv-card">
+                            <i class="fas fa-recycle"></i>
+                            <p class="equiv-title">Botellas Plástico</p>
+                            <span class="equiv-value" id="res-botellas">0 un.</span>
+                            <small>Equivalente en producción</small>
+                        </div>
+
+                        <div class="equiv-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p class="equiv-title">Cargas Smartphone</p>
+                            <span class="equiv-value" id="res-cargas">0 cargas</span>
+                            <small>Energía para cargar</small>
+                        </div>
+
+                        <div class="equiv-card">
+                            <i class="fas fa-seedling"></i>
+                            <p class="equiv-title">Árboles Jóvenes</p>
+                            <span class="equiv-value" id="res-arboles">0 árboles</span>
+                            <small>Equivalentes a 10 años</small>
+                        </div>
                     </div>
 
                 </div>
             </div>
+
+            <!-- TUTORIAL Y EXPLICACIÓN -->
+            <div class="calc-tutorial-section">
+                <div class="container">
+                    <h3><i class="fas fa-book-open"></i> ¿Cómo usar esta calculadora?</h3>
+                    <div class="tutorial-grid">
+                        <div class="tutorial-card">
+                            <div class="tutorial-icon"><i class="fas fa-tree"></i></div>
+                            <h4>1. Selecciona la Especie</h4>
+                            <p>Elige el tipo de árbol que quieres analizar. Cada especie tiene propiedades únicas como densidad de madera y ecuaciones alométricas específicas.</p>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-icon"><i class="fas fa-ruler"></i></div>
+                            <h4>2. Mide el DAP</h4>
+                            <p>El Diámetro a la Altura del Pecho (DAP) se mide a 1.30m del suelo. Usa una cinta diamétrica o mide la circunferencia y divide por π (3.1416).</p>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-icon"><i class="fas fa-arrows-alt-v"></i></div>
+                            <h4>3. Estima la Altura</h4>
+                            <p>Puedes usar métodos visuales, comparar con objetos conocidos, o emplear instrumentos como clinómetros para mayor precisión.</p>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-icon"><i class="fas fa-flask"></i></div>
+                            <h4>4. Elige la Ecuación</h4>
+                            <p>La ecuación específica está calibrada para esa especie. La general (Chave 2014) es válida para todos los árboles tropicales.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-info-circle"></i> ¿Qué significa el resultado?</h4>
+                        <p>El valor de <strong>CO₂ equivalente</strong> representa la cantidad de dióxido de carbono que el árbol ha capturado y almacenado en su biomasa (tronco, ramas, hojas y raíces) durante su crecimiento. Este carbono permanece secuestrado mientras el árbol esté vivo, contribuyendo directamente a mitigar el cambio climático.</p>
+                        <p><strong>Fórmula:</strong> Biomasa Aérea × 0.47 (fracción de carbono) × 3.67 (factor CO₂) = CO₂ equivalente</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -208,6 +274,7 @@
             const especieId = document.getElementById('especie').value;
             const dap = parseFloat(document.getElementById('dap').value);
             const altura = parseFloat(document.getElementById('altura').value);
+            const tipoEcuacion = document.getElementById('tipoEcuacion').value;
             
             // Validar entradas
             if (!especieId || isNaN(dap) || isNaN(altura) || dap <= 0 || altura <= 0) {
@@ -221,18 +288,28 @@
 
             setTimeout(() => {
                 try {
-                    // Calcular usando las ecuaciones reales (usando ecuación específica por defecto)
-                    const resultado = window.CalculadoraCarbono.calcularBiomasa(especieId, dap, altura, 'especifica');
+                    // Calcular usando las ecuaciones reales (usando el tipo seleccionado)
+                    const resultado = window.CalculadoraCarbono.calcularBiomasa(especieId, dap, altura, tipoEcuacion);
                     
                     // Calcular equivalencias
                     const equivalencias = window.CalculadoraCarbono.calcularEquivalencias(resultado.carbono);
                     
-                    // Mostrar resultados con animación
-                    // Nota: El resultado muestra CO₂ equivalente (carbono * 3.67)
-                    document.getElementById('res-carbono').innerText = resultado.co2Equivalente.toFixed(2);
-                    document.getElementById('res-auto').innerText = Math.round(equivalencias.kmAuto).toLocaleString() + " km";
-                    document.getElementById('res-oxigeno').innerText = Math.round(equivalencias.personasDiaOxigeno).toLocaleString();
-                    document.getElementById('res-energia').innerText = Math.round(equivalencias.diasFocoLED).toLocaleString() + " días";
+                    // Mostrar explicación del resultado
+                    const explicacion = `Este ${resultado.especie} (${resultado.cientifico}) ha capturado ${resultado.co2Equivalente.toFixed(2)} kg de CO₂ usando la ecuación ${resultado.ecuacionUsada}.`;
+                    document.getElementById('resultado-explicacion').innerText = explicacion;
+                    
+                    // Animación de conteo para el número principal
+                    animateValue("res-carbono", 0, resultado.co2Equivalente, 1500);
+                    
+                    // Mostrar otras equivalencias con animación
+                    setTimeout(() => {
+                        document.getElementById('res-auto').innerText = Math.round(equivalencias.kmAuto).toLocaleString() + " km";
+                        document.getElementById('res-oxigeno').innerText = Math.round(equivalencias.personasDiaOxigeno).toLocaleString() + " per.";
+                        document.getElementById('res-energia').innerText = Math.round(equivalencias.diasFocoLED).toLocaleString() + " días";
+                        document.getElementById('res-botellas').innerText = Math.round(equivalencias.botellasPlastico).toLocaleString() + " un.";
+                        document.getElementById('res-cargas').innerText = Math.round(equivalencias.cargasSmartphone).toLocaleString() + " cargas";
+                        document.getElementById('res-arboles').innerText = equivalencias.arbolesJovenes10Anios.toFixed(1) + " árboles";
+                    }, 800);
                     
                     // Mostrar mensaje de éxito
                     document.querySelector('.btn-calc').innerHTML = '<i class="fas fa-check"></i> ¡Cálculo Exitoso!';
@@ -250,6 +327,30 @@
                 }
             }, 800);
         });
+
+        // Función para animar el conteo de números
+        function animateValue(elementId, start, end, duration) {
+            const element = document.getElementById(elementId);
+            const range = end - start;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function para suavizar la animación
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const current = start + (range * easeOutQuart);
+                
+                element.innerText = current.toFixed(2);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
     </script>
 
     <!-- Botón Flotante de Tema -->
