@@ -4,7 +4,7 @@
  */
 
 // ✅ Tu API Key oficial de Google (la que empieza con AQ.Ab8RN...)
-const GEMINI_API_KEY = "AQ.Ab8RN6IKYcP64aSSSNjk4MeEs95IMOwK8CSJhj061HBK03JuQA";
+const GEMINI_API_KEY = "AQ.Ab8RN6LPAiCRKkefdhFo41mKRQl_B8hg3U10u6zl9TE95avWfQ";
 
 // ✅ MODELO CORREGIDO: Usar gemini-3.1-flash-lite (el que aparece en tu lista)
 const MODEL_NAME = 'gemini-3.1-flash-lite';
