@@ -1,34 +1,32 @@
 /**
  * Configuración del Chatbot Silvain AI
- * Conectado a Google Gemini API usando SDK oficial
- * Documentación: https://ai.google.dev/gemini-api/docs/get-started/tutorial?lang=javascript
+ * Versión corregida - Modelo Gemini 3.1 Flash Lite
  */
 
-// CONFIGURACIÓN DE LA API KEY
-const GEMINI_API_KEY = "AQ.Ab8RN6Jm7j1N38bkTkLfao2jdTpKn90mpAI-B0_7ueyP0nRCug";
+// ✅ Tu API Key oficial de Google (la que empieza con AQ.Ab8RN...)
+const GEMINI_API_KEY = "AQ.Ab8RN6IKYcP64aSSSNjk4MeEs95IMOwK8CSJhj061HBK03JuQA";
 
-// SOLUCIÓN: Usar el prefijo oficial estricto para evitar el error 404
+// ✅ MODELO CORREGIDO: Usar gemini-3.1-flash-lite (el que aparece en tu lista)
 const MODEL_NAME = 'gemini-3.1-flash-lite';
 
 // Elementos del DOM
 let chatForm, chatInput, chatBox, welcomeScreen;
-
-// Instancia del cliente de Gemini y la sesión de chat activa
 let geminiClient = null;
-let activeChatSession = null; // Almacenará la sesión de chat persistente
+let activeChatSession = null;
 
 /**
- * Carga el SDK de Google GenAI dinámicamente desde CDN
+ * Carga el SDK oficial de Google Generative AI
  */
 async function loadGeminiSDK() {
     if (geminiClient) return true;
-
+    
     try {
-        // Importar el SDK desde CDN (ES Modules)
-        const { GoogleGenAI } = await import('https://cdn.jsdelivr.net/npm/@google/genai@latest/+esm');
-
-        geminiClient = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
-        console.log('✅ SDK de Google GenAI cargado exitosamente');
+        // Importar el SDK OFICIAL desde CDN
+        const { GoogleGenerativeAI } = await import('https://esm.run/@google/generative-ai');
+        
+        geminiClient = new GoogleGenerativeAI(GEMINI_API_KEY);
+        console.log('✅ SDK de Google Generative AI cargado exitosamente');
+        console.log(`🤖 Usando modelo: ${MODEL_NAME}`);
         return true;
     } catch (error) {
         console.error('❌ Error cargando SDK de Gemini:', error);
@@ -47,75 +45,82 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (chatForm && chatInput && chatBox) {
         const sdkLoaded = await loadGeminiSDK();
-
+        
         if (sdkLoaded) {
-            // Configurar las instrucciones del sistema para Silvain AI
-            const systemInstruction = `Actúa como Silvain AI, un tutor botánico experto en inventarios forestales y recursos naturales.
-            Trabajas para la I.E. Jesús Bernal Pinzón en Maní, Colombia.
-            Tus respuestas deben ser:
-            - Breves y concisas (máximo 150 palabras)
-            - Educativas y amigables
-            - Enfocadas en botánica, ecología, servicios ecosistémicos, conservación y árboles del inventario escolar
-            - En español latino
-            - Usa emojis relacionados con naturaleza cuando sea apropiado 🌳🌿🍃`;
-
             try {
-                // SOLUCIÓN: Creamos la sesión de chat una sola vez aquí para mantener la memoria (multi-turno)
-                activeChatSession = geminiClient.chats.create({
+                // Crear el modelo con configuración
+                const model = geminiClient.getGenerativeModel({
                     model: MODEL_NAME,
-                    config: {
-                        systemInstruction: systemInstruction,
-                        temperature: 0.7
+                    generationConfig: {
+                        temperature: 0.7,
+                        maxOutputTokens: 500
                     }
                 });
-                console.log('🤖 Silvain AI inicializado correctamente con Chat Multi-turno');
+
+                // Crear sesión de chat con historial
+                activeChatSession = model.startChat({
+                    history: [
+                        {
+                            role: "user",
+                            parts: [{ text: "Hola, soy un estudiante del colegio Jesús Bernal Pinzón" }]
+                        },
+                        {
+                            role: "model",
+                            parts: [{ text: "¡Hola! 👋 Soy Silvain AI, tu tutor botánico. Estoy aquí para ayudarte a conocer los árboles de nuestro colegio y aprender sobre cómo nos ayudan a combatir el cambio climático. ¿Qué te gustaría saber? 🌳" }]
+                        }
+                    ]
+                });
+
+                console.log('🤖 Silvain AI inicializado correctamente con Gemini 3.1 Flash Lite');
             } catch (chatError) {
                 console.error('❌ Error creando la sesión de chat:', chatError);
             }
 
             chatForm.addEventListener('submit', handleSendMessage);
         } else {
-            console.warn('⚠️ El chatbot funcionará en modo limitado sin el SDK');
+            console.warn('⚠️ El chatbot funcionará en modo limitado');
             chatForm.addEventListener('submit', handleSendMessage);
         }
     } else {
-        console.error('No se encontraron los elementos del chat en el DOM');
+        console.error('❌ No se encontraron los elementos del chat en el DOM');
     }
 });
 
 /**
- * Función para establecer preguntas rápidas desde los botones sugeridos
+ * Función para establecer preguntas rápidas
  */
 function setQuickQuestion(text) {
     if (chatInput) {
         chatInput.value = text;
-        handleSendMessage();
+        handleSendMessage(new Event('submit'));
     }
 }
 
 /**
- * Añade un mensaje al chat (usuario o bot)
+ * Añade un mensaje al chat
  */
 function appendMessage(role, text) {
     if (!chatBox || !welcomeScreen) return;
-
+    
     welcomeScreen.style.display = 'none';
-
+    
     const msgRow = document.createElement('div');
     msgRow.className = `chat-row ${role}-row`;
-
+    
     const avatarIcon = role === 'bot' ? 'fa-robot' : 'fa-user';
     const avatarClass = role === 'bot' ? 'bot-avatar' : 'user-avatar';
-
     const formattedText = text.replace(/\n/g, '<br>');
-
+    
     msgRow.innerHTML = `
-        <div class="avatar ${avatarClass}"><i class="fas ${avatarIcon}"></i></div>
+        <div class="avatar ${avatarClass}">
+            <i class="fas ${avatarIcon}"></i>
+        </div>
         <div class="msg-content">${formattedText}</div>
     `;
-
+    
     chatBox.appendChild(msgRow);
     chatBox.scrollTop = chatBox.scrollHeight;
+    
     return msgRow;
 }
 
@@ -124,92 +129,96 @@ function appendMessage(role, text) {
  */
 function showTypingIndicator() {
     if (!chatBox) return null;
-
+    
     const indicator = document.createElement('div');
     indicator.className = 'chat-row bot-row typing-row';
     indicator.innerHTML = `
-        <div class="avatar bot-avatar"><i class="fas fa-robot"></i></div>
+        <div class="avatar bot-avatar">
+            <i class="fas fa-robot"></i>
+        </div>
         <div class="msg-content typing-indicator">
             <div class="typing-dot"></div>
             <div class="typing-dot"></div>
             <div class="typing-dot"></div>
         </div>
     `;
+    
     chatBox.appendChild(indicator);
     chatBox.scrollTop = chatBox.scrollHeight;
+    
     return indicator;
 }
 
 /**
- * Obtiene la respuesta de la IA usando la sesión activa
+ * Obtiene la respuesta de la IA
  */
 async function getAIResponse(prompt) {
     if (!GEMINI_API_KEY || GEMINI_API_KEY.length < 10) {
-        return "⚠️ ¡Hola! Configura tu API Key de Gemini en el archivo js/ia-chatbot.js para empezar.";
+        return "⚠️ ¡Hola! Necesitas configurar tu API Key de Google AI Studio.";
     }
 
     try {
-        // Si el SDK y la sesión de chat están listos
         if (activeChatSession) {
-            console.log('📡 Enviando pregunta a Gemini (Sesión Activa)...');
-
-            // Enviar el mensaje a través de la sesión existente (maneja el historial de forma automática)
-            const response = await activeChatSession.sendMessage({ message: prompt });
+            console.log('📡 Enviando pregunta a Gemini 3.1 Flash Lite...');
+            
+            // Enviar mensaje y esperar respuesta
+            const result = await activeChatSession.sendMessage(prompt);
+            const response = await result.response;
+            const text = response.text();
             
             console.log('✅ Respuesta recibida correctamente');
-            return response.text;
+            return text;
         } else {
-            // Fallback: método tradicional por si falla el SDK
-            console.log('⚠️ Usando método fallback (fetch directo)...');
-            const fallbackInstruction = `Actúa como Silvain AI, un tutor botánico de la I.E. Jesús Bernal Pinzón en Maní, Colombia. Breve y amigable.`;
-            const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
-
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: `${fallbackInstruction}\n\nPregunta: ${prompt}` }] }]
-                })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                return data.candidates[0].content.parts[0].text;
-            } else {
-                throw new Error(`HTTP ${response.status}`);
-            }
+            throw new Error("La sesión de chat no está inicializada");
         }
     } catch (error) {
-        console.error('❌ Error obteniendo respuesta de Gemini:', error.message);
-        return `😕 Ocurrió un error al conectar con Silvain AI:\n${error.message}\n\nPor favor intenta de nuevo.`;
+        console.error('❌ Error con Gemini:', error);
+        
+        // Mensajes de error más específicos
+        if (error.message.includes('404')) {
+            return "⚠️ Error: El modelo de IA no se encontró. Verifica que estés usando 'gemini-3.1-flash-lite'";
+        } else if (error.message.includes('401')) {
+            return "⚠️ La API Key no es válida o expiró.";
+        } else if (error.message.includes('429')) {
+            return "⏳ Demasiadas solicitudes. Espera un momento e intenta de nuevo.";
+        } else {
+            return `😕 Oops, algo salió mal:\n${error.message}\n\nIntenta de nuevo en unos segundos.`;
+        }
     }
 }
 
 /**
- * Maneja el envío del formulario del chat
+ * Maneja el envío del formulario
  */
 async function handleSendMessage(e) {
     if (e) e.preventDefault();
-
+    
     if (!chatInput || !chatForm) return;
-
+    
     const text = chatInput.value.trim();
     if (!text) return;
-
+    
+    // Mostrar mensaje del usuario
     appendMessage('user', text);
     chatInput.value = '';
-
+    
+    // Mostrar indicador de carga
     const typingIndicator = showTypingIndicator();
-
+    
     try {
+        // Obtener respuesta de la IA
         const aiResponse = await getAIResponse(text);
+        
+        // Remover indicador y mostrar respuesta
         if (typingIndicator) typingIndicator.remove();
         appendMessage('bot', aiResponse);
+        
     } catch (error) {
         console.error('Error en handleSendMessage:', error);
         if (typingIndicator) typingIndicator.remove();
-        appendMessage('bot', '❌ Ocurrió un error al procesar tu pregunta. Inténtalo de nuevo.');
+        appendMessage('bot', '❌ Ocurrió un error inesperado. Revisa la consola para más detalles.');
     }
 }
 
+// Hacer disponible globalmente
 window.setQuickQuestion = setQuickQuestion;
