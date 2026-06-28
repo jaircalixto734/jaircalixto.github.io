@@ -1,20 +1,72 @@
 /**
-Configuración del Chatbot Silvain AI
-Conectado a Groq API (Llama 3.3 70B)
-*/
-
-// ⚠️ REEMPLAZA ESTO CON TU API KEY REAL DE GROQ
-const GROQ_API_KEY = "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";
-const MODEL_NAME = 'llama-3.3-70b-versatile';
-const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+ * Configuración del Chatbot Silvain AI
+ * Conectado a Vercel Proxy (api/chat.js) + Inventario Forestal JBP
+ * La API Key está segura en las variables de entorno de Vercel
+ */
 
 // Elementos del DOM
 let chatForm, chatInput, chatBox, welcomeScreen;
-let chatHistory = [];
+let chatHistory = []; // Historial de conversación (usuario y modelo)
 
 /**
-Inicializa el chatbot cuando el DOM está listo
-*/
+ * === FUNCIÓN: Construye el contexto del inventario forestal ===
+ * Lee baseDatosArboles de datos_arboles.js y genera un resumen para la IA
+ */
+function construirContextoInventario() {
+    if (typeof baseDatosArboles === 'undefined') {
+        console.warn('⚠️ baseDatosArboles no está cargado. Verifica que datos_arboles.js se cargue antes.');
+        return '';
+    }
+
+    const arboles = Object.values(baseDatosArboles);
+    const totalCarbono = arboles.reduce((sum, a) => sum + (a.carbono || 0), 0);
+    
+    let contexto = `INVENTARIO FORESTAL I.E. JESÚS BERNAL PINZÓN (Maní, Casanare):
+Total de especies registradas: ${arboles.length}
+Carbono total almacenado (estimado): ${totalCarbono.toFixed(1)} kg CO₂
+
+ESPECIES DISPONIBLES EN LA BASE DE DATOS:
+`;
+    
+    arboles.forEach(a => {
+        const tipo = a.exotica ? "Exótica" : "Nativa";
+        contexto += `• ${a.nombre} (${a.cientifico}) | Familia: ${a.familia} | ${tipo} | Carbono: ${a.carbono || 0} kg CO₂\n`;
+    });
+
+    return contexto;
+}
+
+/**
+ * === FUNCIÓN: Busca datos específicos si el usuario menciona un árbol ===
+ * Inyecta información detallada del árbol consultado
+ */
+function buscarDatosEspecificos(prompt) {
+    if (typeof baseDatosArboles === 'undefined') return '';
+    
+    const texto = prompt.toLowerCase();
+    
+    for (const a of Object.values(baseDatosArboles)) {
+        const coincideNombre = texto.includes(a.nombre.toLowerCase());
+        const coincideCientifico = texto.includes(a.cientifico.toLowerCase());
+        const coincideLocal = a.nombresLocales && a.nombresLocales.some(n => texto.includes(n.toLowerCase()));
+        
+        if (coincideNombre || coincideCientifico || coincideLocal) {
+            return `\n\n[📊 DATOS REALES DEL ÁRBOL CONSULTADO - USAR PARA RESPONDER]:
+Especie: ${a.nombre}
+Científico: ${a.cientifico}
+Familia: ${a.familia}
+Tipo: ${a.exotica ? 'Exótica' : 'Nativa'}
+Carbono almacenado: ${a.carbono || 0} kg CO₂
+Nombres locales: ${a.nombresLocales ? a.nombresLocales.join(', ') : 'N/A'}
+⚠️ Responde basándote estrictamente en estos datos.`;
+        }
+    }
+    return '';
+}
+
+/**
+ * Inicializa el chatbot cuando el DOM está listo
+ */
 document.addEventListener('DOMContentLoaded', () => {
     chatForm = document.getElementById('chatForm');
     chatInput = document.getElementById('userInput');
@@ -22,28 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
     welcomeScreen = document.getElementById('welcomeScreen');
 
     if (chatForm && chatInput && chatBox) {
-        // Inicializar historial con mensaje de sistema
-        chatHistory = [
-            {
-                role: "system",
-                content: "Eres Silvain AI, un tutor botánico experto en inventarios forestales y recursos naturales. Trabajas para la I.E. Jesús Bernal Pinzón en Maní, Casanare, Colombia. Tus respuestas deben ser: breves y concisas (máximo 150 palabras), educativas, amigables y motivadoras, enfocadas en botánica, ecología, servicios ecosistémicos y conservación. En español latino. Usa emojis de naturaleza cuando sea apropiado 🌳🌿🍃. Si no sabes algo, sé honesto pero sugiere dónde podrían buscar la información."
-            },
-            {
-                role: "assistant",
-                content: "¡Hola! 👋 Soy Silvain AI, tu tutor botánico. Estoy aquí para ayudarte a conocer los árboles de nuestro colegio Jesús Bernal Pinzón y aprender sobre cómo nos ayudan a combatir el cambio climático. ¿Qué te gustaría saber? 🌳"
-            }
-        ];
-
+        // Inicializar historial vacío (el system prompt se envía en cada petición al proxy)
+        chatHistory = [];
+        
         chatForm.addEventListener('submit', handleSendMessage);
-        console.log('✅ Silvain AI inicializado con Groq (Llama 3.3 70B)');
+        console.log('✅ Silvain AI inicializado (modo Proxy Vercel)');
+        console.log('🌳 Inventario forestal cargado:', typeof baseDatosArboles !== 'undefined' ? 'SÍ' : 'NO');
     } else {
         console.error('❌ No se encontraron los elementos del chat en el DOM');
     }
 });
 
 /**
-Función para establecer preguntas rápidas
-*/
+ * Función para establecer preguntas rápidas desde botones
+ */
 function setQuickQuestion(text) {
     if (chatInput) {
         chatInput.value = text;
@@ -52,8 +96,8 @@ function setQuickQuestion(text) {
 }
 
 /**
-Añade un mensaje al chat
-*/
+ * Añade un mensaje al chat (usuario o bot)
+ */
 function appendMessage(role, text) {
     if (!chatBox || !welcomeScreen) return;
     welcomeScreen.style.display = 'none';
@@ -77,8 +121,8 @@ function appendMessage(role, text) {
 }
 
 /**
-Muestra el indicador de "escribiendo..."
-*/
+ * Muestra el indicador de "escribiendo..."
+ */
 function showTypingIndicator() {
     if (!chatBox) return null;
     const indicator = document.createElement('div');
@@ -99,56 +143,55 @@ function showTypingIndicator() {
 }
 
 /**
-Obtiene la respuesta de la IA usando Groq API
-*/
+ * Obtiene la respuesta de la IA a través del proxy de Vercel
+ */
 async function getAIResponse(prompt) {
-    if (!GROQ_API_KEY || GROQ_API_KEY === "TU_API_KEY_DE_GROQ_AQUI") {
-        return "⚠️ ¡Hola! Necesitas configurar tu API Key de Groq en el archivo ia-chatbot.js. Ve a https://console.groq.com/keys para obtener una.";
-    }
+    // 1. Inyectar contexto dinámico si se menciona un árbol específico
+    const datosExtra = buscarDatosEspecificos(prompt);
+    const mensajeFinal = datosExtra ? prompt + datosExtra : prompt;
+    const contextoInventario = construirContextoInventario();
 
-    // Agregar mensaje del usuario al historial
-    chatHistory.push({ role: "user", content: prompt });
+    // 2. Agregar mensaje del usuario al historial local
+    chatHistory.push({ role: "user", parts: [{ text: mensajeFinal }] });
 
     try {
-        console.log('📡 Enviando petición a Groq...');
+        console.log('📡 Enviando petición al proxy de Vercel...');
         
-        const response = await fetch(GROQ_API_URL, {
+        // 3. Llamar a nuestro proxy en /api/chat
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${GROQ_API_KEY}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: MODEL_NAME,
-                messages: chatHistory,
-                temperature: 0.7,
-                max_tokens: 500
+                message: mensajeFinal,
+                history: chatHistory.slice(0, -1), // Enviar historial sin el último mensaje (el proxy lo agrega)
+                contextoInventario: contextoInventario
             })
         });
 
+        // 4. Manejar errores HTTP
         if (!response.ok) {
             const errorData = await response.json();
-            console.error('❌ Error de la API:', errorData);
+            console.error('❌ Error del proxy:', errorData);
             
-            if (response.status === 401) {
-                return "⚠️ La API Key no es válida. Revisa tu clave de Groq.";
+            if (response.status === 500) {
+                return "⚠️ Error del servidor. La API Key podría no estar configurada en Vercel.";
             } else if (response.status === 429) {
                 return "⏳ Demasiadas solicitudes. Espera un momento.";
             } else {
-                return `😕 Error ${response.status}: ${errorData.error?.message || 'Desconocido'}`;
+                return `😕 Error ${response.status}: ${errorData.error || 'Desconocido'}`;
             }
         }
 
+        // 5. Extraer la respuesta
         const data = await response.json();
         
-        if (data.choices && data.choices[0] && data.choices[0].message) {
-            const botReply = data.choices[0].message.content;
-            
-            // Agregar respuesta al historial para mantener contexto
-            chatHistory.push({ role: "assistant", content: botReply });
-            
+        if (data.reply) {
+            // Agregar respuesta al historial
+            chatHistory.push({ role: "model", parts: [{ text: data.reply }] });
             console.log('✅ Respuesta recibida correctamente');
-            return botReply;
+            return data.reply;
         } else {
             return "😕 No pude generar una respuesta. Intenta de nuevo.";
         }
@@ -160,8 +203,8 @@ async function getAIResponse(prompt) {
 }
 
 /**
-Maneja el envío del formulario
-*/
+ * Maneja el envío del formulario
+ */
 async function handleSendMessage(e) {
     if (e) e.preventDefault();
     if (!chatInput || !chatForm) return;
