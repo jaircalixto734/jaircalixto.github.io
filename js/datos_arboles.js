@@ -3334,6 +3334,3 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 }
 };
 
-
-// Al final de datos_arboles.js, agrega:
-export { baseDatosArboles };
