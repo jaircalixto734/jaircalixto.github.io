@@ -1067,240 +1067,530 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
             { q: "¿Qué tipo de estructura botánica es realmente el 'coco' que compramos para beber?", opts: ["Una semilla gigantesca", "Una drupa (fruto) con exocarpio, mesocarpio fibroso y endocarpio leñoso", "Un tubérculo de la palma", "Una nuez verdadera"], correct: 1 }
         ]
     },
-    "guacimo": {
-        id: "#JBP-12", tipo: "Nativo", nombre: "Guácimo / Guásimo", cientifico: "Guazuma ulmifolia Lam.",
-        familia: "Malvaceae", origen: "Nativa", estado: "Preocupación Menor (LC)", exotica: false,
-        carbono: 85.0, viajes: 0, imagen_portada: "./imagenes/guacimo7.jpeg",
-        galeria: [
-            { img: "./imagenes/guacimo7.jpeg", desc: "Árbol completo" },
-            { img: "./imagenes/guacimo1.jpeg", desc: "Hojas" },
-            { img: "./imagenes/guacimo2.jpeg", desc: "Flores secas" },
-            { img: "./imagenes/guacimo3.jpeg", desc: "Tronco" },
-            { img: "./imagenes/guacimo4.jpeg", desc: "Vista árbol" },
-            { img: "./imagenes/guacimo5.jpeg", desc: "Frutos" },
-            { img: "./imagenes/guacimo6.jpeg", desc: "" }
-        ],
-        nombresLocales: ["Guácimo", "Guásimo", "Caulote", "Mutamba"],
-        distribucion: `
-            <p>Especie pionera ampliamente distribuida desde México hasta Argentina. En Colombia es extremadamente común en bosques secos, sabanas, zonas de matorral y potreros del llano casanareño. Excelente capacidad de rebrote tras incendios o podas.</p>
-        `,
-        densidad: "0.56 g/cm³", fraccion: "0.47 (IPCC)",
-        alometria: `
-            <div class="alometry-box" style="margin-bottom:10px;">AGB = exp[-1.803 - 0.976E + 0.976 ln(ρ) + 2.673 ln(D)]</div>
-            <p class="text-sm">Modelo de <strong>Chave et al. (2014)</strong>. El Guácimo es una especie de rápido crecimiento que aporta a la recuperación temprana del carbono en áreas degradadas.</p>
-        `,
-        calendario: [
-            { mes: "Ene", fase: "Fructificación", clima: "dry" }, { mes: "Feb", fase: "Fructificación", clima: "dry" },
-            { mes: "Mar", fase: "Fructificación", clima: "dry" }, { mes: "Abr", fase: "Caída follaje", clima: "rain" },
-            { mes: "May", fase: "Brotación", clima: "rain" }, { mes: "Jun", fase: "Floración", clima: "rain" },
-            { mes: "Jul", fase: "Floración", clima: "rain" }, { mes: "Ago", fase: "Floración", clima: "rain" },
-            { mes: "Sep", fase: "Frutos verdes", clima: "rain" }, { mes: "Oct", fase: "Frutos verdes", clima: "rain" },
-            { mes: "Nov", fase: "Frutos verdes", clima: "dry" }, { mes: "Dic", fase: "Fructificación", clima: "dry" }
-        ],
-        morfologia: `
-            <div style="display:flex; flex-direction:column; gap:15px;">
-                <div><strong style="color:var(--secondary-color);">Porte:</strong> Árbol de tamaño pequeño a mediano, típicamente de 10 a 15 metros de altura, con una copa extendida e irregular y fuste corto y ramificado.</div>
-                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Simples, alternas, ovadas a lanceoladas, con márgenes aserrados y base asimétrica. Se asemejan a las hojas del olmo (de ahí el epíteto <em>ulmifolia</em>). Ásperas al tacto.</div>
-                <div><strong style="color:var(--secondary-color);">Flores:</strong> Pequeñas, agrupadas en cimas axilares, de color amarillo pálido, con un aroma dulce.</div>
-                <div><strong style="color:var(--secondary-color);">Frutos:</strong> Cápsulas leñosas, subglobosas, de color negro o púrpura oscuro al madurar, cubiertas de tubérculos obtusos (como una mora leñosa dura). Contienen mucílago dulce.</div>
-            </div>
-        `,
-        fauna: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Ganado e Invertebrados</div><div class="section-val text-sm mt-2">Los frutos caídos en verano son un forraje vital para el ganado vacuno y equino.</div></div>
-                <div class="metric-card"><div class="metric-label">Aves y Mamíferos</div><div class="section-val text-sm mt-2">Atrae monos, ñeques y aves que consumen el mucílago de sus frutos.</div></div>
-            </div>
-        `,
-        usos: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Forraje y Sombra</div><div class="section-val text-sm mt-2">Árbol clave en sistemas silvopastoriles para sombra y como suplemento alimenticio en verano.</div></div>
-                <div class="metric-card"><div class="metric-label">Medicinal e Industrial</div><div class="section-val text-sm mt-2">La corteza y frutos producen mucílago usado para clarificar el azúcar de caña (panela) y para tratar resfriados e inflamaciones.</div></div>
-            </div>
-        `,
-        mensajeIA: "¡Hola! Soy el Guácimo. Si le preguntas a un llanero por mí, te dirá que soy un salvavidas en el verano. Cuando los pastos se secan, mis frutos dulces, duros y negros caen al suelo y alimentan al ganado. Mi corteza tiene una 'baba' (mucílago) que se usa para limpiar la panela hirviendo. Soy humilde y resistente al fuego.",
-        referencias: [
-            "Bernal, R. et al. (2015). Catálogo de plantas y líquenes de Colombia.",
-            "Maass, J.M. et al. (2005). Ecosystem services of tropical dry forests: insights from long-term ecological and socioeconomic research. Ecology and Society."
-        ],
-        quiz: [
-            { q: "¿Para qué proceso agroindustrial tradicional se utiliza el mucílago ('baba') del tallo del Guácimo?", opts: ["Para hacer queso", "Para clarificar el jugo de caña en la elaboración de panela", "Para teñir telas de rojo"], correct: 1 },
-            { q: "¿Qué rol juega el Guácimo durante el duro verano del Casanare?", opts: ["Atrae lluvias", "Sus frutos caídos proporcionan forraje al ganado cuando el pasto escasea", "Envenena a los depredadores"], correct: 1 },
-            { q: "¿A qué fruto se parecen las cápsulas leñosas oscuras del Guácimo?", opts: ["A una sandía pequeña", "A una mora negra, dura y leñosa", "A una guayaba lisa"], correct: 1 }
-        ]
+"guacimo": {
+    id: "#JBP-12", tipo: "Nativo", nombre: "Guácimo", cientifico: "Guazuma ulmifolia Lam.",
+    familia: "Malvaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN, 2021)", exotica: false,
+    carbono: 0.189, viajes: 69, imagen_portada: "./imagenes/guacimo7.jpeg",
+    galeria: [
+        { img: "./imagenes/guacimo1.jpeg", desc: "" },
+        { img: "./imagenes/guacimo2.jpeg", desc: "" },
+        { img: "./imagenes/guacimo3.jpeg", desc: "" },
+        { img: "./imagenes/guacimo4.jpeg", desc: "" },
+        { img: "./imagenes/guacimo5.jpeg", desc: "" },
+        { img: "./imagenes/guacimo6.jpeg", desc: "" },
+        { img: "./imagenes/guacimo7.jpeg", desc: "" }
+    ],
+    nombresLocales: ["Guácimo", "Guásimo", "Guásimo blanco", "Guásimo colorado", "Mielquemada", "Bolaina", "Mutamba", "Guásimo macho"],
+    distribucion: `
+        <p><strong>Especie nativa nodal del Neotrópico:</strong> <em>Guazuma ulmifolia</em> Lam. es nativa de amplia distribución neotropical, desde México hasta el noreste de Argentina. En Colombia está confirmada en el Catálogo de Plantas y Líquenes (UNAL, 2022) y se distribuye en todas las regiones biogeográficas, incluyendo la <strong>Orinoquía</strong>. En Casanare, particularmente en Maní, habita bordes de bosques de galería, sabanas con árboles y potreros. Su plasticidad ecológica le permite colonizar suelos de baja fertilidad y tolerar periodos de sequía de 4 a 7 meses, convirtiéndola en especie clave para la ganadería sostenible del llano.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Malvales</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Malvaceae Juss. (anteriormente Sterculiaceae)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género / Especie</td><td style="padding:6px;"><em>Guazuma</em> Mill. / <em>G. ulmifolia</em> Lam.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Autoría</td><td style="padding:6px;">Jean-Baptiste Lamarck, <em>Tabl. Encycl.</em> (1789)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Guazuma</em>: nombre vernáculo taíno; <em>ulmifolia</em>: "hojas de olmo" (<em>Ulmus</em>), por similitud morfológica</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">✅ LC — Preocupación Menor (UICN, 2021) · Nativa sin restricción en Colombia</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro">
+            <p>"Guazuma ulmifolia es una especie de árbol de uso múltiple en América Central, con amplia distribución neotropical y alta plasticidad ecológica para colonizar suelos degradados y tolerar sequías prolongadas."</p>
+            <cite>— Salazar, R. (1991). <em>Guácimo (Guazuma ulmifolia Lam.): Especie de árbol de uso múltiple en América Central</em>. CATIE, Turrialba, Costa Rica.</cite>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🌎 Dato curioso:</strong> En la tradición llanera, el guácimo es conocido como "Mielquemada" por el sabor dulce de sus frutos maduros. Cuando el verano aprieta y los pastos se agostan, este árbol se convierte en salvavidas para el ganado: sus hojas jóvenes ofrecen 16–23% de proteína cruda, un valor nutricional excepcional en época de escasez.
+        </div>
+    `,
+    densidad: "0,507 g/cm³ (verificado en bosque seco tropical neotropical; por calibrar localmente en Maní)", fraccion: "0,47 – 0,50 (IPCC para latifoliadas tropicales)",
+    alometria: `
+        <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+            ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> El valor de densidad básica de madera (ρ = 0,507 g/cm³) fue extraído de fuentes primarias verificadas en bosque seco tropical neotropical. Se recomienda toma de muestras en Maní para calibración local conforme al protocolo ASTM D2395. Asimismo, el Factor de Expansión de Biomasa (FEB) específico para <em>G. ulmifolia</em> en la Orinoquía no está reportado; usar FEB = 1,30 (IPCC Tier 1 para bs-T) como valor provisional.
+        </div>
+        <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+            ln(AGB) = −3,652 − 1,697·ln(D) + 1,169·(ln(D))² − 0,122·(ln(D))³ + 1,285·ln(ρ)
+        </div>
+        <p class="text-sm"><strong>Modelo Colombia — Álvarez et al. (2012):</strong> Ecuación recomendada para bosque seco tropical (bs-T). R² = 0,958 | ESR = 0,336. Variables: D = DAP (cm), ρ = densidad básica (g/cm³).</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">AGB</td><td style="padding:6px;">Biomasa aérea individual (kg)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1,30 m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ</td><td style="padding:6px;">Densidad básica: 0,507 g/cm³ (verificado en literatura neotropical)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FC (Carbono)</td><td style="padding:6px;">0,47 (IPCC, 2006) o 0,50 (Brown, 1997)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar · Usar 1,30 (IPCC Tier 1 bs-T) como valor provisional</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro" style="font-size:0.85rem;">
+            <p>"Esta especie ha sido identificada como perennifolia relevante en estudios de carbono del Caribe y Orinoquía, con capacidad de mantener biomasa foliar durante la época seca y contribuir significativamente al almacenamiento de carbono en sistemas silvopastoriles."</p>
+            <cite>— Álvarez, E., et al. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management</em>, 267, 297–308.</cite>
+        </div>
+    `,
+    calendario: [
+        { mes: "Dic", fase: "Floración principal 🌸", clima: "dry" },
+        { mes: "Ene", fase: "Floración sostenida + Néctar para polinizadores 🐝", clima: "dry" },
+        { mes: "Feb", fase: "Maduración de frutos negros 🟤", clima: "dry" },
+        { mes: "Mar", phase: "Forraje de verano: hojas jóvenes para ganado 🌿🐄", clima: "dry" },
+        { mes: "Abr", fase: "Refoliación plena + Segunda floración 🌸🌱", clima: "rain" },
+        { mes: "May", fase: "Crecimiento vegetativo máximo 🍃", clima: "rain" },
+        { mes: "Jun", fase: "Fructificación activa 🟢", clima: "rain" },
+        { mes: "Jul", fase: "Desarrollo de frutos verdes 🍈", clima: "rain" },
+        { mes: "Ago", fase: "Segunda floración (var. locales) 🌸", clima: "rain" },
+        { mes: "Sep", fase: "Maduración de frutos 🟤", clima: "rain" },
+        { mes: "Oct", fase: "Dispersión de semillas por fauna 🐒", clima: "rain" },
+        { mes: "Nov", fase: "Preparación para verano: acumulación de reservas 🍂", clima: "dry" }
+    ],
+    morfologia: `
+        <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol o arbusto de tamaño mediano a grande, alcanza hasta 30 m en condiciones óptimas, frecuentemente 5–15 m en Casanare. Copa redondeada, abierta y extendida. Especie perennifolia con tolerancia a sequía y plasticidad ecológica para colonizar suelos degradados. Crecimiento rápido bajo condiciones favorables.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíz pivotante profunda con raíces laterales extendidas que estabilizan suelos y toleran encharcamiento temporal. Sistema radical eficaz para retención de agua y nutrientes en sabanas inundables del Casanare.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo / Corteza y Madera:</strong> Fuste recto a tortuoso. Corteza grisácea a pardo oscura que se desprende en pequeños pedazos irregulares. <strong>Carácter diagnóstico:</strong> Ramas jóvenes con <strong>pubescencia estrellada</strong> (pelos en forma de estrella) visibles al tacto. Madera de densidad media (ρ = 0,507 g/cm³), albura parda clara, duramen rosado a pardo, textura media, fácil trabajabilidad.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje:</strong> Filotaxia alterna dística. Hojas simples, ovadas a lanceoladas (6–13 cm), margen <strong>finamente aserrado</strong> y base asimétrica. Textura áspera al tacto por pelos estrellados. 3–5 nervaduras principales desde la base. Perennifolia: mantiene follaje durante la época seca, clave para forraje en verano llanero.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Flores pequeñas, amarillo-verdosas a pardo-amarillentas, en cimas o panículas axilares cortas. Bisexuales, con estaminodios característicos. Abundante néctar que atrae abejas, avispas y mariposas. Polinización entomófila. Floración principal en diciembre–febrero (verano), con evento secundario en abril–mayo y septiembre–octubre (invierno).</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Fruto tipo cápsula leñosa globosa a elipsoide (1,5–3 cm), verde inmadura y <strong>negro brillante</strong> en madurez. Cubierta de protuberancias tuberculadas (rugosa). Comestible y mucilaginoso. Semillas duras que requieren escarificación para germinar; <strong>endozoocoria</strong>: germinación mejorada tras pasar por tracto digestivo de animales (ganado, venados). Dispersión por fauna silvestre y doméstica.</div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔍 Triada diagnóstica en campo:</strong> ① Corteza que se desprende en placas irregulares + pubescencia estrellada en ramas jóvenes · ② Hojas simples con margen finamente aserrado y base asimétrica · ③ Frutos negros brillantes con protuberancias tuberculadas (rugosos). + Especie perennifolia con floración en época seca.
+        </div>
+    `,
+    fauna: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🦜 Loros y Pericos</div><div class="section-val text-sm mt-2"><em>Amazona</em> spp., <em>Forpus</em> spp. Consumen frutos maduros y usan la copa extendida como refugio y percha en potreros abiertos del Casanare.</div></div>
+            <div class="metric-card"><div class="metric-label">🦇 Murciélagos frugívoros</div><div class="section-val text-sm mt-2"><em>Carollia</em> spp. Dispersores nocturnos de semillas; visitan frutos maduros y contribuyen a la regeneración natural en bordes de bosque de galería.</div></div>
+            <div class="metric-card"><div class="metric-label">🐒 Mamíferos silvestres</div><div class="section-val text-sm mt-2"><em>Cebus</em> spp., <em>Saimiri</em> spp., <em>Odocoileus virginianus</em> (venado sabanero). Consumo de frutos y néctar; el venado es consumidor ávido de frutos maduros en época seca.</div></div>
+            <div class="metric-card"><div class="metric-label">🐄 Ganado bovino / equino (uso principal)</div><div class="section-val text-sm mt-2">Consumo de hojas jóvenes (16–23% proteína cruda) y frutos como forraje complementario en verano llanero. Especie clave para ganadería sostenible en Casanare cuando los pastos se agostan.</div></div>
+            <div class="metric-card"><div class="metric-label">🐝 Abejas y avispas</div><div class="section-val text-sm mt-2">Polinizadores principales atraídos por néctar abundante. Fuente de néctar valiosa durante floración en época seca (dic–feb), período de menor oferta floral en el llano.</div></div>
+            <div class="metric-card"><div class="metric-label">⚠️ Plagas documentadas</div><div class="section-val text-sm mt-2"><em>Phelypera distigma</em> (insecto defoliador). Monitoreo fitosanitario recomendado en individuos del JBP para detectar infestaciones tempranas en época de estrés hídrico.</div></div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔬 Nota ecológica:</strong> La endozoocoria (dispersión de semillas por tracto digestivo) es un mecanismo clave de regeneración del guácimo. Las semillas duras germinan mejor tras pasar por el estómago de animales como ganado o venados, permitiendo al árbol "mudarse de casa sin mover un pie". Este proceso conecta fauna, flora y dinámica del paisaje llanero.
+        </div>
+    `,
+    usos: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🌾 Forraje y Ganadería (Uso Principal)</div><div class="section-val text-sm mt-2">Uso prioritario del llano. En verano, cuando los pastos se agostan, el guácimo es salvavidas: hojas jóvenes con 16–23% de proteína cruda y tallos con 7–8%. Frutos y hojas suministrados al ganado bovino, equino, porcino y caprino. Especie clave para ganadería sostenible en Casanare.</div></div>
+            <div class="metric-card"><div class="metric-label">🚧 Cercas Vivas</div><div class="section-val text-sm mt-2">Ampliamente usado en cercas vivas del llano. Rápido crecimiento, fácil propagación por semilla y resistencia a la poda. Ideal para delimitar potreros, proteger quebradas y actuar como corredor biológico para fauna en paisajes ganaderos fragmentados.</div></div>
+            <div class="metric-card"><div class="metric-label">🪵 Carpintería y Leña</div><div class="section-val text-sm mt-2">Madera para postes de cerca, construcciones rurales livianas, mangos de herramientas, instrumentos musicales artesanales y carbón vegetal/leña. Densidad ~0,507 g/cm³ facilita trabajo manual. Ceniza de madera usada tradicionalmente para fabricación de jabón artesanal.</div></div>
+            <div class="metric-card"><div class="metric-label">💊 Medicina Popular</div><div class="section-val text-sm mt-2">Cocimiento de corteza: antidiarreico y depurativo de la sangre. Infusión de hojas: afecciones respiratorias/tos, febrífugo. Uso externo en heridas. Fruto mucilaginoso comestible en épocas de escasez. <strong>Nota:</strong> uso tradicional documentado; consultar profesional de salud antes de aplicaciones terapéuticas.</div></div>
+            <div class="metric-card"><div class="metric-label">🍫 Alimentación y Usos Tradicionales</div><div class="section-val text-sm mt-2">Fruto verde mucilaginoso comestible. Semillas molidas y tostadas usadas para saborizar chocolate o como sustituto del café. Aceite de semillas para jabones artesanales. Baba de corteza usada tradicionalmente para aclarar jarabe de panela.</div></div>
+            <div class="metric-card"><div class="metric-label">🌱 Restauración de Suelos Degradados</div><div class="section-val text-sm mt-2">Especie pionera de restauración en la Orinoquía. Tolera suelos de baja fertilidad, fija carbono y aporta materia orgánica vía hojarasca. Usada para recuperar potreros "pelados" en la altillanura casanareña. Preferir en tierras ya degradadas, no en ecosistemas nativos intactos.</div></div>
+        </div>
+    `,
+    mensajeIA: "🌳 ¡Hola, pariente llanero! Soy el <strong>Guácimo</strong>, aunque también me llaman <em>Guásimo</em>, <em>Mielquemada</em> o <em>Bolaina</em> en los campos de Casanare. Mi nombre científico es <em>Guazuma ulmifolia</em> Lam., y tengo una historia que combina utilidad y sabiduría ancestral: nací aquí, en estas sabanas infinitas de Maní, mucho antes de que los llaneros supieran de tractores o alambres de púas.\n\nTengo las hojas ásperas, como las manos de los trabajadores del campo, y mis ramas se extienden generosas dando sombra, fruta y medicina a todo el que llega a mí. Cuando el invierno llega con sus lluvias de abril, me lleno de flores pequeñitas, amarillas, que parecen estrellas del tamaño de una uña. Las abejas, los mariposos y los murciélagos nocturnos vienen a visitarme.\n\n✨ <strong>Pero mi secreto más asombroso</strong> es este: cuando el verano regresa con su sol de hierro y los pastos se vuelven amarillo paja, yo sigo verde. Mis hojas jóvenes ofrecen 16–23% de proteína cruda —un tesoro para el ganado sediento. Y mis frutos negros y rugosos, que parecen pequeñas bolas de espinas, se vuelven el último bocado para los chigüiros, los loros y los venados. Todo el llano sabe que cuando el Guácimo tiene frutos, la vida sigue.\n\n🌱 <strong>Y una curiosidad que te dejará boquiabierto</strong>: ¿Sabías que mis semillas son tan duras que necesitan pasar por el estómago de un animal —como el ganado o un venado— para germinar mejor? Ese proceso se llama <strong>endozoocoria</strong>. ¡El animal come mis frutos, camina kilómetros, y yo nazco en un suelo completamente nuevo! Me estoy mudando de casa sin mover un solo pie. Soy el viajero invisible del llano.\n\n¿Me plantarías en tu finca? Si lo haces, que sea con respeto: en tierras ya degradadas, con poda periódica, y nunca donde antes vivía el bosque de galería. Soy nativo de esta tierra, y mi misión es servir con sabiduría, no desplazar.",
+    referencias: [
+        "Álvarez, E., Benítez, D., Velásquez, C., & Cogollo, Á. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>, 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+        "Bernal, R., Galeano, G., Rodríguez, A., Sarmiento, H., & Gutiérrez, M. (2017). <em>Nombres comunes de las plantas de Colombia</em>. Universidad Nacional de Colombia. http://www.biovirtual.unal.edu.co/nombrescomunes/",
+        "Dorr, L. J. (2022). <em>Guazuma ulmifolia</em> Lam. En R. Bernal, S. R. Gradstein & M. Celis (Eds.), <em>Catálogo de plantas y líquenes de Colombia</em>. Instituto de Ciencias Naturales, UNAL. http://catalogoplantasdecolombia.unal.edu.co",
+        "Salazar, R. (1991). <em>Guácimo (Guazuma ulmifolia Lam.): Especie de árbol de uso múltiple en América Central</em>. Serie Técnica, Informe Técnico N.° 165. CATIE, Turrialba, Costa Rica.",
+        "Torres, G., & Quesada, M. (2019). Árboles del Valle Central de Costa Rica: reproducción del guácimo ternero (<em>Guazuma ulmifolia</em> Lam.). <em>Tecnología en Marcha, 32</em>(2), 61–71. https://doi.org/10.18845/tm.v32i2.4370",
+        "Universidad Nacional Autónoma de México (UNAM). (2009). <em>Guazuma ulmifolia</em> Lam. En <em>Atlas de las plantas de la medicina tradicional mexicana</em>. Biblioteca Digital de la Medicina Tradicional Mexicana. http://www.medicinatradicionalmexicana.unam.mx/apmtm/termino.php?l=3&t=guazuma-ulmifolia",
+        "Global Biodiversity Information Facility (GBIF). (2023). <em>Guazuma ulmifolia</em> Lam. Taxon ID: 3152195. https://www.gbif.org/species/3152195"
+    ],
+    quiz: [
+        { q: "¿A qué familia botánica pertenece el Guásimo (Guazuma ulmifolia) según la clasificación científica moderna?", opts: ["Fabaceae (Leguminosas)", "Malvaceae — antes clasificada en Sterculiaceae", "Moraceae", "Bignoniaceae"], correct: 1, expl: "Pertenece a Malvaceae (orden Malvales), reclasificada tras estudios filogenéticos moleculares. En la literatura llanera tradicional aún se encuentra referenciada como esterculiácea, pero la taxonomía moderna la ubica en Malvaceae." },
+        { q: "En el Casanare (Maní), ¿cuál es el uso PRINCIPAL que el llanero le ha dado históricamente al Guásimo durante el verano (época seca)?", opts: ["Construcción de canoas y botes fluviales", "Extracción de látex para fabricar cuerdas", "Forraje (alimento para el ganado bovino y equino)", "Fabricación de instrumentos de viento"], correct: 2, expl: "En el verano llanero, los frutos y hojas son fuente vital de proteína cruda (16–23%) para el hato ganadero cuando los pastos se agostan. Esta es la razón por la que el guácimo es especie nodal en sistemas silvopastoriles de Casanare." },
+        { q: "¿Qué variable dendrométrica es la principal predictora de biomasa aérea en la ecuación alométrica de Álvarez et al. (2012) recomendada para calcular el carbono del Guásimo?", opts: ["La longitud de las hojas (cm)", "El Diámetro a la Altura del Pecho – DAP (cm) combinado con la densidad de madera (ρ)", "El número de ramas principales del árbol", "La cantidad de frutos producidos por año"], correct: 1, expl: "La ecuación utiliza ln(D) y ln(ρ) como variables independientes, siendo el DAP la medida más fácil y precisa en campo. Para G. ulmifolia, ρ = 0,507 g/cm³ (verificado en literatura neotropical)." },
+        { q: "¿Qué fenómeno ecológico explica que las semillas del Guásimo germinen mejor tras pasar por el tracto digestivo de un animal?", opts: ["Anemocoria: dispersión por viento que escarifica la semilla", "Hidrocoria: dispersión por agua que ablanda la cubierta seminal", "Endozoocoria: dispersión por tracto digestivo que escarifica la semilla y la deposita en nuevo suelo con fertilizante natural", "Autocoria: caída directa al suelo sin intervención de fauna"], correct: 2, expl: "La endozoocoria es el mecanismo clave de regeneración del guácimo. Las semillas duras germinan mejor tras pasar por el estómago de animales como ganado o venados, permitiendo al árbol colonizar nuevos espacios. Este proceso conecta fauna, flora y dinámica del paisaje llanero." },
+        { q: "¿Por qué el Guásimo es considerado una especie 'perennifolia relevante' en estudios de carbono del Caribe y Orinoquía?", opts: ["Porque sus hojas nunca caen, ni siquiera en sequías extremas de 7 meses", "Porque mantiene biomasa foliar durante la época seca, contribuyendo al almacenamiento de carbono y al forraje para ganadería cuando otras especies defolian", "Porque sus raíces almacenan carbono subterráneo en mayor proporción que otras especies", "Porque sus flores fijan CO₂ atmosférico de manera más eficiente que otras angiospermas"], correct: 1, expl: "La capacidad de mantener follaje durante la época seca hace que G. ulmifolia contribuya significativamente al almacenamiento de carbono en sistemas silvopastoriles y ofrezca forraje cuando otras especies están en reposo. Esta característica la convierte en especie clave para ganadería sostenible y mitigación climática en la Orinoquía." }
+    ]
     },
     "gualanday": {
-        id: "#JBP-13", tipo: "Nativo", nombre: "Gualanday / Acacia", cientifico: "Jacaranda obtusifolia Bonpl.",
-        familia: "Bignoniaceae", origen: "Nativa", estado: "Preocupación Menor (LC)", exotica: false,
-        carbono: 120.0, viajes: 0, imagen_portada: "./imagenes/gualanday1.jpeg",
-        galeria: [
-            { img: "./imagenes/gualanday1.jpeg", desc: "Árbol Completo" },
-            { img: "./imagenes/gualanday2.jpeg", desc: "Hojas" },
-            { img: "./imagenes/gualanday3.jpeg", desc: "Fruto" },
-            { img: "./imagenes/gualanday4.jpeg", desc: "Tronco" },
-            { img: "./imagenes/gualanday5.jpeg", desc: "Vista Inferior" },
-            { img: "./imagenes/gualanday6.jpeg", desc: "Flores" }
-        ],
-        nombresLocales: ["Gualanday", "Acacia morada", "Guayacán morado", "Jacaranda"],
-        distribucion: `
-            <p>Especie nativa de América del Sur tropical (Colombia, Venezuela, Guayanas, Brasil). En los Llanos Orientales de Colombia es común en zonas de sabana arbolada, bosques de galería y también como árbol ornamental urbano.</p>
-        `,
-        densidad: "0.45 – 0.55 g/cm³", fraccion: "0.47 (IPCC)",
-        alometria: `
-            <div class="alometry-box" style="margin-bottom:10px;">AGB = 0.0673 × (ρ × D² × H)⁰·⁹⁷⁶</div>
-            <p class="text-sm">Ecuación de <strong>Chave et al. (2014)</strong> aplicable a especies de Bignoniaceae en bosques secos neotropicales.</p>
-        `,
-        calendario: [
-            { mes: "Ene", fase: "Reposo", clima: "dry" }, { mes: "Feb", fase: "Caída follaje", clima: "dry" },
-            { mes: "Mar", fase: "Floración", clima: "dry" }, { mes: "Abr", fase: "Floración", clima: "rain" },
-            { mes: "May", fase: "Brotación", clima: "rain" }, { mes: "Jun", fase: "Fructificación", clima: "rain" },
-            { mes: "Jul", fase: "Fructificación", clima: "rain" }, { mes: "Ago", fase: "Crecimiento", clima: "rain" },
-            { mes: "Sep", fase: "Crecimiento", clima: "rain" }, { mes: "Oct", fase: "Dispersión", clima: "rain" },
-            { mes: "Nov", fase: "Dispersión", clima: "dry" }, { mes: "Dic", fase: "Reposo", clima: "dry" }
-        ],
-        morfologia: `
-            <div style="display:flex; flex-direction:column; gap:15px;">
-                <div><strong style="color:var(--secondary-color);">Porte:</strong> Árbol mediano de 10 a 20 metros de altura, con copa irregular, abierta y extendida, que proporciona una sombra ligera y tamizada.</div>
-                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Bipinnadas (semejantes a las de los helechos), opuestas, con numerosos folíolos pequeños, obtusos en el ápice (de ahí <em>obtusifolia</em>), color verde claro.</div>
-                <div><strong style="color:var(--secondary-color);">Flores:</strong> Espectaculares panículas terminales de flores tubulares y campanuladas, de un color azul-violáceo o lila intenso. Frecuentemente florece cuando ha perdido sus hojas.</div>
-                <div><strong style="color:var(--secondary-color);">Frutos:</strong> Cápsulas leñosas, planas, con forma de castañuela o pequeña tortuga, dehiscentes, que liberan numerosas semillas aladas.</div>
-            </div>
-        `,
-        fauna: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Insectos</div><div class="section-val text-sm mt-2">Sus flores lilas tubulares son visitadas intensamente por abejas grandes y abejorros.</div></div>
-                <div class="metric-card"><div class="metric-label">Aves</div><div class="section-val text-sm mt-2">Los colibríes aprovechan el néctar de sus flores acampanadas durante la temporada seca.</div></div>
-            </div>
-        `,
-        usos: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Ornamental</div><div class="section-val text-sm mt-2">Su floración masiva de color lila lo convierte en uno de los árboles paisajísticos más hermosos del llano.</div></div>
-                <div class="metric-card"><div class="metric-label">Medicinal Tradicional</div><div class="section-val text-sm mt-2">La infusión de sus hojas y corteza se ha usado en medicina popular para afecciones de la piel y como depurativo.</div></div>
-            </div>
-        `,
-        mensajeIA: "¡Hola! Soy el Gualanday. Si alguna vez en el verano llanero viste un árbol que se quedó sin hojas pero se cubrió completamente de campanas moradas o lilas, ¡ese era yo! Pinto el paisaje de la Orinoquía con colores espectaculares. Mis frutos secos parecen pequeñas castañuelas de madera que guardan semillas con 'alas' para volar con el viento.",
-        referencias: [
-            "Bernal, R. et al. (2015). Catálogo de plantas y líquenes de Colombia.",
-            "Gentry, A.H. (1992). Bignoniaceae: Part II (Tribe Tecomeae). Flora Neotropica."
-        ],
-        quiz: [
-            { q: "¿En qué época del año el Gualanday suele mostrar su espectacular floración morada/lila en el Casanare?", opts: ["En el pico de las lluvias torrenciales", "Durante el verano (época seca), muchas veces después de perder sus hojas", "Solo de noche durante el invierno"], correct: 1 },
-            { q: "¿Qué forma tienen los frutos secos leñosos del Gualanday?", opts: ["Forma de castañuela aplanada", "Forma de bola perfecta", "Forma de vaina larguísima como un machete"], correct: 0 },
-            { q: "¿Cómo se dispersan las semillas del Gualanday?", opts: ["Flotando en el agua (Hidrocoria)", "Llevadas por el viento gracias a sus alas (Anemocoria)", "Comidas por monos (Zoocoria)"], correct: 1 }
-        ]
+    id: "#JBP-13", tipo: "Nativo", nombre: "Gualanday", cientifico: "Jacaranda obtusifolia Humb. & Bonpl.",
+    familia: "Bignoniaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN, 2021)", exotica: false,
+    carbono: 0.156, viajes: 57, imagen_portada: "./imagenes/gualanday1.jpeg",
+    galeria: [
+        { img: "./imagenes/gualanday1.jpeg", desc: "" },
+        { img: "./imagenes/gualanday2.jpeg", desc: "" },
+        { img: "./imagenes/gualanday3.jpeg", desc: "" },
+        { img: "./imagenes/gualanday4.jpeg", desc: "" },
+        { img: "./imagenes/gualanday5.jpeg", desc: "" },
+        { img: "./imagenes/gualanday6.jpeg", desc: "" }
+    ],
+    nombresLocales: ["Gualanday", "Flormorado", "Flor morado", "Palisandro llanero", "Jacaranda", "Guarupa", "Abey"],
+    distribucion: `
+        <p><strong>Especie nativa emblemática de la Orinoquía:</strong> <em>Jacaranda obtusifolia</em> Humb. & Bonpl. es nativa de amplia distribución neotropical, desde Venezuela hasta Bolivia. En Colombia está confirmada en el Catálogo de Plantas (UNAL, 2015) y se distribuye principalmente en la <strong>Orinoquía</strong> (Arauca, Casanare, Meta, Vichada), con registros aislados en Andes y Amazonia. Habita sabanas inundables, bordes de bosques de galería y matorrales riparios en rango altitudinal de 200–1.340 m s.n.m. En Maní, Casanare, es componente frecuente de matas de monte y linderos de fincas ganaderas.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Lamiales</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Bignoniaceae Juss.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género / Especie</td><td style="padding:6px;"><em>Jacaranda</em> / <em>J. obtusifolia</em> Humb. & Bonpl.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Autoría</td><td style="padding:6px;">Humboldt & Bonpland, <em>Pl. Aequinoct.</em> 1: 62, t. 18 (1808 [1805])</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Jacaranda</em>: voz tupí-guaraní <em>yacã-ratã</em> = "corazón duro/fragante"; <em>obtusifolia</em>: hojas de ápice obtuso</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">✅ LC — Preocupación Menor (UICN, 2021) · Nativa sin restricción en Colombia</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro">
+            <p>"En Colombia está ampliamente distribuida en la Orinoquía, y hay unas colecciones aisladas en Cundinamarca."</p>
+            <cite>— Gentry, A. H. (1992). <em>Bignoniaceae — Part II (Tribe Tecomeae)</em>. Flora Neotropica, Monograph 25(II), 1–370.</cite>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🌎 Dato curioso:</strong> El Gualanday es el árbol que florece cuando "todos piensan que está muerto". En enero–febrero, cuando el llano se seca y la tierra cruje de sed, este árbol se queda completamente desnudo de hojas y se cubre de miles de flores azul-violeta. Es el espectáculo vegetal más llamativo del paisaje llanero durante el verano.
+        </div>
+    `,
+    densidad: "~0,43 g/cm³ (estimado por género Jacaranda; ⚠️ por verificar en campo para Orinoquía)", fraccion: "0,47 – 0,50 (IPCC para latifoliadas tropicales)",
+    alometria: `
+        <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+            ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> No existe en la literatura consultada (IDEAM, Catálogo de Maderas de Colombia, Global Wood Density Database) un valor de densidad básica específico confirmado para <em>Jacaranda obtusifolia</em> procedente de la Orinoquía colombiana. El valor de ~0,43 g/cm³ proviene de referencias generales del género <em>Jacaranda</em>. Se recomienda toma de muestras incrementales en Maní (Casanare) para calibración local conforme al protocolo ASTM D2395. Asimismo, el Factor de Expansión de Biomasa (FEB) específico no está reportado; usar FEB = 1,30–1,60 (IPCC Tier 1 para bh-T) como valor provisional.
+        </div>
+        <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+            ln(Ba) = a + b·ln(D) + c·ln(H) + d·ln(ρ) · Álvarez et al. (2012) · Tipo I
+        </div>
+        <p class="text-sm"><strong>Modelo Colombia — Álvarez et al. (2012):</strong> Ecuación recomendada para bosques naturales de Colombia, validada con datos de parcelas en la Orinoquía y aplicada en estudios de captura de carbono en Yopal, Casanare (Andrade-Castañeda et al., 2020).</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Ba</td><td style="padding:6px;">Biomasa aérea individual (kg)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">D (DAP)</td><td style="padding:6px;">Diámetro a la altura del pecho (m, medido a 1,30 m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total del árbol (m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ</td><td style="padding:6px;">Densidad básica: ~0,43 g/cm³ (⚠️ estimado; por verificar en campo)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FC (Carbono)</td><td style="padding:6px;">0,47 (IPCC, 2006) o 0,50 (Brown, 1997)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar · Usar 1,30–1,60 (IPCC Tier 1 bh-T) como valor provisional</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro" style="font-size:0.85rem;">
+            <p>"Los bosques de galería y las matas de monte son los sistemas con mayor potencial de almacenamiento [de carbono] en el municipio de Yopal, Casanare."</p>
+            <cite>— Andrade-Castañeda, H. J., et al. (2020). Captura de carbono en biomasa de sistemas de uso del suelo, municipio de Yopal, Casanare, Colombia. <em>Orinoquia — Universidad de los Llanos</em>, 24(1), 13–22.</cite>
+        </div>
+    `,
+    calendario: [
+        { mes: "Dic", fase: "Caída foliar progresiva (caducifolia) 🍂", clima: "dry" },
+        { mes: "Ene", fase: "Árbol desnudo + Floración masiva azul-violeta 🌸", clima: "dry" },
+        { mes: "Feb", fase: "Pico de floración + Polinización por abejas de orquídeas 🐝", clima: "dry" },
+        { mes: "Mar", fase: "Fructificación temprana + Inicio dispersión anemócora 🪁", clima: "dry" },
+        { mes: "Abr", fase: "Rebrote intenso de hojas con primeras lluvias 🌱", clima: "rain" },
+        { mes: "May", fase: "Máximo desarrollo foliar + Crecimiento en altura 🍃", clima: "rain" },
+        { mes: "Jun", fase: "Crecimiento sostenido en diámetro y biomasa 🌳", clima: "rain" },
+        { mes: "Jul", fase: "Mantenimiento de follaje + Reserva de energía 🌿", clima: "rain" },
+        { mes: "Ago", fase: "Maduración y dispersión final de frutos rezagados 🍂", clima: "rain" },
+        { mes: "Sep", fase: "Acumulación de reservas para próximo ciclo 🌱", clima: "rain" },
+        { mes: "Oct", fase: "Preparación para sequía: reducción metabólica 🍂", clima: "rain" },
+        { mes: "Nov", fase: "Inicio de caída foliar + Pre-floración 🌸", clima: "dry" }
+    ],
+    morfologia: `
+        <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol pequeño a mediano de hasta 15 m de altura, con DAP adulto hasta ~50 cm. Ramas jóvenes teretes y glabras. Fuste recto a ligeramente tortuoso. Copa abierta y extendida. Especie caducifolia: pierde todas sus hojas en época seca (dic–mar), rebrotando vigorosamente con las primeras lluvias.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíz pivotante con ramificaciones laterales extendidas. Tolerante a inundaciones estacionales propias de sabanas llaneras. Adaptada a suelos oxísoles y ultísoles de baja fertilidad, comunes en la altillanura casanareña.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo / Corteza y Madera:</strong> Corteza grisácea a pardo-grisácea, escamosa, que se desprende en pequeñas placas. Madera pálida, de grano recto a ligeramente entrecruzado, textura media y lustre mediano-alto. <strong>Densidad básica estimada: ~0,43 g/cm³</strong> (madera ligera a blanda). Fácil de trabajar con herramientas manuales, pero de baja durabilidad natural: susceptible a insectos xilófagos y hongos.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje:</strong> Filotaxia opuesta. Hojas bipinnadas, semejantes a hojas de helecho, de 15–30 cm de largo. Cada hoja porta 16 o más pares de divisiones pinnadas; folíolos pequeños (11×5 mm), obtusos (de ahí el epíteto <em>obtusifolia</em>), oblongos, de textura fina y color verde claro. Caducifolias: caen completamente en época seca.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Flores agrupadas en panículas terminales grandes y vistosas. Corola tubular-bilabiada, color <strong>azul-violácea a lila intensa</strong>. Floración ocurre cuando el árbol está <strong>completamente sin hojas</strong> (enero–febrero), fenómeno visual inconfundible en el Casanare. Polinización principal por abejas de las orquídeas (<em>Eulaema</em> spp., <em>Eufriesea</em> spp.) atraídas por tricomas glandulares del estaminodio.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Fruto tipo cápsula oblongo-elíptica, 3,5–7 × 2–3 cm, fuertemente comprimida, lepidota, cuspidada en el ápice. Semillas planas, 6–7 × 16–20 mm, <strong>bialadas</strong> (con dos alas hialino-marrón) que facilitan la <strong>dispersión anemócora</strong> (por viento). Alta viabilidad en condiciones de humedad adecuada.</div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔍 Triada diagnóstica en campo:</strong> ① Hojas bipinnadas semejantes a helecho, con folíolos obtusos · ② Floración masiva azul-violeta cuando el árbol está completamente desnudo de hojas (enero–febrero) · ③ Cápsulas comprimidas con semillas bialadas para dispersión por viento. + Corteza escamosa grisácea y porte en sabanas inundables.
+        </div>
+    `,
+    fauna: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🦜 Loros y Pericos</div><div class="section-val text-sm mt-2"><em>Amazona</em> spp., <em>Brotogeris</em> spp. Consumen semillas aladas y usan cavidades en ramas para nidificación. Beneficiados por la estructura abierta de la copa en sabanas.</div></div>
+            <div class="metric-card"><div class="metric-label">🐝 Abejas de las orquídeas</div><div class="section-val text-sm mt-2"><em>Eulaema</em> spp., <em>Eufriesea</em> spp. <strong>Polinizadores principales</strong> atraídos por tricomas glandulares del estaminodio. Visitas durante floración en época seca (ene–feb).</div></div>
+            <div class="metric-card"><div class="metric-label">🦋 Mariposas nectarívoras</div><div class="section-val text-sm mt-2"><em>Heliconius</em> spp., <em>Morpho</em> spp. Visitas florales durante la antesis en verano llanero. Contribuyen a polinización secundaria.</div></div>
+            <div class="metric-card"><div class="metric-label">🦅 Gavilanes y halcones</div><div class="section-val text-sm mt-2"><em>Falco</em> spp., <em>Accipiter</em> spp. Usan la copa como atalaya de caza en sabanas abiertas. Beneficiados por la visibilidad que ofrece el árbol desnudo en época seca.</div></div>
+            <div class="metric-card"><div class="metric-label">🦇 Murciélagos nectarívoros</div><div class="section-val text-sm mt-2"><em>Glossophaga soricina</em>. Polinización nocturna complementaria; visitantes florales en horas crepusculares.</div></div>
+            <div class="metric-card"><div class="metric-label">⚠️ Insectos xilófagos</div><div class="section-val text-sm mt-2">Coleoptera: Cerambycidae. Relación negativa: afectan madera; susceptibilidad alta reportada en el género <em>Jacaranda</em>. Monitoreo fitosanitario recomendado en individuos del JBP.</div></div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔬 Nota ecológica:</strong> Los géneros de Bignoniaceae presentan un estaminodio (estambre estéril) más largo que los estambres fértiles, con tricomas glandulares que secretan metabolitos secundarios especialmente atractivos para abejas de las orquídeas. Esta coevolución química explica la eficiencia de polinización del Gualanday en la Orinoquía (Gentry, 1992).
+        </div>
+    `,
+    usos: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🔨 Carpintería y Ebanistería</div><div class="section-val text-sm mt-2">Madera de lustre mediano y fácil trabajabilidad. Usada para muebles rústicos, cajas, artesanías, acabados interiores y carpintería general. En el pasado, apreciada para fabricar telares en zonas con tradición textil. <strong>Nota:</strong> baja durabilidad natural; requiere tratamiento contra insectos xilófagos para usos exteriores.</div></div>
+            <div class="metric-card"><div class="metric-label">🌿 Medicina Popular Llanera</div><div class="section-val text-sm mt-2">Decocción de hojas reportada en Orinoquía como antiséptico y antibacteriano de uso externo: baños con cocimiento para brotes en piel, manchas cutáneas y afecciones del cuero cabelludo. Polvo de hojas secas usado como sulfa cicatrizante de heridas. <strong>Precaución:</strong> uso tradicional documentado; consultar profesional de salud antes de aplicaciones terapéuticas.</div></div>
+            <div class="metric-card"><div class="metric-label">🌳 Cercas Vivas y Arborización</div><div class="section-val text-sm mt-2">Plantado en linderos de fincas ganaderas de Casanare y Meta como árbol de sombra y demarcador de potreros. Tolerante a suelos pobres y drenaje deficiente estacional. Alto valor ornamental por floración espectacular en época seca.</div></div>
+            <div class="metric-card"><div class="metric-label">🎨 Ornamental y Paisajismo</div><div class="section-val text-sm mt-2">Floración masiva azul-violeta cuando el árbol está desnudo de hojas lo convierte en el espectáculo vegetal más llamativo del paisaje llanero (ene–feb). Recomendado para parques, avenidas y espacios públicos de Maní por su alto impacto estético.</div></div>
+            <div class="metric-card"><div class="metric-label">🐄 Agroforestería Llanera</div><div class="section-val text-sm mt-2">Integrado en sistemas silvopastoriles de la Orinoquía por su capacidad de proporcionar sombra para el ganado y resistencia a polución y fuego moderado de quemas de sabana. Caducifolia: permite paso de luz en época seca cuando el ganado más necesita sombra.</div></div>
+            <div class="metric-card"><div class="metric-label">🧪 Fitoquímica y Potencial</div><div class="section-val text-sm mt-2">Compuestos reportados en el género: glucósidos iridoides, ácido ursólico, lapachol y flavonoides con propiedades antimicrobianas. Uso validado como antibacteriano en estudios de la Orinoquía colombiana. Potencial para investigación farmacéutica regional.</div></div>
+        </div>
+    `,
+    mensajeIA: "🌸 ¡Hola, pariente llanero! Soy el <strong>Gualanday</strong>, aunque también me llaman <em>Flormorado</em>, <em>Flor morado</em> o <em>Palisandro llanero</em>. Mi nombre científico es <em>Jacaranda obtusifolia</em> Humb. & Bonpl., y tengo una historia que combina belleza y estrategia: nací aquí, en estas sabanas infinitas de Maní, mucho antes de que los llaneros supieran de tractores o alambres de púas.\n\nSoy el árbol que florece cuando 'todos piensan que estoy muerto'. ¿Ves mis ramas desnudas en enero, sin una sola hoja? Muchos creen que estoy enfermo. Pero guarda el secreto: mientras el llano se seca y la tierra cruje de sed, yo guardo toda mi energía y la convierto en miles de flores azul-violeta que cubren mis ramas como un manto de cielo caído. Las abejas de las orquídeas me conocen bien; vienen desde lejos siguiendo el olor de mis trampas fragantes. Mi flor abre su corazón exactamente cuando más lo necesito: cuando no tengo hojas que estorben el vuelo de mis polinizadores.\n\n✨ <strong>Pero tengo un superpoder que muy pocos conocen</strong>: soy muy bueno para guardar carbono. Ese gas invisible que hace que la Tierra se caliente demasiado, yo lo atrapo con mis hojas, lo bajo por mi tronco y lo entierro en mis raíces. Soy como una esponja gigante del aire. Cada uno de mis familiares en este inventario del JBP es un guardián invisible del clima del Casanare. Y ahora tú, al registrarme, te vuelves también mi guardián.\n\nCuando llega el invierno y las lluvias vuelven a romper el suelo, entonces sí despliego mis hojas, tan finas y elegantes que parecen plumas de helecho. Mis semillas viajan en el viento gracias a dos alitas que las cargan lejos de mi sombra. Así conquisto nuevos territorios sin moverme.\n\n¿Me plantarías en tu finca? Si lo haces, que sea con respeto: en linderos de potreros, en parques de Maní, o para restaurar bordes de caños. Soy nativo de esta tierra, y mi misión es embellecerla y protegerla... con estrategia, belleza y silencio.",
+    referencias: [
+        "Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., De las Salas, G., Del Valle, I., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>(1), 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+        "Andrade-Castañeda, H. J., Segura-Madrigal, M. A., Canal-Daza, D. S., Huertas-González, A., & Mosos-Torres, C. (2020). Captura de carbono en biomasa de sistemas de uso del suelo, municipio de Yopal, Casanare, Colombia. <em>Orinoquia — Universidad de los Llanos</em>, 24(1), 13–22. https://orinoquia.unillanos.edu.co/index.php/orinoquia/article/view/587",
+        "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). <em>Catálogo de plantas y líquenes de Colombia</em>. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. http://catalogoplantasdecolombia.unal.edu.co",
+        "Gentry, A. H. (1992). Bignoniaceae — Part II (Tribe Tecomeae). <em>Flora Neotropica, Monograph 25(II)</em>, 1–370. New York Botanical Garden Press.",
+        "Gentry, A. H. (1997). Bignoniaceae. En J. Steyermark, P. E. Berry, & B. K. Holts (Eds.), <em>Flora of the Venezuelan Guayana</em> (Vol. 3, pp. 403–491). Missouri Botanical Garden Press.",
+        "Royal Botanic Gardens, Kew. (2021). <em>Jacaranda obtusifolia</em> Bonpl. Plants of the World Online. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:109832-1",
+        "Universidad Nacional de Colombia — Herbario Nacional. (2015). <em>Jacaranda obtusifolia</em> subsp. <em>obtusifolia</em> — Flora virtual de Colombia. BioVirtual UNAL. http://www.biovirtual.unal.edu.co/floradecolombia/es/description/345/",
+        "Yepes, A. P., Navarrete, D. A., Duque, A. J., Phillips, J. F., Cabrera, K. R., Álvarez, E., García, M. C., & Ordoñez, M. F. (2011). <em>Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia</em>. Instituto de Hidrología, Meteorología y Estudios Ambientales – IDEAM.",
+        "Barajas Villamizar, L., & otros autores. (2015). Usos tradicionales de las plantas de la Orinoquia colombiana para potencial agroindustrial. <em>UGCiencia — Universidad La Gran Colombia</em>, 21(1). https://revistas.ugca.edu.co/index.php/ugciencia/article/view/419"
+    ],
+    quiz: [
+        { q: "¿En cuál de las siguientes regiones biogeográficas de Colombia se encuentra principalmente distribuida la especie Jacaranda obtusifolia, y a qué familia botánica pertenece?", opts: ["Región Caribe, familia Fabaceae", "Región Andina, familia Verbenaceae", "Orinoquía (incluyendo Casanare), familia Bignoniaceae", "Pacífico, familia Meliaceae"], correct: 2, expl: "J. obtusifolia se distribuye ampliamente en la Orinoquía colombiana (Arauca, Casanare, Meta, Vichada) y pertenece a la familia Bignoniaceae, según Gentry (1992) y el Catálogo de Plantas de Colombia (Bernal et al., 2015)." },
+        { q: "El Gualanday (Jacaranda obtusifolia) es conocido en el Casanare porque florece masivamente durante el verano llanero. ¿Cuál de estas afirmaciones describe correctamente ese proceso en Maní?", opts: ["El árbol florece en julio cuando tiene el máximo follaje, durante las lluvias intensas de invierno", "El árbol pierde todas sus hojas entre diciembre y enero, y solo entonces produce sus flores azul-violetas (enero–febrero), cuando está completamente desnudo de follaje", "El árbol florece en octubre, al inicio del invierno, junto con el rebrote de sus hojas", "El Gualanday es un árbol siempreverde que nunca pierde sus hojas en el llano"], correct: 1, expl: "La fenología de J. obtusifolia responde fuertemente al régimen hídrico: es caducifolia en época seca (dic–mar) y florece masivamente cuando está completamente desnudo de hojas (ene–feb). Este fenómeno lo convierte en el espectáculo vegetal más llamativo del paisaje llanero durante el verano." },
+        { q: "En los inventarios forestales de la Orinoquía colombiana (como Yopal y Maní, Casanare), ¿cuál herramienta científica se usa para estimar indirectamente la biomasa aérea y el carbono almacenado en árboles como el Gualanday, sin necesidad de cortarlos?", opts: ["Un microscopio óptico que mide el grosor de las células de la madera", "La extracción directa de muestras de carbono del suelo con jeringas", "La observación del color de las flores y el número de hojas del árbol", "Ecuaciones alométricas (como la de Álvarez et al., 2012), que calculan la biomasa usando el diámetro del tronco (DAP), la altura y la densidad de la madera"], correct: 3, expl: "Las ecuaciones alométricas de Álvarez et al. (2012) son la herramienta recomendada por IDEAM para estimar biomasa aérea en bosques naturales de Colombia, incluyendo la Orinoquía. Usan variables medibles en campo (DAP, altura, densidad de madera) para calcular biomasa sin necesidad de talar el árbol." },
+        { q: "¿Qué característica reproductiva distingue a Jacaranda obtusifolia de la mayoría de árboles del inventario JBP?", opts: ["Produce flores grandes y fragantes que atraen colibríes y mariposas", "Sus semillas son bialadas (con dos alas) y se dispersan por viento (anemocoria), permitiendo colonizar nuevos territorios sin moverse", "Sus frutos son bayas carnosas que maduran en invierno y son dispersadas por aves", "Se reproduce exclusivamente por hijuelos basales, sin producción de semillas viables"], correct: 1, expl: "Las semillas de J. obtusifolia son planas y bialadas, con alas hialino-marrón que facilitan la dispersión anemócora (por viento). Esta adaptación le permite colonizar sabanas inundables y bordes de bosque de galería en la Orinoquía, conquistando nuevos territorios 'sin mover un pie'." },
+        { q: "¿Por qué el Gualanday es considerado una especie de alto valor ornamental y ecológico en el paisaje llanero de Casanare?", opts: ["Porque sus raíces fijan nitrógeno atmosférico y mejoran la fertilidad del suelo", "Porque su floración masiva azul-violeta en época seca, cuando el árbol está desnudo de hojas, crea un espectáculo visual único que atrae polinizadores y embellece el paisaje", "Porque sus hojas son comestibles y sirven de forraje para el ganado en verano", "Porque su madera es la más duradera y resistente de la Orinoquía"], correct: 1, expl: "La floración masiva de J. obtusifolia en enero–febrero, cuando el árbol está completamente desnudo de hojas, es el fenómeno vegetal más llamativo del paisaje llanero durante el verano. Este espectáculo visual atrae polinizadores especializados (abejas de orquídeas) y embellece parques, linderos y matas de monte de Casanare." }
+    ]
     },
     "palma-real": {
-        id: "#JBP-16", tipo: "Introducido", nombre: "Palma Real / Chaguaramo", cientifico: "Roystonea regia (Kunth) O.F.Cook",
-        familia: "Arecaceae", origen: "Introducida (Caribe)", estado: "Preocupación Menor (LC)", exotica: true,
-        carbono: 135.0, viajes: 0, imagen_portada: "./imagenes/real1.jpeg",
-        galeria: [
-            { img: "./imagenes/real1.jpeg", desc: "Palmas Reales" },
-            { img: "./imagenes/real2.jpeg", desc: "Parte Supeior" },
-            { img: "./imagenes/real3.jpeg", desc: "Parte Superior Zoom" },
-            { img: "./imagenes/real4.jpeg", desc: "Tronco" },
-            { img: "./imagenes/real5.jpeg", desc: "Vista Inferior" }
-        ],
-        nombresLocales: ["Palma real", "Chaguaramo", "Palmera real"],
-        distribucion: `
-            <p>Nativa de Cuba, sur de Florida y Centroamérica. Es el árbol nacional de Cuba. En Colombia es una especie introducida y ampliamente naturalizada y cultivada como ornamental en los Llanos, la región Caribe y Andina.</p>
-        `,
-        densidad: "0.628 – 0.669 g/cm³ (Periferia)", fraccion: "0.47 (IPCC)",
-        alometria: `
-            <div class="alometry-box" style="margin-bottom:10px;">V = π × (D/2)² × H × f</div>
-            <p class="text-sm">Palmeras requieren modelos de biomasa cilíndricos (f ≈ 0.85-0.90). La densidad de su tronco varía: duro en la periferia, suave en el centro.</p>
-        `,
-        calendario: [
-            { mes: "Ene", fase: "Continua", clima: "dry" }, { mes: "Feb", fase: "Continua", clima: "dry" },
-            { mes: "Mar", fase: "Continua", clima: "dry" }, { mes: "Abr", fase: "Continua", clima: "rain" },
-            { mes: "May", fase: "Continua", clima: "rain" }, { mes: "Jun", fase: "Pico Floración", clima: "rain" },
-            { mes: "Jul", fase: "Pico Floración", clima: "rain" }, { mes: "Ago", fase: "Pico Frutos", clima: "rain" },
-            { mes: "Sep", fase: "Pico Frutos", clima: "rain" }, { mes: "Oct", fase: "Pico Frutos", clima: "rain" },
-            { mes: "Nov", fase: "Continua", clima: "dry" }, { mes: "Dic", fase: "Continua", clima: "dry" }
-        ],
-        morfologia: `
-            <div style="display:flex; flex-direction:column; gap:15px;">
-                <div><strong style="color:var(--secondary-color);">Porte:</strong> Palma majestuosa y solitaria que puede alcanzar 20 a 30 metros. Tallo (estípite) grisáceo, liso, ligeramente ensanchado a media altura (fusiforme).</div>
-                <div><strong style="color:var(--secondary-color);">Capitel:</strong> En la parte superior del tronco presenta un capitel liso y verde brillante (crownshaft) de hasta 2 metros de largo, formado por las bases envainadoras de las hojas.</div>
-                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Pinnadas, enormes (4 a 6 metros de largo), agrupadas en la corona, con los folíolos dispuestos en varios planos, lo que le da un aspecto plumoso.</div>
-                <div><strong style="color:var(--secondary-color);">Frutos:</strong> Drupas globosas a elipsoides, purpúreas a negras al madurar (palmiche), abundantes en racimos pesados colgantes justo debajo del capitel verde.</div>
-            </div>
-        `,
-        fauna: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Aves (Loros y guacamayas)</div><div class="section-val text-sm mt-2">Consumen copiosamente el "palmiche" (frutos) al madurar. Usan el tronco muerto para anidar.</div></div>
-                <div class="metric-card"><div class="metric-label">Ganado y Murciélagos</div><div class="section-val text-sm mt-2">El fruto caído es devorado por vacas y cerdos. Murciélagos frugívoros son dispersores.</div></div>
-            </div>
-        `,
-        usos: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Ornamental</div><div class="section-val text-sm mt-2">La reina de las palmas ornamentales para avenidas y haciendas por su elegancia simétrica.</div></div>
-                <div class="metric-card"><div class="metric-label">Materiales</div><div class="section-val text-sm mt-2">La hoja o vaina ensanchada ("yagua") se usaba en el Caribe para empacar, envolver y techar bohíos campesinos.</div></div>
-            </div>
-        `,
-        mensajeIA: "¡Hola! Soy la Palma Real, y en los llanos de Venezuela me llaman 'Chaguaramo'. Vengo del Caribe y soy el Árbol Nacional de Cuba. Mírame bien, mi tronco parece una columna de mármol pulido y no tengo ramas, solo un penacho de plumas gigantes. La parte verde debajo de mis hojas (el capitel) es como mi cuello, y de ahí nacen racimos gigantes de coquitos oscuros (palmiche) que a los loros y a los cerdos les encantan.",
-        referencias: [
-            "Galeano, G. & Bernal, R. (2015). Roystonea regia. En Catálogo de plantas y líquenes de Colombia.",
-            "López-Galet, S.P. et al. (2017). Caracterización de las propiedades físicas y mecánicas de la palma real. Universidad Industrial de Santander."
-        ],
-        quiz: [
-            { q: "¿Qué nombre recibe el fruto maduro y oscuro de la Palma Real, que es alimento favorito de aves y cerdos?", opts: ["Cacao silvestre", "Palmiche", "Bellota llanera"], correct: 1 },
-            { q: "¿Cómo se le llama a la zona lisa y verde brillante que está en la parte superior del tronco, justo debajo de las hojas?", opts: ["Capitel o crownshaft", "Corteza esmeralda", "Nudo fotosintético"], correct: 0 },
-            { q: "¿En qué país la Palma Real (Roystonea regia) es considerada oficialmente como el Árbol Nacional?", opts: ["Colombia", "Cuba", "Brasil"], correct: 1 }
-        ]
-    },
-    "saman": {
-        id: "#JBP-17", tipo: "Nativo", nombre: "Samán / Campano", cientifico: "Samanea saman (Jacq.) Merr.",
-        familia: "Fabaceae", origen: "Nativa", estado: "Preocupación Menor (LC)", exotica: false,
-        carbono: 420.0, viajes: 0, imagen_portada: "./imagenes/desconocido.jpg",
-        galeria: [
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto en campo" }
-        ],
-        nombresLocales: ["Samán", "Campano", "Árbol de la Lluvia", "Dormilón", "Cenízaro"],
-        distribucion: `
-            <p>Nativo del trópico americano, desde México hasta Perú y Brasil. En la Orinoquía colombiana es el árbol silvopastoril por excelencia. Majestuoso en sabanas, potreros y bordes de caño.</p>
-        `,
-        densidad: "0.46 g/cm³", fraccion: "0.47 (IPCC)",
-        alometria: `
-            <div class="alometry-box" style="margin-bottom:10px;">ln(BA) = a + b·ln(DAP) + c·ln(ρ)</div>
-            <p class="text-sm">Ecuación de <strong>Álvarez et al. (2012)</strong>. Aunque de madera moderadamente liviana, su volumen colosal lo convierte en un 'titán del carbono'. Un árbol maduro puede capturar más de 28 t de CO₂/año.</p>
-        `,
-        calendario: [
-            { mes: "Ene", fase: "Plena floración", clima: "dry" }, { mes: "Feb", fase: "Plena floración", clima: "dry" },
-            { mes: "Mar", fase: "Inicio frutos", clima: "dry" }, { mes: "Abr", fase: "Plenos frutos", clima: "rain" },
-            { mes: "May", fase: "Plenos frutos", clima: "rain" }, { mes: "Jun", fase: "Plenos frutos", clima: "rain" },
-            { mes: "Jul", fase: "Dispersión", clima: "rain" }, { mes: "Ago", fase: "2da Floración", clima: "rain" },
-            { mes: "Sep", fase: "2da Floración", clima: "rain" }, { mes: "Oct", fase: "Maduración frutos", clima: "rain" },
-            { mes: "Nov", fase: "Caída de frutos", clima: "dry" }, { mes: "Dic", fase: "Inicio caída hojas", clima: "dry" }
-        ],
-        morfologia: `
-            <div style="display:flex; flex-direction:column; gap:15px;">
-                <div><strong style="color:var(--secondary-color);">Porte:</strong> Árbol colosal de 15 a 30 m de altura. Su característica más distintiva es su copa en forma de inmenso paraguas o sombrilla, que puede alcanzar hasta 50 m de diámetro. Tronco grueso, corto, con corteza fisurada.</div>
-                <div><strong style="color:var(--secondary-color);">Hojas:</strong> Bipinnadas, alternas. Presentan movimientos <strong>nictinásticos</strong>: las hojuelas se pliegan y cierran durante la noche o en días nublados previos a la lluvia.</div>
-                <div><strong style="color:var(--secondary-color);">Flores:</strong> Inflorescencias en umbelas (como pequeños pompones o plumeros), con estambres largos de color rosado en la mitad superior y blancos en la base. Muy vistosas.</div>
-                <div><strong style="color:var(--secondary-color);">Frutos:</strong> Legumbres (vainas) largas, gruesas y oscuras (negras al madurar), indehiscentes, con una pulpa dulce pegajosa rodeando las semillas.</div>
-            </div>
-        `,
-        fauna: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Ganado e Invertebrados</div><div class="section-val text-sm mt-2">Vainas ricas en proteína consumidas por ganado vacuno. Cigarras chupan su savia causando "lluvias" de líquido azucarado.</div></div>
-                <div class="metric-card"><div class="metric-label">Aves, Abejas y Monos</div><div class="section-val text-sm mt-2">Abejas polinizan sus flores. Loros y monos comen sus vainas. Árbol de anidación preferido para rapaces.</div></div>
-            </div>
-        `,
-        usos: `
-            <div class="grid2 mt-3">
-                <div class="metric-card"><div class="metric-label">Silvopastoreo</div><div class="section-val text-sm mt-2">El árbol de sombra más valioso de la ganadería llanera. Su copa fresca baja la temperatura hasta 8°C.</div></div>
-                <div class="metric-card"><div class="metric-label">Ebanistería y Servicios</div><div class="section-val text-sm mt-2">Madera tipo nogal muy apreciada para muebles. Fija nitrógeno en el suelo gracias a bacterias en sus raíces.</div></div>
-            </div>
-        `,
-        mensajeIA: "¡Hola! Soy el Samán, el gigante protector del llano. ¿Sabes por qué me llaman 'Dormilón' o 'Árbol de la Lluvia'? Porque tengo el poder mágico de plegar mis hojas y 'dormir' cuando se hace de noche o va a llover. Al cerrarlas, dejo que la luz de la luna o las gotas de lluvia caigan al suelo, permitiendo que el pasto crezca bajo mi sombra. En el día me abro como una sombrilla gigante para proteger a las vacas del ardiente sol casanareño. ¡Hasta salgo en la moneda de 500 pesos de Colombia!",
-        referencias: [
-            "SENA Colombia (s.f.). Las maderas en Colombia, Fascículo 49: Samán.",
-            "Pedraza, R.M. et al. (2009). Samanea saman, árbol multipropósito con potencialidades forrajeras."
-        ],
-        quiz: [
-            { q: "¿Cómo se llama el movimiento que hace el Samán al cerrar sus hojas de noche o antes de llover?", opts: ["Fototropismo", "Nictinastia", "Gravitropismo"], correct: 1 },
-            { q: "¿Por qué el Samán es el árbol favorito para tener en los potreros ganaderos de la Orinoquía?", opts: ["Porque sus hojas envenenan a las garrapatas", "Porque su inmensa copa da una sombra muy fresca y sus vainas maduras alimentan al ganado", "Porque su madera sirve para postes de cercas eléctricas"], correct: 1 },
-            { q: "¿En qué moneda de circulación actual en Colombia aparece grabado el árbol de Samán?", opts: ["En la de 1.000 pesos", "En la de 50 pesos", "En la de 500 pesos"], correct: 2 }
-        ]
+    id: "#JBP-16", tipo: "Introducida", nombre: "Palma Real", cientifico: "Roystonea regia (Kunth) O.F.Cook",
+    familia: "Arecaceae", origen: "Caribe (Cuba, Florida, Bahamas) — Introducida y naturalizada en Colombia", estado: "LC — Preocupación Menor (UICN); cultivada en Colombia", exotica: true,
+    carbono: 0.412, viajes: 150, imagen_portada: "./imagenes/real6.jpeg",
+    galeria: [
+        { img: "./imagenes/real1.jpeg", desc: "" },
+        { img: "./imagenes/real2.jpeg", desc: "" },
+        { img: "./imagenes/real3.jpeg", desc: "" },
+        { img: "./imagenes/real4.jpeg", desc: "" },
+        { img: "./imagenes/real5.jpeg", desc: "" },
+        { img: "./imagenes/real6.jpeg", desc: "" },
+        { img: "./imagenes/real7.jpeg", desc: "" }
+    ],
+    nombresLocales: ["Palma Real", "Palmera Real", "Chaguaramo", "Palma criolla", "Royal Palm", "Palmiche (fruto)", "Yagua (vaina)"],
+    distribucion: `
+        <p><strong>Especie introducida de alto valor ornamental y agroforestal:</strong> <em>Roystonea regia</em> (Kunth) O.F.Cook es originaria del Caribe (Cuba, sur de Florida, Bahamas, Belice) y pertenece a la familia Arecaceae. En Colombia está registrada como especie <strong>introducida y naturalizada</strong> en el Catálogo de Plantas (UNAL, 2015), cultivada principalmente en zonas cálidas de Atlántico, Cundinamarca, Huila, Magdalena, Tolima, Casanare y Meta. En Maní, Casanare, su presencia corresponde a individuos ornamentales en parques, avenidas y sistemas silvopastoriles; no se han documentado poblaciones silvestres nativas en la Orinoquía.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Liliopsida (Monocotiledóneas) / Arecales</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Arecaceae (Palmae)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género / Especie</td><td style="padding:6px;"><em>Roystonea</em> O.F.Cook / <em>R. regia</em> (Kunth) O.F.Cook</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Basónimo</td><td style="padding:6px;"><em>Oreodoxa regia</em> Kunth (1816)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Roystonea</em>: en honor al general Roy Stone (EE.UU., ingeniero en Puerto Rico); <em>regia</em>: del latín "real, majestuosa"</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">✅ LC (UICN) · ⚠️ Introducida y cultivada en Colombia · 🇨🇺 Árbol Nacional de Cuba</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro">
+            <p>"Roystonea regia está registrada como especie introducida y cultivada en Colombia, presente desde los 0 hasta los 1.800 m s.n.m., con registros en departamentos costeros y andinos, y también en la Orinoquía."</p>
+            <cite>— Galeano, G., & Bernal, R. (2015). <em>Catálogo de plantas y líquenes de Colombia</em>. Instituto de Ciencias Naturales, Universidad Nacional de Colombia.</cite>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>⚠️ Nota taxonómica crítica:</strong> <em>R. regia</em> NO es nativa de la Orinoquía colombiana. Su presencia en Casanare corresponde a individuos cultivados y/o naturalizados con fines ornamentales y agroforestales. No confundir con <em>Roystonea oleracea</em> (Palmera Imperial), especie pariente con registros nativos en el norte de Suramérica.
+        </div>
+    `,
+    densidad: "~0,516 g/cm³ (secado en horno, periferia del estípite; López-Galet et al., 2017) · ⚠️ Gradiente de densidad: periferia más densa, centro más poroso", fraccion: "0,47 – 0,50 (IPCC para tejido vegetal leñoso tropical)",
+    alometria: `
+        <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #e74c3c; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+            ⚠️ <strong>Advertencia metodológica crítica:</strong> Las palmeras son <strong>monocotiledóneas</strong> y estructuralmente distintas de los árboles dicotiledóneos. Su "madera" es tejido de esclerénquima embebido en parénquima, <strong>sin anillos de crecimiento ni diferenciación albura/duramen</strong>. La densidad varía entre periferia (más densa) y centro del tallo. Las ecuaciones alométricas estándar para latifoliadas (Álvarez et al., 2012) <strong>no aplican directamente</strong> a palmeras.
+        </div>
+        <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+            V = π × (D/2)² × H × f · Biomasa = V × ρ · Carbono = Biomasa × FC
+        </div>
+        <p class="text-sm"><strong>Enfoque volumétrico para palmeras solitarias:</strong> Dado que <em>R. regia</em> carece de ramificaciones y su arquitectura es cilíndrica-fusiforme predecible, se recomienda estimar biomasa mediante volumen del estípite: V = π × (D/2)² × H × f, donde f = factor de forma (~0,85–0,90). Luego: Biomasa = V × ρ; Carbono = Biomasa × FC (0,47–0,50).</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">V</td><td style="padding:6px;">Volumen del estípite (m³)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">D (DAP)</td><td style="padding:6px;">Diámetro del tallo a 1,30 m (m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total de la palma (m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">f</td><td style="padding:6px;">Factor de forma: ~0,85–0,90 para tallo cilíndrico-fusiforme</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ</td><td style="padding:6px;">Densidad: ~0,516 g/cm³ (periferia, secado en horno; ⚠️ gradiente periferia→centro)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FC (Carbono)</td><td style="padding:6px;">0,47 (IPCC, 2006) o 0,50 (Brown, 1997)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar · Usar 1,2–1,5 (IPCC Tier 1 palmeras tropicales) como valor provisional</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro" style="font-size:0.85rem;">
+            <p>"La madera de palma real (R. regia) ofrece una alternativa viable con aspectos técnicos únicos. Su madera posee grandes variaciones en sus propiedades físicas y mecánicas [a lo largo de la sección transversal del tronco], lo que la convierte en un material con potencial para diferentes aplicaciones, tales como elemento estructural para la periferia y aislamiento térmico y acústico para el centro del tronco."</p>
+            <cite>— López-Galet, S. P., et al. (2017). Caracterización de las propiedades físicas y mecánicas en la sección transversal del tronco de la palma real <em>Roystonea regia</em>. Universidad Industrial de Santander.</cite>
+        </div>
+        <div class="warn-box mt-2" style="font-size:0.8rem; border-left:4px solid #f39c12; padding-left:10px; color:var(--text-main); margin-top: 15px;">
+            ⚠️ <strong>Nota técnica:</strong> Se recomienda aplicar el protocolo específico para palmeras del IDEAM (Yepes et al., 2011) y desarrollar muestreos destructivos calibrados en el JBP Maní para obtener coeficientes locales.
+        </div>
+    `,
+    calendario: [
+        { mes: "Dic", fase: "Follaje verde mantenido + Floración moderada 🌴", clima: "dry" },
+        { mes: "Ene", fase: "Fructificación continua + Palmiche en varios estados 🍇", clima: "dry" },
+        { mes: "Feb", fase: "Frutos maduros atractivos para fauna + Crecimiento lento 🦜", clima: "dry" },
+        { mes: "Mar", fase: "Reducción producción de hojas + Mantenimiento productivo 🌱", clima: "dry" },
+        { mes: "Abr", fase: "Reactivación vegetativa con lluvias + Nuevas hojas 🍃", clima: "rain" },
+        { mes: "May", fase: "Máxima producción de hojas nuevas (hasta 10/año) 🌿", clima: "rain" },
+        { mes: "Jun", fase: "Pico de floración + Inicio intenso de fructificación 🌸", clima: "rain" },
+        { mes: "Jul", fase: "Floración sostenida + Polinizadores activos 🐝", clima: "rain" },
+        { mes: "Ago", fase: "Máxima producción de palmiche (racimos hasta 92 kg) 🍇", clima: "rain" },
+        { mes: "Sep", fase: "Alta actividad de fauna frugívora + Dispersión de semillas 🦇", clima: "rain" },
+        { mes: "Oct", fase: "Mantenimiento productivo + Caída de yaguaciles (espatas) 🍂", clima: "rain" },
+        { mes: "Nov", fase: "Preparación para verano + Fructificación continua 🌴", clima: "dry" }
+    ],
+    morfologia: `
+        <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Palma solitaria de 20–30 m de altura (máx. reportado: 34,5 m). Tallo liso, gris-blanquecino, con característico <strong>capitel verde (crownshaft)</strong> de 1,5–2 m en el ápice. Diámetro: 47–61 cm. Fusiforme: ensanchamiento moderado a media altura. Sin ramificaciones naturales. Perennifolia: mantiene follaje verde todo el año.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular:</strong> Raíces fibrosas subterráneas que pueden extenderse hasta 6 m en suelos favorables. Sin raíz pivotante (carácter de monocotiledónea). Produce raíces adventicias en suelos mal aireados. Tolerante a inundaciones temporales y períodos de sequía una vez establecida.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Estípite (Tallo) — Estructura Única:</strong> <strong>Carácter diagnóstico:</strong> Sin anillos de crecimiento ni diferenciación albura/duramen. Haces vasculares (fibras de esclerénquima) inmersos en parénquima. <strong>Gradiente de densidad:</strong> zona periférica más densa y resistente (~0,669 g/cm³ saturada); centro más poroso (~0,516 g/cm³ secado en horno). Esta variación interna es clave para estimaciones de biomasa y usos estructurales.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje:</strong> Hojas pinnadas, alternas en espiral, de 4–6 m de longitud. Raquis de 3,2–5,8 m. Folíolos dispuestos en 2–3 planos a lo largo del raquis, de 60–132 cm de largo. Base foliar = <strong>yagua</strong> (vaina envolvente, de gran utilidad tradicional). La palma produce hasta 10 hojas/año. Perennifolia: mantiene follaje verde incluso en época seca.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Especie <strong>monoica</strong>: flores unisexuales en la misma planta. Inflorescencias infrafoliares en panículas con espata (<strong>yaguacil</strong>). Flores blancas con anteras rosadas. Cada inflorescencia con triadas de flores: 2 masculinas + 1 femenina (3:1 por nudo). Estambres: 6–9. Polinización entomófila (abejas diurnas) y quiropterófila (murciélagos nocturnos).</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Fruto tipo baya esferoide a elipsoide, 8,9–15 × 7–10,9 mm. Color: verde inmaduro → rojizo → <strong>violáceo-negro maduro</strong> (palmiche). Cada racimo pesa 23–92 kg. Producción: 2–8 racimos/año por individuo. Semilla única, redonda, germina en ~60 días. Dispersión por aves, murciélagos y mamíferos frugívoros.</div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔍 Triada diagnóstica en campo:</strong> ① Estípite liso gris-blanquecino con capitel verde (crownshaft) en ápice · ② Hojas pinnadas gigantes (4–6 m) con yagua basal · ③ Frutos palmiche violáceo-negros en racimos pesados (23–92 kg). + Porte solitario, fusiforme, sin ramificaciones. <strong>⚠️ Monocotiledónea: sin anillos de crecimiento, gradiente de densidad en estípite.</strong>
+        </div>
+    `,
+    fauna: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🦜 Loros y cotorras</div><div class="section-val text-sm mt-2"><em>Amazona</em> spp., <em>Brotogeris</em> spp. Consumo masivo de palmiche maduro (violáceo-negro). Uso de cavidades en el estípite para nidificación en individuos adultos.</div></div>
+            <div class="metric-card"><div class="metric-label">🦇 Murciélagos frugívoros</div><div class="section-val text-sm mt-2"><em>Artibeus</em> spp., <em>Carollia</em> spp. Dispersores primarios de semillas. Visitan flores en polinización nocturna y consumen frutos maduros, contribuyendo a regeneración natural.</div></div>
+            <div class="metric-card"><div class="metric-label">🐦 Turpiales y tángaras</div><div class="section-val text-sm mt-2"><em>Icterus</em> spp., Thraupidae. Consumo de frutos maduros (palmiche). Contribuyen a dispersión de semillas en el paisaje llanero de Casanare.</div></div>
+            <div class="metric-card"><div class="metric-label">🐝 Abejas nativas y melíferas</div><div class="section-val text-sm mt-2"><em>Apis mellifera</em>, <em>Trigona</em> spp. Polinizadores diurnos principales. Las flores son fuente importante de néctar y polen durante floración en época de lluvias (jun–ago).</div></div>
+            <div class="metric-card"><div class="metric-label">🐀 Roedores</div><div class="section-val text-sm mt-2"><em>Mus</em> spp., ratas silvestres. Consumo y acumulación de semillas caídas. Contribuyen a dispersión secundaria y banco de semillas en suelo de potreros y bordes de caño.</div></div>
+            <div class="metric-card"><div class="metric-label">🦅 Gavilanes y rapaces</div><div class="section-val text-sm mt-2"><em>Falco</em> spp., <em>Buteo</em> spp. Uso de la corona de hojas como atalaya de caza y sitio de nido. La arquitectura monópoda ideal como torre de vigilancia en sabanas abiertas.</div></div>
+            <div class="metric-card"><div class="metric-label">🐄 Ganado vacuno y porcino</div><div class="section-val text-sm mt-2">Consumo de frutos caídos (palmiche). Recurso forrajero complementario en fincas ganaderas del Casanare, especialmente en época de escasez forrajera.</div></div>
+            <div class="metric-card"><div class="metric-label">🐛 Escarabajos perforadores</div><div class="section-val text-sm mt-2"><em>Rhinostomus barbirostris</em> (Curculionidae). Usan el estípite como hábitat larval; también sirven como alimento de aves insectívoras. Monitoreo fitosanitario recomendado en individuos del JBP.</div></div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔬 Nota ecológica:</strong> La fructificación continua de <em>R. regia</em> (sin pico estacional marcado) la convierte en recurso alimenticio constante para fauna en el paisaje llanero. Sin embargo, al ser exótica, su impacto en redes tróficas nativas requiere monitoreo: ¿complementa la oferta de frutos o compite con especies nativas como el guácimo o el merecure?
+        </div>
+    `,
+    usos: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🏗️ Construcción Tradicional</div><div class="section-val text-sm mt-2">Estípite usado para tablones, pilones, pilares y puentes rurales. En el Caribe, tablas para bohíos. <strong>Nota técnica:</strong> zona periférica del estípite más densa y resistente; centro más poroso, apto para aislamiento térmico-acústico (López-Galet et al., 2017).</div></div>
+            <div class="metric-card"><div class="metric-label">🍂 Techado con Hojas (Guano)</div><div class="section-val text-sm mt-2">Hojas (pencas/guano) usadas para techar casas campesinas en Caribe y zonas rurales del Llano. Técnica tradicional de cobertura de bohíos. Requiere mantenimiento periódico por exposición a intemperie.</div></div>
+            <div class="metric-card"><div class="metric-label">🌿 Yagua (Vainas Foliares)</div><div class="section-val text-sm mt-2">Vainas foliares usadas para envolver tabaco, empaque artesanal, paredes de bohíos y, en Cuba, como tobogán infantil cuando caen (yaguacil). Recurso versátil en economía campesina tradicional.</div></div>
+            <div class="metric-card"><div class="metric-label">🐷 Alimentación Animal (Palmiche)</div><div class="section-val text-sm mt-2">Frutos palmiche fuente de alimento para ganado porcino, vacuno y caballar. Cada palma produce 2–8 racimos de 23–92 kg/año. En Casanare, recurso forrajero espontáneo en fincas ganaderas, especialmente en época de escasez.</div></div>
+            <div class="metric-card"><div class="metric-label">🧴 Aceite del Fruto</div><div class="section-val text-sm mt-2">Del palmiche se extrae aceite con aplicaciones en industria farmacéutica y jabonería. Caracterización preliminar realizada en Cuba (Rodríguez et al., 2008); potencial para investigación agroindustrial regional en Casanare.</div></div>
+            <div class="metric-card"><div class="metric-label">💊 Medicina Popular (con precaución)</div><div class="section-val text-sm mt-2">Cocimiento de raíz usado como diurético, para cálculos renales y tratamiento complementario de diabetes. <strong>Precaución:</strong> uso tradicional documentado; consultar profesional de salud antes de aplicaciones terapéuticas. No sustituye tratamiento médico.</div></div>
+            <div class="metric-card"><div class="metric-label">🌳 Ornamental y Silvopastoril</div><div class="section-val text-sm mt-2">Ampliamente plantada en avenidas, parques y centros urbanos del Casanare. En sistemas silvopastoriles proporciona sombra al ganado, orienta caminos internos y demarca linderos de fincas. Alto valor estético por porte majestuoso.</div></div>
+            <div class="metric-card"><div class="metric-label">✝️ Uso Religioso</div><div class="section-val text-sm mt-2">Hojas usadas en Domingo de Ramos en tradiciones católicas de la costa colombiana y del Caribe. Las palmas bendecidas ("guano bendito") se conservan en hogares durante un año como símbolo de protección.</div></div>
+        </div>
+    `,
+    mensajeIA: "🌴 ¡Hola, pariente llanero! Soy la <strong>Palma Real</strong>, aunque también me llaman <em>Chaguaramo</em> en los llanos de Venezuela o simplemente <em>la regia</em>. Mi nombre científico es <em>Roystonea regia</em> (Kunth) O.F.Cook, y tengo una historia que combina majestuosidad y ciencia: nací en el Caribe —Cuba, Florida, Bahamas— pero aquí en Maní me adapté, aprendí el idioma del llano.\n\nSoy una sola línea verde que sube hacia el cielo como una columna de mármol coronada de plumas. No me doblo, no me ramifico, no me confundo con el monte. Mi estípite es liso, gris-blanquecino, con ese capitel verde en la cima que me hace inconfundible. Y cuando ves mis frutos —el <strong>palmiche</strong>— pasando de verde a rojizo y finalmente a ese violáceo-negro brillante, sabes que la vida sigue en el llano, incluso en época seca.\n\n✨ <strong>Pero tengo un secreto que muy pocos conocen</strong>: ¿Sabías que tengo nódulos en mis raíces con bacterias del género <em>Rhizobium</em>? Esas bacterias son las que normalmente solo se encuentran en legumbres como los fríjoles. En mí fueron descubiertas por primera vez en un árbol monocotiledóneo, ¡lo que significa que puedo fijar nitrógeno del aire y fertilizar el suelo bajo mis raíces! Soy, literalmente, la palma que alimenta la tierra mientras la tierra me alimenta a mí.\n\n🌱 <strong>Y otra curiosidad científica</strong>: mi cuerpo no tiene anillos como los árboles normales. Mi estípite no es 'madera' como la conoces: es una estructura única, llena de fibras que son más duras en los bordes y más suaves por dentro, como un tubo de acero forrado en espuma. Por eso los ingenieros de la Universidad Industrial de Santander me estudian para construir nuevos materiales. Soy árbol, pero no árbol; madera, pero no madera; rey del llano, y también ciudadano del mundo.\n\n⚠️ <strong>Una advertencia con honestidad</strong>: no soy nativa de la Orinoquía. Llegué aquí cultivada por manos humanas. Si me plantas en tu finca, que sea con respeto: en linderos, en parques, o para sombra en sistemas silvopastoriles. Nunca donde antes vivía un bosque de galería nativo. La belleza exótica merece ser admirada... con responsabilidad.\n\n¿Me usarías en tu paisaje? Si lo haces, que sea con conocimiento, medida y respeto por la sabana que nos acoge a todos.",
+    referencias: [
+        "Álvarez, E., Duque, A., Saldarriaga, J., Cabrera, K., De las Salas, G., Del Valle, I., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>(1), 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+        "Andrade-Castañeda, H. J., Segura-Madrigal, M. A., Canal-Daza, D. S., Huertas-González, A., & Mosos-Torres, C. (2020). Captura de carbono en biomasa de sistemas de uso del suelo, municipio de Yopal, Casanare, Colombia. <em>Orinoquia — Universidad de los Llanos</em>, 24(1), 13–22. https://orinoquia.unillanos.edu.co/index.php/orinoquia/article/view/587",
+        "Basu, P. S., Ghosh, A. C., & Dangar, T. K. (1997). <em>Roystonea regia</em> a monocotyledonous tree, bears rhizobial root nodules. <em>Folia Microbiologica</em>, 42(6), 601–606. https://doi.org/10.1007/BF02815473",
+        "Galeano, G., & Bernal, R. (2015). <em>Roystonea regia</em> (Kunth) O.F.Cook. En R. Bernal, S. R. Gradstein, & M. Celis (Eds.), <em>Catálogo de plantas y líquenes de Colombia</em>. Instituto de Ciencias Naturales, Universidad Nacional de Colombia.",
+        "López-Galet, S. P., López-Guerra, N., Villegas, D. F., & Castaño, F. (2017). Caracterización de las propiedades físicas y mecánicas en la sección transversal del tronco de la palma real <em>Roystonea regia</em> (Kunth) O. F. Cook. Informe de investigación, Escuela de Ingeniería Mecánica, Universidad Industrial de Santander, Bucaramanga, Colombia. https://hal.science/hal-01701637",
+        "Royal Botanic Gardens, Kew. (2024). <em>Roystonea regia</em> (Kunth) O.F.Cook. Plants of the World Online. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:676832-1",
+        "Yepes, A. P., Navarrete, D. A., Duque, A. J., Phillips, J. F., Cabrera, K. R., Álvarez, E., García, M. C., & Ordoñez, M. F. (2011). <em>Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia</em>. Instituto de Hidrología, Meteorología y Estudios Ambientales – IDEAM, Bogotá D. C.",
+        "Zona, S. (1994). (1141) Proposal to conserve <em>Oreodoxa regia</em> Kunth, the basionym of <em>Roystonea regia</em> (Kunth) O. F. Cook, against <em>Palma elata</em> W. Bartram (Arecaceae). <em>Taxon</em>, 43(4), 662–664. https://doi.org/10.2307/1223558"
+    ],
+    quiz: [
+        { q: "¿Cuál afirmación sobre el origen de Roystonea regia en Colombia es CORRECTA?", opts: ["Es una especie nativa de la Orinoquía colombiana, endémica del Casanare", "Es nativa de los Andes colombianos y fue introducida al Caribe por los españoles", "Es originaria de Cuba, sur de Florida y el Caribe. En Colombia está introducida y naturalizada, cultivada principalmente como ornamental y silvopastoril en departamentos como Casanare, Cundinamarca, Atlántico y Magdalena", "Es una especie exclusiva de la Amazonia colombiana, sin registros en sabanas"], correct: 2, expl: "R. regia es originaria del Caribe (Cuba, Florida, Bahamas) y está registrada como especie introducida y cultivada en Colombia (Galeano & Bernal, 2015). En Casanare su presencia corresponde a individuos ornamentales y agroforestales, no a poblaciones silvestres nativas." },
+        { q: "Los científicos descubrieron algo sorprendente en las raíces de Roystonea regia: nódulos con bacterias del género Rhizobium. ¿Por qué esto fue considerado un hallazgo excepcional en la ciencia botánica?", opts: ["Porque el Rhizobium es mortal para otras plantas y sorprendió que la palma lo tolerara", "Porque estos nódulos permiten a la palma crecer sin necesidad de agua durante el verano llanero", "Porque fue el primer registro de nódulos con Rhizobium (fijadores de nitrógeno del aire) en un árbol monocotiledóneo. Estos nódulos solo se conocían en leguminosas (dicotiledóneas como fríjoles y acacias)", "Porque los nódulos son comestibles y se usan en la medicina tradicional del Casanare"], correct: 2, expl: "Basu, Ghosh & Dangar (1997) reportaron por primera vez nódulos con Rhizobium en R. regia, un hallazgo excepcional porque estos nódulos solo se conocían previamente en leguminosas (dicotiledóneas). Esto sugiere que R. regia podría fijar nitrógeno atmosférico, un servicio ecosistémico valioso en suelos degradados de la Orinoquía." },
+        { q: "En los inventarios forestales como el JBP de Maní, estimar la biomasa y el carbono almacenado en una Palma Real es diferente a estimarlo en un árbol como el Gualanday. ¿Cuál es la razón principal de esta diferencia metodológica?", opts: ["Porque la Palma Real tiene hojas más grandes y por eso acumula más carbono en las hojas que en el tronco", "Porque la Palma Real crece más rápido que el Gualanday y por eso las ecuaciones de carbono deben hacerse más seguido", "Porque la Palma Real tiene flores de color diferente, lo que afecta la fotosíntesis y el almacenamiento de carbono", "Porque la Palma Real es una monocotiledónea sin anillos de crecimiento ni bifurcaciones. Su tallo (estípite) tiene una estructura interna con gradiente de densidad (periferia más dura, centro más blando), sin albura ni duramen. Las ecuaciones alométricas para árboles convencionales no aplican directamente a palmeras"], correct: 3, expl: "Las palmeras son monocotiledóneas con estructura interna única: sin anillos de crecimiento, sin diferenciación albura/duramen, y con gradiente de densidad periferia→centro. Por ello, las ecuaciones alométricas para latifoliadas (Álvarez et al., 2012) no aplican directamente; se recomienda enfoque volumétrico específico para palmeras (Yepes et al., 2011)." },
+        { q: "¿Qué característica fenológica distingue a Roystonea regia de la mayoría de árboles del inventario JBP?", opts: ["Produce flores grandes y fragantes que atraen colibríes y mariposas", "Florece y fructifica de manera continua a lo largo del año, sin un pico estacional marcado, lo que la convierte en recurso alimenticio constante para fauna en el paisaje llanero", "Sus frutos son bayas carnosas que maduran solo en invierno y son dispersadas exclusivamente por aves", "Se reproduce exclusivamente por hijuelos basales, sin producción de semillas viables"], correct: 1, expl: "R. regia presenta floración y fructificación continuas a lo largo del año, sin un pico estacional marcado. Esta característica la convierte en recurso alimenticio constante para aves, murciélagos y mamíferos frugívoros en el paisaje llanero, especialmente valiosa en época de escasez forrajera." },
+        { q: "¿Por qué es importante incluir la nota de que Roystonea regia es una especie introducida en la ficha del Inventario Forestal JBP de Maní?", opts: ["Porque todas las especies introducidas deben marcarse como peligrosas por defecto", "Porque su condición de exótica requiere manejo responsable para evitar desplazamiento de flora nativa en ecosistemas frágiles como bosques de galería y sabanas prístinas", "Porque las especies introducidas no almacenan carbono y por eso no deben incluirse en inventarios forestales", "Porque las notas de origen son obligatorias por ley para cualquier especie ornamental"], correct: 1, expl: "R. regia es una especie exótica con alto potencial de naturalización. Incluir esta nota en el JBP promueve manejo responsable: usarla en tierras ya degradadas, linderos o espacios urbanos, nunca en ecosistemas nativos intactos. La belleza exótica merece ser admirada... con responsabilidad ecológica." }
+    ]
+},
+"saman": {
+    id: "#JBP-17", tipo: "Nativo", nombre: "Samán", cientifico: "Samanea saman (Jacq.) Merr.",
+    familia: "Fabaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN)", exotica: false,
+    carbono: 0.285, viajes: 104, imagen_portada: "./imagenes/saman1.jpeg",
+    galeria: [
+        { img: "./imagenes/saman1.jpeg", desc: "" },
+        { img: "./imagenes/saman2.jpeg", desc: "" },
+        { img: "./imagenes/saman3.jpeg", desc: "" },
+        { img: "./imagenes/saman4.jpeg", desc: "" },
+        { img: "./imagenes/saman5.jpeg", desc: "" },
+        { img: "./imagenes/saman6.jpeg", desc: "" }
+    ],
+    nombresLocales: ["Samán", "Campano", "Árbol de la lluvia", "Dormilón", "Cenízaro", "Genízaro", "Algarrobillo", "Samaguare", "Rain tree", "Monkeypod"],
+    distribucion: `
+        <p><strong>Especie nativa emblemática del paisaje ganadero llanero:</strong> <em>Samanea saman</em> (Jacq.) Merr. es nativa del trópico americano, con distribución desde el sur de México hasta Brasil, incluyendo Centroamérica y las Antillas. En Colombia está registrada en más de 16 departamentos, incluyendo Casanare, Meta, Arauca y la Costa Caribe. En la Orinoquía es un <strong>árbol emblemático del paisaje ganadero</strong>, preservado activamente en potreros y bosques de galería por su sombra, forraje y resiliencia edáfica.</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Reino / División</td><td style="padding:6px;">Plantae / Magnoliophyta (Angiospermas)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Clase / Orden</td><td style="padding:6px;">Magnoliopsida / Fabales</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Familia</td><td style="padding:6px;">Fabaceae Lindl. (= Leguminosae) · Clado: Mimosoideae</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Género / Especie</td><td style="padding:6px;"><em>Samanea</em> (Benth.) Merr. / <em>S. saman</em> (Jacq.) Merr.</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Basiónimo</td><td style="padding:6px;"><em>Mimosa saman</em> Jacq. (1800–1809)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Etimología</td><td style="padding:6px;"><em>Samanea</em>: del caribeño <em>zamang</em> (árbol tipo mimosa); <em>saman</em>: nombre vernáculo de origen indígena</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Conservación</td><td style="padding:6px;">✅ LC — Preocupación Menor (UICN) · Nativa sin restricción en Colombia · 💰 Presente en moneda de 500 COP</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro">
+            <p>"Es un árbol indígena, de gran tamaño, oriundo del trópico seco americano, que se ha generalizado en todo el trópico húmedo y subhúmedo."</p>
+            <cite>— Pedraza, R. M., et al. (2009). <em>Samanea saman (Jacq.) Merr., árbol multipropósito con potencialidades forrajeras</em>. Pastos y Forrajes, 32(1).</cite>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🌎 Dato curioso:</strong> El Samán es la especie arbórea representada en la moneda colombiana de 500 pesos. Su presencia en el paisaje llanero es un símbolo de identidad, historia y productividad silvopastoril. En Venezuela, el "Samán de Güere" (más de 500 años) fue sitio de descanso del ejército de Simón Bolívar durante la Guerra de Independencia.
+        </div>
+    `,
+    densidad: "0,46 g/cm³ (verificado: SENA Colombia, Fascículo 49; citado en Blanco, 2020, FAO/Minambiente)", fraccion: "0,47 – 0,50 (IPCC para latifoliadas tropicales)",
+    alometria: `
+        <div class="warn-box" style="font-size:0.85rem; border-left:4px solid #f39c12; padding-left:12px; margin-bottom:15px; color:var(--text-main);">
+            ⚠️ <strong>Dato por verificar en campo (Integridad Científica SILVAIN):</strong> El Factor de Expansión de Biomasa (FEB) específico para <em>Samanea saman</em> en sabanas inundables de Casanare no fue encontrado en la literatura científica consultada. Se recomienda realizar mediciones directas en individuos del JBP Maní conforme al protocolo IDEAM para obtener valores localmente validados. Usar FEB = 1,30–1,60 (IPCC Tier 1 para bs-T) como valor provisional.
+        </div>
+        <div class="alometry-box" style="margin-bottom:15px; font-family: 'Courier New', monospace; font-weight:bold; background: #000; color: #0f0; padding: 15px; border-radius: 10px; text-align:center;">
+            ln(BA) = a + b·ln(DAP) + c·ln(ρ) · Álvarez et al. (2012) · Tipo II.1
+        </div>
+        <p class="text-sm"><strong>Opciones alométricas para Orinoquía:</strong> (1) Álvarez et al. (2012): aplicable a tierra baja, bosque seco tropical y transición sabana-bosque de galería. (2) Chave et al. (2014): AGB = 0,0673 × (ρ · DAP² · H)^0,976 — validada para bosques tropicales secos con déficit hídrico estacional (Llanos de Casanare).</p>
+        <div class="mt-3">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom: 15px;">
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">BA</td><td style="padding:6px;">Biomasa aérea individual (kg)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">DAP</td><td style="padding:6px;">Diámetro a la altura del pecho (cm, medido a 1,30 m)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">H</td><td style="padding:6px;">Altura total del árbol (m) — requerida en ecuación de Chave et al. (2014)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">ρ</td><td style="padding:6px;">Densidad básica: 0,46 g/cm³ (verificado en literatura nacional)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FC (Carbono)</td><td style="padding:6px;">0,47 (IPCC, 2006) o 0,50 (Brown, 1997)</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">FEB</td><td style="padding:6px;">⚠️ Por verificar · Usar 1,30–1,60 (IPCC Tier 1 bs-T) como valor provisional</td></tr>
+                <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:6px; font-weight:700;">Captura estimada</td><td style="padding:6px;">~28,5 t CO₂/año en árbol maduro (copa ~15 m diámetro) — IPB Indonesia</td></tr>
+            </table>
+        </div>
+        <div class="blockquote-pro" style="font-size:0.85rem;">
+            <p>"La fijación de N₂ por nódulos radiculares con Rhizobium spp. es un servicio ecosistémico clave de S. saman en sistemas agroforestales, mejorando la fertilidad de suelos pobres de la Orinoquía y reduciendo la necesidad de fertilizantes sintéticos."</p>
+            <cite>— Pedraza, R. M., et al. (2009). <em>Pastos y Forrajes</em>, 32(1).</cite>
+        </div>
+    `,
+    calendario: [
+        { mes: "Dic", fase: "Inicio caída foliar + Inicio floración 🌸", clima: "dry" },
+        { mes: "Ene", fase: "Foliación parcial + Floración plena 🌸", clima: "dry" },
+        { mes: "Feb", fase: "Floración plena + Inicio fructificación 🌸🫘", clima: "dry" },
+        { mes: "Mar", fase: "Brotación activa + Declive floral + Desarrollo de vainas 🌱🫘", clima: "dry" },
+        { mes: "Abr", fase: "Rebrote pleno + Floración esporádica + Fructificación activa 🌿🫘", clima: "rain" },
+        { mes: "May", fase: "Follaje pleno + Fructificación plena + Dispersión activa 🍃🫘", clima: "rain" },
+        { mes: "Jun", fase: "Crecimiento sostenido + Dispersión de semillas 🌳🪁", clima: "rain" },
+        { mes: "Jul", fase: "Mantenimiento de follaje + Fructificación rezagada 🍃", clima: "rain" },
+        { mes: "Ago", fase: "Floración esporádica (2.° ciclo) + Maduración de vainas 🌸🫘", clima: "rain" },
+        { mes: "Sep", fase: "Maduración final + Dispersión activa 🫘🪁", clima: "rain" },
+        { mes: "Oct", fase: "Fin de maduración + Dispersión final 🫘", clima: "rain" },
+        { mes: "Nov", fase: "Foliación activa + Botones florales + Preparación para verano 🌱🌸", clima: "dry" }
+    ],
+    morfologia: `
+        <div style="display:flex; flex-direction:column; gap:15px; font-size:0.95rem;">
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-tree"></i> Hábito y Porte:</strong> Árbol semideciduo de gran corpulencia. Altura: 17–30 m (hasta 40–60 m en hábitat óptimo). Copa amplia en forma de paraguas/sombrilla (hasta 50 m de diámetro). DAP adulto: 80 cm – 2 m. Ramificación baja, fuste robusto. Perennifolio con caída foliar parcial en época seca.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-seedling"></i> Sistema Radicular y Fijación de N₂:</strong> Sistema radical superficial de gran alcance lateral (radio ≈ diámetro de copa). <strong>Carácter ecológico clave:</strong> Desarrolla nódulos radiculares con bacterias <em>Rhizobium</em> spp. capaces de <strong>fijar nitrógeno atmosférico</strong>, enriqueciendo el suelo circundante. Puede dañar estructuras superficiales; se recomienda plantar a ≥30 m de edificaciones.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-folder-open"></i> Tallo / Corteza y Madera:</strong> Fuste robusto, ramificación baja. Corteza pardo-grisácea a marrón negruzca, rugosa, con fisuras verticales y placas corchosas en individuos viejos. Madera interna marrón claro/gris-rosado. <strong>Densidad básica: 0,46 g/cm³</strong> (moderadamente liviana), grano inclinado/entrecruzado, fácil trabajabilidad. Duramen marrón-castaño (tipo nogal), albura blanquecina-amarillenta.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-leaf"></i> Hojas y Follaje — Nictinastia:</strong> Hojas compuestas bipinnadas, alternas (25–40 cm). 3–6 pares de pinnas × 6–9 pares de hojuelas (24–62 mm). Raquis piloso. <strong>Carácter diagnóstico:</strong> <strong>Nictinásticas</strong>: se pliegan al anochecer o antes de la lluvia (del griego <em>nyktos</em> = noche). Esta adaptación reduce la pérdida de agua por evaporación durante noches secas y permite el paso de luz al suelo para crecimiento de pastos bajo la copa.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-spa"></i> Flores e Inflorescencia:</strong> Umbelas de capítulos en panículas axilares/terminales. Color rosado pálido/blanco. Flor central heteromorfa (mayor, productora de néctar). Estambres numerosos y vistosos. Fórmula floral: K(5), C5, A∞. Polinización entomófila (abejas, meliponinos). Floración principal en transición seco-lluvioso (feb–abr), con segundo ciclo esporádico en ago–oct.</div>
+            <div><strong style="color:var(--secondary-color);"><i class="fas fa-circle-notch"></i> Frutos y Semillas:</strong> Fruto tipo legumbre indehiscente, 15–22 × 1,5–2,3 cm, recta/ligeramente curvada. Color: verde inmaduro → marrón oscuro/negro al madurar. Pulpa dulce (sabor regaliz), comestible en estado joven. Semillas en compartimentos. <strong>⚠️ Semillas tóxicas en cantidad</strong> (contienen pithecolobina). Dispersión por ganado, aves y mamíferos frugívoros.</div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔍 Triada diagnóstica en campo:</strong> ① Copa en forma de paraguas gigante (hasta 50 m de diámetro) · ② Hojas bipinnadas nictinásticas (se pliegan de noche/antes de lluvia) · ③ Legumbres indehiscentes marrón oscuro con pulpa dulce (sabor regaliz). + Fuste robusto con corteza rugosa fisurada. <strong>⚠️ Recordar: leguminosa fijadora de N₂ — valor ecológico en suelos degradados.</strong>
+        </div>
+    `,
+    fauna: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🐄 Ganado bovino (uso principal)</div><div class="section-val text-sm mt-2"><em>Bos taurus</em> / <em>B. indicus</em>. Sombra preferida que reduce temperatura hasta 8°C, mitigando estrés calórico. Consumo de vainas (13–18% proteína cruda) como suplemento forrajero. Mejora producción lechera, peso y preñez; reduce metano entérico hasta 24%.</div></div>
+            <div class="metric-card"><div class="metric-label">🦜 Loros y Guacamayas</div><div class="section-val text-sm mt-2"><em>Amazona ochrocephala</em>, <em>Ara ararauna</em>. Consumo de pulpa dulce de vainas maduras. Dispersión de semillas a largas distancias. Uso de copa como sitio de percha y nidificación.</div></div>
+            <div class="metric-card"><div class="metric-label">🦟 Cigarras (Cicadidae)</div><div class="section-val text-sm mt-2">Hemípteros que secretan savia azucarada que gotea al suelo ("lluvia del samán"). Parte de la leyenda llanera que da nombre al árbol. Interacción no dañina para el árbol.</div></div>
+            <div class="metric-card"><div class="metric-label">🐝 Abejas y Meliponinos</div><div class="section-val text-sm mt-2"><em>Apis mellifera</em>, <em>Trigona</em> spp. Floración prolífica = fuente melífera de primer orden. Néctar abundante y prolongado durante floración principal (feb–abr) y segundo ciclo esporádico (ago–oct).</div></div>
+            <div class="metric-card"><div class="metric-label">🦇 Murciélagos frugívoros</div><div class="section-val text-sm mt-2"><em>Artibeus jamaicensis</em>, <em>Carollia</em> spp. Consumo de vainas maduras, dispersión secundaria de semillas. Visitas nocturnas que complementan dispersión diurna por aves y ganado.</div></div>
+            <div class="metric-card"><div class="metric-label">🐛 Insecto de laca</div><div class="section-val text-sm mt-2"><em>Kerria lacca</em>. Huésped preferido; secreciones usadas para producción de goma laca (shellac). Interacción de valor económico tradicional en algunas regiones.</div></div>
+            <div class="metric-card"><div class="metric-label">🦅 Rapaces y nidificantes</div><div class="section-val text-sm mt-2"><em>Buteo magnirostris</em>, <em>Elanus leucurus</em>. Copa gigantesca como sitio de anidación y atalaya de caza en sabanas abiertas. Beneficiados por la visibilidad que ofrece la estructura abierta de la copa.</div></div>
+        </div>
+        <div class="warn-box mt-3" style="font-size:0.85rem; border-left:4px solid var(--primary-light); padding-left:12px; margin-top:15px; color:var(--text-main);">
+            <strong>🔬 Nota ecológica:</strong> La fijación biológica de nitrógeno por nódulos radiculares con <em>Rhizobium</em> es un servicio ecosistémico clave de <em>S. saman</em> en sistemas silvopastoriles. Además, su copa permite el paso de luz al suelo (gracias a la nictinastia foliar), favoreciendo el crecimiento de pastos bajo sombra — una adaptación única que integra producción ganadera y conservación de suelo.
+        </div>
+    `,
+    usos: `
+        <div class="grid2 mt-3" style="font-size:0.9rem;">
+            <div class="metric-card"><div class="metric-label">🪚 Madera y Carpintería</div><div class="section-val text-sm mt-2">Madera valorada para instrumentos de cuerda, artesanías, muebles, encimeras y chapa decorativa. Uso rural en pilotes, corrales y postes. En Hawái/Asia: mesas macizas (<em>slab tables</em>) de alto valor comercial. Densidad 0,46 g/cm³ facilita trabajabilidad manual.</div></div>
+            <div class="metric-card"><div class="metric-label">🐄 Forraje Silvopastoril (Uso Principal)</div><div class="section-val text-sm mt-2">Vainas: 13–18% proteína cruda · Hojas: 24–30% PC. Suplemento del 10–30% en dieta bovina mejora peso, producción lechera y tasas de preñez. Reduce emisiones de metano entérico hasta 24%. Especie clave para ganadería sostenible en Casanare.</div></div>
+            <div class="metric-card"><div class="metric-label">☀️ Sombra Ganadera</div><div class="section-val text-sm mt-2">Copa de hasta 50 m de diámetro ≈ 1.963 m² de sombra. Reduce temperatura bajo copa hasta 8°C, mitiga estrés calórico del ganado, retiene humedad del suelo y mejora bienestar animal. Adaptación nictinástica permite paso de luz para crecimiento de pastos bajo sombra.</div></div>
+            <div class="metric-card"><div class="metric-label">🍯 Producción de Miel</div><div class="section-val text-sm mt-2">Néctar abundante y prolongado durante floración. Miel de Samán de alta calidad aromática, valorada en apicultura llanera. Práctica tradicional en Casanare y Meta durante floración principal (feb–abr).</div></div>
+            <div class="metric-card"><div class="metric-label">💊 Medicina Popular (con precaución)</div><div class="section-val text-sm mt-2">Corteza: antiinflamatoria, antimicótica, astringente, antipirética. Semillas masticadas para dolor de garganta. Infusiones para diarrea. Baños de corteza/raíz para afecciones cutáneas. Contiene pithecolobina y saponinas. <strong>Precaución:</strong> usos internos requieren supervisión profesional; semillas tóxicas en cantidad.</div></div>
+            <div class="metric-card"><div class="metric-label">🌳 Arborización y Símbolo Cultural</div><div class="section-val text-sm mt-2">Parques, alamedas, moneda 500 COP. Monumento natural en Venezuela (Samán de Güere). Símbolo del paisaje cultural llanero. Alto valor estético por copa en forma de paraguas y floración rosada en época seca.</div></div>
+            <div class="metric-card"><div class="metric-label">🌱 Restauración Ecológica</div><div class="section-val text-sm mt-2">Reforestación de zonas degradadas/erosionadas. Fijación de N₂, mejora de suelos pobres de la altillanura. Sombra para cacao/café en sistemas agroforestales. Fuente potencial de bioetanol a partir de biomasa lignocelulósica.</div></div>
+            <div class="metric-card"><div class="metric-label">🍽️ Alimento Humano (limitado)</div><div class="section-val text-sm mt-2">Pulpa dulce comestible (cruda/procesada). Hojas tiernas en ensaladas en épocas de escasez. <strong>⚠️ Semillas tóxicas en cantidad</strong> (contienen pithecolobina). Uso alimentario documentado pero no prioritario; consultar conocimiento local antes de consumo.</div></div>
+        </div>
+    `,
+    mensajeIA: "🌳 ¡Hola, pariente llanero! Soy el <strong>Samán</strong>, aunque también me llaman <em>Campano</em> en la costa, <em>Árbol de la lluvia</em> en muchas partes, o simplemente <em>Samán</em> aquí en Casanare, donde mis antepasados han crecido junto a los caños y potreros desde mucho antes de que llegaran los primeros colonos.\n\nSoy enorme. Mis ramas se abren como un paraguas gigante sobre el potrero de Maní, dando sombra a las vacas que se tumban a descansar bajo mi copa en las calurosas tardes de verano. Los llaneros me conocen bien: saben que cuando el sol se va, cierro todas mis hojas. Las pliego suavecito, hojuela por hojuela, como si me fuera a dormir. Y cuando el cielo se oscurece antes de una tormenta, las cierro también para dejar pasar la lluvia hasta el suelo. Por eso me llaman <em>dormilón</em> y <em>árbol de la lluvia</em>.\n\n✨ <strong>Pero tengo un secreto que me hace diferente a todos los demás árboles del llano</strong>: ¿Sabías que este movimiento de mis hojas —que se llama <strong>nictinastia</strong> (del griego <em>nyktos</em>: noche)— tiene un propósito? Al abrirse de día y cerrarse de noche, dejo que la luz de la luna llegue al suelo, donde crece la hierba que come el ganado. ¡Soy el único árbol gigante del llano que permite que crezca pasto bajo mi sombra! Además, este movimiento reduce la pérdida de agua por evaporación durante las frías noches llaneras, lo que me ayuda a sobrevivir la larga sequía del verano casanareño.\n\nSoy parte de la moneda de 500 pesos de Colombia. Cada vez que alguien paga con esa moneda, lleva un pedacito de mí en su bolsillo. Y en Venezuela, hay un Samán de más de 500 años llamado el <em>Samán de Güere</em>, bajo cuya enorme copa descansó el ejército de Simón Bolívar durante la Guerra de Independencia. Soy árbol de historia, de paz, y de sombra para todo el que lo necesite.\n\n🌱 <strong>Y otro superpoder</strong>: en mis raíces viven bacterias llamadas <em>Rhizobium</em> que toman el nitrógeno del aire y lo convierten en abono para el suelo. Soy, literalmente, una fábrica de fertilizante natural. Por eso los ganaderos de esta sabana me quieren tanto: donde yo crezco, el pasto crece más verde, el ganado engorda mejor y la tierra descansa.\n\n¿Me plantarías en tu finca? Si lo haces, que sea con respeto: en linderos de potreros, para sombra en sistemas silvopastoriles, o para restaurar suelos degradados. Soy nativo de esta tierra, y mi misión es servir con sabiduría, no desplazar.",
+    referencias: [
+        "Álvarez, E., Duque, A., Saldarriaga, J. G., Cabrera, K., De las Salas, G., Del Valle, J. I., Moreno, F., Orrego, S. A., & Rodríguez, L. (2012). Tree above-ground biomass allometries for carbon stocks estimation in the natural forests of Colombia. <em>Forest Ecology and Management, 267</em>, 297–308. https://doi.org/10.1016/j.foreco.2011.11.013",
+        "Bernal, R., Gradstein, S. R., & Celis, M. (Eds.). (2015). <em>Catálogo de plantas y líquenes de Colombia</em>. Instituto de Ciencias Naturales, Universidad Nacional de Colombia. http://catalogoplantasdecolombia.unal.edu.co",
+        "Blanco, J. (2020). <em>Caracterización de las 30 especies forestales maderables más movilizadas en Colombia provenientes del bosque natural</em>. Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO), Ministerio de Ambiente y Desarrollo Sostenible y Unión Europea. Convenio 481 de 2019. Bogotá, Colombia.",
+        "Cárdenas-Henao, M., Londoño-Lemos, V., Llano-Almario, M., González-Colorado, Á. M., Rivera-Hernández, K. L., Vargas-Figueroa, J. A., Duque-Palacio, O. L., & Posada-Herrera, J. M. (2015). Fenología de cuatro especies arbóreas de bosque seco tropical en el Jardín Botánico Universitario, Universidad del Valle (Cali), Colombia. <em>Actualidades Biológicas, 37</em>(103), 121–130. https://doi.org/10.17533/udea.acbi.v37n103a01",
+        "Chave, J., Réjou-Méchain, M., Búrquez, A., Chidumayo, E., Colgan, M. S., Delitti, W. B. C., Duque, A., Eid, T., Fearnside, P. M., Goodman, R. C., Henry, M., Martínez-Yrízar, A., Mugasha, W. A., Muller-Landau, H. C., Mencuccini, M., Nelson, B. W., Ngomanda, A., Nogueira, E. M., Ortiz-Malavassi, E., … Vieilledent, G. (2014). Improved allometric models to estimate the aboveground biomass of tropical trees. <em>Global Change Biology, 20</em>(10), 3177–3190. https://doi.org/10.1111/gcb.12629",
+        "Global Biodiversity Information Facility (GBIF). (2024). <em>Samanea saman</em> (Jacq.) Merr. [Occurrence data]. GBIF Secretariat. https://www.gbif.org/species/2972960",
+        "Merrill, E. D. (1916). New species of Philippine and other Malayan plants. <em>Journal of the Washington Academy of Sciences, 6</em>, 47.",
+        "NaturaLista Colombia / iNaturalist. (2024). <em>Samanea saman</em> — Cenízaro, cenicero. Instituto de Investigación de Recursos Biológicos Alexander von Humboldt. https://colombia.inaturalist.org/taxa/281371-Samanea-saman",
+        "Pedraza, R. M., Valenciaga, D., Chongo, B., & Fortes, D. (2009). <em>Samanea saman</em> (Jacq.) Merr., árbol multipropósito con potencialidades forrajeras. <em>Pastos y Forrajes, 32</em>(1), 1–14. https://www.redalyc.org/pdf/1930/193032133001.pdf",
+        "Plants of the World Online (POWO). (2024). <em>Samanea saman</em> (Jacq.) Merr. Royal Botanic Gardens, Kew. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names/500963-1",
+        "Velásquez-Valencia, A., Pastrana-Vargas, D., Cerón-Urquina, C. T., & Flórez-Flórez, C. (2023). Estudio químico de la madera, aceite y harina de semilla de <em>Samanea saman</em> para potenciar su utilización. <em>Información Tecnológica, 34</em>(2), 65–76. https://doi.org/10.4067/S0718-07642023000200065",
+        "Yepes, A. P., Navarrete, D. A., Duque, A. J., Phillips, J. F., Cabrera, K. R., Álvarez, E., García, M. C., & Ordóñez, M. F. (2011). <em>Protocolo para la estimación nacional y subnacional de biomasa-carbono en Colombia</em>. Instituto de Hidrología, Meteorología y Estudios Ambientales – IDEAM, Bogotá D.C."
+    ],
+    quiz: [
+        { q: "El Samán (Samanea saman) cierra sus hojas por la noche y antes de llover. ¿Cómo se llama científicamente este fenómeno y cuál es su principal ventaja en los Llanos de Casanare?", opts: ["Fototropismo positivo; permite al árbol orientarse hacia el sol durante la noche", "Nictinastia; reduce la pérdida de agua por evaporación durante las noches secas del llano y permite el paso de luz al suelo para el crecimiento de pastos", "Geotropismo negativo; es una respuesta al campo gravitacional de la Tierra", "Hidrotropismo; el árbol mueve sus hojas buscando fuentes de agua subterránea"], correct: 1, expl: "La nictinastia es un movimiento foliar rítmico que reduce la evapotranspiración nocturna y permite el paso de luz al suelo, favoreciendo el silvopastoreo. Esta adaptación única integra producción ganadera y conservación de suelo en sistemas llaneros." },
+        { q: "¿Por qué el Samán es considerado una especie con doble beneficio para el sector ganadero en los Llanos Orientales?", opts: ["Porque su madera sirve para construir corrales y su resina repele garrapatas", "Porque sus raíces superficiales evitan la inundación de los potreros en época de lluvias", "Porque brinda sombra que reduce el estrés calórico del ganado y sus vainas son forraje nutritivo (13–18% proteína) que mejora la producción de leche y la preñez", "Porque sus flores atraen insectos que polinizan los pastos mejorados del potrero llanero"], correct: 2, expl: "El Samán es una especie silvopastoril integral: su copa genera sombra que reduce la temperatura hasta 8°C y sus vainas/hojas son forraje proteico que mejora productividad y reduce metano entérico. Esta sinergia lo hace clave para ganadería sostenible en Casanare." },
+        { q: "¿Cuál es la densidad básica de la madera del Samán y qué implicación tiene este valor para el cálculo de carbono almacenado en el JBP de Maní?", opts: ["0,90 g/cm³ — una de las maderas más pesadas del llano, lo que implica alta acumulación de carbono por metro cúbico", "1,10 g/cm³ — madera dura como el hierro, con máxima densidad de carbono en su estructura", "0,46 g/cm³ — madera moderadamente liviana, pero con copa tan grande que el volumen total de biomasa por árbol puede ser inmenso, lo que la convierte en gran capturadora de CO₂", "0,10 g/cm³ — la madera más liviana de la Orinoquía, con escasa capacidad de almacenar carbono"], correct: 2, expl: "La densidad básica es 0,46 g/cm³ (SENA/Fascículo 49). Aunque es moderadamente liviana, el Samán compensa con un volumen de biomasa colosal: una copa de 15 m de diámetro puede capturar hasta 28,5 t de CO₂/año. El cálculo de carbono debe considerar tanto densidad como volumen total de biomasa." },
+        { q: "¿Qué característica ecológica distingue a Samanea saman de la mayoría de árboles del inventario JBP?", opts: ["Produce flores grandes y fragantes que atraen colibríes y mariposas", "Es una leguminosa fijadora de nitrógeno atmosférico mediante nódulos radiculares con Rhizobium, mejorando la fertilidad de suelos degradados de la Orinoquía", "Sus frutos son bayas carnosas que maduran en invierno y son dispersadas exclusivamente por aves", "Se reproduce exclusivamente por hijuelos basales, sin producción de semillas viables"], correct: 1, expl: "S. saman es una leguminosa del clado Mimosoideae que desarrolla nódulos radiculares con bacterias Rhizobium spp. capaces de fijar nitrógeno atmosférico. Este servicio ecosistémico mejora la fertilidad de suelos pobres de la altillanura y reduce la necesidad de fertilizantes sintéticos en sistemas agroforestales." },
+        { q: "¿Por qué el Samán está representado en la moneda colombiana de 500 pesos y qué simboliza en el paisaje llanero?", opts: ["Porque es la especie maderable más valiosa de la Orinoquía, con madera de alta densidad para exportación", "Porque es un símbolo de identidad cultural, historia y productividad silvopastoril en los Llanos Orientales, preservado activamente por ganaderos por su sombra y forraje", "Porque es la única especie nativa que florece en época seca, atrayendo turismo ecológico masivo", "Porque sus raíces previenen la erosión de caños y ríos de manera más efectiva que cualquier otra especie"], correct: 1, expl: "El Samán es un ícono del paisaje cultural llanero: su copa en forma de paraguas da sombra al ganado, sus vainas son forraje proteico, y su presencia en la moneda de 500 COP refleja su valor histórico y productivo. En Venezuela, el 'Samán de Güere' fue sitio de descanso del ejército de Bolívar, reforzando su simbolismo de paz y resistencia." }
+    ]
     },
     "mango": {
         id: "#JBP-8", tipo: "Introducido", nombre: "Mango", cientifico: "Mangifera indica L.",
@@ -3331,6 +3621,6 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
         { q: "¿Por qué es importante incluir la advertencia sobre mimosina en la ficha de Leucaena leucocephala dentro del Inventario Forestal JBP de Maní?", opts: ["Porque todas las especies introducidas deben marcarse como peligrosas por defecto", "Porque la mimosina es un aminoácido no proteico tóxico en altas dosis para el ganado; el inventario tiene un componente pedagógico y de seguridad para la ganadería sostenible", "Porque la toxicidad aumenta el valor de carbono almacenado en la biomasa", "Porque las advertencias son obligatorias por ley para cualquier especie forrajera"], correct: 1, expl: "La mimosina en hojas y semillas de L. leucocephala puede causar toxicidad en ganado si supera el 30% de la ración total. Incluir esta advertencia en el JBP protege a productores ganaderos y refuerza el enfoque de educación ambiental responsable del proyecto SILVAIN AI: usar la especie con conocimiento, no por intuición." },
         { q: "¿Por qué la UICN-ISSG incluye a Leucaena leucocephala en la lista de las 100 especies exóticas invasoras más dañinas del mundo, y qué implica esto para su manejo en Casanare?", opts: ["Porque es una especie nativa que está en peligro de extinción y necesita protección especial", "Porque su alta producción de semillas (4.000–8.000/año), rápido crecimiento y capacidad de fijar nitrógeno le permiten colonizar y desplazar flora nativa en ecosistemas frágiles como sabanas y bosques de galería", "Porque sus flores compiten con las de las plantas nativas por polinizadores, reduciendo la reproducción de especies locales", "Porque sus raíces agotan el agua subterránea y secan los caños de la Orinoquía"], correct: 1, expl: "L. leucocephala tiene 'superpoderes' ecológicos: fijación de N₂, crecimiento rápido, alta producción de semillas y tolerancia a sequía. En ecosistemas intactos, estas ventajas pueden desplazar especies nativas. En Casanare, debe usarse preferentemente en tierras ya degradadas, con poda periódica y monitoreo de dispersión, nunca en bosques de galería o sabanas prístinas." }
     ]
-}
+},
 };
 
