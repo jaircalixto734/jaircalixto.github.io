@@ -477,6 +477,32 @@
             </button>
         </div>
 
+        <!-- SELECTOR DE MODO DE LECTURA -->
+        <div style="background: linear-gradient(135deg, rgba(129, 182, 34, 0.1) 0%, rgba(129, 182, 34, 0.05) 100%); border-radius: 20px; padding: 25px; margin-bottom: 40px; border: 2px solid var(--primary-light); text-align: center;">
+            <h4 style="color: var(--secondary-color); font-weight: 800; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                <i class="fas fa-book-open"></i> Selecciona el tipo de información
+            </h4>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <button id="btnCientifica" onclick="cargarModo('cientifica')" style="flex: 1; min-width: 250px; max-width: 350px; padding: 20px 30px; border-radius: 15px; border: 2px solid var(--primary-light); background: var(--card-bg); color: var(--text-main); cursor: pointer; transition: all 0.3s ease; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                    <i class="fas fa-flask" style="font-size: 1.5rem; color: var(--m2-color);"></i>
+                    <div>
+                        <div style="text-transform: uppercase; letter-spacing: 0.5px;">Información Científica</div>
+                        <div style="font-size: 0.8rem; font-weight: 400; opacity: 0.8; margin-top: 5px;">Lenguaje botánico técnico</div>
+                    </div>
+                </button>
+                <button id="btnEducativa" onclick="cargarModo('educativa')" style="flex: 1; min-width: 250px; max-width: 350px; padding: 20px 30px; border-radius: 15px; border: 2px solid #e67e22; background: var(--card-bg); color: var(--text-main); cursor: pointer; transition: all 0.3s ease; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                    <i class="fas fa-graduation-cap" style="font-size: 1.5rem; color: #e67e22;"></i>
+                    <div>
+                        <div style="text-transform: uppercase; letter-spacing: 0.5px;">Información Educativa</div>
+                        <div style="font-size: 0.8rem; font-weight: 400; opacity: 0.8; margin-top: 5px;">Lenguaje sencillo y claro</div>
+                    </div>
+                </button>
+            </div>
+            <div id="modoActual" style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">
+                <i class="fas fa-info-circle"></i> Modo actual: <strong style="color: var(--primary-light);">Científica</strong>
+            </div>
+        </div>
+
         <!-- SECCIÓN 1: SILVAIN HABLA -->
         <div class="sylvain-chat-box">
             <h4><i class="fas fa-tree"></i> Árbol habla — para los estudiantes</h4>
@@ -647,12 +673,53 @@
     </button>
 
     <script src="js/datos_arboles.js" charset="UTF-8"></script>
+    <script src="js/datos_arboles2.js" charset="UTF-8"></script>
     <script> 
         const urlParams = new URLSearchParams(window.location.search);
         const arbolSeleccionado = urlParams.get('arbol') || 'merecure';
-        const datos = baseDatosArboles[arbolSeleccionado];
-
-        if(datos) {
+        
+        // Variables globales para los datos
+        let datosCientificos = baseDatosArboles[arbolSeleccionado];
+        let datosEducativos = baseDatosArbolesEducativa ? baseDatosArbolesEducativa[arbolSeleccionado] : null;
+        let modoActual = 'cientifica';
+        
+        // Función para cargar el modo seleccionado
+        function cargarModo(modo) {
+            modoActual = modo;
+            const datos = modo === 'cientifica' ? datosCientificos : datosEducativos;
+            
+            if(!datos) {
+                alert('Lo sentimos, la información educativa aún no está disponible para este árbol. Mostrando información científica.');
+                modoActual = 'cientifica';
+                return;
+            }
+            
+            // Actualizar indicador de modo
+            const modoActualDiv = document.getElementById('modoActual');
+            modoActualDiv.innerHTML = `<i class="fas fa-info-circle"></i> Modo actual: <strong style="color: ${modo === 'cientifica' ? 'var(--primary-light)' : '#e67e22'};">${modo === 'cientifica' ? 'Científica' : 'Educativa'}</strong>`;
+            
+            // Actualizar botones
+            const btnCientifica = document.getElementById('btnCientifica');
+            const btnEducativa = document.getElementById('btnEducativa');
+            
+            if(modo === 'cientifica') {
+                btnCientifica.style.borderColor = 'var(--primary-light)';
+                btnCientifica.style.background = 'rgba(129, 182, 34, 0.15)';
+                btnEducativa.style.borderColor = '#e67e22';
+                btnEducativa.style.background = 'var(--card-bg)';
+            } else {
+                btnEducativa.style.borderColor = '#e67e22';
+                btnEducativa.style.background = 'rgba(230, 126, 34, 0.15)';
+                btnCientifica.style.borderColor = 'var(--primary-light)';
+                btnCientifica.style.background = 'var(--card-bg)';
+            }
+            
+            // Cargar datos según el modo
+            cargarDatosEnFicha(datos);
+        }
+        
+        // Función para cargar datos en la ficha
+        function cargarDatosEnFicha(datos) {
             document.title = `${datos.nombre} - Dossier SILVAIN JBP`;
             document.getElementById('fichaId').textContent = datos.id;
             document.getElementById('fichaTipo').innerHTML = `<i class="fas fa-tree"></i> ${datos.tipo}`;
@@ -664,6 +731,7 @@
             document.getElementById('fichaMensajeIA').innerHTML = `"${datos.mensajeIA}"`;
 
             if(datos.exotica) document.getElementById('alertaExotica').style.display = "flex";
+            else document.getElementById('alertaExotica').style.display = "none";
 
             document.getElementById('dFamilia').textContent = datos.familia;
             document.getElementById('dOrigen').textContent = datos.origen;
@@ -677,11 +745,13 @@
             document.getElementById('dUsos').innerHTML = datos.usos;
 
             const tagsCont = document.getElementById('dTagsLocales');
+            tagsCont.innerHTML = '';
             datos.nombresLocales.forEach(nombre => {
                 tagsCont.innerHTML += `<span class="badge-estado" style="margin-right:5px; font-size:0.8rem; border:1px solid var(--border-color);">${nombre}</span> `;
             });
 
             const calCont = document.getElementById('dCalendario');
+            calCont.innerHTML = '';
             datos.calendario.forEach(cal => {
                 const mesDiv = document.createElement('div');
                 mesDiv.className = `month-card-pro ${cal.clima === 'dry' ? 'cal-dry' : cal.clima === 'rain' ? 'cal-rain' : 'cal-trans'}`;
@@ -690,6 +760,7 @@
             });
 
             const galeriaContenedor = document.getElementById('galeriaArbol');
+            galeriaContenedor.innerHTML = '';
             datos.galeria.forEach(foto => {
                 galeriaContenedor.innerHTML += `
                     <div class="gallery-item" onclick="abrirVisor('${foto.img}', '${foto.desc}')">
@@ -699,9 +770,11 @@
             });
 
             const listaApa = document.getElementById('listaApa');
+            listaApa.innerHTML = '';
             datos.referencias.forEach(ref => { listaApa.innerHTML += `<li style="margin-bottom:10px;">${ref}</li>`; });
 
             const quizCont = document.getElementById('quizPreguntasContainer');
+            quizCont.innerHTML = '';
             datos.quiz.forEach((p, qIdx) => {
                 let htmlOpts = '';
                 p.opts.forEach((opt, oIdx) => {
@@ -717,8 +790,10 @@
                         <div id="fb-q${qIdx}" class="mt-3" style="font-weight:600;"></div>
                     </div>`;
             });
-
+            
+            // Actualizar botón de audio con nuevo mensaje
             const btnAudio = document.getElementById('btnAudio');
+            btnAudio.onclick = null; // Remover listener anterior
             btnAudio.addEventListener('click', () => {
                 if ('speechSynthesis' in window) {
                     const loc = new SpeechSynthesisUtterance(datos.mensajeIA); loc.lang = 'es-CO';
@@ -726,6 +801,17 @@
                     loc.onend = () => btnAudio.innerHTML = '<i class="fas fa-volume-up"></i>';
                 }
             });
+        }
+
+        if(datosCientificos) {
+            // Cargar datos científicos por defecto
+            cargarDatosEnFicha(datosCientificos);
+            
+            // Configurar estado inicial de botones
+            const btnCientifica = document.getElementById('btnCientifica');
+            const btnEducativa = document.getElementById('btnEducativa');
+            btnCientifica.style.borderColor = 'var(--primary-light)';
+            btnCientifica.style.background = 'rgba(129, 182, 34, 0.15)';
         }
 
         const themeToggle = document.getElementById('themeToggle');
