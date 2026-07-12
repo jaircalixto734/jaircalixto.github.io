@@ -228,8 +228,6 @@ async function handleSendMessage(e) {
     }
 }
 
-import { baseDatosArboles } from './datos_arboles.js';
-
 // Ahora sí puedes usar baseDatosArboles en el chatbot
 
 // Hacer disponible globalmente
