@@ -1,0 +1,173 @@
+/* =============================================
+   BASE.CSS
+   Variables globales, reset, tipografía,
+   animaciones clave y utilidades base.
+   Debe cargarse PRIMERO en todas las páginas.
+   ============================================= */
+
+/* --- FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* --- VARIABLES GLOBALES (MODO DÍA) --- */
+:root {
+    /* Colores Principales */
+    --primary-color: #2d5a27;
+    --primary-light: #81b622;
+    --primary-vibrant: #d4ff80;
+    --secondary-color: #1a3318;
+
+    /* Colores de Fondo */
+    --bg-color: #fdfdfd;
+    --card-bg: #ffffff;
+    --footer-bg: #222222;
+
+    /* Colores de Texto */
+    --text-main: #2c3e50;
+    --text-muted: #666666;
+    --text-light: #ffffff;
+    --text-soft: #bbb;
+
+    /* Bordes y Sombras */
+    --border-color: #f0f0f0;
+    --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.03);
+    --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    /* Transiciones */
+    --transition: all 0.3s ease;
+}
+
+/* --- VARIABLES GLOBALES (MODO NOCHE) --- */
+.modo-noche,
+.dark-mode {
+    --bg-color: #0d140d;
+    --card-bg: #172616;
+    --text-main: #e0e0e0;
+    --text-muted: #a3b899;
+    --secondary-color: #d4ff80;
+    --border-color: #1e3d1a;
+    --primary-light: #81b622;
+}
+
+/* --- RESET GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* --- TIPOGRAFÍA BASE --- */
+h2 {
+    font-size: 2.5rem;
+    margin: 15px 0 30px;
+    color: var(--secondary-color);
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* --- ANIMACIONES GLOBALES (@keyframes reutilizables) --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fluidoBlanco {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fluidoVerde {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes heroReveal {
+    from { opacity: 0; transform: scale(1.05); filter: blur(10px); }
+    to   { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+/* --- ANIMACIÓN DE REVELADO (Reveal on Scroll) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* --- HOVER PROFESIONAL PARA TARJETAS (utilidad global) --- */
+.card,
+.tree-card,
+.tarjeta-persona {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.card:hover,
+.tree-card:hover,
+.tarjeta-persona:hover {
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* --- MEJORAS TÁCTILES (Android / iOS) --- */
+.navbar a,
+button,
+.btn-main,
+.btn-secondary,
+.suggestion-chip {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* --- LISTA APA 7 (utilidad) --- */
+.lista-apa { padding-left: 20px; }
+.lista-apa li {
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+}
+
+/* --- TEXTO PEQUEÑO (utilidad) --- */
+.text-sm {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #666;
+}
