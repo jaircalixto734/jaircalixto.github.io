@@ -1,0 +1,307 @@
+/* =============================================
+   PAGES/CALCULADORA.CSS
+   Estilos exclusivos de la calculadora de carbono (calculadora.html):
+   - Layout grid de 2 columnas
+   - Formulario de entrada
+   - Tarjeta principal de resultado
+   - Grid de equivalencias
+   - Sección tutorial
+   ============================================= */
+
+.calculadora-section {
+    padding: 60px 20px 100px;
+    background: var(--bg-color);
+    min-height: calc(100vh - 100px);
+}
+
+.calc-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* =============================================
+   1. LAYOUT PRINCIPAL (2 COLUMNAS EN PC)
+   ============================================= */
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* =============================================
+   2. COLUMNA IZQUIERDA: FORMULARIO
+   ============================================= */
+.calc-form-column {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
+}
+
+/* Botón especial de la calculadora */
+.btn-calc {
+    width: 100%;
+    background: var(--primary-light);
+    color: var(--text-light);
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-calc:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
+}
+
+/* =============================================
+   3. COLUMNA DERECHA: RESULTADOS
+   ============================================= */
+.calc-results-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tarjeta principal (verde oscuro) */
+.result-main-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(45, 90, 39, 0.25);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e8f5e9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-value {
+    margin: 20px 0;
+}
+
+.result-value span:first-child {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #d4ff80;
+    line-height: 1;
+}
+
+.result-value .unit {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.result-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =============================================
+   4. EQUIVALENCIAS (6 TARJETAS BLANCAS)
+   ============================================= */
+.equivalency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.equiv-card {
+    background: var(--card-bg);
+    padding: 25px 15px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
+}
+
+.equiv-card:hover {
+    transform: translateY(-8px);
+    border-color: #81b622;
+}
+
+.equiv-card i {
+    font-size: 2.2rem;
+    color: #81b622;
+    margin-bottom: 15px;
+}
+
+.equiv-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.equiv-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin: 8px 0 4px;
+}
+
+.equiv-card small {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* =============================================
+   5. TUTORIAL Y EXPLICACIÓN
+   ============================================= */
+.calc-tutorial-section {
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+}
+
+.calc-tutorial-section h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.tutorial-card {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-light);
+}
+
+.tutorial-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.tutorial-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.tutorial-card h4 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.tutorial-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.info-box {
+    background: linear-gradient(135deg, rgba(129, 182, 34, 0.1), rgba(45, 90, 39, 0.1));
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-light);
+    text-align: left;
+}
+
+.info-box h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-box p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.info-box strong {
+    color: var(--primary-color);
+}
+
+/* =============================================
+   6. MODO NOCHE
+   ============================================= */
+body.modo-noche .equiv-value {
+    color: var(--primary-vibrant);
+}
+
+/* =============================================
+   7. RESPONSIVO
+   ============================================= */
+@media (max-width: 768px) {
+    .calc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calc-form-column {
+        padding: 25px;
+    }
+
+    .equivalency-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-value span:first-child {
+        font-size: 3.5rem;
+    }
+
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calc-tutorial-section h3 {
+        font-size: 1.4rem;
+    }
+}
