@@ -1,0 +1,324 @@
+/* =============================================
+   PAGES/INVENTARIO.CSS
+   Estilos exclusivos del inventario forestal (lista-arboles.html):
+   - Hero con carrusel del colegio
+   - Buscador y filtros
+   - Grid de tarjetas de árboles
+   - Badges por categoría
+   ============================================= */
+
+/* =============================================
+   1. HERO DEL INVENTARIO (carrusel institucional)
+   ============================================= */
+@keyframes carruselInventario {
+    0%, 10%     { background-image: url('./imagenes/colegio1.jpeg'); }
+    11%, 20%    { background-image: url('./imagenes/colegio2.jpeg'); }
+    21%, 30%    { background-image: url('./imagenes/colegio3.jpeg'); }
+    31%, 40%    { background-image: url('./imagenes/colegio4.jpeg'); }
+    41%, 50%    { background-image: url('./imagenes/colegio5.jpeg'); }
+    51%, 60%    { background-image: url('./imagenes/colegio6.jpeg'); }
+    61%, 70%    { background-image: url('./imagenes/colegio7.jpeg'); }
+    71%, 80%    { background-image: url('./imagenes/colegio8.jpeg'); }
+    81%, 90%    { background-image: url('./imagenes/colegio9.jpeg'); }
+    91%, 100%   { background-image: url('./imagenes/colegio10.jpeg'); }
+}
+
+@keyframes fadeInCard {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.inventory-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px 120px;
+    text-align: center;
+    animation: carruselInventario 50s infinite ease-in-out;
+}
+
+.inventory-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 51, 24, 0.7);
+    z-index: 1;
+}
+
+.relative-content {
+    position: relative;
+    z-index: 2;
+}
+
+.inventory-hero .text-white {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+.inventory-hero .text-white-soft {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =============================================
+   2. CONTROLES (Buscador + Filtros)
+   ============================================= */
+.inventory-controls-wrapper {
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.inventory-controls {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #81b622;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 16px 20px 16px 50px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: 0.3s;
+    background: var(--bg-color);
+    color: var(--text-main);
+}
+
+.search-bar input:focus {
+    border-color: var(--primary-light);
+    background: var(--card-bg);
+    box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
+}
+
+.search-bar input:focus + i {
+    color: #2d5a27;
+}
+
+.filter-chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #81b622;
+    color: #81b622;
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+    box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
+}
+
+/* =============================================
+   3. GRID DE ÁRBOLES
+   ============================================= */
+.inventory-grid-section {
+    padding: 50px 20px 100px;
+    background: var(--bg-color);
+}
+
+.tree-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+}
+
+.tree-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    border: 2px solid transparent;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.tree-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-light);
+    box-shadow: 0 15px 40px rgba(129, 182, 34, 0.15);
+}
+
+.tree-img-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: #e0e0e0;
+}
+
+.tree-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.tree-card:hover .tree-img-container img {
+    transform: scale(1.05);
+}
+
+/* --- ETIQUETAS (BADGES Y ID) --- */
+.tree-id {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(26, 51, 24, 0.85);
+    color: #d4ff80;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.tree-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores por categoría */
+.badge-nativo      { background: #2d5a27; }
+.badge-frutal      { background: #e67e22; }
+.badge-ornamental  { background: #9b59b6; }
+.badge-maderable   { background: #7f8c8d; }
+.badge-estudio     { background: #34495e; }
+
+/* --- INFO DE LA TARJETA --- */
+.tree-info {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tree-info h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 2px;
+}
+
+.scientific-name {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.tree-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- BOTÓN "VER FICHA" --- */
+.btn-tree {
+    margin-top: auto;
+    text-align: center;
+    display: inline-block;
+    padding: 12px;
+    background: var(--bg-color);
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.btn-tree i {
+    margin-right: 6px;
+    color: #81b622;
+}
+
+.btn-tree:hover {
+    background: #81b622;
+    color: white;
+}
+
+.btn-tree:hover i {
+    color: white;
+}
+
+/* --- MENSAJE "SIN RESULTADOS" --- */
+.no-results-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.no-results-msg i {
+    font-size: 3rem;
+    color: #ddd;
+    margin-bottom: 15px;
+}
