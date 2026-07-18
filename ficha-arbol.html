@@ -257,12 +257,41 @@
     <script src="js/datos_arboles2.js" charset="UTF-8"></script>
     <script> 
         const urlParams = new URLSearchParams(window.location.search);
-        const arbolSeleccionado = urlParams.get('arbol') || 'merecure';
+        const arbolParam = urlParams.get('arbol') || 'merecure';
+        
+        // Detectar si el acceso es mediante código QR
+        const esQRCode = arbolParam.endsWith('-qrcode');
+        
+        // Extraer el nombre real del árbol (sin el sufijo -qrcode)
+        const arbolSeleccionado = esQRCode ? arbolParam.slice(0, -9) : arbolParam;
         
         // Variables globales para los datos
         let datosCientificos = baseDatosArboles[arbolSeleccionado];
         let datosEducativos = baseDatosArbolesEducativa ? baseDatosArbolesEducativa[arbolSeleccionado] : null;
         let modoActual = 'cientifica';
+        
+        // Función para mostrar banner de acceso QR
+        function mostrarBannerQR() {
+            if (esQRCode) {
+                const bannerQR = document.createElement('div');
+                bannerQR.style.cssText = `
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 15px 25px;
+                    text-align: center;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    border-radius: 0 0 20px 20px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                    animation: slideDown 0.5s ease-out;
+                `;
+                bannerQR.innerHTML = '<i class="fas fa-qrcode"></i> Acceso mediante Código QR — Bienvenido(a)';
+                
+                // Insertar al inicio del body después de ficha-body
+                document.querySelector('.ficha-body').insertBefore(bannerQR, document.querySelector('.ficha-body').firstChild.nextSibling);
+            }
+        }
         
         // Función para cargar el modo seleccionado
         function cargarModo(modo) {
@@ -387,6 +416,9 @@
         if(datosCientificos) {
             // Cargar datos científicos por defecto
             cargarDatosEnFicha(datosCientificos);
+            
+            // Mostrar banner QR si aplica
+            mostrarBannerQR();
             
             // Configurar estado inicial de botones
             const btnCientifica = document.getElementById('btnCientifica');
