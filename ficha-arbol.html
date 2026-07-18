@@ -278,29 +278,6 @@
             console.log('Claves disponibles en baseDatosArboles:', Object.keys(baseDatosArboles));
         }
         
-        // Función para mostrar banner de acceso QR
-        function mostrarBannerQR() {
-            if (esQRCode) {
-                const bannerQR = document.createElement('div');
-                bannerQR.style.cssText = `
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    padding: 15px 25px;
-                    text-align: center;
-                    font-weight: 600;
-                    font-size: 0.95rem;
-                    border-radius: 0 0 20px 20px;
-                    margin-bottom: 20px;
-                    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-                    animation: slideDown 0.5s ease-out;
-                `;
-                bannerQR.innerHTML = '<i class="fas fa-qrcode"></i> Acceso mediante Código QR — Bienvenido(a)';
-                
-                // Insertar al inicio del body después de ficha-body
-                document.querySelector('.ficha-body').insertBefore(bannerQR, document.querySelector('.ficha-body').firstChild.nextSibling);
-            }
-        }
-        
         // Función para cargar el modo seleccionado
         function cargarModo(modo) {
             modoActual = modo;
