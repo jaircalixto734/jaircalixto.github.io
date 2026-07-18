@@ -263,12 +263,20 @@
         const esQRCode = arbolParam.endsWith('-qrcode');
         
         // Extraer el nombre real del árbol (sin el sufijo -qrcode)
-        const arbolSeleccionado = esQRCode ? arbolParam.slice(0, -9) : arbolParam;
+        const arbolSeleccionado = esQRCode ? arbolParam.replace('-qrcode', '') : arbolParam;
         
         // Variables globales para los datos
         let datosCientificos = baseDatosArboles[arbolSeleccionado];
         let datosEducativos = baseDatosArbolesEducativa ? baseDatosArbolesEducativa[arbolSeleccionado] : null;
         let modoActual = 'cientifica';
+        
+        // Validación de datos cargados
+        if (!datosCientificos) {
+            console.error('Error: No se encontraron datos para el árbol:', arbolSeleccionado);
+            console.log('Parámetro original:', arbolParam);
+            console.log('Es QR Code:', esQRCode);
+            console.log('Claves disponibles en baseDatosArboles:', Object.keys(baseDatosArboles));
+        }
         
         // Función para mostrar banner de acceso QR
         function mostrarBannerQR() {
