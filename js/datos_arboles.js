@@ -416,12 +416,14 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
     "almendro": {
         id: "#JBP-04", tipo: "Exótica Introducida", nombre: "Almendro", cientifico: "Terminalia catappa L.",
         familia: "Combretaceae", origen: "Exótica introducida — Sudeste Asiático (Malasia, India, Indo-China). Naturalizada en trópicos de América", estado: "LC — Preocupación Menor (UICN). No listada en Libros Rojos de Colombia", exotica: true,
-        carbono: 280.5, viajes: 95, imagen_portada: "./imagenes/colegio1.jpeg",
+        carbono: 280.5, viajes: 95, imagen_portada: "./imagenes/almendro1.jpeg",
         galeria: [
-            { img: "./imagenes/colegio1.jpeg", desc: "Gran Almendro del JBP con copa piramidal verticilada brindando sombra permanente" },
-            { img: "./imagenes/foto2.jpeg", desc: "Defoliación estacional: hojas rojas y anaranjadas antes de caer en verano llanero" },
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Drupas aplanadas bicarenadas colgando de las ramas" },
-            { img: "./imagenes/desconocido.jpg", desc: "Pendiente de foto - Espigas florales axilares con flores blanco-verdosas" }
+            { img: "./imagenes/almendro1.jpeg", desc: "" },
+            { img: "./imagenes/almendro2.jpeg", desc: "" },
+            { img: "./imagenes/almendro3.jpeg", desc: "" },
+            { img: "./imagenes/almendro4.jpeg", desc: "" },
+            { img: "./imagenes/almendro5.jpeg", desc: "" },
+
         ],
         nombresLocales: ["Almendro", "Almendrón", "Almendro de la India", "Almendro de los Trópicos", "Almendro de playa", "Almendrillo", "Almendro de Sombra"],
         distribucion: `
@@ -1593,7 +1595,7 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     ]
     },
     "mango": {
-        id: "#JBP-8", tipo: "Introducido", nombre: "Mango", cientifico: "Mangifera indica L.",
+        id: "#JBP-08", tipo: "Introducido", nombre: "Mango", cientifico: "Mangifera indica L.",
         familia: "Anacardiaceae", origen: "Norte de India y Myanmar (Exótica introducida)", estado: "LC — Preocupación Menor (UICN) / No Evaluada en Colombia", exotica: true,
         carbono: 185.4, viajes: 62, imagen_portada: "./imagenes/mango1.jpeg",
         galeria: [
