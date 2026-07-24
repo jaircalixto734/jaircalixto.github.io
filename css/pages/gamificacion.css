@@ -1,0 +1,468 @@
+/* =============================================
+   GAMIFICACIÓN - MEDALLAS Y PROGRESO
+   Estilos para el sistema de recompensas por escaneo QR
+   ============================================= */
+
+/* Contenedor principal de gamificación */
+.gamification-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 30px 30px 0 0;
+    padding: 25px 20px;
+    z-index: 9999;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.gamification-container.visible {
+    transform: translateY(0);
+}
+
+.gamification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gamification-title {
+    color: #ffd700;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gamification-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.gamification-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Barra de progreso */
+.progress-section {
+    margin-bottom: 25px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.progress-count {
+    color: #4ade80;
+}
+
+.progress-total {
+    color: #fbbf24;
+}
+
+.progress-bar-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+    border-radius: 20px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Sección de medalla nueva */
+.medal-section {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.medal-title {
+    color: #ffd700;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Medalla */
+.medal-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    animation: medalEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes medalEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.medal-ribbon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 40px;
+    background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+    z-index: 1;
+}
+
+.medal-body {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffb900 50%, #ff9500 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 10px 30px rgba(255, 215, 0, 0.4),
+        inset 0 -5px 20px rgba(0, 0, 0, 0.2),
+        inset 0 5px 20px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    animation: medalGlow 2s ease-in-out infinite;
+}
+
+@keyframes medalGlow {
+    0%, 100% {
+        box-shadow: 
+            0 10px 30px rgba(255, 215, 0, 0.4),
+            inset 0 -5px 20px rgba(0, 0, 0, 0.2),
+            inset 0 5px 20px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 15px 40px rgba(255, 215, 0, 0.6),
+            inset 0 -5px 20px rgba(0, 0, 0, 0.2),
+            inset 0 5px 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.medal-inner {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.medal-name {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+.medal-congrats {
+    color: #4ade80;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Galería de medallas */
+.medals-gallery-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.medals-gallery-title {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.medals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.medals-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.medals-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.medals-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 215, 0, 0.5);
+    border-radius: 10px;
+}
+
+.medal-item {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.medal-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    border-color: rgba(255, 215, 0, 0.5);
+}
+
+.medal-item.unlocked {
+    border-color: rgba(255, 215, 0, 0.7);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.medal-item.locked {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+.medal-icon {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.medal-item-name {
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* Modal de logro desbloqueado */
+.achievement-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.achievement-modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.achievement-content {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 30px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 3px solid #ffd700;
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.achievement-modal.visible .achievement-content {
+    transform: scale(1);
+}
+
+.achievement-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: achievementBounce 1s ease-in-out infinite;
+}
+
+@keyframes achievementBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.achievement-title {
+    color: #ffd700;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.achievement-subtitle {
+    color: #4ade80;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.achievement-description {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.achievement-btn {
+    background: linear-gradient(135deg, #ffd700 0%, #ffb900 100%);
+    color: #1a1a2e;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.achievement-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .gamification-container {
+        padding: 20px 15px;
+    }
+
+    .medal-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .medal-body {
+        width: 85px;
+        height: 85px;
+    }
+
+    .medal-inner {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+
+    .medal-ribbon {
+        width: 50px;
+        height: 35px;
+        top: -25px;
+    }
+
+    .medals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 10px;
+    }
+
+    .achievement-content {
+        padding: 40px 25px;
+    }
+
+    .achievement-icon {
+        font-size: 4rem;
+    }
+
+    .achievement-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Modo noche */
+.modo-noche .gamification-container {
+    background: linear-gradient(135deg, #0d140d 0%, #1a3318 100%);
+    border-color: rgba(129, 182, 34, 0.3);
+}
+
+.modo-noche .progress-bar-fill {
+    background: linear-gradient(90deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+}
