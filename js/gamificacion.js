@@ -7,14 +7,14 @@
 const GAMIFICATION_CONFIG = {
     storageKey: 'silvain_medals',
     totalTrees: 28, // Total de árboles en el inventario (se actualiza dinámicamente abajo)
-    showPanelDelay: 1500, // Tiempo antes de mostrar el panel (ms)
+    showPanelDelay: 1000, // Tiempo antes de mostrar el panel (ms)
     autoHidePanel: false, // Si true, el panel se oculta automáticamente después de un tiempo
     autoHideDelay: 8000, // Tiempo antes de ocultar automáticamente (ms)
 };
 
 // Lista completa de árboles del inventario
 const ARBOLES_INVENTARIO = [
-    'merecure', 'jambolan', 'palo-cruz', 'almendro', 'pomarrosa', 
+    'merecure', 'jambolan', 'palo-cruz', 'almendro', 'pomarrosa',
     'palma_areca', 'caracaro', 'mango', 'maiz_tostado', 'palma-de-coco',
     'trompillo', 'guacimo', 'gualanday', 'oiti', 'noni',
     'palma-real', 'saman', 'flor-morado', 'mamoncillo', 'guayaba',
@@ -36,11 +36,11 @@ let gameState = {
 function initGamification() {
     // Cargar estado desde localStorage
     loadGameState();
-    
+
     // Verificar si es acceso por QR
     const urlParams = new URLSearchParams(window.location.search);
     const arbolParam = urlParams.get('arbol');
-    
+
     if (arbolParam && arbolParam.endsWith('-qrcode')) {
         // Es un acceso por QR - procesar medalla
         const arbolNombre = arbolParam.replace('-qrcode', '');
@@ -75,45 +75,44 @@ function saveGameState() {
 // Procesar escaneo QR
 function processQRScan(arbolNombre) {
     console.log('📱 Procesando QR:', arbolNombre);
-    
-    // Validar que el árbol existe en el inventario
-    if (!ARBOLES_INVENTARIO.includes(arbolNombre)) {
+
+    // Normalizar el nombre del árbol para comparación
+    const matchedArbol = ARBOLES_INVENTARIO.find(
+        a => a.toLowerCase() === arbolNombre.toLowerCase()
+    );
+
+    if (!matchedArbol) {
         console.warn('⚠️ Árbol no encontrado en inventario:', arbolNombre);
         return;
     }
-    
+
     // Verificar si ya tenía la medalla
-    const isNewMedal = !gameState.medals.includes(arbolNombre);
-    
+    const isNewMedal = !gameState.medals.includes(matchedArbol);
+
     if (isNewMedal) {
         // Nueva medalla desbloqueada!
-        gameState.medals.push(arbolNombre);
-        gameState.lastScan = arbolNombre;
+        gameState.medals.push(matchedArbol);
+        gameState.lastScan = matchedArbol;
         gameState.scanCount = gameState.medals.length;
-        
+
         // Guardar progreso
         saveGameState();
-        
-        // Mostrar animación de logro
+
+        // Mostrar animación de logro primero
         setTimeout(() => {
-            showAchievementModal(arbolNombre);
-        }, 1000);
-        
-        // Mostrar panel de gamificación
-        setTimeout(() => {
-            showGamificationPanel(arbolNombre, true);
-        }, GAMIFICATION_CONFIG.showPanelDelay);
-        
-        console.log('🏆 ¡Nueva medalla desbloqueada!', arbolNombre);
+            showAchievementModal(matchedArbol);
+        }, 500);
+
+        console.log('🏆 ¡Nueva medalla desbloqueada!', matchedArbol);
     } else {
         // Ya tenía la medalla - solo mostrar panel
-        gameState.lastScan = arbolNombre;
-        
+        gameState.lastScan = matchedArbol;
+
         setTimeout(() => {
-            showGamificationPanel(arbolNombre, false);
+            showGamificationPanel(matchedArbol, false);
         }, GAMIFICATION_CONFIG.showPanelDelay);
-        
-        console.log('🔄 Medalla ya obtenida:', arbolNombre);
+
+        console.log('🔄 Medalla ya obtenida:', matchedArbol);
     }
 }
 
@@ -121,22 +120,25 @@ function processQRScan(arbolNombre) {
 function showGamificationPanel(lastMedal = null, isNew = false) {
     // Crear contenedor si no existe
     let container = document.getElementById('gamificationPanel');
-    
+
     if (!container) {
         container = createGamificationPanel();
         document.body.appendChild(container);
     }
-    
+
+    // Asegurar que sea visible si antes tenía display: none
+    container.style.display = 'block';
+
     // Actualizar contenido
     updateGamificationPanel(container, lastMedal, isNew);
-    
+
     // Mostrar panel con animación
     setTimeout(() => {
         container.classList.add('visible');
-    }, 100);
-    
+    }, 50);
+
     // Auto-ocultar si está configurado
-    if (GAMIFICATION_CONFIG.autoHide) {
+    if (GAMIFICATION_CONFIG.autoHidePanel) {
         setTimeout(() => {
             hideGamificationPanel();
         }, GAMIFICATION_CONFIG.autoHideDelay);
@@ -148,7 +150,7 @@ function createGamificationPanel() {
     const container = document.createElement('div');
     container.id = 'gamificationPanel';
     container.className = 'gamification-container';
-    
+
     container.innerHTML = `
         <div class="gamification-header">
             <div class="gamification-title">
@@ -159,11 +161,11 @@ function createGamificationPanel() {
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
+
         <div class="progress-section">
             <div class="progress-labels">
                 <span class="progress-count">
-                    <i class="fas fa-check-circle"></i> 
+                    <i class="fas fa-check-circle"></i>
                     <span id="scannedCount">0</span> árboles escaneados
                 </span>
                 <span class="progress-total">
@@ -174,7 +176,7 @@ function createGamificationPanel() {
                 <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
             </div>
         </div>
-        
+
         <div class="medal-section" id="newMedalSection" style="display: none;">
             <div class="medal-title">
                 <i class="fas fa-star"></i>
@@ -191,7 +193,7 @@ function createGamificationPanel() {
             <div class="medal-name" id="medalName">-</div>
             <div class="medal-congrats">¡Sigue explorando!</div>
         </div>
-        
+
         <div class="medals-gallery-section">
             <div class="medals-gallery-title">
                 <i class="fas fa-medal"></i>
@@ -202,7 +204,7 @@ function createGamificationPanel() {
             </div>
         </div>
     `;
-    
+
     return container;
 }
 
@@ -212,24 +214,23 @@ function updateGamificationPanel(container, lastMedal = null, isNew = false) {
     const scannedCount = gameState.medals.length;
     const remainingCount = GAMIFICATION_CONFIG.totalTrees - scannedCount;
     const progressPercent = (scannedCount / GAMIFICATION_CONFIG.totalTrees) * 100;
-    
+
     document.getElementById('scannedCount').textContent = scannedCount;
     document.getElementById('remainingCount').textContent = remainingCount;
     document.getElementById('progressBar').style.width = `${progressPercent}%`;
-    
+
     // Mostrar sección de nueva medalla si es nuevo desbloqueo
     const newMedalSection = document.getElementById('newMedalSection');
     if (isNew && lastMedal) {
         newMedalSection.style.display = 'block';
         document.getElementById('medalName').textContent = lastMedal.replace(/-/g, ' ').replace(/_/g, ' ');
-        
-        // Icono personalizado según tipo de árbol (se puede personalizar)
+
         const iconElement = document.getElementById('medalIcon');
         iconElement.innerHTML = getMedalIcon(lastMedal);
     } else {
         newMedalSection.style.display = 'none';
     }
-    
+
     // Actualizar galería de medallas
     updateMedalsGallery();
 }
@@ -238,36 +239,31 @@ function updateGamificationPanel(container, lastMedal = null, isNew = false) {
 function updateMedalsGallery() {
     const grid = document.getElementById('medalsGrid');
     if (!grid) return;
-    
+
     grid.innerHTML = '';
-    
+
     // Crear medallas para todos los árboles del inventario
     ARBOLES_INVENTARIO.forEach(arbol => {
         const isUnlocked = gameState.medals.includes(arbol);
         const medalItem = document.createElement('div');
         medalItem.className = `medal-item ${isUnlocked ? 'unlocked' : 'locked'}`;
         medalItem.title = isUnlocked ? arbol : 'Bloqueado';
-        
+
         const displayName = arbol.replace(/-/g, ' ').replace(/_/g, ' ');
-        
+
         medalItem.innerHTML = `
             <div class="medal-icon">
                 ${getMedalIcon(arbol)}
             </div>
             <div class="medal-item-name">${displayName}</div>
         `;
-        
+
         grid.appendChild(medalItem);
     });
 }
 
-// Obtener icono para la medalla (personalizable)
+// Obtener icono para la medalla
 function getMedalIcon(arbolNombre) {
-    // Aquí puedes personalizar iconos según el tipo de árbol
-    // Por ahora usamos un icono genérico de árbol
-    // Más adelante puedes mapear iconos específicos
-    
-    // Ejemplo de personalización:
     const iconMap = {
         'merecure': '<i class="fas fa-tree"></i>',
         'jambolan': '<i class="fas fa-apple-alt"></i>',
@@ -280,7 +276,7 @@ function getMedalIcon(arbolNombre) {
         'guayaba': '<i class="fas fa-apple-alt"></i>',
         'pomarrosa': '<i class="fas fa-apple-alt"></i>',
     };
-    
+
     return iconMap[arbolNombre] || '<i class="fas fa-tree"></i>';
 }
 
@@ -297,15 +293,17 @@ function hideGamificationPanel() {
 
 // Mostrar modal de logro
 function showAchievementModal(arbolNombre) {
-    // Crear modal si no existe
     let modal = document.getElementById('achievementModal');
-    
+
     if (!modal) {
         modal = document.createElement('div');
         modal.id = 'achievementModal';
         modal.className = 'achievement-modal';
         modal.innerHTML = `
             <div class="achievement-content">
+                <button class="achievement-close-btn" onclick="closeAchievementModal()" aria-label="Cerrar modal">
+                    <i class="fas fa-times"></i>
+                </button>
                 <div class="achievement-icon" id="achievementIcon">
                     <i class="fas fa-trophy"></i>
                 </div>
@@ -321,21 +319,20 @@ function showAchievementModal(arbolNombre) {
         `;
         document.body.appendChild(modal);
     }
-    
-    // Actualizar contenido
+
     const displayName = arbolNombre.replace(/-/g, ' ').replace(/_/g, ' ');
     document.getElementById('achievementSubtitle').textContent = `🌳 ${displayName}`;
     document.getElementById('achievementIcon').innerHTML = getMedalIcon(arbolNombre);
-    document.getElementById('achievementDescription').textContent = 
+    document.getElementById('achievementDescription').textContent =
         `¡Has escaneado el código QR del ${displayName} y ganado su medalla! ` +
         `Continúa explorando para completar tu colección de ${GAMIFICATION_CONFIG.totalTrees} árboles.`;
-    
-    // Mostrar modal
+
+    modal.style.display = 'flex';
+
     setTimeout(() => {
         modal.classList.add('visible');
     }, 100);
-    
-    // Sonido de logro (opcional)
+
     playAchievementSound();
 }
 
@@ -344,19 +341,23 @@ function closeAchievementModal() {
     const modal = document.getElementById('achievementModal');
     if (modal) {
         modal.classList.remove('visible');
+
+        setTimeout(() => {
+            modal.style.display = 'none';
+            const lastMedal = gameState.lastScan;
+            if (lastMedal) {
+                showGamificationPanel(lastMedal, true);
+            }
+        }, 300);
     }
 }
 
 // Reproducir sonido de logro (opcional)
 function playAchievementSound() {
-    // Aquí puedes agregar un sonido de logro si lo deseas
-    // Por ejemplo:
-    // const audio = new Audio('/sonidos/achievement.mp3');
-    // audio.play();
     console.log('🔔 Sonido de logro (opcional)');
 }
 
-// Resetear progreso (para testing)
+// Resetear progreso
 function resetGamification() {
     if (confirm('¿Estás seguro de que quieres reiniciar todo tu progreso? Esta acción no se puede deshacer.')) {
         localStorage.removeItem(GAMIFICATION_CONFIG.storageKey);
