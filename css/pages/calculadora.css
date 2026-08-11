@@ -4,6 +4,7 @@
    - Layout grid de 2 columnas
    - Formulario de entrada
    - Tarjeta principal de resultado
+   - Procedimiento paso a paso (pedagógico)
    - Grid de equivalencias
    - Sección tutorial
    ============================================= */
@@ -62,10 +63,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.btn-calc:hover {
+.btn-calc:hover:not(:disabled) {
     background: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
+}
+
+.btn-calc:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 /* =============================================
@@ -122,7 +128,101 @@
 }
 
 /* =============================================
-   4. EQUIVALENCIAS (6 TARJETAS BLANCAS)
+   4. PROCEDIMIENTO PASO A PASO
+   ============================================= */
+.calc-procedimiento {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-light);
+    border-radius: 15px;
+    padding: 22px 26px;
+    box-shadow: var(--shadow-soft);
+}
+
+.calc-procedimiento .proc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.calc-procedimiento .proc-header i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.calc-procedimiento .proc-header h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.proc-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: paso;
+}
+
+.proc-lista li {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.proc-lista li:last-child {
+    border-bottom: none;
+}
+
+.proc-lista .paso-num {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.proc-lista .paso-txt {
+    flex: 1;
+    word-break: break-word;
+}
+
+/* El paso final (CO2e) se resalta */
+.proc-lista li:last-child .paso-txt {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+body.modo-noche .calc-procedimiento {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+body.modo-noche .proc-lista li {
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+}
+
+body.modo-noche .proc-lista li:last-child .paso-txt {
+    color: var(--primary-vibrant);
+}
+
+/* =============================================
+   5. EQUIVALENCIAS (6 TARJETAS BLANCAS)
    ============================================= */
 .equivalency-grid {
     display: grid;
@@ -172,7 +272,7 @@
 }
 
 /* =============================================
-   5. TUTORIAL Y EXPLICACIÓN
+   6. TUTORIAL Y EXPLICACIÓN
    ============================================= */
 .calc-tutorial-section {
     margin-top: 60px;
@@ -271,14 +371,14 @@
 }
 
 /* =============================================
-   6. MODO NOCHE
+   7. MODO NOCHE
    ============================================= */
 body.modo-noche .equiv-value {
     color: var(--primary-vibrant);
 }
 
 /* =============================================
-   7. RESPONSIVO
+   8. RESPONSIVO
    ============================================= */
 @media (max-width: 768px) {
     .calc-grid {
@@ -303,5 +403,93 @@ body.modo-noche .equiv-value {
 
     .calc-tutorial-section h3 {
         font-size: 1.4rem;
+    }
+}
+
+
+/* =============================================
+   CALCULADORA - AJUSTES NUEVOS
+   No modifica la base visual existente.
+   ============================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+.calc-form-column .form-group {
+    margin-bottom: 18px;
+}
+
+.calc-form-column small {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted, #666);
+}
+
+/* Notas y advertencias */
+.calc-notas,
+.calc-advertencias {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.calc-notas li {
+    margin: 4px 0;
+    color: var(--text-muted, #666);
+}
+
+.calc-advertencias li {
+    margin: 6px 0;
+    color: #b45309;
+}
+
+.calc-advertencias li.error {
+    color: #dc2626;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Detalles dentro de la tarjeta principal */
+.result-subtitle strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.calc-ecuacion-info {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+}
+
+.calc-ecuacion-info span {
+    display: block;
+}
+
+.calc-ecuacion-info span:empty {
+    display: none;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .calc-ecuacion-info {
+        font-size: 0.78rem;
+    }
+
+    .calc-procedimiento {
+        padding: 18px 16px;
+    }
+
+    .proc-lista li {
+        font-size: 0.8rem;
+    }
+
+    .calc-procedimiento .proc-header h4 {
+        font-size: 0.95rem;
     }
 }
