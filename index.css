@@ -159,3 +159,545 @@
 
     .info-section { padding: 60px 5%; }
 }
+
+
+/* =============================================
+SECCIÓN HERRAMIENTAS (tools-section)
+============================================= */
+.tools-section {
+  padding: 80px 5%;
+  background: #f7f9f7;
+  text-align: center;
+}
+.tools-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.tools-section .section-sub {
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+}
+.grid-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tool-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: left;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--primary-color);
+}
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+.tool-icon {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  display: block;
+}
+.tool-card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.tool-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+.tool-card .btn-tool {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+.tool-card .btn-tool:hover {
+  background: #3d7a35;
+  transform: scale(1.03);
+}
+
+/* =============================================
+SECCIÓN CÓMO FUNCIONA (steps-section)
+============================================= */
+.steps-section {
+  padding: 80px 5%;
+  background: linear-gradient(-45deg, #ffffff, #eef7ee, #ffffff, #f2f2f2);
+  background-size: 400% 400%;
+  animation: fluidoBlanco 15s ease infinite;
+  text-align: center;
+}
+.steps-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 50px;
+}
+.grid-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.step-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  padding: 30px 20px;
+  position: relative;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+.step-card:hover { transform: translateY(-5px); }
+.step-number {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.step-icon {
+  font-size: 2.2rem;
+  margin: 15px 0;
+  display: block;
+}
+.step-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.step-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* =============================================
+SECCIÓN IMPACTO EN NÚMEROS (stats-section)
+============================================= */
+.stats-section {
+  padding: 70px 5%;
+  background: linear-gradient(-45deg, var(--primary-color), #2e5d28, #1e3d1a, var(--primary-color));
+  background-size: 400% 400%;
+  animation: fluidoVerde 12s ease infinite;
+  color: white;
+  text-align: center;
+}
+.stats-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.stat-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  padding: 30px 20px;
+}
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #d4ff80;
+  display: block;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.stat-card p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+}
+
+/* =============================================
+SECCIÓN CTA FINAL (cta-section)
+============================================= */
+.cta-section {
+  padding: 90px 5%;
+  text-align: center;
+  background: #f7f9f7;
+}
+.cta-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+.cta-section p {
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-cta {
+  padding: 15px 35px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-cta.primary {
+  background: var(--primary-color);
+  color: white;
+}
+.btn-cta.secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* =============================================
+ANIMACIONES SCROLL REVEAL
+============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
+RESPONSIVO NUEVAS SECCIONES
+============================================= */
+@media (max-width: 768px) {
+  .tools-section h2, .steps-section h2, .cta-section h2 { font-size: 2rem; }
+  .grid-tools { grid-template-columns: 1fr; }
+  .grid-steps { grid-template-columns: 1fr 1fr; }
+  .grid-stats { grid-template-columns: 1fr 1fr; }
+  .stat-number { font-size: 2.2rem; }
+}
+@media (max-width: 480px) {
+  .grid-steps { grid-template-columns: 1fr; }
+  .grid-stats { grid-template-columns: 1fr; }
+}
+
+
+
+/* =============================================
+MODO NOCHE - SECCIONES NUEVAS
+============================================= */
+
+/* Sección Herramientas */
+body.modo-noche .tools-section {
+  background: #0f150f;
+}
+body.modo-noche .tools-section h2 {
+  color: #d4ff80;
+}
+body.modo-noche .tools-section .section-sub {
+  color: #a8bba8;
+}
+body.modo-noche .tool-card {
+  background: #1a231a;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  border-top-color: #7cb342;
+}
+body.modo-noche .tool-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  background: #202b20;
+}
+body.modo-noche .tool-card h3 {
+  color: #c5e1a5;
+}
+body.modo-noche .tool-card p {
+  color: #b8c8b8;
+}
+body.modo-noche .tool-card .btn-tool {
+  background: #558b2f;
+}
+body.modo-noche .tool-card .btn-tool:hover {
+  background: #689f38;
+}
+
+/* Sección Cómo Funciona */
+body.modo-noche .steps-section {
+  background: linear-gradient(-45deg, #0f150f, #162116, #0f150f, #131c13);
+  background-size: 400% 400%;
+  animation: fluidoVerde 15s ease infinite;
+}
+body.modo-noche .steps-section h2 {
+  color: #d4ff80;
+}
+body.modo-noche .step-card {
+  background: rgba(30, 42, 30, 0.85);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+body.modo-noche .step-card:hover {
+  background: rgba(38, 52, 38, 0.95);
+}
+body.modo-noche .step-number {
+  background: #7cb342;
+}
+body.modo-noche .step-card h4 {
+  color: #c5e1a5;
+}
+body.modo-noche .step-card p {
+  color: #a8bba8;
+}
+
+/* Sección Impacto en Números */
+body.modo-noche .stats-section {
+  background: linear-gradient(-45deg, #1e3d1a, #14290f, #0d1f0a, #1e3d1a);
+  background-size: 400% 400%;
+  animation: fluidoVerde 12s ease infinite;
+}
+body.modo-noche .stats-section h2 {
+  color: #e8f5e9;
+}
+body.modo-noche .stat-card {
+  background: rgba(255, 255, 255, 0.05);
+}
+body.modo-noche .stat-number {
+  color: #d4ff80;
+}
+body.modo-noche .stat-card p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Sección CTA Final */
+body.modo-noche .cta-section {
+  background: #0f150f;
+}
+body.modo-noche .cta-section h2 {
+  color: #d4ff80;
+}
+body.modo-noche .cta-section p {
+  color: #b0c4b0;
+}
+body.modo-noche .btn-cta.primary {
+  background: #558b2f;
+}
+body.modo-noche .btn-cta.primary:hover {
+  background: #689f38;
+  box-shadow: 0 8px 20px rgba(85, 139, 47, 0.3);
+}
+body.modo-noche .btn-cta.secondary {
+  color: #d4ff80;
+  border-color: #d4ff80;
+}
+body.modo-noche .btn-cta.secondary:hover {
+  background: rgba(212, 255, 128, 0.1);
+  box-shadow: 0 8px 20px rgba(212, 255, 128, 0.15);
+}
+
+
+/* =============================================
+SECCIÓN APOYOS Y CRÉDITOS (credits-section)
+============================================= */
+.credits-section {
+  padding: 80px 5%;
+  background: linear-gradient(-45deg, #f7f9f7, #eef5ec, #f7f9f7, #f0f4f0);
+  background-size: 400% 400%;
+  animation: fluidoBlanco 18s ease infinite;
+  text-align: center;
+}
+.credits-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.credits-section .section-sub {
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+}
+.grid-credits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.credit-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 4px solid var(--primary-color);
+}
+.credit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+.credit-badge {
+  background: rgba(76, 140, 60, 0.12);
+  color: var(--primary-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+/* Espacios para imágenes */
+.credit-logo {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  background: #f0f4ec;
+  border: 2px dashed #c5d6be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.credit-logo img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+.credit-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #f0f4ec;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 0 5px rgba(76, 140, 60, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.credit-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Si aún no hay imagen cargada */
+.credit-logo.sin-imagen::before,
+.credit-photo.sin-imagen::before {
+  content: 'Imagen próximamente';
+  color: #9aab93;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.credit-card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+.credit-card p {
+  color: #555;
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+/* =============================================
+MODO NOCHE - APOYOS Y CRÉDITOS
+============================================= */
+body.modo-noche .credits-section {
+  background: linear-gradient(-45deg, #0f150f, #16211a, #0f150f, #131c15);
+  background-size: 400% 400%;
+  animation: fluidoVerde 18s ease infinite;
+}
+body.modo-noche .credits-section h2 {
+  color: #d4ff80;
+}
+body.modo-noche .credits-section .section-sub {
+  color: #a8bba8;
+}
+body.modo-noche .credit-card {
+  background: #1a231a;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  border-top-color: #7cb342;
+}
+body.modo-noche .credit-card:hover {
+  background: #202b20;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+body.modo-noche .credit-badge {
+  background: rgba(212, 255, 128, 0.12);
+  color: #d4ff80;
+}
+body.modo-noche .credit-logo,
+body.modo-noche .credit-photo {
+  background: #232e23;
+  border-color: #3a4a3a;
+}
+body.modo-noche .credit-photo {
+  border-color: #7cb342;
+  box-shadow: 0 0 0 5px rgba(212, 255, 128, 0.1);
+}
+body.modo-noche .credit-logo.sin-imagen::before,
+body.modo-noche .credit-photo.sin-imagen::before {
+  color: #6d806d;
+}
+body.modo-noche .credit-card h3 {
+  color: #c5e1a5;
+}
+body.modo-noche .credit-card p {
+  color: #b8c8b8;
+}
+
+/* =============================================
+RESPONSIVO - APOYOS Y CRÉDITOS
+============================================= */
+@media (max-width: 768px) {
+  .credits-section h2 { font-size: 2rem; }
+  .grid-credits { grid-template-columns: 1fr; }
+}
+
+/* Iconos como imagen (mismo tamaño que los emojis) */
+img.tool-icon {
+  width: 9.8rem;
+  height: 4.8rem;
+  object-fit: contain;
+  margin-bottom: 20px;
+  display: block;
+}
+img.step-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  object-fit: contain;
+  margin: 15px auto;
+  display: block;
+}
