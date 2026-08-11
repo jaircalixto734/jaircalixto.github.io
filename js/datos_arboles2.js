@@ -719,7 +719,7 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
 "caracaro": {
     id: "#JBP-07", tipo: "Nativo", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
     familia: "Fabaceae", origen: "Nativo Neotrópico (México–Sudamérica)", estado: "LC — Preocupación Menor (UICN)", exotica: false,
-    carbono: 285.6, viajes: 92, imagen_portada: "./imagenes/colegio1.jpeg",
+    carbono: 285.6, viajes: 92, imagen_portada: "./imagenes/caracaro1.jpeg",
     galeria: [
         { img: "./imagenes/caracaro1.jpeg", desc: "Árbol Completo" },
         { img: "./imagenes/caracaro2.jpeg", desc: "Hojas" },
@@ -1239,11 +1239,11 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
 "trompillo": {
     id: "#JBP-11", tipo: "Nativo", nombre: "Trompillo", cientifico: "Guarea guidonia (L.) Sleumer",
     familia: "Meliaceae", origen: "Nativa Neotrópico — Desde Cuba hasta Argentina", estado: "LC — Preocupación Menor (UICN 2021)", exotica: false,
-    carbono: 185.3, viajes: 62, imagen_portada: "./imagenes/colegio1.jpeg",
+    carbono: 185.3, viajes: 62, imagen_portada: "./imagenes/trompillo1.jpeg",
     galeria: [
-        { img: "./imagenes/colegio1.jpeg", desc: "Árbol de Trompillo en bosque de galería del Casanare" },
-        { img: "./imagenes/foto2.jpeg", desc: "Hojas paripinnadas con crecimiento apical indefinido característico" },
-        { img: "./imagenes/foto3.jpeg", desc: "Frutos capsulares anaranjados con semillas rojas" }
+        { img: "./imagenes/trompillo1.jpeg", desc: "" },
+        { img: "./imagenes/trompillo2.jpeg", desc: "" },
+        { img: "./imagenes/foto.jpeg", desc: "" }
     ],
     nombresLocales: ["Trompillo", "Palo de Tigre", "Guaraguao", "Requia", "Bailador", "Cedrillo", "Sambocedro"],
     distribucion: `
@@ -1967,14 +1967,17 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
 "saman": {
     id: "#JBP-17", tipo: "Nativo", nombre: "Samán", cientifico: "Samanea saman (Jacq.) Merr.",
     familia: "Fabaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN)", exotica: false,
-    carbono: 0.285, viajes: 104, imagen_portada: "./imagenes/saman1.jpeg",
+    carbono: 0.285, viajes: 104, imagen_portada: "./imagenes/saman9.jpeg",
     galeria: [
         { img: "./imagenes/saman1.jpeg", desc: "" },
         { img: "./imagenes/saman2.jpeg", desc: "" },
         { img: "./imagenes/saman3.jpeg", desc: "" },
         { img: "./imagenes/saman4.jpeg", desc: "" },
         { img: "./imagenes/saman5.jpeg", desc: "" },
-        { img: "./imagenes/saman6.jpeg", desc: "" }
+        { img: "./imagenes/saman6.jpeg", desc: "" },
+        { img: "./imagenes/saman7.jpeg", desc: "" },
+        { img: "./imagenes/saman8.jpeg", desc: "" },
+        { img: "./imagenes/saman9.jpeg", desc: "" }
     ],
     nombresLocales: ["Samán", "Campano", "Árbol de la lluvia", "Dormilón", "Cenízaro", "Genízaro", "Algarrobillo", "Samaguare", "Rain tree", "Monkeypod"],
     distribucion: `
@@ -2224,16 +2227,11 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
 "mamoncillo": {
     id: "#JBP-19", tipo: "Nativo", nombre: "Mamoncillo", cientifico: "Melicoccus bijugatus Jacq.",
     familia: "Sapindaceae", origen: "Nativo norte de Suramérica — Orinoquía colombo-venezolana", estado: "LC — Preocupación Menor (UICN, 2020)", exotica: false,
-    carbono: 0.312, viajes: 114, imagen_portada: "./imagenes/mamoncillo1.jpeg",
+    carbono: 0.312, viajes: 114, imagen_portada: "./imagenes/mamoncillo.jpeg",
     galeria: [
-        { img: "./imagenes/mamoncillo1.jpeg", desc: "Racimos de frutos maduros" },
-        { img: "./imagenes/mamoncillo2.jpeg", desc: "Árbol adulto en potrero llanero" },
-        { img: "./imagenes/mamoncillo3.jpeg", desc: "Hojas bijugadas (2 pares de folíolos)" },
-        { img: "./imagenes/mamoncillo4.jpeg", desc: "Detalle de flores blanco-verdosas" },
-        { img: "./imagenes/mamoncillo5.jpeg", desc: "Fruto abierto mostrando pulpa gelatinosa" },
-        { img: "./imagenes/mamoncillo6.jpeg", desc: "Semilla tostada (uso tradicional)" },
-        { img: "./imagenes/mamoncillo7.jpeg", desc: "Copa densa de sombra" },
-        { img: "./imagenes/mamoncillo8.jpeg", desc: "Corteza grisácea lisa" }
+        { img: "./imagenes/mamoncillo.jpeg", desc: "" },
+        { img: "./imagenes/mamoncillo2.jpeg", desc: "" },
+        { img: "./imagenes/mamoncillo3.jpeg", desc: "" }
     ],
     nombresLocales: ["Mamoncillo", "Mamón", "Macao", "Quenepa", "Guinep", "Spanish lime", "Huaya"],
     distribucion: `
