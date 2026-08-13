@@ -3,23 +3,30 @@
 <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description"
         content="Silvain AI - Tu tutor botánico inteligente para explorar la biodiversidad de Maní.">
+    <meta name="theme-color" content="#2d5a27">
     <title>Chatbot IA - SILVAIN JBP</title>
+
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/pages/ia-chatbot.css">
+
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Markdown + sanitización + highlighting (CDN, lazy-cargados en JS) -->
 </head>
 
 <body class="ai-app-body">
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR (sin cambios, main.js lo controla) -->
     <nav class="navbar">
         <div class="nav-brand">
             <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
@@ -45,62 +52,162 @@
     <!-- INTERFAZ TIPO CHATGPT -->
     <main class="ai-workspace">
 
-        <!-- Área donde aparecen los mensajes -->
-        <div class="ai-chat-container" id="chatWindow">
+        <!-- ====== SIDEBAR DE CONVERSACIONES ====== -->
+        <aside class="ai-sidebar" id="aiSidebar" aria-label="Historial de conversaciones">
+            <div class="ai-sidebar-header">
+                <button class="ai-new-chat-btn" id="newChatBtn" title="Nueva conversación (Ctrl + K)">
+                    <i class="fas fa-plus"></i>
+                    <span>Nueva conversación</span>
+                </button>
+                <button class="ai-sidebar-close" id="sidebarClose" title="Cerrar" aria-label="Cerrar panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
 
-            <!-- Pantalla de Bienvenida -->
-            <div class="ai-welcome-screen" id="welcomeScreen">
-                <div class="ai-logo-large">
-                    <img src="./imagenes/logoAI.jpeg" alt="Silvain AI Logo" loading="lazy">
+            <div class="ai-sidebar-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="convSearch" placeholder="Buscar conversación..." autocomplete="off">
+            </div>
+
+            <div class="ai-conversation-list" id="convList">
+                <!-- Las conversaciones se inyectan dinámicamente -->
+            </div>
+
+            <div class="ai-sidebar-footer">
+                <div class="ai-stat-pill" title="Mensajes en la conversación actual">
+                    <i class="fas fa-comments"></i>
+                    <span id="msgCount">0</span>
                 </div>
-                <h2>Hola, soy Silvain AI</h2>
-                <p>Tu tutor ambiental. ¿En qué te puedo ayudar hoy con el inventario del colegio Jesús Bernal Pinzón?
-                </p>
+                <div class="ai-stat-pill" title="Especies en el inventario JBP">
+                    <i class="fas fa-tree"></i>
+                    <span id="treeCount">—</span>
+                </div>
+                <button class="ai-stat-pill ai-export-btn" id="exportBtn" title="Exportar conversación actual">
+                    <i class="fas fa-file-export"></i>
+                    <span>Exportar</span>
+                </button>
+            </div>
+        </aside>
 
-                <div class="ai-suggestions">
-                    <button class="suggestion-chip"
-                        onclick="setQuickQuestion('¿Cómo se calcula la biomasa de un árbol?')">¿Cómo se calcula la
-                        biomasa de un árbol?</button>
-                    <button class="suggestion-chip"
-                        onclick="setQuickQuestion('Dime características del Flor Amarillo')">Dime características del
-                        Flor Amarillo</button>
-                    <button class="suggestion-chip"
-                        onclick="setQuickQuestion('¿Qué son los servicios ecosistémicos?')">¿Qué son los servicios
-                        ecosistémicos?</button>
-                    <button class="suggestion-chip"
-                        onclick="setQuickQuestion('Explícame el secuestro de carbono')">Explícame el secuestro de
-                        carbono</button>
+        <!-- Overlay para móvil cuando el sidebar está abierto -->
+        <div class="ai-sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- ====== ÁREA PRINCIPAL DEL CHAT ====== -->
+        <section class="ai-main">
+
+            <!-- Toolbar superior -->
+            <header class="ai-topbar">
+                <button class="ai-icon-btn ai-sidebar-toggle" id="sidebarToggle" title="Ver conversaciones" aria-label="Abrir panel lateral">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="ai-current-title" id="currentTitle">
+                    <i class="fas fa-leaf"></i>
+                    <span>Silvain AI</span>
+                </div>
+
+                <div class="ai-topbar-actions">
+                    <div class="ai-status-pill" id="statusPill" title="Estado de la conexión">
+                        <span class="ai-status-dot" id="statusDot"></span>
+                        <span id="statusText">Listo</span>
+                    </div>
+                    <button class="ai-icon-btn" id="readAloudToggleBtn" title="Activar lectura en voz alta" aria-pressed="false">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <button class="ai-icon-btn" id="clearChatBtn" title="Limpiar conversación actual">
+                        <i class="fas fa-broom"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Área donde aparecen los mensajes -->
+            <div class="ai-chat-container" id="chatWindow">
+
+                <!-- Pantalla de Bienvenida -->
+                <div class="ai-welcome-screen" id="welcomeScreen">
+                    <div class="ai-logo-large">
+                        <img src="./imagenes/logoAI.jpeg" alt="Silvain AI Logo" loading="lazy">
+                    </div>
+                    <h2>Hola, soy <span class="ai-brand">Silvain AI</span></h2>
+                    <p>Tu tutor ambiental del Jesús Bernal Pinzón. Pregúntame sobre los árboles del colegio, sus servicios ecosistémicos, captura de carbono y mucho más.</p>
+
+                    <!-- Categorías de prompts rápidos -->
+                    <div class="ai-prompt-categories" id="promptCategories">
+                        <button class="ai-cat-tab active" data-cat="all">
+                            <i class="fas fa-grip"></i> Todos
+                        </button>
+                        <button class="ai-cat-tab" data-cat="arboles">
+                            <i class="fas fa-tree"></i> Árboles
+                        </button>
+                        <button class="ai-cat-tab" data-cat="carbono">
+                            <i class="fas fa-cloud"></i> Carbono
+                        </button>
+                        <button class="ai-cat-tab" data-cat="ecosistema">
+                            <i class="fas fa-mountain"></i> Ecosistema
+                        </button>
+                        <button class="ai-cat-tab" data-cat="identificar">
+                            <i class="fas fa-search-location"></i> Identificar
+                        </button>
+                    </div>
+
+                    <div class="ai-suggestions" id="suggestionsGrid">
+                        <!-- Sugerencias inyectadas por JS según la categoría -->
+                    </div>
+
+                    <div class="ai-capabilities">
+                        <div class="ai-cap"><i class="fas fa-database"></i> Conoce el inventario forestal completo</div>
+                        <div class="ai-cap"><i class="fas fa-language"></i> Habla español natural</div>
+                        <div class="ai-cap"><i class="fas fa-microphone"></i> Puedes hablarle en voz</div>
+                        <div class="ai-cap"><i class="fas fa-file-export"></i> Exporta tus conversaciones</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Barra de escritura -->
-        <div class="ai-input-wrapper">
-            <form id="chatForm" class="ai-input-box">
-                <input type="text" id="userInput" placeholder="Pregúntale a Silvain AI..." autocomplete="off" required>
-                <button type="submit" id="sendBtn" title="Enviar mensaje">
-                    <i class="fas fa-arrow-up"></i>
-                </button>
-            </form>
-            <small class="ai-disclaimer">Silvain AI usa tecnología de Google Gemini. Verifica datos críticos.</small>
-        </div>
+            <!-- Botón para volver al final del chat -->
+            <button class="ai-scroll-bottom-btn" id="scrollBottomBtn" title="Ir al último mensaje" aria-label="Bajar al final">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+
+            <!-- Barra de escritura -->
+            <div class="ai-input-wrapper">
+                <div class="ai-input-box" id="inputBox">
+                    <button class="ai-input-action" id="voiceBtn" title="Hablar (voz a texto)" aria-label="Entrada por voz">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <textarea id="userInput" placeholder="Pregúntale a Silvain AI...  (Enter para enviar, Shift+Enter para salto de línea)" rows="1" autocomplete="off"></textarea>
+                    <button class="ai-input-action" id="stopBtn" title="Detener generación" aria-label="Detener" hidden>
+                        <i class="fas fa-stop"></i>
+                    </button>
+                    <button type="submit" id="sendBtn" title="Enviar mensaje" aria-label="Enviar">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+                <div class="ai-input-meta">
+                    <small class="ai-disclaimer">Silvain AI usa tecnología de Google Gemini · Verifica datos críticos con tu docente.</small>
+                    <small class="ai-counter" id="charCounter">0 / 2000</small>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <!-- Botón Flotante de Tema -->
+    <!-- Botón Flotante de Tema (controlado por main.js) -->
     <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
         <i class="fas fa-moon"></i>
     </button>
 
+    <!-- Toast de notificaciones -->
+    <div class="ai-toast-container" id="toastContainer" aria-live="polite"></div>
 
+    <!-- Fuente de datos del inventario -->
     <script src="datos_arboles.js"></script>
 
-    <!-- Lógica del Chatbot IA -->
+    <!-- Lógica del Chatbot IA (mejorada) -->
     <script src="js/ia-chatbot.js"></script>
 
-    <!-- Lógica Global -->
+    <!-- Lógica Global (navbar, tema, etc.) -->
     <script src="js/main.js"></script>
-    
+
 </body>
 
 </html>
