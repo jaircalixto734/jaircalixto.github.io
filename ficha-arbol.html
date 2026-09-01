@@ -42,7 +42,7 @@
     <main class="premium-layout">
         
         <!-- ENCABEZADO PRINCIPAL -->
-        <div class="ficha-header-pro">
+        <div class="ficha-header-pro reveal-up">
             <div class="header-logo-container" style="display: flex; align-items: center; gap: 20px;">
                 <img src="./imagenes/logojbp1.png" alt="Logo JBP" style="height: 80px; width: auto; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));">
                 <div class="ficha-titles">
@@ -60,19 +60,19 @@
         </div>
 
         <!-- SELECTOR DE MODO DE LECTURA -->
-        <div style="background: linear-gradient(135deg, rgba(129, 182, 34, 0.1) 0%, rgba(129, 182, 34, 0.05) 100%); border-radius: 20px; padding: 25px; margin-bottom: 40px; border: 2px solid var(--primary-light); text-align: center;">
+        <div class="reveal-up" style="background: linear-gradient(135deg, rgba(129, 182, 34, 0.1) 0%, rgba(129, 182, 34, 0.05) 100%); border-radius: 20px; padding: 25px; margin-bottom: 40px; border: 2px solid var(--primary-light); text-align: center;">
             <h4 style="color: var(--secondary-color); font-weight: 800; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
                 <i class="fas fa-book-open"></i> Selecciona el tipo de información
             </h4>
             <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <button id="btnCientifica" onclick="cargarModo('cientifica')" style="flex: 1; min-width: 250px; max-width: 350px; padding: 20px 30px; border-radius: 15px; border: 2px solid var(--primary-light); background: var(--card-bg); color: var(--text-main); cursor: pointer; transition: all 0.3s ease; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                <button id="btnCientifica" onclick="cargarModo('cientifica')" style="flex: 1; min-width: 250px; max-width: 350px; padding: 20px 30px; border-radius: 15px; border: 2px solid var(--primary-light); background: var(--card-bg); color: var(--text-main); cursor: pointer; transition: all 0.3s ease; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 12px; font-family: Poppins, sans-serif;">
                     <i class="fas fa-flask" style="font-size: 1.5rem; color: var(--m2-color);"></i>
                     <div>
                         <div style="text-transform: uppercase; letter-spacing: 0.5px;">Información Científica</div>
                         <div style="font-size: 0.8rem; font-weight: 400; opacity: 0.8; margin-top: 5px;">Lenguaje botánico técnico</div>
                     </div>
                 </button>
-                <button id="btnEducativa" onclick="cargarModo('educativa')" style="flex: 1; min-width: 250px; max-width: 350px; padding: 20px 30px; border-radius: 15px; border: 2px solid #e67e22; background: var(--card-bg); color: var(--text-main); cursor: pointer; transition: all 0.3s ease; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                <button id="btnEducativa" onclick="cargarModo('educativa')" style="flex: 1; min-width: 250px; max-width: 350px; padding: 20px 30px; border-radius: 15px; border: 2px solid #e67e22; background: var(--card-bg); color: var(--text-main); cursor: pointer; transition: all 0.3s ease; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 12px; font-family: Poppins, sans-serif;">
                     <i class="fas fa-graduation-cap" style="font-size: 1.5rem; color: #e67e22;"></i>
                     <div>
                         <div style="text-transform: uppercase; letter-spacing: 0.5px;">Información Educativa</div>
@@ -86,7 +86,7 @@
         </div>
 
         <!-- SECCIÓN 1: SILVAIN HABLA -->
-        <div class="sylvain-chat-box">
+        <div class="sylvain-chat-box reveal-up">
             <h4><i class="fas fa-tree"></i> Árbol habla — para los estudiantes</h4>
             <div class="sylvain-chat-text" id="fichaMensajeIA">
                 "Hola, soy Silvain. Estoy analizando los datos de este ejemplar para contarte su historia..."
@@ -94,13 +94,13 @@
         </div>
 
         <!-- SECCIÓN 2: GALERÍA FOTOGRÁFICA -->
-        <h4 class="section-title-pro"><i class="fas fa-images"></i> Galería Fotográfica del Árbol</h4>
-        <div class="gallery-scroll-container" id="galeriaArbol" style="margin-bottom: 40px;">
+        <h4 class="section-title-pro reveal-up"><i class="fas fa-images"></i> Galería Fotográfica del Árbol</h4>
+        <div class="gallery-scroll-container reveal-up" id="galeriaArbol" style="margin-bottom: 40px;">
             <!-- Renderizado Dinámico -->
         </div>
 
         <!-- MÓDULO 1: TAXONOMÍA Y CONSERVACIÓN -->
-        <div class="dossier-module m1">
+        <div class="dossier-module m1 reveal-up">
             <div class="module-header-pro">
                 <i class="fas fa-dna"></i>
                 <span class="module-title-pro">Módulo 1: Taxonomía y Conservación</span>
@@ -132,16 +132,16 @@
         </div>
 
         <!-- ALERTA EXÓTICA -->
-        <div id="alertaExotica" class="exotic-banner-pro" style="display: none;">
+        <div id="alertaExotica" class="exotic-banner-pro reveal-up" style="display: none;">
             <i class="fas fa-exclamation-triangle" style="font-size: 2rem;"></i>
             <div>
-                <strong>⚠️ Especie Introducida / Exótica:</strong>
+                <strong>Especie Introducida / Exótica:</strong>
                 Este árbol no es originario de Colombia. Su presencia se debe a la introducción humana para fines ornamentales o productivos.
             </div>
         </div>
 
         <!-- MÓDULO 2: BIOMETRÍA Y ALOMETRÍA -->
-        <div class="dossier-module m2">
+        <div class="dossier-module m2 reveal-up">
             <div class="module-header-pro">
                 <i class="fas fa-calculator"></i>
                 <span class="module-title-pro">Módulo 2: Biometría y Alometría</span>
@@ -159,7 +159,7 @@
                 </div>
                 <div class="mt-4">
                     <div class="section-label">Motor de Cálculo de Carbono</div>
-                    <div class="alometry-box" id="dAlometria" style="font-family: 'Courier New', monospace; background: #000; color: #0f0; padding: 20px; border-radius: 10px;">
+                    <div id="dAlometria" class="section-val">
                         Cargando ecuación científica...
                     </div>
                 </div>
@@ -178,7 +178,7 @@
         </div>
 
         <!-- MÓDULO 3: MORFOLOGÍA Y CALENDARIO FENOLÓGICO -->
-        <div class="dossier-module m3">
+        <div class="dossier-module m3 reveal-up">
             <div class="module-header-pro">
                 <i class="fas fa-leaf"></i>
                 <span class="module-title-pro">Módulo 3: Morfología y Calendario Fenológico</span>
@@ -201,7 +201,7 @@
         </div>
 
         <!-- MÓDULO 4: FAUNA ASOCIADA Y ETNOBOTÁNICA LLANERA -->
-        <div class="dossier-module m4">
+        <div class="dossier-module m4 reveal-up">
             <div class="module-header-pro">
                 <i class="fas fa-horse"></i>
                 <span class="module-title-pro">Módulo 4: Fauna Asociada y Etnobotánica</span>
@@ -216,7 +216,7 @@
         </div>
 
         <!-- RETO DE CONOCIMIENTO INTERACTIVO -->
-        <div class="quiz-premium-container">
+        <div class="quiz-premium-container reveal-up">
             <div class="quiz-title-pro">
                 <i class="fas fa-trophy" style="font-size: 3rem; color: #f1c40f; margin-bottom: 10px;"></i>
                 <h2>Reto de Conocimiento Botánico</h2>
@@ -227,8 +227,8 @@
             </div>
         </div>
 
-        <!-- REFERENCIAS APA 7 (ACCORDEON) -->
-        <details class="ref-accordion">
+        <!-- REFERENCIAS APA 7 (ACCORDION) -->
+        <details class="ref-accordion reveal-up">
             <summary class="ref-summary">
                 <span><i class="fas fa-book"></i> Referencias Bibliográficas (APA 7)</span>
                 <i class="fas fa-chevron-down"></i>
@@ -257,82 +257,65 @@
     <script src="js/datos_arboles.js" charset="UTF-8"></script>
     <script src="js/datos_arboles2.js" charset="UTF-8"></script>
     <script src="js/gamificacion.js"></script>
+    <script src="js/ficha-interactiva.js" charset="UTF-8"></script>
     <script> 
         const urlParams = new URLSearchParams(window.location.search);
-    const arbolParam = urlParams.get('arbol') || 'merecure';
-    
-    // Detectar si el acceso es mediante código QR
-    const esQRCode = arbolParam.endsWith('-qrcode');
-    
-    // Extraer el nombre real del árbol (sin el sufijo -qrcode)
-    const arbolSeleccionado = esQRCode ? arbolParam.replace('-qrcode', '') : arbolParam;
-    
-    // Variables globales para los datos
-    let datosCientificos = baseDatosArboles[arbolSeleccionado];
-    let datosEducativos = baseDatosArbolesEducativa ? baseDatosArbolesEducativa[arbolSeleccionado] : null;
-    let modoActual = 'cientifica';
-    
-    // Función para mostrar banner de acceso QR (animado, aparece y desaparece en 2 segundos)
-    function mostrarBannerQR() {
-        if (esQRCode) {
-            const bannerQR = document.createElement('div');
-            bannerQR.id = 'bannerQRCode';
-            bannerQR.style.cssText = `
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 15px 25px;
-                text-align: center;
-                font-weight: 600;
-                font-size: 0.95rem;
-                border-radius: 0 0 20px 20px;
-                margin-bottom: 20px;
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-                opacity: 0;
-                transform: translateY(-20px);
-                transition: opacity 0.5s ease, transform 0.5s ease;
-                z-index: 1000;
-                position: relative;
-            `;
-            bannerQR.innerHTML = '<i class="fas fa-qrcode"></i> Acceso mediante Código QR — Bienvenido(a)';
-            
-            // Insertar al inicio del body después de ficha-body
-            document.querySelector('.ficha-body').insertBefore(bannerQR, document.querySelector('.ficha-body').firstChild.nextSibling);
-            
-            // Animación de entrada
-            setTimeout(() => {
-                bannerQR.style.opacity = '1';
-                bannerQR.style.transform = 'translateY(0)';
-            }, 100);
-            
-            // Animación de salida después de 2 segundos
-            setTimeout(() => {
-                bannerQR.style.opacity = '0';
-                bannerQR.style.transform = 'translateY(-20px)';
-                // Eliminar el banner después de la animación
-                setTimeout(() => {
-                    bannerQR.remove();
-                }, 500);
-            }, 2000);
-        }
-    }
-    
+        const arbolParam = urlParams.get('arbol') || 'merecure';
+        const esQRCode = arbolParam.endsWith('-qrcode');
+        const arbolSeleccionado = esQRCode ? arbolParam.replace('-qrcode', '') : arbolParam;
         
-        // Función para cargar el modo seleccionado
+        let datosCientificos = baseDatosArboles[arbolSeleccionado];
+        let datosEducativos = baseDatosArbolesEducativa ? baseDatosArbolesEducativa[arbolSeleccionado] : null;
+        let modoActual = 'cientifica';
+        
+        function mostrarBannerQR() {
+            if (esQRCode) {
+                const bannerQR = document.createElement('div');
+                bannerQR.id = 'bannerQRCode';
+                bannerQR.style.cssText = `
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 15px 25px;
+                    text-align: center;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    border-radius: 0 0 20px 20px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                    opacity: 0;
+                    transform: translateY(-20px);
+                    transition: opacity 0.5s ease, transform 0.5s ease;
+                    z-index: 1000;
+                    position: relative;
+                `;
+                bannerQR.innerHTML = '<i class="fas fa-qrcode"></i> Acceso mediante Código QR — Bienvenido(a)';
+                document.querySelector('.ficha-body').insertBefore(bannerQR, document.querySelector('.ficha-body').firstChild.nextSibling);
+                setTimeout(() => {
+                    bannerQR.style.opacity = '1';
+                    bannerQR.style.transform = 'translateY(0)';
+                }, 100);
+                setTimeout(() => {
+                    bannerQR.style.opacity = '0';
+                    bannerQR.style.transform = 'translateY(-20px)';
+                    setTimeout(() => bannerQR.remove(), 500);
+                }, 2000);
+            }
+        }
+        
         function cargarModo(modo) {
             modoActual = modo;
             const datos = modo === 'cientifica' ? datosCientificos : datosEducativos;
             
             if(!datos) {
-                alert('Lo sentimos, la información educativa aún no está disponible para este árbol. Mostrando información científica.');
+                if(window.showNotification) window.showNotification('La información educativa aún no está disponible para este árbol. Se mostrará la información científica.', 'warning');
+                else alert('Lo sentimos, la información educativa aún no está disponible para este árbol. Mostrando información científica.');
                 modoActual = 'cientifica';
                 return;
             }
             
-            // Actualizar indicador de modo
             const modoActualDiv = document.getElementById('modoActual');
             modoActualDiv.innerHTML = `<i class="fas fa-info-circle"></i> Modo actual: <strong style="color: ${modo === 'cientifica' ? 'var(--primary-light)' : '#e67e22'};">${modo === 'cientifica' ? 'Científica' : 'Educativa'}</strong>`;
             
-            // Actualizar botones
             const btnCientifica = document.getElementById('btnCientifica');
             const btnEducativa = document.getElementById('btnEducativa');
             
@@ -348,11 +331,27 @@
                 btnCientifica.style.background = 'var(--card-bg)';
             }
             
-            // Cargar datos según el modo
-            cargarDatosEnFicha(datos);
+            // Re-initiar animaciones
+            if (window.transitionMode) {
+                window.transitionMode(function() {
+                    cargarDatosEnFicha(datos);
+                    if (window.initScrollReveal) window.initScrollReveal();
+                    if (window.initCounters) window.initCounters();
+                    if (window.initTypingEffect) window.initTypingEffect();
+                    if (window.initGalleryNav) window.initGalleryNav();
+                    if (window.initTiltCards) window.initTiltCards();
+                    if (window.initQuizEnhanced) window.initQuizEnhanced();
+                    if (window.initMicroInteractions) window.initMicroInteractions();
+                    if (window.initSideNav) window.initSideNav();
+                });
+            } else {
+                cargarDatosEnFicha(datos);
+                if (window.initScrollReveal) window.initScrollReveal();
+                if (window.initCounters) window.initCounters();
+                if (window.initTypingEffect) window.initTypingEffect();
+            }
         }
         
-        // Función para cargar datos en la ficha
         function cargarDatosEnFicha(datos) {
             document.title = `${datos.nombre} - Dossier SILVAIN JBP`;
             document.getElementById('fichaId').textContent = datos.id;
@@ -419,15 +418,14 @@
                 });
                 quizCont.innerHTML += `
                     <div class="quiz-card-pro">
-                        <p style="font-weight:700; margin-bottom:15px; font-size:1.1rem;">${qIdx + 1}. ${p.q}</p>
+                        <p style="font-weight:700; margin-bottom:15px; font-size:1.05rem; overflow-wrap:break-word; word-break:break-word;">${qIdx + 1}. ${p.q}</p>
                         ${htmlOpts}
                         <div id="fb-q${qIdx}" class="mt-3" style="font-weight:600;"></div>
                     </div>`;
             });
             
-            // Actualizar botón de audio con nuevo mensaje
             const btnAudio = document.getElementById('btnAudio');
-            btnAudio.onclick = null; // Remover listener anterior
+            btnAudio.onclick = null;
             btnAudio.addEventListener('click', () => {
                 if ('speechSynthesis' in window) {
                     const loc = new SpeechSynthesisUtterance(datos.mensajeIA); loc.lang = 'es-CO';
@@ -438,22 +436,14 @@
         }
 
         if(datosCientificos) {
-            // Cargar datos científicos por defecto
             cargarDatosEnFicha(datosCientificos);
-            
-            // Mostrar banner QR si aplica
             mostrarBannerQR();
-            
-            // Configurar estado inicial de botones
             const btnCientifica = document.getElementById('btnCientifica');
-            const btnEducativa = document.getElementById('btnEducativa');
             btnCientifica.style.borderColor = 'var(--primary-light)';
             btnCientifica.style.background = 'rgba(129, 182, 34, 0.15)';
         }
 
         const themeToggle = document.getElementById('themeToggle');
-        
-        // Cargar estado inicial
         const savedTheme = localStorage.getItem('ecoTheme');
         if(savedTheme === 'dark') {
             document.body.classList.add('modo-noche');
