@@ -310,6 +310,29 @@
     color: white;
 }
 
+/* --- BOTÓN QR PARA GAMIFICACIÓN --- */
+.btn-tree.qr-link {
+    padding: 10px;
+    min-width: auto;
+    margin-left: 8px;
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-tree.qr-link i {
+    margin-right: 0;
+    color: #fff;
+}
+
+.btn-tree.qr-link:hover {
+    background: #81b622;
+    border-color: #81b622;
+}
+
+.btn-tree.qr-link:hover i {
+    color: white;
+}
+
 /* --- MENSAJE "SIN RESULTADOS" --- */
 .no-results-msg {
     text-align: center;

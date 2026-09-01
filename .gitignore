@@ -1,1 +1,1 @@
-(css/pages/gamificacion.css, js/gamificacion.js)
+Nothing needs to be added to .gitignore since the changes only include source files (.js, .html, .css) and no build artifacts, dependencies, or temporary files.
