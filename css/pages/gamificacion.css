@@ -501,3 +501,254 @@
         font-size: 1.4rem;
     }
 }
+
+/* =============================================
+   RESPONSIVE MEJORADO - TABLET Y MÓVIL
+   ============================================= */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .gamification-container {
+        padding: 30px 20px;
+    }
+    
+    .medal-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .medal-body {
+        width: 85px;
+        height: 85px;
+    }
+    
+    .medals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 15px;
+    }
+    
+    .progress-section h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet pequeña / Móvil grande (max-width: 768px) */
+@media (max-width: 768px) {
+    .gamification-container {
+        padding: 25px 15px;
+    }
+    
+    .progress-section {
+        margin-bottom: 25px;
+    }
+    
+    .progress-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .level-display {
+        padding: 20px;
+    }
+    
+    .level-number {
+        font-size: 2rem;
+    }
+    
+    .level-label {
+        font-size: 0.9rem;
+    }
+    
+    .xp-bar-container {
+        height: 10px;
+    }
+    
+    .medal-container {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .medal-body {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .medal-inner {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+    
+    .medals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 12px;
+    }
+    
+    .achievements-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .achievement-card {
+        padding: 20px;
+    }
+    
+    .achievement-icon {
+        font-size: 3rem;
+    }
+    
+    .achievement-title {
+        font-size: 1.2rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móvil mediano (max-width: 480px) */
+@media (max-width: 480px) {
+    .gamification-container {
+        padding: 20px 12px;
+    }
+    
+    .progress-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .level-display {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .level-number {
+        font-size: 1.8rem;
+    }
+    
+    .level-label {
+        font-size: 0.85rem;
+    }
+    
+    .xp-bar-container {
+        height: 8px;
+        border-radius: 4px;
+    }
+    
+    .xp-bar-fill {
+        border-radius: 4px;
+    }
+    
+    .medal-container {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .medal-body {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .medal-inner {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+    
+    .medal-ribbon {
+        width: 35px;
+        height: 22px;
+        top: -15px;
+    }
+    
+    .medals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+        gap: 10px;
+    }
+    
+    .achievement-card {
+        padding: 18px 15px;
+        border-radius: 12px;
+    }
+    
+    .achievement-icon {
+        font-size: 2.5rem;
+    }
+    
+    .achievement-title {
+        font-size: 1.1rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.8rem;
+    }
+    
+    .achievement-xp {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}
+
+/* Móvil pequeño (max-width: 360px) */
+@media (max-width: 360px) {
+    .gamification-container {
+        padding: 18px 10px;
+    }
+    
+    .progress-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .level-display {
+        padding: 12px;
+    }
+    
+    .level-number {
+        font-size: 1.5rem;
+    }
+    
+    .level-label {
+        font-size: 0.8rem;
+    }
+    
+    .medal-container {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .medal-body {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .medal-inner {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .medal-ribbon {
+        width: 30px;
+        height: 18px;
+        top: -12px;
+    }
+    
+    .medals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+        gap: 8px;
+    }
+    
+    .achievement-card {
+        padding: 15px 12px;
+    }
+    
+    .achievement-icon {
+        font-size: 2rem;
+    }
+    
+    .achievement-title {
+        font-size: 1rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.75rem;
+    }
+}

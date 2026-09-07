@@ -1513,3 +1513,295 @@
 .modo-noche .warn-box em {
     color: #d4a84b;
 }
+
+/* =============================================
+   40. RESPONSIVE MEJORADO - TABLET Y MÓVIL
+   ============================================= */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .ficha-hero {
+        padding: 60px 15px 80px;
+    }
+    
+    .ficha-hero h2 {
+        font-size: 2rem;
+    }
+    
+    .tree-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .tree-main-info {
+        padding: 30px;
+    }
+    
+    .gallery-container {
+        max-height: 400px;
+    }
+}
+
+/* Tablet pequeña / Móvil grande (max-width: 768px) */
+@media (max-width: 768px) {
+    .ficha-hero {
+        padding: 50px 15px 60px;
+    }
+    
+    .ficha-hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .ficha-hero p {
+        font-size: 1rem;
+    }
+    
+    .tree-detail-grid {
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .tree-main-info {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    
+    .tree-main-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .scientific-name-large {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-container {
+        max-height: 350px;
+        border-radius: 15px;
+    }
+    
+    .section-ficha {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+    
+    .section-ficha h4 {
+        font-size: 1.2rem;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .info-label {
+        font-size: 0.85rem;
+    }
+    
+    .info-value {
+        font-size: 0.95rem;
+    }
+    
+    .btn-volver {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .taxonomia-badges {
+        flex-wrap: wrap;
+    }
+    
+    .taxo-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Móvil mediano (max-width: 480px) */
+@media (max-width: 480px) {
+    .ficha-hero {
+        padding: 40px 10px 50px;
+    }
+    
+    .ficha-hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .ficha-hero p {
+        font-size: 0.9rem;
+    }
+    
+    .tree-detail-grid {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .tree-main-info {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+    
+    .tree-main-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .scientific-name-large {
+        font-size: 1rem;
+    }
+    
+    .gallery-container {
+        max-height: 300px;
+        border-radius: 12px;
+    }
+    
+    .gallery-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .section-ficha {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+    }
+    
+    .section-ficha h4 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .info-row {
+        padding: 12px 0;
+    }
+    
+    .info-label {
+        font-size: 0.8rem;
+    }
+    
+    .info-value {
+        font-size: 0.9rem;
+    }
+    
+    .btn-volver {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+    
+    .taxonomia-badges {
+        gap: 8px;
+    }
+    
+    .taxo-badge {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    .uso-list li,
+    .cuidados-list li {
+        font-size: 0.85rem;
+        padding-left: 25px;
+    }
+    
+    .curiosidad-item {
+        padding: 15px;
+    }
+    
+    .curiosidad-icon {
+        font-size: 1.5rem;
+    }
+    
+    .curiosidad-text h5 {
+        font-size: 0.95rem;
+    }
+    
+    .curiosidad-text p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móvil pequeño (max-width: 360px) */
+@media (max-width: 360px) {
+    .ficha-hero {
+        padding: 30px 10px 40px;
+    }
+    
+    .ficha-hero h2 {
+        font-size: 1.3rem;
+    }
+    
+    .ficha-hero p {
+        font-size: 0.85rem;
+    }
+    
+    .tree-main-info {
+        padding: 15px 12px;
+    }
+    
+    .tree-main-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .scientific-name-large {
+        font-size: 0.9rem;
+    }
+    
+    .gallery-container {
+        max-height: 250px;
+    }
+    
+    .gallery-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .section-ficha {
+        padding: 15px 12px;
+    }
+    
+    .section-ficha h4 {
+        font-size: 1rem;
+    }
+    
+    .info-label {
+        font-size: 0.75rem;
+    }
+    
+    .info-value {
+        font-size: 0.85rem;
+    }
+    
+    .btn-volver {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+    
+    .taxo-badge {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    .uso-list li,
+    .cuidados-list li {
+        font-size: 0.8rem;
+        padding-left: 22px;
+    }
+    
+    .curiosidad-item {
+        padding: 12px;
+    }
+    
+    .curiosidad-icon {
+        font-size: 1.3rem;
+    }
+    
+    .curiosidad-text h5 {
+        font-size: 0.9rem;
+    }
+    
+    .curiosidad-text p {
+        font-size: 0.8rem;
+    }
+}
