@@ -952,3 +952,41 @@ CONTROLES DE TAMAÑO DE TEXTO
   }
 })();
 
+/* =============================================
+CORRECCIÓN POSICIÓN BOTÓN MODO NOCHE
+============================================= */
+(function () {
+  'use strict';
+
+  function fixThemeToggleButton() {
+    var btn = document.querySelector('.theme-toggle-btn');
+    if (!btn) return;
+
+    // Si el botón no está directamente en el body, lo movemos.
+    if (btn.parentElement !== document.body) {
+      document.body.appendChild(btn);
+    }
+
+    // Refuerzo de posición por si algún estilo pisa el CSS.
+    btn.style.position = 'fixed';
+    btn.style.right = '25px';
+    btn.style.bottom = '25px';
+    btn.style.zIndex = '1200';
+  }
+
+  function initThemeToggleFix() {
+    fixThemeToggleButton();
+
+    // Por si el botón tarda un poco en existir.
+    setTimeout(fixThemeToggleButton, 300);
+    setTimeout(fixThemeToggleButton, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggleFix);
+  } else {
+    initThemeToggleFix();
+  }
+
+  window.addEventListener('load', initThemeToggleFix);
+})();
