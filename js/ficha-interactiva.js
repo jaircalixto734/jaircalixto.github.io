@@ -841,3 +841,114 @@ if (cards[0].parentElement === quizContainer) {
     }
 
 })();
+
+
+/* =============================================
+CONTROLES DE TAMAÑO DE TEXTO
+============================================= */
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'jbpFichaFontScale';
+  var MIN = 0.85;
+  var MAX = 1.45;
+  var STEP = 0.1;
+  var scale = 1;
+
+  function clampScale(value) {
+    value = Math.round(value * 100) / 100;
+    return Math.min(MAX, Math.max(MIN, value));
+  }
+
+  function safeGetStoredScale() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function safeStoreScale(value) {
+    try {
+      localStorage.setItem(STORAGE_KEY, String(value));
+    } catch (error) {
+      // Si localStorage falla, la página sigue funcionando.
+    }
+  }
+
+  function updateButtons() {
+    var decreaseBtn = document.getElementById('fontDecrease');
+    var increaseBtn = document.getElementById('fontIncrease');
+    var resetBtn = document.getElementById('fontReset');
+
+    if (decreaseBtn) {
+      decreaseBtn.disabled = scale <= MIN + 0.001;
+    }
+
+    if (increaseBtn) {
+      increaseBtn.disabled = scale >= MAX - 0.001;
+    }
+
+    if (resetBtn) {
+      resetBtn.disabled = Math.abs(scale - 1) < 0.001;
+    }
+  }
+
+  function announceScale() {
+    var status = document.getElementById('fontSizeStatus');
+    if (status) {
+      status.textContent = 'Tamaño de letra: ' + Math.round(scale * 100) + '%';
+    }
+  }
+
+  function applyScale() {
+    // Variable CSS por si quieres usarla en futuros estilos.
+    document.documentElement.style.setProperty('--user-font-scale', String(scale));
+
+    // Cambio real del tamaño base. Funciona bien con estilos en rem.
+    document.documentElement.style.fontSize = Math.round(scale * 100) + '%';
+
+    safeStoreScale(scale);
+    updateButtons();
+    announceScale();
+  }
+
+  function initFontControls() {
+    var stored = parseFloat(safeGetStoredScale());
+    scale = isNaN(stored) ? 1 : clampScale(stored);
+
+    applyScale();
+
+    var decreaseBtn = document.getElementById('fontDecrease');
+    var increaseBtn = document.getElementById('fontIncrease');
+    var resetBtn = document.getElementById('fontReset');
+
+    if (decreaseBtn) {
+      decreaseBtn.addEventListener('click', function () {
+        scale = clampScale(scale - STEP);
+        applyScale();
+      });
+    }
+
+    if (increaseBtn) {
+      increaseBtn.addEventListener('click', function () {
+        scale = clampScale(scale + STEP);
+        applyScale();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        scale = 1;
+        applyScale();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFontControls);
+  } else {
+    initFontControls();
+  }
+})();
+
