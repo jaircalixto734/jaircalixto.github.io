@@ -13,7 +13,7 @@
 </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Dossier Botánico Profesional - Información técnica y pedagógica de la flora institucional.">
     <title>Dossier Botánico - SILVAIN JBP</title>
@@ -28,6 +28,13 @@
 </head>
 
 <body class="ficha-body">
+
+    <div class="text-size-controls" role="group" aria-label="Ajustes de tamaño de texto">
+  <button type="button" id="fontDecrease" aria-label="Reducir tamaño de letra">A−</button>
+  <button type="button" id="fontReset" aria-label="Restablecer tamaño de letra">A</button>
+  <button type="button" id="fontIncrease" aria-label="Aumentar tamaño de letra">A+</button>
+  <span id="fontSizeStatus" class="visually-hidden" role="status" aria-live="polite"></span>
+    </div>
 
     <!-- Botón Volver -->
     <a href="lista-arboles.html" class="btn-back">
@@ -239,6 +246,8 @@
                 </ul>
             </div>
         </details>
+
+        
 
     </main>
 
