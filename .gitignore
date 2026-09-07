@@ -1,1 +1,1 @@
-Nothing needs to be added to .gitignore since the changes only include source files (.js, .html, .css) and no build artifacts, dependencies, or temporary files.
+(css/pages/calculadora.css, css/pages/equipo.css, css/pages/ficha-arbol.css, css/pages/gamificacion.css, css/pages/ia-chatbot.css, inventario.css)

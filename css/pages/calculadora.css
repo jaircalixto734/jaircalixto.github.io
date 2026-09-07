@@ -493,3 +493,250 @@ body.modo-noche .equiv-value {
         font-size: 0.95rem;
     }
 }
+
+/* =============================================
+   RESPONSIVE MEJORADO - TABLET Y MÓVIL
+   ============================================= */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .calculadora-section {
+        padding: 50px 15px 80px;
+    }
+    
+    .calc-grid {
+        gap: 30px;
+    }
+    
+    .result-main-card {
+        padding: 30px;
+    }
+    
+    .result-value span:first-child {
+        font-size: 3rem;
+    }
+}
+
+/* Tablet pequeña / Móvil grande (max-width: 768px) */
+@media (max-width: 768px) {
+    .calculadora-section {
+        padding: 40px 15px 60px;
+    }
+    
+    .calc-header {
+        margin-bottom: 30px;
+    }
+    
+    .calc-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .calc-form-column {
+        padding: 25px 20px;
+    }
+    
+    .btn-calc {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .result-main-card {
+        padding: 25px 20px;
+    }
+    
+    .result-title {
+        font-size: 1rem;
+    }
+    
+    .result-value span:first-child {
+        font-size: 2.5rem;
+    }
+    
+    .result-unit {
+        font-size: 1rem;
+    }
+    
+    .result-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .equivalency-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .equiv-item {
+        padding: 15px;
+    }
+    
+    .equiv-icon {
+        font-size: 1.5rem;
+    }
+    
+    .equiv-text {
+        font-size: 0.85rem;
+    }
+    
+    .tutorial-grid {
+        gap: 20px;
+    }
+    
+    .tutorial-step {
+        padding: 20px;
+    }
+}
+
+/* Móvil mediano (max-width: 480px) */
+@media (max-width: 480px) {
+    .calculadora-section {
+        padding: 30px 10px 50px;
+    }
+    
+    .calc-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .calc-header p {
+        font-size: 0.9rem;
+    }
+    
+    .calc-form-column {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-calc {
+        padding: 14px;
+        font-size: 0.95rem;
+        border-radius: 12px;
+    }
+    
+    .result-main-card {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    .result-title {
+        font-size: 0.9rem;
+    }
+    
+    .result-value span:first-child {
+        font-size: 2rem;
+    }
+    
+    .result-unit {
+        font-size: 0.9rem;
+    }
+    
+    .result-subtitle {
+        font-size: 0.85rem;
+        margin-top: 10px;
+    }
+    
+    .equivalency-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .equiv-item {
+        padding: 12px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .equiv-icon {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+    
+    .equiv-text {
+        font-size: 0.8rem;
+    }
+    
+    .calc-procedimiento {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .proc-header h4 {
+        font-size: 0.9rem;
+    }
+    
+    .proc-lista li {
+        font-size: 0.75rem;
+        padding-left: 20px;
+    }
+    
+    .tutorial-step {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .step-number {
+        font-size: 1.2rem;
+    }
+    
+    .tutorial-step h5 {
+        font-size: 0.95rem;
+    }
+    
+    .tutorial-step p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móvil pequeño (max-width: 360px) */
+@media (max-width: 360px) {
+    .calculadora-section {
+        padding: 25px 10px 40px;
+    }
+    
+    .calc-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .calc-header p {
+        font-size: 0.85rem;
+    }
+    
+    .calc-form-column {
+        padding: 15px 12px;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-calc {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .result-main-card {
+        padding: 15px 12px;
+    }
+    
+    .result-value span:first-child {
+        font-size: 1.8rem;
+    }
+    
+    .equiv-text {
+        font-size: 0.75rem;
+    }
+    
+    .proc-lista li {
+        font-size: 0.7rem;
+    }
+}
