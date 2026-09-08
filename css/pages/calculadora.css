@@ -740,3 +740,61 @@ body.modo-noche .equiv-value {
         font-size: 0.7rem;
     }
 }
+
+
+
+/* =============================================
+AVISO DE ADVERTENCIA (CALCULADORA)
+============================================= */
+.calc-aviso {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.12), rgba(245, 158, 11, 0.08));
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-left: 5px solid #f59e0b;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+}
+
+.calc-aviso i {
+    font-size: 1.4rem;
+    color: #f59e0b;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.calc-aviso p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.calc-aviso strong {
+    color: #b45309;
+}
+
+/* Modo noche */
+body.modo-noche .calc-aviso {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(245, 158, 11, 0.05));
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+body.modo-noche .calc-aviso strong {
+    color: #fbbf24;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .calc-aviso {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+    .calc-aviso p {
+        font-size: 0.82rem;
+    }
+}
