@@ -758,7 +758,7 @@
     margin-bottom: 30px;
 }
 .quiz-title-pro i { font-size: 2.5rem; color: #f1c40f; margin-bottom: 8px; }
-.quiz-title-pro h2 { font-size: 1.6rem; margin-bottom: 6px; }
+.quiz-title-pro h2 {  margin-bottom: 6px; }
 .quiz-title-pro p { opacity: 0.7; font-size: 0.9rem; }
 .quiz-card-pro {
     background: rgba(255,255,255,0.07);
@@ -1514,8 +1514,6 @@
     color: #d4a84b;
 }
 
-
-
 /* =============================================
 40. RESPONSIVE TYPO + CONTROLES DE LECTURA
 ============================================= */
@@ -1816,7 +1814,6 @@ video {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    font-size: 2rem;
     cursor: pointer;
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     transition: all 0.3s ease;
@@ -1824,7 +1821,16 @@ video {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    overflow: hidden;
     animation: silvainBubblePulse 2s infinite;
+}
+
+.silvain-bubble-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 @keyframes silvainBubblePulse {
@@ -2170,9 +2176,12 @@ video {
         right: 20px;
         width: 60px;
         height: 60px;
-        font-size: 1.6rem;
     }
     
+    .silvain-bubble-logo {
+        border-radius: 50%;
+    }
+        
     .silvain-ficha-modal {
         right: 0;
         bottom: 0;
@@ -2201,4 +2210,12 @@ body.modo-noche .silvain-ficha-message.bot {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
+body.modo-noche .silvain-bubble-logo {
+    opacity: 0.9;
+}
 
+@media (max-width: 480px) {
+    .silvain-bubble-logo {
+        border-radius: 50%;
+    }
+}

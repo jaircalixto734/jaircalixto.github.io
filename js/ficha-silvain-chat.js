@@ -199,14 +199,15 @@ REGLAS IMPORTANTES:
         }
 
         // Ocultar bienvenida y mostrar área de mensajes
-        welcomeSection.style.display = 'none';
-        messagesContainer.style.display = 'flex';
-        inputWrapper.style.display = 'block';
+        if (welcomeSection) welcomeSection.style.display = 'none';
+        if (messagesContainer) messagesContainer.style.display = 'flex';
+        if (inputWrapper) inputWrapper.style.display = 'block';
 
         // Agregar mensaje del usuario
         addMessage(userText, 'user');
         inputField.value = '';
         updateCounter(0);
+        inputField.style.height = 'auto'; // Resetear altura del textarea
 
         // Guardar en historial
         chatHistory.push({ role: 'user', parts: [{ text: userText }] });
@@ -219,6 +220,10 @@ REGLAS IMPORTANTES:
         // Agregar respuesta del bot
         addMessage(botResponse, 'bot');
         chatHistory.push({ role: 'model', parts: [{ text: botResponse }] });
+        
+        // Asegurar que el input permanezca visible y enfocado
+        if (inputWrapper) inputWrapper.style.display = 'block';
+        setTimeout(() => inputField.focus(), 100);
     }
 
     function openModal() {
