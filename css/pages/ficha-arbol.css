@@ -1803,4 +1803,402 @@ video {
   }
 }
 
+/* =============================================
+   BURBUJA FLOTANTE SILVAIN AI PARA FICHA
+   ============================================= */
+.silvain-ficha-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: silvainBubblePulse 2s infinite;
+}
+
+@keyframes silvainBubblePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.silvain-ficha-bubble:hover {
+    transform: scale(1.1) rotate(-10deg);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+    animation: none;
+}
+
+.silvain-ficha-bubble:active {
+    transform: scale(0.95);
+}
+
+/* Modal de chat */
+.silvain-ficha-modal {
+    position: fixed;
+    bottom: -100%;
+    right: 30px;
+    width: 400px;
+    max-width: calc(100vw - 60px);
+    max-height: 600px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.silvain-ficha-modal.active {
+    bottom: 115px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.silvain-ficha-modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header del modal */
+.silvain-ficha-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.silvain-ficha-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.silvain-ficha-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.silvain-ficha-title h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.silvain-ficha-subtitle {
+    margin: 0;
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.silvain-ficha-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.silvain-ficha-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Contenedor del chat */
+.silvain-ficha-chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Mensaje de bienvenida */
+.silvain-ficha-welcome {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.silvain-ficha-welcome-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    animation: silvainWelcomeBounce 1.5s infinite;
+}
+
+@keyframes silvainWelcomeBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.silvain-ficha-welcome h5 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.silvain-ficha-welcome p {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.silvain-ficha-sugerencias {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    text-align: left;
+}
+
+.silvain-ficha-sugerencias li {
+    padding: 8px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.silvain-ficha-sugerencias li i {
+    color: #667eea;
+    width: 20px;
+}
+
+.silvain-ficha-start-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.silvain-ficha-start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Área de mensajes */
+.silvain-ficha-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.silvain-ficha-message {
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    animation: silvainMessageSlide 0.3s ease;
+}
+
+@keyframes silvainMessageSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.silvain-ficha-message.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.silvain-ficha-message.bot {
+    align-self: flex-start;
+    background: var(--bg-color);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 4px;
+}
+
+/* Input area */
+.silvain-ficha-input-wrapper {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.silvain-ficha-input-box {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    padding: 8px 15px;
+    transition: border-color 0.3s ease;
+}
+
+.silvain-ficha-input-box:focus-within {
+    border-color: #667eea;
+}
+
+.silvain-ficha-input-box textarea {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: none;
+    max-height: 100px;
+    min-height: 24px;
+    color: var(--text-main);
+}
+
+.silvain-ficha-input-box textarea:focus {
+    outline: none;
+}
+
+.silvain-ficha-input-box button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.silvain-ficha-input-box button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.silvain-ficha-input-box button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.silvain-ficha-input-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Loading indicator */
+.silvain-ficha-loading {
+    padding: 30px;
+    text-align: center;
+    background: var(--card-bg);
+}
+
+.silvain-ficha-typing {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.silvain-ficha-typing span {
+    width: 10px;
+    height: 10px;
+    background: #667eea;
+    border-radius: 50%;
+    animation: silvainTyping 1.4s infinite;
+}
+
+.silvain-ficha-typing span:nth-child(2) { animation-delay: 0.2s; }
+.silvain-ficha-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes silvainTyping {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(-10px); opacity: 1; }
+}
+
+.silvain-ficha-loading p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .silvain-ficha-bubble {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+    
+    .silvain-ficha-modal {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        max-height: 75vh;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .silvain-ficha-modal.active {
+        bottom: 0;
+    }
+    
+    .silvain-ficha-header {
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+/* Modo noche */
+body.modo-noche .silvain-ficha-modal {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+body.modo-noche .silvain-ficha-message.bot {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
 
