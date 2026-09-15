@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W32JPEZVD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3W32JPEZVD');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapa del Colegio - Ubica los árboles del IE Jesús Bernal Pinzón en nuestro campus escolar.">
+    <meta name="keywords" content="Mapa Forestal, Ubicación de Árboles, IE Jesús Bernal Pinzón, Biodiversidad Escolar">
+    <meta name="author" content="Equipo SILVAIN JBP">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecodigital.edu.co/mapa-colegio.html">
+    <meta property="og:title" content="Mapa del Colegio | IE Jesús Bernal Pinzón">
+    <meta property="og:description" content="Explora la ubicación de todos los árboles de nuestro colegio en un mapa interactivo.">
+    <meta property="og:image" content="./imagenes/logojbp1.png">
+
+    <title>Mapa del Colegio | IE Jesús Bernal Pinzón</title>
+    <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/pages/mapa-colegio.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
+        <div class="brand-text">
+            <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+            <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
+        </div>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú" role="button" tabindex="0">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lista-arboles.html">Árboles</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+        <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION DEL MAPA -->
+<section class="map-hero">
+    <div class="map-overlay"></div>
+    <div class="container relative-content">
+        <span class="label-white">Exploración Espacial</span>
+        <h2 class="text-white">Mapa Forestal del Colegio</h2>
+        <p class="section-intro text-white-soft">Ubica cada árbol en nuestro campus escolar. Explora la distribución espacial de nuestra biodiversidad y descubre dónde se encuentra cada especie.</p>
+        
+        <div class="buttons-group">
+            <a href="#mapa-interactivo" class="btn-secondary"><i class="fas fa-map-marked-alt"></i> Ver Mapa</a>
+            <a href="#lista-puntos" class="btn-main"><i class="fas fa-list"></i> Lista de Puntos</a>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN DE CONTROLES Y FILTROS -->
+<section class="map-controls-section">
+    <div class="container">
+        <div class="controls-wrapper">
+            <!-- Buscador -->
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchTreeInput" placeholder="Buscar árbol por nombre..." autocomplete="off">
+            </div>
+
+            <!-- Filtros por categoría -->
+            <div class="filter-chips">
+                <button class="filter-btn active" data-filter="todos"><i class="fas fa-th-large"></i> Todos</button>
+                <button class="filter-btn" data-filter="nativos"><i class="fas fa-seedling"></i> Nativos</button>
+                <button class="filter-btn" data-filter="frutales"><i class="fas fa-apple-alt"></i> Frutales</button>
+                <button class="filter-btn" data-filter="ornamentales"><i class="fas fa-spa"></i> Ornamentales</button>
+                <button class="filter-btn" data-filter="maderables"><i class="fas fa-tree"></i> Maderables</button>
+            </div>
+
+            <!-- Leyenda -->
+            <div class="legend-container">
+                <h4><i class="fas fa-info-circle"></i> Leyenda</h4>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-dot nativo"></span>
+                        <span>Nativo</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot frutal"></span>
+                        <span>Frutal</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot ornamental"></span>
+                        <span>Ornamental</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot maderable"></span>
+                        <span>Maderable/Sombra</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN PRINCIPAL: MAPA INTERACTIVO -->
+<section id="mapa-interactivo" class="map-main-section">
+    <div class="container-full">
+        <div class="map-wrapper">
+            <!-- Contenedor del mapa SVG/Canvas -->
+            <div class="map-container" id="campusMap">
+                <!-- El mapa se generará dinámicamente con JavaScript -->
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <h3>Mapa del Campus</h3>
+                    <p>Cargando distribución de árboles...</p>
+                </div>
+            </div>
+
+            <!-- Panel lateral de información -->
+            <div class="map-sidebar" id="mapSidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-tree"></i> Información del Árbol</h3>
+                    <button class="close-sidebar" id="closeSidebar" aria-label="Cerrar panel">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="sidebar-content" id="sidebarContent">
+                    <p class="sidebar-placeholder">Selecciona un punto en el mapa para ver los detalles del árbol.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN: LISTA DE PUNTOS DE ÁRBOLES -->
+<section id="lista-puntos" class="points-list-section">
+    <div class="container">
+        <span class="label-green">Inventario Georreferenciado</span>
+        <h2>Todos los Puntos de Árboles</h2>
+        <p class="section-intro">Lista completa de árboles con su ubicación en el campus. Haz clic en cualquiera para verlo en el mapa.</p>
+
+        <div class="points-grid" id="pointsGrid">
+            <!-- Los puntos se generarán dinámicamente con JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN: ESTADÍSTICAS DE DISTRIBUCIÓN -->
+<section class="stats-distribution-section">
+    <div class="container">
+        <span class="label-white">Análisis Espacial</span>
+        <h2 class="text-white">Distribución de Especies</h2>
+        
+        <div class="grid-stats-map">
+            <div class="stat-card-map reveal">
+                <i class="fas fa-tree stat-icon"></i>
+                <span class="stat-number" id="totalTrees">0</span>
+                <p>Árboles Mapeados</p>
+            </div>
+            
+            <div class="stat-card-map reveal">
+                <i class="fas fa-seedling stat-icon"></i>
+                <span class="stat-number" id="nativeTrees">0</span>
+                <p>Especies Nativas</p>
+            </div>
+            
+            <div class="stat-card-map reveal">
+                <i class="fas fa-apple-alt stat-icon"></i>
+                <span class="stat-number" id="fruitTrees">0</span>
+                <p>Árboles Frutales</p>
+            </div>
+            
+            <div class="stat-card-map reveal">
+                <i class="fas fa-expand-arrows-alt stat-icon"></i>
+                <span class="stat-number" id="coverageArea">0</span>
+                <p>Zonas Cubiertas</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-map-section">
+    <div class="container">
+        <h2 class="reveal">¿Quieres Contribuir al Mapa?</h2>
+        <p class="reveal">Si conoces la ubicación exacta de algún árbol que no aparece en el mapa, ¡ayúdanos a mejorar esta herramienta!</p>
+        
+        <div class="cta-buttons reveal">
+            <a href="lista-arboles.html" class="btn-cta primary">Ver Inventario Completo</a>
+            <a href="equipo.html" class="btn-cta secondary">Contactar Equipo</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column branding">
+            <div class="footer-logo">
+                <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
+                <div>
+                    <h4>Inventario Forestal Digital</h4>
+                    <span>IE Jesús Bernal Pinzón</span>
+                </div>
+            </div>
+            <p>Implementación de un sistema de gestión digital y pedagogía interactiva para la valoración de la biodiversidad arbórea mediante TIC e IA.</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="lista-arboles.html">Inventario Forestal</a></li>
+                <li><a href="calculadora.html">Calculadora de Carbono</a></li>
+                <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+                <li><a href="mapa-colegio.html" class="active">Mapa del Colegio</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Información</h4>
+            <ul>
+                <li><a href="equipo.html">Equipo de Trabajo</a></li>
+                <li><a href="index.html#goals">Objetivos del Proyecto</a></li>
+                <li><a href="#">Marco Teórico</a></li>
+                <li><a href="#">Resultados Esperados</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Contacto</h4>
+            <ul class="contact-info">
+                <li>📍 Maní, Casanare </li>
+                <li>🏫 IE Jesús Bernal Pinzón </li>
+                <li>🎓 SENA - 2026 </li>
+                <li>📧 contacto@ecodigital.edu.co</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Ecosistema Digital JBP - IE Jesús Bernal Pinzón. Todos los derechos reservados.</p>
+        <div class="footer-badges">
+            <span class="badge">SENA</span>
+            <span class="badge">ODS 15</span>
+            <span class="badge">PRAE</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Botón Flotante de Tema -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- Lógica Global -->
+<script src="js/main.js"></script>
+<script src="js/datos_arboles.js"></script>
+<script src="js/mapa-colegio.js"></script>
+
+<script>
+// Scroll reveal para elementos
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    const elementVisible = 100;
+
+    reveals.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+            reveal.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll(); // Ejecutar al cargar
+</script>
+
+</body>
+</html>
