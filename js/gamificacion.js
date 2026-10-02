@@ -37,10 +37,18 @@ function initGamification() {
     // Cargar estado desde localStorage
     loadGameState();
 
-    // Verificar si es acceso por QR
+    // Verificar si es acceso por QR con token seguro
     const urlParams = new URLSearchParams(window.location.search);
-    const arbolParam = urlParams.get('arbol');
+    const treeParam = urlParams.get('tree'); // Nuevo parámetro para tokens QR
+    
+    if (treeParam) {
+        // Es un acceso por QR con token - procesar medalla
+        processQRToken(treeParam);
+        return;
+    }
 
+    // Mantener compatibilidad con el método antiguo (-qrcode)
+    const arbolParam = urlParams.get('arbol');
     if (arbolParam && arbolParam.endsWith('-qrcode')) {
         // Es un acceso por QR - procesar medalla
         const arbolNombre = arbolParam.replace('-qrcode', '');
@@ -72,9 +80,61 @@ function saveGameState() {
     }
 }
 
-// Procesar escaneo QR
+// Procesar escaneo QR con token seguro
+function processQRToken(token) {
+    console.log('📱 Procesando token QR:', token);
+
+    // Verificar si el token es válido usando TREE_TOKENS
+    if (typeof TREE_TOKENS === 'undefined' || !TREE_TOKENS[token]) {
+        console.warn('⚠️ Token no válido:', token);
+        return;
+    }
+
+    const arbolNombre = TREE_TOKENS[token];
+    
+    // Normalizar el nombre del árbol para comparación
+    const matchedArbol = ARBOLES_INVENTARIO.find(
+        a => a.toLowerCase() === arbolNombre.toLowerCase()
+    );
+
+    if (!matchedArbol) {
+        console.warn('⚠️ Árbol no encontrado en inventario:', arbolNombre);
+        return;
+    }
+
+    // Verificar si ya tenía la medalla
+    const isNewMedal = !gameState.medals.includes(matchedArbol);
+
+    if (isNewMedal) {
+        // Nueva medalla desbloqueada!
+        gameState.medals.push(matchedArbol);
+        gameState.lastScan = matchedArbol;
+        gameState.scanCount = gameState.medals.length;
+
+        // Guardar progreso
+        saveGameState();
+
+        // Mostrar animación de logro primero
+        setTimeout(() => {
+            showAchievementModal(matchedArbol);
+        }, 500);
+
+        console.log('🏆 ¡Nueva medalla desbloqueada!', matchedArbol);
+    } else {
+        // Ya tenía la medalla - solo mostrar panel
+        gameState.lastScan = matchedArbol;
+
+        setTimeout(() => {
+            showGamificationPanel(matchedArbol, false);
+        }, GAMIFICATION_CONFIG.showPanelDelay);
+
+        console.log('🔄 Medalla ya obtenida:', matchedArbol);
+    }
+}
+
+// Procesar escaneo QR (método antiguo - compatibilidad)
 function processQRScan(arbolNombre) {
-    console.log('📱 Procesando QR:', arbolNombre);
+    console.log('📱 Procesando QR (método antiguo):', arbolNombre);
 
     // Normalizar el nombre del árbol para comparación
     const matchedArbol = ARBOLES_INVENTARIO.find(
@@ -371,6 +431,8 @@ window.initGamification = initGamification;
 window.hideGamificationPanel = hideGamificationPanel;
 window.closeAchievementModal = closeAchievementModal;
 window.resetGamification = resetGamification;
+window.processQRToken = processQRToken;
+window.processQRScan = processQRScan;
 
 // Auto-inicializar cuando el DOM esté listo
 if (document.readyState === 'loading') {

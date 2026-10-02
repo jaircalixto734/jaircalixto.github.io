@@ -254,15 +254,29 @@
         <i class="fas fa-moon"></i>
     </button>
 
+    <script src="js/tree-tokens.js"></script>
     <script src="js/datos_arboles.js" charset="UTF-8"></script>
     <script src="js/datos_arboles2.js" charset="UTF-8"></script>
     <script src="js/gamificacion.js"></script>
     <script src="js/ficha-interactiva.js" charset="UTF-8"></script>
     <script> 
         const urlParams = new URLSearchParams(window.location.search);
-        const arbolParam = urlParams.get('arbol') || 'merecure';
-        const esQRCode = arbolParam.endsWith('-qrcode');
-        const arbolSeleccionado = esQRCode ? arbolParam.replace('-qrcode', '') : arbolParam;
+        
+        // Verificar si hay un token QR seguro primero
+        const treeParam = urlParams.get('tree');
+        let arbolSeleccionado = 'merecure'; // Valor por defecto
+        let esQRCode = false;
+        
+        if (treeParam && typeof TREE_TOKENS !== 'undefined' && TREE_TOKENS[treeParam]) {
+            // Acceso por QR con token seguro
+            arbolSeleccionado = TREE_TOKENS[treeParam];
+            esQRCode = true;
+        } else {
+            // Método tradicional
+            const arbolParam = urlParams.get('arbol') || 'merecure';
+            esQRCode = arbolParam.endsWith('-qrcode');
+            arbolSeleccionado = esQRCode ? arbolParam.replace('-qrcode', '') : arbolParam;
+        }
         
         let datosCientificos = baseDatosArboles[arbolSeleccionado];
         let datosEducativos = baseDatosArbolesEducativa ? baseDatosArbolesEducativa[arbolSeleccionado] : null;
