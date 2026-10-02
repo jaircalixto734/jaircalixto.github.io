@@ -345,3 +345,246 @@
     color: #ddd;
     margin-bottom: 15px;
 }
+
+/* =============================================
+   RESPONSIVE DESIGN - MOBILE & TABLET
+   ============================================= */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .inventory-hero {
+        padding: 60px 15px 100px;
+    }
+    
+    .inventory-hero .text-white {
+        font-size: 2rem;
+    }
+    
+    .tree-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .inventory-controls {
+        max-width: 90%;
+        padding: 25px;
+    }
+}
+
+/* Tablet pequeña / Móvil grande (max-width: 768px) */
+@media (max-width: 768px) {
+    .inventory-hero {
+        padding: 50px 15px 80px;
+    }
+    
+    .inventory-hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .inventory-hero .section-intro {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .inventory-controls-wrapper {
+        margin-top: -40px;
+        padding: 0 15px;
+    }
+    
+    .inventory-controls {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .search-bar input {
+        padding: 14px 18px 14px 45px;
+        font-size: 0.95rem;
+    }
+    
+    .filter-chips {
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 7px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .tree-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        gap: 20px;
+    }
+    
+    .tree-img-container {
+        height: 200px;
+    }
+    
+    .tree-info {
+        padding: 20px 15px;
+    }
+    
+    .tree-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .btn-tree {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Móvil mediano (max-width: 480px) */
+@media (max-width: 480px) {
+    .inventory-hero {
+        padding: 40px 10px 70px;
+    }
+    
+    .inventory-hero .label-white {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+    }
+    
+    .inventory-hero h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+    
+    .inventory-hero .text-white-soft {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .inventory-controls-wrapper {
+        margin-top: -30px;
+        padding: 0 10px;
+    }
+    
+    .inventory-controls {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .search-bar {
+        max-width: 100%;
+    }
+    
+    .search-bar input {
+        padding: 12px 15px 12px 42px;
+        font-size: 0.9rem;
+    }
+    
+    .search-bar i {
+        left: 15px;
+        font-size: 1rem;
+    }
+    
+    .filter-chips {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    .tree-grid {
+        gap: 15px;
+    }
+    
+    .tree-card {
+        border-radius: 15px;
+    }
+    
+    .tree-img-container {
+        height: 180px;
+    }
+    
+    .tree-badge {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        left: 10px;
+        top: 10px;
+    }
+    
+    .tree-id {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .tree-info {
+        padding: 15px;
+    }
+    
+    .tree-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .scientific-name {
+        font-size: 0.8rem;
+    }
+    
+    .tree-desc {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .btn-tree {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+    
+    .no-results-msg {
+        padding: 40px 15px;
+    }
+    
+    .no-results-msg i {
+        font-size: 2.5rem;
+    }
+}
+
+/* Móvil pequeño (max-width: 360px) */
+@media (max-width: 360px) {
+    .inventory-hero {
+        padding: 30px 10px 60px;
+    }
+    
+    .inventory-hero h2 {
+        font-size: 1.3rem;
+    }
+    
+    .inventory-hero .text-white-soft {
+        font-size: 0.85rem;
+    }
+    
+    .inventory-controls {
+        padding: 12px;
+    }
+    
+    .search-bar input {
+        padding: 10px 12px 10px 40px;
+        font-size: 0.85rem;
+    }
+    
+    .filter-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .tree-img-container {
+        height: 160px;
+    }
+    
+    .tree-info h3 {
+        font-size: 1rem;
+    }
+    
+    .tree-desc {
+        font-size: 0.85rem;
+    }
+}

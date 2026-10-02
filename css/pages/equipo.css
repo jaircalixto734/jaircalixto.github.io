@@ -132,5 +132,126 @@ body.modo-noche .etiqueta {
     .mentor-horizontal {
         flex-direction: column;
         text-align: center;
+        padding: 25px;
+        margin: 60px auto 0;
+    }
+    
+    .mentor-foto {
+        width: 140px;
+        height: 200px;
+    }
+    
+    .mentor-datos h4 {
+        font-size: 1.2rem;
+    }
+    
+    .equipo-section {
+        padding: 60px 15px;
+    }
+    
+    .grid-equipo {
+        gap: 25px;
+    }
+    
+    .tarjeta-persona {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* Móvil mediano (max-width: 480px) */
+@media (max-width: 480px) {
+    .equipo-section {
+        padding: 50px 10px;
+    }
+    
+    .grid-equipo {
+        gap: 20px;
+    }
+    
+    .tarjeta-persona {
+        width: 100%;
+        border-radius: 15px;
+    }
+    
+    .contenedor-foto {
+        height: 350px;
+    }
+    
+    .bloque-info {
+        padding: 20px 15px;
+    }
+    
+    .bloque-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .etiqueta {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+    
+    .mentor-horizontal {
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 40px auto 0;
+    }
+    
+    .mentor-foto {
+        width: 120px;
+        height: 180px;
+        border-radius: 12px;
+    }
+    
+    .mentor-datos h4 {
+        font-size: 1.1rem;
+    }
+    
+    .mentor-datos .cargo {
+        font-size: 0.9rem;
+    }
+    
+    .mentor-datos p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móvil pequeño (max-width: 360px) */
+@media (max-width: 360px) {
+    .equipo-section {
+        padding: 40px 10px;
+    }
+    
+    .contenedor-foto {
+        height: 300px;
+    }
+    
+    .bloque-info {
+        padding: 15px 12px;
+    }
+    
+    .bloque-info h3 {
+        font-size: 1rem;
+    }
+    
+    .mentor-horizontal {
+        padding: 15px 12px;
+    }
+    
+    .mentor-foto {
+        width: 100px;
+        height: 160px;
+    }
+    
+    .mentor-datos h4 {
+        font-size: 1rem;
+    }
+    
+    .mentor-datos .cargo {
+        font-size: 0.85rem;
+    }
+    
+    .mentor-datos p {
+        font-size: 0.8rem;
     }
 }

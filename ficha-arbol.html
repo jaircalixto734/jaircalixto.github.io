@@ -13,7 +13,7 @@
 </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Dossier Botánico Profesional - Información técnica y pedagógica de la flora institucional.">
     <title>Dossier Botánico - SILVAIN JBP</title>
@@ -28,6 +28,13 @@
 </head>
 
 <body class="ficha-body">
+
+    <div class="text-size-controls" role="group" aria-label="Ajustes de tamaño de texto">
+  <button type="button" id="fontDecrease" aria-label="Reducir tamaño de letra">A−</button>
+  <button type="button" id="fontReset" aria-label="Restablecer tamaño de letra">A</button>
+  <button type="button" id="fontIncrease" aria-label="Aumentar tamaño de letra">A+</button>
+  <span id="fontSizeStatus" class="visually-hidden" role="status" aria-live="polite"></span>
+    </div>
 
     <!-- Botón Volver -->
     <a href="lista-arboles.html" class="btn-back">
@@ -240,6 +247,8 @@
             </div>
         </details>
 
+        
+
     </main>
 
     <!-- VISOR DE IMÁGENES -->
@@ -254,11 +263,96 @@
         <i class="fas fa-moon"></i>
     </button>
 
+   <!-- Burbuja flotante -->
+<button id="silvainFichaBubble" class="silvain-ficha-bubble" aria-label="Abrir Silvain AI">
+  <img src="./imagenes/logoAI.jpeg" alt="Silvain AI" class="silvain-bubble-logo">
+</button>
+
+<!-- Modal del chat -->
+<div id="silvainFichaModal" class="silvain-ficha-modal" aria-hidden="true">
+  <div class="silvain-ficha-modal-content">
+
+    <div class="silvain-ficha-header">
+      <div class="silvain-ficha-title">
+        <img src="./imagenes/logoAI.jpeg" alt="Silvain AI" class="silvain-ficha-logo">
+        <div>
+          <h4>Silvain AI — Inteligencia Artificial</h4>
+          <p class="silvain-ficha-subtitle">
+            Pregúntame sobre
+            <span id="silvainFichaArbolNombre">este árbol</span>
+          </p>
+        </div>
+      </div>
+
+      <button id="silvainFichaClose" class="silvain-ficha-close" aria-label="Cerrar chat">
+        ✕
+      </button>
+    </div>
+
+    <!-- Este contenedor es el que debe hacer scroll -->
+    <div id="silvainFichaChatContainer" class="silvain-ficha-chat-container">
+
+      <div id="silvainFichaWelcome" class="silvain-ficha-welcome">
+        <div class="silvain-ficha-welcome-icon"><img src="./imagenes/logoAI.jpeg" alt="Silvain AI" class="silvain-ficha-logo"></div>
+        <h5>¡Hola! Soy Silvain AI</h5>
+        <p>Estoy aquí para ayudarte a entender mejor este árbol.</p>
+
+        <ul class="silvain-ficha-sugerencias">
+          <li><i class="fa-solid fa-leaf"></i> Sus características morfológicas</li>
+          <li><i class="fa-solid fa-hand-holding-heart"></i> Usos tradicionales y etnobotánica</li>
+          <li><i class="fa-solid fa-cloud"></i> Cómo captura carbono</li>
+          <li><i class="fa-solid fa-dove"></i> Fauna asociada</li>
+          <li><i class="fa-solid fa-calendar-days"></i> Su ciclo fenológico</li>
+        </ul>
+
+        <button id="silvainFichaStartBtn" class="silvain-ficha-start-btn">
+          Comenzar a preguntar
+        </button>
+      </div>
+
+      <div id="silvainFichaMessages" class="silvain-ficha-messages" style="display: none;"></div>
+
+      <div id="silvainFichaLoading" class="silvain-ficha-loading" style="display: none;">
+        <div class="silvain-ficha-typing">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p>Silvain AI está pensando...</p>
+      </div>
+
+    </div>
+
+    <!-- Input fuera del contenedor de mensajes para que quede fijo abajo -->
+    <div id="silvainFichaInputWrapper" class="silvain-ficha-input-wrapper" style="display: none;">
+      <div class="silvain-ficha-input-box">
+        <textarea
+          id="silvainFichaInput"
+          rows="1"
+          placeholder="Escribe tu pregunta..."
+          maxlength="500"
+        ></textarea>
+
+        <button id="silvainFichaSendBtn" aria-label="Enviar mensaje">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+
+      <div class="silvain-ficha-input-meta">
+        <span>Enter para enviar</span>
+        <span id="silvainFichaCounter">0 / 500</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
     <script src="js/tree-tokens.js"></script>
     <script src="js/datos_arboles.js" charset="UTF-8"></script>
     <script src="js/datos_arboles2.js" charset="UTF-8"></script>
     <script src="js/gamificacion.js"></script>
     <script src="js/ficha-interactiva.js" charset="UTF-8"></script>
+    <script src="js/ficha-silvain-chat.js" charset="UTF-8"></script>
     <script> 
         const urlParams = new URLSearchParams(window.location.search);
         
@@ -281,6 +375,10 @@
         let datosCientificos = baseDatosArboles[arbolSeleccionado];
         let datosEducativos = baseDatosArbolesEducativa ? baseDatosArbolesEducativa[arbolSeleccionado] : null;
         let modoActual = 'cientifica';
+        
+        // Hacer disponibles las variables globalmente para el chatbot
+        window.arbolSeleccionado = arbolSeleccionado;
+        window.baseDatosArboles = baseDatosArboles;
         
         function mostrarBannerQR() {
             if (esQRCode) {

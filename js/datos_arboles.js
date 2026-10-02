@@ -2968,7 +2968,7 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
         { q: "¿Por qué los frutos de Swinglea glutinosa NO son recomendables para consumo humano directo?", opts: ["Porque son tóxicos y pueden causar intoxicación grave", "Porque su pulpa es ácida, amarga y muy pegajosa, rica en pectinas no digeribles", "Porque contienen semillas venenosas que no pueden separse fácilmente", "Porque su cáscara es demasiado gruesa y dura para pelarse"], correct: 1, expl: "Aunque los frutos de S. glutinosa son visualmente atractivos (hesperidios de 10–12 cm), su pulpa es ácida, amarga y extremadamente pegajosa debido a su alto contenido de pectinas. No son tóxicos, pero su sabor y textura los hacen poco apetecibles para consumo directo. Se usan industrialmente para extracción de pectina, no como fruta de mesa." }
     ]
 },
-"palma africana": {
+"palma_africana": {
     id: "#JBP-22", tipo: "Introducida", nombre: "Palma Africana", cientifico: "Elaeis guineensis Jacq.",
     familia: "Arecaceae", origen: "Golfo de Guinea (África Occidental) — Cultivada en Orinoquía colombiana", estado: "NE — No Evaluada (UICN); exótica cultivada en Colombia", exotica: true,
     carbono: 0.658, viajes: 239, imagen_portada: "./imagenes/africana1.jpeg",
