@@ -97,27 +97,13 @@
                 <button class="filter-btn" data-filter="maderables"><i class="fas fa-tree"></i> Maderables</button>
             </div>
 
-            <!-- Leyenda -->
+            <!-- Leyenda de especies (se genera con JS desde el levantamiento de campo) -->
             <div class="legend-container">
-                <h4><i class="fas fa-info-circle"></i> Leyenda</h4>
-                <div class="legend-items">
-                    <div class="legend-item">
-                        <span class="legend-dot nativo"></span>
-                        <span>Nativo</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot frutal"></span>
-                        <span>Frutal</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot ornamental"></span>
-                        <span>Ornamental</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot maderable"></span>
-                        <span>Maderable/Sombra</span>
-                    </div>
+                <h4><i class="fas fa-info-circle"></i> Leyenda de Especies</h4>
+                <div class="legend-items" id="speciesLegend">
+                    <!-- Las especies y sus colores se generan con JavaScript -->
                 </div>
+                <p class="legend-hint">Los colores coinciden con el levantamiento de campo. Haz clic en una especie para ver solo sus árboles en el mapa.</p>
             </div>
         </div>
     </div>
@@ -146,7 +132,7 @@
                     </button>
                 </div>
                 <div class="sidebar-content" id="sidebarContent">
-                    <p class="sidebar-placeholder">Selecciona un punto en el mapa para ver los detalles del árbol.</p>
+                    <p class="sidebar-placeholder">Selecciona un punto en el mapa para ver los detalles del árbol.<br><small>Usa la rueda del ratón para hacer zoom y arrastra para recorrer el campus.</small></p>
                 </div>
             </div>
         </div>
