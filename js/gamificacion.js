@@ -18,7 +18,7 @@ const ARBOLES_INVENTARIO = [
     'palma_areca', 'caracaro', 'mango', 'maiz_tostado', 'palma-de-coco',
     'trompillo', 'guacimo', 'gualanday', 'oiti', 'noni',
     'palma-real', 'saman', 'flor-morado', 'mamoncillo', 'guayaba',
-    'limoncillo', 'palma africana', 'adelfa amarilla', 'cica', 'vanarena',
+    'limoncillo', 'palma_africana', 'adelfa amarilla', 'cica', 'vanarena',
     'leucaena', 'guama', 'araguaney'
 ];
 

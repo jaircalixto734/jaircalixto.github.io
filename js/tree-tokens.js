@@ -27,7 +27,7 @@ const TREE_TOKENS = {
     's5x1t0w7v2u9': 'mamoncillo',
     't6y2u1x8w3v0': 'guayaba',
     'u7z3v2y9x4w1': 'limoncillo',
-    'v8a4w3z0y5x2': 'palma africana',
+    'v8a4w3z0y5x2': 'palma_africana',
     'w9b5x4a1z6y3': 'adelfa amarilla',
     'x0c6y5b2a7z4': 'cica',
     'y1d7z6c3b8a5': 'vanarena',
