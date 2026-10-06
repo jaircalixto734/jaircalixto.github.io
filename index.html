@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W32JPEZVD"></script>
     <script>
@@ -20,33 +20,74 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "xs0u5boz0x");
     </script>
-    
-<link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
+
+    <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inventario Forestal Digital de la IE Jesús Bernal Pinzón. Valoración de la biodiversidad arbórea mediante TIC e Inteligencia Artificial en Maní, Casanare.">
-    <meta name="keywords" content="Inventario Forestal, Educación Ambiental, Casanare, IE Jesús Bernal Pinzón, SENA, Conservación, Recursos Naturales">
-    <meta name="author" content="Equipo SILVAIN JBP">
-    
+    <meta name="theme-color" content="#2d5a27">
+    <meta name="description" content="SILVAIN — Inventario Forestal Digital de la IE Jesús Bernal Pinzón. Valoración de la biodiversidad arbórea mediante TIC e Inteligencia Artificial en Maní, Casanare.">
+    <meta name="keywords" content="SILVAIN, Inventario Forestal, Educación Ambiental, Casanare, IE Jesús Bernal Pinzón, SENA, Conservación, Recursos Naturales, Calculadora de Carbono, Mapa Interactivo">
+    <meta name="author" content="Jair Calixto Hernández — Equipo SILVAIN JBP">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ecodigital.edu.co/">
-    <meta property="og:title" content="Inventario Forestal Digital | IE Jesús Bernal Pinzón">
+    <meta property="og:title" content="SILVAIN | Inventario Forestal Digital — IE Jesús Bernal Pinzón">
     <meta property="og:description" content="Transformando nuestro entorno escolar en un laboratorio vivo a través de TIC e Inteligencia Artificial.">
     <meta property="og:image" content="./imagenes/logojbp1.png">
 
-    <title>Inventario Forestal Digital | IE Jesús Bernal Pinzón</title>
+    <title>SILVAIN | Inventario Forestal Digital — IE Jesús Bernal Pinzón</title>
+
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="index.css">
-    <!-- Iconos FontAwesome -->
+    <!-- Iconos FontAwesome (usado por el botón de tema) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Si el visitante tiene JavaScript desactivado, el contenido igual se muestra -->
+    <noscript>
+        <style>
+            .reveal { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
 
+<!-- =============================================
+     SPRITE DE ICONOS SVG (no requiere internet)
+     ============================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l2 3.3a1 1 0 0 1-.7 1.7Z"/><path d="M12 22v-3"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="16" width="5" height="5" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-chev-d" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect fill="currentColor" stroke="none" x="6" y="4" width="4" height="16" rx="1"/><rect fill="currentColor" stroke="none" x="14" y="4" width="4" height="16" rx="1"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.7 1.8L21.5 17.5l-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7L19 15z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/><path d="M22 10v6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- =============================================
+     NAVBAR (igual que en el resto del sitio)
+     ============================================= -->
 <nav class="navbar">
     <div class="nav-brand">
         <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
@@ -72,238 +113,425 @@
     </ul>
 </nav>
 
-<header class="hero">
-    <div class="hero-overlay"></div> 
+<!-- =============================================
+     1. HERO — Título principal del proyecto
+     (fondo: carrusel de fotos del colegio con
+     fundido cruzado y efecto Ken Burns)
+     ============================================= -->
+<header class="hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true">
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <div class="hero-content">
-        <span class="project-label">Proyecto Grado Once</span>
+        <span class="project-label">Proyecto Grado Once · SENA 2026</span>
         <h1>Sistema de Gestión Digital para la <br><span>Valoración de la Biodiversidad</span></h1>
-        <p>Transformando nuestro entorno escolar en un laboratorio vivo a través de TIC e Inteligencia Artificial.</p>
-        
+        <p class="hero-sub">Transformando nuestro entorno escolar en un laboratorio vivo a través de TIC e Inteligencia Artificial.</p>
+
         <div class="buttons-group">
-            <a href="#about" class="btn-secondary">Conocer el proyecto</a>
+            <a href="#bienvenida" class="btn-secondary">Conocer el proyecto</a>
             <a href="lista-arboles.html" class="btn-main">Lista de Árboles</a>
         </div>
+
+        <!-- Vistazo rápido de las 4 funciones -->
+        <div class="hero-chips" aria-label="Funciones de la plataforma">
+            <a href="#funciones" class="hero-chip"><svg class="icon"><use href="#i-tree"/></svg> Inventario Forestal</a>
+            <a href="#funciones" class="hero-chip"><svg class="icon"><use href="#i-calc"/></svg> Calculadora de Carbono</a>
+            <a href="#funciones" class="hero-chip"><svg class="icon"><use href="#i-bot"/></svg> Silvain AI</a>
+            <a href="#funciones" class="hero-chip"><svg class="icon"><use href="#i-pin"/></svg> Mapa Interactivo</a>
+        </div>
     </div>
+
+    <a href="#stats" class="scroll-hint" aria-label="Desplazarse hacia abajo">
+        <svg class="icon"><use href="#i-chev-d"/></svg>
+    </a>
 </header>
 
-<section id="about" class="info-section">
-    <div class="container">
-        <span class="label-green">Sobre el Proyecto</span>
-        <h2>Un Ecosistema Digital de Aprendizaje</h2>
-        <p class="section-intro">Unimos la botánica con la tecnología para que los árboles del colegio dejen de ser invisibles y se conviertan en "docentes vivos".</p>
-
-        <div class="grid-cards">
-            <div class="card">
-                <div class="icon-container">
-                    <img src="./imagenes/servicios ecosistemicos2.png" alt="Icono Servicios Ecosistémicos" loading="lazy">
-                </div>
-                <h3>Servicios Ecosistémicos</h3>
-                <p>Hacemos visible lo invisible: cómo los árboles limpian nuestro aire y regulan el calor.</p>
-            </div>
-            <div class="card">
-                <div class="icon-container">
-                    <img src="./imagenes/ciencia ciudadana.png" alt="Icono Ciencia Ciudadana" loading="lazy">        
-                </div>
-                <h3>Ciencia Ciudadana</h3>
-                <p>Tú participas en la recolección de datos reales usando herramientas digitales.</p>
-            </div>
-            <div class="card">
-                <div class="icon-container">
-                    <img src="./imagenes/silvainai2.png" alt="Icono Inteligencia Artificial" loading="lazy">
-                </div>
-                <h3>Inteligencia Artificial</h3>
-                <p>Un tutor que traduce datos científicos complejos a un lenguaje sencillo para todos.</p>
-            </div>
-            <div class="card">
-                <div class="icon-container">
-                    <img src="./imagenes/codigo QR.png" alt="Icono Códigos QR" loading="lazy"> 
-                </div>
-                <h3>Códigos QR</h3>
-                <p>Acceso instantáneo a la ficha técnica de cada árbol con solo un escaneo.</p>
-            </div>
+<!-- =============================================
+     2. BARRA DE ESTADÍSTICAS FLOTANTE
+     (contadores animados al entrar en pantalla)
+     ============================================= -->
+<section id="stats" class="stats-bar" aria-label="El proyecto en cifras">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Módulos interactivos</span>
         </div>
-    </div>
-</section>
-
-<section id="goals" class="goals-section">
-    <div class="container">
-        <span class="label-white">Objetivos</span>
-        <h2 class="text-white">Objetivos Del Proyecto</h2>
-        
-        <div class="grid-goals">
-            <div class="goal-item">
-                <span class="goal-number">01</span>
-                <h4>Inventario Forestal</h4>
-                <p>Clasificar cada árbol por su nombre científico y común.</p>
-            </div>
-            <div class="goal-item">
-                <span class="goal-number">02</span>
-                <h4>Cálculo de Biomasa</h4>
-                <p>Poder medir cuánto carbono atrapan nuestros árboles para frenar el cambio climático.</p>
-            </div>
-            <div class="goal-item">
-                <span class="goal-number">03</span>
-                <h4>Plataforma Viva</h4>
-                <p>Crear esta web interactiva donde la naturaleza y el código se encuentran en uno solo.</p>
-            </div>
-            <div class="goal-item">
-                <span class="goal-number">04</span>
-                <h4>Impacto Escolar</h4>
-                <p>Lograr que todos en el Jesús Bernal Pinzón cuiden más su entorno natural.</p>
-            </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="100" data-suffix="%">0</span>
+            <span class="stat-label">Árboles con ficha y QR</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="24" data-suffix="/7">0</span>
+            <span class="stat-label">Silvain AI disponible</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="7">0</span>
+            <span class="stat-label">Meses de desarrollo</span>
         </div>
     </div>
 </section>
 
 <!-- =============================================
-SECCIÓN HERRAMIENTAS DEL ECOSISTEMA
-============================================= -->
-<section id="tools" class="tools-section">
-  <h2 class="reveal">Tres Herramientas, Un Mismo Objetivo</h2>
-  <p class="section-sub reveal">Inventario, cálculo y aprendizaje se unen en una sola plataforma para que los árboles del colegio dejen de ser invisibles.</p>
-  
-  <div class="grid-tools">
-    <div class="tool-card reveal">
-      <img src="./imagenes/silvainjbp.png" alt="Inventario Forestal Digital" class="tool-icon">
-      <h3>Inventario Forestal Digital</h3>
-      <p>Cada árbol tiene su ficha técnica con nombre científico, familia, y una galería de hojas, flores y frutos. La base científica del proyecto, accesible desde cualquier celular.</p>
-      <a href="lista-arboles.html" class="btn-tool">Explorar el inventario</a>
+     3. BIENVENIDA — Logo del proyecto + propósito
+     ============================================= -->
+<section id="bienvenida" class="welcome-section">
+    <div class="aurora aurora-1" aria-hidden="true"></div>
+    <div class="aurora aurora-2" aria-hidden="true"></div>
+
+    <div class="welcome-grid">
+        <!-- Logo del proyecto con anillos animados -->
+        <div class="logo-showcase reveal">
+            <div class="logo-glow" aria-hidden="true"></div>
+            <div class="logo-ring" aria-hidden="true"></div>
+            <div class="logo-ring logo-ring-2" aria-hidden="true"></div>
+
+            <div class="logo-frame">
+                <!-- 🖼️ LOGO DEL PROYECTO: cambia el src si tienes otra versión -->
+                <img src="./imagenes/silvainjbp.png" alt="Logo del proyecto SILVAIN"
+                     onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible');">
+                <div class="logo-fallback">
+                    <svg class="icon"><use href="#i-leaf"/></svg>
+                    <strong>SILVAIN</strong>
+                    <span>Ecosistema Digital de Aprendizaje</span>
+                </div>
+            </div>
+
+            <span class="orbit-badge ob-1"><svg class="icon"><use href="#i-qr"/></svg> Códigos QR</span>
+            <span class="orbit-badge ob-2"><svg class="icon"><use href="#i-bot"/></svg> IA Educativa</span>
+        </div>
+
+        <!-- Texto de bienvenida y propósito -->
+        <div class="welcome-text">
+            <span class="eyebrow reveal"><svg class="icon"><use href="#i-spark"/></svg> Bienvenido</span>
+            <h2 class="reveal">¡Bienvenido a <span class="text-grad">SILVAIN</span>!</h2>
+            <p class="lead reveal">La plataforma web interactiva de aprendizaje de la <strong>Institución Educativa Jesús Bernal Pinzón</strong> — Maní, Casanare.</p>
+            <p class="reveal">SILVAIN nace con un propósito claro: que los árboles de nuestro colegio dejen de ser invisibles y se conviertan en <strong>docentes vivos</strong>. Somos un Ecosistema Digital de Aprendizaje que une la botánica con la tecnología —códigos QR, Inteligencia Artificial y mapas reales— para que toda la comunidad educativa conozca, valore y proteja la biodiversidad que la rodea.</p>
+            <p class="reveal">Este proyecto de grado fue creado por estudiantes de la <strong>Técnica en Conservación de Recursos Naturales del SENA</strong>, con el sueño de transformar la institución en un laboratorio vivo donde la naturaleza y el código se encuentran en uno solo.</p>
+
+            <div class="welcome-chips reveal">
+                <span class="w-chip"><svg class="icon"><use href="#i-globe"/></svg> ODS 15 · Vida de ecosistemas terrestres</span>
+                <span class="w-chip"><svg class="icon"><use href="#i-leaf"/></svg> PRAE</span>
+                <span class="w-chip"><svg class="icon"><use href="#i-users"/></svg> Ciencia ciudadana</span>
+                <span class="w-chip"><svg class="icon"><use href="#i-cap"/></svg> SENA · 2026</span>
+            </div>
+
+            <div class="institution-row reveal">
+                <img src="./imagenes/logojbp1.png" alt="Escudo I.E. Jesús Bernal Pinzón" loading="lazy"
+                     onerror="this.style.display='none'">
+                <div>
+                    <strong>I.E. Jesús Bernal Pinzón</strong>
+                    <span>Maní, Casanare · Técnica en Conservación de Recursos Naturales</span>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="tool-card reveal">
-      <img src="./imagenes/calculadora (1).png" alt="Calculadora de Carbono" class="tool-icon">
-      <h3>Calculadora de Carbono</h3>
-      <p>Basada en protocolos IDEAM y ecuaciones alométricas. Ingresa el DAP y la altura de un ejemplar, y descubre en tiempo real cuánta biomasa y CO2 está capturando.</p>
-      <a href="calculadora.html" class="btn-tool">Calcular carbono</a>
-    </div>
-    
-    <div class="tool-card reveal">
-      <img src="./imagenes/silvainai2.png" alt="Silvain AI" class="tool-icon">
-      <h3>Silvain AI</h3>
-      <p>Nuestro tutor ambiental con Inteligencia Artificial, disponible 24/7. Pasa de datos técnicos a un lenguaje sencillo y responde tus dudas sobre la biodiversidad del colegio.</p>
-      <a href="ia-chatbot.html" class="btn-tool">Hablar con Silvain</a>
-    </div>
-  </div>
 </section>
 
 <!-- =============================================
-SECCIÓN CÓMO FUNCIONA
-============================================= -->
-<section id="steps" class="steps-section">
-  <h2 class="reveal">Del Árbol a la Pantalla en 4 Pasos</h2>
-  
-  <div class="grid-steps">
-    <div class="step-card reveal">
-      <span class="step-number">1</span>
-      <img src="./imagenes/qr-code Merecure.png" alt="Escanea el código QR" class="step-icon">
-      <h4>Escanea</h4>
-      <p>Encuentra la placa QR en el árbol y escanéala con la cámara de tu celular.</p>
+     4. FUNCIONES — Carrusel dinámico (4 módulos)
+     Se mueve solo cada ~6.5 s. Cada diapositiva
+     tiene su ESPACIO para pantallazo, video o logo.
+     ============================================= -->
+<section id="funciones" class="funciones-section">
+    <div class="funciones-deco" aria-hidden="true"></div>
+
+    <header class="section-head reveal">
+        <span class="eyebrow light"><svg class="icon"><use href="#i-leaf"/></svg> Funcionalidades</span>
+        <h2>Un ecosistema, <span>cuatro herramientas</span></h2>
+        <p>Todo lo que SILVAIN pone al servicio de la biodiversidad del colegio. El carrusel avanza solo, pero también puedes navegarlo con las flechas, los puntos o deslizándolo en tu celular.</p>
+    </header>
+
+    <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Funciones de la plataforma SILVAIN" tabindex="0">
+        <button class="carousel-arrow prev" id="prevBtn" type="button" aria-label="Función anterior">
+            <svg class="icon"><use href="#i-chev-l"/></svg>
+        </button>
+
+        <div class="slides-viewport">
+            <div class="slides-track" id="slidesTrack">
+
+                <!-- ====== FUNCIÓN 1: INVENTARIO FORESTAL ====== -->
+                <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 4: Inventario Forestal" data-name="Inventario">
+                    <div class="slide-card">
+                        <div class="slide-text">
+                            <div class="slide-kicker">
+                                <span class="slide-icon"><svg class="icon"><use href="#i-tree"/></svg></span>
+                                <span class="slide-num">01</span>
+                            </div>
+                            <h3>Inventario Forestal</h3>
+                            <p class="slide-tagline">Cada árbol, una ficha. Cada ficha, una historia.</p>
+                            <p class="slide-desc">Todos los árboles de la institución cuentan con su propia ficha técnica: nombre científico y común, familia, galería de hojas, flores y frutos, morfología, etnobotánica, etc. Accede desde esta web o escaneando los códigos QR instalados en el colegio.</p>
+                            <ul class="slide-features">
+                                <li><svg class="icon"><use href="#i-check"/></svg> Fichas técnicas completas por especie</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> Acceso desde la web o con códigos QR en cada árbol</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> Galería fotográfica y etnobotánica llanera</li>
+                            </ul>
+                            <a href="lista-arboles.html" class="slide-cta">Explorar el inventario <svg class="icon"><use href="#i-arrow"/></svg></a>
+                        </div>
+                        <div class="slide-media">
+                            <div class="device">
+                                <div class="device-bar"><span></span><span></span><span></span><em>inventarioforestaljbp.vercel.app/lista-arboles.html</em></div>
+                                <div class="device-screen screen-inv">
+                                    <!-- 📸 ESPACIO PARA PANTALLAZO / VIDEO / LOGO del módulo:
+                                         Reemplaza la <img> de abajo por tu captura, por ejemplo:
+                                         <img src="./imagenes/captura-inventario.png" alt="Pantallazo del Inventario Forestal">
+                                         O por un video:
+                                         <video src="./videos/inventario.mp4" autoplay muted loop playsinline></video> -->
+                                    <img src="./imagenes/silvainjbp.png" alt="Logo del Inventario Forestal SILVAIN" loading="lazy"
+                                         onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible');">
+                                    <div class="screen-fallback"><svg class="icon"><use href="#i-tree"/></svg><span>Inventario Forestal</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ====== FUNCIÓN 2: CALCULADORA DE CARBONO ====== -->
+                <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 4: Calculadora de Carbono" data-name="Calculadora">
+                    <div class="slide-card">
+                        <div class="slide-text">
+                            <div class="slide-kicker">
+                                <span class="slide-icon"><svg class="icon"><use href="#i-calc"/></svg></span>
+                                <span class="slide-num">02</span>
+                            </div>
+                            <h3>Calculadora de Carbono</h3>
+                            <p class="slide-tagline">El impacto que no se ve, en números reales.</p>
+                            <p class="slide-desc">Una herramienta para ver el impacto que pueden tener los árboles presentes en la institución: a partir del DAP y la altura, estima la biomasa y el CO₂ capturado usando ecuaciones alométricas y protocolos del IDEAM.</p>
+                            <ul class="slide-features">
+                                <li><svg class="icon"><use href="#i-check"/></svg> Ecuaciones alométricas y protocolo IDEAM</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> Biomasa y CO₂ calculados en tiempo real</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> Línea base ambiental del colegio</li>
+                            </ul>
+                            <a href="calculadora.html" class="slide-cta">Calcular carbono <svg class="icon"><use href="#i-arrow"/></svg></a>
+                        </div>
+                        <div class="slide-media">
+                            <div class="device">
+                                <div class="device-bar"><span></span><span></span><span></span><em>inventarioforestaljbp.vercel.app/calculadora.html</em></div>
+                                <div class="device-screen screen-calc">
+                                    <!-- 📸 ESPACIO PARA PANTALLAZO / VIDEO / LOGO del módulo:
+                                         <img src="./imagenes/captura-calculadora.png" alt="Pantallazo de la Calculadora de Carbono">
+                                         o <video src="./videos/calculadora.mp4" autoplay muted loop playsinline></video> -->
+                                    <img src="./imagenes/calculadora (1).png" alt="Logo de la Calculadora de Carbono" loading="lazy"
+                                         onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible');">
+                                    <div class="screen-fallback"><svg class="icon"><use href="#i-calc"/></svg><span>Calculadora de Carbono</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ====== FUNCIÓN 3: SILVAIN AI ====== -->
+                <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 4: Silvain AI" data-name="Silvain AI">
+                    <div class="slide-card">
+                        <div class="slide-text">
+                            <div class="slide-kicker">
+                                <span class="slide-icon"><svg class="icon"><use href="#i-bot"/></svg></span>
+                                <span class="slide-num">03</span>
+                            </div>
+                            <h3>Silvain AI</h3>
+                            <p class="slide-tagline">Tu tutor ambiental, disponible 24/7.</p>
+                            <p class="slide-desc">El chatbot de Inteligencia Artificial personalizado para nuestro proyecto. Resolverá toda pregunta que se encuentre en nuestro banco de información de los árboles, traduciendo datos científicos complejos a un lenguaje sencillo para todos.</p>
+                            <ul class="slide-features">
+                                <li><svg class="icon"><use href="#i-check"/></svg> Entrenado con nuestro propio inventario</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> Respuestas pedagógicas a cualquier hora</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> De la ciencia al lenguaje cotidiano</li>
+                            </ul>
+                            <a href="ia-chatbot.html" class="slide-cta">Hablar con Silvain AI <svg class="icon"><use href="#i-arrow"/></svg></a>
+                        </div>
+                        <div class="slide-media">
+                            <div class="device">
+                                <div class="device-bar"><span></span><span></span><span></span><em>inventarioforestaljbp.vercel.app/ia-chatbot.html</em></div>
+                                <div class="device-screen screen-ai">
+                                    <div class="ai-glow" aria-hidden="true"></div>
+                                    <!-- 📸 ESPACIO PARA PANTALLAZO / VIDEO / LOGO del módulo:
+                                         <img src="./imagenes/captura-chatbot.png" alt="Pantallazo del chatbot Silvain AI">
+                                         o <video src="./videos/chatbot.mp4" autoplay muted loop playsinline></video> -->
+                                    <img src="./imagenes/silvainai2.png" alt="Logo de Silvain AI" loading="lazy"
+                                         onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible');">
+                                    <div class="screen-fallback"><svg class="icon"><use href="#i-bot"/></svg><span>Silvain AI</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ====== FUNCIÓN 4: MAPA INTERACTIVO ====== -->
+                <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 4: Mapa Interactivo" data-name="Mapa">
+                    <div class="slide-card">
+                        <div class="slide-text">
+                            <div class="slide-kicker">
+                                <span class="slide-icon"><svg class="icon"><use href="#i-pin"/></svg></span>
+                                <span class="slide-num">04</span>
+                            </div>
+                            <h3>Mapa Interactivo</h3>
+                            <p class="slide-tagline">El colegio, árbol por árbol.</p>
+                            <p class="slide-desc">Visualiza el número exacto de árboles registrados de nuestra institución y su ubicación con un mapa real. Un recorrido virtual por el campus para descubrir dónde está cada ejemplar y qué especie lo habita.</p>
+                            <ul class="slide-features">
+                                <li><svg class="icon"><use href="#i-check"/></svg> Mapa real de la institución</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> Ubicación exacta de cada árbol registrado</li>
+                                <li><svg class="icon"><use href="#i-check"/></svg> Conteo total de la infraestructura verde</li>
+                            </ul>
+                            <a href="mapa-colegio.html" class="slide-cta">Abrir el mapa <svg class="icon"><use href="#i-arrow"/></svg></a>
+                        </div>
+                        <div class="slide-media">
+                            <div class="device">
+                                <div class="device-bar"><span></span><span></span><span></span><em>inventarioforestaljbp.vercel.app/mapa-colegio.html</em></div>
+                                <div class="device-screen screen-map">
+                                    <!-- 📸 ESPACIO PARA PANTALLAZO / VIDEO del mapa real:
+                                         Reemplaza TODO el <div class="mock-map">...</div> por:
+                                         <img src="./imagenes/captura-mapa.png" alt="Pantallazo del mapa interactivo">
+                                         o <video src="./videos/mapa.mp4" autoplay muted loop playsinline></video> -->
+                                    <div class="mock-map" aria-hidden="true">
+                                        <div class="map-road r1"></div>
+                                        <div class="map-road r2"></div>
+                                        <div class="map-road r3"></div>
+                                        <div class="map-block b1"></div>
+                                        <div class="map-block b2"></div>
+                                        <div class="map-block b3"></div>
+                                        <span class="map-pin" style="left:18%; top:32%; --d:0s"><svg class="icon fill"><use href="#i-pin"/></svg></span>
+                                        <span class="map-pin" style="left:34%; top:58%; --d:.4s"><svg class="icon fill"><use href="#i-pin"/></svg></span>
+                                        <span class="map-pin" style="left:52%; top:26%; --d:.8s"><svg class="icon fill"><use href="#i-pin"/></svg></span>
+                                        <span class="map-pin" style="left:66%; top:62%; --d:1.2s"><svg class="icon fill"><use href="#i-pin"/></svg></span>
+                                        <span class="map-pin" style="left:78%; top:38%; --d:1.6s"><svg class="icon fill"><use href="#i-pin"/></svg></span>
+                                        <span class="map-pin" style="left:44%; top:76%; --d:2s"><svg class="icon fill"><use href="#i-pin"/></svg></span>
+                                        <div class="map-chip"><span class="live-dot"></span> Árboles registrados en tiempo real</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <button class="carousel-arrow next" id="nextBtn" type="button" aria-label="Función siguiente">
+            <svg class="icon"><use href="#i-chev-r"/></svg>
+        </button>
+
+        <!-- Barra de progreso del autoplay -->
+        <div class="carousel-progress" aria-hidden="true"><div class="carousel-progress-fill" id="progressFill"></div></div>
+
+        <!-- Controles: play/pausa + puntos con nombre -->
+        <div class="carousel-controls">
+            <button class="carousel-play" id="playPause" type="button" aria-label="Pausar carrusel" aria-pressed="false">
+                <svg class="icon ic-pause"><use href="#i-pause"/></svg>
+                <svg class="icon ic-play"><use href="#i-play"/></svg>
+            </button>
+            <div class="carousel-dots" id="carouselDots" aria-label="Seleccionar función"></div>
+        </div>
+
+        <p class="sr-only" aria-live="polite" id="carouselLive"></p>
     </div>
-    
-    <div class="step-card reveal">
-      <span class="step-number">2</span>
-      <img src="./imagenes/silvainjbp.png" alt="Descubre la ficha técnica" class="step-icon">
-      <h4>Descubre</h4>
-      <p>Accede al instante a la ficha técnica con fotos, taxonomía y etnobotánica de la especie.</p>
-    </div>
-    
-    <div class="step-card reveal">
-      <span class="step-number">3</span>
-      <img src="./imagenes/calculadora2.png" alt="Calcula el carbono capturado" class="step-icon">
-      <h4>Calcula</h4>
-      <p>Usa la calculadora de carbono para estimar cuánto CO2 captura ese ejemplar.</p>
-    </div>
-    
-    <div class="step-card reveal">
-      <span class="step-number">4</span>
-      <img src="./imagenes/silvainai2.png" alt="Aprende con Silvain AI" class="step-icon">
-      <h4>Aprende</h4>
-      <p>Pregúntale a Silvain AI y resuelve tus dudas sobre la naturaleza de nuestro colegio.</p>
-    </div>
-  </div>
 </section>
 
 <!-- =============================================
-SECCIÓN IMPACTO EN NÚMEROS
-============================================= -->
-<section id="stats" class="stats-section">
-  <h2 class="reveal">El Proyecto en Números</h2>
-  
-  <div class="grid-stats">
-    <div class="stat-card reveal">
-      <span class="stat-number" data-target="3" data-suffix="">0</span>
-      <p>Módulos interactivos</p>
+     5. CRÉDITOS — Fundación Morichales de Colombia
+     ============================================= -->
+<section id="creditos" class="credits-section">
+    <header class="section-head reveal">
+        <span class="eyebrow"><svg class="icon"><use href="#i-heart"/></svg> Créditos y apoyos</span>
+        <h2>Aliados que hacen <span class="text-grad">crecer</span> este proyecto</h2>
+        <p>Ningún bosque crece solo. Estas son las manos que ayudaron a sembrar SILVAIN en la institución.</p>
+    </header>
+
+    <div class="morichales-card reveal">
+        <div class="morichales-media">
+            <!-- 🖼️ LOGO (o 🎬 VIDEO ANIMADO) DE LA FUNDACIÓN:
+                 Opción 1 — imagen:  <img src="./imagenes/fundacion-morichales.png" alt="Logo Fundación Morichales de Colombia">
+                 Opción 2 — video:   <video src="./videos/morichales-logo.mp4" autoplay muted loop playsinline></video> -->
+            <img src="./imagenes/fundacion-morichales.png" alt="Logo Fundación Morichales de Colombia" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible');">
+            <div class="media-placeholder">
+                <svg class="icon"><use href="#i-image"/></svg>
+                <span>Logo o video animado</span>
+                <small>imagenes/fundacion-morichales.png</small>
+            </div>
+        </div>
+        <div class="morichales-text">
+            <span class="credit-badge"><svg class="icon"><use href="#i-qr"/></svg> Apoyo institucional · Códigos QR</span>
+            <h3>Fundación Morichales de Colombia</h3>
+            <p>Gracias a su apoyo fue posible la producción e instalación de las placas con códigos QR en los árboles de la institución: pequeñas puertas digitales que conectan cada ejemplar con su ficha en SILVAIN. Su confianza demuestra que cuando la educación y la conservación se unen, los resultados florecen.</p>
+        </div>
+        <svg class="morichales-watermark icon" aria-hidden="true"><use href="#i-leaf"/></svg>
     </div>
-    
-    <div class="stat-card reveal">
-      <span class="stat-number" data-target="100" data-suffix="%">0</span>
-      <p>Árboles seleccionados con QR</p>
-    </div>
-    
-    <div class="stat-card reveal">
-      <span class="stat-number" data-target="75" data-suffix="%">0</span>
-      <p>Meta de apropiación estudiantil</p>
-    </div>
-    
-    <div class="stat-card reveal">
-      <span class="stat-number" data-target="7" data-suffix="">0</span>
-      <p>Meses de desarrollo</p>
-    </div>
-  </div>
 </section>
 
 <!-- =============================================
-SECCIÓN CTA FINAL
-============================================= -->
+     6. AUTOR — Jair Calixto Hernández y su equipo
+     ============================================= -->
+<section id="autor" class="author-section">
+    <svg class="author-deco icon" aria-hidden="true"><use href="#i-leaf"/></svg>
+
+    <div class="author-grid">
+        <div class="author-photo reveal">
+            <div class="photo-frame">
+                <div class="photo-inner">
+                    <!-- 📷 TU FOTO: reemplaza el archivo ./imagenes/fotojair.jpeg
+                         o cambia el src por el nombre de tu foto -->
+                    <img src="./imagenes/Jair.jpg" alt="Jair Calixto Hernández, autor del proyecto SILVAIN" loading="lazy"
+                         onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible');">
+                    <div class="photo-placeholder">
+                        <svg class="icon"><use href="#i-user"/></svg>
+                        <span>Coloca aquí tu foto</span>
+                        <small>imagenes/fotojair.jpeg</small>
+                    </div>
+                </div>
+                <span class="photo-badge">Autor &amp; Creador</span>
+            </div>
+        </div>
+
+        <div class="author-text">
+            <span class="eyebrow reveal"><svg class="icon"><use href="#i-spark"/></svg> Autor del proyecto</span>
+            <h2 class="reveal">Jair Calixto Hernández</h2>
+            <p class="author-role reveal">Técnica en Conservación de Recursos Naturales · SENA</p>
+            <p class="reveal">Autor y creador de todo el proyecto, quien junto a su equipo de la Técnica en Conservación de Recursos Naturales ha hecho posible que todo esto funcione: desde el levantamiento del inventario forestal en campo, hasta el diseño, la programación y la puesta en marcha de cada módulo de SILVAIN.</p>
+
+            <span class="team-label reveal">El equipo que lo hace posible:</span>
+            <div class="team-chips reveal">
+                <span class="team-chip"><svg class="icon"><use href="#i-user"/></svg> Sara Margarita Ávila Lara</span>
+                <span class="team-chip"><svg class="icon"><use href="#i-user"/></svg> Diego Alejandro Hernández Daza</span>
+                <span class="team-chip"><svg class="icon"><use href="#i-cap"/></svg> Prof. Edwin Ricaurte Avella</span>
+            </div>
+
+            <a href="equipo.html" class="btn-author reveal">Conocer al equipo completo <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     7. CTA FINAL
+     ============================================= -->
 <section id="cta" class="cta-section">
-  <h2 class="reveal">La Naturaleza del Colegio, al Alcance de tu Celular</h2>
-  <p class="reveal">Explora el inventario, calcula el carbono que nos rodea y descubre lo que los árboles del Jesús Bernal Pinzón tienen para enseñarnos. Esto no es solo una página web, es un laboratorio vivo.</p>
-  
-  <div class="cta-buttons reveal">
-    <a href="lista-arboles.html" class="btn-cta primary">Ver el inventario</a>
-    <a href="equipo.html" class="btn-cta secondary">Conocer al equipo</a>
-  </div>
+    <h2 class="reveal">La naturaleza del colegio, al alcance de tu celular</h2>
+    <p class="reveal">Explora el inventario, calcula el carbono que nos rodea, conversa con Silvain AI y descubre el mapa vivo del Jesús Bernal Pinzón. Esto no es solo una página web: es un laboratorio vivo.</p>
+
+    <div class="cta-buttons reveal">
+        <a href="lista-arboles.html" class="btn-cta primary">Ver el inventario</a>
+        <a href="equipo.html" class="btn-cta secondary">Conocer al equipo</a>
+    </div>
 </section>
 
 <!-- =============================================
-SECCIÓN APOYOS Y CRÉDITOS
-============================================= -->
-<section id="credits" class="credits-section">
-  <h2 class="reveal">Apoyos y Créditos</h2>
-  <p class="section-sub reveal">Este proyecto es posible gracias al respaldo de nuestros aliados y al trabajo de quienes lo hicieron realidad.</p>
-
-  <div class="grid-credits">
-    <!-- Fundación Morichales Colombia -->
-    <div class="credit-card reveal">
-      <span class="credit-badge">Apoyo y financiación · Códigos QR</span>
-      <div class="credit-logo">
-        <img src="./imagenes/fundacion-morichales.png" alt="Logo Fundación Morichales Colombia" 
-             onerror="this.style.display='none'; this.parentElement.classList.add('sin-imagen');">
-      </div>
-      <h3>Fundación Morichales Colombia</h3>
-      <p>Gracias a su apoyo y financiación fue posible la producción e instalación de las placas con códigos QR que conectan cada árbol del colegio con esta plataforma.</p>
-    </div>
-
-    <!-- Autor del proyecto -->
-    <div class="credit-card reveal">
-      <span class="credit-badge author">Autor y Creador del Proyecto</span>
-      <div class="credit-photo">
-        <img src="./imagenes/Jair.jpg" alt="Jair Calixto Hernández"
-             onerror="this.style.display='none'; this.parentElement.classList.add('sin-imagen');">
-      </div>
-      <h3>Jair Calixto Hernández</h3>
-      <p>Autor y creador de esta iniciativa. Quien la hizo resurgir y la llevó de la idea a la práctica junto a su equipo de trabajo, convirtiendo el inventario forestal digital en una realidad para la comunidad del Jesús Bernal Pinzón.</p>
-    </div>
-  </div>
-</section>
-
+     FOOTER
+     ============================================= -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-column branding">
             <div class="footer-logo">
                 <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
                 <div>
-                    <h4>Inventario Forestal Digital</h4>
+                    <h4>SILVAIN · Inventario Forestal Digital</h4>
                     <span>IE Jesús Bernal Pinzón</span>
                 </div>
             </div>
@@ -317,16 +545,17 @@ SECCIÓN APOYOS Y CRÉDITOS
                 <li><a href="lista-arboles.html">Inventario Forestal</a></li>
                 <li><a href="calculadora.html">Calculadora de Carbono</a></li>
                 <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+                <li><a href="mapa-colegio.html">Mapa Interactivo</a></li>
             </ul>
         </div>
 
         <div class="footer-column">
             <h4>Información</h4>
             <ul>
+                <li><a href="#bienvenida">Sobre SILVAIN</a></li>
+                <li><a href="#funciones">Funciones de la plataforma</a></li>
+                <li><a href="#creditos">Créditos y apoyos</a></li>
                 <li><a href="equipo.html">Equipo de Trabajo</a></li>
-                <li><a href="#goals">Objetivos del Proyecto</a></li>
-                <li><a href="#">Marco Teórico</a></li>
-                <li><a href="#">Resultados Esperados</a></li>
             </ul>
         </div>
 
@@ -356,50 +585,157 @@ SECCIÓN APOYOS Y CRÉDITOS
     <i class="fas fa-moon"></i>
 </button>
 
-<!-- Lógica Global -->
+<!-- Lógica Global (menú móvil, tema, luciérnagas, reveal) -->
 <script src="js/main.js"></script>
 
-
-
 <script>
-// Scroll reveal
+/* =============================================
+   CARRUSEL DE FUNCIONES (autoplay + controles)
+   ============================================= */
+(function () {
+    const carousel = document.getElementById('carousel');
+    const track = document.getElementById('slidesTrack');
+    if (!carousel || !track) return;
+
+    const slides = Array.from(track.querySelectorAll('.slide'));
+    const dotsWrap = document.getElementById('carouselDots');
+    const fill = document.getElementById('progressFill');
+    const playBtn = document.getElementById('playPause');
+    const live = document.getElementById('carouselLive');
+    const total = slides.length;
+    const DURATION = 6500; // ms por diapositiva
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+    let remaining = DURATION;
+    let last = performance.now();
+    let paused = reducedMotion; // sin movimiento automático si el usuario lo prefiere
+
+    /* --- Puntos con nombre (Inventario, Calculadora, ...) --- */
+    slides.forEach((slide, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'dot';
+        dot.setAttribute('aria-label', 'Ver función: ' + (slide.dataset.name || (i + 1)));
+        dot.innerHTML = '<span class="dot-label"></span>';
+        dot.querySelector('.dot-label').textContent = slide.dataset.name || ('Función ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+
+    function render() {
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        slides.forEach((s, i) => {
+            const active = i === index;
+            s.setAttribute('aria-hidden', String(!active));
+            s.querySelectorAll('a, button').forEach(el => { el.tabIndex = active ? 0 : -1; });
+        });
+        dots.forEach((d, i) => {
+            d.classList.toggle('active', i === index);
+        });
+        fill.style.width = '0%';
+        if (live) live.textContent = 'Diapositiva ' + (index + 1) + ' de ' + total + ': ' + (slides[index].dataset.name || '');
+    }
+
+    function goTo(i) {
+        index = (i + total) % total;
+        remaining = DURATION;
+        render();
+    }
+
+    function updatePlayIcon() {
+        carousel.classList.toggle('is-paused', paused);
+        playBtn.setAttribute('aria-label', paused ? 'Reproducir carrusel' : 'Pausar carrusel');
+        playBtn.setAttribute('aria-pressed', String(paused));
+    }
+
+    /* --- Bucle de autoplay con barra de progreso --- */
+    function loop(now) {
+        let dt = now - last;
+        last = now;
+        if (dt > 1000) dt = 16; // evita saltos al volver a la pestaña
+        if (!paused && !carousel.matches(':hover') && !carousel.matches(':focus-within')) {
+            remaining -= dt;
+            fill.style.width = Math.min(100, (1 - remaining / DURATION) * 100) + '%';
+            if (remaining <= 0) goTo(index + 1);
+        }
+        requestAnimationFrame(loop);
+    }
+
+    /* --- Controles --- */
+    document.getElementById('prevBtn').addEventListener('click', () => goTo(index - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => goTo(index + 1));
+
+    playBtn.addEventListener('click', () => {
+        paused = !paused;
+        if (!paused) remaining = DURATION;
+        updatePlayIcon();
+    });
+
+    carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { goTo(index + 1); }
+        if (e.key === 'ArrowLeft') { goTo(index - 1); }
+    });
+
+    /* --- Deslizar con el dedo (móvil) --- */
+    let touchX = null;
+    carousel.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', (e) => {
+        if (touchX === null) return;
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 50) goTo(dx < 0 ? index + 1 : index - 1);
+        touchX = null;
+    }, { passive: true });
+
+    /* --- Inicio --- */
+    render();
+    updatePlayIcon();
+    requestAnimationFrame((t) => { last = t; loop(t); });
+})();
+
+/* =============================================
+   SCROLL REVEAL (aparición suave de secciones)
+   ============================================= */
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
 }, { threshold: 0.15 });
 reveals.forEach(el => revealObserver.observe(el));
 
-// Contadores animados
-const counters = document.querySelectorAll('.stat-number');
+/* =============================================
+   CONTADORES ANIMADOS (barra de estadísticas)
+   ============================================= */
+const counters = document.querySelectorAll('.stat-number[data-target]');
 const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.dataset.target);
-      const suffix = el.dataset.suffix || '';
-      let current = 0;
-      const steps = 60;
-      const increment = target / steps;
-      const interval = 1500 / steps;
-      
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          el.textContent = target + suffix;
-          clearInterval(timer);
-        } else {
-          el.textContent = Math.floor(current) + suffix;
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target, 10);
+            const suffix = el.dataset.suffix || '';
+            let current = 0;
+            const steps = 60;
+            const increment = target / steps;
+            const interval = 1500 / steps;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(current) + suffix;
+                }
+            }, interval);
+
+            counterObserver.unobserve(el);
         }
-      }, interval);
-      
-      counterObserver.unobserve(el);
-    }
-  });
+    });
 }, { threshold: 0.5 });
 counters.forEach(el => counterObserver.observe(el));
 </script>
