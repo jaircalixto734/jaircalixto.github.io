@@ -1,42 +1,132 @@
 /* =============================================
-   PAGES/EQUIPO.CSS
-   Estilos exclusivos de la página de equipo (equipo.html)
+   PAGES/EQUIPO.CSS — Equipo de trabajo SILVAIN
+   Réplica del lenguaje visual de index.css:
+   0.  Hero compacto de página (page-hero)
+   1.  Sección del equipo (auroras + encabezado)
+   2.  Tarjetas de personas (estilo autor)
+   3.  Mentor (tarjeta horizontal premium)
+   4.  Modo noche
+   5.  Responsivo
+   6.  Movimiento reducido
    ============================================= */
 
-.equipo-section {
-    padding: 80px 20px;
-    background-color: var(--bg-color);
+/* =============================================
+   0. HERO COMPACTO DE PÁGINA
+   (reutiliza .hero / .hero-bg / .hero-layer /
+   .hero-overlay / .hero-chips de index.css)
+   ============================================= */
+.hero.page-hero {
+    height: auto;
+    min-height: 62vh;
+    padding: 170px 20px 132px;
 }
 
+.page-hero h1 {
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    margin: 20px 0 16px;
+}
+
+.page-hero .hero-sub {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+}
+
+/* Entrada escalonada del contenido (igual que el hero del index) */
+.page-hero .hero-content .eyebrow   { animation-delay: 0.1s; }
+.page-hero .hero-content h1         { animation-delay: 0.25s; }
+.page-hero .hero-content .hero-sub  { animation-delay: 0.4s; }
+.page-hero .hero-content .hero-chips { animation-delay: 0.55s; }
+
+.page-hero .hero-chip { cursor: default; }
+
+/* =============================================
+   1. SECCIÓN DEL EQUIPO (auroras + encabezado)
+   ============================================= */
+@keyframes equipoFluido {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.equipo-section {
+    position: relative;
+    padding: 100px 20px 110px;
+    background: linear-gradient(180deg, var(--bg-color) 0%, #f4f8f0 100%);
+    overflow: hidden;
+}
+
+/* Las auroras de index.css quedan detrás del contenido */
+.equipo-section .aurora { z-index: 0; }
+.equipo-section > * { position: relative; z-index: 1; }
+.equipo-section .aurora { position: absolute; }
+
+.equipo-section .section-head { margin-bottom: 56px; }
+.equipo-section .section-head h2 { color: var(--secondary-color); }
+.equipo-section .section-head p { color: var(--text-muted); }
+
+/* =============================================
+   2. TARJETAS DE PERSONAS
+   ============================================= */
 .grid-equipo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 
 .tarjeta-persona {
-    width: 320px;
+    position: relative;
     background: var(--card-bg);
-    border-radius: 20px;
+    border-radius: 26px;
     overflow: hidden;
-    box-shadow: var(--shadow-medium);
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    box-shadow: 0 24px 60px rgba(26, 51, 24, 0.12);
+    border: 1px solid rgba(45, 90, 39, 0.1);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .tarjeta-persona:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-medium);
+    border-color: rgba(129, 182, 34, 0.45);
+    box-shadow: 0 32px 70px rgba(26, 51, 24, 0.2);
 }
 
+/* Número de miembro con trazo (estilo slide-num del index) */
+.tarjeta-persona::before {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 3;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.75);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+    pointer-events: none;
+}
+.grid-equipo .tarjeta-persona:nth-child(1)::before { content: '01'; }
+.grid-equipo .tarjeta-persona:nth-child(2)::before { content: '02'; }
+.grid-equipo .tarjeta-persona:nth-child(3)::before { content: '03'; }
+
+/* --- Fotografía --- */
 .contenedor-foto {
+    position: relative;
     width: 100%;
     height: 400px;
-    background: #e0e0e0;
     overflow: hidden;
+    background: linear-gradient(160deg, #eef4e8, #dcecc2);
+}
+
+.contenedor-foto::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 20, 8, 0.18) 0%, transparent 30%, transparent 55%, rgba(10, 20, 8, 0.3) 100%);
+    pointer-events: none;
 }
 
 .contenedor-foto img {
@@ -44,214 +134,329 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    filter: grayscale(20%);
-    transition: 0.5s;
+    filter: grayscale(18%);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 0.6s ease;
 }
 
 .tarjeta-persona:hover .contenedor-foto img {
     filter: grayscale(0%);
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
+/* --- Información --- */
 .bloque-info {
-    padding: 25px;
+    position: relative;
+    padding: 26px 24px 24px;
     text-align: center;
     background: var(--card-bg);
-    border-top: 5px solid var(--primary-light);
+    flex-grow: 1;
+}
+
+/* Barra superior con degradado verde (firma del index) */
+.bloque-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2d5a27, #81b622 60%, #d4ff80);
 }
 
 .bloque-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.18rem;
+    font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    line-height: 1.3;
 }
 
+/* Etiqueta de rol (estilo team-chip del index) */
 .etiqueta {
-    display: inline-block;
-    background: var(--bg-color);
-    color: var(--primary-light);
-    padding: 4px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(129, 182, 34, 0.1);
+    border: 1px solid rgba(45, 90, 39, 0.14);
+    color: var(--primary-color);
+    padding: 6px 16px;
     border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    margin-bottom: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 14px;
     text-transform: uppercase;
-    border: 1px solid var(--border-color);
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease;
 }
 
-/* --- MENTOR (Tarjeta horizontal) --- */
+.tarjeta-persona:hover .etiqueta {
+    background: rgba(129, 182, 34, 0.18);
+    transform: translateY(-2px);
+}
+
+.bloque-info p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+/* =============================================
+   3. MENTOR (tarjeta horizontal premium)
+   ============================================= */
 .mentor-horizontal {
-    max-width: 800px;
+    position: relative;
+    max-width: 860px;
     margin: 80px auto 0;
     display: flex;
     align-items: center;
-    background: var(--primary-color);
-    color: var(--text-light);
-    padding: 30px;
-    border-radius: 25px;
-    gap: 25px;
+    gap: 34px;
+    padding: 40px;
+    border-radius: 30px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(-45deg, #14290f, #1e3d1a, #2d5a27, #1a3318);
+    background-size: 400% 400%;
+    animation: equipoFluido 16s ease infinite;
+    border: 1px solid rgba(212, 255, 128, 0.16);
+    box-shadow: 0 30px 70px rgba(26, 51, 24, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
+/* Hoja marca de agua (estilo morichales-watermark del index) */
+.mentor-watermark {
+    position: absolute;
+    right: -46px;
+    bottom: -56px;
+    font-size: 13rem;
+    color: rgba(212, 255, 128, 0.06);
+    transform: rotate(-16deg);
+    pointer-events: none;
+}
+
+/* Foto con marco degradado (estilo photo-frame del index) */
 .mentor-foto {
-    width: 160px;
-    height: 250px;
+    position: relative;
+    z-index: 2;
+    width: 170px;
+    height: 240px;
     flex-shrink: 0;
-    border-radius: 15px;
-    overflow: hidden;
+    padding: 6px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #81b622, #2d5a27 55%, #d4ff80);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
 }
 
 .mentor-foto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
+    border-radius: 15px;
+    display: block;
 }
 
+.mentor-datos {
+    position: relative;
+    z-index: 2;
+}
+
+/* Insignia superior (estilo credit-badge sobre oscuro) */
+.mentor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212, 255, 128, 0.1);
+    border: 1px solid rgba(212, 255, 128, 0.25);
+    color: #d4ff80;
+    padding: 7px 16px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 16px;
+}
+.mentor-badge .icon { font-size: 0.9rem; }
+
 .mentor-datos h4 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+    font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
 }
 
 .mentor-datos .cargo {
-    font-weight: bold;
-    color: #81b622;
-    margin-bottom: 10px;
+    font-weight: 600;
+    color: #d4ff80;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
 }
 
-/* --- MODO NOCHE --- */
-body.modo-noche .bloque-info {
-    border-top: 5px solid var(--primary-vibrant);
+.mentor-datos .desc {
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    font-size: 0.92rem;
+    margin-bottom: 18px;
 }
+
+/* Tags con check (estilo slide-features del index) */
+.mentor-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.mentor-tags li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mentor-tags li:hover {
+    background: rgba(212, 255, 128, 0.14);
+    border-color: rgba(212, 255, 128, 0.4);
+    transform: translateY(-2px);
+}
+
+.mentor-tags .icon {
+    font-size: 0.85rem;
+    color: #d4ff80;
+}
+
+/* =============================================
+   4. MODO NOCHE
+   ============================================= */
+body.modo-noche .equipo-section {
+    background: linear-gradient(180deg, var(--bg-color) 0%, #101a10 100%);
+}
+
+body.modo-noche .equipo-section .section-head h2 { color: #e8f5e9; }
+body.modo-noche .equipo-section .section-head p { color: #a3b899; }
+
+body.modo-noche .tarjeta-persona {
+    border-color: rgba(212, 255, 128, 0.1);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+body.modo-noche .tarjeta-persona:hover {
+    border-color: rgba(212, 255, 128, 0.3);
+    box-shadow: 0 32px 70px rgba(0, 0, 0, 0.6);
+}
+
+body.modo-noche .contenedor-foto {
+    background: linear-gradient(160deg, #232e23, #1a231a);
+}
+
+body.modo-noche .bloque-info h3 { color: #e8f5e9; }
+body.modo-noche .bloque-info p { color: #b8c8b8; }
 
 body.modo-noche .etiqueta {
-    background-color: var(--primary-color);
-    color: var(--primary-vibrant);
+    background: rgba(212, 255, 128, 0.08);
+    border-color: rgba(212, 255, 128, 0.18);
+    color: #c5e1a5;
 }
 
-/* --- RESPONSIVO --- */
+body.modo-noche .bloque-info::before {
+    background: linear-gradient(90deg, #558b2f, #81b622 60%, #d4ff80);
+}
+
+body.modo-noche .mentor-horizontal {
+    background: linear-gradient(-45deg, #0d1a0c, #14220f, #1c331a, #101a10);
+    border-color: rgba(212, 255, 128, 0.18);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* =============================================
+   5. RESPONSIVO
+   ============================================= */
+@media (max-width: 1024px) {
+    .hero.page-hero { padding: 150px 20px 116px; }
+
+    .grid-equipo {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        max-width: 720px;
+    }
+
+    .equipo-section { padding: 80px 16px 90px; }
+}
+
 @media (max-width: 768px) {
+    .hero.page-hero {
+        min-height: 56vh;
+        padding: 130px 16px 100px;
+    }
+    .page-hero h1 { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+    .page-hero .hero-chips { gap: 8px; margin-top: 30px; }
+    .page-hero .hero-chip { font-size: 0.76rem; padding: 8px 14px; }
+
+    .equipo-section { padding: 64px 15px 70px; }
+    .grid-equipo {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 26px;
+    }
+    .contenedor-foto { height: 380px; }
+
     .mentor-horizontal {
         flex-direction: column;
         text-align: center;
-        padding: 25px;
+        padding: 34px 24px;
         margin: 60px auto 0;
+        gap: 26px;
     }
-    
-    .mentor-foto {
-        width: 140px;
-        height: 200px;
-    }
-    
-    .mentor-datos h4 {
-        font-size: 1.2rem;
-    }
-    
-    .equipo-section {
-        padding: 60px 15px;
-    }
-    
-    .grid-equipo {
-        gap: 25px;
-    }
-    
-    .tarjeta-persona {
-        width: 100%;
-        max-width: 350px;
-    }
+    .mentor-foto { width: 150px; height: 210px; }
+    .mentor-tags { justify-content: center; }
+    .mentor-watermark { font-size: 9rem; right: -30px; bottom: -40px; }
 }
 
-/* Móvil mediano (max-width: 480px) */
 @media (max-width: 480px) {
-    .equipo-section {
-        padding: 50px 10px;
-    }
-    
-    .grid-equipo {
-        gap: 20px;
-    }
-    
-    .tarjeta-persona {
-        width: 100%;
-        border-radius: 15px;
-    }
-    
-    .contenedor-foto {
-        height: 350px;
-    }
-    
-    .bloque-info {
-        padding: 20px 15px;
-    }
-    
-    .bloque-info h3 {
-        font-size: 1.1rem;
-    }
-    
-    .etiqueta {
-        font-size: 0.7rem;
-        padding: 4px 10px;
-    }
-    
-    .mentor-horizontal {
-        padding: 20px 15px;
-        border-radius: 15px;
-        margin: 40px auto 0;
-    }
-    
-    .mentor-foto {
-        width: 120px;
-        height: 180px;
-        border-radius: 12px;
-    }
-    
-    .mentor-datos h4 {
-        font-size: 1.1rem;
-    }
-    
-    .mentor-datos .cargo {
-        font-size: 0.9rem;
-    }
-    
-    .mentor-datos p {
-        font-size: 0.85rem;
-    }
+    .hero.page-hero { padding: 118px 14px 92px; }
+    .page-hero .hero-sub { font-size: 0.9rem; }
+
+    .tarjeta-persona { border-radius: 20px; }
+    .contenedor-foto { height: 340px; }
+    .bloque-info { padding: 22px 18px 20px; }
+    .bloque-info h3 { font-size: 1.08rem; }
+    .etiqueta { font-size: 0.64rem; padding: 5px 12px; }
+    .tarjeta-persona::before { font-size: 1.9rem; top: 10px; right: 14px; }
+
+    .mentor-horizontal { padding: 28px 18px; border-radius: 22px; margin-top: 44px; }
+    .mentor-foto { width: 130px; height: 185px; }
+    .mentor-datos .desc { font-size: 0.86rem; }
+    .mentor-tags li { font-size: 0.72rem; padding: 7px 13px; }
 }
 
-/* Móvil pequeño (max-width: 360px) */
 @media (max-width: 360px) {
-    .equipo-section {
-        padding: 40px 10px;
+    .hero.page-hero { padding: 108px 12px 84px; min-height: 52vh; }
+    .page-hero h1 { font-size: 1.45rem; }
+    .contenedor-foto { height: 300px; }
+    .mentor-foto { width: 115px; height: 165px; }
+}
+
+/* =============================================
+   6. MOVIMIENTO REDUCIDO (accesibilidad)
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+    .page-hero .hero-content > * {
+        animation: none !important;
+        opacity: 1 !important;
     }
-    
-    .contenedor-foto {
-        height: 300px;
-    }
-    
-    .bloque-info {
-        padding: 15px 12px;
-    }
-    
-    .bloque-info h3 {
-        font-size: 1rem;
-    }
-    
-    .mentor-horizontal {
-        padding: 15px 12px;
-    }
-    
-    .mentor-foto {
-        width: 100px;
-        height: 160px;
-    }
-    
-    .mentor-datos h4 {
-        font-size: 1rem;
-    }
-    
-    .mentor-datos .cargo {
-        font-size: 0.85rem;
-    }
-    
-    .mentor-datos p {
-        font-size: 0.8rem;
-    }
+
+    .mentor-horizontal { animation: none !important; }
+
+    .tarjeta-persona,
+    .contenedor-foto img,
+    .etiqueta,
+    .mentor-tags li { transition-duration: 0.01s; }
 }
