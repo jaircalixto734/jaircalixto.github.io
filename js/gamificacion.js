@@ -56,25 +56,81 @@ function initGamification() {
     }
 }
 
+// Campos extendidos del perfil que NUNCA deben perderse al guardar
+// (los administra js/perfil.js: xp, quizzesPassed, missions, profile)
+let extendedFields = {};
+
 // Cargar estado del juego desde localStorage
 function loadGameState() {
     try {
         const saved = localStorage.getItem(GAMIFICATION_CONFIG.storageKey);
         if (saved) {
-            gameState = JSON.parse(saved);
-            console.log('🎮 Estado cargado:', gameState);
+            const parsed = JSON.parse(saved);
+            // Conservar referencias a los campos extendidos para no destruirlos al guardar
+            extendedFields = {
+                xp: typeof parsed.xp === 'number' ? parsed.xp : 0,
+                quizzesPassed: parsed.quizzesPassed || [],
+                missions: parsed.missions || {},
+                profile: parsed.profile || null
+            };
+            gameState = {
+                medals: parsed.medals || [],
+                lastScan: parsed.lastScan || null,
+                scanCount: typeof parsed.scanCount === 'number' ? parsed.scanCount : (parsed.medals || []).length
+            };
+            console.log('🎮 Estado cargado:', gameState, 'XP:', extendedFields.xp);
+        } else {
+            extendedFields = { xp: 0, quizzesPassed: [], missions: {}, profile: null };
         }
     } catch (error) {
         console.error('❌ Error cargando estado:', error);
         gameState = { medals: [], lastScan: null, scanCount: 0 };
+        extendedFields = { xp: 0, quizzesPassed: [], missions: {}, profile: null };
     }
 }
 
+// Volver a leer desde localStorage el estado compartido (sincronización multi-pestaña)
+function syncGameStateFromStorage() {
+    loadGameState();
+    updateGamificationPanelIfVisible();
+}
+
+// Refrescar el panel de medallas abierto con datos actualizados
+function updateGamificationPanelIfVisible() {
+    const container = document.getElementById('gamificationPanel');
+    if (container && container.classList.contains('visible')) {
+        updateGamificationPanel(container, gameState.lastScan, false);
+    }
+}
+
+// Recargar el estado compartido desde localStorage y refrescar el panel si está visible
+window.refreshGamificationState = function () {
+    syncGameStateFromStorage();
+};
+
 // Guardar estado del juego en localStorage
+// IMPORTANTE: mergea sobre lo que ya existe para NO borrar xp/quizzesPassed/missions/profile
 function saveGameState() {
     try {
-        localStorage.setItem(GAMIFICATION_CONFIG.storageKey, JSON.stringify(gameState));
-        console.log('💾 Estado guardado:', gameState);
+        const saved = localStorage.getItem(GAMIFICATION_CONFIG.storageKey);
+        const current = saved ? JSON.parse(saved) : {};
+        const merged = Object.assign({}, current, gameState);
+        // Restaurar campos extendidos del perfil si venían en el estado cargado
+        if (typeof extendedFields.xp === 'number') merged.xp = extendedFields.xp;
+        if (extendedFields.quizzesPassed) merged.quizzesPassed = extendedFields.quizzesPassed;
+        if (extendedFields.missions) merged.missions = extendedFields.missions;
+        if (extendedFields.profile) merged.profile = extendedFields.profile;
+        localStorage.setItem(GAMIFICATION_CONFIG.storageKey, JSON.stringify(merged));
+        // Mantener la copia local de los campos extendidos actualizada
+        extendedFields = {
+            xp: typeof merged.xp === 'number' ? merged.xp : 0,
+            quizzesPassed: merged.quizzesPassed || [],
+            missions: merged.missions || {},
+            profile: merged.profile || null
+        };
+        // Notificar a perfil.js para que recargue el estado compartido (XP/rangos/misiones)
+        window.dispatchEvent(new CustomEvent('silvain:progress-changed'));
+        console.log('💾 Estado guardado (merge):', merged);
     } catch (error) {
         console.error('❌ Error guardando estado:', error);
     }
@@ -415,6 +471,7 @@ function showAchievementModal(arbolNombre) {
                 </div>
                 <div class="achievement-title">¡Logro Desbloqueado!</div>
                 <div class="achievement-subtitle" id="achievementSubtitle">Medalla de Explorador</div>
+                <div class="achievement-xp" id="achievementXp"></div>
                 <div class="achievement-description" id="achievementDescription">
                     Has desbloqueado una nueva medalla en tu colección.
                 </div>
@@ -432,6 +489,22 @@ function showAchievementModal(arbolNombre) {
     document.getElementById('achievementDescription').textContent =
         `¡Has escaneado el código QR del ${displayName} y ganado su medalla! ` +
         `Continúa explorando para completar tu colección de ${GAMIFICATION_CONFIG.totalTrees} árboles.`;
+
+    // Mostrar XP ganada y rango actual (leído en vivo desde localStorage por perfil.js)
+    const xpEl = document.getElementById('achievementXp');
+    if (xpEl && typeof window.SILVAIN_PERFIL !== 'undefined') {
+        try {
+            if (window.SILVAIN_PERFIL.reload) window.SILVAIN_PERFIL.reload();
+            const estadoPerfil = window.SILVAIN_PERFIL.getState();
+            const rangoActual = window.SILVAIN_PERFIL.getRango();
+            xpEl.innerHTML = `<i class="fas fa-bolt"></i> <strong>+${window.SILVAIN_PERFIL.constants.XP_SCAN} XP</strong>` +
+                ` · Total: <strong>${estadoPerfil.xp} XP</strong>` +
+                ` · <span class="achievement-rango">${rangoActual.nombre}</span>`;
+            xpEl.style.display = 'block';
+        } catch (e) {
+            xpEl.style.display = 'none';
+        }
+    }
 
     modal.style.display = 'flex';
 

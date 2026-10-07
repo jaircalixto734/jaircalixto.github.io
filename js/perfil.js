@@ -37,6 +37,9 @@
             var saved = localStorage.getItem(STORAGE_KEY);
             if (saved) {
                 var parsed = JSON.parse(saved);
+                // IMPORTANTE: se mutan las propiedades del objeto "state" en lugar de
+                // reemplazarlo, para que gamificacion.js (getState()) comparta SIEMPRE
+                // la misma referencia y la sincronización XP <-> medallas no se pierda.
                 state.medals = parsed.medals || [];
                 state.lastScan = parsed.lastScan || null;
                 state.scanCount = typeof parsed.scanCount === 'number' ? parsed.scanCount : state.medals.length;
@@ -66,6 +69,14 @@
         getState: function () { return state; },
         save: saveState,
 
+        // Recargar el estado compartido desde localStorage (sincroniza con gamificacion.js)
+        reload: function () {
+            loadState();
+            MISIONES = null; // reconstruir misiones con los datos frescos
+            ensureMissionsBuilt();
+            return state;
+        },
+
         addXP: function (cantidad) {
             state.xp = Math.max(0, (state.xp || 0) + cantidad);
             saveState();
@@ -73,6 +84,8 @@
 
         registerQuizPass: function (arbolId) {
             if (!arbolId) return false;
+            // Sincronizar con lo que esté en localStorage (por si se escaneó en otra pestaña)
+            loadState();
             if (state.quizzesPassed.indexOf(arbolId) !== -1) return false; // ya contado
             state.quizzesPassed.push(arbolId);
             state.xp += XP_QUIZ_PASSED;
@@ -295,6 +308,23 @@
         }
         return nuevo;
     }
+
+    // ---------- Sincronización con gamificacion.js ----------
+    // Al guardar medallas, gamificacion.js dispara este evento para que el
+    // perfil recargue el estado compartido (medallas/XP) desde localStorage.
+    window.addEventListener('silvain:progress-changed', function () {
+        loadState();
+        MISIONES = null;
+        ensureMissionsBuilt();
+        if (typeof window.__perfilRenderTodo === 'function') {
+            try { window.__perfilRenderTodo(); } catch (e) { /* noop */ }
+        }
+    });
+
+    // Guardar al cerrar la pestaña para no perder XP/misiones pendientes
+    window.addEventListener('beforeunload', function () {
+        try { saveState(); } catch (e) { /* noop */ }
+    });
 
     // =====================================================
     // PÁGINA DE PERFIL (perfil.html)
@@ -670,6 +700,8 @@
         }
 
         renderTodo();
+        // Exponer para re-render cuando cambie el progreso (evento de gamificacion.js)
+        window.__perfilRenderTodo = renderTodo;
     }
 
     function escapeHtml(s) {
