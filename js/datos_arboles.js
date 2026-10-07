@@ -1,8 +1,9 @@
 const baseDatosArboles = {
     "merecure": {
         id: "#JBP-01", tipo: "Nativo", nombre: "Merecure", cientifico: "Moquilea pyrifolia (Griseb.) R.O.Williams",
+        datosColegio: { dapPromedio: 32.54, alturaPromedio: 5.17, individuos: 43, qrsInstalados: 0 },
         familia: "Chrysobalanaceae", origen: "Nativo Orinoquía — Llanos colombo-venezolanos", estado: "LC — Preocupación Menor (UICN: No Evaluada en Colombia)", exotica: false,
-        carbono: 215.4, viajes: 78, imagen_portada: "./imagenes/merecure1.jpeg",
+        imagen_portada: "./imagenes/merecure1.jpeg",
         galeria: [
             { img: "./imagenes/merecure1.jpeg", desc: "Imagen Merecure" },
             { img: "./imagenes/merecures.jpeg", desc: "Varios Merecures" },
@@ -136,8 +137,9 @@ const baseDatosArboles = {
     },
     "jambolan": {
         id: "#JBP-02", tipo: "Frutal / Exótica", nombre: "Jambolán", cientifico: "Syzygium cumini (L.) Skeels",
+        datosColegio: { dapPromedio: 0.0, alturaPromedio: 0.0, individuos: 1, qrsInstalados: 0 },
         familia: "Myrtaceae", origen: "Exótica introducida — Indo-Malaya (subcontinente indio y Sudeste Asiático)", estado: "No Evaluada (NE) en Colombia / Globalmente no amenazada — Potencial invasor", exotica: true,
-        carbono: 150.8, viajes: 55, imagen_portada: "./imagenes/Jambolán.jpeg",
+        imagen_portada: "./imagenes/Jambolán.jpeg",
         galeria: [
             { img: "./imagenes/Jambolán.jpeg", desc: "" },
             { img: "./imagenes/jambolan1.jpeg", desc: "" },
@@ -276,8 +278,9 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
     },
     "palo-cruz": {
         id: "#JBP-03", tipo: "Nativo", nombre: "Palo Cruz", cientifico: "Brownea ariza Benth.",
+        datosColegio: { dapPromedio: 28.64, alturaPromedio: 4.1, individuos: 4, qrsInstalados: 0 },
         familia: "Fabaceae", origen: "Nativa de Colombia — Neotrópico (Orinoquía)", estado: "LC — Preocupación Menor (ColPlanta/UNAL 2025)", exotica: false,
-        carbono: 185.0, viajes: 65, imagen_portada: "./imagenes/Palo_Cruz.jpeg",
+        imagen_portada: "./imagenes/Palo_Cruz.jpeg",
         galeria: [
             { img: "./imagenes/Palo_Cruz.jpeg", desc: "Árbol Completo" },
             { img: "./imagenes/palocruz1.jpeg", desc: "Árbol Completo" },
@@ -415,8 +418,9 @@ Soy un viajero. Llegué desde muy, muy lejos: desde la India, ese país enorme y
     },
     "almendro": {
         id: "#JBP-04", tipo: "Exótica Introducida", nombre: "Almendro", cientifico: "Terminalia catappa L.",
+        datosColegio: { dapPromedio: 24.19, alturaPromedio: 3.0, individuos: 1, qrsInstalados: 0 },
         familia: "Combretaceae", origen: "Exótica introducida — Sudeste Asiático (Malasia, India, Indo-China). Naturalizada en trópicos de América", estado: "LC — Preocupación Menor (UICN). No listada en Libros Rojos de Colombia", exotica: true,
-        carbono: 280.5, viajes: 95, imagen_portada: "./imagenes/almendro1.jpeg",
+        imagen_portada: "./imagenes/almendro1.jpeg",
         galeria: [
             { img: "./imagenes/almendro1.jpeg", desc: "" },
             { img: "./imagenes/almendro2.jpeg", desc: "" },
@@ -554,8 +558,9 @@ Cada año, cuando llega el verano llanero, me visto de rojo y anaranjado antes d
     },
     "pomarrosa": {
         id: "#JBP-05", tipo: "Exótica Introducida", nombre: "Pomarrosa", cientifico: "Syzygium jambos (L.) Alston",
+        datosColegio: { dapPromedio: 28.78, alturaPromedio: 6.1, individuos: 39, qrsInstalados: 0 },
         familia: "Myrtaceae", origen: "Exótico — Sudeste Asiático (archipiélago malayo). Naturalizada en Colombia", estado: "LC — Preocupación Menor (UICN 2019)", exotica: true,
-        carbono: 142.5, viajes: 52, imagen_portada: "./imagenes/pomarrosa1.jpeg",
+         imagen_portada: "./imagenes/pomarrosa1.jpeg",
         galeria: [
             { img: "./imagenes/pomarrosa1.jpeg", desc: "Árbol Completo" },
             { img: "./imagenes/pomarrosa3.jpeg", desc: "Vista inferior" },
@@ -686,8 +691,9 @@ Cada año, cuando llega el verano llanero, me visto de rojo y anaranjado antes d
     },
     "palma_areca": {
         id: "#JBP-06", tipo: "Ornamental", nombre: "Palma Areca", cientifico: "Dypsis lutescens (H.Wendl.) Beentje & J.Dransf.",
+        datosColegio: { dapPromedio: 0.0, alturaPromedio: 0.0, individuos: 0, qrsInstalados: 0 },
         familia: "Arecaceae", origen: "Exótico (Madagascar)", estado: "EN — En Peligro (UICN: Hábitat Natural) / No Evaluada en Colombia", exotica: true,
-        carbono: 45.2, viajes: 15, imagen_portada: "./imagenes/areca1.jpeg",
+        imagen_portada: "./imagenes/areca1.jpeg",
         galeria: [
             { img: "./imagenes/areca1.jpeg", desc: "Palma Completa" },
             { img: "./imagenes/areca2.jpeg", desc: "Palma Completa" },
@@ -850,8 +856,9 @@ Tengo un superpoder que muy pocas plantas del jardín poseen: soy una <strong>m�
     },
     "palma-de-coco": {
         id: "#JBP-10", tipo: "Introducido", nombre: "Palma de Coco", cientifico: "Cocos nucifera L.",
+        datosColegio: { dapPromedio: 23.73, alturaPromedio: 4.1, individuos: 8, qrsInstalados: 0 },
         familia: "Arecaceae", origen: "Indo-Pacífico (Exótica introducida)", estado: "No Evaluada / LC global", exotica: true,
-        carbono: 85.2, viajes: 0, imagen_portada: "./imagenes/coco1.jpeg",
+        imagen_portada: "./imagenes/coco1.jpeg",
         galeria: [
             { img: "./imagenes/coco1.jpeg", desc: "Palma Completa" },
             { img: "./imagenes/coco2.jpeg", desc: "Cocos" },
@@ -1071,8 +1078,9 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     },
 "guacimo": {
     id: "#JBP-12", tipo: "Nativo", nombre: "Guácimo", cientifico: "Guazuma ulmifolia Lam.",
+    datosColegio: { dapPromedio: 22.35, alturaPromedio: 4.9, individuos: 3, qrsInstalados: 0 },
     familia: "Malvaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN, 2021)", exotica: false,
-    carbono: 0.189, viajes: 69, imagen_portada: "./imagenes/guacimo7.jpeg",
+    imagen_portada: "./imagenes/guacimo7.jpeg",
     galeria: [
         { img: "./imagenes/guacimo1.jpeg", desc: "" },
         { img: "./imagenes/guacimo2.jpeg", desc: "" },
@@ -1197,8 +1205,9 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     },
     "gualanday": {
     id: "#JBP-13", tipo: "Nativo", nombre: "Gualanday", cientifico: "Jacaranda obtusifolia Humb. & Bonpl.",
+    datosColegio: { dapPromedio: 41.06, alturaPromedio: 8.0, individuos: 1, qrsInstalados: 0 },
     familia: "Bignoniaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN, 2021)", exotica: false,
-    carbono: 0.156, viajes: 57, imagen_portada: "./imagenes/gualanday1.jpeg",
+    imagen_portada: "./imagenes/gualanday1.jpeg",
     galeria: [
         { img: "./imagenes/gualanday1.jpeg", desc: "" },
         { img: "./imagenes/gualanday2.jpeg", desc: "" },
@@ -1325,8 +1334,9 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     },
     "palma-real": {
     id: "#JBP-16", tipo: "Introducida", nombre: "Palma Real", cientifico: "Roystonea regia (Kunth) O.F.Cook",
+    datosColegio: { dapPromedio: 39.06, alturaPromedio: 8.5, individuos: 11, qrsInstalados: 0 },
     familia: "Arecaceae", origen: "Caribe (Cuba, Florida, Bahamas) — Introducida y naturalizada en Colombia", estado: "LC — Preocupación Menor (UICN); cultivada en Colombia", exotica: true,
-    carbono: 0.412, viajes: 150, imagen_portada: "./imagenes/real6.jpeg",
+    imagen_portada: "./imagenes/real6.jpeg",
     galeria: [
         { img: "./imagenes/real1.jpeg", desc: "" },
         { img: "./imagenes/real2.jpeg", desc: "" },
@@ -1461,8 +1471,9 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
 },
 "saman": {
     id: "#JBP-17", tipo: "Nativo", nombre: "Samán", cientifico: "Samanea saman (Jacq.) Merr.",
+    datosColegio: { dapPromedio: 68.91, alturaPromedio: 10.7, individuos: 2, qrsInstalados: 0 },
     familia: "Fabaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN)", exotica: false,
-    carbono: 0.285, viajes: 104, imagen_portada: "./imagenes/saman9.jpeg",
+    imagen_portada: "./imagenes/saman9.jpeg",
     galeria: [
         { img: "./imagenes/saman1.jpeg", desc: "" },
         { img: "./imagenes/saman2.jpeg", desc: "" },
@@ -1599,8 +1610,9 @@ Cada mes del año, sin descanso, produzco flores y frutos al mismo tiempo. Nunca
     },
     "mango": {
         id: "#JBP-08", tipo: "Introducido", nombre: "Mango", cientifico: "Mangifera indica L.",
+        datosColegio: { dapPromedio: 116.5, alturaPromedio: 9.4, individuos: 1, qrsInstalados: 0 },
         familia: "Anacardiaceae", origen: "Norte de India y Myanmar (Exótica introducida)", estado: "LC — Preocupación Menor (UICN) / No Evaluada en Colombia", exotica: true,
-        carbono: 185.4, viajes: 62, imagen_portada: "./imagenes/mango1.jpeg",
+        imagen_portada: "./imagenes/mango1.jpeg",
         galeria: [
             { img: "./imagenes/mango1.jpeg", desc: "Árbol Completo" },
             { img: "./imagenes/mango2.jpeg", desc: "Corteza" },
@@ -1798,8 +1810,9 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
     },
     "trompillo": {
         id: "#JBP-11", tipo: "Nativo", nombre: "Trompillo", cientifico: "Guarea guidonia (L.) Sleumer",
+        datosColegio: { dapPromedio: 51.24, alturaPromedio: 6.8, individuos: 1, qrsInstalados: 0 },
         familia: "Meliaceae", origen: "Nativa Neotrópico", estado: "Preocupación Menor (LC)", exotica: false,
-        carbono: 185.3, viajes: 62, imagen_portada: "./imagenes/trompillo1.jpeg",
+        imagen_portada: "./imagenes/trompillo1.jpeg",
         galeria: [
             { img: "./imagenes/trompillo1.jpeg", desc: "" },
             { img: "./imagenes/trompillo2.jpeg", desc: "" },
@@ -1916,8 +1929,9 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
     },
     "oiti": {
         id: "#JBP-14", tipo: "Introducida", nombre: "Oití", cientifico: "Licania tomentosa (Benth.) Fritsch",
+        datosColegio: { dapPromedio: 30.16, alturaPromedio: 6.34, individuos: 24, qrsInstalados: 0 },
         familia: "Chrysobalanaceae", origen: "Exótica (Brasil - Mata Atlántica/Cerrado)", estado: "Preocupación Menor (LC) - Introducida", exotica: true,
-        carbono: 185.3, viajes: 42, imagen_portada: "./imagenes/oiti1.jpeg",
+        imagen_portada: "./imagenes/oiti1.jpeg",
         galeria: [
             { img: "./imagenes/oiti1.jpeg", desc: "Árbol Completo" },
             { img: "./imagenes/oiti2.jpeg", desc: "Hojas" },
@@ -2039,8 +2053,9 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
     },
     "noni": {
         id: "#JBP-15", tipo: "Exótica Naturalizada", nombre: "Noni", cientifico: "Morinda citrifolia L.",
+        datosColegio: { dapPromedio: 17.37, alturaPromedio: 3.5, individuos: 1, qrsInstalados: 0 },
         familia: "Rubiaceae", origen: "Exótica (Sureste Asiático – Australasia)", estado: "Preocupación Menor (LC) / Naturalizada", exotica: true,
-        carbono: 45.2, viajes: 120, imagen_portada: "./imagenes/noni1.jpeg",
+        imagen_portada: "./imagenes/noni1.jpeg",
         galeria: [
             { img: "./imagenes/noni1.jpeg", desc: "Árbol Completo" },
             { img: "./imagenes/noni2.jpeg", desc: "Vista" },
@@ -2151,8 +2166,9 @@ AGB = 0.0673 × (ρ × D² × H)^0.976
     },
     "caracaro": {
         id: "#JBP-07", tipo: "Nativo", nombre: "Caracaro", cientifico: "Enterolobium cyclocarpum (Jacq.) Griseb.",
+        datosColegio: { dapPromedio: 113.0, alturaPromedio: 10.5, individuos: 1, qrsInstalados: 0 },
         familia: "Fabaceae", origen: "Nativo Neotrópico (México–Sudamérica)", estado: "LC — Preocupación Menor (UICN)", exotica: false,
-        carbono: 285.6, viajes: 92, imagen_portada: "./imagenes/caracaro1.jpeg",
+        imagen_portada: "./imagenes/caracaro1.jpeg",
         galeria: [
             { img: "./imagenes/caracaro1.jpeg", desc: "Árbol Completo" },
             { img: "./imagenes/caracaro2.jpeg", desc: "Hojas" },
@@ -2300,8 +2316,9 @@ Mis raíces guardan un secreto increíble: dentro de pequeños nódulos, viven b
     },
     "maiz_tostado": {
         id: "#JBP-09", tipo: "Nativo", nombre: "Maíz Tostado", cientifico: "Coccoloba acuminata Kunth",
+        datosColegio: { dapPromedio: 0.0, alturaPromedio: 0.0, individuos: 1, qrsInstalados: 0 },
         familia: "Polygonaceae", origen: "Nativa Neotrópico — México SE a Sudamérica. Nativa de Colombia", estado: "LC — Preocupación Menor (UICN 2021)", exotica: false,
-        carbono: 85.3, viajes: 42, imagen_portada: "./imagenes/tostado1.jpeg",
+        imagen_portada: "./imagenes/tostado1.jpeg",
         galeria: [
             { img: "./imagenes/tostado1.jpeg", desc: "" },
             { img: "./imagenes/tostado2.jpeg", desc: "" },
@@ -2448,8 +2465,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
     },
     "guayaba": {
         id: "#JBP-20", tipo: "Nativo", nombre: "Guayaba", cientifico: "Psidium guajava L.",
+        datosColegio: { dapPromedio: 10.45, alturaPromedio: 8.0, individuos: 3, qrsInstalados: 0 },
         familia: "Myrtaceae", origen: "Nativa Neotrópico — México a Argentina, Caribe, Amazonia", estado: "NE — No Evaluada (UICN); Nativa cultivada sin amenaza en Colombia", exotica: false,
-        carbono: 32.1, viajes: 45, imagen_portada: "./imagenes/guayaba1.jpeg",
+        imagen_portada: "./imagenes/guayaba1.jpeg",
         galeria: [
             { img: "./imagenes/guayaba1.jpeg", desc: "Árbol de Guayaba" },
             { img: "./imagenes/guayaba2.jpeg", desc: "Hojas Características" },
@@ -2595,8 +2613,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
     },
 "flor-morado": {
     id: "#JBP-18", tipo: "Nativo", nombre: "Flor Morado", cientifico: "Tabebuia rosea (Bertol.) DC.",
+    datosColegio: { dapPromedio: 33.10, alturaPromedio: 5.5, individuos: 1, qrsInstalados: 0 },
     familia: "Bignoniaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "NE — No Evaluada (UICN); sin restricción en Colombia", exotica: false,
-    carbono: 0.479, viajes: 175, imagen_portada: "./imagenes/rosea1.jpeg",
+    imagen_portada: "./imagenes/rosea1.jpeg",
     galeria: [
         { img: "./imagenes/rosea2.jpeg", desc: "Árbol Tabebuia Rosea" },
         { img: "./imagenes/rosea3.jpeg", desc: "Corteza Y Tronco" },
@@ -2723,8 +2742,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "mamoncillo": {
     id: "#JBP-19", tipo: "Nativo", nombre: "Mamoncillo", cientifico: "Melicoccus bijugatus Jacq.",
+    datosColegio: { dapPromedio: 56.02, alturaPromedio: 9.0, individuos: 1, qrsInstalados: 0 },
     familia: "Sapindaceae", origen: "Nativo norte de Suramérica — Orinoquía colombo-venezolana", estado: "LC — Preocupación Menor (UICN, 2020)", exotica: false,
-    carbono: 0.312, viajes: 114, imagen_portada: "./imagenes/mamoncillo.jpeg",
+    imagen_portada: "./imagenes/mamoncillo.jpeg",
     galeria: [
         { img: "./imagenes/mamoncillo.jpeg", desc: "" },
         { img: "./imagenes/mamoncillo2.jpeg", desc: "" },
@@ -2848,8 +2868,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "limoncillo": {
     id: "#JBP-21", tipo: "Introducida", nombre: "Limoncillo", cientifico: "Swinglea glutinosa (Blanco) Merr.",
+    datosColegio: { dapPromedio: 25.28, alturaPromedio: 3.88, individuos: 20, qrsInstalados: 0 },
     familia: "Rutaceae", origen: "Filipinas — Naturalizada en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN); exótica cultivada en Colombia", exotica: true,
-    carbono: 0.089, viajes: 32, imagen_portada: "./imagenes/limoncillo1.jpeg",
+    imagen_portada: "./imagenes/limoncillo1.jpeg",
     galeria: [
         { img: "./imagenes/limoncillo2.jpeg", desc: "" },
         { img: "./imagenes/limoncillo3.jpeg", desc: "" },
@@ -2970,8 +2991,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "palma_africana": {
     id: "#JBP-22", tipo: "Introducida", nombre: "Palma Africana", cientifico: "Elaeis guineensis Jacq.",
+    datosColegio: { dapPromedio: 45.20, alturaPromedio: 10.0, individuos: 1, qrsInstalados: 0 },
     familia: "Arecaceae", origen: "Golfo de Guinea (África Occidental) — Cultivada en Orinoquía colombiana", estado: "NE — No Evaluada (UICN); exótica cultivada en Colombia", exotica: true,
-    carbono: 0.658, viajes: 239, imagen_portada: "./imagenes/africana1.jpeg",
+    imagen_portada: "./imagenes/africana1.jpeg",
     galeria: [
         { img: "./imagenes/palma_africana1.jpeg", desc: "Plantación comercial en Casanare" },
         { img: "./imagenes/palma_africana2.jpeg", desc: "Estípite adulto con cicatrices foliares" },
@@ -3102,8 +3124,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "adelfa amarilla": {
     id: "#JBP-23", tipo: "Introducida", nombre: "Adelfa Amarilla", cientifico: "Cascabela thevetia (L.) Lippold",
+    datosColegio: { dapPromedio: 21.9, alturaPromedio: 4.3, individuos: 1, qrsInstalados: 0 },
     familia: "Apocynaceae", origen: "Noroeste de Sudamérica (prob. Perú) — Naturalizada en Orinoquía", estado: "LC — Preocupación Menor (UICN, 2021); exótica cultivada en Colombia", exotica: true,
-    carbono: 0.142, viajes: 52, imagen_portada: "./imagenes/adelfa1.jpeg",
+    imagen_portada: "./imagenes/adelfa1.jpeg",
     galeria: [
         { img: "./imagenes/adelfa1.jpeg", desc: "" },
         { img: "./imagenes/adelfa2.jpeg", desc: "" },
@@ -3227,8 +3250,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "cica": {
     id: "#JBP-24", tipo: "Introducida", nombre: "Cica", cientifico: "Cycas revoluta Thunb.",
+    datosColegio: { dapPromedio: 0.0, alturaPromedio: 0.0, individuos: 0, qrsInstalados: 0 },
     familia: "Cycadaceae", origen: "Sur de Japón — Cultivada como ornamental en Colombia", estado: "LC — Preocupación Menor (UICN, 2009); exótica cultivada", exotica: true,
-    carbono: 0.034, viajes: 12, imagen_portada: "./imagenes/cica1.jpeg",
+    imagen_portada: "./imagenes/cica1.jpeg",
     galeria: [
         { img: "./imagenes/cica1.jpeg", desc: "Porte ornamental con corona de frondas" },
         { img: "./imagenes/cica2.jpeg", desc: "Caudex cubierto de bases foliares persistentes" },
@@ -3361,8 +3385,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "vanarena": {
     id: "#JBP-24", tipo: "Introducida", nombre: "Vanarena", cientifico: "Bougainvillea spectabilis Willd.",
+    datosColegio: { dapPromedio: 0.0, alturaPromedio: 0.0, individuos: 5, qrsInstalados: 0 },
     familia: "Nyctaginaceae", origen: "Brasil (Mata Atlántica/Amazonia) — Cultivada como ornamental en Colombia", estado: "LC — Preocupación Menor (UICN, 2024); exótica cultivada", exotica: true,
-    carbono: 0.087, viajes: 32, imagen_portada: "./imagenes/vanarena1.jpeg",
+    imagen_portada: "./imagenes/vanarena1.jpeg",
     galeria: [
         { img: "./imagenes/vanarena1.jpeg", desc: "Floración masiva en verano llanero" },
         { img: "./imagenes/vanarena2.jpeg", desc: "Brácteas papiráceas magenta (no son flores verdaderas)" },
@@ -3489,8 +3514,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "leucaena": {
     id: "#JBP-25", tipo: "Introducida", nombre: "Leucaena", cientifico: "Leucaena leucocephala (Lam.) de Wit",
+    datosColegio: { dapPromedio: 0.0, alturaPromedio: 0.0, individuos: 1, qrsInstalados: 0 },
     familia: "Fabaceae", origen: "México y América Central — Naturalizada en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN); ⚠️ Top 100 invasoras (ISSG)", exotica: true,
-    carbono: 0.227, viajes: 83, imagen_portada: "./imagenes/leucaena1.jpeg",
+    imagen_portada: "./imagenes/leucaena1.jpeg",
     galeria: [
         { img: "./imagenes/leucaena1.jpeg", desc: "Inflorescencias globosas blancas (pompón)" },
         { img: "./imagenes/leucaena2.jpeg", desc: "Hojas bipinnadas con glándulas nectaríferas" },
@@ -3626,8 +3652,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 
 "guama": {
     id: "#JBP-27", tipo: "Nativo", nombre: "Guamo", cientifico: "Inga edulis Mart.",
+    datosColegio: { dapPromedio: 26.55, alturaPromedio: 5.0, individuos: 1, qrsInstalados: 0 },
     familia: "Fabaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombiana", estado: "LC — Preocupación Menor (UICN, 2021)", exotica: false,
-    carbono: 0.104, viajes: 38, imagen_portada: "./imagenes/guama1.jpg",
+    imagen_portada: "./imagenes/guama1.jpg",
     galeria: [
         { img: "./imagenes/guama1.jpg", desc: "" },
         { img: "./imagenes/guama2.jpg", desc: "" },
@@ -3755,8 +3782,9 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
 },
 "araguaney": {
     id: "#JBP-28", tipo: "Nativo", nombre: "Flor Amarillo", cientifico: "Handroanthus chrysanthus (Jacq.) S.O.Grose",
+    datosColegio: { dapPromedio: 33.34, alturaPromedio: 6.7, individuos: 2, qrsInstalados: 0 },
     familia: "Bignoniaceae", origen: "Neotrópico — Amplia distribución en Orinoquía colombo-venezolana", estado: "LC (referencial) — Sin evaluación UICN especie-específica publicada", exotica: false,
-    carbono: 0.312, viajes: 114, imagen_portada: "./imagenes/canaguate1.jpeg",
+    imagen_portada: "./imagenes/canaguate1.jpeg",
     galeria: [
         { img: "./imagenes/canaguate1.jpeg", desc: "" },
         { img: "./imagenes/canaguate2.jpeg", desc: "" },
@@ -3888,4 +3916,6 @@ ln(AGB) = −3,652 − 1,697 · ln(D) + 1,169 · [ln(D)]² − 0,122 · [ln(D)]�
     ]
 },
 };
+
+
 
