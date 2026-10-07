@@ -170,19 +170,59 @@
                         Cargando ecuación científica...
                     </div>
                 </div>
-                <div class="ficha-carbono-pro mt-4">
-                    <div class="carbono-pro-bg"></div>
-                    <div class="carbono-pro-content">
-                        <span class="c-header">Carbono Total Secuestrado</span>
-                        <div class="c-data">
-                            <div class="c-number"><span id="fichaCarbono">0</span><small>kg</small></div>
-                            <div class="c-divider"></div>
-                            <div class="c-text">Equivale a retirar <strong><span id="fichaViajes">0</span> viajes</strong> de un vehículo promedio.</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
+
+        <!-- =============================================
+NUEVA SECCIÓN: DATOS DENTRO DEL COLEGIO
+============================================= -->
+<section id="datos-colegio" class="dossier-module m5 reveal-up">
+  <div class="module-header-pro">
+    <i class="fa-solid fa-school-flag"></i>
+    <h2 class="module-title-pro">Datos dentro del colegio</h2>
+  </div>
+
+  <div class="module-body-pro">
+    <p class="section-label">
+      <i class="fa-solid fa-clipboard-list"></i>
+      Registro institucional del arbolado
+    </p>
+
+    <div class="grid4">
+      <div class="metric-card metric-card-colegio">
+        <i class="fa-solid fa-ruler-horizontal metric-icon"></i>
+        <div class="metric-label">DAP promedio registrado</div>
+        <div class="metric-val" id="dDapPromedio">-- cm</div>
+        <div class="metric-note">Diámetro a la altura del pecho</div>
+      </div>
+
+      <div class="metric-card metric-card-colegio">
+        <i class="fa-solid fa-ruler-vertical metric-icon"></i>
+        <div class="metric-label">Altura estimada promedio</div>
+        <div class="metric-val" id="dAlturaPromedio">-- m</div>
+        <div class="metric-note">Altura total aproximada</div>
+      </div>
+
+      <div class="metric-card metric-card-colegio">
+        <i class="fa-solid fa-tree metric-icon"></i>
+        <div class="metric-label">Individuos en el colegio</div>
+        <div class="metric-val" id="dIndividuos">--</div>
+        <div class="metric-note">Ejemplares de esta especie</div>
+      </div>
+
+      <div class="metric-card metric-card-colegio">
+        <i class="fa-solid fa-qrcode metric-icon"></i>
+        <div class="metric-label">QR instalados</div>
+        <div class="metric-val" id="dQrsInstalados">--</div>
+        <div class="metric-note">Códigos asociados a este árbol</div>
+      </div>
+    </div>
+
+    <div class="warn-box mt-3">
+      <strong>Nota:</strong> estos valores corresponden al registro interno del colegio y pueden actualizarse conforme se realicen nuevas mediciones o instalaciones de QR.
+    </div>
+  </div>
+</section>
 
         <!-- MÓDULO 3: MORFOLOGÍA Y CALENDARIO FENOLÓGICO -->
         <div class="dossier-module m3 reveal-up">
@@ -471,8 +511,6 @@
             document.getElementById('fichaNombreComun').textContent = datos.nombre;
             document.getElementById('fichaCientifico').textContent = datos.cientifico;
             document.getElementById('fichaImagen').style.backgroundImage = `url('${datos.imagen_portada}')`;
-            document.getElementById('fichaCarbono').textContent = datos.carbono;
-            document.getElementById('fichaViajes').textContent = datos.viajes;
             document.getElementById('fichaMensajeIA').innerHTML = `"${datos.mensajeIA}"`;
 
             if(datos.exotica) document.getElementById('alertaExotica').style.display = "flex";
@@ -598,6 +636,44 @@
                 fb.style.color = "#e74c3c";
             }
         }
+        
+
+        function cargarDatosColegio(arbol) {
+  const datos = arbol.datosColegio || {};
+
+  const dap = document.getElementById("dDapPromedio");
+  const altura = document.getElementById("dAlturaPromedio");
+  const individuos = document.getElementById("dIndividuos");
+  const qrs = document.getElementById("dQrsInstalados");
+
+  if (dap) {
+    dap.textContent = datos.dapPromedio != null
+      ? `${datos.dapPromedio} cm`
+      : "--";
+  }
+
+  if (altura) {
+    altura.textContent = datos.alturaPromedio != null
+      ? `${datos.alturaPromedio} m`
+      : "--";
+  }
+
+  if (individuos) {
+    individuos.textContent = datos.individuos != null
+      ? datos.individuos
+      : "--";
+  }
+
+  if (qrs) {
+    qrs.textContent = datos.qrsInstalados != null
+      ? datos.qrsInstalados
+      : "--";
+  }
+}
+
+        // Cargar datos del colegio al inicio
+        cargarDatosColegio(datosCientificos);
+        cargarDatosColegio(arbol);
     </script>
 </body>
 
