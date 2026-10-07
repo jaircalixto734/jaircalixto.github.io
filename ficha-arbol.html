@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/pages/ficha-arbol.css">
     <link rel="stylesheet" href="./css/pages/gamificacion.css">
+    <link rel="stylesheet" href="./css/pages/perfil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -391,6 +392,7 @@ NUEVA SECCIÓN: DATOS DENTRO DEL COLEGIO
     <script src="js/datos_arboles.js" charset="UTF-8"></script>
     <script src="js/datos_arboles2.js" charset="UTF-8"></script>
     <script src="js/gamificacion.js"></script>
+    <script src="js/perfil.js" charset="UTF-8"></script>
     <script src="js/ficha-interactiva.js" charset="UTF-8"></script>
     <script src="js/ficha-silvain-chat.js" charset="UTF-8"></script>
     <script> 
@@ -672,8 +674,11 @@ NUEVA SECCIÓN: DATOS DENTRO DEL COLEGIO
 }
 
         // Cargar datos del colegio al inicio
-        cargarDatosColegio(datosCientificos);
-        cargarDatosColegio(arbol);
+        // (fix: la variable correcta es arbolSeleccionado; antes lanzaba "arbol is not defined")
+        window.arbolSeleccionado = arbolSeleccionado;
+        if (typeof datosCientificos !== 'undefined' && datosCientificos) {
+            cargarDatosColegio(datosCientificos);
+        }
     </script>
 </body>
 
