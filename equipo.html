@@ -1,115 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
-<link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
 <head>
+
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W32JPEZVD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W32JPEZVD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-3W32JPEZVD');
-</script>
+      gtag('config', 'G-3W32JPEZVD');
+    </script>
 
+    <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conoce al equipo detrás de SILVAIN JBP. Estudiantes y mentores dedicados a la conservación.">
-    <title>Nuestro Equipo - SILVAIN JBP</title>
+    <meta name="theme-color" content="#2d5a27">
+    <meta name="description" content="Conoce al equipo detrás de SILVAIN: estudiantes del SENA y docente asesor de la IE Jesús Bernal Pinzón dedicados a la conservación de la biodiversidad.">
+    <meta name="keywords" content="SILVAIN, Equipo, SENA, IE Jesús Bernal Pinzón, Conservación de Recursos Naturales, Maní, Casanare, Estudiantes">
+    <meta name="author" content="Jair Calixto Hernández — Equipo SILVAIN JBP">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecodigital.edu.co/equipo.html">
+    <meta property="og:title" content="Nuestro Equipo | SILVAIN — IE Jesús Bernal Pinzón">
+    <meta property="og:description" content="Las personas que sembraron SILVAIN: estudiantes de la Técnica en Conservación de Recursos Naturales del SENA.">
+    <meta property="og:image" content="./imagenes/logojbp1.png">
+
+    <title>Nuestro Equipo | SILVAIN — IE Jesús Bernal Pinzón</title>
+
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./css/pages/equipo.css">
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Si el visitante tiene JavaScript desactivado, el contenido igual se muestra -->
+    <noscript>
+        <style>
+            .reveal { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-brand">
-            <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
-            <div class="brand-text">
-                <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
-                <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
-            </div>
+<!-- =============================================
+     SPRITE DE ICONOS SVG (no requiere internet)
+     ============================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l2 3.3a1 1 0 0 1-.7 1.7Z"/><path d="M12 22v-3"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="16" width="5" height="5" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.7 1.8L21.5 17.5l-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7L19 15z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/><path d="M22 10v6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- =============================================
+     NAVBAR (igual que en el resto del sitio)
+     ============================================= -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
+        <div class="brand-text">
+            <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+            <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
         </div>
-        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú" role="button" tabindex="0">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú" role="button" tabindex="0">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lista-arboles.html">Árboles</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+        <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+        <li><a href="equipo.html" class="active">Equipo</a></li>
+        <li><a href="mapa-colegio.html">Mapa</a></li>
+    </ul>
+</nav>
+
+<!-- =============================================
+     HERO DEL EQUIPO
+     (mismo carrusel de fotos con Ken Burns
+     que el hero del index, en versión compacta)
+     ============================================= -->
+<header class="hero page-hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true">
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+        <span class="eyebrow light"><svg class="icon"><use href="#i-users"/></svg> Las personas detrás del proyecto</span>
+        <h1>Las raíces de <span>SILVAIN</span></h1>
+        <p class="hero-sub">Somos los estudiantes de la Técnica en Conservación de Recursos Naturales del SENA que convirtieron los árboles del colegio en un laboratorio vivo de aprendizaje.</p>
+
+        <div class="hero-chips" aria-label="Datos del equipo">
+            <span class="hero-chip"><svg class="icon"><use href="#i-cap"/></svg> Grado Once · SENA 2026</span>
+            <span class="hero-chip"><svg class="icon"><use href="#i-users"/></svg> Ciencia ciudadana</span>
+            <span class="hero-chip"><svg class="icon"><use href="#i-globe"/></svg> ODS 15 · Vida de ecosistemas</span>
+            <span class="hero-chip"><svg class="icon"><use href="#i-pin"/></svg> Maní, Casanare</span>
         </div>
-        <ul class="nav-links" id="nav-list">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="lista-arboles.html">Árboles</a></li>
-            <li><a href="calculadora.html">Calculadora</a></li>
-            <li><a href="ia-chatbot.html">IA Chatbot</a></li>
-            <li><a href="equipo.html" class="active">Equipo</a></li>
-            <li><a href="mapa-colegio.html">Mapa</a></li>
-        </ul>
-    </nav>
+    </div>
+</header>
 
-<section class="equipo-section">
-    <div class="container">
-        <h2>Nuestro Equipo De Trabajo</h2>
-        
-        <div class="grid-equipo">
-            <div class="tarjeta-persona">
-                <div class="contenedor-foto">
-                    <img src="./imagenes/Jair.jpg" alt="Jair Calixto" loading="lazy">
-                </div>
-                <div class="bloque-info">
-                    <h3>Jair Calixto Hernández</h3>
-                    <span class="etiqueta">Líder Del Grupo/ Encargado Digital</span>
-                    <p>Desarrollo web, Calculadora de Carbono, Arquitectura de Inteligencia Artificial e Inventario Forestal.</p>
-                </div>
-            </div>
-
-            <div class="tarjeta-persona">
-                <div class="contenedor-foto">
-                    <img src="./imagenes/sara.jpeg" alt="Sara Ávila" loading="lazy">
-                </div>
-                <div class="bloque-info">
-                    <h3>Sara Margarita Ávila</h3>
-                    <span class="etiqueta">Fotógrafa</span>
-                    <p>Especialista en fotografía, Identificación Y Recolección de Campo.</p>
-                </div>
-            </div>
-
-            <div class="tarjeta-persona">
-                <div class="contenedor-foto">
-                    <img src="./imagenes/diego.jpeg" alt="Diego Hernández" loading="lazy">
-                </div>
-                <div class="bloque-info">
-                    <h3>Diego Alejandro Hernández Daza</h3>
-                    <span class="etiqueta">Analista</span>
-                    <p>Recolección de DAP y Altura Estimada, Cálculo de Biomasa y Carbono.</p>
-                </div>
-            </div>
+<!-- =============================================
+     EL EQUIPO EN CIFRAS
+     (misma barra de vidrio flotante del index)
+     ============================================= -->
+<section class="stats-bar" aria-label="El equipo en cifras">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Estudiantes creadores</span>
         </div>
-
-        <div class="mentor-horizontal">
-            <div class="mentor-foto">
-                <img src="./imagenes/edwin.jpg" alt="Profe Edwin" loading="lazy">
-            </div>
-            <div class="mentor-datos">
-                <h4>Edwin Ricaurte Avella</h4>
-                <p class="cargo">Docente Asesor - Guía Técnico SENA</p>
-                <p class="desc">Mentor pedagógico en la Técnica de Conservación de Recursos Naturales (I.E Jesús Bernal Pinzón).</p>
-            </div>
+        <div class="stat-item">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Docente asesor SENA</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Meses de proyecto</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">28</span>
+            <span class="stat-label">Árboles documentados</span>
         </div>
     </div>
 </section>
 
+<!-- =============================================
+     NUESTRO EQUIPO DE TRABAJO
+     ============================================= -->
+<section class="equipo-section" id="equipo">
+    <div class="aurora aurora-1" aria-hidden="true"></div>
+    <div class="aurora aurora-2" aria-hidden="true"></div>
+
+    <div class="container">
+        <header class="section-head reveal">
+            <span class="eyebrow"><svg class="icon"><use href="#i-users"/></svg> Nuestro equipo</span>
+            <h2>Quiénes hacen posible este <span class="text-grad">bosque digital</span></h2>
+            <p>Cada ficha, cada fotografía y cada línea de código tiene nombre propio. Estas son las personas que sembraron SILVAIN en la I.E. Jesús Bernal Pinzón.</p>
+        </header>
+
+        <div class="grid-equipo">
+            <!-- ===== 01 · Jair ===== -->
+            <div class="tarjeta-persona reveal">
+                <div class="contenedor-foto">
+                    <img src="./imagenes/Jair.jpg" alt="Jair Calixto Hernández, líder del proyecto SILVAIN" loading="lazy">
+                </div>
+                <div class="bloque-info">
+                    <h3>Jair Calixto Hernández</h3>
+                    <span class="etiqueta">Líder del grupo · Encargado digital</span>
+                    <p>Desarrollo web, Calculadora de Carbono, Arquitectura de Inteligencia Artificial e Inventario Forestal.</p>
+                </div>
+            </div>
+
+            <!-- ===== 02 · Sara ===== -->
+            <div class="tarjeta-persona reveal">
+                <div class="contenedor-foto">
+                    <img src="./imagenes/sara.jpeg" alt="Sara Margarita Ávila Lara, fotógrafa del proyecto" loading="lazy">
+                </div>
+                <div class="bloque-info">
+                    <h3>Sara Margarita Ávila</h3>
+                    <span class="etiqueta">Fotógrafa</span>
+                    <p>Especialista en fotografía, identificación y recolección de campo.</p>
+                </div>
+            </div>
+
+            <!-- ===== 03 · Diego ===== -->
+            <div class="tarjeta-persona reveal">
+                <div class="contenedor-foto">
+                    <img src="./imagenes/diego.jpeg" alt="Diego Alejandro Hernández Daza, analista del proyecto" loading="lazy">
+                </div>
+                <div class="bloque-info">
+                    <h3>Diego Alejandro Hernández Daza</h3>
+                    <span class="etiqueta">Analista</span>
+                    <p>Recolección de DAP y altura estimada, cálculo de biomasa y carbono.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MENTOR (tarjeta horizontal premium) ===== -->
+        <div class="mentor-horizontal reveal">
+            <div class="mentor-foto">
+                <img src="./imagenes/edwin.jpg" alt="Profesor Edwin Ricaurte Avella, docente asesor del proyecto" loading="lazy">
+            </div>
+            <div class="mentor-datos">
+                <span class="mentor-badge"><svg class="icon"><use href="#i-cap"/></svg> Acompañamiento institucional</span>
+                <h4>Edwin Ricaurte Avella</h4>
+                <p class="cargo">Docente Asesor · Guía Técnico SENA</p>
+                <p class="desc">Mentor pedagógico en la Técnica de Conservación de Recursos Naturales (I.E Jesús Bernal Pinzón).</p>
+                <ul class="mentor-tags">
+                    <li><svg class="icon"><use href="#i-check"/></svg> Acompañamiento pedagógico</li>
+                    <li><svg class="icon"><use href="#i-check"/></svg> Articulación con el SENA</li>
+                    <li><svg class="icon"><use href="#i-check"/></svg> Guía técnica de campo</li>
+                </ul>
+            </div>
+            <svg class="mentor-watermark icon" aria-hidden="true"><use href="#i-leaf"/></svg>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     CTA FINAL (misma banda verde animada del index)
+     ============================================= -->
+<section class="cta-section">
+    <h2 class="reveal">¿Quieres conocer los árboles que documentamos?</h2>
+    <p class="reveal">Explora el inventario forestal del colegio, calcula el carbono que nos rodea y descubre el mapa vivo del Jesús Bernal Pinzón.</p>
+
+    <div class="cta-buttons reveal">
+        <a href="lista-arboles.html" class="btn-cta primary">Ver el inventario</a>
+        <a href="index.html" class="btn-cta secondary">Volver al inicio</a>
+    </div>
+</section>
+
+<!-- =============================================
+     FOOTER (unificado con el del index)
+     ============================================= -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-column branding">
             <div class="footer-logo">
                 <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
                 <div>
-                    <h4>Inventario Forestal Digital</h4>
+                    <h4>SILVAIN · Inventario Forestal Digital</h4>
                     <span>IE Jesús Bernal Pinzón</span>
                 </div>
             </div>
@@ -123,16 +267,17 @@
                 <li><a href="lista-arboles.html">Inventario Forestal</a></li>
                 <li><a href="calculadora.html">Calculadora de Carbono</a></li>
                 <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+                <li><a href="mapa-colegio.html">Mapa Interactivo</a></li>
             </ul>
         </div>
 
         <div class="footer-column">
             <h4>Información</h4>
             <ul>
+                <li><a href="index.html#bienvenida">Sobre SILVAIN</a></li>
+                <li><a href="index.html#funciones">Funciones de la plataforma</a></li>
+                <li><a href="index.html#creditos">Créditos y apoyos</a></li>
                 <li><a href="equipo.html">Equipo de Trabajo</a></li>
-                <li><a href="#goals">Objetivos del Proyecto</a></li>
-                <li><a href="#">Marco Teórico</a></li>
-                <li><a href="#">Resultados Esperados</a></li>
             </ul>
         </div>
 
@@ -162,7 +307,30 @@
     <i class="fas fa-moon"></i>
 </button>
 
-<!-- Lógica Global -->
+<!-- Lógica Global (menú móvil, tema, luciérnagas, reveal) -->
 <script src="js/main.js"></script>
+
+<script>
+/* =============================================
+   SCROLL REVEAL (mismo sistema que el index)
+   ============================================= */
+(function () {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+        reveals.forEach(el => el.classList.add('visible'));
+        return;
+    }
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => obs.observe(el));
+})();
+</script>
+
 </body>
 </html>

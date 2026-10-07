@@ -1,133 +1,127 @@
 /* =============================================
-   PAGES/INVENTARIO.CSS
-   Estilos exclusivos del inventario forestal (lista-arboles.html):
-   - Hero con carrusel del colegio
-   - Buscador y filtros
-   - Grid de tarjetas de árboles
-   - Badges por categoría
+   INVENTARIO.CSS — Lista de árboles SILVAIN
+   Réplica del lenguaje visual de index.css:
+   0.  Hero compacto de página (page-hero)
+   1.  Barra de controles flotante (vidrio)
+   2.  Buscador y filtros por categoría
+   3.  Grilla de tarjetas de árboles
+   4.  Badges, ID y botón de ficha
+   5.  Mensaje "sin resultados"
+   6.  Modo noche
+   7.  Responsivo
+   8.  Movimiento reducido
    ============================================= */
 
 /* =============================================
-   1. HERO DEL INVENTARIO (carrusel institucional)
+   0. HERO COMPACTO DE PÁGINA
+   (reutiliza .hero / .hero-bg / .hero-layer /
+   .hero-overlay / .hero-chips de index.css)
    ============================================= */
-@keyframes carruselInventario {
-    0%, 10%     { background-image: url('./imagenes/colegio1.jpeg'); }
-    11%, 20%    { background-image: url('./imagenes/colegio2.jpeg'); }
-    21%, 30%    { background-image: url('./imagenes/colegio3.jpeg'); }
-    31%, 40%    { background-image: url('./imagenes/colegio4.jpeg'); }
-    41%, 50%    { background-image: url('./imagenes/colegio5.jpeg'); }
-    51%, 60%    { background-image: url('./imagenes/colegio6.jpeg'); }
-    61%, 70%    { background-image: url('./imagenes/colegio7.jpeg'); }
-    71%, 80%    { background-image: url('./imagenes/colegio8.jpeg'); }
-    81%, 90%    { background-image: url('./imagenes/colegio9.jpeg'); }
-    91%, 100%   { background-image: url('./imagenes/colegio10.jpeg'); }
+.hero.page-hero {
+    height: auto;
+    min-height: 62vh;
+    padding: 170px 20px 132px;
 }
+
+.page-hero h1 {
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    margin: 20px 0 16px;
+}
+
+.page-hero .hero-sub {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+}
+
+/* Entrada escalonada del contenido (igual que el hero del index) */
+.page-hero .hero-content .eyebrow   { animation-delay: 0.1s; }
+.page-hero .hero-content h1         { animation-delay: 0.25s; }
+.page-hero .hero-content .hero-sub  { animation-delay: 0.4s; }
+.page-hero .hero-content .hero-chips { animation-delay: 0.55s; }
+
+/* Chips informativos (no son enlaces) */
+.page-hero .hero-chip { cursor: default; }
 
 @keyframes fadeInCard {
-    from { opacity: 0; transform: scale(0.9); }
-    to   { opacity: 1; transform: scale(1); }
-}
-
-.inventory-hero {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    padding: 80px 20px 120px;
-    text-align: center;
-    animation: carruselInventario 50s infinite ease-in-out;
-}
-
-.inventory-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(26, 51, 24, 0.7);
-    z-index: 1;
-}
-
-.relative-content {
-    position: relative;
-    z-index: 2;
-}
-
-.inventory-hero .text-white {
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin: 15px 0;
-}
-
-.inventory-hero .text-white-soft {
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 700px;
-    margin: 0 auto;
+    from { opacity: 0; transform: translateY(22px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* =============================================
-   2. CONTROLES (Buscador + Filtros)
+   1. BARRA DE CONTROLES FLOTANTE (vidrio)
    ============================================= */
 .inventory-controls-wrapper {
     position: relative;
-    z-index: 10;
-    margin-top: -60px;
+    z-index: 30;
+    margin-top: -64px;
     padding: 0 20px;
     display: flex;
     justify-content: center;
 }
 
 .inventory-controls {
-    background: var(--card-bg);
     width: 100%;
-    max-width: 800px;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    max-width: 860px;
+    padding: 26px 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     align-items: center;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(45, 90, 39, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(26, 51, 24, 0.18);
 }
 
+/* =============================================
+   2. BUSCADOR Y FILTROS
+   ============================================= */
 .search-bar {
     position: relative;
     width: 100%;
-    max-width: 600px;
-}
-
-.search-bar i {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #81b622;
-    font-size: 1.2rem;
-    transition: 0.3s;
+    max-width: 620px;
 }
 
 .search-bar input {
     width: 100%;
-    padding: 16px 20px 16px 50px;
+    padding: 16px 22px 16px 52px;
     border: 2px solid var(--border-color);
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-family: 'Poppins', sans-serif;
     outline: none;
-    transition: 0.3s;
-    background: var(--bg-color);
+    transition: all 0.3s ease;
+    background: var(--card-bg);
     color: var(--text-main);
 }
 
+.search-bar input::placeholder { color: var(--text-muted); opacity: 0.75; }
+
 .search-bar input:focus {
     border-color: var(--primary-light);
-    background: var(--card-bg);
-    box-shadow: 0 10px 25px rgba(129, 182, 34, 0.15);
+    box-shadow: 0 0 0 4px rgba(129, 182, 34, 0.16),
+                0 12px 28px rgba(26, 51, 24, 0.12);
 }
 
+.search-bar i {
+    position: absolute;
+    left: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #81b622;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+/* El input va primero en el markup para que este selector funcione */
 .search-bar input:focus + i {
-    color: #2d5a27;
+    color: var(--primary-color);
+    transform: translateY(-50%) scale(1.12);
 }
 
+/* --- Chips de filtro --- */
 .filter-chips {
     display: flex;
     gap: 10px;
@@ -136,12 +130,15 @@
 }
 
 .filter-btn {
-    background: transparent;
-    border: 2px solid var(--border-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(129, 182, 34, 0.07);
+    border: 1px solid rgba(45, 90, 39, 0.16);
     color: var(--text-muted);
-    padding: 8px 20px;
+    padding: 9px 20px;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     font-weight: 600;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
@@ -150,23 +147,63 @@
 
 .filter-btn:hover {
     border-color: #81b622;
-    color: #81b622;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(26, 51, 24, 0.1);
 }
 
 .filter-btn.active {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--text-light);
-    box-shadow: 0 5px 15px rgba(45, 90, 39, 0.2);
+    background: linear-gradient(135deg, #2d5a27, #3d7a35);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(45, 90, 39, 0.3);
+}
+
+/* Punto de color por categoría */
+.chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+.filter-btn[data-filter="todos"] .chip-dot           { background: linear-gradient(135deg, #2d5a27, #a4d438); }
+.filter-btn[data-filter="nativos"] .chip-dot          { background: #2d5a27; }
+.filter-btn[data-filter="frutales"] .chip-dot         { background: #e67e22; }
+.filter-btn[data-filter="ornamentales"] .chip-dot     { background: #9b59b6; }
+.filter-btn[data-filter="maderables"] .chip-dot       { background: #7f8c8d; }
+.filter-btn[data-filter="por-identificar"] .chip-dot  { background: #34495e; }
+
+/* --- Contador de resultados --- */
+.results-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(129, 182, 34, 0.1);
+    border: 1px solid rgba(45, 90, 39, 0.12);
+    padding: 6px 16px;
+    border-radius: 50px;
+}
+.results-count::before {
+    content: '\f06c'; /* fa-leaf */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #81b622;
+    font-size: 0.72rem;
 }
 
 /* =============================================
-   3. GRID DE ÁRBOLES
+   3. GRILLA DE TARJETAS DE ÁRBOLES
    ============================================= */
 .inventory-grid-section {
-    padding: 50px 20px 100px;
-    background: var(--bg-color);
+    padding: 72px 20px 100px;
+    background: linear-gradient(180deg, var(--bg-color) 0%, #f4f8f0 100%);
 }
+
+.inventory-grid-section .container { padding-top: 0; }
 
 .tree-grid {
     display: grid;
@@ -176,102 +213,154 @@
 
 .tree-card {
     background: var(--card-bg);
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
     box-shadow: var(--shadow-medium);
-    border: 2px solid transparent;
-    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
     display: flex;
     flex-direction: column;
+    /* Entrada escalonada al cargar la página */
+    animation: fadeInCard 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
 }
 
+/* Repetición de la entrada al filtrar (la activa el JS) */
+.tree-grid .tree-card.card-in {
+    animation: fadeInCard 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.tree-grid .tree-card:nth-child(1)  { animation-delay: 0.00s; }
+.tree-grid .tree-card:nth-child(2)  { animation-delay: 0.05s; }
+.tree-grid .tree-card:nth-child(3)  { animation-delay: 0.10s; }
+.tree-grid .tree-card:nth-child(4)  { animation-delay: 0.15s; }
+.tree-grid .tree-card:nth-child(5)  { animation-delay: 0.20s; }
+.tree-grid .tree-card:nth-child(6)  { animation-delay: 0.25s; }
+.tree-grid .tree-card:nth-child(7)  { animation-delay: 0.30s; }
+.tree-grid .tree-card:nth-child(8)  { animation-delay: 0.35s; }
+.tree-grid .tree-card:nth-child(9)  { animation-delay: 0.40s; }
+.tree-grid .tree-card:nth-child(10) { animation-delay: 0.45s; }
+.tree-grid .tree-card:nth-child(11) { animation-delay: 0.50s; }
+.tree-grid .tree-card:nth-child(n+12) { animation-delay: 0.55s; }
+
 .tree-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-light);
-    box-shadow: 0 15px 40px rgba(129, 182, 34, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(129, 182, 34, 0.5);
+    box-shadow: 0 24px 50px rgba(26, 51, 24, 0.18);
 }
 
 .tree-img-container {
     position: relative;
     width: 100%;
     height: 220px;
-    background: #e0e0e0;
+    overflow: hidden;
+    background: linear-gradient(160deg, #eef4e8, #dcecc2);
 }
 
 .tree-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.tree-card:hover .tree-img-container img {
-    transform: scale(1.05);
+.tree-card:hover .tree-img-container img { transform: scale(1.07); }
+
+/* Velo degradado para que las etiquetas se lean siempre */
+.tree-img-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 20, 8, 0.22) 0%, transparent 34%, transparent 62%, rgba(10, 20, 8, 0.16) 100%);
+    pointer-events: none;
 }
 
-/* --- ETIQUETAS (BADGES Y ID) --- */
+/* =============================================
+   4. BADGES, ID Y BOTÓN DE FICHA
+   ============================================= */
 .tree-id {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(26, 51, 24, 0.85);
-    color: #d4ff80;
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    backdrop-filter: blur(4px);
+    top: 14px;
+    right: 14px;
     z-index: 2;
+    background: rgba(15, 28, 13, 0.72);
+    color: #d4ff80;
+    padding: 5px 13px;
+    border-radius: 50px;
+    border: 1px solid rgba(212, 255, 128, 0.25);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 .tree-badge {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: white;
+    top: 14px;
+    left: 14px;
     z-index: 2;
+    padding: 6px 13px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #fff;
     display: flex;
     align-items: center;
-    gap: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    gap: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
+.tree-badge i { font-size: 0.68rem; }
 
-/* Colores por categoría */
-.badge-nativo      { background: #2d5a27; }
-.badge-frutal      { background: #e67e22; }
-.badge-ornamental  { background: #9b59b6; }
-.badge-maderable   { background: #7f8c8d; }
-.badge-estudio     { background: #34495e; }
+/* Colores por categoría (suaves, con vidrio) */
+.badge-nativo     { background: rgba(45, 90, 39, 0.88); }
+.badge-frutal     { background: rgba(211, 106, 16, 0.9); }
+.badge-ornamental { background: rgba(142, 68, 173, 0.88); }
+.badge-maderable  { background: rgba(93, 105, 107, 0.9); }
+.badge-estudio    { background: rgba(52, 73, 94, 0.9); }
 
-/* --- INFO DE LA TARJETA --- */
+/* --- Info de la tarjeta --- */
 .tree-info {
-    padding: 25px 20px;
+    padding: 24px 22px 22px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .tree-info h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--secondary-color);
     margin-bottom: 2px;
 }
 
 .scientific-name {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     font-style: italic;
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     margin-bottom: 12px;
+}
+.scientific-name::before {
+    content: '\f06c'; /* fa-leaf */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-style: normal;
+    font-size: 0.68rem;
+    color: #81b622;
 }
 
 .tree-desc {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
     margin-bottom: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -280,311 +369,292 @@
     text-overflow: ellipsis;
 }
 
-/* --- BOTÓN "VER FICHA" --- */
+/* --- Botón "Ver ficha" (píldora con barrido de brillo) --- */
 .btn-tree {
+    position: relative;
+    overflow: hidden;
     margin-top: auto;
     text-align: center;
-    display: inline-block;
-    padding: 12px;
-    background: var(--bg-color);
-    color: var(--primary-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 18px;
+    background: rgba(129, 182, 34, 0.1);
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: var(--transition);
-    border: 1px solid var(--border-color);
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border: 1px solid rgba(45, 90, 39, 0.16);
+    transition: all 0.3s ease;
 }
 
-.btn-tree i {
-    margin-right: 6px;
-    color: #81b622;
+.btn-tree i { color: #81b622; transition: color 0.3s ease; }
+
+.btn-tree::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.22);
+    transform: rotate(30deg);
+    transition: left 0.6s ease;
 }
 
 .btn-tree:hover {
-    background: #81b622;
-    color: white;
+    background: linear-gradient(135deg, #2d5a27, #3d7a35);
+    border-color: transparent;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(45, 90, 39, 0.28);
 }
+.btn-tree:hover i { color: #d4ff80; }
+.btn-tree:hover::after { left: 120%; }
 
-.btn-tree:hover i {
-    color: white;
-}
-
-/* --- BOTÓN QR PARA GAMIFICACIÓN --- */
+/* --- Variante QR (gamificación, disponible para futuras fichas) --- */
 .btn-tree.qr-link {
-    padding: 10px;
-    min-width: auto;
+    padding: 13px 15px;
     margin-left: 8px;
-    background: var(--primary-dark);
-    border-color: var(--primary-dark);
-}
-
-.btn-tree.qr-link i {
-    margin-right: 0;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
     color: #fff;
 }
-
+.btn-tree.qr-link i { color: #d4ff80; margin-right: 0; }
 .btn-tree.qr-link:hover {
     background: #81b622;
     border-color: #81b622;
 }
+.btn-tree.qr-link:hover i { color: #14290f; }
 
-.btn-tree.qr-link:hover i {
-    color: white;
-}
-
-/* --- MENSAJE "SIN RESULTADOS" --- */
+/* =============================================
+   5. MENSAJE "SIN RESULTADOS"
+   ============================================= */
 .no-results-msg {
     text-align: center;
-    padding: 60px 20px;
-    color: #888;
+    padding: 70px 20px 40px;
+    color: var(--text-muted);
 }
 
 .no-results-msg i {
     font-size: 3rem;
-    color: #ddd;
-    margin-bottom: 15px;
+    color: rgba(129, 182, 34, 0.45);
+    margin-bottom: 18px;
+    display: inline-block;
+    animation: floaty 4s ease-in-out infinite;
+}
+
+.no-results-msg h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+
+.no-results-msg p {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+.no-results-msg button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    background: var(--primary-color);
+    border: none;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 24px rgba(45, 90, 39, 0.25);
+}
+.no-results-msg button:hover {
+    background: #3d7a35;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(45, 90, 39, 0.32);
 }
 
 /* =============================================
-   RESPONSIVE DESIGN - MOBILE & TABLET
+   6. MODO NOCHE
    ============================================= */
+body.modo-noche .inventory-grid-section {
+    background: linear-gradient(180deg, var(--bg-color) 0%, #101a10 100%);
+}
 
-/* Tablet (max-width: 1024px) */
+body.modo-noche .inventory-controls {
+    background: rgba(20, 33, 19, 0.85);
+    border-color: rgba(212, 255, 128, 0.12);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+body.modo-noche .search-bar input {
+    background: rgba(15, 24, 14, 0.8);
+    border-color: rgba(212, 255, 128, 0.14);
+    color: var(--text-main);
+}
+body.modo-noche .search-bar input:focus {
+    border-color: #d4ff80;
+    box-shadow: 0 0 0 4px rgba(212, 255, 128, 0.12);
+}
+body.modo-noche .search-bar i { color: #d4ff80; }
+body.modo-noche .search-bar input:focus + i { color: #d4ff80; }
+
+body.modo-noche .filter-btn {
+    background: rgba(212, 255, 128, 0.06);
+    border-color: rgba(212, 255, 128, 0.16);
+    color: #a3b899;
+}
+body.modo-noche .filter-btn:hover {
+    border-color: rgba(212, 255, 128, 0.45);
+    color: #d4ff80;
+}
+body.modo-noche .filter-btn.active {
+    background: linear-gradient(135deg, #558b2f, #689f38);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+body.modo-noche .chip-dot { box-shadow: 0 0 0 2px rgba(20, 33, 19, 0.6); }
+
+body.modo-noche .results-count {
+    background: rgba(212, 255, 128, 0.07);
+    border-color: rgba(212, 255, 128, 0.15);
+    color: #a3b899;
+}
+body.modo-noche .results-count::before { color: #d4ff80; }
+
+body.modo-noche .tree-card {
+    border-color: var(--border-color);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+body.modo-noche .tree-card:hover {
+    border-color: rgba(212, 255, 128, 0.35);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+}
+body.modo-noche .tree-img-container {
+    background: linear-gradient(160deg, #232e23, #1a231a);
+}
+
+body.modo-noche .tree-info h3 { color: #e8f5e9; }
+body.modo-noche .scientific-name { color: #a3b899; }
+body.modo-noche .scientific-name::before { color: #d4ff80; }
+body.modo-noche .tree-desc { color: #b8c8b8; }
+
+body.modo-noche .btn-tree {
+    background: rgba(212, 255, 128, 0.08);
+    border-color: rgba(212, 255, 128, 0.2);
+    color: #c5e1a5;
+}
+body.modo-noche .btn-tree i { color: #d4ff80; }
+body.modo-noche .btn-tree:hover {
+    background: linear-gradient(135deg, #558b2f, #689f38);
+    color: #fff;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+}
+body.modo-noche .btn-tree:hover i { color: #fff; }
+
+body.modo-noche .no-results-msg i { color: rgba(212, 255, 128, 0.35); }
+body.modo-noche .no-results-msg h3 { color: #e8f5e9; }
+body.modo-noche .no-results-msg button {
+    background: #558b2f;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+body.modo-noche .no-results-msg button:hover { background: #689f38; }
+
+/* =============================================
+   7. RESPONSIVO
+   ============================================= */
 @media (max-width: 1024px) {
-    .inventory-hero {
-        padding: 60px 15px 100px;
-    }
-    
-    .inventory-hero .text-white {
-        font-size: 2rem;
-    }
-    
+    .hero.page-hero { padding: 150px 20px 116px; }
+
     .tree-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 25px;
     }
-    
-    .inventory-controls {
-        max-width: 90%;
-        padding: 25px;
-    }
+
+    .inventory-controls { max-width: 92%; padding: 24px; }
 }
 
-/* Tablet pequeña / Móvil grande (max-width: 768px) */
 @media (max-width: 768px) {
-    .inventory-hero {
-        padding: 50px 15px 80px;
+    .hero.page-hero {
+        min-height: 56vh;
+        padding: 130px 16px 100px;
     }
-    
-    .inventory-hero h2 {
-        font-size: 1.8rem;
-    }
-    
-    .inventory-hero .section-intro {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-    
-    .inventory-controls-wrapper {
-        margin-top: -40px;
-        padding: 0 15px;
-    }
-    
-    .inventory-controls {
-        padding: 20px;
-        border-radius: 15px;
-    }
-    
-    .search-bar input {
-        padding: 14px 18px 14px 45px;
-        font-size: 0.95rem;
-    }
-    
-    .filter-chips {
-        justify-content: center;
-        gap: 8px;
-    }
-    
-    .filter-btn {
-        padding: 7px 15px;
-        font-size: 0.85rem;
-    }
-    
-    .tree-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-        gap: 20px;
-    }
-    
-    .tree-img-container {
-        height: 200px;
-    }
-    
-    .tree-info {
-        padding: 20px 15px;
-    }
-    
-    .tree-info h3 {
-        font-size: 1.2rem;
-    }
-    
-    .btn-tree {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
+    .page-hero h1 { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+    .page-hero .hero-chips { gap: 8px; margin-top: 30px; }
+    .page-hero .hero-chip { font-size: 0.76rem; padding: 8px 14px; }
+
+    .inventory-controls-wrapper { margin-top: -46px; padding: 0 15px; }
+    .inventory-controls { padding: 20px 18px; gap: 15px; border-radius: 20px; }
+
+    .search-bar input { padding: 14px 18px 14px 48px; font-size: 0.92rem; }
+    .search-bar i { left: 18px; }
+
+    .filter-chips { gap: 8px; }
+    .filter-btn { padding: 8px 15px; font-size: 0.8rem; }
+
+    .inventory-grid-section { padding: 52px 15px 80px; }
+    .tree-grid { grid-template-columns: 1fr; gap: 20px; }
+    .tree-img-container { height: 210px; }
 }
 
-/* Móvil mediano (max-width: 480px) */
 @media (max-width: 480px) {
-    .inventory-hero {
-        padding: 40px 10px 70px;
-    }
-    
-    .inventory-hero .label-white {
-        font-size: 0.75rem;
-        padding: 6px 16px;
-    }
-    
-    .inventory-hero h2 {
-        font-size: 1.5rem;
-        margin: 10px 0;
-    }
-    
-    .inventory-hero .text-white-soft {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-    
-    .inventory-controls-wrapper {
-        margin-top: -30px;
-        padding: 0 10px;
-    }
-    
-    .inventory-controls {
-        padding: 15px;
-        gap: 15px;
-    }
-    
-    .search-bar {
-        max-width: 100%;
-    }
-    
-    .search-bar input {
-        padding: 12px 15px 12px 42px;
-        font-size: 0.9rem;
-    }
-    
-    .search-bar i {
-        left: 15px;
-        font-size: 1rem;
-    }
-    
-    .filter-chips {
-        flex-wrap: wrap;
-        gap: 6px;
-    }
-    
-    .filter-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-    }
-    
-    .tree-grid {
-        gap: 15px;
-    }
-    
-    .tree-card {
-        border-radius: 15px;
-    }
-    
-    .tree-img-container {
-        height: 180px;
-    }
-    
-    .tree-badge {
-        font-size: 0.7rem;
-        padding: 4px 8px;
-        left: 10px;
-        top: 10px;
-    }
-    
-    .tree-id {
-        font-size: 0.75rem;
-        padding: 4px 10px;
-        right: 10px;
-        top: 10px;
-    }
-    
-    .tree-info {
-        padding: 15px;
-    }
-    
-    .tree-info h3 {
-        font-size: 1.1rem;
-    }
-    
-    .scientific-name {
-        font-size: 0.8rem;
-    }
-    
-    .tree-desc {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-    
-    .btn-tree {
-        padding: 10px 15px;
-        font-size: 0.85rem;
-        border-radius: 10px;
-    }
-    
-    .no-results-msg {
-        padding: 40px 15px;
-    }
-    
-    .no-results-msg i {
-        font-size: 2.5rem;
-    }
+    .hero.page-hero { padding: 118px 14px 92px; }
+    .page-hero .hero-sub { font-size: 0.9rem; }
+
+    .inventory-controls-wrapper { margin-top: -36px; padding: 0 10px; }
+    .inventory-controls { padding: 16px 14px; gap: 13px; }
+
+    .search-bar input { padding: 12px 15px 12px 44px; font-size: 0.88rem; }
+    .search-bar i { left: 15px; font-size: 0.95rem; }
+
+    .filter-btn { padding: 7px 12px; font-size: 0.75rem; }
+    .chip-dot { width: 7px; height: 7px; }
+    .results-count { font-size: 0.72rem; }
+
+    .tree-card { border-radius: 18px; }
+    .tree-img-container { height: 190px; }
+    .tree-badge { font-size: 0.64rem; padding: 5px 10px; top: 10px; left: 10px; }
+    .tree-id { font-size: 0.66rem; padding: 4px 10px; top: 10px; right: 10px; }
+    .tree-info { padding: 18px 16px 16px; }
+    .tree-info h3 { font-size: 1.1rem; }
+    .btn-tree { padding: 11px 15px; font-size: 0.85rem; }
+
+    .no-results-msg { padding: 50px 15px 30px; }
+    .no-results-msg i { font-size: 2.4rem; }
 }
 
-/* Móvil pequeño (max-width: 360px) */
 @media (max-width: 360px) {
-    .inventory-hero {
-        padding: 30px 10px 60px;
+    .hero.page-hero { padding: 108px 12px 84px; min-height: 52vh; }
+    .page-hero h1 { font-size: 1.45rem; }
+    .filter-btn { padding: 6px 10px; font-size: 0.72rem; }
+    .tree-img-container { height: 170px; }
+}
+
+/* =============================================
+   8. MOVIMIENTO REDUCIDO (accesibilidad)
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+    .page-hero .hero-content > * {
+        animation: none !important;
+        opacity: 1 !important;
     }
-    
-    .inventory-hero h2 {
-        font-size: 1.3rem;
+
+    .tree-grid .tree-card,
+    .tree-grid .tree-card.card-in {
+        animation: none !important;
+        opacity: 1 !important;
     }
-    
-    .inventory-hero .text-white-soft {
-        font-size: 0.85rem;
-    }
-    
-    .inventory-controls {
-        padding: 12px;
-    }
-    
-    .search-bar input {
-        padding: 10px 12px 10px 40px;
-        font-size: 0.85rem;
-    }
-    
-    .filter-btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
-    
-    .tree-img-container {
-        height: 160px;
-    }
-    
-    .tree-info h3 {
-        font-size: 1rem;
-    }
-    
-    .tree-desc {
-        font-size: 0.85rem;
-    }
+
+    .no-results-msg i { animation: none !important; }
+
+    .tree-card,
+    .tree-img-container img,
+    .btn-tree,
+    .filter-btn { transition-duration: 0.01s; }
 }

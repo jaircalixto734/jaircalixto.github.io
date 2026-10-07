@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculadora de Carbono - Mide el impacto ambiental de tus árboles con SILVAIN JBP.">
-    <title>Calculadora de Carbono - SILVAIN JBP</title>
-    <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W32JPEZTD"></script>
@@ -16,8 +11,26 @@
       gtag('config', 'G-3W32JPEZTD');
     </script>
 
+    <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d5a27">
+    <meta name="description" content="Calculadora de Biomasa y Carbono SILVAIN — Estima el CO₂ capturado por los árboles de la IE Jesús Bernal Pinzón con ecuaciones alométricas y protocolos IDEAM.">
+    <meta name="keywords" content="SILVAIN, Calculadora de Carbono, Biomasa, CO2, DAP, Ecuaciones Alométricas, IDEAM, Casanare, IE Jesús Bernal Pinzón, SENA">
+    <meta name="author" content="Jair Calixto Hernández — Equipo SILVAIN JBP">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecodigital.edu.co/calculadora.html">
+    <meta property="og:title" content="Calculadora de Carbono | SILVAIN — IE Jesús Bernal Pinzón">
+    <meta property="og:description" content="El impacto que no se ve, en números reales: estima la biomasa y el CO₂ capturado por cada árbol del colegio.">
+    <meta property="og:image" content="./imagenes/logojbp1.png">
+
+    <title>Calculadora de Carbono | SILVAIN — IE Jesús Bernal Pinzón</title>
+
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./css/pages/calculadora.css">
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,291 +38,402 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Si el visitante tiene JavaScript desactivado, el contenido igual se muestra -->
+    <noscript>
+        <style>
+            .reveal { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-brand">
-            <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
-            <div class="brand-text">
-                <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
-                <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
-            </div>
+<!-- =============================================
+     SPRITE DE ICONOS SVG (no requiere internet)
+     ============================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l2 3.3a1 1 0 0 1-.7 1.7Z"/><path d="M12 22v-3"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="16" width="5" height="5" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.7 1.8L21.5 17.5l-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7L19 15z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/><path d="M22 10v6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- =============================================
+     NAVBAR (igual que en el resto del sitio)
+     ============================================= -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
+        <div class="brand-text">
+            <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+            <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
         </div>
-        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú" role="button" tabindex="0">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú" role="button" tabindex="0">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lista-arboles.html">Árboles</a></li>
+        <li><a href="calculadora.html" class="active">Calculadora</a></li>
+        <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="mapa-colegio.html">Mapa</a></li>
+    </ul>
+</nav>
+
+<!-- =============================================
+     HERO DE LA CALCULADORA
+     (mismo carrusel de fotos con Ken Burns
+     que el hero del index, en versión compacta)
+     ============================================= -->
+<header class="hero page-hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true">
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+        <div class="hero-layer"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+        <span class="eyebrow light"><svg class="icon"><use href="#i-calc"/></svg> Módulo 02 · Calculadora de Carbono</span>
+        <h1>Calculadora de <span>Biomasa y Carbono</span></h1>
+        <p class="hero-sub">El impacto que no se ve, en números reales: estima la biomasa y el CO₂ capturado por un árbol a partir de su DAP y su altura, con ecuaciones alométricas y protocolos del IDEAM.</p>
+
+        <div class="hero-chips" aria-label="Características de la calculadora">
+            <span class="hero-chip"><svg class="icon"><use href="#i-spark"/></svg> Ecuaciones alométricas</span>
+            <span class="hero-chip"><svg class="icon"><use href="#i-globe"/></svg> Protocolo IDEAM</span>
+            <span class="hero-chip"><svg class="icon"><use href="#i-calc"/></svg> Resultados en tiempo real</span>
+            <span class="hero-chip"><svg class="icon"><use href="#i-cap"/></svg> Uso pedagógico</span>
         </div>
-        <ul class="nav-links" id="nav-list">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="lista-arboles.html">Árboles</a></li>
-            <li><a href="calculadora.html" class="active">Calculadora</a></li>
-            <li><a href="ia-chatbot.html">IA Chatbot</a></li>
-            <li><a href="equipo.html">Equipo</a></li>
-            <li><a href="mapa-colegio.html">Mapa</a></li>
-        </ul>
-    </nav>
+    </div>
+</header>
 
-    <!-- =============================================
-         CALCULADORA DE BIOMASA Y CARBONO
-         ============================================= -->
-    <section class="calculadora-section">
-        <div class="calc-header">
-            <h2>Calculadora de Biomasa y Carbono</h2>
-            <p>
-                Ingresa los datos dasonómicos del árbol para estimar su biomasa y descubrir su impacto real en la mitigación del cambio climático.
-            </p>
+<!-- =============================================
+     CIFRAS CLAVE DEL MÉTODO
+     (misma barra de vidrio flotante del index)
+     ============================================= -->
+<section class="stats-bar calc-stats" aria-label="Cifras clave del método">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <span class="stat-number">1.30 m</span>
+            <span class="stat-label">Altura de medición del DAP</span>
         </div>
+        <div class="stat-item">
+            <span class="stat-number">0.47</span>
+            <span class="stat-label">Fracción de carbono (IPCC)</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">3.67</span>
+            <span class="stat-label">Factor de conversión a CO₂</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">28</span>
+            <span class="stat-label">Especies en el inventario</span>
+        </div>
+    </div>
+</section>
 
-        <div class="calc-aviso">
-    <i class="fas fa-exclamation-triangle"></i>
-    <p>
-        <strong>Aviso importante:</strong> Los cálculos de captura de carbono de esta herramienta son 
-        <strong>estimaciones aproximadas</strong> y pueden presentar imprecisiones derivadas de las 
-        ecuaciones alométricas o de la programación. Los valores mostrados deben tomarse como datos 
-        orientativos o equivalentes, <strong>no como mediciones científicas precisas</strong>. 
-        El propósito de esta calculadora es ilustrar de forma pedagógica el impacto ambiental 
-        que pueden tener los árboles de la institución.
-    </p>
-</div>
+<!-- =============================================
+     CALCULADORA DE BIOMASA Y CARBONO
+     ============================================= -->
+<section class="calculadora-section" id="calculadora">
+    <div class="aurora aurora-1" aria-hidden="true"></div>
+    <div class="aurora aurora-2" aria-hidden="true"></div>
 
-        <div class="calc-grid">
-            <!-- =============================================
-                 FORMULARIO
-                 ============================================= -->
-            <div class="calc-form-column">
-                <form id="form-calculadora" novalidate>
-                    <div class="form-group">
-                        <label for="especie">Especie del Árbol</label>
-                        <select id="especie" name="especie" required>
-                            <option value="">Selecciona una especie...</option>
-                        </select>
-                        <small>
-                            El listado se carga automáticamente desde el inventario forestal JBP.
-                        </small>
+    <header class="section-head reveal">
+        <span class="eyebrow"><svg class="icon"><use href="#i-calc"/></svg> Herramienta pedagógica</span>
+        <h2>Estima el impacto de <span class="text-grad">cada árbol</span></h2>
+        <p>Ingresa los datos dasonómicos del árbol para estimar su biomasa y descubrir su impacto real en la mitigación del cambio climático. La calculadora te muestra el procedimiento completo, paso a paso.</p>
+    </header>
 
-                        <!-- Notas técnicas de la especie seleccionada -->
-                        <ul id="notas-especie" class="calc-notas" aria-live="polite"></ul>
-                    </div>
+    <div class="calc-aviso reveal">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>
+            <strong>Aviso importante:</strong> Los cálculos de captura de carbono de esta herramienta son
+            <strong>estimaciones aproximadas</strong> y pueden presentar imprecisiones derivadas de las
+            ecuaciones alométricas o de la programación. Los valores mostrados deben tomarse como datos
+            orientativos o equivalentes, <strong>no como mediciones científicas precisas</strong>.
+            El propósito de esta calculadora es ilustrar de forma pedagógica el impacto ambiental
+            que pueden tener los árboles de la institución.
+        </p>
+    </div>
 
-                    <div class="form-group">
-                        <label for="dap">DAP (Diámetro en cm)</label>
-                        <input
-                            type="number"
-                            id="dap"
-                            name="dap"
-                            min="0.1"
-                            step="0.01"
-                            inputmode="decimal"
-                            placeholder="Ej: 18.5"
-                            required
-                        >
-                        <small>
-                            Diámetro a la altura del pecho, medido a 1.30 m del suelo.
-                        </small>
-                    </div>
+    <div class="calc-grid">
+        <!-- =============================================
+             FORMULARIO
+             ============================================= -->
+        <div class="calc-form-column reveal">
+            <form id="form-calculadora" novalidate>
+                <div class="form-group">
+                    <label for="especie">Especie del Árbol</label>
+                    <select id="especie" name="especie" required>
+                        <option value="">Selecciona una especie...</option>
+                    </select>
+                    <small>
+                        El listado se carga automáticamente desde el inventario forestal JBP.
+                    </small>
 
-                    <div class="form-group">
-                        <label for="altura">Altura Estimada (Metros)</label>
-                        <input
-                            type="number"
-                            id="altura"
-                            name="altura"
-                            min="0.1"
-                            step="0.1"
-                            inputmode="decimal"
-                            placeholder="Ej: 9.0"
-                            required
-                        >
-                        <small>
-                            Puedes usar clinómetro, estimación visual o comparación con objetos cercanos.
-                        </small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ecuacion">Tipo de Ecuación</label>
-                        <select id="ecuacion" name="ecuacion" required>
-                            <option value="">Primero selecciona una especie</option>
-                        </select>
-                        <small>
-                            La calculadora muestra las ecuaciones disponibles para la especie elegida.
-                        </small>
-                    </div>
-
-                    <button type="submit" class="btn-calc">
-                        <i class="fas fa-calculator"></i>
-                        Calcular Impacto Ambiental
-                    </button>
-                </form>
-            </div>
-
-            <!-- =============================================
-                 RESULTADOS
-                 ============================================= -->
-            <div class="calc-results-column" id="resultado">
-                <div class="result-main-card">
-                    <h3 class="result-title">CO₂ Equivalente Estimado</h3>
-
-                    <div class="result-value">
-                        <span id="res-co2">0.00</span><span class="unit">kg CO₂e</span>
-                    </div>
-
-                    <p class="result-subtitle">
-                        Biomasa: <strong><span id="res-biomasa">0.00</span> kg</strong> ·
-                        Carbono: <strong><span id="res-carbono">0.00</span> kg C</strong>
-                    </p>
-
-                    <p class="result-subtitle" id="res-ecuacion">
-                        Ingresa los datos para calcular el impacto de este árbol.
-                    </p>
-
-                    <div class="calc-ecuacion-info">
-                        <span id="res-formula"></span>
-                        <span id="res-fuente"></span>
-                    </div>
-
-                    <!-- Advertencias técnicas o errores -->
-                    <ul id="advertencias" class="calc-advertencias" aria-live="polite"></ul>
+                    <!-- Notas técnicas de la especie seleccionada -->
+                    <ul id="notas-especie" class="calc-notas" aria-live="polite"></ul>
                 </div>
 
-                <!-- =============================================
-                     PROCEDIMIENTO PASO A PASO (PEDAGÓGICO)
-                     ============================================= -->
-                <div class="calc-procedimiento" id="procedimiento-box">
-                    <div class="proc-header">
-                        <i class="fas fa-square-root-alt"></i>
-                        <h4>Procedimiento del cálculo</h4>
-                    </div>
-                    <ol id="res-procedimiento" class="proc-lista"></ol>
+                <div class="form-group">
+                    <label for="dap">DAP (Diámetro en cm)</label>
+                    <input
+                        type="number"
+                        id="dap"
+                        name="dap"
+                        min="0.1"
+                        step="0.01"
+                        inputmode="decimal"
+                        placeholder="Ej: 18.5"
+                        required
+                    >
+                    <small>
+                        Diámetro a la altura del pecho, medido a 1.30 m del suelo.
+                    </small>
                 </div>
 
-                <!-- =============================================
-                     EQUIVALENCIAS
-                     ============================================= -->
-                <div class="equivalency-grid" id="equivalencias">
-                    <div class="equiv-card">
-                        <i class="fas fa-car"></i>
-                        <span class="equiv-title">CO₂ Compensado</span>
-                        <span class="equiv-value" id="eq-km">0 km</span>
-                        <small>Recorridos en auto</small>
-                    </div>
-
-                    <div class="equiv-card">
-                        <i class="fas fa-wind"></i>
-                        <span class="equiv-title">Oxígeno Producido</span>
-                        <span class="equiv-value" id="eq-oxigeno">0 días</span>
-                        <small>Respirando por 1 día</small>
-                    </div>
-
-                    <div class="equiv-card">
-                        <i class="fas fa-lightbulb"></i>
-                        <span class="equiv-title">Energía Limpia</span>
-                        <span class="equiv-value" id="eq-led">0 días</span>
-                        <small>Foco LED encendido</small>
-                    </div>
-
-                    <div class="equiv-card">
-                        <i class="fas fa-recycle"></i>
-                        <span class="equiv-title">Botellas Plástico</span>
-                        <span class="equiv-value" id="eq-botellas">0 bot.</span>
-                        <small>Equivalente en producción</small>
-                    </div>
-
-                    <div class="equiv-card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span class="equiv-title">Cargas Smartphone</span>
-                        <span class="equiv-value" id="eq-cargas">0 cargas</span>
-                        <small>Energía para cargar</small>
-                    </div>
-
-                    <div class="equiv-card">
-                        <i class="fas fa-tree"></i>
-                        <span class="equiv-title">Árboles Jóvenes</span>
-                        <span class="equiv-value" id="eq-arboles">0 árboles</span>
-                        <small>Equivalentes a 10 años</small>
-                    </div>
+                <div class="form-group">
+                    <label for="altura">Altura Estimada (Metros)</label>
+                    <input
+                        type="number"
+                        id="altura"
+                        name="altura"
+                        min="0.1"
+                        step="0.1"
+                        inputmode="decimal"
+                        placeholder="Ej: 9.0"
+                        required
+                    >
+                    <small>
+                        Puedes usar clinómetro, estimación visual o comparación con objetos cercanos.
+                    </small>
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <label for="ecuacion">Tipo de Ecuación</label>
+                    <select id="ecuacion" name="ecuacion" required>
+                        <option value="">Primero selecciona una especie</option>
+                    </select>
+                    <small>
+                        La calculadora muestra las ecuaciones disponibles para la especie elegida.
+                    </small>
+                </div>
+
+                <button type="submit" class="btn-calc">
+                    <i class="fas fa-calculator"></i>
+                    Calcular Impacto Ambiental
+                </button>
+            </form>
         </div>
 
         <!-- =============================================
-             TUTORIAL
+             RESULTADOS
              ============================================= -->
-        <div class="calc-tutorial-section">
-            <h3>
-                <i class="fas fa-graduation-cap"></i>
-                ¿Cómo usar esta calculadora?
-            </h3>
+        <div class="calc-results-column reveal" id="resultado">
+            <div class="result-main-card">
+                <h3 class="result-title">CO₂ Equivalente Estimado</h3>
 
-            <div class="tutorial-grid">
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h4>1. Selecciona la Especie</h4>
-                    <p>
-                        Elige el árbol del inventario JBP. Cada especie tiene su propia densidad de madera y sus ecuaciones alométricas asociadas.
-                    </p>
+                <div class="result-value">
+                    <span id="res-co2">0.00</span><span class="unit">kg CO₂e</span>
                 </div>
 
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">
-                        <i class="fas fa-ruler"></i>
-                    </div>
-                    <h4>2. Mide el DAP</h4>
-                    <p>
-                        El DAP es el diámetro del tronco a 1.30 m del suelo. Si mediste la circunferencia, divídela entre π: 3.1416.
-                    </p>
+                <p class="result-subtitle">
+                    Biomasa: <strong><span id="res-biomasa">0.00</span> kg</strong> ·
+                    Carbono: <strong><span id="res-carbono">0.00</span> kg C</strong>
+                </p>
+
+                <p class="result-subtitle" id="res-ecuacion">
+                    Ingresa los datos para calcular el impacto de este árbol.
+                </p>
+
+                <div class="calc-ecuacion-info">
+                    <span id="res-formula"></span>
+                    <span id="res-fuente"></span>
                 </div>
 
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">
-                        <i class="fas fa-arrows-alt-v"></i>
-                    </div>
-                    <h4>3. Estima la Altura</h4>
-                    <p>
-                        Puedes usar un clinómetro, una aplicación móvil o una comparación visual con objetos conocidos.
-                    </p>
-                </div>
-
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">
-                        <i class="fas fa-square-root-alt"></i>
-                    </div>
-                    <h4>4. Elige la Ecuación</h4>
-                    <p>
-                        La calculadora carga automáticamente las ecuaciones disponibles para la especie: específica, alternativa, arbustiva o general.
-                    </p>
-                </div>
+                <!-- Advertencias técnicas o errores -->
+                <ul id="advertencias" class="calc-advertencias" aria-live="polite"></ul>
             </div>
 
-            <div class="info-box">
-                <h4>
-                    <i class="fas fa-info-circle"></i>
-                    ¿Qué significa el resultado?
-                </h4>
+            <!-- =============================================
+                 PROCEDIMIENTO PASO A PASO (PEDAGÓGICO)
+                 ============================================= -->
+            <div class="calc-procedimiento" id="procedimiento-box">
+                <div class="proc-header">
+                    <i class="fas fa-square-root-alt"></i>
+                    <h4>Procedimiento del cálculo</h4>
+                </div>
+                <ol id="res-procedimiento" class="proc-lista"></ol>
+            </div>
+
+            <!-- =============================================
+                 EQUIVALENCIAS
+                 ============================================= -->
+            <div class="equivalency-grid" id="equivalencias">
+                <div class="equiv-card">
+                    <i class="fas fa-car"></i>
+                    <span class="equiv-title">CO₂ Compensado</span>
+                    <span class="equiv-value" id="eq-km">0 km</span>
+                    <small>Recorridos en auto</small>
+                </div>
+
+                <div class="equiv-card">
+                    <i class="fas fa-wind"></i>
+                    <span class="equiv-title">Oxígeno Producido</span>
+                    <span class="equiv-value" id="eq-oxigeno">0 días</span>
+                    <small>Respirando por 1 día</small>
+                </div>
+
+                <div class="equiv-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <span class="equiv-title">Energía Limpia</span>
+                    <span class="equiv-value" id="eq-led">0 días</span>
+                    <small>Foco LED encendido</small>
+                </div>
+
+                <div class="equiv-card">
+                    <i class="fas fa-recycle"></i>
+                    <span class="equiv-title">Botellas Plástico</span>
+                    <span class="equiv-value" id="eq-botellas">0 bot.</span>
+                    <small>Equivalente en producción</small>
+                </div>
+
+                <div class="equiv-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="equiv-title">Cargas Smartphone</span>
+                    <span class="equiv-value" id="eq-cargas">0 cargas</span>
+                    <small>Energía para cargar</small>
+                </div>
+
+                <div class="equiv-card">
+                    <i class="fas fa-tree"></i>
+                    <span class="equiv-title">Árboles Jóvenes</span>
+                    <span class="equiv-value" id="eq-arboles">0 árboles</span>
+                    <small>Equivalentes a 10 años</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================================
+         TUTORIAL
+         ============================================= -->
+    <div class="calc-tutorial-section reveal">
+        <h3>
+            <i class="fas fa-graduation-cap"></i>
+            ¿Cómo usar esta calculadora?
+        </h3>
+
+        <div class="tutorial-grid">
+            <div class="tutorial-card">
+                <div class="tutorial-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h4>1. Selecciona la Especie</h4>
                 <p>
-                    El valor principal muestra el <strong>CO₂ equivalente</strong> que el árbol ha capturado y almacenado según su biomasa aérea estimada. También puedes ver la biomasa en kilogramos y el carbono almacenado en kg C.
+                    Elige el árbol del inventario JBP. Cada especie tiene su propia densidad de madera y sus ecuaciones alométricas asociadas.
                 </p>
+            </div>
+
+            <div class="tutorial-card">
+                <div class="tutorial-icon">
+                    <i class="fas fa-ruler"></i>
+                </div>
+                <h4>2. Mide el DAP</h4>
                 <p>
-                    <strong>Fórmula de conversión:</strong> Biomasa Aérea × 0.47 (fracción de carbono IPCC) × 3.67 (factor CO₂) = CO₂ equivalente.
+                    El DAP es el diámetro del tronco a 1.30 m del suelo. Si mediste la circunferencia, divídela entre π: 3.1416.
                 </p>
+            </div>
+
+            <div class="tutorial-card">
+                <div class="tutorial-icon">
+                    <i class="fas fa-arrows-alt-v"></i>
+                </div>
+                <h4>3. Estima la Altura</h4>
                 <p>
-                    <strong>Procedimiento:</strong> La calculadora muestra paso a paso cómo se sustituyen los valores en la ecuación alométrica y cómo se convierte la biomasa en carbono y luego en CO₂ equivalente, para que entiendas el origen de cada cifra.
+                    Puedes usar un clinómetro, una aplicación móvil o una comparación visual con objetos conocidos.
+                </p>
+            </div>
+
+            <div class="tutorial-card">
+                <div class="tutorial-icon">
+                    <i class="fas fa-square-root-alt"></i>
+                </div>
+                <h4>4. Elige la Ecuación</h4>
+                <p>
+                    La calculadora carga automáticamente las ecuaciones disponibles para la especie: específica, alternativa, arbustiva o general.
                 </p>
             </div>
         </div>
-    </section>
 
+        <div class="info-box">
+            <h4>
+                <i class="fas fa-info-circle"></i>
+                ¿Qué significa el resultado?
+            </h4>
+            <p>
+                El valor principal muestra el <strong>CO₂ equivalente</strong> que el árbol ha capturado y almacenado según su biomasa aérea estimada. También puedes ver la biomasa en kilogramos y el carbono almacenado en kg C.
+            </p>
+            <p>
+                <strong>Fórmula de conversión:</strong> Biomasa Aérea × 0.47 (fracción de carbono IPCC) × 3.67 (factor CO₂) = CO₂ equivalente.
+            </p>
+            <p>
+                <strong>Procedimiento:</strong> La calculadora muestra paso a paso cómo se sustituyen los valores en la ecuación alométrica y cómo se convierte la biomasa en carbono y luego en CO₂ equivalente, para que entiendas el origen de cada cifra.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     CTA FINAL (misma banda verde animada del index)
+     ============================================= -->
+<section class="cta-section">
+    <h2 class="reveal">De la cifra, al bosque</h2>
+    <p class="reveal">Ahora que sabes cuánto carbono captura un árbol, explora el inventario completo del colegio y descubre en el mapa dónde crece cada ejemplar.</p>
+
+    <div class="cta-buttons reveal">
+        <a href="lista-arboles.html" class="btn-cta primary">Ver el inventario</a>
+        <a href="mapa-colegio.html" class="btn-cta secondary">Abrir el mapa</a>
+    </div>
+</section>
+
+<!-- =============================================
+     FOOTER (unificado con el del index)
+     ============================================= -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-column branding">
             <div class="footer-logo">
                 <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón">
                 <div>
-                    <h4>Inventario Forestal Digital</h4>
+                    <h4>SILVAIN · Inventario Forestal Digital</h4>
                     <span>IE Jesús Bernal Pinzón</span>
                 </div>
             </div>
@@ -323,16 +447,17 @@
                 <li><a href="lista-arboles.html">Inventario Forestal</a></li>
                 <li><a href="calculadora.html">Calculadora de Carbono</a></li>
                 <li><a href="ia-chatbot.html">Chatbot IA</a></li>
+                <li><a href="mapa-colegio.html">Mapa Interactivo</a></li>
             </ul>
         </div>
 
         <div class="footer-column">
             <h4>Información</h4>
             <ul>
+                <li><a href="index.html#bienvenida">Sobre SILVAIN</a></li>
+                <li><a href="index.html#funciones">Funciones de la plataforma</a></li>
+                <li><a href="index.html#creditos">Créditos y apoyos</a></li>
                 <li><a href="equipo.html">Equipo de Trabajo</a></li>
-                <li><a href="#goals">Objetivos del Proyecto</a></li>
-                <li><a href="#">Marco Teórico</a></li>
-                <li><a href="#">Resultados Esperados</a></li>
             </ul>
         </div>
 
@@ -357,16 +482,38 @@
     </div>
 </footer>
 
+<!-- Botón Flotante de Tema -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
 
-    <!-- SCRIPT: Lógica de la calculadora (se auto-inicializa) -->
-    <script src="js/calculadora-carbono.js"></script>
+<!-- SCRIPT: Lógica de la calculadora (se auto-inicializa) -->
+<script src="js/calculadora-carbono.js"></script>
 
-    <!-- Botón Flotante de Tema -->
-    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
-        <i class="fas fa-moon"></i>
-    </button>
+<!-- Lógica Global (menú móvil, tema, luciérnagas, reveal) -->
+<script src="js/main.js"></script>
 
-    <!-- Lógica Global -->
-    <script src="js/main.js"></script>
+<script>
+/* =============================================
+   SCROLL REVEAL (mismo sistema que el index)
+   ============================================= */
+(function () {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+        reveals.forEach(el => el.classList.add('visible'));
+        return;
+    }
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => obs.observe(el));
+})();
+</script>
+
 </body>
 </html>
