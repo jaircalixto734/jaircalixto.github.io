@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil · Guardián del Bosque | SILVAIN JBP</title>
+    <meta name="description" content="Perfil del Guardián: rango, XP, eco-misiones, medallas y Certificado Digital de Guardián del Bosque — Proyecto SILVAIN, I.E. Jesús Bernal Pinzón, Maní Casanare.">
+    <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
+
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/pages/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+<!-- =============================================
+     NAVEGACIÓN
+     ============================================= -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="./imagenes/logojbp1.png" alt="Logo Jesús Bernal Pinzón" class="brand-logo">
+        <div class="brand-text">
+            <h1 class="school-name">I.E. Jesús Bernal Pinzón</h1>
+            <p class="tech-name">Técnica en Conservación de Recursos Naturales</p>
+        </div>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú" role="button" tabindex="0">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lista-arboles.html">Árboles</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+        <li><a href="ia-chatbot.html">IA Chatbot</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="mapa-colegio.html">Mapa</a></li>
+        <li><a href="perfil.html" class="active">Mi Perfil</a></li>
+    </ul>
+</nav>
+
+<main class="perfil-page" id="perfilRoot">
+    <div class="perfil-container">
+
+        <h2 class="perfil-hero-title"><i class="fas fa-user-shield"></i>Mi Perfil · Guardián del Bosque</h2>
+        <p class="perfil-subtitle">Evolución del Guardián: escanea árboles, aprueba quizzes, cumple Eco-Misiones y gana tu certificado.</p>
+
+        <!-- ===== IDENTIDAD + XP ===== -->
+        <section class="perfil-card">
+            <div class="perfil-identidad">
+                <div class="perfil-avatar"><i class="fas fa-tree"></i></div>
+                <div class="perfil-identidad-info">
+                    <h3 id="perfilDisplayName">Guardián Anónimo</h3>
+                    <p id="perfilRangoActual"><i class="fas fa-seedling"></i> Semilla Curiosa</p>
+                    <div class="perfil-nombre-form">
+                        <input type="text" id="perfilNombreInput" maxlength="40" placeholder="Escribe tu nombre completo (aparecerá en tu certificado)" aria-label="Nombre del guardián">
+                        <button class="perfil-btn" id="btnGuardarNombre"><i class="fas fa-floppy-disk"></i> Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfil-xp-zona">
+                <div class="perfil-xp-cabecera">
+                    <span><i class="fas fa-bolt" style="color:#c9a227;"></i> Experiencia</span>
+                    <span id="perfilXPValor">0 XP</span>
+                </div>
+                <div class="perfil-xp-barra"><div id="perfilXPBarFill"></div></div>
+                <span id="perfilXPLabel"></span>
+            </div>
+        </section>
+
+        <!-- ===== ESTADÍSTICAS ===== -->
+        <section class="perfil-stats-grid" id="perfilStatsGrid"></section>
+
+        <!-- ===== RANGOS ===== -->
+        <section class="perfil-card">
+            <h2><i class="fas fa-signal"></i> Evolución del Guardián — Rangos</h2>
+            <div class="perfil-rangos-lista" id="perfilRangosLista"></div>
+        </section>
+
+        <!-- ===== ECO-MISIONES ===== -->
+        <section class="perfil-card">
+            <h2><i class="fas fa-bullseye"></i> Eco-Misiones Ambientales</h2>
+            <div class="perfil-misiones-lista" id="perfilMisionesLista"></div>
+        </section>
+
+        <!-- ===== MEDALLAS ===== -->
+        <section class="perfil-card">
+            <h2><i class="fas fa-medal"></i> Colección de Medallas</h2>
+            <div class="perfil-medallas-grid" id="perfilMedallasGrid"></div>
+        </section>
+
+        <!-- ===== CERTIFICADO ===== -->
+        <section class="perfil-card">
+            <h2><i class="fas fa-scroll"></i> Certificado Digital de Guardián del Bosque</h2>
+            <div id="certificadoZona"></div>
+            <div class="cert-acciones">
+                <button class="perfil-btn dorado" id="btnVerCertificado" disabled><i class="fas fa-award"></i> Ver mi Certificado</button>
+            </div>
+        </section>
+
+        <!-- Zona de pruebas (solo con ?demo=1 en la URL) -->
+        <section class="perfil-card" id="demoCard" style="display:none;">
+            <h2><i class="fas fa-flask"></i> Modo Demostración</h2>
+            <p>Pulsa para simular progreso completo y ver el certificado (no afecta tu datos reales hasta que recargues).</p>
+            <button class="perfil-btn" id="btnDemo"><i class="fas fa-play"></i> Simular progreso completo</button>
+            <button class="perfil-btn" id="btnDemoReset" style="background:#b03a2e;"><i class="fas fa-rotate-left"></i> Restaurar mi progreso real</button>
+        </section>
+
+    </div>
+</main>
+
+<!-- ===== MODAL DEL CERTIFICADO ===== -->
+<div class="certificado-modal" id="certificadoModal" role="dialog" aria-modal="true" aria-label="Certificado digital">
+    <div class="certificado-modal-box">
+        <button class="certificado-modal-close" id="cerrarCertificadoModal" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        <canvas id="certificadoCanvas" width="1600" height="1130"></canvas>
+        <img id="imgLogoColegioCert" src="./imagenes/logojbp1.png" alt="" style="display:none;">
+        <img id="imgLogoProyectoCert" src="./imagenes/silvainjbp.png" alt="" style="display:none;">
+        <div class="certificado-modal-acciones">
+            <button class="perfil-btn dorado" id="btnDescargarCertificado"><i class="fas fa-download"></i> Descargar PNG</button>
+            <button class="perfil-btn" id="btnImprimirCertificado"><i class="fas fa-print"></i> Imprimir / Guardar PDF</button>
+        </div>
+    </div>
+</div>
+
+<!-- Botón Flotante de Tema -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar a Modo Noche/Día">
+    <i class="fas fa-moon"></i>
+</button>
+
+<script src="js/main.js"></script>
+<script src="js/tree-tokens.js"></script>
+<script src="js/datos_arboles.js" charset="UTF-8"></script>
+<script src="js/gamificacion.js"></script>
+<script src="js/perfil.js" charset="UTF-8"></script>
+<script>
+// ===== Modo demo opcional: perfil.html?demo=1 =====
+(function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('demo') !== '1') return;
+    var card = document.getElementById('demoCard');
+    if (!card) return;
+    card.style.display = 'block';
+
+    // Copia de seguridad del estado real
+    var real = localStorage.getItem('silvain_medals');
+
+    document.getElementById('btnDemo').addEventListener('click', function () {
+        var inventario = (typeof ARBOLES_INVENTARIO !== 'undefined') ? ARBOLES_INVENTARIO.slice() : [];
+        var demo = {
+            medals: inventario,
+            lastScan: inventario[0] || null,
+            scanCount: inventario.length,
+            xp: 5000,
+            quizzesPassed: inventario.slice(),
+            missions: {},
+            profile: JSON.parse(real || '{}').profile || { nombre: 'Estudiante Demo' }
+        };
+        if (!demo.profile.nombre) demo.profile.nombre = 'Estudiante Demo';
+        localStorage.setItem('silvain_medals', JSON.stringify(demo));
+        location.href = 'perfil.html?demo=1#listo';
+    });
+
+    document.getElementById('btnDemoReset').addEventListener('click', function () {
+        if (real) localStorage.setItem('silvain_medals', real);
+        else localStorage.removeItem('silvain_medals');
+        location.href = 'perfil.html';
+    });
+})();
+</script>
+</body>
+</html>

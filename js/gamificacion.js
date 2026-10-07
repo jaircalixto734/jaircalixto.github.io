@@ -114,6 +114,9 @@ function processQRToken(token) {
         // Guardar progreso
         saveGameState();
 
+        // 🎖️ Sistema de Perfil: +XP, Eco-Misiones y ascenso de rango
+        awardProfileProgress(matchedArbol);
+
         // Mostrar animación de logro primero
         setTimeout(() => {
             showAchievementModal(matchedArbol);
@@ -158,6 +161,9 @@ function processQRScan(arbolNombre) {
         // Guardar progreso
         saveGameState();
 
+        // 🎖️ Sistema de Perfil: +XP, Eco-Misiones y ascenso de rango
+        awardProfileProgress(matchedArbol);
+
         // Mostrar animación de logro primero
         setTimeout(() => {
             showAchievementModal(matchedArbol);
@@ -173,6 +179,46 @@ function processQRScan(arbolNombre) {
         }, GAMIFICATION_CONFIG.showPanelDelay);
 
         console.log('🔄 Medalla ya obtenida:', matchedArbol);
+    }
+}
+
+// 🎖️ Integración con el sistema de Perfil (XP, rangos, misiones) — js/perfil.js
+function awardProfileProgress(arbolNombre) {
+    if (typeof window.SILVAIN_PERFIL === 'undefined') return;
+    try {
+        var perfil = window.SILVAIN_PERFIL;
+        var estado = perfil.getState();
+        var rangoPrevio = perfil.getRango();
+        var xpGanada = perfil.constants.XP_SCAN;
+
+        // Evitar duplicados si gamificacion aún no registraba la medalla
+        estado.xp += xpGanada;
+        perfil.save();
+
+        // Comprobar Eco-Misiones desbloqueadas por este escaneo
+        var misionesFn = window.__silvainCheckMissions;
+        var ganadas = misionesFn ? misionesFn() : [];
+
+        // Notificar al usuario (toast del perfil)
+        window.__silvainPerfilToast && window.__silvainPerfilToast(
+            '<i class="fas fa-bolt"></i> <strong>+' + xpGanada + ' XP</strong> por escanear ' +
+            arbolNombre.replace(/[-_]/g, ' ') +
+            ' · <a href="perfil.html" class="perfil-toast-link">Ver mi perfil →</a>'
+        );
+        ganadas.forEach(function (m) {
+            window.__silvainPerfilToast && window.__silvainPerfilToast(
+                '<i class="fas fa-bullseye"></i> <strong>Eco-Misión completada:</strong> ' + m.titulo +
+                ' <span class="perfil-xp-chip">+' + m.xp + ' XP</span>', 6000);
+        });
+
+        var nuevo = perfil.getRango();
+        if (nuevo.nombre !== rangoPrevio.nombre) {
+            window.__silvainPerfilToast && window.__silvainPerfilToast(
+                '<i class="fas ' + nuevo.icono + '"></i> <strong>¡Ascenso de rango!</strong> Ahora eres: ' +
+                nuevo.nombre + ' 🎖️', 7000);
+        }
+    } catch (e) {
+        console.warn('⚠️ gamificacion: fallo integrando perfil', e);
     }
 }
 
