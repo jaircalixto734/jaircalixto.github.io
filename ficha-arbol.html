@@ -26,6 +26,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- ===== PWA: App instalable y modo sin conexión (SILVAIN Offline) ===== -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SILVAIN">
+    <script src="./js/offline.js" defer></script>
 </head>
 
 <body class="ficha-body">
@@ -680,6 +688,7 @@ NUEVA SECCIÓN: DATOS DENTRO DEL COLEGIO
             cargarDatosColegio(datosCientificos);
         }
     </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

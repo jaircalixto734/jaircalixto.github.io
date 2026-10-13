@@ -1,0 +1,71 @@
+{
+  "name": "SILVAIN — Inventario Forestal Digital JBP",
+  "short_name": "SILVAIN",
+  "description": "Inventario Forestal Digital de la IE Jesús Bernal Pinzón (Maní, Casanare). Fichas de árboles, mapa del campus, calculadora de carbono y gamificación — funciona sin conexión a internet.",
+  "lang": "es-CO",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#0e1f16",
+  "theme_color": "#2d5a27",
+  "categories": ["education", "environment", "productivity"],
+  "icons": [
+    {
+      "src": "./icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Inventario de árboles",
+      "short_name": "Inventario",
+      "description": "Lista completa de las especies del colegio",
+      "url": "./lista-arboles.html",
+      "icons": [{ "src": "./icons/icon-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Mapa del Campus",
+      "short_name": "Mapa",
+      "description": "Ubicación de los árboles en el colegio",
+      "url": "./mapa-colegio.html",
+      "icons": [{ "src": "./icons/icon-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Calculadora de Carbono",
+      "short_name": "Carbono",
+      "description": "Calcula el CO₂ capturado por un árbol",
+      "url": "./calculadora.html",
+      "icons": [{ "src": "./icons/icon-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Mi Perfil",
+      "short_name": "Perfil",
+      "description": "Tu progreso, XP e insignias",
+      "url": "./perfil.html",
+      "icons": [{ "src": "./icons/icon-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
