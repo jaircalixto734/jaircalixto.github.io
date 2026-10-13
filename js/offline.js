@@ -40,6 +40,14 @@
               }
             });
           });
+
+          // Revisar periódicamente si hay nueva versión del sw.js
+          // (cada vez que se abre la app y luego cada 60 min mientras sigue abierta)
+          function revisarActualizacion() {
+            try { reg.update(); } catch (e) {}
+          }
+          revisarActualizacion();
+          setInterval(revisarActualizacion, 60 * 60 * 1000);
         })
         .catch(function (err) {
           console.warn('[SILVAIN PWA] No se pudo registrar el SW:', err);
@@ -96,8 +104,23 @@
       '<span>Sin internet · modo offline activo</span>';
     document.body.appendChild(badge);
 
+    // Botón discreto para ocultar el aviso (sesión actual)
+    var cerrar = document.createElement('button');
+    cerrar.setAttribute('aria-label', 'Ocultar aviso');
+    cerrar.textContent = '✕';
+    cerrar.style.cssText =
+      'background:transparent;border:none;color:#ffd166;font-size:1rem;cursor:pointer;padding:0 2px;line-height:1;';
+    badge.appendChild(cerrar);
+    var oculto = false;
+    cerrar.addEventListener('click', function () {
+      oculto = true;
+      badge.classList.remove('visible');
+    });
+    window.addEventListener('online', function () { oculto = false; });
+    window.addEventListener('offline', function () { oculto = false; });
+
     function refrescar() {
-      badge.classList.toggle('visible', !navigator.onLine);
+      badge.classList.toggle('visible', !navigator.onLine && !oculto);
     }
     window.addEventListener('online', refrescar);
     window.addEventListener('offline', refrescar);
@@ -109,6 +132,15 @@
      ------------------------------------------------------------------ */
   function crearBarraInstalacion() {
     var deferredPrompt = null;
+
+    // Si la app ya está instalada (o corriendo en modo standalone), no mostrar nada
+    var yaInstalada = false;
+    try {
+      yaInstalada =
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true ||
+        sessionStorage.getItem('silvain_install_dismissed') === '1';
+    } catch (e) {}
 
     var bar = document.createElement('div');
     bar.className = 'silvain-install-bar';
@@ -125,15 +157,15 @@
 
     btnNo.addEventListener('click', function () {
       bar.classList.remove('visible');
-      try { sessionStorage.setItem('silvain_install_dismissed', '1'); } catch (e) {}
+      try { localStorage.setItem('silvain_install_dismissed', '1'); } catch (e) {}
     });
 
     window.addEventListener('beforeinstallprompt', function (e) {
       e.preventDefault();
       deferredPrompt = e;
-      var yaRechazado = false;
-      try { yaRechazado = sessionStorage.getItem('silvain_install_dismissed') === '1'; } catch (err) {}
-      if (!yaRechazado) bar.classList.add('visible');
+      var rechazado = false;
+      try { rechazado = localStorage.getItem('silvain_install_dismissed') === '1'; } catch (err) {}
+      if (!rechazado) bar.classList.add('visible');
     });
 
     btnOk.addEventListener('click', function () {
@@ -151,133 +183,46 @@
     window.addEventListener('appinstalled', function () {
       bar.classList.remove('visible');
     });
+
+    // Si el navegador nunca dispara beforeinstallprompt pero la app ya está
+    // instalada, tampoco debe verse nada (yaInstalada evita mostrar la barra
+    // en contexto standalone por si eventos previos la activaron).
+    if (yaInstalada) {
+      window.addEventListener('beforeinstallprompt', function () {
+        bar.classList.remove('visible');
+      }, true);
+    }
   }
 
   /* ------------------------------------------------------------------
-     5. MOTOR DE RESPUESTAS LOCALES (Silvain AI sin internet)
+     5. SILVAIN AI SIN INTERNET → AVISO DE "FUNCIONA SOLO ONLINE"
      ------------------------------------------------------------------
-     Usa la base de datos local `baseDatosArboles` (js/datos_arboles.js),
-     que ya está cargada en la página, para responder consultas básicas
-     cuando no hay conexión o cuando el servidor de IA no responde.
+     Por decisión del proyecto, el chatbot Silvain AI (la IA generativa)
+     NO tiene modo local: sin conexión responde un mensaje claro indicando
+     que la función requiere internet. El resto de la app (inventario,
+     fichas, mapa, calculadora, perfil, XP y medallas) sí funciona offline.
      ------------------------------------------------------------------ */
-  function normalizar(txt) {
-    return String(txt || '')
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
-  }
+  var MENSAJE_OFFLINE_IA =
+    '📡 *Silvain AI solo funciona con conexión a internet.*\n\n' +
+    'Necesito estar en línea para pensar y responder tus preguntas.\n' +
+    'Mientras tanto, puedes seguir usando SILVAIN sin señal:\n' +
+    '• 🌳 Inventario y fichas de los árboles\n' +
+    '• 🗺️ Mapa del colegio\n' +
+    '• 🌱 Calculadora de carbono\n' +
+    '• 🏅 Tu perfil, XP y medallas\n\n' +
+    'Cuando vuelva la conexión, escríbeme de nuevo. 🌿';
 
-  function limpiarHTML(html) {
-    var div = document.createElement('div');
-    div.innerHTML = String(html || '');
-    return (div.textContent || '').replace(/\s+/g, ' ').trim();
-  }
-
-  /** Busca qué especie(s) menciona la pregunta. */
-  function especiesEnConsulta(consulta) {
-    var db = (typeof baseDatosArboles !== 'undefined' && baseDatosArboles) || null;
-    if (!db) return [];
-    var texto = normalizar(consulta);
-    var encontradas = [];
-    Object.keys(db).forEach(function (clave) {
-      var a = db[clave];
-      var alias = [a.nombre].concat(a.nombresLocales || []).concat([a.cientifico])
-        .filter(Boolean).map(normalizar);
-      for (var i = 0; i < alias.length; i++) {
-        if (alias[i].length >= 4 && texto.indexOf(alias[i]) !== -1) {
-          encontradas.push({ clave: clave, arbol: a });
-          return;
-        }
-      }
-    });
-    return encontradas.slice(0, 2);
-  }
-
-  /** Categorías de pregunta → campo de la ficha que responde. */
-  function categoriaPregunta(consulta) {
-    var t = normalizar(consulta);
-    if (/(carbono|co2|biomasa|clima|calentamiento)/.test(t)) return 'carbono';
-    if (/(medicinal|medicina|cura|salud)/.test(t)) return 'usos';
-    if (/(fruto|comestible|comer|fruta)/.test(t)) return 'usos';
-    if (/(flor|florece|floracion|calendario|fenologia)/.test(t)) return 'calendario';
-    if (/(hoja|corteza|madera|tronco|altura|como es|parece|morfologia|identificar)/.test(t)) return 'morfologia';
-    if (/(ave|animal|fauna|poliniz|abeja|insecto)/.test(t)) return 'fauna';
-    if (/(origen|nativa|exotica|donde crece|habitat|distribucion)/.test(t)) return 'distribucion';
-    if (/(dap|diametro|medida|proceso|formula|calcul)/.test(t)) return 'carbono';
-    if (/(hola|buenas|bienven|gracias|quien eres|que eres|ayuda)/.test(t)) return 'saludo';
-    return 'resumen';
-  }
-
-  /** Genera una respuesta local a partir de los datos de la ficha. */
-  function responderLocal(consulta, arbolDeFicha) {
-    var cat = categoriaPregunta(consulta);
-
-    if (cat === 'saludo' && !arbolDeFicha) {
-      var total = 0;
-      try { total = Object.keys(baseDatosArboles).length; } catch (e) {}
-      return '👋 ¡Hola! Soy Silvain AI en <strong>modo local (sin internet)</strong>. ' +
-        'Conozco las <strong>' + total + ' especies</strong> del inventario forestal del colegio ' +
-        'Jesús Bernal Pinzón. Pregúntame por un árbol, por ejemplo: ' +
-        '<em>"¿Qué usos tiene el merecure?"</em> o <em>"Cuéntame sobre el algarrobo"</em>. ' +
-        'Para respuestas más profundas concurso, conéctate a internet. 🌳';
-    }
-
-    var hit = especiesEnConsulta(consulta);
-    var a = null, nombre = '';
-    if (arbolDeFicha) { a = arbolDeFicha; nombre = a.nombre; }
-    else if (hit.length) { a = hit[0].arbol; nombre = a.nombre; }
-
-    if (!a) {
-      return '😕 No encontré esa especie en el inventario local. Puedo hablarte de: ' +
-        (function () {
-          try {
-            return Object.keys(baseDatosArboles).slice(0, 12)
-              .map(function (k) { return baseDatosArboles[k].nombre; }).join(', ') + '…';
-          } catch (e) { return 'merecure, pomarrosa, algarrobo…'; }
-        })() +
-        '<br><br>💡 Con internet, Silvain AI puede responder mucho más. Esta es la versión sin conexión.';
-    }
-
-    var partes = ['📗 <strong>' + nombre + '</strong> <em>(' + (a.cientifico || '') + ')</em> — respuesta del <strong>modo local</strong>:'];
-
-    if (cat === 'carbono') {
-      partes.push('Almacena aproximadamente <strong>' + (a.carbono || '—') + ' kg de CO₂</strong> por individuo según el cálculo del inventario (alometría de Álvarez et al. 2012 para bosques naturales de Colombia).' +
-        (a.datosColegio && a.datosColegio.individuos ? ' En el colegio hay <strong>' + a.datosColegio.individuos + ' individuos</strong> con DAP promedio de ' + a.datosColegio.dapPromedio + ' cm y altura de ' + a.datosColegio.alturaPromedio + ' m.' : ''));
-    } else if (cat === 'usos') {
-      partes.push(limpiarHTML(a.usos).slice(0, 600) || 'La ficha local no registra usos detallados.');
-    } else if (cat === 'morfologia') {
-      partes.push(limpiarHTML(a.morfologia).slice(0, 600) || 'Sin descripción morfológica en la ficha local.');
-    } else if (cat === 'fauna') {
-      partes.push(limpiarHTML(a.fauna).slice(0, 500) || 'Sin datos de fauna asociada en la ficha local.');
-    } else if (cat === 'distribucion') {
-      partes.push((a.origen || '') + '. ' + limpiarHTML(a.distribucion).slice(0, 500));
-    } else if (cat === 'calendario') {
-      if (Array.isArray(a.calendario) && a.calendario.length) {
-        partes.push('Calendario fenológico: ' + a.calendario.map(function (c) { return c.mes + ': ' + c.fase; }).join(' · '));
-      } else {
-        partes.push(limpiarHTML(a.morfologia).slice(0, 300) || 'Sin calendario en la ficha local.');
-      }
-    } else if (cat === 'saludo') {
-      partes.push('Estás viendo su ficha. Puedes preguntarme por sus usos, frutos, hojas, carbono o dónde crece.');
-    } else { // resumen
-      partes.push('Familia <strong>' + (a.familia || '—') + '</strong>, ' + (a.exotica ? 'especie <strong>exótica</strong>' : 'especie <strong>nativa</strong>') +
-        ', estado de conservación: ' + (a.estado || '—') + '. Almacena ~' + (a.carbono || '—') + ' kg de CO₂.' +
-        (a.nombresLocales && a.nombresLocales.length ? ' También lo conocemos como: ' + a.nombresLocales.join(', ') + '.' : ''));
-      var morf = limpiarHTML(a.morfologia).slice(0, 350);
-      if (morf) partes.push(morf);
-    }
-
-    partes.push('<span class="silvain-local-tag">Modo local · sin internet</span>');
-    return partes.join('<br><br>');
+  function esUrlChatIA(url) {
+    return /\/api\/chat(\?|$)/.test(String(url || ''));
   }
 
   /* ------------------------------------------------------------------
      6. INTEGRACIÓN CON LOS CHATBOTS EXISTENTES
      ------------------------------------------------------------------
      parchamos window.fetch solo para POST /api/chat: si el dispositivo
-     está offline (o el servidor falla), devolvemos una respuesta local
-     con el mismo formato JSON que esperan los chats ({ reply }).
-     Así NO hace falta modificar ia-chatbot.js ni ficha-silvain-chat.js.
+     está offline (o el servidor no responde), devolvemos el aviso
+     "requiere internet" con el mismo formato JSON que esperan los chats
+     ({ reply }), sin tocar ia-chatbot.js ni ficha-silvain-chat.js.
      ------------------------------------------------------------------ */
   function parcharChatOffline() {
     if (!window.fetch) return;
@@ -287,61 +232,59 @@
       var url = typeof input === 'string' ? input : (input && input.url) || '';
       var method = (init && init.method) || (input && input.method) || 'GET';
 
-      var esChatIA = /\/api\/chat(\?|$)/.test(url) && String(method).toUpperCase() === 'POST';
+      var esChatIA = esUrlChatIA(url) && String(method).toUpperCase() === 'POST';
 
       if (!esChatIA) {
         return fetchOriginal(input, init);
       }
 
-      // Offline → responder localmente sin intentar la red
+      // Offline → NO se intenta la red: aviso inmediato de "solo online"
       if (!navigator.onLine) {
-        return simularRespuestaLocal(init);
+        return Promise.resolve(respuestaIAOffline());
       }
 
-      // Online → intento normal; si el servidor falla, caigo al modo local
-      return fetchOriginal(input, init).then(function (resp) {
-        if (resp && resp.ok) return resp;
-        return simularRespuestaLocal(init);
-      }).catch(function () {
-        return simularRespuestaLocal(init);
-      });
+      // Online → petición normal; si el servidor falla o tarda demasiado
+      // (señal débil en el colegio), caemos al mismo aviso con elegancia.
+      var ctrl = null, timer = null;
+      var opts = init ? Object.assign({}, init) : {};
+      try {
+        ctrl = new AbortController();
+        opts.signal = ctrl.signal;
+        timer = setTimeout(function () { try { ctrl.abort(); } catch (e) {} }, 30000);
+      } catch (e) { ctrl = null; }
+
+      return fetchOriginal(input, opts)
+        .then(function (resp) {
+          if (timer) clearTimeout(timer);
+          if (resp && resp.ok) return resp;
+          return respuestaIAOffline();
+        })
+        .catch(function () {
+          if (timer) clearTimeout(timer);
+          return respuestaIAOffline();
+        });
     };
 
-    function simularRespuestaLocal(init) {
-      var consulta = '';
-      var contextoFicha = '';
-      try {
-        var body = JSON.parse((init && init.body) || '{}');
-        consulta = body.message || '';
-        contextoFicha = body.contextoInventario || '';
-      } catch (e) {}
-
-      // Si estamos en una ficha de árbol, detectamos la especie desde la URL
-      var arbolDeFicha = null;
-      try {
-        var params = new URLSearchParams(window.location.search);
-        var id = params.get('arbol') || params.get('id');
-        if (id && typeof baseDatosArboles !== 'undefined' && baseDatosArboles[id]) {
-          arbolDeFicha = baseDatosArboles[id];
-        }
-      } catch (e) {}
-
-      var texto = responderLocal(consulta, arbolDeFicha);
-      // Quitar etiquetas HTML simples para el chat que usa texto plano
-      var textoPlano = texto.replace(/<[^>]+>/g, '');
-
+    function respuestaIAOffline() {
       var json = JSON.stringify({
-        reply: textoPlano,
+        reply: MENSAJE_OFFLINE_IA,
         offline: true,
-        fuente: 'SILVAIN modo local'
+        requiereInternet: true,
+        fuente: 'SILVAIN · Silvain AI requiere conexión a internet'
       });
-
-      return Promise.resolve(new Response(json, {
+      return new Response(json, {
         status: 200,
         headers: { 'Content-Type': 'application/json' }
-      }));
+      });
     }
   }
+
+  /* Expone el motor de aviso para uso directo desde las páginas de IA */
+  window.SilvainPWA = {
+    isOffline: function () { return !navigator.onLine; },
+    esUrlChatIA: esUrlChatIA,
+    mensajeOfflineIA: function () { return MENSAJE_OFFLINE_IA; }
+  };
 
   /* ------------------------------------------------------------------
      ARRANQUE
