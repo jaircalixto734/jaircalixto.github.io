@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2d5a27">
+  <title>SILVAIN · Sin conexión</title>
+  <link rel="icon" type="image/png" href="./imagenes/logojbp1.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(160deg, #0e1f16 0%, #1c3527 60%, #23422e 100%);
+      color: #eaf5ec;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .tarjeta {
+      max-width: 520px;
+      width: 100%;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+    .hoja { font-size: 3.2rem; margin-bottom: 10px; }
+    h1 { font-size: 1.5rem; margin-bottom: 12px; color: #9fd3a8; }
+    p { font-size: .95rem; line-height: 1.6; opacity: .85; margin-bottom: 26px; }
+    .botones { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: 12px 22px;
+      border-radius: 12px;
+      transition: transform .15s ease;
+    }
+    a:hover { transform: translateY(-2px); }
+    .primario { background: #3fa34d; color: #fff; }
+    .secundario { background: transparent; color: #9fd3a8; border: 1px solid rgba(159,211,168,.4); }
+    .nota { margin-top: 26px; font-size: .78rem; opacity: .6; }
+  </style>
+</head>
+<body>
+  <div class="tarjeta">
+    <div class="hoja">🌳</div>
+    <h1>SILVAIN está aquí, aunque el internet no</h1>
+    <p>
+      No pudimos cargar esta página desde la red, pero tu copia instalada sigue funcionando.
+      El inventario de árboles, el mapa del campus, la calculadora de carbono y tu perfil
+      <strong>funcionan sin conexión</strong>. Solo <em>Silvain AI</em> necesita internet
+      (y aun así responde en modo local con los datos del inventario).
+    </p>
+    <div class="botones">
+      <a class="primario" href="./index.html">Ir al inicio</a>
+      <a class="secundario" href="./lista-arboles.html">Ver inventario</a>
+      <a class="secundario" href="./mapa-colegio.html">Mapa del campus</a>
+    </div>
+    <div class="nota">IE Jesús Bernal Pinzón · Maní, Casanare · Inventario Forestal Digital</div>
+  </div>
+
+  <script>
+    // Si vuelve la conexión, recargar automáticamente hacia la página solicitada
+    window.addEventListener('online', function () {
+      var destino = sessionStorage.getItem('silvain_destino') || './index.html';
+      sessionStorage.removeItem('silvain_destino');
+      if (destino !== location.pathname) location.href = destino;
+    });
+  </script>
+</body>
+</html>
