@@ -862,3 +862,354 @@ body.modo-noche .info-box strong { color: #c5e1a5; }
     .tutorial-icon,
     .btn-calc { transition-duration: 0.01s; }
 }
+
+
+/* =============================================
+   11. REGISTRO DE CAMPO (base de datos)
+   ============================================= */
+.registro-campo-section {
+    max-width: 1100px;
+    margin: 70px auto 0;
+    padding: 48px 40px;
+    background: var(--card-bg);
+    border: 1px solid rgba(45, 90, 39, 0.1);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(26, 51, 24, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.registro-campo-section h3 {
+    font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.registro-campo-section h3 i {
+    color: #81b622;
+    font-size: 1.4rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(129, 182, 34, 0.12);
+    border: 1px solid rgba(45, 90, 39, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.registro-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+}
+.registro-intro strong { color: var(--primary-color); }
+
+/* Toolbar: buscador + contador */
+.registro-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.registro-buscador {
+    position: relative;
+    flex: 1;
+    min-width: 240px;
+    max-width: 440px;
+}
+
+.registro-buscador i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #81b622;
+    pointer-events: none;
+    font-size: 0.95rem;
+}
+
+.registro-buscador input {
+    width: 100%;
+    padding: 13px 18px 13px 46px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    background: var(--bg-color);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.registro-buscador input:focus {
+    border-color: var(--primary-light);
+    background: var(--card-bg);
+    box-shadow: 0 0 0 4px rgba(129, 182, 34, 0.16);
+}
+
+.registro-contador {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+.registro-contador strong {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+/* Tabla */
+.registro-tabla-wrap {
+    max-height: 560px;
+    overflow-y: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+}
+
+.registro-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.registro-tabla thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: linear-gradient(135deg, #2d5a27, #3d7a35);
+    color: #fff;
+}
+
+.registro-tabla thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.registro-tabla tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s ease;
+}
+.registro-tabla tbody tr:last-child { border-bottom: none; }
+.registro-tabla tbody tr:hover {
+    background: rgba(129, 182, 34, 0.06);
+}
+
+.registro-tabla tbody td {
+    padding: 12px 16px;
+    color: var(--text-main);
+    vertical-align: middle;
+}
+
+.registro-tabla .col-num {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    width: 54px;
+}
+
+.registro-tabla .col-especie {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.registro-tabla .col-dap,
+.registro-tabla .col-altura {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.registro-no-disponible {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* Botón "Usar" */
+.btn-usar-registro {
+    background: linear-gradient(135deg, #2d5a27, #3d7a35);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    box-shadow: 0 6px 14px rgba(45, 90, 39, 0.2);
+}
+
+.btn-usar-registro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(45, 90, 39, 0.32);
+}
+
+.btn-usar-registro i {
+    color: #d4ff80;
+    font-size: 0.72rem;
+    transition: color 0.3s ease;
+}
+
+.btn-usar-registro.cargado {
+    background: linear-gradient(135deg, #81b622, #a4d438);
+}
+.btn-usar-registro.cargado i { color: #fff; }
+
+/* Estado vacío */
+.registro-vacio {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-muted);
+}
+.registro-vacio i {
+    font-size: 2.2rem;
+    color: #81b622;
+    margin-bottom: 14px;
+    opacity: 0.5;
+}
+.registro-vacio p { font-size: 0.92rem; }
+
+/* Pulso del formulario al cargar datos */
+@keyframes formPulse {
+    0%, 100% { box-shadow: 0 24px 60px rgba(26, 51, 24, 0.1); }
+    50% {
+        box-shadow: 0 24px 60px rgba(129, 182, 34, 0.55),
+                    0 0 0 4px rgba(129, 182, 34, 0.3);
+    }
+}
+.calc-form-column.form-highlight {
+    animation: formPulse 1.5s ease;
+}
+
+/* Modo noche */
+body.modo-noche .registro-campo-section {
+    border-color: rgba(212, 255, 128, 0.1);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+body.modo-noche .registro-campo-section h3 { color: #e8f5e9; }
+body.modo-noche .registro-campo-section h3 i {
+    background: rgba(212, 255, 128, 0.08);
+    border-color: rgba(212, 255, 128, 0.2);
+    color: #d4ff80;
+}
+body.modo-noche .registro-intro { color: #a3b899; }
+
+body.modo-noche .registro-buscador input {
+    background: rgba(15, 24, 14, 0.6);
+    border-color: rgba(212, 255, 128, 0.14);
+}
+body.modo-noche .registro-buscador input:focus {
+    border-color: #d4ff80;
+    box-shadow: 0 0 0 4px rgba(212, 255, 128, 0.1);
+}
+
+body.modo-noche .registro-tabla-wrap {
+    background: rgba(15, 24, 14, 0.5);
+    border-color: var(--border-color);
+}
+body.modo-noche .registro-tabla tbody tr:hover {
+    background: rgba(212, 255, 128, 0.05);
+}
+body.modo-noche .registro-tabla .col-especie { color: #c5e1a5; }
+
+body.modo-noche .btn-usar-registro {
+    background: linear-gradient(135deg, #558b2f, #689f38);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+body.modo-noche .btn-usar-registro.cargado {
+    background: linear-gradient(135deg, #81b622, #a4d438);
+}
+
+/* Responsivo: tabla → tarjetas en móvil */
+@media (max-width: 768px) {
+    .registro-campo-section {
+        padding: 34px 22px;
+        margin-top: 50px;
+    }
+    .registro-campo-section h3 { flex-direction: column; gap: 14px; }
+    .registro-toolbar { gap: 12px; }
+
+    .registro-tabla-wrap {
+        max-height: 520px;
+        border: none;
+        background: transparent;
+        overflow-y: auto;
+    }
+    .registro-tabla thead { display: none; }
+    .registro-tabla,
+    .registro-tabla tbody { display: block; }
+    .registro-tabla tbody tr {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4px 12px;
+        padding: 14px 16px;
+        margin-bottom: 10px;
+        background: var(--bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+    }
+    .registro-tabla tbody td {
+        padding: 2px 0;
+        border: none;
+    }
+    .registro-tabla .col-num { display: none; }
+    .registro-tabla .col-especie {
+        grid-column: 1;
+        font-size: 0.95rem;
+    }
+    .registro-tabla .col-dap,
+    .registro-tabla .col-altura {
+        grid-column: 1;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+    .registro-tabla .col-dap::before {
+        content: 'DAP: ';
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+    .registro-tabla .col-altura::before {
+        content: 'Altura: ';
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+    .registro-tabla .col-accion {
+        grid-row: 1 / span 3;
+        grid-column: 2;
+        align-self: center;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-campo-section { padding: 28px 16px; }
+    .registro-tabla tbody tr { padding: 12px; }
+    .registro-contador { font-size: 0.78rem; }
+    .registro-contador strong { font-size: 1rem; }
+}
