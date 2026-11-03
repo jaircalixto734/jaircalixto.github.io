@@ -420,6 +420,61 @@
     </div>
 </section>
 
+
+<!-- =============================================
+     REGISTRO DE CAMPO - Base de datos de referencia
+     ============================================= -->
+<section class="registro-campo-section reveal" id="registro-campo">
+    <h3>
+        <i class="fas fa-clipboard-list"></i>
+        Registro de Campo · Datos de Referencia
+    </h3>
+
+    <p class="registro-intro">
+        Estos son los <strong>árboles del inventario JBP</strong> con sus mediciones reales de campo.
+        Busca una especie, revisa sus datos y presiona <strong>"Usar"</strong> para cargar automáticamente
+        la especie, el DAP y la altura en la calculadora.
+    </p>
+
+    <div class="registro-toolbar">
+        <div class="registro-buscador">
+            <i class="fas fa-search"></i>
+            <input
+                type="text"
+                id="buscar-arbol"
+                placeholder="Buscar por nombre del árbol (ej: Merecure, Palma...)"
+                autocomplete="off"
+            >
+        </div>
+        <div class="registro-contador">
+            <strong id="contador-registros">150</strong>
+            <span>árboles en el registro</span>
+        </div>
+    </div>
+
+    <div class="registro-tabla-wrap" id="registro-tabla-wrap">
+        <table class="registro-tabla">
+            <thead>
+                <tr>
+                    <th class="col-num">#</th>
+                    <th>Nombre del Árbol</th>
+                    <th>DAP Registrado</th>
+                    <th>Altura Estimada</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="registro-tbody">
+                <!-- Las filas se generan con JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="registro-vacio" id="registro-vacio" hidden>
+        <i class="fas fa-search"></i>
+        <p>No se encontraron árboles con ese nombre. Prueba con otra búsqueda.</p>
+    </div>
+</section>
+
 <!-- =============================================
      CTA FINAL (misma banda verde animada del index)
      ============================================= -->
@@ -523,6 +578,10 @@
     reveals.forEach(el => obs.observe(el));
 })();
 </script>
+
+<script src="js/calculadora-carbono.js"></script>
+<script src="js/registro-campo.js"></script>  <!-- NUEVO -->
+<script src="js/main.js"></script>
 
 </body>
 </html>
