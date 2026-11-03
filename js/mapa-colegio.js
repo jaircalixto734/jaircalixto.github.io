@@ -10,6 +10,7 @@
 /* El color de cada especie es el mismo de la leyenda
    del levantamiento de campo (mapa de puntos).       */
 const JBP_ESPECIES = {
+    /* ---------- Especies con puntos georreferenciados ---------- */
     merecure: {
         nombre: 'Merecure', nombreCientifico: 'Moquilea pyrifolia', categoria: 'nativo',
         color: '#FF7F27', imagen: './imagenes/merecure1.jpeg', ficha: 'merecure',
@@ -70,18 +71,101 @@ const JBP_ESPECIES = {
         color: '#FFF200', imagen: './imagenes/caracaro1.jpeg', ficha: 'caracaro',
         descripcion: 'El gigante de las sabanas. Sus frutos en forma de oreja y su capacidad de fijar nitrógeno lo hacen vital para el ecosistema llanero.'
     },
-     palma_real: {
+    palma_real: {
         nombre: 'Palma Real', nombreCientifico: 'Roystonea regia', categoria: 'ornamental',
         color: '#404144', imagen: './imagenes/real6.jpeg', ficha: 'palma-real',
-        descripcion: 'Conocido por su fuerte olor y ampliamente cultivado por sus supuestas propiedades medicinales.'
-        }
+        descripcion: 'Majestuosa palmera con capitel verde brillante; sus frutos "palmiche" son favoritos de loros y guacamayas.'
+    },
+
+    /* ---------- Especies del inventario sin puntos aún georreferenciados ---------- */
+    jambolan: {
+        nombre: 'Jambolán', nombreCientifico: 'Syzygium cumini', categoria: 'frutal',
+        color: '#7F3F00', imagen: './imagenes/Jambolán.jpeg', ficha: 'jambolan',
+        descripcion: 'Especie exótica introducida desde la India, famosa por sus frutos que tiñen la lengua y sus propiedades medicinales.'
+    },
+    palma_areca: {
+        nombre: 'Palma Areca', nombreCientifico: 'Dypsis lutescens', categoria: 'ornamental',
+        color: '#7AC64D', imagen: './imagenes/areca1.jpeg', ficha: 'palma_areca',
+        descripcion: 'Elegante palmera multicaule conocida como "Palma Bambú". Es una de las mejores purificadoras de aire según la NASA.'
+    },
+    maiz_tostado: {
+        nombre: 'Maíz Tostado', nombreCientifico: 'Coccoloba acuminata', categoria: 'nativo',
+        color: '#FF6B9D', imagen: './imagenes/tostado1.jpeg', ficha: 'maiz_tostado',
+        descripcion: 'Sus pequeños frutos parecidos a uvas son un manjar para aves y transeúntes; crece cerca de fuentes de agua.'
+    },
+    trompillo: {
+        nombre: 'Trompillo', nombreCientifico: 'Guarea guidonia', categoria: 'maderable',
+        color: '#8B4513', imagen: './imagenes/trompillo1.jpeg', ficha: 'trompillo',
+        descripcion: 'También conocido como Cedro Macho, aporta valiosa madera y sus semillas atraen a las aves del bosque.'
+    },
+    guacimo: {
+        nombre: 'Guácimo', nombreCientifico: 'Guazuma ulmifolia', categoria: 'nativo',
+        color: '#3B7A57', imagen: './imagenes/guacimo7.jpeg', ficha: 'guacimo',
+        descripcion: 'Un salvavidas en el verano llanero: sus frutos caídos proporcionan forraje clave para el ganado.'
+    },
+    flor_morado: {
+        nombre: 'Flor Morado', nombreCientifico: 'Tabebuia rosea', categoria: 'ornamental',
+        color: '#8B5CF6', imagen: './imagenes/rosea1.jpeg', ficha: 'flor-morado',
+        descripcion: 'Especie nativa con distribución natural desde el sur de México hasta el norte de Sudamérica.'
+    },
+    mamoncillo: {
+        nombre: 'Mamoncillo', nombreCientifico: 'Melicoccus bijugatus', categoria: 'frutal',
+        color: '#FFD700', imagen: './imagenes/mamoncillo.jpeg', ficha: 'mamoncillo',
+        descripcion: 'Especie nativa de las tierras colombianas y venezolanas, conocida por su fruto pulposo y refrescante.'
+    },
+    palma_africana: {
+        nombre: 'Palma Africana', nombreCientifico: 'Elaeis guineensis', categoria: 'frutal',
+        color: '#E67E22', imagen: './imagenes/africana1.jpeg', ficha: 'palma_africana',
+        descripcion: 'La palma africana de aceite es una planta tropical propia de climas cálidos, originaria del África occidental.'
+    },
+    adelfa_amarilla: {
+        nombre: 'Adelfa Amarilla', nombreCientifico: 'Cascabela thevetia', categoria: 'ornamental',
+        color: '#F1C40F', imagen: './imagenes/adelfa1.jpeg', ficha: 'adelfa amarilla',
+        descripcion: '⚠️ Especie TÓXICA. Pertenece a una de las familias botánicas más diversas del Neotrópico, con numerosas especies de gran importancia ecológica.'
+    },
+    cica: {
+        nombre: 'Cica', nombreCientifico: 'Cycas revoluta', categoria: 'ornamental',
+        color: '#16A085', imagen: './imagenes/cica1.jpeg', ficha: 'cica',
+        descripcion: '⚠️ Especie TÓXICA. Originaria del sur de Japón, pertenece a la familia Cycadaceae, un linaje de gimnospermas que apareció hace más de 200 millones de años.'
+    },
+    vanarena: {
+        nombre: 'Vanarena', nombreCientifico: 'Bougainvillea spectabilis', categoria: 'ornamental',
+        color: '#E91E63', imagen: './imagenes/vanarena1.jpeg', ficha: 'vanarena',
+        descripcion: 'Originaria de Brasil, pertenece a la familia Nyctaginaceae. Fue introducida a Europa por el explorador Louis Antoine de Bougainville.'
+    },
+    leucaena: {
+        nombre: 'Leucaena', nombreCientifico: 'Leucaena leucocephala', categoria: 'ornamental',
+        color: '#9ACD32', imagen: './imagenes/XD.jpeg', ficha: 'leucaena',
+        descripcion: 'Árbol originario de México y América Central, perteneciente a la familia Fabaceae. Ha sido introducida en muchas regiones tropicales del mundo.'
+    },
+    guamo: {
+        nombre: 'Guamo', nombreCientifico: 'Inga edulis', categoria: 'nativo',
+        color: '#6B8E23', imagen: './imagenes/guama2.jpg', ficha: 'guama',
+        descripcion: 'Especie nativa nodal de los bosques de galería: Inga edulis Mart. es nativa de amplia distribución neotropical, desde Honduras hasta Bolivia y sur de Brasil.'
+    },
+    flor_amarillo: {
+        nombre: 'Flor Amarillo', nombreCientifico: 'Handroanthus chrysanthus', categoria: 'ornamental',
+        color: '#FFC300', imagen: './imagenes/XD.jpeg', ficha: 'araguaney',
+        descripcion: 'Especie nativa emblemática de los bosques secos neotropicales: Handroanthus chrysanthus (Jacq.) S.O.Grose. Florece con fuerza en la estación seca.'
+    },
+    almendro: {
+        nombre: 'Almendro', nombreCientifico: 'Terminalia catappa', categoria: 'maderable',
+        color: '#A0522D', imagen: './imagenes/almendro1.jpeg', ficha: 'almendro',
+        descripcion: 'Árbol de sombra clave en la llanura. Sus hojas purifican el agua y sus ramas crecen en capas protegiendo al ganado del sol.'
+    },
 };
 
 /* Abreviaturas para el código de cada punto (ej. JBP-MER-01) */
 const JBP_PREFIJOS = {
+    /* Especies con puntos */
     merecure: 'MER', pomarrosa: 'POM', oiti: 'OIT', limoncillo: 'LIM',
     noni: 'NON', palma_coco: 'COC', palo_cruz: 'PCZ', guayaba: 'GUA',
-    saman: 'SAM', gualanday: 'GUL', mango: 'MAN', caracaro: 'CAR', palma_real: 'REA'
+    saman: 'SAM', gualanday: 'GUL', mango: 'MAN', caracaro: 'CAR', palma_real: 'REA',
+    /* Especies del inventario sin puntos aún */
+    jambolan: 'JAM', palma_areca: 'ARE', maiz_tostado: 'MAI', trompillo: 'TRO',
+    guacimo: 'GCM', flor_morado: 'FMO', mamoncillo: 'MAM', palma_africana: 'AFR',
+    adelfa_amarilla: 'ADE', cica: 'CIC', vanarena: 'VAN', leucaena: 'LEU',
+    guamo: 'GMO', flor_amarillo: 'FAM', almendro: 'ALM'
 };
 
 /* ---------- 2. PUNTOS GEORREFERENCIADOS ---------- */
@@ -258,6 +342,31 @@ const JBP_PUNTOS = [
   ['gualanday', 49.52, 72.73],
   ['mango', 23.46, 88.28],
   ['caracaro', 31.84, 93.14],
+  ['adelfa_amarilla', 94.53, 65.70],
+  ['jambolan', 10.84, 72.87],
+  ['maiz_tostado', 57.54, 61.13],
+  ['mamoncillo', 96.42, 87.65],
+  ['trompillo', 93.63, 92.99],
+  ['flor_morado', 23.80, 45.12],
+  ['palma_africana', 75.53, 48.93],
+  ['leucaena', 31.51,  0.30],
+  ['guamo', 23.69, 80.79],
+  ['flor_amarillo', 19.11, 81.71],
+  ['flor_amarillo', 13.63, 83.84],
+  ['almendro', 13.74, 77.74],
+  ['palma_areca', 65.14, 58.23],
+  ['oiti', 72.07, 53.35],
+  ['oiti', 73.30, 55.49],
+  ['palma_areca', 43.35, 74.24],
+  ['cica', 27.71, 52.90],
+  ['cica', 26.82, 54.42],
+  ['cica', 27.26, 47.71],
+  ['cica', 27.26, 45.73],
+  ['cica', 28.38, 44.66],
+  ['guacimo', 20.00, 48.48],
+  ['guacimo', 21.23, 47.10],
+  ['guacimo', 25.59, 41.01],
+  ['guacimo',  22.12, 43.14],
 ];
 
 /* ---------- 3. ZONAS DEL CAMPUS ---------- */
